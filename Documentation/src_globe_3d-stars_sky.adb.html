@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    File: globe_3d-stars_sky.adb
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+  </div>
+</div> <!-- leftSide -->
+
+<div class='subprograms'>
+  <div class='details'><ol><li id="l1"><pre><span class="keyword">with</span> <span class="droplink">GLOBE_3D.Math<ul><li><a href="globe_3d-math.ads.html#globe_3d-math.ads:1:18" title="To API doc">To API doc</a></li><li><a href="src_globe_3d-math.ads.html#l1" title="To spec">To spec</a></li><li><a href="src_globe_3d-math.adb.html#l1" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l2"><pre><span class="keyword">pragma</span> Elaborate_All (<span class="droplink">GLOBE_3D.Math<ul><li><a href="globe_3d-math.ads.html#globe_3d-math.ads:1:18" title="To API doc">To API doc</a></li><li><a href="src_globe_3d-math.ads.html#l1" title="To spec">To spec</a></li><li><a href="src_globe_3d-math.adb.html#l1" title="To body">To body</a></li></ul></span>); </pre></li>
+<li id="l3"><pre> </pre></li>
+<li id="l4"><pre><span class="keyword">with</span> Ada.Numerics.Float_Random;         <span class="keyword">use</span> Ada.Numerics.Float_Random; </pre></li>
+<li id="l5"><pre> </pre></li>
+<li id="l6"><pre><span class="keyword">package</span> <span class="keyword">body</span> <span class="droplink">GLOBE_3D.Stars_sky<ul><li><a href="globe_3d-stars_sky.ads.html#globe_3d-stars_sky.ads:6:18" title="To API doc">To API doc</a></li><li><a href="src_globe_3d-stars_sky.ads.html#l6" title="To spec">To spec</a></li></ul></span> <span class="keyword">is</span> </pre></li>
+<li id="l7"><pre> </pre></li>
+<li id="l8"><pre>   Star_Colours   : <span class="keyword">array</span> (1 .. <span class="droplink">No_of_Stars<ul><li><a href="globe_3d-stars_sky.ads.html#globe_3d-stars_sky.ads:3:3" title="To API doc">To API doc</a></li><li><a href="src_globe_3d-stars_sky.ads.html#l3" title="To spec">To spec</a></li></ul></span>) <span class="keyword">of</span> <span class="droplink">GL.RGB_Color<ul><li><a href="gl.ads.html#gl.ads:157:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l157" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l9"><pre>   Star_Positions : <span class="keyword">array</span> (1 .. <span class="droplink">No_of_Stars<ul><li><a href="globe_3d-stars_sky.ads.html#globe_3d-stars_sky.ads:3:3" title="To API doc">To API doc</a></li><li><a href="src_globe_3d-stars_sky.ads.html#l3" title="To spec">To spec</a></li></ul></span>) <span class="keyword">of</span> <span class="droplink">Point_3D<ul><li><a href="globe_3d.ads.html#globe_3d.ads:111:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l111" title="To spec">To spec</a></li></ul></span>; <span class="comment">-- normalized position on sphere</span> </pre></li>
+<li id="l10"><pre> </pre></li>
+<li id="l11"><pre>   <span class="keyword">procedure</span> <span class="droplink">Display<ul><li><a href="globe_3d-stars_sky.ads.html#globe_3d-stars_sky.ads:10:14" title="To API doc">To API doc</a></li><li><a href="src_globe_3d-stars_sky.ads.html#l10" title="To spec">To spec</a></li></ul></span> (<span class="droplink">Rotation<ul><li><a href="globe_3d-stars_sky.ads.html#globe_3d-stars_sky.ads:10:23" title="To API doc">To API doc</a></li><li><a href="src_globe_3d-stars_sky.ads.html#l10" title="To spec">To spec</a></li></ul></span> : <span class="droplink">Matrix_33<ul><li><a href="globe_3d.ads.html#globe_3d.ads:114:9" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l114" title="To spec">To spec</a></li></ul></span>) <span class="keyword">is</span> </pre></li>
+<li id="l12"><pre> </pre></li>
+<li id="l13"><pre>      <span class="keyword">use</span> <span class="droplink">GLOBE_3D.Math<ul><li><a href="globe_3d-math.ads.html#globe_3d-math.ads:1:18" title="To API doc">To API doc</a></li><li><a href="src_globe_3d-math.ads.html#l1" title="To spec">To spec</a></li><li><a href="src_globe_3d-math.adb.html#l1" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l14"><pre> </pre></li>
+<li id="l15"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l16"><pre>      <span class="droplink">PushMatrix<ul><li><a href="gl.ads.html#gl.ads:3278:14" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l3278" title="To spec">To spec</a></li><li><a href="src_gl.ads.html#l4169" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l17"><pre>      <span class="droplink">Set_GL_Matrix<ul><li><a href="globe_3d-math.ads.html#globe_3d-math.ads:80:13" title="To API doc">To API doc</a></li><li><a href="src_globe_3d-math.ads.html#l80" title="To spec">To spec</a></li><li><a href="src_globe_3d-math.adb.html#l283" title="To body">To body</a></li></ul></span> (<span class="droplink">Rotation<ul><li><a href="globe_3d-stars_sky.ads.html#globe_3d-stars_sky.ads:10:23" title="To API doc">To API doc</a></li><li><a href="src_globe_3d-stars_sky.ads.html#l10" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l18"><pre>      <span class="droplink">Disable<ul><li><a href="gl.ads.html#gl.ads:706:14" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l706" title="To spec">To spec</a></li><li><a href="src_gl.ads.html#l4141" title="To body">To body</a></li></ul></span> (TEXTURE_2D); </pre></li>
+<li id="l19"><pre>      <span class="keyword">for</span> i <span class="keyword">in</span> 1 .. <span class="droplink">No_of_Stars<ul><li><a href="globe_3d-stars_sky.ads.html#globe_3d-stars_sky.ads:3:3" title="To API doc">To API doc</a></li><li><a href="src_globe_3d-stars_sky.ads.html#l3" title="To spec">To spec</a></li></ul></span> <span class="keyword">loop</span> </pre></li>
+<li id="l20"><pre>         <span class="droplink">Color<ul><li><a href="gl.ads.html#gl.ads:3449:14" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l3449" title="To spec">To spec</a></li><li><a href="src_gl.adb.html#l59" title="To body">To body</a></li></ul></span> (<a href="src_globe_3d-stars_sky.adb.html#l8" title="defined at globe_3d-stars_sky.adb:8:4">Star_Colours</a> (i)); </pre></li>
+<li id="l21"><pre>         <span class="droplink">GL_Begin<ul><li><a href="gl.ads.html#gl.ads:1432:14" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l1432" title="To spec">To spec</a></li><li><a href="src_gl.ads.html#l4190" title="To body">To body</a></li></ul></span> (GL.POINTS); </pre></li>
+<li id="l22"><pre>         <span class="droplink">Vertex<ul><li><a href="gl.ads.html#gl.ads:3330:14" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l3330" title="To spec">To spec</a></li><li><a href="src_gl.adb.html#l39" title="To body">To body</a></li></ul></span> (<a href="src_globe_3d-stars_sky.adb.html#l9" title="defined at globe_3d-stars_sky.adb:9:4">Star_Positions</a> (i)); </pre></li>
+<li id="l23"><pre>         <span class="droplink">GL_End<ul><li><a href="gl.ads.html#gl.ads:1434:14" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l1434" title="To spec">To spec</a></li><li><a href="src_gl.ads.html#l4191" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l24"><pre>      <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l25"><pre>      <span class="droplink">PopMatrix<ul><li><a href="gl.ads.html#gl.ads:3280:14" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l3280" title="To spec">To spec</a></li><li><a href="src_gl.ads.html#l4170" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l26"><pre>   <span class="keyword">end</span> <span class="droplink">Display<ul><li><a href="globe_3d-stars_sky.ads.html#globe_3d-stars_sky.ads:10:14" title="To API doc">To API doc</a></li><li><a href="src_globe_3d-stars_sky.ads.html#l10" title="To spec">To spec</a></li><li><a href="src_globe_3d-stars_sky.adb.html#l11" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l27"><pre> </pre></li>
+<li id="l28"><pre>   <span class="keyword">procedure</span> Reset <span class="keyword">is</span> </pre></li>
+<li id="l29"><pre> </pre></li>
+<li id="l30"><pre>      seed : Generator; </pre></li>
+<li id="l31"><pre>      v    : <span class="droplink">Vector_3D<ul><li><a href="globe_3d.ads.html#globe_3d.ads:106:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l106" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l32"><pre>      int  : <span class="droplink">Real<ul><li><a href="globe_3d.ads.html#globe_3d.ads:102:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l102" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l33"><pre> </pre></li>
+<li id="l34"><pre>      <span class="keyword">use</span> <span class="droplink">REF<ul><li><a href="globe_3d.ads.html#globe_3d.ads:103:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l103" title="To spec">To spec</a></li></ul></span>, <span class="droplink">GLOBE_3D.Math<ul><li><a href="globe_3d-math.ads.html#globe_3d-math.ads:1:18" title="To API doc">To API doc</a></li><li><a href="src_globe_3d-math.ads.html#l1" title="To spec">To spec</a></li><li><a href="src_globe_3d-math.adb.html#l1" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l35"><pre> </pre></li>
+<li id="l36"><pre>      <span class="keyword">function</span> Amas <span class="keyword">return</span> <span class="droplink">Real<ul><li><a href="globe_3d.ads.html#globe_3d.ads:102:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l102" title="To spec">To spec</a></li></ul></span> <span class="keyword">is</span> <span class="comment">-- expected tendencies : keep near or go far</span> </pre></li>
+<li id="l37"><pre> </pre></li>
+<li id="l38"><pre>         r : <span class="droplink">Real<ul><li><a href="globe_3d.ads.html#globe_3d.ads:102:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l102" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l39"><pre> </pre></li>
+<li id="l40"><pre>      <span class="keyword">begin</span> </pre></li>
+<li id="l41"><pre>         <a href="src_globe_3d-stars_sky.adb.html#l38" title="defined at globe_3d-stars_sky.adb:38:10">r</a> := <span class="droplink">Real<ul><li><a href="globe_3d.ads.html#globe_3d.ads:102:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l102" title="To spec">To spec</a></li></ul></span> (Random (<a href="src_globe_3d-stars_sky.adb.html#l30" title="defined at globe_3d-stars_sky.adb:30:7">seed</a>)); </pre></li>
+<li id="l42"><pre>         <a href="src_globe_3d-stars_sky.adb.html#l38" title="defined at globe_3d-stars_sky.adb:38:10">r</a> := <a href="src_globe_3d-stars_sky.adb.html#l38" title="defined at globe_3d-stars_sky.adb:38:10">r</a> * 2.0 - 1.0;       <span class="comment">-- r in - 1 .. 1</span> </pre></li>
+<li id="l43"><pre>         <a href="src_globe_3d-stars_sky.adb.html#l38" title="defined at globe_3d-stars_sky.adb:38:10">r</a> := <a href="src_globe_3d-stars_sky.adb.html#l38" title="defined at globe_3d-stars_sky.adb:38:10">r</a> ** 8;              <span class="comment">-- almost always ~0</span> </pre></li>
+<li id="l44"><pre>         <a href="src_globe_3d-stars_sky.adb.html#l38" title="defined at globe_3d-stars_sky.adb:38:10">r</a> := Exp (<a href="src_globe_3d-stars_sky.adb.html#l38" title="defined at globe_3d-stars_sky.adb:38:10">r</a> * 1.8) - 1.0; </pre></li>
+<li id="l45"><pre>         <span class="keyword">return</span> <a href="src_globe_3d-stars_sky.adb.html#l38" title="defined at globe_3d-stars_sky.adb:38:10">r</a>; </pre></li>
+<li id="l46"><pre>      <span class="keyword">end</span> <span class="droplink">Amas<ul><li><a href="src_globe_3d-stars_sky.adb.html#l36" title="To spec">To spec</a></li><li><a href="src_globe_3d-stars_sky.adb.html#l36" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l47"><pre> </pre></li>
+<li id="l48"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l49"><pre>      Reset (<a href="src_globe_3d-stars_sky.adb.html#l30" title="defined at globe_3d-stars_sky.adb:30:7">seed</a>); </pre></li>
+<li id="l50"><pre>      <a href="src_globe_3d-stars_sky.adb.html#l31" title="defined at globe_3d-stars_sky.adb:31:7">v</a> := (<span class="droplink">far_side<ul><li><a href="globe_3d-stars_sky.ads.html#globe_3d-stars_sky.ads:4:3" title="To API doc">To API doc</a></li><li><a href="src_globe_3d-stars_sky.ads.html#l4" title="To spec">To spec</a></li></ul></span>, 0.0, 0.0); </pre></li>
+<li id="l51"><pre>      <span class="keyword">for</span> i <span class="keyword">in</span> 1 .. <span class="droplink">No_of_Stars<ul><li><a href="globe_3d-stars_sky.ads.html#globe_3d-stars_sky.ads:3:3" title="To API doc">To API doc</a></li><li><a href="src_globe_3d-stars_sky.ads.html#l3" title="To spec">To spec</a></li></ul></span> <span class="keyword">loop</span> </pre></li>
+<li id="l52"><pre>         <a href="src_globe_3d-stars_sky.adb.html#l31" title="defined at globe_3d-stars_sky.adb:31:7">v</a> := <span class="droplink">XYZ_rotation<ul><li><a href="globe_3d-math.ads.html#globe_3d-math.ads:61:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d-math.ads.html#l61" title="To spec">To spec</a></li><li><a href="src_globe_3d-math.adb.html#l150" title="To body">To body</a></li></ul></span> (<span class="droplink">Amas<ul><li><a href="src_globe_3d-stars_sky.adb.html#l36" title="To spec">To spec</a></li><li><a href="src_globe_3d-stars_sky.adb.html#l36" title="To body">To body</a></li></ul></span>, <span class="droplink">Amas<ul><li><a href="src_globe_3d-stars_sky.adb.html#l36" title="To spec">To spec</a></li><li><a href="src_globe_3d-stars_sky.adb.html#l36" title="To body">To body</a></li></ul></span>, <span class="droplink">Amas<ul><li><a href="src_globe_3d-stars_sky.adb.html#l36" title="To spec">To spec</a></li><li><a href="src_globe_3d-stars_sky.adb.html#l36" title="To body">To body</a></li></ul></span>) * <a href="src_globe_3d-stars_sky.adb.html#l31" title="defined at globe_3d-stars_sky.adb:31:7">v</a>; </pre></li>
+<li id="l53"><pre>         <a href="src_globe_3d-stars_sky.adb.html#l9" title="defined at globe_3d-stars_sky.adb:9:4">Star_Positions</a> (i) := <a href="src_globe_3d-stars_sky.adb.html#l31" title="defined at globe_3d-stars_sky.adb:31:7">v</a>; </pre></li>
+<li id="l54"><pre>         <a href="src_globe_3d-stars_sky.adb.html#l32" title="defined at globe_3d-stars_sky.adb:32:7">int</a> := <span class="droplink">Real<ul><li><a href="globe_3d.ads.html#globe_3d.ads:102:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l102" title="To spec">To spec</a></li></ul></span> (Random (<a href="src_globe_3d-stars_sky.adb.html#l30" title="defined at globe_3d-stars_sky.adb:30:7">seed</a>)) * 0.3; </pre></li>
+<li id="l55"><pre>         <a href="src_globe_3d-stars_sky.adb.html#l8" title="defined at globe_3d-stars_sky.adb:8:4">Star_Colours</a> (i) := (<a href="src_globe_3d-stars_sky.adb.html#l32" title="defined at globe_3d-stars_sky.adb:32:7">int</a> + 0.15 * <span class="droplink">Real<ul><li><a href="globe_3d.ads.html#globe_3d.ads:102:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l102" title="To spec">To spec</a></li></ul></span> (Random (<a href="src_globe_3d-stars_sky.adb.html#l30" title="defined at globe_3d-stars_sky.adb:30:7">seed</a>)), </pre></li>
+<li id="l56"><pre>                              <a href="src_globe_3d-stars_sky.adb.html#l32" title="defined at globe_3d-stars_sky.adb:32:7">int</a> + 0.12 * <span class="droplink">Real<ul><li><a href="globe_3d.ads.html#globe_3d.ads:102:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l102" title="To spec">To spec</a></li></ul></span> (Random (<a href="src_globe_3d-stars_sky.adb.html#l30" title="defined at globe_3d-stars_sky.adb:30:7">seed</a>)), </pre></li>
+<li id="l57"><pre>                              <a href="src_globe_3d-stars_sky.adb.html#l32" title="defined at globe_3d-stars_sky.adb:32:7">int</a> + 0.12 * <span class="droplink">Real<ul><li><a href="globe_3d.ads.html#globe_3d.ads:102:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l102" title="To spec">To spec</a></li></ul></span> (Random (<a href="src_globe_3d-stars_sky.adb.html#l30" title="defined at globe_3d-stars_sky.adb:30:7">seed</a>))); </pre></li>
+<li id="l58"><pre>      <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l59"><pre>   <span class="keyword">end</span> <span class="droplink">Reset<ul><li><a href="src_globe_3d-stars_sky.adb.html#l28" title="To spec">To spec</a></li><li><a href="src_globe_3d-stars_sky.adb.html#l28" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l60"><pre> </pre></li>
+<li id="l61"><pre><span class="keyword">begin</span> </pre></li>
+<li id="l62"><pre>   <span class="droplink">Reset<ul><li><a href="src_globe_3d-stars_sky.adb.html#l28" title="To spec">To spec</a></li><li><a href="src_globe_3d-stars_sky.adb.html#l28" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l63"><pre><span class="keyword">end</span> <span class="droplink">GLOBE_3D.Stars_sky<ul><li><a href="globe_3d-stars_sky.ads.html#globe_3d-stars_sky.ads:6:18" title="To API doc">To API doc</a></li><li><a href="src_globe_3d-stars_sky.ads.html#l6" title="To spec">To spec</a></li><li><a href="src_globe_3d-stars_sky.adb.html#l6" title="To body">To body</a></li></ul></span>; </pre></li>
+</ol></div>
+</div>
+
+</body>
+</html>

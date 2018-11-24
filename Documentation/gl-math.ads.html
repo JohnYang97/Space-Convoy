@@ -1,0 +1,917 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    Package: Math
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+
+  <div id='navigation'>
+    <h2 class="button">Navigation</h2>
+    <a href='#Description'><div class="button2">Description</div></a>
+    <a href='#Packages'><div class="button2">Packages</div></a>
+    <a href='#Types'><div class="button2">Types</div></a>
+    <a href='#Constants'><div class="button2">Constants &amp; Global variables</div></a>
+    <a href='#Methods'><div class="button2">Subprograms &amp; Entries</div></a>
+  </div><!-- navigation -->
+  </div>
+</div> <!-- leftSide -->
+
+<div class='default' id='rightSide'>
+ <div id='rightSideInside'>
+ <div id='Index'>
+  <h2>Index</h2>
+  <script type="text/javascript">
+    var names = new Array (
+new Array ('REF', 'gl-math.ads:7:11', 'package-spec'),
+new Array ('RIO', 'gl-math.ads:8:11', 'package-spec'),
+new Array ('Vector_<wbr/>4D', 'gl-math.ads:43:8', 'type-spec'),
+new Array ('Matrix', 'gl-math.ads:59:8', 'type-spec'),
+new Array ('Matrix_<wbr/>33', 'gl-math.ads:60:8', 'type-spec'),
+new Array ('Matrix_<wbr/>44', 'gl-math.ads:61:8', 'type-spec'),
+new Array ('Id_<wbr/>33', 'gl-math.ads:65:3', 'var-spec'),
+new Array ('"*"', 'gl-math.ads:14:12', 'subp-spec'),
+new Array ('"*"', 'gl-math.ads:17:12', 'subp-spec'),
+new Array ('"+"', 'gl-math.ads:20:12', 'subp-spec'),
+new Array ('"-"', 'gl-math.ads:23:12', 'subp-spec'),
+new Array ('"-"', 'gl-math.ads:26:12', 'subp-spec'),
+new Array ('"*"', 'gl-math.ads:29:12', 'subp-spec'),
+new Array ('"*"', 'gl-math.ads:32:12', 'subp-spec'),
+new Array ('Norm', 'gl-math.ads:35:12', 'subp-spec'),
+new Array ('Norm2', 'gl-math.ads:38:12', 'subp-spec'),
+new Array ('Normalized', 'gl-math.ads:41:12', 'subp-spec'),
+new Array ('Angle', 'gl-math.ads:48:13', 'subp-spec'),
+new Array ('to_<wbr/>Degrees', 'gl-math.ads:52:13', 'subp-spec'),
+new Array ('to_<wbr/>Radians', 'gl-math.ads:53:13', 'subp-spec'),
+new Array ('"*"', 'gl-math.ads:69:12', 'subp-spec'),
+new Array ('"*"', 'gl-math.ads:71:12', 'subp-spec'),
+new Array ('"*"', 'gl-math.ads:72:12', 'subp-spec'),
+new Array ('"*"', 'gl-math.ads:73:12', 'subp-spec'),
+new Array ('Transpose', 'gl-math.ads:75:12', 'subp-spec'),
+new Array ('Transpose', 'gl-math.ads:76:12', 'subp-spec'),
+new Array ('Det', 'gl-math.ads:78:12', 'subp-spec'),
+new Array ('XYZ_<wbr/>rotation', 'gl-math.ads:80:12', 'subp-spec'),
+new Array ('XYZ_<wbr/>rotation', 'gl-math.ads:82:12', 'subp-spec'),
+new Array ('Look_<wbr/>at', 'gl-math.ads:87:12', 'subp-spec'),
+new Array ('Look_<wbr/>at', 'gl-math.ads:89:13', 'subp-spec'),
+new Array ('Re_<wbr/>Orthonormalize', 'gl-math.ads:93:13', 'subp-spec'),
+new Array ('Multiply_<wbr/>GL_<wbr/>Matrix', 'gl-math.ads:96:13', 'subp-spec'),
+new Array ('Set_<wbr/>GL_<wbr/>Matrix', 'gl-math.ads:99:13', 'subp-spec'),
+new Array ('Almost_<wbr/>zero', 'gl-math.ads:102:12', 'subp-spec'),
+new Array ('Almost_<wbr/>zero', 'gl-math.ads:104:12', 'subp-spec'),
+new Array ('Sub_<wbr/>Matrix', 'gl-math.ads:107:13', 'subp-spec'),
+      new Array ('dummy', '', ''));
+    printIndexList (names);
+  </script>
+  <noscript>
+    <ul>
+      <li class='package-spec'><a href="#gl-math.ads:7:11">REF</a></li>
+      <li class='package-spec'><a href="#gl-math.ads:8:11">RIO</a></li>
+      <li class='type-spec'><a href="#gl-math.ads:43:8">Vector_<wbr/>4D</a></li>
+      <li class='type-spec'><a href="#gl-math.ads:59:8">Matrix</a></li>
+      <li class='type-spec'><a href="#gl-math.ads:60:8">Matrix_<wbr/>33</a></li>
+      <li class='type-spec'><a href="#gl-math.ads:61:8">Matrix_<wbr/>44</a></li>
+      <li class='var-spec'><a href="#gl-math.ads:65:3">Id_<wbr/>33</a></li>
+      <li class='subp-spec'><a href="#gl-math.ads:14:12">"*"</a></li>
+      <li class='subp-spec'><a href="#gl-math.ads:17:12">"*"</a></li>
+      <li class='subp-spec'><a href="#gl-math.ads:20:12">"+"</a></li>
+      <li class='subp-spec'><a href="#gl-math.ads:23:12">"-"</a></li>
+      <li class='subp-spec'><a href="#gl-math.ads:26:12">"-"</a></li>
+      <li class='subp-spec'><a href="#gl-math.ads:29:12">"*"</a></li>
+      <li class='subp-spec'><a href="#gl-math.ads:32:12">"*"</a></li>
+      <li class='subp-spec'><a href="#gl-math.ads:35:12">Norm</a></li>
+      <li class='subp-spec'><a href="#gl-math.ads:38:12">Norm2</a></li>
+      <li class='subp-spec'><a href="#gl-math.ads:41:12">Normalized</a></li>
+      <li class='subp-spec'><a href="#gl-math.ads:48:13">Angle</a></li>
+      <li class='subp-spec'><a href="#gl-math.ads:52:13">to_<wbr/>Degrees</a></li>
+      <li class='subp-spec'><a href="#gl-math.ads:53:13">to_<wbr/>Radians</a></li>
+      <li class='subp-spec'><a href="#gl-math.ads:69:12">"*"</a></li>
+      <li class='subp-spec'><a href="#gl-math.ads:71:12">"*"</a></li>
+      <li class='subp-spec'><a href="#gl-math.ads:72:12">"*"</a></li>
+      <li class='subp-spec'><a href="#gl-math.ads:73:12">"*"</a></li>
+      <li class='subp-spec'><a href="#gl-math.ads:75:12">Transpose</a></li>
+      <li class='subp-spec'><a href="#gl-math.ads:76:12">Transpose</a></li>
+      <li class='subp-spec'><a href="#gl-math.ads:78:12">Det</a></li>
+      <li class='subp-spec'><a href="#gl-math.ads:80:12">XYZ_<wbr/>rotation</a></li>
+      <li class='subp-spec'><a href="#gl-math.ads:82:12">XYZ_<wbr/>rotation</a></li>
+      <li class='subp-spec'><a href="#gl-math.ads:87:12">Look_<wbr/>at</a></li>
+      <li class='subp-spec'><a href="#gl-math.ads:89:13">Look_<wbr/>at</a></li>
+      <li class='subp-spec'><a href="#gl-math.ads:93:13">Re_<wbr/>Orthonormalize</a></li>
+      <li class='subp-spec'><a href="#gl-math.ads:96:13">Multiply_<wbr/>GL_<wbr/>Matrix</a></li>
+      <li class='subp-spec'><a href="#gl-math.ads:99:13">Set_<wbr/>GL_<wbr/>Matrix</a></li>
+      <li class='subp-spec'><a href="#gl-math.ads:102:12">Almost_<wbr/>zero</a></li>
+      <li class='subp-spec'><a href="#gl-math.ads:104:12">Almost_<wbr/>zero</a></li>
+      <li class='subp-spec'><a href="#gl-math.ads:107:13">Sub_<wbr/>Matrix</a></li>
+    </ul>
+  </noscript>
+ </div>
+ </div>
+</div>
+
+<div class='default' id='documentation'>
+  <div class='title'>
+    Package:
+<span class="droplink"><i>Math</i><ul>
+  <li><a href="src_gl-math.ads.html">Goto spec source</a></li>
+  <li><a href="src_gl-math.adb.html">Goto body source</a></li>
+</ul></span>
+  </div>
+  <div class='subprograms'>
+    <h1><a name='Description' id='Description'></a>Description</h1>
+    <div class="class">
+    <div class='details'><pre><span class="keyword">package</span> <span class="name_emphasis">GL.Math</span> <span class="keyword">is</span></pre></div>
+    </div>
+  </div>
+
+  <div class='subprograms'>
+    <h1><a name='Packages' id='Packages'></a>Packages</h1>
+    <div class="class">
+      <h3>
+        <a name='gl-math.ads:7:11' id='gl-math.ads:7:11'></a>
+        REF
+        <span class='type'>(new Ada.Numerics.Generic_Elementary_Functions)</span>
+      </h3>
+        <div class='details'><pre><span class="keyword">package</span> <span class="name_emphasis">REF</span> <span class="keyword">is</span> <span class="keyword">new</span> Ada.Numerics.Generic_Elementary_Functions (<a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">Double</a>);</pre></div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-math.ads:8:11' id='gl-math.ads:8:11'></a>
+        RIO
+        <span class='type'>(new Float_IO)</span>
+      </h3>
+        <div class='details'><pre><span class="keyword">package</span> <span class="name_emphasis">RIO</span> <span class="keyword">is</span> <span class="keyword">new</span> Ada.Text_IO.Float_IO                      (<a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">Double</a>);</pre></div>
+    </div>
+  </div>
+
+
+
+  <div class='subprograms'>
+    <h1><a name='Types' id='Types'></a>Types</h1>
+    <div class="class">
+      <h3>
+        <a name='gl-math.ads:43:8' id='gl-math.ads:43:8'></a>
+<span class="droplink">Vector_4D<ul>
+  <li><a href="src_gl-math.ads.html#l43">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Vector_4D</span> <span class="keyword">is</span> <span class="keyword">array</span> (0 .. 3) <span class="keyword">of</span> <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">Double</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-math.ads.html#l43" title="gl-math.ads:43:8">gl-math.ads:43:8</a> (declaration)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l115" title="gl-math.adb:115:62">gl-math.adb:115:62</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l117" title="gl-math.adb:117:24">gl-math.adb:117:24</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l118" title="gl-math.adb:118:15">gl-math.adb:118:15</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l126" title="gl-math.adb:126:68">gl-math.adb:126:68</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l128" title="gl-math.adb:128:43">gl-math.adb:128:43</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.ads.html#l73" title="gl-math.ads:73:61">gl-math.ads:73:61</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-math.ads:59:8' id='gl-math.ads:59:8'></a>
+<span class="droplink">Matrix<ul>
+  <li><a href="src_gl-math.ads.html#l59">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Matrix</span>    <span class="keyword">is</span> <span class="keyword">array</span> (Positive <span class="keyword">range</span> <>, Positive <span class="keyword">range</span> <>) <span class="keyword">of</span> <span class="keyword">aliased</span> <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">Double</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-math.ads.html#l59" title="gl-math.ads:59:8">gl-math.ads:59:8</a> (declaration)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l194" title="gl-math.adb:194:47">gl-math.adb:194:47</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l196" title="gl-math.adb:196:64">gl-math.adb:196:64</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l198" title="gl-math.adb:198:25">gl-math.adb:198:25</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.ads.html#l60" title="gl-math.ads:60:25">gl-math.ads:60:25</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.ads.html#l61" title="gl-math.ads:61:25">gl-math.ads:61:25</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.ads.html#l107" title="gl-math.ads:107:46">gl-math.ads:107:46</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.ads.html#l109" title="gl-math.ads:109:63">gl-math.ads:109:63</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-math.ads:60:8' id='gl-math.ads:60:8'></a>
+<span class="droplink">Matrix_33<ul>
+  <li><a href="src_gl-math.ads.html#l60">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Matrix_33</span> <span class="keyword">is</span> <span class="keyword">new</span> <a href="gl-math.ads.html#gl-math.ads:59:8" title="defined at gl-math.ads:59:8">Matrix</a> (1 .. 3, 1 .. 3);</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-math.ads.html#l60" title="gl-math.ads:60:8">gl-math.ads:60:8</a> (declaration)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l56" title="gl-math.adb:56:25">gl-math.adb:56:25</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l56" title="gl-math.adb:56:43">gl-math.adb:56:43</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l58" title="gl-math.adb:58:12">gl-math.adb:58:12</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l61" title="gl-math.adb:61:16">gl-math.adb:61:16</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l62" title="gl-math.adb:62:19">gl-math.adb:62:19</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l66" title="gl-math.adb:66:25">gl-math.adb:66:25</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l76" title="gl-math.adb:76:22">gl-math.adb:76:22</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l81" title="gl-math.adb:81:16">gl-math.adb:81:16</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l85" title="gl-math.adb:85:22">gl-math.adb:85:22</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l86" title="gl-math.adb:86:43">gl-math.adb:86:43</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l88" title="gl-math.adb:88:21">gl-math.adb:88:21</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l134" title="gl-math.adb:134:28">gl-math.adb:134:28</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l134" title="gl-math.adb:134:46">gl-math.adb:134:46</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l143" title="gl-math.adb:143:22">gl-math.adb:143:22</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l150" title="gl-math.adb:150:55">gl-math.adb:150:55</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l152" title="gl-math.adb:152:20">gl-math.adb:152:20</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l178" title="gl-math.adb:178:56">gl-math.adb:178:56</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l180" title="gl-math.adb:180:59">gl-math.adb:180:59</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l212" title="gl-math.adb:212:66">gl-math.adb:212:66</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l225" title="gl-math.adb:225:44">gl-math.adb:225:44</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l272" title="gl-math.adb:272:38">gl-math.adb:272:38</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l275" title="gl-math.adb:275:16">gl-math.adb:275:16</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l276" title="gl-math.adb:276:19">gl-math.adb:276:19</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l287" title="gl-math.adb:287:33">gl-math.adb:287:33</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.ads.html#l65" title="gl-math.ads:65:21">gl-math.ads:65:21</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.ads.html#l69" title="gl-math.ads:69:24">gl-math.ads:69:24</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.ads.html#l69" title="gl-math.ads:69:42">gl-math.ads:69:42</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.ads.html#l71" title="gl-math.ads:71:21">gl-math.ads:71:21</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.ads.html#l75" title="gl-math.ads:75:27">gl-math.ads:75:27</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.ads.html#l75" title="gl-math.ads:75:45">gl-math.ads:75:45</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.ads.html#l78" title="gl-math.ads:78:21">gl-math.ads:78:21</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.ads.html#l80" title="gl-math.ads:80:54">gl-math.ads:80:54</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.ads.html#l82" title="gl-math.ads:82:55">gl-math.ads:82:55</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.ads.html#l87" title="gl-math.ads:87:58">gl-math.ads:87:58</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.ads.html#l89" title="gl-math.ads:89:66">gl-math.ads:89:66</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.ads.html#l93" title="gl-math.ads:93:43">gl-math.ads:93:43</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.ads.html#l96" title="gl-math.ads:96:37">gl-math.ads:96:37</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.ads.html#l99" title="gl-math.ads:99:32">gl-math.ads:99:32</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-math.ads:61:8' id='gl-math.ads:61:8'></a>
+<span class="droplink">Matrix_44<ul>
+  <li><a href="src_gl-math.ads.html#l61">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Matrix_44</span> <span class="keyword">is</span> <span class="keyword">new</span> <a href="gl-math.ads.html#gl-math.ads:59:8" title="defined at gl-math.ads:59:8">Matrix</a> (1 .. 4, 1 .. 4);</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-math.ads.html#l61" title="gl-math.ads:61:8">gl-math.ads:61:8</a> (declaration)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l94" title="gl-math.adb:94:22">gl-math.adb:94:22</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l102" title="gl-math.adb:102:16">gl-math.adb:102:16</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l106" title="gl-math.adb:106:22">gl-math.adb:106:22</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l107" title="gl-math.adb:107:46">gl-math.adb:107:46</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l109" title="gl-math.adb:109:21">gl-math.adb:109:21</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l115" title="gl-math.adb:115:22">gl-math.adb:115:22</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l121" title="gl-math.adb:121:16">gl-math.adb:121:16</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l125" title="gl-math.adb:125:22">gl-math.adb:125:22</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l126" title="gl-math.adb:126:46">gl-math.adb:126:46</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l128" title="gl-math.adb:128:21">gl-math.adb:128:21</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l138" title="gl-math.adb:138:28">gl-math.adb:138:28</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l138" title="gl-math.adb:138:46">gl-math.adb:138:46</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.adb.html#l268" title="gl-math.adb:268:8">gl-math.adb:268:8</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.ads.html#l63" title="gl-math.ads:63:31">gl-math.ads:63:31</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.ads.html#l72" title="gl-math.ads:72:21">gl-math.ads:72:21</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.ads.html#l73" title="gl-math.ads:73:21">gl-math.ads:73:21</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.ads.html#l76" title="gl-math.ads:76:27">gl-math.ads:76:27</a> (reference)</i></div>
+          <div><i><a href="src_gl-math.ads.html#l76" title="gl-math.ads:76:45">gl-math.ads:76:45</a> (reference)</i></div>
+      </div>
+      <div class='comment'>type <a href="gl-math.ads.html#gl-math.ads:61:8" title="Matrix_44">Matrix_44</a> is array (0 .. 3, 0 .. 3) of aliased Double; -- for GL.MultMatrix
+</div>
+    </div>
+  </div>
+
+  <div class='subprograms'>
+    <h1><a name='Constants' id='Constants'></a>Constants &amp; Global variables</h1>
+    <div class="class">
+      <h3><a name='gl-math.ads:65:3' id='gl-math.ads:65:3'></a>
+<span class="droplink">Id_33<ul>
+  <li><a href="src_gl-math.ads.html#l65">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="gl-math.ads.html#gl-math.ads:60:8" title="defined at gl-math.ads:60:8">Matrix_33</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Id_33</span>  : <span class="keyword">constant</span> <a href="gl-math.ads.html#gl-math.ads:60:8" title="defined at gl-math.ads:60:8">Matrix_33</a> := ((1.0, 0.0, 0.0),
+                                (0.0, 1.0, 0.0),
+                                (0.0, 0.0, 1.0));</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-math.ads.html#l65" title="gl-math.ads:65:3">gl-math.ads:65:3</a> (declaration)</i></div>
+      </div>
+    </div>
+  </div>
+
+    <div class='subprograms'>
+      <h1><a name='Methods' id='Methods'></a>Subprograms &amp; Entries</h1>
+      <div class="class">
+        <h3>
+          <a name='gl-math.ads:14:12' id='gl-math.ads:14:12'></a>
+<span class="droplink">"*"<ul>
+  <li><a href="src_gl-math.ads.html#l14">Goto spec in source</a></li>
+  <li><a href="src_gl-math.adb.html#l10">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">"*"</span> <table><tr><td>(</td><td><span class="name"><a name="gl-math.ads:14:17"></a>l</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="gl-math.ads:14:29"></a>v</span></td><td>: <a href="gl.ads.html#gl.ads:155:9" title="defined at gl.ads:155:9">Double_Vector_3D</a>) <span class="keyword">return</span> <a href="gl.ads.html#gl.ads:155:9" title="defined at gl.ads:155:9">Double_Vector_3D</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-math.ads.html#l14" title="gl-math.ads:14:13">gl-math.ads:14:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l231" title="gl-geometry.adb:231:81">gl-geometry.adb:231:81</a> (call)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l261" title="gl-geometry.adb:261:66">gl-geometry.adb:261:66</a> (call)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l10" title="gl-math.adb:10:14">gl-math.adb:10:14</a> (body)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="gl-geometry.ads.html#gl-geometry.ads:137:14" title="defined at gl-geometry.ads:137:14">GL.Geometry.Vertex_Normals</a> defined at <a href="src_gl-geometry.ads.html#l137" title="gl-geometry.ads:137:14">gl-geometry.ads:137:14</a></i></div>
+            <div><i><a href="gl-geometry.ads.html#gl-geometry.ads:137:14" title="defined at gl-geometry.ads:137:14">GL.Geometry.Vertex_Normals</a> defined at <a href="src_gl-geometry.ads.html#l137" title="gl-geometry.ads:137:14">gl-geometry.ads:137:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-math.ads:17:12' id='gl-math.ads:17:12'></a>
+<span class="droplink">"*"<ul>
+  <li><a href="src_gl-math.ads.html#l17">Goto spec in source</a></li>
+  <li><a href="src_gl-math.adb.html#l12">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">"*"</span> <table><tr><td>(</td><td><span class="name"><a name="gl-math.ads:17:17"></a>v</span></td><td>: <a href="gl.ads.html#gl.ads:155:9" title="defined at gl.ads:155:9">Double_Vector_3D</a>;</td></tr><tr><td></td><td><span class="name"><a name="gl-math.ads:17:39"></a>l</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">Double</a>) <span class="keyword">return</span> <a href="gl.ads.html#gl.ads:155:9" title="defined at gl.ads:155:9">Double_Vector_3D</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-math.ads.html#l17" title="gl-math.ads:17:13">gl-math.ads:17:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l12" title="gl-math.adb:12:14">gl-math.adb:12:14</a> (body)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l30" title="gl-math.adb:30:77">gl-math.adb:30:77</a> (call)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-math.ads:20:12' id='gl-math.ads:20:12'></a>
+<span class="droplink">"+"<ul>
+  <li><a href="src_gl-math.ads.html#l20">Goto spec in source</a></li>
+  <li><a href="src_gl-math.adb.html#l14">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">"+"</span> <table><tr><td>(</td><td><span class="name"><a name="gl-math.ads:20:17"></a>a</span>, <span class="name"><a name="gl-math.ads:20:20"></a>b</span></td><td>: <a href="gl.ads.html#gl.ads:155:9" title="defined at gl.ads:155:9">Double_Vector_3D</a>) <span class="keyword">return</span> <a href="gl.ads.html#gl.ads:155:9" title="defined at gl.ads:155:9">Double_Vector_3D</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-math.ads.html#l20" title="gl-math.ads:20:13">gl-math.ads:20:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l252" title="gl-geometry.adb:252:94">gl-geometry.adb:252:94</a> (call)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l14" title="gl-math.adb:14:14">gl-math.adb:14:14</a> (body)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="gl-geometry.ads.html#gl-geometry.ads:137:14" title="defined at gl-geometry.ads:137:14">GL.Geometry.Vertex_Normals</a> defined at <a href="src_gl-geometry.ads.html#l137" title="gl-geometry.ads:137:14">gl-geometry.ads:137:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-math.ads:23:12' id='gl-math.ads:23:12'></a>
+<span class="droplink">"-"<ul>
+  <li><a href="src_gl-math.ads.html#l23">Goto spec in source</a></li>
+  <li><a href="src_gl-math.adb.html#l16">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">"-"</span> <table><tr><td>(</td><td><span class="name"><a name="gl-math.ads:23:17"></a>a</span></td><td>: <a href="gl.ads.html#gl.ads:155:9" title="defined at gl.ads:155:9">Double_Vector_3D</a>) <span class="keyword">return</span> <a href="gl.ads.html#gl.ads:155:9" title="defined at gl.ads:155:9">Double_Vector_3D</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-math.ads.html#l23" title="gl-math.ads:23:13">gl-math.ads:23:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l16" title="gl-math.adb:16:14">gl-math.adb:16:14</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-math.ads:26:12' id='gl-math.ads:26:12'></a>
+<span class="droplink">"-"<ul>
+  <li><a href="src_gl-math.ads.html#l26">Goto spec in source</a></li>
+  <li><a href="src_gl-math.adb.html#l18">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">"-"</span> <table><tr><td>(</td><td><span class="name"><a name="gl-math.ads:26:17"></a>a</span>, <span class="name"><a name="gl-math.ads:26:20"></a>b</span></td><td>: <a href="gl.ads.html#gl.ads:155:9" title="defined at gl.ads:155:9">Double_Vector_3D</a>) <span class="keyword">return</span> <a href="gl.ads.html#gl.ads:155:9" title="defined at gl.ads:155:9">Double_Vector_3D</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-math.ads.html#l26" title="gl-math.ads:26:13">gl-math.ads:26:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l225" title="gl-geometry.adb:225:69">gl-geometry.adb:225:69</a> (call)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l226" title="gl-geometry.adb:226:69">gl-geometry.adb:226:69</a> (call)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l18" title="gl-math.adb:18:14">gl-math.adb:18:14</a> (body)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l37" title="gl-math.adb:37:69">gl-math.adb:37:69</a> (call)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l38" title="gl-math.adb:38:69">gl-math.adb:38:69</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="gl-math.ads.html#gl-math.ads:48:13" title="defined at gl-math.ads:48:13">Angle</a> defined at <a href="src_gl-math.ads.html#l48" title="gl-math.ads:48:13">gl-math.ads:48:13</a></i></div>
+            <div><i><a href="gl-math.ads.html#gl-math.ads:48:13" title="defined at gl-math.ads:48:13">Angle</a> defined at <a href="src_gl-math.ads.html#l48" title="gl-math.ads:48:13">gl-math.ads:48:13</a></i></div>
+            <div><i><a href="gl-geometry.ads.html#gl-geometry.ads:137:14" title="defined at gl-geometry.ads:137:14">GL.Geometry.Vertex_Normals</a> defined at <a href="src_gl-geometry.ads.html#l137" title="gl-geometry.ads:137:14">gl-geometry.ads:137:14</a></i></div>
+            <div><i><a href="gl-geometry.ads.html#gl-geometry.ads:137:14" title="defined at gl-geometry.ads:137:14">GL.Geometry.Vertex_Normals</a> defined at <a href="src_gl-geometry.ads.html#l137" title="gl-geometry.ads:137:14">gl-geometry.ads:137:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-math.ads:29:12' id='gl-math.ads:29:12'></a>
+<span class="droplink">"*"<ul>
+  <li><a href="src_gl-math.ads.html#l29">Goto spec in source</a></li>
+  <li><a href="src_gl-math.adb.html#l20">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">"*"</span> <table><tr><td>(</td><td><span class="name"><a name="gl-math.ads:29:17"></a>a</span>, <span class="name"><a name="gl-math.ads:29:20"></a>b</span></td><td>: <a href="gl.ads.html#gl.ads:155:9" title="defined at gl.ads:155:9">Double_Vector_3D</a>) <span class="keyword">return</span> <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">Double</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-math.ads.html#l29" title="gl-math.ads:29:13">gl-math.ads:29:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l20" title="gl-math.adb:20:14">gl-math.adb:20:14</a> (body)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l39" title="gl-math.adb:39:53">gl-math.adb:39:53</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="gl-math.ads.html#gl-math.ads:48:13" title="defined at gl-math.ads:48:13">Angle</a> defined at <a href="src_gl-math.ads.html#l48" title="gl-math.ads:48:13">gl-math.ads:48:13</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-math.ads:32:12' id='gl-math.ads:32:12'></a>
+<span class="droplink">"*"<ul>
+  <li><a href="src_gl-math.ads.html#l32">Goto spec in source</a></li>
+  <li><a href="src_gl-math.adb.html#l22">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">"*"</span> <table><tr><td>(</td><td><span class="name"><a name="gl-math.ads:32:17"></a>a</span>, <span class="name"><a name="gl-math.ads:32:20"></a>b</span></td><td>: <a href="gl.ads.html#gl.ads:155:9" title="defined at gl.ads:155:9">Double_Vector_3D</a>) <span class="keyword">return</span> <a href="gl.ads.html#gl.ads:155:9" title="defined at gl.ads:155:9">Double_Vector_3D</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-math.ads.html#l32" title="gl-math.ads:32:13">gl-math.ads:32:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l226" title="gl-geometry.adb:226:22">gl-geometry.adb:226:22</a> (call)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l22" title="gl-math.adb:22:14">gl-math.adb:22:14</a> (body)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l188" title="gl-math.adb:188:16">gl-math.adb:188:16</a> (call)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l215" title="gl-math.adb:215:67">gl-math.adb:215:67</a> (call)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l216" title="gl-math.adb:216:52">gl-math.adb:216:52</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="gl-geometry.ads.html#gl-geometry.ads:137:14" title="defined at gl-geometry.ads:137:14">GL.Geometry.Vertex_Normals</a> defined at <a href="src_gl-geometry.ads.html#l137" title="gl-geometry.ads:137:14">gl-geometry.ads:137:14</a></i></div>
+            <div><i><a href="gl-math.ads.html#gl-math.ads:89:13" title="defined at gl-math.ads:89:13">Look_at</a> defined at <a href="src_gl-math.ads.html#l89" title="gl-math.ads:89:13">gl-math.ads:89:13</a></i></div>
+            <div><i><a href="gl-math.ads.html#gl-math.ads:87:12" title="defined at gl-math.ads:87:12">Look_at</a> defined at <a href="src_gl-math.ads.html#l87" title="gl-math.ads:87:12">gl-math.ads:87:12</a></i></div>
+            <div><i><a href="gl-math.ads.html#gl-math.ads:89:13" title="defined at gl-math.ads:89:13">Look_at</a> defined at <a href="src_gl-math.ads.html#l89" title="gl-math.ads:89:13">gl-math.ads:89:13</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-math.ads:35:12' id='gl-math.ads:35:12'></a>
+<span class="droplink">Norm<ul>
+  <li><a href="src_gl-math.ads.html#l35">Goto spec in source</a></li>
+  <li><a href="src_gl-math.adb.html#l26">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Norm</span> <table><tr><td>(</td><td><span class="name"><a name="gl-math.ads:35:18"></a>a</span></td><td>: <a href="gl.ads.html#gl.ads:155:9" title="defined at gl.ads:155:9">Double_Vector_3D</a>) <span class="keyword">return</span> <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">Double</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-math.ads.html#l35" title="gl-math.ads:35:12">gl-math.ads:35:12</a> (declaration)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l227" title="gl-geometry.adb:227:31">gl-geometry.adb:227:31</a> (call)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l258" title="gl-geometry.adb:258:39">gl-geometry.adb:258:39</a> (call)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l26" title="gl-math.adb:26:13">gl-math.adb:26:13</a> (body)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l30" title="gl-math.adb:30:86">gl-math.adb:30:86</a> (call)</i></div>
+            <div><i><a href="src_gl-math.ads.html#l36" title="gl-math.ads:36:18">gl-math.ads:36:18</a> (reference)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="gl-geometry.ads.html#gl-geometry.ads:137:14" title="defined at gl-geometry.ads:137:14">GL.Geometry.Vertex_Normals</a> defined at <a href="src_gl-geometry.ads.html#l137" title="gl-geometry.ads:137:14">gl-geometry.ads:137:14</a></i></div>
+            <div><i><a href="gl-geometry.ads.html#gl-geometry.ads:137:14" title="defined at gl-geometry.ads:137:14">GL.Geometry.Vertex_Normals</a> defined at <a href="src_gl-geometry.ads.html#l137" title="gl-geometry.ads:137:14">gl-geometry.ads:137:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-math.ads:38:12' id='gl-math.ads:38:12'></a>
+<span class="droplink">Norm2<ul>
+  <li><a href="src_gl-math.ads.html#l38">Goto spec in source</a></li>
+  <li><a href="src_gl-math.adb.html#l28">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Norm2</span> <table><tr><td>(</td><td><span class="name"><a name="gl-math.ads:38:19"></a>a</span></td><td>: <a href="gl.ads.html#gl.ads:155:9" title="defined at gl.ads:155:9">Double_Vector_3D</a>) <span class="keyword">return</span> <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">Double</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-math.ads.html#l38" title="gl-math.ads:38:12">gl-math.ads:38:12</a> (declaration)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l28" title="gl-math.adb:28:13">gl-math.adb:28:13</a> (body)</i></div>
+            <div><i><a href="src_gl-math.ads.html#l39" title="gl-math.ads:39:18">gl-math.ads:39:18</a> (reference)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-math.ads:41:12' id='gl-math.ads:41:12'></a>
+<span class="droplink">Normalized<ul>
+  <li><a href="src_gl-math.ads.html#l41">Goto spec in source</a></li>
+  <li><a href="src_gl-math.adb.html#l30">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Normalized</span> <table><tr><td>(</td><td><span class="name"><a name="gl-math.ads:41:24"></a>a</span></td><td>: <a href="gl.ads.html#gl.ads:155:9" title="defined at gl.ads:155:9">Double_Vector_3D</a>) <span class="keyword">return</span> <a href="gl.ads.html#gl.ads:155:9" title="defined at gl.ads:155:9">Double_Vector_3D</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-math.ads.html#l41" title="gl-math.ads:41:12">gl-math.ads:41:12</a> (declaration)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l30" title="gl-math.adb:30:13">gl-math.adb:30:13</a> (body)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l37" title="gl-math.adb:37:49">gl-math.adb:37:49</a> (call)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l38" title="gl-math.adb:38:49">gl-math.adb:38:49</a> (call)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l186" title="gl-math.adb:186:13">gl-math.adb:186:13</a> (call)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l187" title="gl-math.adb:187:13">gl-math.adb:187:13</a> (call)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l214" title="gl-math.adb:214:47">gl-math.adb:214:47</a> (call)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l215" title="gl-math.adb:215:47">gl-math.adb:215:47</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="gl-math.ads.html#gl-math.ads:48:13" title="defined at gl-math.ads:48:13">Angle</a> defined at <a href="src_gl-math.ads.html#l48" title="gl-math.ads:48:13">gl-math.ads:48:13</a></i></div>
+            <div><i><a href="gl-math.ads.html#gl-math.ads:48:13" title="defined at gl-math.ads:48:13">Angle</a> defined at <a href="src_gl-math.ads.html#l48" title="gl-math.ads:48:13">gl-math.ads:48:13</a></i></div>
+            <div><i><a href="gl-math.ads.html#gl-math.ads:89:13" title="defined at gl-math.ads:89:13">Look_at</a> defined at <a href="src_gl-math.ads.html#l89" title="gl-math.ads:89:13">gl-math.ads:89:13</a></i></div>
+            <div><i><a href="gl-math.ads.html#gl-math.ads:87:12" title="defined at gl-math.ads:87:12">Look_at</a> defined at <a href="src_gl-math.ads.html#l87" title="gl-math.ads:87:12">gl-math.ads:87:12</a></i></div>
+            <div><i><a href="gl-math.ads.html#gl-math.ads:89:13" title="defined at gl-math.ads:89:13">Look_at</a> defined at <a href="src_gl-math.ads.html#l89" title="gl-math.ads:89:13">gl-math.ads:89:13</a></i></div>
+            <div><i><a href="gl-math.ads.html#gl-math.ads:87:12" title="defined at gl-math.ads:87:12">Look_at</a> defined at <a href="src_gl-math.ads.html#l87" title="gl-math.ads:87:12">gl-math.ads:87:12</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-math.ads:48:13' id='gl-math.ads:48:13'></a>
+<span class="droplink">Angle<ul>
+  <li><a href="src_gl-math.ads.html#l48">Goto spec in source</a></li>
+  <li><a href="src_gl-math.adb.html#l35">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Angle</span> <table><tr><td>(</td><td><span class="name"><a name="gl-math.ads:48:20"></a>Point_1</span>, <span class="name"><a name="gl-math.ads:48:29"></a>Point_2</span>, <span class="name"><a name="gl-math.ads:48:38"></a>Point_3</span></td><td>: <a href="gl.ads.html#gl.ads:155:9" title="defined at gl.ads:155:9">Double_Vector_3D</a>) <span class="keyword">return</span> <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">Double</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-math.ads.html#l48" title="gl-math.ads:48:13">gl-math.ads:48:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l35" title="gl-math.adb:35:13">gl-math.adb:35:13</a> (body)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l46" title="gl-math.adb:46:8">gl-math.adb:46:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>* defined at <a href="src_gl-math.ads.html#l29" title="gl-math.ads:29:13">gl-math.ads:29:13</a></i></div>
+            <div><i>- defined at <a href="src_gl-math.ads.html#l26" title="gl-math.ads:26:13">gl-math.ads:26:13</a></i></div>
+            <div><i>Ada.Numerics.Generic_Elementary_Functions.Arccos defined at a-ngelfu.ads:108:13</i></div>
+            <div><i><a href="gl-math.ads.html#gl-math.ads:41:12" title="defined at gl-math.ads:41:12">Normalized</a> defined at <a href="src_gl-math.ads.html#l41" title="gl-math.ads:41:12">gl-math.ads:41:12</a></i></div>
+        </div>
+        <div class='comment'>
+returns the angle between the vector Point_1 to Point_2 and the vector Point_3 to Point_2.
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-math.ads:52:13' id='gl-math.ads:52:13'></a>
+<span class="droplink">to_Degrees<ul>
+  <li><a href="src_gl-math.ads.html#l52">Goto spec in source</a></li>
+  <li><a href="src_gl-math.adb.html#l48">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">to_Degrees</span> <table><tr><td>(</td><td><span class="name"><a name="gl-math.ads:52:25"></a>Radians</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">Double</a>) <span class="keyword">return</span> <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">Double</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-math.ads.html#l52" title="gl-math.ads:52:13">gl-math.ads:52:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l48" title="gl-math.adb:48:13">gl-math.adb:48:13</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-math.ads:53:13' id='gl-math.ads:53:13'></a>
+<span class="droplink">to_Radians<ul>
+  <li><a href="src_gl-math.ads.html#l53">Goto spec in source</a></li>
+  <li><a href="src_gl-math.adb.html#l50">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">to_Radians</span> <table><tr><td>(</td><td><span class="name"><a name="gl-math.ads:53:25"></a>Degrees</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">Double</a>) <span class="keyword">return</span> <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">Double</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-math.ads.html#l53" title="gl-math.ads:53:13">gl-math.ads:53:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l50" title="gl-math.adb:50:13">gl-math.adb:50:13</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-math.ads:69:12' id='gl-math.ads:69:12'></a>
+<span class="droplink">"*"<ul>
+  <li><a href="src_gl-math.ads.html#l69">Goto spec in source</a></li>
+  <li><a href="src_gl-math.adb.html#l56">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">"*"</span> <table><tr><td>(</td><td><span class="name"><a name="gl-math.ads:69:17"></a>A</span>, <span class="name"><a name="gl-math.ads:69:20"></a>B</span></td><td>: <a href="gl-math.ads.html#gl-math.ads:60:8" title="defined at gl-math.ads:60:8">Matrix_33</a>) <span class="keyword">return</span> <a href="gl-math.ads.html#gl-math.ads:60:8" title="defined at gl-math.ads:60:8">Matrix_33</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-math.ads.html#l69" title="gl-math.ads:69:13">gl-math.ads:69:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l56" title="gl-math.adb:56:14">gl-math.adb:56:14</a> (body)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l74" title="gl-math.adb:74:9">gl-math.adb:74:9</a> (label)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l174" title="gl-math.adb:174:17">gl-math.adb:174:17</a> (call)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l174" title="gl-math.adb:174:22">gl-math.adb:174:22</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="gl-math.ads.html#gl-math.ads:80:12" title="defined at gl-math.ads:80:12">XYZ_rotation</a> defined at <a href="src_gl-math.ads.html#l80" title="gl-math.ads:80:12">gl-math.ads:80:12</a></i></div>
+            <div><i><a href="gl-math.ads.html#gl-math.ads:80:12" title="defined at gl-math.ads:80:12">XYZ_rotation</a> defined at <a href="src_gl-math.ads.html#l80" title="gl-math.ads:80:12">gl-math.ads:80:12</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-math.ads:71:12' id='gl-math.ads:71:12'></a>
+<span class="droplink">"*"<ul>
+  <li><a href="src_gl-math.ads.html#l71">Goto spec in source</a></li>
+  <li><a href="src_gl-math.adb.html#l76">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">"*"</span> <table><tr><td>(</td><td><span class="name"><a name="gl-math.ads:71:17"></a>A</span></td><td>: <a href="gl-math.ads.html#gl-math.ads:60:8" title="defined at gl-math.ads:60:8">Matrix_33</a>;</td></tr><tr><td></td><td><span class="name"><a name="gl-math.ads:71:32"></a>x</span></td><td>: <a href="gl.ads.html#gl.ads:155:9" title="defined at gl.ads:155:9">Double_Vector_3D</a>) <span class="keyword">return</span> <a href="gl.ads.html#gl.ads:155:9" title="defined at gl.ads:155:9">Double_Vector_3D</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-math.ads.html#l71" title="gl-math.ads:71:13">gl-math.ads:71:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l76" title="gl-math.adb:76:14">gl-math.adb:76:14</a> (body)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l92" title="gl-math.adb:92:9">gl-math.adb:92:9</a> (label)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-math.ads:72:12' id='gl-math.ads:72:12'></a>
+<span class="droplink">"*"<ul>
+  <li><a href="src_gl-math.ads.html#l72">Goto spec in source</a></li>
+  <li><a href="src_gl-math.adb.html#l94">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">"*"</span> <table><tr><td>(</td><td><span class="name"><a name="gl-math.ads:72:17"></a>A</span></td><td>: <a href="gl-math.ads.html#gl-math.ads:61:8" title="defined at gl-math.ads:61:8">Matrix_44</a>;</td></tr><tr><td></td><td><span class="name"><a name="gl-math.ads:72:32"></a>x</span></td><td>: <a href="gl.ads.html#gl.ads:155:9" title="defined at gl.ads:155:9">Double_Vector_3D</a>) <span class="keyword">return</span> <a href="gl.ads.html#gl.ads:155:9" title="defined at gl.ads:155:9">Double_Vector_3D</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-math.ads.html#l72" title="gl-math.ads:72:13">gl-math.ads:72:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l94" title="gl-math.adb:94:14">gl-math.adb:94:14</a> (body)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l113" title="gl-math.adb:113:9">gl-math.adb:113:9</a> (label)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-math.ads:73:12' id='gl-math.ads:73:12'></a>
+<span class="droplink">"*"<ul>
+  <li><a href="src_gl-math.ads.html#l73">Goto spec in source</a></li>
+  <li><a href="src_gl-math.adb.html#l115">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">"*"</span> <table><tr><td>(</td><td><span class="name"><a name="gl-math.ads:73:17"></a>A</span></td><td>: <a href="gl-math.ads.html#gl-math.ads:61:8" title="defined at gl-math.ads:61:8">Matrix_44</a>;</td></tr><tr><td></td><td><span class="name"><a name="gl-math.ads:73:32"></a>x</span></td><td>: <a href="gl.ads.html#gl.ads:155:9" title="defined at gl.ads:155:9">Double_Vector_3D</a>) <span class="keyword">return</span> <a href="gl-math.ads.html#gl-math.ads:43:8" title="defined at gl-math.ads:43:8">Vector_4D</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-math.ads.html#l73" title="gl-math.ads:73:13">gl-math.ads:73:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l115" title="gl-math.adb:115:14">gl-math.adb:115:14</a> (body)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l132" title="gl-math.adb:132:9">gl-math.adb:132:9</a> (label)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-math.ads:75:12' id='gl-math.ads:75:12'></a>
+<span class="droplink">Transpose<ul>
+  <li><a href="src_gl-math.ads.html#l75">Goto spec in source</a></li>
+  <li><a href="src_gl-math.adb.html#l134">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Transpose</span> <table><tr><td>(</td><td><span class="name"><a name="gl-math.ads:75:23"></a>A</span></td><td>: <a href="gl-math.ads.html#gl-math.ads:60:8" title="defined at gl-math.ads:60:8">Matrix_33</a>) <span class="keyword">return</span> <a href="gl-math.ads.html#gl-math.ads:60:8" title="defined at gl-math.ads:60:8">Matrix_33</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-math.ads.html#l75" title="gl-math.ads:75:12">gl-math.ads:75:12</a> (declaration)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l134" title="gl-math.adb:134:13">gl-math.adb:134:13</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-math.ads:76:12' id='gl-math.ads:76:12'></a>
+<span class="droplink">Transpose<ul>
+  <li><a href="src_gl-math.ads.html#l76">Goto spec in source</a></li>
+  <li><a href="src_gl-math.adb.html#l138">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Transpose</span> <table><tr><td>(</td><td><span class="name"><a name="gl-math.ads:76:23"></a>A</span></td><td>: <a href="gl-math.ads.html#gl-math.ads:61:8" title="defined at gl-math.ads:61:8">Matrix_44</a>) <span class="keyword">return</span> <a href="gl-math.ads.html#gl-math.ads:61:8" title="defined at gl-math.ads:61:8">Matrix_44</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-math.ads.html#l76" title="gl-math.ads:76:12">gl-math.ads:76:12</a> (declaration)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l138" title="gl-math.adb:138:13">gl-math.adb:138:13</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-math.ads:78:12' id='gl-math.ads:78:12'></a>
+<span class="droplink">Det<ul>
+  <li><a href="src_gl-math.ads.html#l78">Goto spec in source</a></li>
+  <li><a href="src_gl-math.adb.html#l143">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Det</span> <table><tr><td>(</td><td><span class="name"><a name="gl-math.ads:78:17"></a>A</span></td><td>: <a href="gl-math.ads.html#gl-math.ads:60:8" title="defined at gl-math.ads:60:8">Matrix_33</a>) <span class="keyword">return</span> <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">Double</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-math.ads.html#l78" title="gl-math.ads:78:12">gl-math.ads:78:12</a> (declaration)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l143" title="gl-math.adb:143:13">gl-math.adb:143:13</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-math.ads:80:12' id='gl-math.ads:80:12'></a>
+<span class="droplink">XYZ_rotation<ul>
+  <li><a href="src_gl-math.ads.html#l80">Goto spec in source</a></li>
+  <li><a href="src_gl-math.adb.html#l150">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">XYZ_rotation</span> <table><tr><td>(</td><td><span class="name"><a name="gl-math.ads:80:26"></a>ax</span>, <span class="name"><a name="gl-math.ads:80:30"></a>ay</span>, <span class="name"><a name="gl-math.ads:80:34"></a>az</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">Double</a>) <span class="keyword">return</span> <a href="gl-math.ads.html#gl-math.ads:60:8" title="defined at gl-math.ads:60:8">Matrix_33</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-math.ads.html#l80" title="gl-math.ads:80:12">gl-math.ads:80:12</a> (declaration)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l150" title="gl-math.adb:150:13">gl-math.adb:150:13</a> (body)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l176" title="gl-math.adb:176:8">gl-math.adb:176:8</a> (label)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l178" title="gl-math.adb:178:70">gl-math.adb:178:70</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>* defined at <a href="src_gl-math.ads.html#l69" title="gl-math.ads:69:13">gl-math.ads:69:13</a></i></div>
+            <div><i>Ada.Numerics.Generic_Elementary_Functions.Cos defined at a-ngelfu.ads:78:13</i></div>
+            <div><i>Ada.Numerics.Generic_Elementary_Functions.Sin defined at a-ngelfu.ads:68:13</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-math.ads:82:12' id='gl-math.ads:82:12'></a>
+<span class="droplink">XYZ_rotation<ul>
+  <li><a href="src_gl-math.ads.html#l82">Goto spec in source</a></li>
+  <li><a href="src_gl-math.adb.html#l178">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">XYZ_rotation</span> <table><tr><td>(</td><td><span class="name"><a name="gl-math.ads:82:26"></a>v</span></td><td>: <a href="gl.ads.html#gl.ads:155:9" title="defined at gl.ads:155:9">Double_Vector_3D</a>) <span class="keyword">return</span> <a href="gl-math.ads.html#gl-math.ads:60:8" title="defined at gl-math.ads:60:8">Matrix_33</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-math.ads.html#l82" title="gl-math.ads:82:12">gl-math.ads:82:12</a> (declaration)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l178" title="gl-math.adb:178:13">gl-math.adb:178:13</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-math.ads:87:12' id='gl-math.ads:87:12'></a>
+<span class="droplink">Look_at<ul>
+  <li><a href="src_gl-math.ads.html#l87">Goto spec in source</a></li>
+  <li><a href="src_gl-math.adb.html#l180">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Look_at</span> <table><tr><td>(</td><td><span class="name"><a name="gl-math.ads:87:21"></a>direction</span></td><td>: <a href="gl.ads.html#gl.ads:155:9" title="defined at gl.ads:155:9">Double_Vector_3D</a>) <span class="keyword">return</span> <a href="gl-math.ads.html#gl-math.ads:60:8" title="defined at gl-math.ads:60:8">Matrix_33</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-math.ads.html#l87" title="gl-math.ads:87:12">gl-math.ads:87:12</a> (declaration)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l180" title="gl-math.adb:180:13">gl-math.adb:180:13</a> (body)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l192" title="gl-math.adb:192:8">gl-math.adb:192:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>* defined at <a href="src_gl-math.ads.html#l32" title="gl-math.ads:32:13">gl-math.ads:32:13</a></i></div>
+            <div><i><a href="gl-math.ads.html#gl-math.ads:41:12" title="defined at gl-math.ads:41:12">Normalized</a> defined at <a href="src_gl-math.ads.html#l41" title="gl-math.ads:41:12">gl-math.ads:41:12</a></i></div>
+        </div>
+        <div class='comment'>Gives a rotation matrix that corresponds to look into a certain
+direction. Camera swing rotation is arbitrary.
+Left - multiply by XYZ_Rotation (0.0, 0.0, az) to correct it.
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-math.ads:89:13' id='gl-math.ads:89:13'></a>
+<span class="droplink">Look_at<ul>
+  <li><a href="src_gl-math.ads.html#l89">Goto spec in source</a></li>
+  <li><a href="src_gl-math.adb.html#l212">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Look_at</span> <table><tr><td>(</td><td><span class="name"><a name="gl-math.ads:89:22"></a>eye</span>, <span class="name"><a name="gl-math.ads:89:27"></a>center</span>, <span class="name"><a name="gl-math.ads:89:35"></a>up</span></td><td>: <a href="gl.ads.html#gl.ads:155:9" title="defined at gl.ads:155:9">Double_Vector_3D</a>) <span class="keyword">return</span> <a href="gl-math.ads.html#gl-math.ads:60:8" title="defined at gl-math.ads:60:8">Matrix_33</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-math.ads.html#l89" title="gl-math.ads:89:13">gl-math.ads:89:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l212" title="gl-math.adb:212:13">gl-math.adb:212:13</a> (body)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l222" title="gl-math.adb:222:8">gl-math.adb:222:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>* defined at <a href="src_gl-math.ads.html#l32" title="gl-math.ads:32:13">gl-math.ads:32:13</a></i></div>
+            <div><i><a href="gl-math.ads.html#gl-math.ads:41:12" title="defined at gl-math.ads:41:12">Normalized</a> defined at <a href="src_gl-math.ads.html#l41" title="gl-math.ads:41:12">gl-math.ads:41:12</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-math.ads:93:13' id='gl-math.ads:93:13'></a>
+<span class="droplink">Re_Orthonormalize<ul>
+  <li><a href="src_gl-math.ads.html#l93">Goto spec in source</a></li>
+  <li><a href="src_gl-math.adb.html#l225">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Re_Orthonormalize</span> <table><tr><td>(</td><td><span class="name"><a name="gl-math.ads:93:32"></a>M</span></td><td>: <span class="keyword">in</span> <span class="keyword">out</span> <a href="gl-math.ads.html#gl-math.ads:60:8" title="defined at gl-math.ads:60:8">Matrix_33</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-math.ads.html#l93" title="gl-math.ads:93:13">gl-math.ads:93:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l225" title="gl-math.adb:225:14">gl-math.adb:225:14</a> (body)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l263" title="gl-math.adb:263:8">gl-math.adb:263:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>Ada.Numerics.Generic_Elementary_Functions.Sqrt defined at a-ngelfu.ads:42:13</i></div>
+        </div>
+        <div class='comment'>This is for correcting cumulation of small computational
+errors, making the rotation matrix no more orthogonal
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-math.ads:96:13' id='gl-math.ads:96:13'></a>
+<span class="droplink">Multiply_GL_Matrix<ul>
+  <li><a href="src_gl-math.ads.html#l96">Goto spec in source</a></li>
+  <li><a href="src_gl-math.adb.html#l272">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Multiply_GL_Matrix</span> <table><tr><td>(</td><td><span class="name"><a name="gl-math.ads:96:33"></a>A</span></td><td>: <a href="gl-math.ads.html#gl-math.ads:60:8" title="defined at gl-math.ads:60:8">Matrix_33</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-math.ads.html#l96" title="gl-math.ads:96:13">gl-math.ads:96:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l272" title="gl-math.adb:272:14">gl-math.adb:272:14</a> (body)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l285" title="gl-math.adb:285:8">gl-math.adb:285:8</a> (label)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l291" title="gl-math.adb:291:7">gl-math.adb:291:7</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="gl-math.ads.html#gl-math.ads:99:13" title="defined at gl-math.ads:99:13">Set_GL_Matrix</a> defined at <a href="src_gl-math.ads.html#l99" title="gl-math.ads:99:13">gl-math.ads:99:13</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="gl.ads.html#gl.ads:3288:14" title="defined at gl.ads:3288:14">GL.MultMatrixd</a> defined at <a href="src_gl.ads.html#l3288" title="gl.ads:3288:14">gl.ads:3288:14</a></i></div>
+        </div>
+        <div class='comment'>Right - multiply current matrix by A
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-math.ads:99:13' id='gl-math.ads:99:13'></a>
+<span class="droplink">Set_GL_Matrix<ul>
+  <li><a href="src_gl-math.ads.html#l99">Goto spec in source</a></li>
+  <li><a href="src_gl-math.adb.html#l287">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Set_GL_Matrix</span> <table><tr><td>(</td><td><span class="name"><a name="gl-math.ads:99:28"></a>A</span></td><td>: <a href="gl-math.ads.html#gl-math.ads:60:8" title="defined at gl-math.ads:60:8">Matrix_33</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-math.ads.html#l99" title="gl-math.ads:99:13">gl-math.ads:99:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l287" title="gl-math.adb:287:14">gl-math.adb:287:14</a> (body)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l292" title="gl-math.adb:292:8">gl-math.adb:292:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="gl.ads.html#gl.ads:3282:14" title="defined at gl.ads:3282:14">GL.LoadIdentity</a> defined at <a href="src_gl.ads.html#l3282" title="gl.ads:3282:14">gl.ads:3282:14</a></i></div>
+            <div><i><a href="gl-math.ads.html#gl-math.ads:96:13" title="defined at gl-math.ads:96:13">Multiply_GL_Matrix</a> defined at <a href="src_gl-math.ads.html#l96" title="gl-math.ads:96:13">gl-math.ads:96:13</a></i></div>
+        </div>
+        <div class='comment'>Impose A as current matrix
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-math.ads:102:12' id='gl-math.ads:102:12'></a>
+<span class="droplink">Almost_zero<ul>
+  <li><a href="src_gl-math.ads.html#l102">Goto spec in source</a></li>
+  <li><a href="src_gl-math.adb.html#l307">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Almost_zero</span> <table><tr><td>(</td><td><span class="name"><a name="gl-math.ads:102:25"></a>x</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">Double</a>) <span class="keyword">return</span> Boolean;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-math.ads.html#l102" title="gl-math.ads:102:12">gl-math.ads:102:12</a> (declaration)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l229" title="gl-geometry.adb:229:24">gl-geometry.adb:229:24</a> (call)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l260" title="gl-geometry.adb:260:29">gl-geometry.adb:260:29</a> (call)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l307" title="gl-math.adb:307:13">gl-math.adb:307:13</a> (body)</i></div>
+            <div><i><a href="src_gl-math.ads.html#l103" title="gl-math.ads:103:18">gl-math.ads:103:18</a> (reference)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="gl-geometry.ads.html#gl-geometry.ads:137:14" title="defined at gl-geometry.ads:137:14">GL.Geometry.Vertex_Normals</a> defined at <a href="src_gl-geometry.ads.html#l137" title="gl-geometry.ads:137:14">gl-geometry.ads:137:14</a></i></div>
+            <div><i><a href="gl-geometry.ads.html#gl-geometry.ads:137:14" title="defined at gl-geometry.ads:137:14">GL.Geometry.Vertex_Normals</a> defined at <a href="src_gl-geometry.ads.html#l137" title="gl-geometry.ads:137:14">gl-geometry.ads:137:14</a></i></div>
+        </div>
+        <div class='comment'>For replacing the &quot; = 0.0&quot; test which is a Bad Thing
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-math.ads:104:12' id='gl-math.ads:104:12'></a>
+<span class="droplink">Almost_zero<ul>
+  <li><a href="src_gl-math.ads.html#l104">Goto spec in source</a></li>
+  <li><a href="src_gl-math.adb.html#l309">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Almost_zero</span> <table><tr><td>(</td><td><span class="name"><a name="gl-math.ads:104:25"></a>x</span></td><td>: <a href="gl.ads.html#gl.ads:126:9" title="defined at gl.ads:126:9">GL.C_Float</a>) <span class="keyword">return</span> Boolean;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-math.ads.html#l104" title="gl-math.ads:104:12">gl-math.ads:104:12</a> (declaration)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l309" title="gl-math.adb:309:13">gl-math.adb:309:13</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-math.ads:107:13' id='gl-math.ads:107:13'></a>
+<span class="droplink">Sub_Matrix<ul>
+  <li><a href="src_gl-math.ads.html#l107">Goto spec in source</a></li>
+  <li><a href="src_gl-math.adb.html#l194">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Sub_Matrix</span> <table><tr><td>(</td><td><span class="name"><a name="gl-math.ads:107:25"></a>Self</span></td><td>: <a href="gl-math.ads.html#gl-math.ads:59:8" title="defined at gl-math.ads:59:8">Matrix</a>;</td></tr><tr><td></td><td><span class="name"><a name="gl-math.ads:108:25"></a>start_Row</span>, <span class="name"><a name="gl-math.ads:108:36"></a>end_Row</span></td><td>: Positive;</td></tr><tr><td></td><td><span class="name"><a name="gl-math.ads:109:25"></a>start_Col</span>, <span class="name"><a name="gl-math.ads:109:36"></a>end_Col</span></td><td>: Positive) <span class="keyword">return</span> <a href="gl-math.ads.html#gl-math.ads:59:8" title="defined at gl-math.ads:59:8">Matrix</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-math.ads.html#l107" title="gl-math.ads:107:13">gl-math.ads:107:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l194" title="gl-math.adb:194:13">gl-math.adb:194:13</a> (body)</i></div>
+            <div><i><a href="src_gl-math.adb.html#l210" title="gl-math.adb:210:8">gl-math.adb:210:8</a> (label)</i></div>
+        </div>
+      </div>
+    </div>
+</div> <!-- documentation -->
+
+</body>
+</html>

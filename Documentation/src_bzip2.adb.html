@@ -1,0 +1,795 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    File: bzip2.adb
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+  </div>
+</div> <!-- leftSide -->
+
+<div class='subprograms'>
+  <div class='details'><ol><li id="l1"><pre><span class="comment">-- See bzip2.ads for legal stuff</span> </pre></li>
+<li id="l2"><pre><span class="comment">--</span> </pre></li>
+<li id="l3"><pre><span class="comment">-- Documentation pointers:</span> </pre></li>
+<li id="l4"><pre><span class="comment">--</span> </pre></li>
+<li id="l5"><pre><span class="comment">--   Burrows - Wheeler transform</span> </pre></li>
+<li id="l6"><pre><span class="comment">--     http://en.wikipedia.org/wiki/Burrows%E2%80%93Wheeler_transform</span> </pre></li>
+<li id="l7"><pre><span class="comment">--   MTF Move - To - Front</span> </pre></li>
+<li id="l8"><pre><span class="comment">--     http://fr.wikipedia.org/wiki/Move - To - Front</span> </pre></li>
+<li id="l9"><pre><span class="comment">--</span> </pre></li>
+<li id="l10"><pre><span class="comment">-- Translated on 20 - Oct - 2009 by (New) P2Ada v. 15 - Nov - 2006</span> </pre></li>
+<li id="l11"><pre><span class="comment">--</span> </pre></li>
+<li id="l12"><pre><span class="comment">-- with Ada.Text_IO;                       use Ada.Text_IO;</span> </pre></li>
+<li id="l13"><pre> </pre></li>
+<li id="l14"><pre><span class="keyword">with</span> Ada.Unchecked_Deallocation; </pre></li>
+<li id="l15"><pre> </pre></li>
+<li id="l16"><pre><span class="keyword">package</span> <span class="keyword">body</span> <span class="droplink">BZip2<ul><li><a href="bzip2.ads.html#bzip2.ads:81:9" title="To API doc">To API doc</a></li><li><a href="src_bzip2.ads.html#l81" title="To spec">To spec</a></li></ul></span> <span class="keyword">is</span> </pre></li>
+<li id="l17"><pre> </pre></li>
+<li id="l18"><pre>   <span class="keyword">procedure</span> <span class="droplink">Decompress<ul><li><a href="bzip2.ads.html#bzip2.ads:89:13" title="To API doc">To API doc</a></li><li><a href="src_bzip2.ads.html#l89" title="To spec">To spec</a></li></ul></span> <span class="keyword">is</span> </pre></li>
+<li id="l19"><pre> </pre></li>
+<li id="l20"><pre>      max_groups     : <span class="keyword">constant</span> := 6; </pre></li>
+<li id="l21"><pre>      max_alpha_size : <span class="keyword">constant</span> := 258; </pre></li>
+<li id="l22"><pre>      max_code_len   : <span class="keyword">constant</span> := 23; </pre></li>
+<li id="l23"><pre>      group_size     : <span class="keyword">constant</span> := 50; </pre></li>
+<li id="l24"><pre>      max_selectors  : <span class="keyword">constant</span> := 2 + (900_000 / <a href="src_bzip2.adb.html#l23" title="defined at bzip2.adb:23:7">group_size</a>); </pre></li>
+<li id="l25"><pre> </pre></li>
+<li id="l26"><pre>      sub_block_size : <span class="keyword">constant</span> := 100_000; </pre></li>
+<li id="l27"><pre> </pre></li>
+<li id="l28"><pre>      <span class="keyword">type</span> Length_array <span class="keyword">is</span> <span class="keyword">array</span> (Integer <span class="keyword">range</span> &lt;&gt;) <span class="keyword">of</span> Natural; </pre></li>
+<li id="l29"><pre> </pre></li>
+<li id="l30"><pre>      block_randomized : Boolean := False; </pre></li>
+<li id="l31"><pre>      block_size : Natural; </pre></li>
+<li id="l32"><pre> </pre></li>
+<li id="l33"><pre>      <span class="keyword">use</span> Interfaces; </pre></li>
+<li id="l34"><pre> </pre></li>
+<li id="l35"><pre>      <span class="keyword">type</span> Tcardinal_array <span class="keyword">is</span> <span class="keyword">array</span> (Integer <span class="keyword">range</span> &lt;&gt;) <span class="keyword">of</span> Unsigned_32; </pre></li>
+<li id="l36"><pre>      <span class="keyword">type</span> Pcardinal_array <span class="keyword">is</span> <span class="keyword">access</span> <a href="src_bzip2.adb.html#l35" title="defined at bzip2.adb:35:12">Tcardinal_array</a>; </pre></li>
+<li id="l37"><pre>      <span class="keyword">procedure</span> Dispose <span class="keyword">is</span> <span class="keyword">new</span> Ada.Unchecked_Deallocation (<a href="src_bzip2.adb.html#l35" title="defined at bzip2.adb:35:12">Tcardinal_array</a>, <a href="src_bzip2.adb.html#l36" title="defined at bzip2.adb:36:12">Pcardinal_array</a>); </pre></li>
+<li id="l38"><pre>      tt : <a href="src_bzip2.adb.html#l36" title="defined at bzip2.adb:36:12">Pcardinal_array</a>; </pre></li>
+<li id="l39"><pre>      tt_count : Natural; </pre></li>
+<li id="l40"><pre> </pre></li>
+<li id="l41"><pre>      rle_run_left : Natural := 0; </pre></li>
+<li id="l42"><pre>      rle_run_data : Unsigned_8 := 0; </pre></li>
+<li id="l43"><pre>      decode_available : Natural := Natural&apos;<a href="src_bzip2.adb.html#l610" title="defined at bzip2.adb:610:7">Last</a>; </pre></li>
+<li id="l44"><pre>      block_origin : Natural := 0; </pre></li>
+<li id="l45"><pre>      read_data : Unsigned_8 := 0; </pre></li>
+<li id="l46"><pre>      bits_available : Natural := 0; </pre></li>
+<li id="l47"><pre>      inuse_count : Natural; </pre></li>
+<li id="l48"><pre>      seq_to_unseq : <span class="keyword">array</span> (0 .. 255) <span class="keyword">of</span> Natural; </pre></li>
+<li id="l49"><pre>      global_alpha_size : Natural; </pre></li>
+<li id="l50"><pre>      group_count : Natural; </pre></li>
+<li id="l51"><pre>      <span class="comment">--</span> </pre></li>
+<li id="l52"><pre>      selector_count : Natural; </pre></li>
+<li id="l53"><pre>      selector, selector_mtf : <span class="keyword">array</span> (0 .. <a href="src_bzip2.adb.html#l24" title="defined at bzip2.adb:24:7">max_selectors</a>) <span class="keyword">of</span> Unsigned_8; </pre></li>
+<li id="l54"><pre>      <span class="comment">--</span> </pre></li>
+<li id="l55"><pre>      <span class="keyword">type</span> Alpha_U32_array <span class="keyword">is</span> <span class="keyword">array</span> (0 .. <a href="src_bzip2.adb.html#l21" title="defined at bzip2.adb:21:7">max_alpha_size</a>) <span class="keyword">of</span> Unsigned_32; </pre></li>
+<li id="l56"><pre>      <span class="keyword">type</span> Alpha_Nat_array <span class="keyword">is</span> <span class="keyword">array</span> (0 .. <a href="src_bzip2.adb.html#l21" title="defined at bzip2.adb:21:7">max_alpha_size</a>) <span class="keyword">of</span> Natural; </pre></li>
+<li id="l57"><pre> </pre></li>
+<li id="l58"><pre>      len   : <span class="keyword">array</span> (0 .. <a href="src_bzip2.adb.html#l20" title="defined at bzip2.adb:20:7">max_groups</a>) <span class="keyword">of</span> <a href="src_bzip2.adb.html#l56" title="defined at bzip2.adb:56:12">Alpha_Nat_array</a>; </pre></li>
+<li id="l59"><pre>      global_limit, </pre></li>
+<li id="l60"><pre>      global_base, </pre></li>
+<li id="l61"><pre>      global_perm  : <span class="keyword">array</span> (0 .. <a href="src_bzip2.adb.html#l20" title="defined at bzip2.adb:20:7">max_groups</a>) <span class="keyword">of</span> <a href="src_bzip2.adb.html#l55" title="defined at bzip2.adb:55:12">Alpha_U32_array</a>; </pre></li>
+<li id="l62"><pre>      <span class="comment">--</span> </pre></li>
+<li id="l63"><pre>      minlens : <a href="src_bzip2.adb.html#l28" title="defined at bzip2.adb:28:12">Length_array</a> (0 .. <a href="src_bzip2.adb.html#l20" title="defined at bzip2.adb:20:7">max_groups</a>); </pre></li>
+<li id="l64"><pre>      cftab : <span class="keyword">array</span> (0 .. 257) <span class="keyword">of</span> Natural; </pre></li>
+<li id="l65"><pre>      <span class="comment">--</span> </pre></li>
+<li id="l66"><pre>      end_reached : Boolean := False; </pre></li>
+<li id="l67"><pre> </pre></li>
+<li id="l68"><pre>      in_buf : <span class="droplink">Buffer<ul><li><a href="bzip2.ads.html#bzip2.ads:72:8" title="To API doc">To API doc</a></li><li><a href="src_bzip2.ads.html#l72" title="To spec">To spec</a></li></ul></span> (1 .. <span class="droplink">input_buffer_size<ul><li><a href="bzip2.ads.html#bzip2.ads:69:3" title="To API doc">To API doc</a></li><li><a href="src_bzip2.ads.html#l69" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l69"><pre>      in_idx : Natural := <a href="src_bzip2.adb.html#l68" title="defined at bzip2.adb:68:7">in_buf</a>&apos;<a href="src_bzip2.adb.html#l610" title="defined at bzip2.adb:610:7">Last</a> + 1; </pre></li>
+<li id="l70"><pre> </pre></li>
+<li id="l71"><pre>      <span class="keyword">function</span> Read_byte <span class="keyword">return</span> Unsigned_8 <span class="keyword">is</span> </pre></li>
+<li id="l72"><pre>         res : Unsigned_8; </pre></li>
+<li id="l73"><pre>      <span class="keyword">begin</span> </pre></li>
+<li id="l74"><pre>         <span class="keyword">if</span> <a href="src_bzip2.adb.html#l69" title="defined at bzip2.adb:69:7">in_idx</a> &gt; <a href="src_bzip2.adb.html#l68" title="defined at bzip2.adb:68:7">in_buf</a>&apos;<a href="src_bzip2.adb.html#l610" title="defined at bzip2.adb:610:7">Last</a> <span class="keyword">then</span> </pre></li>
+<li id="l75"><pre>            <span class="droplink">Read<ul><li><a href="bzip2.ads.html#bzip2.ads:78:18" title="To API doc">To API doc</a></li><li><a href="src_bzip2.ads.html#l78" title="To spec">To spec</a></li></ul></span> (<a href="src_bzip2.adb.html#l68" title="defined at bzip2.adb:68:7">in_buf</a>); </pre></li>
+<li id="l76"><pre>            <a href="src_bzip2.adb.html#l69" title="defined at bzip2.adb:69:7">in_idx</a> := <a href="src_bzip2.adb.html#l68" title="defined at bzip2.adb:68:7">in_buf</a>&apos;First; </pre></li>
+<li id="l77"><pre>         <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l78"><pre>         <a href="src_bzip2.adb.html#l72" title="defined at bzip2.adb:72:10">res</a> := <a href="src_bzip2.adb.html#l68" title="defined at bzip2.adb:68:7">in_buf</a> (<a href="src_bzip2.adb.html#l69" title="defined at bzip2.adb:69:7">in_idx</a>); </pre></li>
+<li id="l79"><pre>         <a href="src_bzip2.adb.html#l69" title="defined at bzip2.adb:69:7">in_idx</a> := <a href="src_bzip2.adb.html#l69" title="defined at bzip2.adb:69:7">in_idx</a> + 1; </pre></li>
+<li id="l80"><pre>         <span class="keyword">return</span> <a href="src_bzip2.adb.html#l72" title="defined at bzip2.adb:72:10">res</a>; </pre></li>
+<li id="l81"><pre>      <span class="keyword">end</span> <span class="droplink">Read_byte<ul><li><a href="src_bzip2.adb.html#l71" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l71" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l82"><pre> </pre></li>
+<li id="l83"><pre>      <span class="keyword">procedure</span> hb_create_decode_tables (limit, base, perm : <span class="keyword">in</span> <span class="keyword">out</span> <a href="src_bzip2.adb.html#l55" title="defined at bzip2.adb:55:12">Alpha_U32_array</a>; </pre></li>
+<li id="l84"><pre>                                         length            :        <a href="src_bzip2.adb.html#l56" title="defined at bzip2.adb:56:12">Alpha_Nat_array</a>; </pre></li>
+<li id="l85"><pre>                                         min_len, max_len  :        Natural; </pre></li>
+<li id="l86"><pre>                                         alpha_size        :        Integer) <span class="keyword">is</span> </pre></li>
+<li id="l87"><pre> </pre></li>
+<li id="l88"><pre>         pp, idx : Integer; </pre></li>
+<li id="l89"><pre>         vec : Unsigned_32; </pre></li>
+<li id="l90"><pre> </pre></li>
+<li id="l91"><pre>      <span class="keyword">begin</span> </pre></li>
+<li id="l92"><pre>         <a href="src_bzip2.adb.html#l88" title="defined at bzip2.adb:88:10">pp</a> := 0; </pre></li>
+<li id="l93"><pre>         <span class="keyword">for</span> i <span class="keyword">in</span> <a href="src_bzip2.adb.html#l85" title="defined at bzip2.adb:85:42">min_len</a> .. <a href="src_bzip2.adb.html#l85" title="defined at bzip2.adb:85:51">max_len</a> <span class="keyword">loop</span> </pre></li>
+<li id="l94"><pre>            <span class="keyword">for</span> j <span class="keyword">in</span> 0 .. <a href="src_bzip2.adb.html#l86" title="defined at bzip2.adb:86:42">alpha_size</a> - 1 <span class="keyword">loop</span> </pre></li>
+<li id="l95"><pre>               <span class="keyword">if</span> <a href="src_bzip2.adb.html#l84" title="defined at bzip2.adb:84:42">length</a> (j) = i <span class="keyword">then</span> </pre></li>
+<li id="l96"><pre>                  <a href="src_bzip2.adb.html#l83" title="defined at bzip2.adb:83:55">perm</a> (<a href="src_bzip2.adb.html#l88" title="defined at bzip2.adb:88:10">pp</a>) := Unsigned_32 (j); </pre></li>
+<li id="l97"><pre>                  <a href="src_bzip2.adb.html#l88" title="defined at bzip2.adb:88:10">pp</a> := <a href="src_bzip2.adb.html#l88" title="defined at bzip2.adb:88:10">pp</a> + 1; </pre></li>
+<li id="l98"><pre>               <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l99"><pre>            <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l100"><pre>         <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l101"><pre>         <span class="keyword">for</span> i <span class="keyword">in</span> 0 .. <a href="src_bzip2.adb.html#l22" title="defined at bzip2.adb:22:7">max_code_len</a> - 1 <span class="keyword">loop</span> </pre></li>
+<li id="l102"><pre>            <a href="src_bzip2.adb.html#l83" title="defined at bzip2.adb:83:49">base</a> (i) := 0; </pre></li>
+<li id="l103"><pre>            <a href="src_bzip2.adb.html#l83" title="defined at bzip2.adb:83:42">limit</a> (i) := 0; </pre></li>
+<li id="l104"><pre>         <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l105"><pre>         <span class="keyword">for</span> i <span class="keyword">in</span> 0 .. <a href="src_bzip2.adb.html#l86" title="defined at bzip2.adb:86:42">alpha_size</a> - 1 <span class="keyword">loop</span> </pre></li>
+<li id="l106"><pre>            <a href="src_bzip2.adb.html#l88" title="defined at bzip2.adb:88:14">idx</a> := <a href="src_bzip2.adb.html#l84" title="defined at bzip2.adb:84:42">length</a> (i) + 1; </pre></li>
+<li id="l107"><pre>            <a href="src_bzip2.adb.html#l83" title="defined at bzip2.adb:83:49">base</a> (<a href="src_bzip2.adb.html#l88" title="defined at bzip2.adb:88:14">idx</a>) := <a href="src_bzip2.adb.html#l83" title="defined at bzip2.adb:83:49">base</a> (<a href="src_bzip2.adb.html#l88" title="defined at bzip2.adb:88:14">idx</a>) + 1; </pre></li>
+<li id="l108"><pre>         <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l109"><pre>         <span class="keyword">for</span> i <span class="keyword">in</span> 1 .. <a href="src_bzip2.adb.html#l22" title="defined at bzip2.adb:22:7">max_code_len</a> - 1 <span class="keyword">loop</span> </pre></li>
+<li id="l110"><pre>            <a href="src_bzip2.adb.html#l83" title="defined at bzip2.adb:83:49">base</a> (i) := <a href="src_bzip2.adb.html#l83" title="defined at bzip2.adb:83:49">base</a> (i) + <a href="src_bzip2.adb.html#l83" title="defined at bzip2.adb:83:49">base</a> (i - 1); </pre></li>
+<li id="l111"><pre>         <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l112"><pre>         <a href="src_bzip2.adb.html#l89" title="defined at bzip2.adb:89:10">vec</a> := 0; </pre></li>
+<li id="l113"><pre>         <span class="keyword">for</span> i <span class="keyword">in</span> <a href="src_bzip2.adb.html#l85" title="defined at bzip2.adb:85:42">min_len</a> .. <a href="src_bzip2.adb.html#l85" title="defined at bzip2.adb:85:51">max_len</a> <span class="keyword">loop</span> </pre></li>
+<li id="l114"><pre>            <a href="src_bzip2.adb.html#l89" title="defined at bzip2.adb:89:10">vec</a> := <a href="src_bzip2.adb.html#l89" title="defined at bzip2.adb:89:10">vec</a> + <a href="src_bzip2.adb.html#l83" title="defined at bzip2.adb:83:49">base</a> (i + 1) - <a href="src_bzip2.adb.html#l83" title="defined at bzip2.adb:83:49">base</a> (i); </pre></li>
+<li id="l115"><pre>            <a href="src_bzip2.adb.html#l83" title="defined at bzip2.adb:83:42">limit</a> (i) := <a href="src_bzip2.adb.html#l89" title="defined at bzip2.adb:89:10">vec</a> - 1; </pre></li>
+<li id="l116"><pre>            <a href="src_bzip2.adb.html#l89" title="defined at bzip2.adb:89:10">vec</a> := <a href="src_bzip2.adb.html#l89" title="defined at bzip2.adb:89:10">vec</a> * 2; </pre></li>
+<li id="l117"><pre>         <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l118"><pre>         <span class="keyword">for</span> i <span class="keyword">in</span> <a href="src_bzip2.adb.html#l85" title="defined at bzip2.adb:85:42">min_len</a> + 1 .. <a href="src_bzip2.adb.html#l85" title="defined at bzip2.adb:85:51">max_len</a> <span class="keyword">loop</span> </pre></li>
+<li id="l119"><pre>            <a href="src_bzip2.adb.html#l83" title="defined at bzip2.adb:83:49">base</a> (i) := (<a href="src_bzip2.adb.html#l83" title="defined at bzip2.adb:83:42">limit</a> (i - 1) + 1) * 2 - <a href="src_bzip2.adb.html#l83" title="defined at bzip2.adb:83:49">base</a> (i); </pre></li>
+<li id="l120"><pre>         <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l121"><pre>      <span class="keyword">end</span> <span class="droplink">hb_create_decode_tables<ul><li><a href="src_bzip2.adb.html#l83" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l83" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l122"><pre> </pre></li>
+<li id="l123"><pre>      <span class="keyword">procedure</span> Init <span class="keyword">is</span> </pre></li>
+<li id="l124"><pre>         magic : String (1 .. 3); </pre></li>
+<li id="l125"><pre>         b : Unsigned_8; </pre></li>
+<li id="l126"><pre>      <span class="keyword">begin</span> </pre></li>
+<li id="l127"><pre>         <span class="comment">--  Read the magic.</span> </pre></li>
+<li id="l128"><pre>         <span class="keyword">for</span> i <span class="keyword">in</span> <a href="src_bzip2.adb.html#l124" title="defined at bzip2.adb:124:10">magic</a>&apos;Range <span class="keyword">loop</span> </pre></li>
+<li id="l129"><pre>            <a href="src_bzip2.adb.html#l125" title="defined at bzip2.adb:125:10">b</a> := <span class="droplink">Read_byte<ul><li><a href="src_bzip2.adb.html#l71" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l71" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l130"><pre>            <a href="src_bzip2.adb.html#l124" title="defined at bzip2.adb:124:10">magic</a> (i) := Character&apos;<a href="src_bzip2.adb.html#l468" title="defined at bzip2.adb:468:60">Val</a> (<a href="src_bzip2.adb.html#l125" title="defined at bzip2.adb:125:10">b</a>); </pre></li>
+<li id="l131"><pre>         <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l132"><pre>         <span class="keyword">if</span> <a href="src_bzip2.adb.html#l124" title="defined at bzip2.adb:124:10">magic</a> /= <span class="string">&quot;BZh&quot;</span> <span class="keyword">then</span> </pre></li>
+<li id="l133"><pre>            <span class="keyword">raise</span> <span class="droplink">bad_header_magic<ul><li><a href="bzip2.ads.html#bzip2.ads:83:3" title="To API doc">To API doc</a></li><li><a href="src_bzip2.ads.html#l83" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l134"><pre>         <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l135"><pre>         <span class="comment">--  Read the block size and allocate the working array.</span> </pre></li>
+<li id="l136"><pre>         <a href="src_bzip2.adb.html#l125" title="defined at bzip2.adb:125:10">b</a> := <span class="droplink">Read_byte<ul><li><a href="src_bzip2.adb.html#l71" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l71" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l137"><pre>         <a href="src_bzip2.adb.html#l31" title="defined at bzip2.adb:31:7">block_size</a> := Natural (<a href="src_bzip2.adb.html#l125" title="defined at bzip2.adb:125:10">b</a>) - Character&apos;<a href="src_bzip2.adb.html#l234" title="defined at bzip2.adb:234:10">Pos</a> (<span class="string">&apos;0&apos;</span>); </pre></li>
+<li id="l138"><pre>         <a href="src_bzip2.adb.html#l38" title="defined at bzip2.adb:38:7">tt</a> := <span class="keyword">new</span> <a href="src_bzip2.adb.html#l35" title="defined at bzip2.adb:35:12">Tcardinal_array</a> (0 .. <a href="src_bzip2.adb.html#l31" title="defined at bzip2.adb:31:7">block_size</a> * <a href="src_bzip2.adb.html#l26" title="defined at bzip2.adb:26:7">sub_block_size</a>); </pre></li>
+<li id="l139"><pre>      <span class="keyword">end</span> <span class="droplink">Init<ul><li><a href="src_bzip2.adb.html#l123" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l123" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l140"><pre> </pre></li>
+<li id="l141"><pre>      <span class="keyword">function</span> get_bits (n : Natural) <span class="keyword">return</span> Unsigned_8 <span class="keyword">is</span> </pre></li>
+<li id="l142"><pre>         Result_get_bits  : Unsigned_8; </pre></li>
+<li id="l143"><pre>         data : Unsigned_8; </pre></li>
+<li id="l144"><pre>      <span class="keyword">begin</span> </pre></li>
+<li id="l145"><pre>         <span class="keyword">if</span> <a href="src_bzip2.adb.html#l141" title="defined at bzip2.adb:141:26">n</a> &gt; <a href="src_bzip2.adb.html#l46" title="defined at bzip2.adb:46:7">bits_available</a> <span class="keyword">then</span> </pre></li>
+<li id="l146"><pre>            <a href="src_bzip2.adb.html#l143" title="defined at bzip2.adb:143:10">data</a> := <span class="droplink">Read_byte<ul><li><a href="src_bzip2.adb.html#l71" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l71" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l147"><pre>            <a href="src_bzip2.adb.html#l142" title="defined at bzip2.adb:142:10">Result_get_bits</a> := Shift_Right (<a href="src_bzip2.adb.html#l45" title="defined at bzip2.adb:45:7">read_data</a>, 8 - <a href="src_bzip2.adb.html#l141" title="defined at bzip2.adb:141:26">n</a>) <span class="keyword">or</span> Shift_Right (<a href="src_bzip2.adb.html#l143" title="defined at bzip2.adb:143:10">data</a>, 8 - (<a href="src_bzip2.adb.html#l141" title="defined at bzip2.adb:141:26">n</a> - <a href="src_bzip2.adb.html#l46" title="defined at bzip2.adb:46:7">bits_available</a>)); </pre></li>
+<li id="l148"><pre>            <a href="src_bzip2.adb.html#l45" title="defined at bzip2.adb:45:7">read_data</a> := Shift_Left (<a href="src_bzip2.adb.html#l143" title="defined at bzip2.adb:143:10">data</a>, <a href="src_bzip2.adb.html#l141" title="defined at bzip2.adb:141:26">n</a> - <a href="src_bzip2.adb.html#l46" title="defined at bzip2.adb:46:7">bits_available</a>); </pre></li>
+<li id="l149"><pre>            <a href="src_bzip2.adb.html#l46" title="defined at bzip2.adb:46:7">bits_available</a> := <a href="src_bzip2.adb.html#l46" title="defined at bzip2.adb:46:7">bits_available</a> + 8; </pre></li>
+<li id="l150"><pre>         <span class="keyword">else</span> </pre></li>
+<li id="l151"><pre>            <a href="src_bzip2.adb.html#l142" title="defined at bzip2.adb:142:10">Result_get_bits</a> := Shift_Right (<a href="src_bzip2.adb.html#l45" title="defined at bzip2.adb:45:7">read_data</a>, 8 - <a href="src_bzip2.adb.html#l141" title="defined at bzip2.adb:141:26">n</a>); </pre></li>
+<li id="l152"><pre>            <a href="src_bzip2.adb.html#l45" title="defined at bzip2.adb:45:7">read_data</a> := Shift_Left (<a href="src_bzip2.adb.html#l45" title="defined at bzip2.adb:45:7">read_data</a>, <a href="src_bzip2.adb.html#l141" title="defined at bzip2.adb:141:26">n</a>); </pre></li>
+<li id="l153"><pre>         <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l154"><pre>         <a href="src_bzip2.adb.html#l46" title="defined at bzip2.adb:46:7">bits_available</a> := <a href="src_bzip2.adb.html#l46" title="defined at bzip2.adb:46:7">bits_available</a> - <a href="src_bzip2.adb.html#l141" title="defined at bzip2.adb:141:26">n</a>; </pre></li>
+<li id="l155"><pre>         <span class="keyword">return</span> <a href="src_bzip2.adb.html#l142" title="defined at bzip2.adb:142:10">Result_get_bits</a>; </pre></li>
+<li id="l156"><pre>      <span class="keyword">end</span> <span class="droplink">get_bits<ul><li><a href="src_bzip2.adb.html#l141" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l141" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l157"><pre> </pre></li>
+<li id="l158"><pre>      <span class="keyword">function</span> get_bits_32 (n : Natural) <span class="keyword">return</span> Unsigned_32 <span class="keyword">is</span> </pre></li>
+<li id="l159"><pre>      <span class="keyword">begin</span> </pre></li>
+<li id="l160"><pre>         <span class="keyword">return</span> Unsigned_32 (<span class="droplink">get_bits<ul><li><a href="src_bzip2.adb.html#l141" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l141" title="To body">To body</a></li></ul></span> (<a href="src_bzip2.adb.html#l158" title="defined at bzip2.adb:158:29">n</a>)); </pre></li>
+<li id="l161"><pre>      <span class="keyword">end</span> <span class="droplink">get_bits_32<ul><li><a href="src_bzip2.adb.html#l158" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l158" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l162"><pre> </pre></li>
+<li id="l163"><pre>      <span class="keyword">function</span> get_boolean <span class="keyword">return</span> Boolean <span class="keyword">is</span> </pre></li>
+<li id="l164"><pre>      <span class="keyword">begin</span> </pre></li>
+<li id="l165"><pre>         <span class="keyword">return</span> Boolean&apos;<a href="src_bzip2.adb.html#l468" title="defined at bzip2.adb:468:60">Val</a> (<span class="droplink">get_bits<ul><li><a href="src_bzip2.adb.html#l141" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l141" title="To body">To body</a></li></ul></span> (1)); </pre></li>
+<li id="l166"><pre>      <span class="keyword">end</span> <span class="droplink">get_boolean<ul><li><a href="src_bzip2.adb.html#l163" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l163" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l167"><pre> </pre></li>
+<li id="l168"><pre>      <span class="keyword">function</span> get_byte <span class="keyword">return</span> Unsigned_8 <span class="keyword">is</span> </pre></li>
+<li id="l169"><pre>      <span class="keyword">begin</span> </pre></li>
+<li id="l170"><pre>         <span class="keyword">return</span> <span class="droplink">get_bits<ul><li><a href="src_bzip2.adb.html#l141" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l141" title="To body">To body</a></li></ul></span> (8); </pre></li>
+<li id="l171"><pre>      <span class="keyword">end</span> <span class="droplink">get_byte<ul><li><a href="src_bzip2.adb.html#l168" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l168" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l172"><pre> </pre></li>
+<li id="l173"><pre>      <span class="keyword">function</span> get_cardinal24 <span class="keyword">return</span> Unsigned_32 <span class="keyword">is</span> </pre></li>
+<li id="l174"><pre>      <span class="keyword">begin</span> </pre></li>
+<li id="l175"><pre>         <span class="keyword">return</span> Shift_Left (<span class="droplink">get_bits_32<ul><li><a href="src_bzip2.adb.html#l158" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l158" title="To body">To body</a></li></ul></span> (8), 16) <span class="keyword">or</span> Shift_Left (<span class="droplink">get_bits_32<ul><li><a href="src_bzip2.adb.html#l158" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l158" title="To body">To body</a></li></ul></span> (8), 8) <span class="keyword">or</span> <span class="droplink">get_bits_32<ul><li><a href="src_bzip2.adb.html#l158" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l158" title="To body">To body</a></li></ul></span> (8); </pre></li>
+<li id="l176"><pre>      <span class="keyword">end</span> <span class="droplink">get_cardinal24<ul><li><a href="src_bzip2.adb.html#l173" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l173" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l177"><pre> </pre></li>
+<li id="l178"><pre>      <span class="keyword">function</span> get_cardinal <span class="keyword">return</span> Unsigned_32 <span class="keyword">is</span> </pre></li>
+<li id="l179"><pre>      <span class="keyword">begin</span> </pre></li>
+<li id="l180"><pre>         <span class="keyword">return</span> Shift_Left (<span class="droplink">get_bits_32<ul><li><a href="src_bzip2.adb.html#l158" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l158" title="To body">To body</a></li></ul></span> (8), 24)  <span class="keyword">or</span> </pre></li>
+<li id="l181"><pre>           Shift_Left (<span class="droplink">get_bits_32<ul><li><a href="src_bzip2.adb.html#l158" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l158" title="To body">To body</a></li></ul></span> (8), 16)  <span class="keyword">or</span> </pre></li>
+<li id="l182"><pre>           Shift_Left (<span class="droplink">get_bits_32<ul><li><a href="src_bzip2.adb.html#l158" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l158" title="To body">To body</a></li></ul></span> (8), 8)  <span class="keyword">or</span> </pre></li>
+<li id="l183"><pre>           <span class="droplink">get_bits_32<ul><li><a href="src_bzip2.adb.html#l158" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l158" title="To body">To body</a></li></ul></span> (8); </pre></li>
+<li id="l184"><pre>      <span class="keyword">end</span> <span class="droplink">get_cardinal<ul><li><a href="src_bzip2.adb.html#l178" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l178" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l185"><pre> </pre></li>
+<li id="l186"><pre>      <span class="comment">--  Receive the mapping table. To save space, the inuse set is stored in pieces</span> </pre></li>
+<li id="l187"><pre>      <span class="comment">--  of 16 bits. First 16 bits are stored which pieces of 16 bits are used, then</span> </pre></li>
+<li id="l188"><pre>      <span class="comment">--  the pieces follow.</span> </pre></li>
+<li id="l189"><pre>      <span class="keyword">procedure</span> receive_mapping_table <span class="keyword">is</span> </pre></li>
+<li id="l190"><pre>         inuse16 : <span class="keyword">array</span> (0 .. 15) <span class="keyword">of</span> Boolean; </pre></li>
+<li id="l191"><pre>         <span class="comment">--* inuse : array (0 .. 255) of Boolean; -- for dump purposes</span> </pre></li>
+<li id="l192"><pre>      <span class="keyword">begin</span> </pre></li>
+<li id="l193"><pre>         <a href="src_bzip2.adb.html#l190" title="defined at bzip2.adb:190:10">inuse16</a> := (<span class="keyword">others</span> =&gt; False); </pre></li>
+<li id="l194"><pre>         <span class="comment">--  Receive the first 16 bits which tell which pieces are stored.</span> </pre></li>
+<li id="l195"><pre>         <span class="keyword">for</span> i <span class="keyword">in</span> 0 .. 15 <span class="keyword">loop</span> </pre></li>
+<li id="l196"><pre>            <a href="src_bzip2.adb.html#l190" title="defined at bzip2.adb:190:10">inuse16</a> (i) := <span class="droplink">get_boolean<ul><li><a href="src_bzip2.adb.html#l163" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l163" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l197"><pre>         <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l198"><pre>         <span class="comment">--  Receive the used pieces.</span> </pre></li>
+<li id="l199"><pre>         <span class="comment">--* inuse := (others =&gt; False);</span> </pre></li>
+<li id="l200"><pre>         <a href="src_bzip2.adb.html#l47" title="defined at bzip2.adb:47:7">inuse_count</a> := 0; </pre></li>
+<li id="l201"><pre>         <span class="keyword">for</span> i <span class="keyword">in</span> 0 .. 15 <span class="keyword">loop</span> </pre></li>
+<li id="l202"><pre>            <span class="keyword">if</span> <a href="src_bzip2.adb.html#l190" title="defined at bzip2.adb:190:10">inuse16</a> (i) <span class="keyword">then</span> </pre></li>
+<li id="l203"><pre>               <span class="keyword">for</span> j <span class="keyword">in</span> 0 .. 15 <span class="keyword">loop</span> </pre></li>
+<li id="l204"><pre>                  <span class="keyword">if</span> <span class="droplink">get_boolean<ul><li><a href="src_bzip2.adb.html#l163" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l163" title="To body">To body</a></li></ul></span> <span class="keyword">then</span> </pre></li>
+<li id="l205"><pre>                     <span class="comment">--* inuse (16*i + j) := True;</span> </pre></li>
+<li id="l206"><pre>                     <a href="src_bzip2.adb.html#l48" title="defined at bzip2.adb:48:7">seq_to_unseq</a> (<a href="src_bzip2.adb.html#l47" title="defined at bzip2.adb:47:7">inuse_count</a>) := 16 * i + j; </pre></li>
+<li id="l207"><pre>                     <a href="src_bzip2.adb.html#l47" title="defined at bzip2.adb:47:7">inuse_count</a> := <a href="src_bzip2.adb.html#l47" title="defined at bzip2.adb:47:7">inuse_count</a> + 1; </pre></li>
+<li id="l208"><pre>                  <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l209"><pre>               <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l210"><pre>            <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l211"><pre>         <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l212"><pre>      <span class="keyword">end</span> <span class="droplink">receive_mapping_table<ul><li><a href="src_bzip2.adb.html#l189" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l189" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l213"><pre> </pre></li>
+<li id="l214"><pre>      <span class="comment">--  Receives the selectors.</span> </pre></li>
+<li id="l215"><pre>      <span class="keyword">procedure</span> receive_selectors <span class="keyword">is</span> </pre></li>
+<li id="l216"><pre>         j : Unsigned_8; </pre></li>
+<li id="l217"><pre>      <span class="keyword">begin</span> </pre></li>
+<li id="l218"><pre>         <a href="src_bzip2.adb.html#l50" title="defined at bzip2.adb:50:7">group_count</a> := Natural (<span class="droplink">get_bits<ul><li><a href="src_bzip2.adb.html#l141" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l141" title="To body">To body</a></li></ul></span> (3)); </pre></li>
+<li id="l219"><pre>         <a href="src_bzip2.adb.html#l52" title="defined at bzip2.adb:52:7">selector_count</a> := Natural (Shift_Left (<span class="droplink">get_bits_32<ul><li><a href="src_bzip2.adb.html#l158" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l158" title="To body">To body</a></li></ul></span> (8), 7) <span class="keyword">or</span> <span class="droplink">get_bits_32<ul><li><a href="src_bzip2.adb.html#l158" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l158" title="To body">To body</a></li></ul></span> (7)); </pre></li>
+<li id="l220"><pre>         <span class="keyword">for</span> i <span class="keyword">in</span> 0 .. <a href="src_bzip2.adb.html#l52" title="defined at bzip2.adb:52:7">selector_count</a> - 1 <span class="keyword">loop</span> </pre></li>
+<li id="l221"><pre>            <a href="src_bzip2.adb.html#l216" title="defined at bzip2.adb:216:10">j</a> := 0; </pre></li>
+<li id="l222"><pre>            <span class="keyword">while</span> <span class="droplink">get_boolean<ul><li><a href="src_bzip2.adb.html#l163" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l163" title="To body">To body</a></li></ul></span> <span class="keyword">loop</span> </pre></li>
+<li id="l223"><pre>               <a href="src_bzip2.adb.html#l216" title="defined at bzip2.adb:216:10">j</a> := <a href="src_bzip2.adb.html#l216" title="defined at bzip2.adb:216:10">j</a> + 1; </pre></li>
+<li id="l224"><pre>               <span class="keyword">if</span> <a href="src_bzip2.adb.html#l216" title="defined at bzip2.adb:216:10">j</a> &gt; 5 <span class="keyword">then</span> </pre></li>
+<li id="l225"><pre>                  <span class="keyword">raise</span> <span class="droplink">data_error<ul><li><a href="bzip2.ads.html#bzip2.ads:85:3" title="To API doc">To API doc</a></li><li><a href="src_bzip2.ads.html#l85" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l226"><pre>               <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l227"><pre>            <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l228"><pre>            <a href="src_bzip2.adb.html#l53" title="defined at bzip2.adb:53:17">selector_mtf</a> (i) := <a href="src_bzip2.adb.html#l216" title="defined at bzip2.adb:216:10">j</a>; </pre></li>
+<li id="l229"><pre>         <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l230"><pre>      <span class="keyword">end</span> <span class="droplink">receive_selectors<ul><li><a href="src_bzip2.adb.html#l215" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l215" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l231"><pre> </pre></li>
+<li id="l232"><pre>      <span class="comment">--  Undo the MTF values for the selectors.</span> </pre></li>
+<li id="l233"><pre>      <span class="keyword">procedure</span> undo_mtf_values <span class="keyword">is</span> </pre></li>
+<li id="l234"><pre>         pos : <span class="keyword">array</span> (0 .. <a href="src_bzip2.adb.html#l20" title="defined at bzip2.adb:20:7">max_groups</a>) <span class="keyword">of</span> Natural; </pre></li>
+<li id="l235"><pre>         v, tmp : Natural; </pre></li>
+<li id="l236"><pre>      <span class="keyword">begin</span> </pre></li>
+<li id="l237"><pre>         <span class="keyword">for</span> w <span class="keyword">in</span> 0 .. <a href="src_bzip2.adb.html#l50" title="defined at bzip2.adb:50:7">group_count</a> - 1 <span class="keyword">loop</span> </pre></li>
+<li id="l238"><pre>            <a href="src_bzip2.adb.html#l234" title="defined at bzip2.adb:234:10">pos</a> (w) := w; </pre></li>
+<li id="l239"><pre>         <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l240"><pre>         <span class="keyword">for</span> i <span class="keyword">in</span> 0 .. <a href="src_bzip2.adb.html#l52" title="defined at bzip2.adb:52:7">selector_count</a> - 1 <span class="keyword">loop</span> </pre></li>
+<li id="l241"><pre>            <a href="src_bzip2.adb.html#l235" title="defined at bzip2.adb:235:10">v</a> := Natural (<a href="src_bzip2.adb.html#l53" title="defined at bzip2.adb:53:17">selector_mtf</a> (i)); </pre></li>
+<li id="l242"><pre>            <a href="src_bzip2.adb.html#l235" title="defined at bzip2.adb:235:13">tmp</a> := <a href="src_bzip2.adb.html#l234" title="defined at bzip2.adb:234:10">pos</a> (<a href="src_bzip2.adb.html#l235" title="defined at bzip2.adb:235:10">v</a>); </pre></li>
+<li id="l243"><pre>            <span class="keyword">while</span> <a href="src_bzip2.adb.html#l235" title="defined at bzip2.adb:235:10">v</a> /= 0 <span class="keyword">loop</span> </pre></li>
+<li id="l244"><pre>               <a href="src_bzip2.adb.html#l234" title="defined at bzip2.adb:234:10">pos</a> (<a href="src_bzip2.adb.html#l235" title="defined at bzip2.adb:235:10">v</a>) := <a href="src_bzip2.adb.html#l234" title="defined at bzip2.adb:234:10">pos</a> (<a href="src_bzip2.adb.html#l235" title="defined at bzip2.adb:235:10">v</a> - 1); </pre></li>
+<li id="l245"><pre>               <a href="src_bzip2.adb.html#l235" title="defined at bzip2.adb:235:10">v</a> := <a href="src_bzip2.adb.html#l235" title="defined at bzip2.adb:235:10">v</a> - 1; </pre></li>
+<li id="l246"><pre>            <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l247"><pre>            <a href="src_bzip2.adb.html#l234" title="defined at bzip2.adb:234:10">pos</a> (0) := <a href="src_bzip2.adb.html#l235" title="defined at bzip2.adb:235:13">tmp</a>; </pre></li>
+<li id="l248"><pre>            <a href="src_bzip2.adb.html#l53" title="defined at bzip2.adb:53:7">selector</a> (i) := Unsigned_8 (<a href="src_bzip2.adb.html#l235" title="defined at bzip2.adb:235:13">tmp</a>); </pre></li>
+<li id="l249"><pre>         <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l250"><pre>      <span class="keyword">end</span> <span class="droplink">undo_mtf_values<ul><li><a href="src_bzip2.adb.html#l233" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l233" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l251"><pre> </pre></li>
+<li id="l252"><pre>      <span class="keyword">procedure</span> receive_coding_tables <span class="keyword">is</span> </pre></li>
+<li id="l253"><pre>         curr : Natural; </pre></li>
+<li id="l254"><pre>      <span class="keyword">begin</span> </pre></li>
+<li id="l255"><pre>         <span class="keyword">for</span> t <span class="keyword">in</span> 0 .. <a href="src_bzip2.adb.html#l50" title="defined at bzip2.adb:50:7">group_count</a> - 1 <span class="keyword">loop</span> </pre></li>
+<li id="l256"><pre>            <a href="src_bzip2.adb.html#l253" title="defined at bzip2.adb:253:10">curr</a> := Natural (<span class="droplink">get_bits<ul><li><a href="src_bzip2.adb.html#l141" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l141" title="To body">To body</a></li></ul></span> (5)); </pre></li>
+<li id="l257"><pre>            <span class="keyword">for</span> i <span class="keyword">in</span> 0 .. <a href="src_bzip2.adb.html#l49" title="defined at bzip2.adb:49:7">global_alpha_size</a> - 1 <span class="keyword">loop</span> </pre></li>
+<li id="l258"><pre>               <span class="keyword">loop</span> </pre></li>
+<li id="l259"><pre>                  <span class="keyword">if</span> <a href="src_bzip2.adb.html#l253" title="defined at bzip2.adb:253:10">curr</a> <span class="keyword">not</span> <span class="keyword">in</span> 1 .. 20 <span class="keyword">then</span> </pre></li>
+<li id="l260"><pre>                     <span class="keyword">raise</span> <span class="droplink">data_error<ul><li><a href="bzip2.ads.html#bzip2.ads:85:3" title="To API doc">To API doc</a></li><li><a href="src_bzip2.ads.html#l85" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l261"><pre>                  <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l262"><pre>                  <span class="keyword">exit</span> <span class="keyword">when</span> <span class="keyword">not</span> <span class="droplink">get_boolean<ul><li><a href="src_bzip2.adb.html#l163" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l163" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l263"><pre>                  <span class="keyword">if</span> <span class="droplink">get_boolean<ul><li><a href="src_bzip2.adb.html#l163" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l163" title="To body">To body</a></li></ul></span> <span class="keyword">then</span> </pre></li>
+<li id="l264"><pre>                     <a href="src_bzip2.adb.html#l253" title="defined at bzip2.adb:253:10">curr</a> := <a href="src_bzip2.adb.html#l253" title="defined at bzip2.adb:253:10">curr</a> - 1; </pre></li>
+<li id="l265"><pre>                  <span class="keyword">else</span> </pre></li>
+<li id="l266"><pre>                     <a href="src_bzip2.adb.html#l253" title="defined at bzip2.adb:253:10">curr</a> := <a href="src_bzip2.adb.html#l253" title="defined at bzip2.adb:253:10">curr</a> + 1; </pre></li>
+<li id="l267"><pre>                  <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l268"><pre>               <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l269"><pre>               <a href="src_bzip2.adb.html#l58" title="defined at bzip2.adb:58:7">len</a> (t) (i) := <a href="src_bzip2.adb.html#l253" title="defined at bzip2.adb:253:10">curr</a>; </pre></li>
+<li id="l270"><pre>            <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l271"><pre>         <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l272"><pre>      <span class="keyword">end</span> <span class="droplink">receive_coding_tables<ul><li><a href="src_bzip2.adb.html#l252" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l252" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l273"><pre> </pre></li>
+<li id="l274"><pre>      <span class="comment">--  Builds the Huffman tables.</span> </pre></li>
+<li id="l275"><pre>      <span class="keyword">procedure</span> make_hufftab <span class="keyword">is</span> </pre></li>
+<li id="l276"><pre>         minlen, maxlen : Natural; </pre></li>
+<li id="l277"><pre>      <span class="keyword">begin</span> </pre></li>
+<li id="l278"><pre>         <span class="keyword">for</span> t <span class="keyword">in</span> 0 .. <a href="src_bzip2.adb.html#l50" title="defined at bzip2.adb:50:7">group_count</a> - 1 <span class="keyword">loop</span> </pre></li>
+<li id="l279"><pre>            <a href="src_bzip2.adb.html#l276" title="defined at bzip2.adb:276:10">minlen</a> := 32; </pre></li>
+<li id="l280"><pre>            <a href="src_bzip2.adb.html#l276" title="defined at bzip2.adb:276:18">maxlen</a> := 0; </pre></li>
+<li id="l281"><pre>            <span class="keyword">for</span> i <span class="keyword">in</span> 0 .. <a href="src_bzip2.adb.html#l49" title="defined at bzip2.adb:49:7">global_alpha_size</a> - 1 <span class="keyword">loop</span> </pre></li>
+<li id="l282"><pre>               <span class="keyword">if</span> <a href="src_bzip2.adb.html#l58" title="defined at bzip2.adb:58:7">len</a> (t) (i) &gt; <a href="src_bzip2.adb.html#l276" title="defined at bzip2.adb:276:18">maxlen</a> <span class="keyword">then</span> </pre></li>
+<li id="l283"><pre>                  <a href="src_bzip2.adb.html#l276" title="defined at bzip2.adb:276:18">maxlen</a> := <a href="src_bzip2.adb.html#l58" title="defined at bzip2.adb:58:7">len</a> (t) (i); </pre></li>
+<li id="l284"><pre>               <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l285"><pre>               <span class="keyword">if</span> <a href="src_bzip2.adb.html#l58" title="defined at bzip2.adb:58:7">len</a> (t) (i) &lt; <a href="src_bzip2.adb.html#l276" title="defined at bzip2.adb:276:10">minlen</a> <span class="keyword">then</span> </pre></li>
+<li id="l286"><pre>                  <a href="src_bzip2.adb.html#l276" title="defined at bzip2.adb:276:10">minlen</a> := <a href="src_bzip2.adb.html#l58" title="defined at bzip2.adb:58:7">len</a> (t) (i); </pre></li>
+<li id="l287"><pre>               <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l288"><pre>            <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l289"><pre>            <span class="droplink">hb_create_decode_tables<ul><li><a href="src_bzip2.adb.html#l83" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l83" title="To body">To body</a></li></ul></span> (<a href="src_bzip2.adb.html#l59" title="defined at bzip2.adb:59:7">global_limit</a> (t), <a href="src_bzip2.adb.html#l60" title="defined at bzip2.adb:60:7">global_base</a> (t), <a href="src_bzip2.adb.html#l61" title="defined at bzip2.adb:61:7">global_perm</a> (t), <a href="src_bzip2.adb.html#l58" title="defined at bzip2.adb:58:7">len</a> (t), </pre></li>
+<li id="l290"><pre>                                     <a href="src_bzip2.adb.html#l276" title="defined at bzip2.adb:276:10">minlen</a>, <a href="src_bzip2.adb.html#l276" title="defined at bzip2.adb:276:18">maxlen</a>, <a href="src_bzip2.adb.html#l49" title="defined at bzip2.adb:49:7">global_alpha_size</a>); </pre></li>
+<li id="l291"><pre>            <a href="src_bzip2.adb.html#l63" title="defined at bzip2.adb:63:7">minlens</a> (t) := <a href="src_bzip2.adb.html#l276" title="defined at bzip2.adb:276:10">minlen</a>; </pre></li>
+<li id="l292"><pre>         <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l293"><pre>      <span class="keyword">end</span> <span class="droplink">make_hufftab<ul><li><a href="src_bzip2.adb.html#l275" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l275" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l294"><pre> </pre></li>
+<li id="l295"><pre>      <span class="comment">-------------------------</span> </pre></li>
+<li id="l296"><pre>      <span class="comment">-- MTF - Move To Front --</span> </pre></li>
+<li id="l297"><pre>      <span class="comment">-------------------------</span> </pre></li>
+<li id="l298"><pre> </pre></li>
+<li id="l299"><pre>      <span class="keyword">procedure</span> receive_mtf_values <span class="keyword">is</span> </pre></li>
+<li id="l300"><pre>         <span class="comment">--</span> </pre></li>
+<li id="l301"><pre>         mtfa_size : <span class="keyword">constant</span> := 4096; </pre></li>
+<li id="l302"><pre>         mtfl_size : <span class="keyword">constant</span> := 16; </pre></li>
+<li id="l303"><pre>         mtfbase : <span class="keyword">array</span> (0 .. 256 / <a href="src_bzip2.adb.html#l302" title="defined at bzip2.adb:302:10">mtfl_size</a> - 1) <span class="keyword">of</span> Natural; </pre></li>
+<li id="l304"><pre>         mtfa : <span class="keyword">array</span> (0 .. <a href="src_bzip2.adb.html#l301" title="defined at bzip2.adb:301:10">mtfa_size</a> - 1) <span class="keyword">of</span> Natural; </pre></li>
+<li id="l305"><pre>         <span class="comment">--</span> </pre></li>
+<li id="l306"><pre>         <span class="keyword">procedure</span> init_mtf <span class="keyword">is</span> </pre></li>
+<li id="l307"><pre>            k : Natural := <a href="src_bzip2.adb.html#l301" title="defined at bzip2.adb:301:10">mtfa_size</a> - 1; </pre></li>
+<li id="l308"><pre>         <span class="keyword">begin</span> </pre></li>
+<li id="l309"><pre>            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="keyword">reverse</span> 0 .. 256  /  <a href="src_bzip2.adb.html#l302" title="defined at bzip2.adb:302:10">mtfl_size</a> - 1 <span class="keyword">loop</span> </pre></li>
+<li id="l310"><pre>               <span class="keyword">for</span> j <span class="keyword">in</span> <span class="keyword">reverse</span> 0 .. <a href="src_bzip2.adb.html#l302" title="defined at bzip2.adb:302:10">mtfl_size</a> - 1 <span class="keyword">loop</span> </pre></li>
+<li id="l311"><pre>                  <a href="src_bzip2.adb.html#l304" title="defined at bzip2.adb:304:10">mtfa</a> (<a href="src_bzip2.adb.html#l307" title="defined at bzip2.adb:307:13">k</a>) := i * <a href="src_bzip2.adb.html#l302" title="defined at bzip2.adb:302:10">mtfl_size</a> + j; </pre></li>
+<li id="l312"><pre>                  <a href="src_bzip2.adb.html#l307" title="defined at bzip2.adb:307:13">k</a> := <a href="src_bzip2.adb.html#l307" title="defined at bzip2.adb:307:13">k</a> - 1; </pre></li>
+<li id="l313"><pre>               <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l314"><pre>               <a href="src_bzip2.adb.html#l303" title="defined at bzip2.adb:303:10">mtfbase</a> (i) := <a href="src_bzip2.adb.html#l307" title="defined at bzip2.adb:307:13">k</a> + 1; </pre></li>
+<li id="l315"><pre>            <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l316"><pre>         <span class="keyword">end</span> <span class="droplink">init_mtf<ul><li><a href="src_bzip2.adb.html#l306" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l306" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l317"><pre>         <span class="comment">--</span> </pre></li>
+<li id="l318"><pre>         group_pos, group_no : Integer; </pre></li>
+<li id="l319"><pre>         gminlen, gsel : Natural; </pre></li>
+<li id="l320"><pre>         <span class="comment">--</span> </pre></li>
+<li id="l321"><pre>         <span class="keyword">function</span> get_mtf_value <span class="keyword">return</span> Unsigned_32 <span class="keyword">is</span> </pre></li>
+<li id="l322"><pre>            zn : Natural; </pre></li>
+<li id="l323"><pre>            zvec : Unsigned_32; </pre></li>
+<li id="l324"><pre>         <span class="keyword">begin</span> </pre></li>
+<li id="l325"><pre>            <span class="keyword">if</span> <a href="src_bzip2.adb.html#l318" title="defined at bzip2.adb:318:10">group_pos</a> = 0 <span class="keyword">then</span> </pre></li>
+<li id="l326"><pre>               <a href="src_bzip2.adb.html#l318" title="defined at bzip2.adb:318:21">group_no</a> := <a href="src_bzip2.adb.html#l318" title="defined at bzip2.adb:318:21">group_no</a> + 1; </pre></li>
+<li id="l327"><pre>               <a href="src_bzip2.adb.html#l318" title="defined at bzip2.adb:318:10">group_pos</a> := <a href="src_bzip2.adb.html#l23" title="defined at bzip2.adb:23:7">group_size</a>; </pre></li>
+<li id="l328"><pre>               <a href="src_bzip2.adb.html#l319" title="defined at bzip2.adb:319:19">gsel</a> := Natural (<a href="src_bzip2.adb.html#l53" title="defined at bzip2.adb:53:7">selector</a> (<a href="src_bzip2.adb.html#l318" title="defined at bzip2.adb:318:21">group_no</a>)); </pre></li>
+<li id="l329"><pre>               <a href="src_bzip2.adb.html#l319" title="defined at bzip2.adb:319:10">gminlen</a> := <a href="src_bzip2.adb.html#l63" title="defined at bzip2.adb:63:7">minlens</a> (<a href="src_bzip2.adb.html#l319" title="defined at bzip2.adb:319:19">gsel</a>); </pre></li>
+<li id="l330"><pre>            <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l331"><pre>            <a href="src_bzip2.adb.html#l318" title="defined at bzip2.adb:318:10">group_pos</a> := <a href="src_bzip2.adb.html#l318" title="defined at bzip2.adb:318:10">group_pos</a> - 1; </pre></li>
+<li id="l332"><pre>            <a href="src_bzip2.adb.html#l322" title="defined at bzip2.adb:322:13">zn</a> := <a href="src_bzip2.adb.html#l319" title="defined at bzip2.adb:319:10">gminlen</a>; </pre></li>
+<li id="l333"><pre>            <a href="src_bzip2.adb.html#l323" title="defined at bzip2.adb:323:13">zvec</a> := <span class="droplink">get_bits_32<ul><li><a href="src_bzip2.adb.html#l158" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l158" title="To body">To body</a></li></ul></span> (<a href="src_bzip2.adb.html#l322" title="defined at bzip2.adb:322:13">zn</a>); </pre></li>
+<li id="l334"><pre>            <span class="keyword">while</span> <a href="src_bzip2.adb.html#l323" title="defined at bzip2.adb:323:13">zvec</a> &gt; <a href="src_bzip2.adb.html#l59" title="defined at bzip2.adb:59:7">global_limit</a> (<a href="src_bzip2.adb.html#l319" title="defined at bzip2.adb:319:19">gsel</a>) (<a href="src_bzip2.adb.html#l322" title="defined at bzip2.adb:322:13">zn</a>) <span class="keyword">loop</span> </pre></li>
+<li id="l335"><pre>               <a href="src_bzip2.adb.html#l322" title="defined at bzip2.adb:322:13">zn</a> := <a href="src_bzip2.adb.html#l322" title="defined at bzip2.adb:322:13">zn</a> + 1; </pre></li>
+<li id="l336"><pre>               <a href="src_bzip2.adb.html#l323" title="defined at bzip2.adb:323:13">zvec</a> := Shift_Left (<a href="src_bzip2.adb.html#l323" title="defined at bzip2.adb:323:13">zvec</a>, 1) <span class="keyword">or</span> <span class="droplink">get_bits_32<ul><li><a href="src_bzip2.adb.html#l158" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l158" title="To body">To body</a></li></ul></span> (1); </pre></li>
+<li id="l337"><pre>            <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l338"><pre>            <span class="keyword">return</span> <a href="src_bzip2.adb.html#l61" title="defined at bzip2.adb:61:7">global_perm</a> (<a href="src_bzip2.adb.html#l319" title="defined at bzip2.adb:319:19">gsel</a>) (Natural (<a href="src_bzip2.adb.html#l323" title="defined at bzip2.adb:323:13">zvec</a> - <a href="src_bzip2.adb.html#l60" title="defined at bzip2.adb:60:7">global_base</a> (<a href="src_bzip2.adb.html#l319" title="defined at bzip2.adb:319:19">gsel</a>) (<a href="src_bzip2.adb.html#l322" title="defined at bzip2.adb:322:13">zn</a>))); </pre></li>
+<li id="l339"><pre>         <span class="keyword">end</span> <span class="droplink">get_mtf_value<ul><li><a href="src_bzip2.adb.html#l321" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l321" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l340"><pre>         <span class="comment">--</span> </pre></li>
+<li id="l341"><pre>         <span class="keyword">procedure</span> move_mtf_block <span class="keyword">is</span> </pre></li>
+<li id="l342"><pre>            j, k : Natural; </pre></li>
+<li id="l343"><pre>         <span class="keyword">begin</span> </pre></li>
+<li id="l344"><pre>            <a href="src_bzip2.adb.html#l342" title="defined at bzip2.adb:342:16">k</a> := <a href="src_bzip2.adb.html#l301" title="defined at bzip2.adb:301:10">mtfa_size</a>; </pre></li>
+<li id="l345"><pre>            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="keyword">reverse</span> 0 .. 256  /  <a href="src_bzip2.adb.html#l302" title="defined at bzip2.adb:302:10">mtfl_size</a> - 1 <span class="keyword">loop</span> </pre></li>
+<li id="l346"><pre>               <a href="src_bzip2.adb.html#l342" title="defined at bzip2.adb:342:13">j</a> := <a href="src_bzip2.adb.html#l303" title="defined at bzip2.adb:303:10">mtfbase</a> (i); </pre></li>
+<li id="l347"><pre>               <a href="src_bzip2.adb.html#l304" title="defined at bzip2.adb:304:10">mtfa</a> (<a href="src_bzip2.adb.html#l342" title="defined at bzip2.adb:342:16">k</a> - 16 .. <a href="src_bzip2.adb.html#l342" title="defined at bzip2.adb:342:16">k</a> - 1) := <a href="src_bzip2.adb.html#l304" title="defined at bzip2.adb:304:10">mtfa</a> (<a href="src_bzip2.adb.html#l342" title="defined at bzip2.adb:342:13">j</a> .. <a href="src_bzip2.adb.html#l342" title="defined at bzip2.adb:342:13">j</a> + 15); </pre></li>
+<li id="l348"><pre>               <a href="src_bzip2.adb.html#l342" title="defined at bzip2.adb:342:16">k</a> := <a href="src_bzip2.adb.html#l342" title="defined at bzip2.adb:342:16">k</a> - 16; </pre></li>
+<li id="l349"><pre>               <a href="src_bzip2.adb.html#l303" title="defined at bzip2.adb:303:10">mtfbase</a> (i) := <a href="src_bzip2.adb.html#l342" title="defined at bzip2.adb:342:16">k</a>; </pre></li>
+<li id="l350"><pre>            <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l351"><pre>         <span class="keyword">end</span> <span class="droplink">move_mtf_block<ul><li><a href="src_bzip2.adb.html#l341" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l341" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l352"><pre>         <span class="comment">--</span> </pre></li>
+<li id="l353"><pre>         run_b : <span class="keyword">constant</span> := 1; </pre></li>
+<li id="l354"><pre>         t : Natural; </pre></li>
+<li id="l355"><pre>         next_sym : Unsigned_32; </pre></li>
+<li id="l356"><pre>         es : Natural; </pre></li>
+<li id="l357"><pre>         n, nn : Natural; </pre></li>
+<li id="l358"><pre>         p, q : Natural; <span class="comment">-- indexes mtfa</span> </pre></li>
+<li id="l359"><pre>         u, v : Natural; <span class="comment">-- indexes mtfbase</span> </pre></li>
+<li id="l360"><pre>         lno, off : Natural; </pre></li>
+<li id="l361"><pre>      <span class="keyword">begin</span> <span class="comment">-- receive_mtf_values</span> </pre></li>
+<li id="l362"><pre>         <a href="src_bzip2.adb.html#l318" title="defined at bzip2.adb:318:21">group_no</a> := -1; </pre></li>
+<li id="l363"><pre>         <a href="src_bzip2.adb.html#l318" title="defined at bzip2.adb:318:10">group_pos</a> := 0; </pre></li>
+<li id="l364"><pre>         <a href="src_bzip2.adb.html#l354" title="defined at bzip2.adb:354:10">t</a> := 0; </pre></li>
+<li id="l365"><pre>         <a href="src_bzip2.adb.html#l64" title="defined at bzip2.adb:64:7">cftab</a> := (<span class="keyword">others</span> =&gt; 0); </pre></li>
+<li id="l366"><pre>         <span class="droplink">init_mtf<ul><li><a href="src_bzip2.adb.html#l306" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l306" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l367"><pre>         <a href="src_bzip2.adb.html#l355" title="defined at bzip2.adb:355:10">next_sym</a> := <span class="droplink">get_mtf_value<ul><li><a href="src_bzip2.adb.html#l321" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l321" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l368"><pre>         <span class="comment">--</span> </pre></li>
+<li id="l369"><pre>         <span class="keyword">while</span> Natural (<a href="src_bzip2.adb.html#l355" title="defined at bzip2.adb:355:10">next_sym</a>) /= <a href="src_bzip2.adb.html#l47" title="defined at bzip2.adb:47:7">inuse_count</a> + 1 <span class="keyword">loop</span> </pre></li>
+<li id="l370"><pre>            <span class="keyword">if</span> <a href="src_bzip2.adb.html#l355" title="defined at bzip2.adb:355:10">next_sym</a> &lt;= <a href="src_bzip2.adb.html#l353" title="defined at bzip2.adb:353:10">run_b</a> <span class="keyword">then</span> </pre></li>
+<li id="l371"><pre>               <a href="src_bzip2.adb.html#l356" title="defined at bzip2.adb:356:10">es</a> := 0; </pre></li>
+<li id="l372"><pre>               <a href="src_bzip2.adb.html#l357" title="defined at bzip2.adb:357:10">n</a> := 0; </pre></li>
+<li id="l373"><pre>               <span class="keyword">loop</span> </pre></li>
+<li id="l374"><pre>                  <a href="src_bzip2.adb.html#l356" title="defined at bzip2.adb:356:10">es</a> := <a href="src_bzip2.adb.html#l356" title="defined at bzip2.adb:356:10">es</a> + Natural (Shift_Left (<a href="src_bzip2.adb.html#l355" title="defined at bzip2.adb:355:10">next_sym</a> + 1, <a href="src_bzip2.adb.html#l357" title="defined at bzip2.adb:357:10">n</a>)); </pre></li>
+<li id="l375"><pre>                  <a href="src_bzip2.adb.html#l357" title="defined at bzip2.adb:357:10">n</a> := <a href="src_bzip2.adb.html#l357" title="defined at bzip2.adb:357:10">n</a> + 1; </pre></li>
+<li id="l376"><pre>                  <a href="src_bzip2.adb.html#l355" title="defined at bzip2.adb:355:10">next_sym</a> := <span class="droplink">get_mtf_value<ul><li><a href="src_bzip2.adb.html#l321" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l321" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l377"><pre>                  <span class="keyword">exit</span> <span class="keyword">when</span> <a href="src_bzip2.adb.html#l355" title="defined at bzip2.adb:355:10">next_sym</a> &gt; <a href="src_bzip2.adb.html#l353" title="defined at bzip2.adb:353:10">run_b</a>; </pre></li>
+<li id="l378"><pre>               <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l379"><pre>               <a href="src_bzip2.adb.html#l357" title="defined at bzip2.adb:357:10">n</a> := <a href="src_bzip2.adb.html#l48" title="defined at bzip2.adb:48:7">seq_to_unseq</a> (<a href="src_bzip2.adb.html#l304" title="defined at bzip2.adb:304:10">mtfa</a> (<a href="src_bzip2.adb.html#l303" title="defined at bzip2.adb:303:10">mtfbase</a> (0))); </pre></li>
+<li id="l380"><pre>               <a href="src_bzip2.adb.html#l64" title="defined at bzip2.adb:64:7">cftab</a> (<a href="src_bzip2.adb.html#l357" title="defined at bzip2.adb:357:10">n</a>) := <a href="src_bzip2.adb.html#l64" title="defined at bzip2.adb:64:7">cftab</a> (<a href="src_bzip2.adb.html#l357" title="defined at bzip2.adb:357:10">n</a>) + <a href="src_bzip2.adb.html#l356" title="defined at bzip2.adb:356:10">es</a>; </pre></li>
+<li id="l381"><pre>               <span class="keyword">if</span> <a href="src_bzip2.adb.html#l354" title="defined at bzip2.adb:354:10">t</a> + <a href="src_bzip2.adb.html#l356" title="defined at bzip2.adb:356:10">es</a> &gt; <a href="src_bzip2.adb.html#l26" title="defined at bzip2.adb:26:7">sub_block_size</a> * <a href="src_bzip2.adb.html#l31" title="defined at bzip2.adb:31:7">block_size</a> <span class="keyword">then</span> </pre></li>
+<li id="l382"><pre>                  <span class="keyword">raise</span> <span class="droplink">data_error<ul><li><a href="bzip2.ads.html#bzip2.ads:85:3" title="To API doc">To API doc</a></li><li><a href="src_bzip2.ads.html#l85" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l383"><pre>               <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l384"><pre>               <span class="keyword">while</span> <a href="src_bzip2.adb.html#l356" title="defined at bzip2.adb:356:10">es</a> &gt; 0 <span class="keyword">loop</span> </pre></li>
+<li id="l385"><pre>                  <a href="src_bzip2.adb.html#l38" title="defined at bzip2.adb:38:7">tt</a>.<span class="keyword">all</span> (<a href="src_bzip2.adb.html#l354" title="defined at bzip2.adb:354:10">t</a>) := Unsigned_32 (<a href="src_bzip2.adb.html#l357" title="defined at bzip2.adb:357:10">n</a>); </pre></li>
+<li id="l386"><pre>                  <a href="src_bzip2.adb.html#l356" title="defined at bzip2.adb:356:10">es</a> := <a href="src_bzip2.adb.html#l356" title="defined at bzip2.adb:356:10">es</a> - 1; </pre></li>
+<li id="l387"><pre>                  <a href="src_bzip2.adb.html#l354" title="defined at bzip2.adb:354:10">t</a> := <a href="src_bzip2.adb.html#l354" title="defined at bzip2.adb:354:10">t</a> + 1; </pre></li>
+<li id="l388"><pre>               <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l389"><pre>            <span class="keyword">else</span> </pre></li>
+<li id="l390"><pre>               <a href="src_bzip2.adb.html#l357" title="defined at bzip2.adb:357:13">nn</a> := Natural (<a href="src_bzip2.adb.html#l355" title="defined at bzip2.adb:355:10">next_sym</a> - 1); </pre></li>
+<li id="l391"><pre>               <span class="keyword">if</span> <a href="src_bzip2.adb.html#l357" title="defined at bzip2.adb:357:13">nn</a> &lt; <a href="src_bzip2.adb.html#l302" title="defined at bzip2.adb:302:10">mtfl_size</a> <span class="keyword">then</span> </pre></li>
+<li id="l392"><pre>                  <span class="comment">-- Avoid the costs of the general case.</span> </pre></li>
+<li id="l393"><pre>                  <a href="src_bzip2.adb.html#l358" title="defined at bzip2.adb:358:10">p</a> := <a href="src_bzip2.adb.html#l303" title="defined at bzip2.adb:303:10">mtfbase</a> (0); </pre></li>
+<li id="l394"><pre>                  <a href="src_bzip2.adb.html#l358" title="defined at bzip2.adb:358:13">q</a> := <a href="src_bzip2.adb.html#l358" title="defined at bzip2.adb:358:10">p</a> + <a href="src_bzip2.adb.html#l357" title="defined at bzip2.adb:357:13">nn</a>; </pre></li>
+<li id="l395"><pre>                  <a href="src_bzip2.adb.html#l357" title="defined at bzip2.adb:357:10">n</a> := <a href="src_bzip2.adb.html#l304" title="defined at bzip2.adb:304:10">mtfa</a> (<a href="src_bzip2.adb.html#l358" title="defined at bzip2.adb:358:13">q</a>); </pre></li>
+<li id="l396"><pre>                  <span class="keyword">loop</span> </pre></li>
+<li id="l397"><pre>                     <a href="src_bzip2.adb.html#l304" title="defined at bzip2.adb:304:10">mtfa</a> (<a href="src_bzip2.adb.html#l358" title="defined at bzip2.adb:358:13">q</a>) := <a href="src_bzip2.adb.html#l304" title="defined at bzip2.adb:304:10">mtfa</a> (<a href="src_bzip2.adb.html#l358" title="defined at bzip2.adb:358:13">q</a> - 1); </pre></li>
+<li id="l398"><pre>                     <a href="src_bzip2.adb.html#l358" title="defined at bzip2.adb:358:13">q</a> := <a href="src_bzip2.adb.html#l358" title="defined at bzip2.adb:358:13">q</a> - 1; </pre></li>
+<li id="l399"><pre>                     <span class="keyword">exit</span> <span class="keyword">when</span> <a href="src_bzip2.adb.html#l358" title="defined at bzip2.adb:358:13">q</a> = <a href="src_bzip2.adb.html#l358" title="defined at bzip2.adb:358:10">p</a>; </pre></li>
+<li id="l400"><pre>                  <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l401"><pre>                  <a href="src_bzip2.adb.html#l304" title="defined at bzip2.adb:304:10">mtfa</a> (<a href="src_bzip2.adb.html#l358" title="defined at bzip2.adb:358:13">q</a>) := <a href="src_bzip2.adb.html#l357" title="defined at bzip2.adb:357:10">n</a>; </pre></li>
+<li id="l402"><pre>               <span class="keyword">else</span> </pre></li>
+<li id="l403"><pre>                  <span class="comment">--  General case.</span> </pre></li>
+<li id="l404"><pre>                  <a href="src_bzip2.adb.html#l360" title="defined at bzip2.adb:360:10">lno</a> := <a href="src_bzip2.adb.html#l357" title="defined at bzip2.adb:357:13">nn</a>   /   <a href="src_bzip2.adb.html#l302" title="defined at bzip2.adb:302:10">mtfl_size</a>; </pre></li>
+<li id="l405"><pre>                  <a href="src_bzip2.adb.html#l360" title="defined at bzip2.adb:360:15">off</a> := <a href="src_bzip2.adb.html#l357" title="defined at bzip2.adb:357:13">nn</a>  <span class="keyword">mod</span>  <a href="src_bzip2.adb.html#l302" title="defined at bzip2.adb:302:10">mtfl_size</a>; </pre></li>
+<li id="l406"><pre>                  <a href="src_bzip2.adb.html#l358" title="defined at bzip2.adb:358:10">p</a> := <a href="src_bzip2.adb.html#l303" title="defined at bzip2.adb:303:10">mtfbase</a> (<a href="src_bzip2.adb.html#l360" title="defined at bzip2.adb:360:10">lno</a>); </pre></li>
+<li id="l407"><pre>                  <a href="src_bzip2.adb.html#l358" title="defined at bzip2.adb:358:13">q</a> := <a href="src_bzip2.adb.html#l358" title="defined at bzip2.adb:358:10">p</a> + <a href="src_bzip2.adb.html#l360" title="defined at bzip2.adb:360:15">off</a>; </pre></li>
+<li id="l408"><pre>                  <a href="src_bzip2.adb.html#l357" title="defined at bzip2.adb:357:10">n</a> := <a href="src_bzip2.adb.html#l304" title="defined at bzip2.adb:304:10">mtfa</a> (<a href="src_bzip2.adb.html#l358" title="defined at bzip2.adb:358:13">q</a>); </pre></li>
+<li id="l409"><pre>                  <span class="keyword">while</span> <a href="src_bzip2.adb.html#l358" title="defined at bzip2.adb:358:13">q</a> /= <a href="src_bzip2.adb.html#l358" title="defined at bzip2.adb:358:10">p</a> <span class="keyword">loop</span> </pre></li>
+<li id="l410"><pre>                     <a href="src_bzip2.adb.html#l304" title="defined at bzip2.adb:304:10">mtfa</a> (<a href="src_bzip2.adb.html#l358" title="defined at bzip2.adb:358:13">q</a>) := <a href="src_bzip2.adb.html#l304" title="defined at bzip2.adb:304:10">mtfa</a> (<a href="src_bzip2.adb.html#l358" title="defined at bzip2.adb:358:13">q</a> - 1); </pre></li>
+<li id="l411"><pre>                     <a href="src_bzip2.adb.html#l358" title="defined at bzip2.adb:358:13">q</a> := <a href="src_bzip2.adb.html#l358" title="defined at bzip2.adb:358:13">q</a> - 1; </pre></li>
+<li id="l412"><pre>                  <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l413"><pre>                  <a href="src_bzip2.adb.html#l359" title="defined at bzip2.adb:359:10">u</a> := <a href="src_bzip2.adb.html#l303" title="defined at bzip2.adb:303:10">mtfbase</a>&apos;First; </pre></li>
+<li id="l414"><pre>                  <a href="src_bzip2.adb.html#l359" title="defined at bzip2.adb:359:13">v</a> := <a href="src_bzip2.adb.html#l359" title="defined at bzip2.adb:359:10">u</a> + <a href="src_bzip2.adb.html#l360" title="defined at bzip2.adb:360:10">lno</a>; </pre></li>
+<li id="l415"><pre>                  <span class="keyword">loop</span> </pre></li>
+<li id="l416"><pre>                     <a href="src_bzip2.adb.html#l304" title="defined at bzip2.adb:304:10">mtfa</a> (<a href="src_bzip2.adb.html#l303" title="defined at bzip2.adb:303:10">mtfbase</a> (<a href="src_bzip2.adb.html#l359" title="defined at bzip2.adb:359:13">v</a>)) := <a href="src_bzip2.adb.html#l304" title="defined at bzip2.adb:304:10">mtfa</a> (<a href="src_bzip2.adb.html#l303" title="defined at bzip2.adb:303:10">mtfbase</a> (<a href="src_bzip2.adb.html#l359" title="defined at bzip2.adb:359:13">v</a> - 1) + <a href="src_bzip2.adb.html#l302" title="defined at bzip2.adb:302:10">mtfl_size</a> - 1); </pre></li>
+<li id="l417"><pre>                     <a href="src_bzip2.adb.html#l359" title="defined at bzip2.adb:359:13">v</a> := <a href="src_bzip2.adb.html#l359" title="defined at bzip2.adb:359:13">v</a> - 1; </pre></li>
+<li id="l418"><pre>                     <a href="src_bzip2.adb.html#l303" title="defined at bzip2.adb:303:10">mtfbase</a> (<a href="src_bzip2.adb.html#l359" title="defined at bzip2.adb:359:13">v</a>) := <a href="src_bzip2.adb.html#l303" title="defined at bzip2.adb:303:10">mtfbase</a> (<a href="src_bzip2.adb.html#l359" title="defined at bzip2.adb:359:13">v</a>) - 1; </pre></li>
+<li id="l419"><pre>                     <span class="keyword">exit</span> <span class="keyword">when</span> <a href="src_bzip2.adb.html#l359" title="defined at bzip2.adb:359:13">v</a> = <a href="src_bzip2.adb.html#l359" title="defined at bzip2.adb:359:10">u</a>; </pre></li>
+<li id="l420"><pre>                  <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l421"><pre>                  <a href="src_bzip2.adb.html#l304" title="defined at bzip2.adb:304:10">mtfa</a> (<a href="src_bzip2.adb.html#l303" title="defined at bzip2.adb:303:10">mtfbase</a> (<a href="src_bzip2.adb.html#l359" title="defined at bzip2.adb:359:13">v</a>)) := <a href="src_bzip2.adb.html#l357" title="defined at bzip2.adb:357:10">n</a>; </pre></li>
+<li id="l422"><pre>                  <span class="keyword">if</span> <a href="src_bzip2.adb.html#l303" title="defined at bzip2.adb:303:10">mtfbase</a> (<a href="src_bzip2.adb.html#l359" title="defined at bzip2.adb:359:13">v</a>) = 0 <span class="keyword">then</span> </pre></li>
+<li id="l423"><pre>                     <span class="droplink">move_mtf_block<ul><li><a href="src_bzip2.adb.html#l341" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l341" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l424"><pre>                  <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l425"><pre>               <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l426"><pre>               <a href="src_bzip2.adb.html#l64" title="defined at bzip2.adb:64:7">cftab</a> (<a href="src_bzip2.adb.html#l48" title="defined at bzip2.adb:48:7">seq_to_unseq</a> (<a href="src_bzip2.adb.html#l357" title="defined at bzip2.adb:357:10">n</a>)) := <a href="src_bzip2.adb.html#l64" title="defined at bzip2.adb:64:7">cftab</a> (<a href="src_bzip2.adb.html#l48" title="defined at bzip2.adb:48:7">seq_to_unseq</a> (<a href="src_bzip2.adb.html#l357" title="defined at bzip2.adb:357:10">n</a>)) + 1; </pre></li>
+<li id="l427"><pre>               <a href="src_bzip2.adb.html#l38" title="defined at bzip2.adb:38:7">tt</a>.<span class="keyword">all</span> (<a href="src_bzip2.adb.html#l354" title="defined at bzip2.adb:354:10">t</a>) := Unsigned_32 (<a href="src_bzip2.adb.html#l48" title="defined at bzip2.adb:48:7">seq_to_unseq</a> (<a href="src_bzip2.adb.html#l357" title="defined at bzip2.adb:357:10">n</a>)); </pre></li>
+<li id="l428"><pre>               <a href="src_bzip2.adb.html#l354" title="defined at bzip2.adb:354:10">t</a> := <a href="src_bzip2.adb.html#l354" title="defined at bzip2.adb:354:10">t</a> + 1; </pre></li>
+<li id="l429"><pre>               <span class="keyword">if</span> <a href="src_bzip2.adb.html#l354" title="defined at bzip2.adb:354:10">t</a> &gt; <a href="src_bzip2.adb.html#l26" title="defined at bzip2.adb:26:7">sub_block_size</a> * <a href="src_bzip2.adb.html#l31" title="defined at bzip2.adb:31:7">block_size</a> <span class="keyword">then</span> </pre></li>
+<li id="l430"><pre>                  <span class="keyword">raise</span> <span class="droplink">data_error<ul><li><a href="bzip2.ads.html#bzip2.ads:85:3" title="To API doc">To API doc</a></li><li><a href="src_bzip2.ads.html#l85" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l431"><pre>               <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l432"><pre>               <a href="src_bzip2.adb.html#l355" title="defined at bzip2.adb:355:10">next_sym</a> := <span class="droplink">get_mtf_value<ul><li><a href="src_bzip2.adb.html#l321" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l321" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l433"><pre>            <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l434"><pre>         <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l435"><pre>         <a href="src_bzip2.adb.html#l39" title="defined at bzip2.adb:39:7">tt_count</a> := <a href="src_bzip2.adb.html#l354" title="defined at bzip2.adb:354:10">t</a>; </pre></li>
+<li id="l436"><pre>         <span class="comment">--  Setup cftab to facilitate generation of T^ ( - 1).</span> </pre></li>
+<li id="l437"><pre>         <a href="src_bzip2.adb.html#l354" title="defined at bzip2.adb:354:10">t</a> := 0; </pre></li>
+<li id="l438"><pre>         <span class="keyword">for</span> i <span class="keyword">in</span> 0 .. 256 <span class="keyword">loop</span> </pre></li>
+<li id="l439"><pre>            <a href="src_bzip2.adb.html#l357" title="defined at bzip2.adb:357:13">nn</a> := <a href="src_bzip2.adb.html#l64" title="defined at bzip2.adb:64:7">cftab</a> (i); </pre></li>
+<li id="l440"><pre>            <a href="src_bzip2.adb.html#l64" title="defined at bzip2.adb:64:7">cftab</a> (i) := <a href="src_bzip2.adb.html#l354" title="defined at bzip2.adb:354:10">t</a>; </pre></li>
+<li id="l441"><pre>            <a href="src_bzip2.adb.html#l354" title="defined at bzip2.adb:354:10">t</a> := <a href="src_bzip2.adb.html#l354" title="defined at bzip2.adb:354:10">t</a> + <a href="src_bzip2.adb.html#l357" title="defined at bzip2.adb:357:13">nn</a>; </pre></li>
+<li id="l442"><pre>         <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l443"><pre>      <span class="keyword">end</span> <span class="droplink">receive_mtf_values<ul><li><a href="src_bzip2.adb.html#l299" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l299" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l444"><pre> </pre></li>
+<li id="l445"><pre>      <span class="keyword">procedure</span> detransform <span class="keyword">is</span> </pre></li>
+<li id="l446"><pre>         a : Unsigned_32; </pre></li>
+<li id="l447"><pre>         p, q, r, i255 : Natural; </pre></li>
+<li id="l448"><pre>      <span class="keyword">begin</span> </pre></li>
+<li id="l449"><pre>         <a href="src_bzip2.adb.html#l446" title="defined at bzip2.adb:446:10">a</a> := 0; </pre></li>
+<li id="l450"><pre>         <a href="src_bzip2.adb.html#l447" title="defined at bzip2.adb:447:10">p</a> := <a href="src_bzip2.adb.html#l38" title="defined at bzip2.adb:38:7">tt</a>&apos;First; </pre></li>
+<li id="l451"><pre>         <a href="src_bzip2.adb.html#l447" title="defined at bzip2.adb:447:13">q</a> := <a href="src_bzip2.adb.html#l447" title="defined at bzip2.adb:447:10">p</a> + <a href="src_bzip2.adb.html#l39" title="defined at bzip2.adb:39:7">tt_count</a>; </pre></li>
+<li id="l452"><pre>         <span class="keyword">while</span> <a href="src_bzip2.adb.html#l447" title="defined at bzip2.adb:447:10">p</a> /= <a href="src_bzip2.adb.html#l447" title="defined at bzip2.adb:447:13">q</a> <span class="keyword">loop</span> </pre></li>
+<li id="l453"><pre>            <a href="src_bzip2.adb.html#l447" title="defined at bzip2.adb:447:19">i255</a> := Natural (<a href="src_bzip2.adb.html#l38" title="defined at bzip2.adb:38:7">tt</a>.<span class="keyword">all</span> (<a href="src_bzip2.adb.html#l447" title="defined at bzip2.adb:447:10">p</a>) <span class="keyword">and</span> 16#ff#); </pre></li>
+<li id="l454"><pre>            <a href="src_bzip2.adb.html#l447" title="defined at bzip2.adb:447:16">r</a> := <a href="src_bzip2.adb.html#l64" title="defined at bzip2.adb:64:7">cftab</a> (<a href="src_bzip2.adb.html#l447" title="defined at bzip2.adb:447:19">i255</a>); </pre></li>
+<li id="l455"><pre>            <a href="src_bzip2.adb.html#l64" title="defined at bzip2.adb:64:7">cftab</a> (<a href="src_bzip2.adb.html#l447" title="defined at bzip2.adb:447:19">i255</a>) := <a href="src_bzip2.adb.html#l64" title="defined at bzip2.adb:64:7">cftab</a> (<a href="src_bzip2.adb.html#l447" title="defined at bzip2.adb:447:19">i255</a>) + 1; </pre></li>
+<li id="l456"><pre>            <a href="src_bzip2.adb.html#l38" title="defined at bzip2.adb:38:7">tt</a>.<span class="keyword">all</span> (<a href="src_bzip2.adb.html#l447" title="defined at bzip2.adb:447:16">r</a>) := <a href="src_bzip2.adb.html#l38" title="defined at bzip2.adb:38:7">tt</a>.<span class="keyword">all</span> (<a href="src_bzip2.adb.html#l447" title="defined at bzip2.adb:447:16">r</a>) <span class="keyword">or</span> <a href="src_bzip2.adb.html#l446" title="defined at bzip2.adb:446:10">a</a>; </pre></li>
+<li id="l457"><pre>            <a href="src_bzip2.adb.html#l446" title="defined at bzip2.adb:446:10">a</a> := <a href="src_bzip2.adb.html#l446" title="defined at bzip2.adb:446:10">a</a> + 256; </pre></li>
+<li id="l458"><pre>            <a href="src_bzip2.adb.html#l447" title="defined at bzip2.adb:447:10">p</a> := <a href="src_bzip2.adb.html#l447" title="defined at bzip2.adb:447:10">p</a> + 1; </pre></li>
+<li id="l459"><pre>         <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l460"><pre>      <span class="keyword">end</span> <span class="droplink">detransform<ul><li><a href="src_bzip2.adb.html#l445" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l445" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l461"><pre> </pre></li>
+<li id="l462"><pre>      <span class="comment">-- Cyclic redundancy check to verify uncompressed block data integrity</span> </pre></li>
+<li id="l463"><pre> </pre></li>
+<li id="l464"><pre>      <span class="keyword">package</span> <a href="src_bzip2.adb.html#l473" title="defined at bzip2.adb:464:15">CRC</a> <span class="keyword">is</span> </pre></li>
+<li id="l465"><pre> </pre></li>
+<li id="l466"><pre>         <span class="keyword">procedure</span> <a href="src_bzip2.adb.html#l551" title="defined at bzip2.adb:466:20">Init</a> (CRC_Value : <span class="keyword">out</span> Unsigned_32); </pre></li>
+<li id="l467"><pre>         <span class="keyword">function</span>  <a href="src_bzip2.adb.html#l556" title="defined at bzip2.adb:467:20">Final</a> (CRC_Value : Unsigned_32) <span class="keyword">return</span> Unsigned_32; </pre></li>
+<li id="l468"><pre>         <span class="keyword">procedure</span> <a href="src_bzip2.adb.html#l543" title="defined at bzip2.adb:468:20">Update</a> (CRC_Value : <span class="keyword">in</span> <span class="keyword">out</span> Unsigned_32; val : Unsigned_8); </pre></li>
+<li id="l469"><pre>         <span class="keyword">pragma</span> Inline (<span class="droplink">Update<ul><li><a href="src_bzip2.adb.html#l468" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l543" title="To body">To body</a></li></ul></span>); </pre></li>
+<li id="l470"><pre> </pre></li>
+<li id="l471"><pre>      <span class="keyword">end</span> <span class="droplink">CRC<ul><li><a href="src_bzip2.adb.html#l464" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l473" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l472"><pre> </pre></li>
+<li id="l473"><pre>      <span class="keyword">package</span> <span class="keyword">body</span> <a href="src_bzip2.adb.html#l464" title="defined at bzip2.adb:464:15">CRC</a> <span class="keyword">is</span> </pre></li>
+<li id="l474"><pre> </pre></li>
+<li id="l475"><pre>         CRC32_Table : </pre></li>
+<li id="l476"><pre>         <span class="keyword">constant</span> <span class="keyword">array</span> (Unsigned_32&apos;(0) .. 255) <span class="keyword">of</span> Unsigned_32 := ( </pre></li>
+<li id="l477"><pre>                                                                    16#00000000#, 16#04c11db7#, 16#09823b6e#, 16#0d4326d9#, </pre></li>
+<li id="l478"><pre>                                                                    16#130476dc#, 16#17c56b6b#, 16#1a864db2#, 16#1e475005#, </pre></li>
+<li id="l479"><pre>                                                                    16#2608edb8#, 16#22c9f00f#, 16#2f8ad6d6#, 16#2b4bcb61#, </pre></li>
+<li id="l480"><pre>                                                                    16#350c9b64#, 16#31cd86d3#, 16#3c8ea00a#, 16#384fbdbd#, </pre></li>
+<li id="l481"><pre>                                                                    16#4c11db70#, 16#48d0c6c7#, 16#4593e01e#, 16#4152fda9#, </pre></li>
+<li id="l482"><pre>                                                                    16#5f15adac#, 16#5bd4b01b#, 16#569796c2#, 16#52568b75#, </pre></li>
+<li id="l483"><pre>                                                                    16#6a1936c8#, 16#6ed82b7f#, 16#639b0da6#, 16#675a1011#, </pre></li>
+<li id="l484"><pre>                                                                    16#791d4014#, 16#7ddc5da3#, 16#709f7b7a#, 16#745e66cd#, </pre></li>
+<li id="l485"><pre>                                                                    16#9823b6e0#, 16#9ce2ab57#, 16#91a18d8e#, 16#95609039#, </pre></li>
+<li id="l486"><pre>                                                                    16#8b27c03c#, 16#8fe6dd8b#, 16#82a5fb52#, 16#8664e6e5#, </pre></li>
+<li id="l487"><pre>                                                                    16#be2b5b58#, 16#baea46ef#, 16#b7a96036#, 16#b3687d81#, </pre></li>
+<li id="l488"><pre>                                                                    16#ad2f2d84#, 16#a9ee3033#, 16#a4ad16ea#, 16#a06c0b5d#, </pre></li>
+<li id="l489"><pre>                                                                    16#d4326d90#, 16#d0f37027#, 16#ddb056fe#, 16#d9714b49#, </pre></li>
+<li id="l490"><pre>                                                                    16#c7361b4c#, 16#c3f706fb#, 16#ceb42022#, 16#ca753d95#, </pre></li>
+<li id="l491"><pre>                                                                    16#f23a8028#, 16#f6fb9d9f#, 16#fbb8bb46#, 16#ff79a6f1#, </pre></li>
+<li id="l492"><pre>                                                                    16#e13ef6f4#, 16#e5ffeb43#, 16#e8bccd9a#, 16#ec7dd02d#, </pre></li>
+<li id="l493"><pre>                                                                    16#34867077#, 16#30476dc0#, 16#3d044b19#, 16#39c556ae#, </pre></li>
+<li id="l494"><pre>                                                                    16#278206ab#, 16#23431b1c#, 16#2e003dc5#, 16#2ac12072#, </pre></li>
+<li id="l495"><pre>                                                                    16#128e9dcf#, 16#164f8078#, 16#1b0ca6a1#, 16#1fcdbb16#, </pre></li>
+<li id="l496"><pre>                                                                    16#018aeb13#, 16#054bf6a4#, 16#0808d07d#, 16#0cc9cdca#, </pre></li>
+<li id="l497"><pre>                                                                    16#7897ab07#, 16#7c56b6b0#, 16#71159069#, 16#75d48dde#, </pre></li>
+<li id="l498"><pre>                                                                    16#6b93dddb#, 16#6f52c06c#, 16#6211e6b5#, 16#66d0fb02#, </pre></li>
+<li id="l499"><pre>                                                                    16#5e9f46bf#, 16#5a5e5b08#, 16#571d7dd1#, 16#53dc6066#, </pre></li>
+<li id="l500"><pre>                                                                    16#4d9b3063#, 16#495a2dd4#, 16#44190b0d#, 16#40d816ba#, </pre></li>
+<li id="l501"><pre>                                                                    16#aca5c697#, 16#a864db20#, 16#a527fdf9#, 16#a1e6e04e#, </pre></li>
+<li id="l502"><pre>                                                                    16#bfa1b04b#, 16#bb60adfc#, 16#b6238b25#, 16#b2e29692#, </pre></li>
+<li id="l503"><pre>                                                                    16#8aad2b2f#, 16#8e6c3698#, 16#832f1041#, 16#87ee0df6#, </pre></li>
+<li id="l504"><pre>                                                                    16#99a95df3#, 16#9d684044#, 16#902b669d#, 16#94ea7b2a#, </pre></li>
+<li id="l505"><pre>                                                                    16#e0b41de7#, 16#e4750050#, 16#e9362689#, 16#edf73b3e#, </pre></li>
+<li id="l506"><pre>                                                                    16#f3b06b3b#, 16#f771768c#, 16#fa325055#, 16#fef34de2#, </pre></li>
+<li id="l507"><pre>                                                                    16#c6bcf05f#, 16#c27dede8#, 16#cf3ecb31#, 16#cbffd686#, </pre></li>
+<li id="l508"><pre>                                                                    16#d5b88683#, 16#d1799b34#, 16#dc3abded#, 16#d8fba05a#, </pre></li>
+<li id="l509"><pre>                                                                    16#690ce0ee#, 16#6dcdfd59#, 16#608edb80#, 16#644fc637#, </pre></li>
+<li id="l510"><pre>                                                                    16#7a089632#, 16#7ec98b85#, 16#738aad5c#, 16#774bb0eb#, </pre></li>
+<li id="l511"><pre>                                                                    16#4f040d56#, 16#4bc510e1#, 16#46863638#, 16#42472b8f#, </pre></li>
+<li id="l512"><pre>                                                                    16#5c007b8a#, 16#58c1663d#, 16#558240e4#, 16#51435d53#, </pre></li>
+<li id="l513"><pre>                                                                    16#251d3b9e#, 16#21dc2629#, 16#2c9f00f0#, 16#285e1d47#, </pre></li>
+<li id="l514"><pre>                                                                    16#36194d42#, 16#32d850f5#, 16#3f9b762c#, 16#3b5a6b9b#, </pre></li>
+<li id="l515"><pre>                                                                    16#0315d626#, 16#07d4cb91#, 16#0a97ed48#, 16#0e56f0ff#, </pre></li>
+<li id="l516"><pre>                                                                    16#1011a0fa#, 16#14d0bd4d#, 16#19939b94#, 16#1d528623#, </pre></li>
+<li id="l517"><pre>                                                                    16#f12f560e#, 16#f5ee4bb9#, 16#f8ad6d60#, 16#fc6c70d7#, </pre></li>
+<li id="l518"><pre>                                                                    16#e22b20d2#, 16#e6ea3d65#, 16#eba91bbc#, 16#ef68060b#, </pre></li>
+<li id="l519"><pre>                                                                    16#d727bbb6#, 16#d3e6a601#, 16#dea580d8#, 16#da649d6f#, </pre></li>
+<li id="l520"><pre>                                                                    16#c423cd6a#, 16#c0e2d0dd#, 16#cda1f604#, 16#c960ebb3#, </pre></li>
+<li id="l521"><pre>                                                                    16#bd3e8d7e#, 16#b9ff90c9#, 16#b4bcb610#, 16#b07daba7#, </pre></li>
+<li id="l522"><pre>                                                                    16#ae3afba2#, 16#aafbe615#, 16#a7b8c0cc#, 16#a379dd7b#, </pre></li>
+<li id="l523"><pre>                                                                    16#9b3660c6#, 16#9ff77d71#, 16#92b45ba8#, 16#9675461f#, </pre></li>
+<li id="l524"><pre>                                                                    16#8832161a#, 16#8cf30bad#, 16#81b02d74#, 16#857130c3#, </pre></li>
+<li id="l525"><pre>                                                                    16#5d8a9099#, 16#594b8d2e#, 16#5408abf7#, 16#50c9b640#, </pre></li>
+<li id="l526"><pre>                                                                    16#4e8ee645#, 16#4a4ffbf2#, 16#470cdd2b#, 16#43cdc09c#, </pre></li>
+<li id="l527"><pre>                                                                    16#7b827d21#, 16#7f436096#, 16#7200464f#, 16#76c15bf8#, </pre></li>
+<li id="l528"><pre>                                                                    16#68860bfd#, 16#6c47164a#, 16#61043093#, 16#65c52d24#, </pre></li>
+<li id="l529"><pre>                                                                    16#119b4be9#, 16#155a565e#, 16#18197087#, 16#1cd86d30#, </pre></li>
+<li id="l530"><pre>                                                                    16#029f3d35#, 16#065e2082#, 16#0b1d065b#, 16#0fdc1bec#, </pre></li>
+<li id="l531"><pre>                                                                    16#3793a651#, 16#3352bbe6#, 16#3e119d3f#, 16#3ad08088#, </pre></li>
+<li id="l532"><pre>                                                                    16#2497d08d#, 16#2056cd3a#, 16#2d15ebe3#, 16#29d4f654#, </pre></li>
+<li id="l533"><pre>                                                                    16#c5a92679#, 16#c1683bce#, 16#cc2b1d17#, 16#c8ea00a0#, </pre></li>
+<li id="l534"><pre>                                                                    16#d6ad50a5#, 16#d26c4d12#, 16#df2f6bcb#, 16#dbee767c#, </pre></li>
+<li id="l535"><pre>                                                                    16#e3a1cbc1#, 16#e760d676#, 16#ea23f0af#, 16#eee2ed18#, </pre></li>
+<li id="l536"><pre>                                                                    16#f0a5bd1d#, 16#f464a0aa#, 16#f9278673#, 16#fde69bc4#, </pre></li>
+<li id="l537"><pre>                                                                    16#89b8fd09#, 16#8d79e0be#, 16#803ac667#, 16#84fbdbd0#, </pre></li>
+<li id="l538"><pre>                                                                    16#9abc8bd5#, 16#9e7d9662#, 16#933eb0bb#, 16#97ffad0c#, </pre></li>
+<li id="l539"><pre>                                                                    16#afb010b1#, 16#ab710d06#, 16#a6322bdf#, 16#a2f33668#, </pre></li>
+<li id="l540"><pre>                                                                    16#bcb4666d#, 16#b8757bda#, 16#b5365d03#, 16#b1f740b4# </pre></li>
+<li id="l541"><pre>                                                                   ); </pre></li>
+<li id="l542"><pre> </pre></li>
+<li id="l543"><pre>         <span class="keyword">procedure</span> <a href="src_bzip2.adb.html#l468" title="defined at bzip2.adb:468:20">Update</a> (<a href="src_bzip2.adb.html#l468" title="defined at bzip2.adb:468:28">CRC_Value</a> : <span class="keyword">in</span> <span class="keyword">out</span> Unsigned_32; <a href="src_bzip2.adb.html#l468" title="defined at bzip2.adb:468:60">val</a> : Unsigned_8) <span class="keyword">is</span> </pre></li>
+<li id="l544"><pre>         <span class="keyword">begin</span> </pre></li>
+<li id="l545"><pre>            <a href="src_bzip2.adb.html#l468" title="defined at bzip2.adb:468:28">CRC_Value</a> := </pre></li>
+<li id="l546"><pre>              CRC32_Table (16#FF# <span class="keyword">and</span> (Shift_Right (<a href="src_bzip2.adb.html#l468" title="defined at bzip2.adb:468:28">CRC_Value</a>, 24) <span class="keyword">xor</span> Unsigned_32 (<a href="src_bzip2.adb.html#l468" title="defined at bzip2.adb:468:60">val</a>))) </pre></li>
+<li id="l547"><pre>              <span class="keyword">xor</span> </pre></li>
+<li id="l548"><pre>                Shift_Left (<a href="src_bzip2.adb.html#l468" title="defined at bzip2.adb:468:28">CRC_Value</a>, 8); </pre></li>
+<li id="l549"><pre>         <span class="keyword">end</span> <span class="droplink">Update<ul><li><a href="src_bzip2.adb.html#l468" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l543" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l550"><pre> </pre></li>
+<li id="l551"><pre>         <span class="keyword">procedure</span> <a href="src_bzip2.adb.html#l466" title="defined at bzip2.adb:466:20">Init</a> (<a href="src_bzip2.adb.html#l466" title="defined at bzip2.adb:466:26">CRC_Value</a> : <span class="keyword">out</span> Unsigned_32) <span class="keyword">is</span> </pre></li>
+<li id="l552"><pre>         <span class="keyword">begin</span> </pre></li>
+<li id="l553"><pre>            <a href="src_bzip2.adb.html#l466" title="defined at bzip2.adb:466:26">CRC_Value</a> := 16#FFFF_FFFF#; </pre></li>
+<li id="l554"><pre>         <span class="keyword">end</span> <span class="droplink">Init<ul><li><a href="src_bzip2.adb.html#l466" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l551" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l555"><pre> </pre></li>
+<li id="l556"><pre>         <span class="keyword">function</span> <a href="src_bzip2.adb.html#l467" title="defined at bzip2.adb:467:20">Final</a> (<a href="src_bzip2.adb.html#l467" title="defined at bzip2.adb:467:27">CRC_Value</a> : Unsigned_32) <span class="keyword">return</span> Unsigned_32 <span class="keyword">is</span> </pre></li>
+<li id="l557"><pre>         <span class="keyword">begin</span> </pre></li>
+<li id="l558"><pre>            <span class="keyword">return</span> <span class="keyword">not</span> <a href="src_bzip2.adb.html#l467" title="defined at bzip2.adb:467:27">CRC_Value</a>; </pre></li>
+<li id="l559"><pre>         <span class="keyword">end</span> <span class="droplink">Final<ul><li><a href="src_bzip2.adb.html#l467" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l556" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l560"><pre> </pre></li>
+<li id="l561"><pre>      <span class="keyword">end</span> <span class="droplink">CRC<ul><li><a href="src_bzip2.adb.html#l464" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l473" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l562"><pre> </pre></li>
+<li id="l563"><pre>      compare_final_CRC : Boolean := False; </pre></li>
+<li id="l564"><pre>      stored_blockcrc, mem_stored_blockcrc, computed_crc : Unsigned_32; </pre></li>
+<li id="l565"><pre> </pre></li>
+<li id="l566"><pre>      <span class="comment">-- Decode a new compressed block.</span> </pre></li>
+<li id="l567"><pre>      <span class="keyword">function</span> decode_block <span class="keyword">return</span> Boolean <span class="keyword">is</span> </pre></li>
+<li id="l568"><pre>         magic : String (1 .. 6); </pre></li>
+<li id="l569"><pre>      <span class="keyword">begin</span> </pre></li>
+<li id="l570"><pre>         <span class="keyword">for</span> i <span class="keyword">in</span> 1 .. 6 <span class="keyword">loop</span> </pre></li>
+<li id="l571"><pre>            <a href="src_bzip2.adb.html#l568" title="defined at bzip2.adb:568:10">magic</a> (i) := Character&apos;<a href="src_bzip2.adb.html#l468" title="defined at bzip2.adb:468:60">Val</a> (<span class="droplink">get_byte<ul><li><a href="src_bzip2.adb.html#l168" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l168" title="To body">To body</a></li></ul></span>); </pre></li>
+<li id="l572"><pre>         <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l573"><pre>         <span class="keyword">if</span> <a href="src_bzip2.adb.html#l568" title="defined at bzip2.adb:568:10">magic</a> = <span class="string">&quot;1AY&amp;SY&quot;</span> <span class="keyword">then</span> </pre></li>
+<li id="l574"><pre>            <span class="keyword">if</span> <span class="droplink">check_CRC<ul><li><a href="bzip2.ads.html#bzip2.ads:74:3" title="To API doc">To API doc</a></li><li><a href="src_bzip2.ads.html#l74" title="To spec">To spec</a></li></ul></span> <span class="keyword">then</span> </pre></li>
+<li id="l575"><pre>               <span class="keyword">if</span> <a href="src_bzip2.adb.html#l563" title="defined at bzip2.adb:563:7">compare_final_CRC</a> <span class="keyword">then</span> </pre></li>
+<li id="l576"><pre>                  <span class="keyword">null</span>; <span class="comment">-- initialisation is delayed until the rle buffer is empty</span> </pre></li>
+<li id="l577"><pre>               <span class="keyword">else</span> </pre></li>
+<li id="l578"><pre>                  <span class="droplink">CRC.Init<ul><li><a href="src_bzip2.adb.html#l466" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l551" title="To body">To body</a></li></ul></span> (<a href="src_bzip2.adb.html#l564" title="defined at bzip2.adb:564:45">computed_crc</a>); <span class="comment">-- Initialize for next block.</span> </pre></li>
+<li id="l579"><pre>               <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l580"><pre>            <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l581"><pre>            <a href="src_bzip2.adb.html#l564" title="defined at bzip2.adb:564:7">stored_blockcrc</a> := <span class="droplink">get_cardinal<ul><li><a href="src_bzip2.adb.html#l178" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l178" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l582"><pre>            <a href="src_bzip2.adb.html#l30" title="defined at bzip2.adb:30:7">block_randomized</a> := <span class="droplink">get_boolean<ul><li><a href="src_bzip2.adb.html#l163" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l163" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l583"><pre>            <a href="src_bzip2.adb.html#l44" title="defined at bzip2.adb:44:7">block_origin</a> := Natural (<span class="droplink">get_cardinal24<ul><li><a href="src_bzip2.adb.html#l173" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l173" title="To body">To body</a></li></ul></span>); </pre></li>
+<li id="l584"><pre>            <span class="comment">--  Receive the mapping table.</span> </pre></li>
+<li id="l585"><pre>            <span class="droplink">receive_mapping_table<ul><li><a href="src_bzip2.adb.html#l189" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l189" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l586"><pre>            <a href="src_bzip2.adb.html#l49" title="defined at bzip2.adb:49:7">global_alpha_size</a> := <a href="src_bzip2.adb.html#l47" title="defined at bzip2.adb:47:7">inuse_count</a> + 2; </pre></li>
+<li id="l587"><pre>            <span class="comment">--  Receive the selectors.</span> </pre></li>
+<li id="l588"><pre>            <span class="droplink">receive_selectors<ul><li><a href="src_bzip2.adb.html#l215" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l215" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l589"><pre>            <span class="comment">--  Undo the MTF values for the selectors.</span> </pre></li>
+<li id="l590"><pre>            <span class="droplink">undo_mtf_values<ul><li><a href="src_bzip2.adb.html#l233" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l233" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l591"><pre>            <span class="comment">--  Receive the coding tables.</span> </pre></li>
+<li id="l592"><pre>            <span class="droplink">receive_coding_tables<ul><li><a href="src_bzip2.adb.html#l252" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l252" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l593"><pre>            <span class="comment">--  Build the Huffman tables.</span> </pre></li>
+<li id="l594"><pre>            <span class="droplink">make_hufftab<ul><li><a href="src_bzip2.adb.html#l275" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l275" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l595"><pre>            <span class="comment">--  Receive the MTF values.</span> </pre></li>
+<li id="l596"><pre>            <span class="droplink">receive_mtf_values<ul><li><a href="src_bzip2.adb.html#l299" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l299" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l597"><pre>            <span class="comment">--  Undo the Burrows Wheeler transformation.</span> </pre></li>
+<li id="l598"><pre>            <span class="droplink">detransform<ul><li><a href="src_bzip2.adb.html#l445" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l445" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l599"><pre>            <a href="src_bzip2.adb.html#l43" title="defined at bzip2.adb:43:7">decode_available</a> := <a href="src_bzip2.adb.html#l39" title="defined at bzip2.adb:39:7">tt_count</a>; </pre></li>
+<li id="l600"><pre>            <span class="keyword">return</span> True; </pre></li>
+<li id="l601"><pre>         <span class="keyword">elsif</span> <a href="src_bzip2.adb.html#l568" title="defined at bzip2.adb:568:10">magic</a> = Character&apos;<a href="src_bzip2.adb.html#l468" title="defined at bzip2.adb:468:60">Val</a> (16#17#) &amp; <span class="string">&quot;rE8P&quot;</span> &amp; Character&apos;<a href="src_bzip2.adb.html#l468" title="defined at bzip2.adb:468:60">Val</a> (16#90#) <span class="keyword">then</span> </pre></li>
+<li id="l602"><pre>            <span class="keyword">return</span> False; </pre></li>
+<li id="l603"><pre>         <span class="keyword">else</span> </pre></li>
+<li id="l604"><pre>            <span class="keyword">raise</span> <span class="droplink">bad_block_magic<ul><li><a href="bzip2.ads.html#bzip2.ads:84:3" title="To API doc">To API doc</a></li><li><a href="src_bzip2.ads.html#l84" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l605"><pre>         <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l606"><pre>      <span class="keyword">end</span> <span class="droplink">decode_block<ul><li><a href="src_bzip2.adb.html#l567" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l567" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l607"><pre> </pre></li>
+<li id="l608"><pre>      next_rle_idx : Integer := -2; </pre></li>
+<li id="l609"><pre>      buf : <span class="droplink">Buffer<ul><li><a href="bzip2.ads.html#bzip2.ads:72:8" title="To API doc">To API doc</a></li><li><a href="src_bzip2.ads.html#l72" title="To spec">To spec</a></li></ul></span> (1 .. <span class="droplink">output_buffer_size<ul><li><a href="bzip2.ads.html#bzip2.ads:70:3" title="To API doc">To API doc</a></li><li><a href="src_bzip2.ads.html#l70" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l610"><pre>      last : Natural; </pre></li>
+<li id="l611"><pre> </pre></li>
+<li id="l612"><pre>      <span class="keyword">procedure</span> Read <span class="keyword">is</span> </pre></li>
+<li id="l613"><pre>         shorten : Natural := 0; </pre></li>
+<li id="l614"><pre> </pre></li>
+<li id="l615"><pre>         <span class="keyword">procedure</span> rle_read <span class="keyword">is</span> </pre></li>
+<li id="l616"><pre>            rle_len : Natural; </pre></li>
+<li id="l617"><pre>            data : Unsigned_8; </pre></li>
+<li id="l618"><pre>            idx : Integer := <a href="src_bzip2.adb.html#l609" title="defined at bzip2.adb:609:7">buf</a>&apos;First; </pre></li>
+<li id="l619"><pre>            count : Integer := <a href="src_bzip2.adb.html#l609" title="defined at bzip2.adb:609:7">buf</a>&apos;<a href="src_bzip2.adb.html#l84" title="defined at bzip2.adb:84:42">Length</a>; </pre></li>
+<li id="l620"><pre>            <span class="comment">--</span> </pre></li>
+<li id="l621"><pre>            <span class="keyword">procedure</span> rle_write <span class="keyword">is</span> </pre></li>
+<li id="l622"><pre>               <span class="keyword">pragma</span> Inline (<span class="droplink">rle_write<ul><li><a href="src_bzip2.adb.html#l621" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l621" title="To body">To body</a></li></ul></span>); </pre></li>
+<li id="l623"><pre>            <span class="keyword">begin</span> </pre></li>
+<li id="l624"><pre>               <span class="keyword">loop</span> </pre></li>
+<li id="l625"><pre>                  <a href="src_bzip2.adb.html#l609" title="defined at bzip2.adb:609:7">buf</a> (<a href="src_bzip2.adb.html#l618" title="defined at bzip2.adb:618:13">idx</a>) := <a href="src_bzip2.adb.html#l617" title="defined at bzip2.adb:617:13">data</a>; </pre></li>
+<li id="l626"><pre>                  <a href="src_bzip2.adb.html#l618" title="defined at bzip2.adb:618:13">idx</a> := <a href="src_bzip2.adb.html#l618" title="defined at bzip2.adb:618:13">idx</a> + 1; </pre></li>
+<li id="l627"><pre>                  <a href="src_bzip2.adb.html#l619" title="defined at bzip2.adb:619:13">count</a> := <a href="src_bzip2.adb.html#l619" title="defined at bzip2.adb:619:13">count</a> - 1; </pre></li>
+<li id="l628"><pre>                  <a href="src_bzip2.adb.html#l616" title="defined at bzip2.adb:616:13">rle_len</a> := <a href="src_bzip2.adb.html#l616" title="defined at bzip2.adb:616:13">rle_len</a> - 1; </pre></li>
+<li id="l629"><pre>                  <span class="keyword">if</span> <span class="droplink">check_CRC<ul><li><a href="bzip2.ads.html#bzip2.ads:74:3" title="To API doc">To API doc</a></li><li><a href="src_bzip2.ads.html#l74" title="To spec">To spec</a></li></ul></span> <span class="keyword">then</span> </pre></li>
+<li id="l630"><pre>                     <span class="droplink">CRC.Update<ul><li><a href="src_bzip2.adb.html#l468" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l543" title="To body">To body</a></li></ul></span> (<a href="src_bzip2.adb.html#l564" title="defined at bzip2.adb:564:45">computed_crc</a>, <a href="src_bzip2.adb.html#l617" title="defined at bzip2.adb:617:13">data</a>); </pre></li>
+<li id="l631"><pre>                     <span class="keyword">if</span> <a href="src_bzip2.adb.html#l616" title="defined at bzip2.adb:616:13">rle_len</a> = 0 <span class="keyword">and</span> <span class="keyword">then</span> <a href="src_bzip2.adb.html#l563" title="defined at bzip2.adb:563:7">compare_final_CRC</a> <span class="keyword">then</span> </pre></li>
+<li id="l632"><pre>                        <span class="keyword">if</span> <span class="droplink">CRC.Final<ul><li><a href="src_bzip2.adb.html#l467" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l556" title="To body">To body</a></li></ul></span> (<a href="src_bzip2.adb.html#l564" title="defined at bzip2.adb:564:45">computed_crc</a>) /= <a href="src_bzip2.adb.html#l564" title="defined at bzip2.adb:564:24">mem_stored_blockcrc</a> <span class="keyword">then</span> </pre></li>
+<li id="l633"><pre>                           <span class="keyword">raise</span> <span class="droplink">block_crc_check_failed<ul><li><a href="bzip2.ads.html#bzip2.ads:86:3" title="To API doc">To API doc</a></li><li><a href="src_bzip2.ads.html#l86" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l634"><pre>                        <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l635"><pre>                        <a href="src_bzip2.adb.html#l563" title="defined at bzip2.adb:563:7">compare_final_CRC</a> := False; </pre></li>
+<li id="l636"><pre>                        <span class="droplink">CRC.Init<ul><li><a href="src_bzip2.adb.html#l466" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l551" title="To body">To body</a></li></ul></span> (<a href="src_bzip2.adb.html#l564" title="defined at bzip2.adb:564:45">computed_crc</a>); <span class="comment">-- Initialize for next block.</span> </pre></li>
+<li id="l637"><pre>                     <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l638"><pre>                  <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l639"><pre>                  <span class="keyword">exit</span> <span class="keyword">when</span> <a href="src_bzip2.adb.html#l616" title="defined at bzip2.adb:616:13">rle_len</a> = 0 <span class="keyword">or</span> <span class="keyword">else</span> <a href="src_bzip2.adb.html#l619" title="defined at bzip2.adb:619:13">count</a> = 0; </pre></li>
+<li id="l640"><pre>               <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l641"><pre>            <span class="keyword">end</span> <span class="droplink">rle_write<ul><li><a href="src_bzip2.adb.html#l621" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l621" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l642"><pre>            <span class="comment">--</span> </pre></li>
+<li id="l643"><pre>            <span class="comment">-- handle extreme cases of data of length 1, 2</span> </pre></li>
+<li id="l644"><pre>            input_dried : <span class="keyword">exception</span>; </pre></li>
+<li id="l645"><pre>            <span class="comment">--</span> </pre></li>
+<li id="l646"><pre>            <span class="comment">-- Make next_rle_idx index to the next decoded byte.</span> </pre></li>
+<li id="l647"><pre>            <span class="comment">-- If next_rle_idx did index to the last</span> </pre></li>
+<li id="l648"><pre>            <span class="comment">-- byte in the current block, decode the next block.</span> </pre></li>
+<li id="l649"><pre>            <span class="comment">--</span> </pre></li>
+<li id="l650"><pre>            <span class="keyword">procedure</span> consume_rle <span class="keyword">is</span> </pre></li>
+<li id="l651"><pre>               <span class="keyword">pragma</span> Inline (<span class="droplink">consume_rle<ul><li><a href="src_bzip2.adb.html#l650" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l650" title="To body">To body</a></li></ul></span>); </pre></li>
+<li id="l652"><pre>            <span class="keyword">begin</span> </pre></li>
+<li id="l653"><pre>               <a href="src_bzip2.adb.html#l608" title="defined at bzip2.adb:608:7">next_rle_idx</a> := Integer (Shift_Right (<a href="src_bzip2.adb.html#l38" title="defined at bzip2.adb:38:7">tt</a>.<span class="keyword">all</span> (<a href="src_bzip2.adb.html#l608" title="defined at bzip2.adb:608:7">next_rle_idx</a>), 8)); </pre></li>
+<li id="l654"><pre>               <a href="src_bzip2.adb.html#l43" title="defined at bzip2.adb:43:7">decode_available</a> := <a href="src_bzip2.adb.html#l43" title="defined at bzip2.adb:43:7">decode_available</a> - 1; </pre></li>
+<li id="l655"><pre>               <span class="keyword">if</span> <a href="src_bzip2.adb.html#l43" title="defined at bzip2.adb:43:7">decode_available</a> = 0 <span class="keyword">then</span> </pre></li>
+<li id="l656"><pre>                  <a href="src_bzip2.adb.html#l563" title="defined at bzip2.adb:563:7">compare_final_CRC</a> := True; </pre></li>
+<li id="l657"><pre>                  <a href="src_bzip2.adb.html#l564" title="defined at bzip2.adb:564:24">mem_stored_blockcrc</a> := <a href="src_bzip2.adb.html#l564" title="defined at bzip2.adb:564:7">stored_blockcrc</a>; </pre></li>
+<li id="l658"><pre>                  <span class="comment">-- ^ There might be a new block when last block&apos;s</span> </pre></li>
+<li id="l659"><pre>                  <span class="comment">--   rle is finally emptied.</span> </pre></li>
+<li id="l660"><pre>                  <span class="comment">--</span> </pre></li>
+<li id="l661"><pre>                  <span class="comment">-- ** New block</span> </pre></li>
+<li id="l662"><pre>                  <span class="keyword">if</span> <span class="droplink">decode_block<ul><li><a href="src_bzip2.adb.html#l567" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l567" title="To body">To body</a></li></ul></span> <span class="keyword">then</span> </pre></li>
+<li id="l663"><pre>                     <a href="src_bzip2.adb.html#l608" title="defined at bzip2.adb:608:7">next_rle_idx</a> := Natural (Shift_Right (<a href="src_bzip2.adb.html#l38" title="defined at bzip2.adb:38:7">tt</a>.<span class="keyword">all</span> (<a href="src_bzip2.adb.html#l44" title="defined at bzip2.adb:44:7">block_origin</a>), 8)); </pre></li>
+<li id="l664"><pre>                  <span class="keyword">else</span> </pre></li>
+<li id="l665"><pre>                     <a href="src_bzip2.adb.html#l608" title="defined at bzip2.adb:608:7">next_rle_idx</a> := -1; </pre></li>
+<li id="l666"><pre>                     <a href="src_bzip2.adb.html#l66" title="defined at bzip2.adb:66:7">end_reached</a> := True; </pre></li>
+<li id="l667"><pre>                  <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l668"><pre>                  <span class="comment">-- **</span> </pre></li>
+<li id="l669"><pre>                  <span class="keyword">if</span> <a href="src_bzip2.adb.html#l66" title="defined at bzip2.adb:66:7">end_reached</a> <span class="keyword">then</span> </pre></li>
+<li id="l670"><pre>                     <span class="keyword">raise</span> <a href="src_bzip2.adb.html#l644" title="defined at bzip2.adb:644:13">input_dried</a>; </pre></li>
+<li id="l671"><pre>                  <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l672"><pre>               <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l673"><pre>            <span class="keyword">end</span> <span class="droplink">consume_rle<ul><li><a href="src_bzip2.adb.html#l650" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l650" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l674"><pre>            <span class="comment">--</span> </pre></li>
+<li id="l675"><pre>            <span class="keyword">function</span> rle_byte <span class="keyword">return</span> Unsigned_8 <span class="keyword">is</span> </pre></li>
+<li id="l676"><pre>               <span class="keyword">pragma</span> Inline (<span class="droplink">rle_byte<ul><li><a href="src_bzip2.adb.html#l675" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l675" title="To body">To body</a></li></ul></span>); </pre></li>
+<li id="l677"><pre>            <span class="keyword">begin</span> </pre></li>
+<li id="l678"><pre>               <span class="keyword">return</span> Unsigned_8 (<a href="src_bzip2.adb.html#l38" title="defined at bzip2.adb:38:7">tt</a>.<span class="keyword">all</span> (<a href="src_bzip2.adb.html#l608" title="defined at bzip2.adb:608:7">next_rle_idx</a>) <span class="keyword">and</span> 16#FF#); </pre></li>
+<li id="l679"><pre>            <span class="keyword">end</span> <span class="droplink">rle_byte<ul><li><a href="src_bzip2.adb.html#l675" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l675" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l680"><pre>            <span class="comment">--</span> </pre></li>
+<li id="l681"><pre>            <span class="keyword">function</span> rle_possible <span class="keyword">return</span> Boolean <span class="keyword">is</span> </pre></li>
+<li id="l682"><pre>               <span class="keyword">pragma</span> Inline (<span class="droplink">rle_possible<ul><li><a href="src_bzip2.adb.html#l681" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l681" title="To body">To body</a></li></ul></span>); </pre></li>
+<li id="l683"><pre>            <span class="keyword">begin</span> </pre></li>
+<li id="l684"><pre>               <span class="keyword">return</span> <a href="src_bzip2.adb.html#l43" title="defined at bzip2.adb:43:7">decode_available</a> &gt; 0 <span class="keyword">and</span> <span class="keyword">then</span> <a href="src_bzip2.adb.html#l617" title="defined at bzip2.adb:617:13">data</a> = <span class="droplink">rle_byte<ul><li><a href="src_bzip2.adb.html#l675" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l675" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l685"><pre>            <span class="keyword">end</span> <span class="droplink">rle_possible<ul><li><a href="src_bzip2.adb.html#l681" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l681" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l686"><pre>            <span class="comment">--</span> </pre></li>
+<li id="l687"><pre>         <span class="keyword">begin</span> <span class="comment">-- rle_read</span> </pre></li>
+<li id="l688"><pre>            <a href="src_bzip2.adb.html#l616" title="defined at bzip2.adb:616:13">rle_len</a> := <a href="src_bzip2.adb.html#l41" title="defined at bzip2.adb:41:7">rle_run_left</a>; </pre></li>
+<li id="l689"><pre>            <a href="src_bzip2.adb.html#l617" title="defined at bzip2.adb:617:13">data</a> := <a href="src_bzip2.adb.html#l42" title="defined at bzip2.adb:42:7">rle_run_data</a>; </pre></li>
+<li id="l690"><pre>            <span class="keyword">if</span> <a href="src_bzip2.adb.html#l30" title="defined at bzip2.adb:30:7">block_randomized</a> <span class="keyword">then</span> </pre></li>
+<li id="l691"><pre>               <span class="keyword">raise</span> <span class="droplink">randomized_not_yet_implemented<ul><li><a href="bzip2.ads.html#bzip2.ads:87:3" title="To API doc">To API doc</a></li><li><a href="src_bzip2.ads.html#l87" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l692"><pre>            <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l693"><pre>            <span class="keyword">if</span> <a href="src_bzip2.adb.html#l616" title="defined at bzip2.adb:616:13">rle_len</a> /= 0 <span class="keyword">then</span> </pre></li>
+<li id="l694"><pre>               <span class="droplink">rle_write<ul><li><a href="src_bzip2.adb.html#l621" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l621" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l695"><pre>               <span class="keyword">if</span> <a href="src_bzip2.adb.html#l619" title="defined at bzip2.adb:619:13">count</a> = 0 <span class="keyword">then</span> </pre></li>
+<li id="l696"><pre>                  <a href="src_bzip2.adb.html#l613" title="defined at bzip2.adb:613:10">shorten</a> := 0; </pre></li>
+<li id="l697"><pre>                  <a href="src_bzip2.adb.html#l42" title="defined at bzip2.adb:42:7">rle_run_data</a> := <a href="src_bzip2.adb.html#l617" title="defined at bzip2.adb:617:13">data</a>; </pre></li>
+<li id="l698"><pre>                  <a href="src_bzip2.adb.html#l41" title="defined at bzip2.adb:41:7">rle_run_left</a> := <a href="src_bzip2.adb.html#l616" title="defined at bzip2.adb:616:13">rle_len</a>; </pre></li>
+<li id="l699"><pre>                  <span class="keyword">return</span>; </pre></li>
+<li id="l700"><pre>               <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l701"><pre>            <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l702"><pre>            <span class="keyword">begin</span> </pre></li>
+<li id="l703"><pre>               <span class="comment">-- The big loop</span> </pre></li>
+<li id="l704"><pre>               <span class="keyword">loop</span> </pre></li>
+<li id="l705"><pre>                  <span class="keyword">if</span> <a href="src_bzip2.adb.html#l43" title="defined at bzip2.adb:43:7">decode_available</a> = 0 <span class="keyword">or</span> <span class="keyword">else</span> <a href="src_bzip2.adb.html#l66" title="defined at bzip2.adb:66:7">end_reached</a> <span class="keyword">then</span> </pre></li>
+<li id="l706"><pre>                     <span class="keyword">exit</span>; </pre></li>
+<li id="l707"><pre>                  <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l708"><pre>                  <a href="src_bzip2.adb.html#l616" title="defined at bzip2.adb:616:13">rle_len</a> := 1; </pre></li>
+<li id="l709"><pre>                  <a href="src_bzip2.adb.html#l617" title="defined at bzip2.adb:617:13">data</a> := <span class="droplink">rle_byte<ul><li><a href="src_bzip2.adb.html#l675" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l675" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l710"><pre>                  <span class="droplink">consume_rle<ul><li><a href="src_bzip2.adb.html#l650" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l650" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l711"><pre>                  <span class="keyword">if</span> <span class="droplink">rle_possible<ul><li><a href="src_bzip2.adb.html#l681" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l681" title="To body">To body</a></li></ul></span> <span class="keyword">then</span> </pre></li>
+<li id="l712"><pre>                     <a href="src_bzip2.adb.html#l616" title="defined at bzip2.adb:616:13">rle_len</a> := <a href="src_bzip2.adb.html#l616" title="defined at bzip2.adb:616:13">rle_len</a> + 1; </pre></li>
+<li id="l713"><pre>                     <span class="droplink">consume_rle<ul><li><a href="src_bzip2.adb.html#l650" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l650" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l714"><pre>                     <span class="keyword">if</span> <span class="droplink">rle_possible<ul><li><a href="src_bzip2.adb.html#l681" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l681" title="To body">To body</a></li></ul></span> <span class="keyword">then</span> </pre></li>
+<li id="l715"><pre>                        <a href="src_bzip2.adb.html#l616" title="defined at bzip2.adb:616:13">rle_len</a> := <a href="src_bzip2.adb.html#l616" title="defined at bzip2.adb:616:13">rle_len</a> + 1; </pre></li>
+<li id="l716"><pre>                        <span class="droplink">consume_rle<ul><li><a href="src_bzip2.adb.html#l650" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l650" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l717"><pre>                        <span class="keyword">if</span> <span class="droplink">rle_possible<ul><li><a href="src_bzip2.adb.html#l681" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l681" title="To body">To body</a></li></ul></span> <span class="keyword">then</span> </pre></li>
+<li id="l718"><pre>                           <span class="droplink">consume_rle<ul><li><a href="src_bzip2.adb.html#l650" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l650" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l719"><pre>                           <a href="src_bzip2.adb.html#l616" title="defined at bzip2.adb:616:13">rle_len</a> := <a href="src_bzip2.adb.html#l616" title="defined at bzip2.adb:616:13">rle_len</a> + Natural (<span class="droplink">rle_byte<ul><li><a href="src_bzip2.adb.html#l675" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l675" title="To body">To body</a></li></ul></span>) + 1; </pre></li>
+<li id="l720"><pre>                           <span class="droplink">consume_rle<ul><li><a href="src_bzip2.adb.html#l650" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l650" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l721"><pre>                        <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l722"><pre>                     <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l723"><pre>                  <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l724"><pre>                  <span class="droplink">rle_write<ul><li><a href="src_bzip2.adb.html#l621" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l621" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l725"><pre>                  <span class="keyword">exit</span> <span class="keyword">when</span> <a href="src_bzip2.adb.html#l619" title="defined at bzip2.adb:619:13">count</a> = 0; </pre></li>
+<li id="l726"><pre>               <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l727"><pre>            <span class="keyword">exception</span> </pre></li>
+<li id="l728"><pre>               <span class="keyword">when</span> <a href="src_bzip2.adb.html#l644" title="defined at bzip2.adb:644:13">input_dried</a> =&gt; <span class="droplink">rle_write<ul><li><a href="src_bzip2.adb.html#l621" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l621" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l729"><pre>            <span class="keyword">end</span>; </pre></li>
+<li id="l730"><pre>            <a href="src_bzip2.adb.html#l613" title="defined at bzip2.adb:613:10">shorten</a> := <a href="src_bzip2.adb.html#l619" title="defined at bzip2.adb:619:13">count</a>; </pre></li>
+<li id="l731"><pre>            <a href="src_bzip2.adb.html#l42" title="defined at bzip2.adb:42:7">rle_run_data</a> := <a href="src_bzip2.adb.html#l617" title="defined at bzip2.adb:617:13">data</a>; </pre></li>
+<li id="l732"><pre>            <a href="src_bzip2.adb.html#l41" title="defined at bzip2.adb:41:7">rle_run_left</a> := <a href="src_bzip2.adb.html#l616" title="defined at bzip2.adb:616:13">rle_len</a>; </pre></li>
+<li id="l733"><pre>         <span class="keyword">end</span> <span class="droplink">rle_read<ul><li><a href="src_bzip2.adb.html#l615" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l615" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l734"><pre> </pre></li>
+<li id="l735"><pre>      <span class="keyword">begin</span> <span class="comment">-- read</span> </pre></li>
+<li id="l736"><pre>         <a href="src_bzip2.adb.html#l610" title="defined at bzip2.adb:610:7">last</a> := <a href="src_bzip2.adb.html#l609" title="defined at bzip2.adb:609:7">buf</a>&apos;<a href="src_bzip2.adb.html#l610" title="defined at bzip2.adb:610:7">Last</a>; </pre></li>
+<li id="l737"><pre>         <span class="keyword">if</span> <a href="src_bzip2.adb.html#l43" title="defined at bzip2.adb:43:7">decode_available</a> = Natural&apos;<a href="src_bzip2.adb.html#l610" title="defined at bzip2.adb:610:7">Last</a> <span class="keyword">then</span> </pre></li>
+<li id="l738"><pre>            <span class="comment">--  Initialize the rle process:</span> </pre></li>
+<li id="l739"><pre>            <span class="comment">--       - Decode a block</span> </pre></li>
+<li id="l740"><pre>            <span class="comment">--       - Initialize pointer.</span> </pre></li>
+<li id="l741"><pre>            <span class="keyword">if</span> <span class="droplink">decode_block<ul><li><a href="src_bzip2.adb.html#l567" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l567" title="To body">To body</a></li></ul></span> <span class="keyword">then</span> </pre></li>
+<li id="l742"><pre>               <a href="src_bzip2.adb.html#l608" title="defined at bzip2.adb:608:7">next_rle_idx</a> := Natural (Shift_Right (<a href="src_bzip2.adb.html#l38" title="defined at bzip2.adb:38:7">tt</a>.<span class="keyword">all</span> (<a href="src_bzip2.adb.html#l44" title="defined at bzip2.adb:44:7">block_origin</a>), 8)); </pre></li>
+<li id="l743"><pre>            <span class="keyword">else</span> </pre></li>
+<li id="l744"><pre>               <a href="src_bzip2.adb.html#l608" title="defined at bzip2.adb:608:7">next_rle_idx</a> := -1; </pre></li>
+<li id="l745"><pre>               <a href="src_bzip2.adb.html#l66" title="defined at bzip2.adb:66:7">end_reached</a> := True; </pre></li>
+<li id="l746"><pre>            <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l747"><pre>         <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l748"><pre>         <span class="droplink">rle_read<ul><li><a href="src_bzip2.adb.html#l615" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l615" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l749"><pre>         <a href="src_bzip2.adb.html#l610" title="defined at bzip2.adb:610:7">last</a> := <a href="src_bzip2.adb.html#l610" title="defined at bzip2.adb:610:7">last</a> - <a href="src_bzip2.adb.html#l613" title="defined at bzip2.adb:613:10">shorten</a>; </pre></li>
+<li id="l750"><pre>      <span class="keyword">end</span> <span class="droplink">Read<ul><li><a href="src_bzip2.adb.html#l612" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l612" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l751"><pre> </pre></li>
+<li id="l752"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l753"><pre>      <span class="droplink">Init<ul><li><a href="src_bzip2.adb.html#l123" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l123" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l754"><pre>      <span class="keyword">loop</span> </pre></li>
+<li id="l755"><pre>         <span class="droplink">Read<ul><li><a href="src_bzip2.adb.html#l612" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l612" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l756"><pre>         <span class="droplink">Write<ul><li><a href="bzip2.ads.html#bzip2.ads:79:18" title="To API doc">To API doc</a></li><li><a href="src_bzip2.ads.html#l79" title="To spec">To spec</a></li></ul></span> (<a href="src_bzip2.adb.html#l609" title="defined at bzip2.adb:609:7">buf</a> (1 .. <a href="src_bzip2.adb.html#l610" title="defined at bzip2.adb:610:7">last</a>)); </pre></li>
+<li id="l757"><pre>         <span class="keyword">exit</span> <span class="keyword">when</span> <a href="src_bzip2.adb.html#l66" title="defined at bzip2.adb:66:7">end_reached</a> <span class="keyword">and</span> <span class="keyword">then</span> <a href="src_bzip2.adb.html#l41" title="defined at bzip2.adb:41:7">rle_run_left</a> = 0; </pre></li>
+<li id="l758"><pre>      <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l759"><pre>      <a href="src_bzip2.adb.html#l37" title="defined at bzip2.adb:37:17">Dispose</a> (<a href="src_bzip2.adb.html#l38" title="defined at bzip2.adb:38:7">tt</a>); <span class="keyword">pragma</span> Unreferenced (<a href="src_bzip2.adb.html#l38" title="defined at bzip2.adb:38:7">tt</a>); </pre></li>
+<li id="l760"><pre>   <span class="keyword">end</span> <span class="droplink">Decompress<ul><li><a href="bzip2.ads.html#bzip2.ads:89:13" title="To API doc">To API doc</a></li><li><a href="src_bzip2.ads.html#l89" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l18" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l761"><pre> </pre></li>
+<li id="l762"><pre><span class="keyword">end</span> <span class="droplink">BZip2<ul><li><a href="bzip2.ads.html#bzip2.ads:81:9" title="To API doc">To API doc</a></li><li><a href="src_bzip2.ads.html#l81" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l16" title="To body">To body</a></li></ul></span>; </pre></li>
+</ol></div>
+</div>
+
+</body>
+</html>

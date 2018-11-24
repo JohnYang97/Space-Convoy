@@ -1,0 +1,464 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    Package: Streams
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+
+  <div id='navigation'>
+    <h2 class="button">Navigation</h2>
+    <a href='#Description'><div class="button2">Description</div></a>
+    <a href='#Classes'><div class="button2">Classes</div></a>
+    <a href='#Types'><div class="button2">Types</div></a>
+    <a href='#Constants'><div class="button2">Constants &amp; Global variables</div></a>
+    <a href='#Methods'><div class="button2">Subprograms &amp; Entries</div></a>
+  </div><!-- navigation -->
+  </div>
+</div> <!-- leftSide -->
+
+<div class='default' id='rightSide'>
+ <div id='rightSideInside'>
+ <div id='Index'>
+  <h2>Index</h2>
+  <script type="text/javascript">
+    var names = new Array (
+new Array ('UnZip_<wbr/>Stream_<wbr/>Type (private)', 'unzip-streams.ads:81:9', 'class-spec'),
+new Array ('Stream_<wbr/>Access', 'unzip-streams.ads:19:12', 'type-spec'),
+new Array ('Zipped_<wbr/>File_<wbr/>Type', 'unzip-streams.ads:21:9', 'type-spec'),
+new Array ('UZS_<wbr/>state (private)', 'unzip-streams.ads:71:9', 'type-spec'),
+new Array ('p_<wbr/>String (private)', 'unzip-streams.ads:79:9', 'type-spec'),
+new Array ('Use_<wbr/>Error', 'unzip-streams.ads:66:4', 'var-spec'),
+new Array ('End_<wbr/>Error', 'unzip-streams.ads:67:4', 'var-spec'),
+new Array ('Open', 'unzip-streams.ads:28:14', 'subp-spec'),
+new Array ('Open', 'unzip-streams.ads:37:14', 'subp-spec'),
+new Array ('Open', 'unzip-streams.ads:51:14', 'subp-spec'),
+new Array ('Close', 'unzip-streams.ads:59:14', 'subp-spec'),
+new Array ('Is_<wbr/>Open', 'unzip-streams.ads:61:13', 'subp-spec'),
+new Array ('End_<wbr/>Of_<wbr/>File', 'unzip-streams.ads:62:13', 'subp-spec'),
+new Array ('Stream', 'unzip-streams.ads:64:13', 'subp-spec'),
+new Array ('Read (private)', 'unzip-streams.ads:90:25', 'subp-spec'),
+new Array ('Write (private)', 'unzip-streams.ads:95:25', 'subp-spec'),
+      new Array ('dummy', '', ''));
+    printIndexList (names);
+  </script>
+  <noscript>
+    <ul>
+      <li class='class-spec'><a href="#unzip-streams.ads:81:9">UnZip_<wbr/>Stream_<wbr/>Type (private)</a></li>
+      <li class='type-spec'><a href="#unzip-streams.ads:19:12">Stream_<wbr/>Access</a></li>
+      <li class='type-spec'><a href="#unzip-streams.ads:21:9">Zipped_<wbr/>File_<wbr/>Type</a></li>
+      <li class='type-spec'><a href="#unzip-streams.ads:71:9">UZS_<wbr/>state (private)</a></li>
+      <li class='type-spec'><a href="#unzip-streams.ads:79:9">p_<wbr/>String (private)</a></li>
+      <li class='var-spec'><a href="#unzip-streams.ads:66:4">Use_<wbr/>Error</a></li>
+      <li class='var-spec'><a href="#unzip-streams.ads:67:4">End_<wbr/>Error</a></li>
+      <li class='subp-spec'><a href="#unzip-streams.ads:28:14">Open</a></li>
+      <li class='subp-spec'><a href="#unzip-streams.ads:37:14">Open</a></li>
+      <li class='subp-spec'><a href="#unzip-streams.ads:51:14">Open</a></li>
+      <li class='subp-spec'><a href="#unzip-streams.ads:59:14">Close</a></li>
+      <li class='subp-spec'><a href="#unzip-streams.ads:61:13">Is_<wbr/>Open</a></li>
+      <li class='subp-spec'><a href="#unzip-streams.ads:62:13">End_<wbr/>Of_<wbr/>File</a></li>
+      <li class='subp-spec'><a href="#unzip-streams.ads:64:13">Stream</a></li>
+      <li class='subp-spec'><a href="#unzip-streams.ads:90:25">Read (private)</a></li>
+      <li class='subp-spec'><a href="#unzip-streams.ads:95:25">Write (private)</a></li>
+    </ul>
+  </noscript>
+ </div>
+ </div>
+</div>
+
+<div class='default' id='documentation'>
+  <div class='title'>
+    Package:
+<span class="droplink"><i>Streams</i><ul>
+  <li><a href="src_unzip-streams.ads.html">Goto spec source</a></li>
+  <li><a href="src_unzip-streams.adb.html">Goto body source</a></li>
+</ul></span>
+  </div>
+  <div class='subprograms'>
+    <h1><a name='Description' id='Description'></a>Description</h1>
+    <div class="class">
+    <div class='details'><pre><span class="keyword">package</span> <span class="name_emphasis">UnZip.Streams</span> <span class="keyword">is</span></pre></div>
+    <div class='comment'><a href="unzip-streams.adb.html#unzip-streams.adb:7:14" title="UnZip.Streams">UnZip.Streams</a>
+--------------
+Extracts, as a stream, a file which is has been compressed into a <a href="zip.adb.html#zip.adb:9:14" title="Zip">Zip</a> archive.
+The <a href="zip.adb.html#zip.adb:9:14" title="Zip">Zip</a> archive itself (the input) can be a file or a more <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:20:19" title="general">general</a> stream.
+This package is resembling Ada.Streams.Stream_IO, to facilitate transition.
+</div>
+    </div>
+  </div>
+
+
+  <div class='subprograms'>
+    <h1><a name='Classes' id='Classes'></a>Classes</h1>
+    <div class="class">
+      <h3><a name='unzip-streams.ads:81:9' id='unzip-streams.ads:81:9'></a>
+<span class="droplink">UnZip_Stream_Type (private)<ul>
+  <li><a href="src_unzip-streams.ads.html#l81">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">UnZip_Stream_Type</span> <span class="keyword">is</span> <span class="keyword">new</span> Ada.Streams.Root_Stream_Type <span class="keyword">with</span> <span class="keyword">record</span>
+      state         : <a href="unzip-streams.ads.html#unzip-streams.ads:71:9" title="defined at unzip-streams.ads:71:9">UZS_state</a> := uninitialized;
+      archive_info  : <a href="zip.ads.html#zip.ads:53:8" title="defined at zip.ads:53:8">Zip.Zip_info</a>; <span class="comment">-- archive info (.zip file, directory)
+</span>      delete_info_on_closing  : Boolean;
+      file_name     : <a href="unzip-streams.ads.html#unzip-streams.ads:79:9" title="defined at unzip-streams.ads:79:9">p_String</a>; <span class="comment">-- name of zipped file to unzip from archive
+</span>      Uncompressed  : <a href="unzip.ads.html#unzip.ads:308:8" title="defined at unzip.ads:308:8">p_Stream_Element_Array</a>; <span class="comment">-- whole uncompressed data
+</span>      index         : Ada.Streams.Stream_Element_Offset;
+   <span class="keyword">end</span> <span class="keyword">record</span>;</pre></div>
+      <div class='profile'>
+        <div>
+          <h4>Ancestors:</h4>
+            <div>Ada.Streams.Root_Stream_Type</div>
+        </div>
+        <div>
+          <h4>Primitive operations:</h4>
+              <div><span class="droplink">Read<ul><li><a href="unzip-streams.ads.html#unzip-streams.ads:90:25" title="To API doc">To API doc</a></li><li><a href="src_unzip-streams.ads.html#l90" title="To spec">To spec</a></li></ul></span> <i>(overriding Ada.Streams.Read)</i></div>
+              <div><span class="droplink">Write<ul><li><a href="unzip-streams.ads.html#unzip-streams.ads:95:25" title="To API doc">To API doc</a></li><li><a href="src_unzip-streams.ads.html#l95" title="To spec">To spec</a></li></ul></span> <i>(overriding Ada.Streams.Write)</i></div>
+        </div>
+      </div>
+      <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_unzip-streams.ads.html#l81" title="unzip-streams.ads:81:9">unzip-streams.ads:81:9</a> (declaration)</i></div>
+            <div><i><a href="src_unzip-streams.adb.html#l17" title="unzip-streams.adb:17:34">unzip-streams.adb:17:34</a> (reference)</i></div>
+            <div><i><a href="src_unzip-streams.adb.html#l196" title="unzip-streams.adb:196:22">unzip-streams.adb:196:22</a> (reference)</i></div>
+            <div><i><a href="src_unzip-streams.adb.html#l273" title="unzip-streams.adb:273:54">unzip-streams.adb:273:54</a> (reference)</i></div>
+            <div><i><a href="src_unzip-streams.adb.html#l322" title="unzip-streams.adb:322:54">unzip-streams.adb:322:54</a> (reference)</i></div>
+            <div><i><a href="src_unzip-streams.ads.html#l91" title="unzip-streams.ads:91:29">unzip-streams.ads:91:29</a> (reference)</i></div>
+            <div><i><a href="src_unzip-streams.ads.html#l96" title="unzip-streams.ads:96:29">unzip-streams.ads:96:29</a> (reference)</i></div>
+            <div><i><a href="src_unzip-streams.ads.html#l99" title="unzip-streams.ads:99:36">unzip-streams.ads:99:36</a> (reference)</i></div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class='subprograms'>
+    <h1><a name='Types' id='Types'></a>Types</h1>
+    <div class="class">
+      <h3>
+        <a name='unzip-streams.ads:19:12' id='unzip-streams.ads:19:12'></a>
+<span class="droplink">Stream_Access<ul>
+  <li><a href="src_unzip-streams.ads.html#l19">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">subtype</span> <span class="name_emphasis">Stream_Access</span> <span class="keyword">is</span> Ada.Streams.Stream_IO.Stream_Access;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_unzip-streams.ads.html#l19" title="unzip-streams.ads:19:12">unzip-streams.ads:19:12</a> (declaration)</i></div>
+          <div><i><a href="src_unzip-streams.adb.html#l320" title="unzip-streams.adb:320:54">unzip-streams.adb:320:54</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.adb.html#l320" title="unzip-streams.adb:320:72">unzip-streams.adb:320:72</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.ads.html#l64" title="unzip-streams.ads:64:54">unzip-streams.ads:64:54</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='unzip-streams.ads:21:9' id='unzip-streams.ads:21:9'></a>
+<span class="droplink">Zipped_File_Type<ul>
+  <li><a href="src_unzip-streams.ads.html#l21">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Zipped_File_Type</span> <span class="keyword">is</span> <span class="keyword">private</span>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_unzip-streams.ads.html#l21" title="unzip-streams.ads:21:9">unzip-streams.ads:21:9</a> (declaration)</i></div>
+          <div><i><a href="src_globe_3d-textures.adb.html#l60" title="globe_3d-textures.adb:60:14">globe_3d-textures.adb:60:14</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.adb.html#l18" title="unzip-streams.adb:18:34">unzip-streams.adb:18:34</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.adb.html#l156" title="unzip-streams.adb:156:36">unzip-streams.adb:156:36</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.adb.html#l170" title="unzip-streams.adb:170:29">unzip-streams.adb:170:29</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.adb.html#l173" title="unzip-streams.adb:173:33">unzip-streams.adb:173:33</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.adb.html#l182" title="unzip-streams.adb:182:45">unzip-streams.adb:182:45</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.adb.html#l239" title="unzip-streams.adb:239:45">unzip-streams.adb:239:45</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.adb.html#l254" title="unzip-streams.adb:254:45">unzip-streams.adb:254:45</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.adb.html#l320" title="unzip-streams.adb:320:29">unzip-streams.adb:320:29</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.ads.html#l29" title="unzip-streams.ads:29:32">unzip-streams.ads:29:32</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.ads.html#l38" title="unzip-streams.ads:38:32">unzip-streams.ads:38:32</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.ads.html#l52" title="unzip-streams.ads:52:32">unzip-streams.ads:52:32</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.ads.html#l59" title="unzip-streams.ads:59:36">unzip-streams.ads:59:36</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.ads.html#l61" title="unzip-streams.ads:61:34">unzip-streams.ads:61:34</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.ads.html#l62" title="unzip-streams.ads:62:34">unzip-streams.ads:62:34</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.ads.html#l64" title="unzip-streams.ads:64:29">unzip-streams.ads:64:29</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.ads.html#l99" title="unzip-streams.ads:99:9">unzip-streams.ads:99:9</a> (full declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='unzip-streams.ads:71:9' id='unzip-streams.ads:71:9'></a>
+<span class="droplink">UZS_state (private)<ul>
+  <li><a href="src_unzip-streams.ads.html#l71">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">UZS_state</span> <span class="keyword">is</span> (
+      uninitialized,
+      data_uncompressed, <span class="comment">-- In that model, all data is unzipped in one
+</span>                         <span class="comment">--   time, into memory. If you have a smarter
+</span>                         <span class="comment">--   idea (small buffer with tasking, write me!)
+</span>      end_of_zip         <span class="comment">-- We have reached the end, not yet closed
+</span>);</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_unzip-streams.ads.html#l71" title="unzip-streams.ads:71:9">unzip-streams.ads:71:9</a> (declaration)</i></div>
+          <div><i><a href="src_unzip-streams.ads.html#l82" title="unzip-streams.ads:82:23">unzip-streams.ads:82:23</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='unzip-streams.ads:79:9' id='unzip-streams.ads:79:9'></a>
+<span class="droplink">p_String (private)<ul>
+  <li><a href="src_unzip-streams.ads.html#l79">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">p_String</span> <span class="keyword">is</span> <span class="keyword">access</span> String;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_unzip-streams.ads.html#l79" title="unzip-streams.ads:79:9">unzip-streams.ads:79:9</a> (declaration)</i></div>
+          <div><i><a href="src_unzip-streams.adb.html#l10" title="unzip-streams.adb:10:42">unzip-streams.adb:10:42</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.ads.html#l85" title="unzip-streams.ads:85:23">unzip-streams.ads:85:23</a> (reference)</i></div>
+      </div>
+    </div>
+  </div>
+
+  <div class='subprograms'>
+    <h1><a name='Constants' id='Constants'></a>Constants &amp; Global variables</h1>
+    <div class="class">
+      <h3><a name='unzip-streams.ads:66:4' id='unzip-streams.ads:66:4'></a>
+<span class="droplink">Use_Error<ul>
+  <li><a href="src_unzip-streams.ads.html#l66">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Use_Error</span>     : <span class="keyword">exception</span> <span class="keyword">renames</span> Ada.IO_Exceptions.Use_Error;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_unzip-streams.ads.html#l66" title="unzip-streams.ads:66:4">unzip-streams.ads:66:4</a> (declaration)</i></div>
+          <div><i><a href="src_unzip-streams.adb.html#l159" title="unzip-streams.adb:159:16">unzip-streams.adb:159:16</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.adb.html#l177" title="unzip-streams.adb:177:16">unzip-streams.adb:177:16</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.adb.html#l198" title="unzip-streams.adb:198:16">unzip-streams.adb:198:16</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.adb.html#l281" title="unzip-streams.adb:281:16">unzip-streams.adb:281:16</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='unzip-streams.ads:67:4' id='unzip-streams.ads:67:4'></a>
+<span class="droplink">End_Error<ul>
+  <li><a href="src_unzip-streams.ads.html#l67">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">End_Error</span>     : <span class="keyword">exception</span> <span class="keyword">renames</span> Ada.IO_Exceptions.End_Error;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_unzip-streams.ads.html#l67" title="unzip-streams.ads:67:4">unzip-streams.ads:67:4</a> (declaration)</i></div>
+      </div>
+    </div>
+  </div>
+
+    <div class='subprograms'>
+      <h1><a name='Methods' id='Methods'></a>Subprograms &amp; Entries</h1>
+      <div class="class">
+        <h3>
+          <a name='unzip-streams.ads:28:14' id='unzip-streams.ads:28:14'></a>
+<span class="droplink">Open<ul>
+  <li><a href="src_unzip-streams.ads.html#l28">Goto spec in source</a></li>
+  <li><a href="src_unzip-streams.adb.html#l239">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Open</span> <table><tr><td>(</td><td><span class="name"><a name="unzip-streams.ads:29:7"></a>File</span></td><td>: <span class="keyword">in</span> <span class="keyword">out</span> <a href="unzip-streams.ads.html#unzip-streams.ads:21:9" title="defined at unzip-streams.ads:21:9">Zipped_File_Type</a>;</td></tr><tr><td></td><td><span class="comment">-- File - in - archive handle </span>      <span class="name"><a name="unzip-streams.ads:30:7"></a>Archive_Name</span></td><td>:        String;</td></tr><tr><td></td><td><span class="comment">-- Name of archive file </span>      <span class="name"><a name="unzip-streams.ads:31:7"></a>Name</span></td><td>:        String;</td></tr><tr><td></td><td><span class="comment">-- Name of zipped entry </span>      <span class="name"><a name="unzip-streams.ads:32:7"></a>Password</span></td><td>:        String := <span class="string">""</span>;</td></tr><tr><td></td><td><span class="comment">-- Decryption password </span>      <span class="name"><a name="unzip-streams.ads:33:7"></a>Case_sensitive</span></td><td>:        Boolean := False );</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_unzip-streams.ads.html#l28" title="unzip-streams.ads:28:14">unzip-streams.ads:28:14</a> (declaration)</i></div>
+            <div><i><a href="src_unzip-streams.adb.html#l239" title="unzip-streams.adb:239:14">unzip-streams.adb:239:14</a> (body)</i></div>
+            <div><i><a href="src_unzip-streams.adb.html#l252" title="unzip-streams.adb:252:8">unzip-streams.adb:252:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="unzip-streams.ads.html#unzip-streams.ads:51:14" title="defined at unzip-streams.ads:51:14">Open</a> defined at <a href="src_unzip-streams.ads.html#l51" title="unzip-streams.ads:51:14">unzip-streams.ads:51:14</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:62:14" title="defined at zip.ads:62:14">Zip.Load</a> defined at <a href="src_zip.ads.html#l62" title="zip.ads:62:14">zip.ads:62:14</a></i></div>
+        </div>
+        <div class='comment'>Version : <a href="zip.adb.html#zip.adb:9:14" title="Zip">Zip</a> as a file
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='unzip-streams.ads:37:14' id='unzip-streams.ads:37:14'></a>
+<span class="droplink">Open<ul>
+  <li><a href="src_unzip-streams.ads.html#l37">Goto spec in source</a></li>
+  <li><a href="src_unzip-streams.adb.html#l254">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Open</span> <table><tr><td>(</td><td><span class="name"><a name="unzip-streams.ads:38:7"></a>File</span></td><td>: <span class="keyword">in</span> <span class="keyword">out</span> <a href="unzip-streams.ads.html#unzip-streams.ads:21:9" title="defined at unzip-streams.ads:21:9">Zipped_File_Type</a>;</td></tr><tr><td></td><td><span class="comment">-- File - in - archive handle </span>      <span class="name"><a name="unzip-streams.ads:39:7"></a>Archive_Stream</span></td><td>:        <a href="zip_streams.ads.html#zip_streams.ads:43:9" title="defined at zip_streams.ads:43:9">Zip_Streams.Zipstream_Class</a>;</td></tr><tr><td></td><td><span class="comment">-- Archive's stream </span>      <span class="name"><a name="unzip-streams.ads:40:7"></a>Name</span></td><td>:        String;</td></tr><tr><td></td><td><span class="comment">-- Name of zipped entry </span>      <span class="name"><a name="unzip-streams.ads:41:7"></a>Password</span></td><td>:        String := <span class="string">""</span>;</td></tr><tr><td></td><td><span class="comment">-- Decryption password </span>      <span class="name"><a name="unzip-streams.ads:42:7"></a>Case_sensitive</span></td><td>:        Boolean := False );</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_unzip-streams.ads.html#l37" title="unzip-streams.ads:37:14">unzip-streams.ads:37:14</a> (declaration)</i></div>
+            <div><i><a href="src_unzip-streams.adb.html#l254" title="unzip-streams.adb:254:14">unzip-streams.adb:254:14</a> (body)</i></div>
+            <div><i><a href="src_unzip-streams.adb.html#l267" title="unzip-streams.adb:267:8">unzip-streams.adb:267:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="unzip-streams.ads.html#unzip-streams.ads:51:14" title="defined at unzip-streams.ads:51:14">Open</a> defined at <a href="src_unzip-streams.ads.html#l51" title="unzip-streams.ads:51:14">unzip-streams.ads:51:14</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:68:14" title="defined at zip.ads:68:14">Zip.Load</a> defined at <a href="src_zip.ads.html#l68" title="zip.ads:68:14">zip.ads:68:14</a></i></div>
+        </div>
+        <div class='comment'>Version : <a href="zip.adb.html#zip.adb:9:14" title="Zip">Zip</a> as a stream
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='unzip-streams.ads:51:14' id='unzip-streams.ads:51:14'></a>
+<span class="droplink">Open<ul>
+  <li><a href="src_unzip-streams.ads.html#l51">Goto spec in source</a></li>
+  <li><a href="src_unzip-streams.adb.html#l182">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Open</span> <table><tr><td>(</td><td><span class="name"><a name="unzip-streams.ads:52:7"></a>File</span></td><td>: <span class="keyword">in</span> <span class="keyword">out</span> <a href="unzip-streams.ads.html#unzip-streams.ads:21:9" title="defined at unzip-streams.ads:21:9">Zipped_File_Type</a>;</td></tr><tr><td></td><td><span class="comment">-- File - in - archive handle </span>      <span class="name"><a name="unzip-streams.ads:53:7"></a>Archive_Info</span></td><td>:        <a href="zip.ads.html#zip.ads:53:8" title="defined at zip.ads:53:8">Zip.Zip_info</a>;</td></tr><tr><td></td><td><span class="comment">-- Archive's Zip_info </span>      <span class="name"><a name="unzip-streams.ads:54:7"></a>Name</span></td><td>:        String;</td></tr><tr><td></td><td><span class="comment">-- Name of zipped entry </span>      <span class="name"><a name="unzip-streams.ads:55:7"></a>Password</span></td><td>:        String := <span class="string">""</span>;</td></tr><tr><td></td><td><span class="comment">-- Decryption password </span>      <span class="name"><a name="unzip-streams.ads:56:7"></a>Case_sensitive</span></td><td>:        Boolean := False );</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_unzip-streams.ads.html#l51" title="unzip-streams.ads:51:14">unzip-streams.ads:51:14</a> (declaration)</i></div>
+            <div><i><a href="src_globe_3d-textures.adb.html#l63" title="globe_3d-textures.adb:63:9">globe_3d-textures.adb:63:9</a> (call)</i></div>
+            <div><i><a href="src_unzip-streams.adb.html#l182" title="unzip-streams.adb:182:14">unzip-streams.adb:182:14</a> (body)</i></div>
+            <div><i><a href="src_unzip-streams.adb.html#l237" title="unzip-streams.adb:237:8">unzip-streams.adb:237:8</a> (label)</i></div>
+            <div><i><a href="src_unzip-streams.adb.html#l250" title="unzip-streams.adb:250:7">unzip-streams.adb:250:7</a> (call)</i></div>
+            <div><i><a href="src_unzip-streams.adb.html#l265" title="unzip-streams.adb:265:7">unzip-streams.adb:265:7</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="unzip-streams.ads.html#unzip-streams.ads:37:14" title="defined at unzip-streams.ads:37:14">Open</a> defined at <a href="src_unzip-streams.ads.html#l37" title="unzip-streams.ads:37:14">unzip-streams.ads:37:14</a></i></div>
+            <div><i><a href="unzip-streams.ads.html#unzip-streams.ads:28:14" title="defined at unzip-streams.ads:28:14">Open</a> defined at <a href="src_unzip-streams.ads.html#l28" title="unzip-streams.ads:28:14">unzip-streams.ads:28:14</a></i></div>
+            <div><i><a href="globe_3d-textures.adb.html#globe_3d-textures.adb:61:17" title="defined at globe_3d-textures.adb:61:17">Textures.Load_texture_2D.Try.Try_a_type</a> defined at <a href="src_globe_3d-textures.adb.html#l61" title="globe_3d-textures.adb:61:17">globe_3d-textures.adb:61:17</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="unzip-streams.adb.html#unzip-streams.adb:125:14" title="defined at unzip-streams.adb:125:14">Streams.S_Extract</a> defined at <a href="src_unzip-streams.adb.html#l125" title="unzip-streams.adb:125:14">unzip-streams.adb:125:14</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:84:12" title="defined at zip.ads:84:12">Zip.Zip_name</a> defined at <a href="src_zip.ads.html#l84" title="zip.ads:84:12">zip.ads:84:12</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:88:12" title="defined at zip.ads:88:12">Zip.Zip_Stream</a> defined at <a href="src_zip.ads.html#l88" title="zip.ads:88:12">zip.ads:88:12</a></i></div>
+            <div><i><a href="zip_streams.ads.html#zip_streams.ads:138:14" title="defined at zip_streams.ads:138:14">Zip_Streams.Close</a> defined at <a href="src_zip_streams.ads.html#l138" title="zip_streams.ads:138:14">zip_streams.ads:138:14</a></i></div>
+            <div><i><a href="zip_streams.ads.html#zip_streams.ads:131:14" title="defined at zip_streams.ads:131:14">Zip_Streams.Open</a> defined at <a href="src_zip_streams.ads.html#l131" title="zip_streams.ads:131:14">zip_streams.ads:131:14</a></i></div>
+            <div><i><a href="zip_streams.ads.html#zip_streams.ads:56:14" title="defined at zip_streams.ads:56:14">Zip_Streams.Set_Name</a> defined at <a href="src_zip_streams.ads.html#l56" title="zip_streams.ads:56:14">zip_streams.ads:56:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='unzip-streams.ads:59:14' id='unzip-streams.ads:59:14'></a>
+<span class="droplink">Close<ul>
+  <li><a href="src_unzip-streams.ads.html#l59">Goto spec in source</a></li>
+  <li><a href="src_unzip-streams.adb.html#l156">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Close</span> <table><tr><td>(</td><td><span class="name"><a name="unzip-streams.ads:59:21"></a>File</span></td><td>: <span class="keyword">in</span> <span class="keyword">out</span> <a href="unzip-streams.ads.html#unzip-streams.ads:21:9" title="defined at unzip-streams.ads:21:9">Zipped_File_Type</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_unzip-streams.ads.html#l59" title="unzip-streams.ads:59:14">unzip-streams.ads:59:14</a> (declaration)</i></div>
+            <div><i><a href="src_globe_3d-textures.adb.html#l65" title="globe_3d-textures.adb:65:9">globe_3d-textures.adb:65:9</a> (call)</i></div>
+            <div><i><a href="src_unzip-streams.adb.html#l156" title="unzip-streams.adb:156:14">unzip-streams.adb:156:14</a> (body)</i></div>
+            <div><i><a href="src_unzip-streams.adb.html#l168" title="unzip-streams.adb:168:8">unzip-streams.adb:168:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="globe_3d-textures.adb.html#globe_3d-textures.adb:61:17" title="defined at globe_3d-textures.adb:61:17">Textures.Load_texture_2D.Try.Try_a_type</a> defined at <a href="src_globe_3d-textures.adb.html#l61" title="globe_3d-textures.adb:61:17">globe_3d-textures.adb:61:17</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="unzip-streams.adb.html#unzip-streams.adb:16:14" title="defined at unzip-streams.adb:16:14">Streams.Dispose</a> defined at <a href="src_unzip-streams.adb.html#l16" title="unzip-streams.adb:16:14">unzip-streams.adb:16:14</a></i></div>
+            <div><i><a href="unzip-streams.adb.html#unzip-streams.adb:9:14" title="defined at unzip-streams.adb:9:14">Streams.Dispose</a> defined at <a href="src_unzip-streams.adb.html#l9" title="unzip-streams.adb:9:14">unzip-streams.adb:9:14</a></i></div>
+            <div><i><a href="unzip-streams.adb.html#unzip-streams.adb:12:14" title="defined at unzip-streams.adb:12:14">Streams.Dispose</a> defined at <a href="src_unzip-streams.adb.html#l12" title="unzip-streams.adb:12:14">unzip-streams.adb:12:14</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:92:13" title="defined at zip.ads:92:13">Zip.Delete</a> defined at <a href="src_zip.ads.html#l92" title="zip.ads:92:13">zip.ads:92:13</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='unzip-streams.ads:61:13' id='unzip-streams.ads:61:13'></a>
+<span class="droplink">Is_Open<ul>
+  <li><a href="src_unzip-streams.ads.html#l61">Goto spec in source</a></li>
+  <li><a href="src_unzip-streams.adb.html#l170">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Is_Open</span>     <table><tr><td>(</td><td><span class="name"><a name="unzip-streams.ads:61:26"></a>File</span></td><td>: <a href="unzip-streams.ads.html#unzip-streams.ads:21:9" title="defined at unzip-streams.ads:21:9">Zipped_File_Type</a>) <span class="keyword">return</span> Boolean;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_unzip-streams.ads.html#l61" title="unzip-streams.ads:61:13">unzip-streams.ads:61:13</a> (declaration)</i></div>
+            <div><i><a href="src_unzip-streams.adb.html#l170" title="unzip-streams.adb:170:13">unzip-streams.adb:170:13</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='unzip-streams.ads:62:13' id='unzip-streams.ads:62:13'></a>
+<span class="droplink">End_Of_File<ul>
+  <li><a href="src_unzip-streams.ads.html#l62">Goto spec in source</a></li>
+  <li><a href="src_unzip-streams.adb.html#l173">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">End_Of_File</span> <table><tr><td>(</td><td><span class="name"><a name="unzip-streams.ads:62:26"></a>File</span></td><td>: <a href="unzip-streams.ads.html#unzip-streams.ads:21:9" title="defined at unzip-streams.ads:21:9">Zipped_File_Type</a>) <span class="keyword">return</span> Boolean;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_unzip-streams.ads.html#l62" title="unzip-streams.ads:62:13">unzip-streams.ads:62:13</a> (declaration)</i></div>
+            <div><i><a href="src_unzip-streams.adb.html#l173" title="unzip-streams.adb:173:13">unzip-streams.adb:173:13</a> (body)</i></div>
+            <div><i><a href="src_unzip-streams.adb.html#l180" title="unzip-streams.adb:180:8">unzip-streams.adb:180:8</a> (label)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='unzip-streams.ads:64:13' id='unzip-streams.ads:64:13'></a>
+<span class="droplink">Stream<ul>
+  <li><a href="src_unzip-streams.ads.html#l64">Goto spec in source</a></li>
+  <li><a href="src_unzip-streams.adb.html#l320">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Stream</span> <table><tr><td>(</td><td><span class="name"><a name="unzip-streams.ads:64:21"></a>File</span></td><td>: <a href="unzip-streams.ads.html#unzip-streams.ads:21:9" title="defined at unzip-streams.ads:21:9">Zipped_File_Type</a>) <span class="keyword">return</span> <a href="unzip-streams.ads.html#unzip-streams.ads:19:12" title="defined at unzip-streams.ads:19:12">Stream_Access</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_unzip-streams.ads.html#l64" title="unzip-streams.ads:64:13">unzip-streams.ads:64:13</a> (declaration)</i></div>
+            <div><i><a href="src_globe_3d-textures.adb.html#l64" title="globe_3d-textures.adb:64:21">globe_3d-textures.adb:64:21</a> (call)</i></div>
+            <div><i><a href="src_unzip-streams.adb.html#l320" title="unzip-streams.adb:320:13">unzip-streams.adb:320:13</a> (body)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="globe_3d-textures.adb.html#globe_3d-textures.adb:61:17" title="defined at globe_3d-textures.adb:61:17">Textures.Load_texture_2D.Try.Try_a_type</a> defined at <a href="src_globe_3d-textures.adb.html#l61" title="globe_3d-textures.adb:61:17">globe_3d-textures.adb:61:17</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='unzip-streams.ads:90:25' id='unzip-streams.ads:90:25'></a>
+<span class="droplink">Read (private)<ul>
+  <li><a href="src_unzip-streams.ads.html#l90">Goto spec in source</a></li>
+  <li><a href="src_unzip-streams.adb.html#l273">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">overriding</span> <span class="keyword">procedure</span> <span class="name_emphasis">Read</span> <table><tr><td>(</td><td><span class="name"><a name="unzip-streams.ads:91:7"></a>UnZip_Stream</span></td><td>: <span class="keyword">in</span> <span class="keyword">out</span> <a href="unzip-streams.ads.html#unzip-streams.ads:81:9" title="defined at unzip-streams.ads:81:9">UnZip_Stream_Type</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip-streams.ads:92:7"></a>Item</span></td><td>:    <span class="keyword">out</span> Ada.Streams.Stream_Element_Array;</td></tr><tr><td></td><td><span class="name"><a name="unzip-streams.ads:93:7"></a>Last</span></td><td>:    <span class="keyword">out</span> Ada.Streams.Stream_Element_Offset);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_unzip-streams.ads.html#l90" title="unzip-streams.ads:90:25">unzip-streams.ads:90:25</a> (declaration)</i></div>
+            <div><i><a href="src_unzip-streams.adb.html#l273" title="unzip-streams.adb:273:25">unzip-streams.adb:273:25</a> (body)</i></div>
+            <div><i><a href="src_unzip-streams.adb.html#l318" title="unzip-streams.adb:318:8">unzip-streams.adb:318:8</a> (label)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='unzip-streams.ads:95:25' id='unzip-streams.ads:95:25'></a>
+<span class="droplink">Write (private)<ul>
+  <li><a href="src_unzip-streams.ads.html#l95">Goto spec in source</a></li>
+  <li><a href="src_unzip-streams.adb.html#l322">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">overriding</span> <span class="keyword">procedure</span> <span class="name_emphasis">Write</span> <table><tr><td>(</td><td><span class="name"><a name="unzip-streams.ads:96:7"></a>UnZip_Stream</span></td><td>: <span class="keyword">in</span> <span class="keyword">out</span> <a href="unzip-streams.ads.html#unzip-streams.ads:81:9" title="defined at unzip-streams.ads:81:9">UnZip_Stream_Type</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip-streams.ads:97:7"></a>Item</span></td><td>:        Ada.Streams.Stream_Element_Array);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_unzip-streams.ads.html#l95" title="unzip-streams.ads:95:25">unzip-streams.ads:95:25</a> (declaration)</i></div>
+            <div><i><a href="src_unzip-streams.adb.html#l322" title="unzip-streams.adb:322:25">unzip-streams.adb:322:25</a> (body)</i></div>
+            <div><i><a href="src_unzip-streams.adb.html#l329" title="unzip-streams.adb:329:8">unzip-streams.adb:329:8</a> (label)</i></div>
+        </div>
+      </div>
+    </div>
+</div> <!-- documentation -->
+
+</body>
+</html>

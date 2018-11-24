@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    File: unzip-streams.ads
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+  </div>
+</div> <!-- leftSide -->
+
+<div class='subprograms'>
+  <div class='details'><ol><li id="l1"><pre><span class="comment">--  ________  ___   ______       ______     ___</span> </pre></li>
+<li id="l2"><pre> <span class="comment">-- /___ .. ._/  |.|   |.___.\     /. __ .\  __|.|   ____</span> </pre></li>
+<li id="l3"><pre> <span class="comment">--    / .. /    |.|   |.____/     |.|__|.| / .. ..|  __\ .. \</span> </pre></li>
+<li id="l4"><pre> <span class="comment">--  _/ .. /___  |.|   |.|    ===  | .. __ .. ||. = .| | = .. |</span> </pre></li>
+<li id="l5"><pre> <span class="comment">-- /_______/  |_|  /__|        /__|  |_| \__\_|  \__\_|</span> </pre></li>
+<li id="l6"><pre> </pre></li>
+<li id="l7"><pre> <span class="comment">-- UnZip.Streams</span> </pre></li>
+<li id="l8"><pre> <span class="comment">----------------</span> </pre></li>
+<li id="l9"><pre> <span class="comment">-- Extracts, as a stream, a file which is has been compressed into a Zip archive.</span> </pre></li>
+<li id="l10"><pre> <span class="comment">-- The Zip archive itself (the input) can be a file or a more general stream.</span> </pre></li>
+<li id="l11"><pre> <span class="comment">-- This package is resembling Ada.Streams.Stream_IO, to facilitate transition.</span> </pre></li>
+<li id="l12"><pre> </pre></li>
+<li id="l13"><pre><span class="keyword">with</span> <span class="droplink">Zip<ul><li><a href="zip.ads.html#zip.ads:45:9" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l45" title="To spec">To spec</a></li><li><a href="src_zip.adb.html#l9" title="To body">To body</a></li></ul></span>, <span class="droplink">Zip_Streams<ul><li><a href="zip_streams.ads.html#zip_streams.ads:31:9" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l31" title="To spec">To spec</a></li><li><a href="src_zip_streams.adb.html#l10" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l14"><pre> </pre></li>
+<li id="l15"><pre><span class="keyword">with</span> Ada.Streams.Stream_IO, Ada.IO_Exceptions; </pre></li>
+<li id="l16"><pre> </pre></li>
+<li id="l17"><pre><span class="keyword">package</span> <span class="droplink">UnZip.Streams<ul><li><a href="unzip-streams.ads.html#unzip-streams.ads:17:15" title="To API doc">To API doc</a></li><li><a href="src_unzip-streams.ads.html#l17" title="To spec">To spec</a></li><li><a href="src_unzip-streams.adb.html#l7" title="To body">To body</a></li></ul></span> <span class="keyword">is</span> </pre></li>
+<li id="l18"><pre> </pre></li>
+<li id="l19"><pre>   <span class="keyword">subtype</span> <a href="unzip-streams.ads.html#unzip-streams.ads:19:12" title="defined at unzip-streams.ads:19:12">Stream_Access</a> <span class="keyword">is</span> Ada.Streams.Stream_IO.Stream_Access; </pre></li>
+<li id="l20"><pre> </pre></li>
+<li id="l21"><pre>   <span class="keyword">type</span> <a href="unzip-streams.ads.html#unzip-streams.ads:21:9" title="defined at unzip-streams.ads:21:9">Zipped_File_Type</a> <span class="keyword">is</span> <span class="keyword">private</span>; </pre></li>
+<li id="l22"><pre> </pre></li>
+<li id="l23"><pre>   <span class="comment">-- Opens an input stream for the compressed file named Name stored</span> </pre></li>
+<li id="l24"><pre>   <span class="comment">-- in the archive file named Archive_Name. The function Stream ( .. )</span> </pre></li>
+<li id="l25"><pre>   <span class="comment">-- then gives access to the opened stream.</span> </pre></li>
+<li id="l26"><pre> </pre></li>
+<li id="l27"><pre>   <span class="comment">-- Version : Zip as a file</span> </pre></li>
+<li id="l28"><pre>   <span class="keyword">procedure</span> <span class="droplink">Open<ul><li><a href="unzip-streams.ads.html#unzip-streams.ads:28:14" title="To API doc">To API doc</a></li><li><a href="src_unzip-streams.adb.html#l239" title="To body">To body</a></li></ul></span> </pre></li>
+<li id="l29"><pre>     (<a href="unzip-streams.ads.html#unzip-streams.ads:29:7" title="defined at unzip-streams.ads:29:7">File</a>            : <span class="keyword">in</span> <span class="keyword">out</span> <span class="droplink">Zipped_File_Type<ul><li><a href="unzip-streams.ads.html#unzip-streams.ads:21:9" title="To API doc">To API doc</a></li><li><a href="src_unzip-streams.ads.html#l21" title="To spec">To spec</a></li></ul></span>; <span class="comment">-- File - in - archive handle</span> </pre></li>
+<li id="l30"><pre>      <a href="unzip-streams.ads.html#unzip-streams.ads:30:7" title="defined at unzip-streams.ads:30:7">Archive_Name</a>    :        String;               <span class="comment">-- Name of archive file</span> </pre></li>
+<li id="l31"><pre>      <a href="unzip-streams.ads.html#unzip-streams.ads:31:7" title="defined at unzip-streams.ads:31:7">Name</a>            :        String;               <span class="comment">-- Name of zipped entry</span> </pre></li>
+<li id="l32"><pre>      <a href="unzip-streams.ads.html#unzip-streams.ads:32:7" title="defined at unzip-streams.ads:32:7">Password</a>        :        String := <span class="string">&quot;&quot;</span>;         <span class="comment">-- Decryption password</span> </pre></li>
+<li id="l33"><pre>      <a href="unzip-streams.ads.html#unzip-streams.ads:33:7" title="defined at unzip-streams.ads:33:7">Case_sensitive</a>  :        Boolean := False </pre></li>
+<li id="l34"><pre>); </pre></li>
+<li id="l35"><pre> </pre></li>
+<li id="l36"><pre>   <span class="comment">-- Version : Zip as a stream</span> </pre></li>
+<li id="l37"><pre>   <span class="keyword">procedure</span> <span class="droplink">Open<ul><li><a href="unzip-streams.ads.html#unzip-streams.ads:37:14" title="To API doc">To API doc</a></li><li><a href="src_unzip-streams.adb.html#l254" title="To body">To body</a></li></ul></span> </pre></li>
+<li id="l38"><pre>     (<a href="unzip-streams.ads.html#unzip-streams.ads:38:7" title="defined at unzip-streams.ads:38:7">File</a>            : <span class="keyword">in</span> <span class="keyword">out</span> <span class="droplink">Zipped_File_Type<ul><li><a href="unzip-streams.ads.html#unzip-streams.ads:21:9" title="To API doc">To API doc</a></li><li><a href="src_unzip-streams.ads.html#l21" title="To spec">To spec</a></li></ul></span>; <span class="comment">-- File - in - archive handle</span> </pre></li>
+<li id="l39"><pre>      <a href="unzip-streams.ads.html#unzip-streams.ads:39:7" title="defined at unzip-streams.ads:39:7">Archive_Stream</a>  :        <span class="droplink">Zip_Streams.Zipstream_Class<ul><li><a href="zip_streams.ads.html#zip_streams.ads:43:9" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l43" title="To spec">To spec</a></li></ul></span>; <span class="comment">-- Archive&apos;s stream</span> </pre></li>
+<li id="l40"><pre>      <a href="unzip-streams.ads.html#unzip-streams.ads:40:7" title="defined at unzip-streams.ads:40:7">Name</a>            :        String;               <span class="comment">-- Name of zipped entry</span> </pre></li>
+<li id="l41"><pre>      <a href="unzip-streams.ads.html#unzip-streams.ads:41:7" title="defined at unzip-streams.ads:41:7">Password</a>        :        String := <span class="string">&quot;&quot;</span>;         <span class="comment">-- Decryption password</span> </pre></li>
+<li id="l42"><pre>      <a href="unzip-streams.ads.html#unzip-streams.ads:42:7" title="defined at unzip-streams.ads:42:7">Case_sensitive</a>  :        Boolean := False </pre></li>
+<li id="l43"><pre>); </pre></li>
+<li id="l44"><pre> </pre></li>
+<li id="l45"><pre>   <span class="comment">-- Same as above, but uses a the pre - loaded contents of the archive&apos;s</span> </pre></li>
+<li id="l46"><pre>   <span class="comment">-- Central Directory; hence Archive_Info is passed instead of</span> </pre></li>
+<li id="l47"><pre>   <span class="comment">-- Archive_Name or Archive_Stream.</span> </pre></li>
+<li id="l48"><pre>   <span class="comment">-- You need to call Zip.Load (Archive_Info .. .) prior to opening the</span> </pre></li>
+<li id="l49"><pre>   <span class="comment">-- compressed file.</span> </pre></li>
+<li id="l50"><pre> </pre></li>
+<li id="l51"><pre>   <span class="keyword">procedure</span> <span class="droplink">Open<ul><li><a href="unzip-streams.ads.html#unzip-streams.ads:51:14" title="To API doc">To API doc</a></li><li><a href="src_unzip-streams.adb.html#l182" title="To body">To body</a></li></ul></span> </pre></li>
+<li id="l52"><pre>     (<a href="unzip-streams.ads.html#unzip-streams.ads:52:7" title="defined at unzip-streams.ads:52:7">File</a>            : <span class="keyword">in</span> <span class="keyword">out</span> <span class="droplink">Zipped_File_Type<ul><li><a href="unzip-streams.ads.html#unzip-streams.ads:21:9" title="To API doc">To API doc</a></li><li><a href="src_unzip-streams.ads.html#l21" title="To spec">To spec</a></li></ul></span>; <span class="comment">-- File - in - archive handle</span> </pre></li>
+<li id="l53"><pre>      <span class="droplink">Archive_Info<ul><li><a href="unzip-streams.ads.html#unzip-streams.ads:53:7" title="To API doc">To API doc</a></li><li><a href="src_unzip-streams.adb.html#l183" title="To body">To body</a></li></ul></span>    :        <span class="droplink">Zip.Zip_info<ul><li><a href="zip.ads.html#zip.ads:53:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l53" title="To spec">To spec</a></li><li><a href="src_zip.ads.html#l308" title="To body">To body</a></li></ul></span>;         <span class="comment">-- Archive&apos;s Zip_info</span> </pre></li>
+<li id="l54"><pre>      <a href="unzip-streams.ads.html#unzip-streams.ads:54:7" title="defined at unzip-streams.ads:54:7">Name</a>            :        String;               <span class="comment">-- Name of zipped entry</span> </pre></li>
+<li id="l55"><pre>      <a href="unzip-streams.ads.html#unzip-streams.ads:55:7" title="defined at unzip-streams.ads:55:7">Password</a>        :        String := <span class="string">&quot;&quot;</span>;         <span class="comment">-- Decryption password</span> </pre></li>
+<li id="l56"><pre>      <a href="unzip-streams.ads.html#unzip-streams.ads:56:7" title="defined at unzip-streams.ads:56:7">Case_sensitive</a>  :        Boolean := False </pre></li>
+<li id="l57"><pre>); </pre></li>
+<li id="l58"><pre> </pre></li>
+<li id="l59"><pre>   <span class="keyword">procedure</span> <span class="droplink">Close<ul><li><a href="unzip-streams.ads.html#unzip-streams.ads:59:14" title="To API doc">To API doc</a></li><li><a href="src_unzip-streams.adb.html#l156" title="To body">To body</a></li></ul></span> (<a href="unzip-streams.ads.html#unzip-streams.ads:59:21" title="defined at unzip-streams.ads:59:21">File</a>  : <span class="keyword">in</span> <span class="keyword">out</span> <span class="droplink">Zipped_File_Type<ul><li><a href="unzip-streams.ads.html#unzip-streams.ads:21:9" title="To API doc">To API doc</a></li><li><a href="src_unzip-streams.ads.html#l21" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l60"><pre> </pre></li>
+<li id="l61"><pre>   <span class="keyword">function</span> <span class="droplink">Is_Open<ul><li><a href="unzip-streams.ads.html#unzip-streams.ads:61:13" title="To API doc">To API doc</a></li><li><a href="src_unzip-streams.adb.html#l170" title="To body">To body</a></li></ul></span>     (<a href="unzip-streams.ads.html#unzip-streams.ads:61:26" title="defined at unzip-streams.ads:61:26">File</a>  : <span class="droplink">Zipped_File_Type<ul><li><a href="unzip-streams.ads.html#unzip-streams.ads:21:9" title="To API doc">To API doc</a></li><li><a href="src_unzip-streams.ads.html#l21" title="To spec">To spec</a></li></ul></span>) <span class="keyword">return</span> Boolean; </pre></li>
+<li id="l62"><pre>   <span class="keyword">function</span> <span class="droplink">End_Of_File<ul><li><a href="unzip-streams.ads.html#unzip-streams.ads:62:13" title="To API doc">To API doc</a></li><li><a href="src_unzip-streams.adb.html#l173" title="To body">To body</a></li></ul></span> (<a href="unzip-streams.ads.html#unzip-streams.ads:62:26" title="defined at unzip-streams.ads:62:26">File</a>  : <span class="droplink">Zipped_File_Type<ul><li><a href="unzip-streams.ads.html#unzip-streams.ads:21:9" title="To API doc">To API doc</a></li><li><a href="src_unzip-streams.ads.html#l21" title="To spec">To spec</a></li></ul></span>) <span class="keyword">return</span> Boolean; </pre></li>
+<li id="l63"><pre> </pre></li>
+<li id="l64"><pre>   <span class="keyword">function</span> <span class="droplink">Stream<ul><li><a href="unzip-streams.ads.html#unzip-streams.ads:64:13" title="To API doc">To API doc</a></li><li><a href="src_unzip-streams.adb.html#l320" title="To body">To body</a></li></ul></span> (<a href="unzip-streams.ads.html#unzip-streams.ads:64:21" title="defined at unzip-streams.ads:64:21">File</a>  : <span class="droplink">Zipped_File_Type<ul><li><a href="unzip-streams.ads.html#unzip-streams.ads:21:9" title="To API doc">To API doc</a></li><li><a href="src_unzip-streams.ads.html#l21" title="To spec">To spec</a></li></ul></span>) <span class="keyword">return</span> <span class="droplink">Stream_Access<ul><li><a href="unzip-streams.ads.html#unzip-streams.ads:19:12" title="To API doc">To API doc</a></li><li><a href="src_unzip-streams.ads.html#l19" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l65"><pre> </pre></li>
+<li id="l66"><pre>   <a href="unzip-streams.ads.html#unzip-streams.ads:66:4" title="defined at unzip-streams.ads:66:4">Use_Error</a>     : <span class="keyword">exception</span> <span class="keyword">renames</span> Ada.IO_Exceptions.Use_Error; </pre></li>
+<li id="l67"><pre>   <a href="unzip-streams.ads.html#unzip-streams.ads:67:4" title="defined at unzip-streams.ads:67:4">End_Error</a>     : <span class="keyword">exception</span> <span class="keyword">renames</span> Ada.IO_Exceptions.End_Error; </pre></li>
+<li id="l68"><pre> </pre></li>
+<li id="l69"><pre><span class="keyword">private</span> </pre></li>
+<li id="l70"><pre> </pre></li>
+<li id="l71"><pre>   <span class="keyword">type</span> <a href="unzip-streams.ads.html#unzip-streams.ads:71:9" title="defined at unzip-streams.ads:71:9">UZS_state</a> <span class="keyword">is</span> ( </pre></li>
+<li id="l72"><pre>      uninitialized, </pre></li>
+<li id="l73"><pre>      data_uncompressed, <span class="comment">-- In that model, all data is unzipped in one</span> </pre></li>
+<li id="l74"><pre>                         <span class="comment">--   time, into memory. If you have a smarter</span> </pre></li>
+<li id="l75"><pre>                         <span class="comment">--   idea (small buffer with tasking, write me!)</span> </pre></li>
+<li id="l76"><pre>      end_of_zip         <span class="comment">-- We have reached the end, not yet closed</span> </pre></li>
+<li id="l77"><pre>); </pre></li>
+<li id="l78"><pre> </pre></li>
+<li id="l79"><pre>   <span class="keyword">type</span> <a href="unzip-streams.ads.html#unzip-streams.ads:79:9" title="defined at unzip-streams.ads:79:9">p_String</a> <span class="keyword">is</span> <span class="keyword">access</span> String; </pre></li>
+<li id="l80"><pre> </pre></li>
+<li id="l81"><pre>   <span class="keyword">type</span> <a href="unzip-streams.ads.html#unzip-streams.ads:81:9" title="defined at unzip-streams.ads:81:9">UnZip_Stream_Type</a> <span class="keyword">is</span> <span class="keyword">new</span> Ada.Streams.Root_Stream_Type <span class="keyword">with</span> <span class="keyword">record</span> </pre></li>
+<li id="l82"><pre>      state         : <span class="droplink">UZS_state<ul><li><a href="unzip-streams.ads.html#unzip-streams.ads:71:9" title="To API doc">To API doc</a></li><li><a href="src_unzip-streams.ads.html#l71" title="To spec">To spec</a></li></ul></span> := uninitialized; </pre></li>
+<li id="l83"><pre>      archive_info  : <span class="droplink">Zip.Zip_info<ul><li><a href="zip.ads.html#zip.ads:53:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l53" title="To spec">To spec</a></li><li><a href="src_zip.ads.html#l308" title="To body">To body</a></li></ul></span>; <span class="comment">-- archive info (.zip file, directory)</span> </pre></li>
+<li id="l84"><pre>      delete_info_on_closing  : Boolean; </pre></li>
+<li id="l85"><pre>      file_name     : <span class="droplink">p_String<ul><li><a href="unzip-streams.ads.html#unzip-streams.ads:79:9" title="To API doc">To API doc</a></li><li><a href="src_unzip-streams.ads.html#l79" title="To spec">To spec</a></li></ul></span>; <span class="comment">-- name of zipped file to unzip from archive</span> </pre></li>
+<li id="l86"><pre>      Uncompressed  : <span class="droplink">p_Stream_Element_Array<ul><li><a href="unzip.ads.html#unzip.ads:308:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l308" title="To spec">To spec</a></li></ul></span>; <span class="comment">-- whole uncompressed data</span> </pre></li>
+<li id="l87"><pre>      index         : Ada.Streams.Stream_Element_Offset; </pre></li>
+<li id="l88"><pre>   <span class="keyword">end</span> <span class="keyword">record</span>; </pre></li>
+<li id="l89"><pre> </pre></li>
+<li id="l90"><pre>   <span class="keyword">overriding</span> <span class="keyword">procedure</span> <span class="droplink">Read<ul><li><a href="unzip-streams.ads.html#unzip-streams.ads:90:25" title="To API doc">To API doc</a></li><li><a href="src_unzip-streams.adb.html#l273" title="To body">To body</a></li></ul></span> </pre></li>
+<li id="l91"><pre>     (<span class="droplink">UnZip_Stream<ul><li><a href="unzip-streams.ads.html#unzip-streams.ads:91:7" title="To API doc">To API doc</a></li><li><a href="src_unzip-streams.adb.html#l273" title="To body">To body</a></li></ul></span> : <span class="keyword">in</span> <span class="keyword">out</span> <span class="droplink">UnZip_Stream_Type<ul><li><a href="unzip-streams.ads.html#unzip-streams.ads:81:9" title="To API doc">To API doc</a></li><li><a href="src_unzip-streams.ads.html#l81" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l92"><pre>      <a href="unzip-streams.ads.html#unzip-streams.ads:92:7" title="defined at unzip-streams.ads:92:7">Item</a>         :    <span class="keyword">out</span> Ada.Streams.Stream_Element_Array; </pre></li>
+<li id="l93"><pre>      <a href="unzip-streams.ads.html#unzip-streams.ads:93:7" title="defined at unzip-streams.ads:93:7">Last</a>         :    <span class="keyword">out</span> Ada.Streams.Stream_Element_Offset); </pre></li>
+<li id="l94"><pre> </pre></li>
+<li id="l95"><pre>   <span class="keyword">overriding</span> <span class="keyword">procedure</span> <span class="droplink">Write<ul><li><a href="unzip-streams.ads.html#unzip-streams.ads:95:25" title="To API doc">To API doc</a></li><li><a href="src_unzip-streams.adb.html#l322" title="To body">To body</a></li></ul></span> </pre></li>
+<li id="l96"><pre>     (<span class="droplink">UnZip_Stream<ul><li><a href="unzip-streams.ads.html#unzip-streams.ads:96:7" title="To API doc">To API doc</a></li><li><a href="src_unzip-streams.adb.html#l322" title="To body">To body</a></li></ul></span> : <span class="keyword">in</span> <span class="keyword">out</span> <span class="droplink">UnZip_Stream_Type<ul><li><a href="unzip-streams.ads.html#unzip-streams.ads:81:9" title="To API doc">To API doc</a></li><li><a href="src_unzip-streams.ads.html#l81" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l97"><pre>      <a href="unzip-streams.ads.html#unzip-streams.ads:97:7" title="defined at unzip-streams.ads:97:7">Item</a>         :        Ada.Streams.Stream_Element_Array); </pre></li>
+<li id="l98"><pre> </pre></li>
+<li id="l99"><pre>   <span class="keyword">type</span> <span class="droplink">Zipped_File_Type<ul><li><a href="unzip-streams.ads.html#unzip-streams.ads:21:9" title="To API doc">To API doc</a></li><li><a href="src_unzip-streams.ads.html#l21" title="To spec">To spec</a></li></ul></span> <span class="keyword">is</span> <span class="keyword">access</span> <span class="droplink">UnZip_Stream_Type<ul><li><a href="unzip-streams.ads.html#unzip-streams.ads:81:9" title="To API doc">To API doc</a></li><li><a href="src_unzip-streams.ads.html#l81" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l100"><pre> </pre></li>
+<li id="l101"><pre><span class="keyword">end</span> <span class="droplink">UnZip.Streams<ul><li><a href="unzip-streams.ads.html#unzip-streams.ads:17:15" title="To API doc">To API doc</a></li><li><a href="src_unzip-streams.ads.html#l17" title="To spec">To spec</a></li><li><a href="src_unzip-streams.adb.html#l7" title="To body">To body</a></li></ul></span>; </pre></li>
+</ol></div>
+</div>
+
+</body>
+</html>

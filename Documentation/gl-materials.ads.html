@@ -1,0 +1,856 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    Package: Materials
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+
+  <div id='navigation'>
+    <h2 class="button">Navigation</h2>
+    <a href='#Description'><div class="button2">Description</div></a>
+    <a href='#Types'><div class="button2">Types</div></a>
+    <a href='#Constants'><div class="button2">Constants &amp; Global variables</div></a>
+    <a href='#Methods'><div class="button2">Subprograms &amp; Entries</div></a>
+  </div><!-- navigation -->
+  </div>
+</div> <!-- leftSide -->
+
+<div class='default' id='rightSide'>
+ <div id='rightSideInside'>
+ <div id='Index'>
+  <h2>Index</h2>
+  <script type="text/javascript">
+    var names = new Array (
+new Array ('Material_<wbr/>type', 'gl-materials.ads:25:8', 'type-spec'),
+new Array ('neutral_<wbr/>material', 'gl-materials.ads:35:3', 'var-spec'),
+new Array ('Red', 'gl-materials.ads:45:3', 'var-spec'),
+new Array ('Orange', 'gl-materials.ads:53:3', 'var-spec'),
+new Array ('Yellow', 'gl-materials.ads:61:3', 'var-spec'),
+new Array ('Green', 'gl-materials.ads:69:3', 'var-spec'),
+new Array ('Indigo', 'gl-materials.ads:77:3', 'var-spec'),
+new Array ('Blue', 'gl-materials.ads:85:3', 'var-spec'),
+new Array ('Violet', 'gl-materials.ads:93:3', 'var-spec'),
+new Array ('White', 'gl-materials.ads:101:3', 'var-spec'),
+new Array ('Black', 'gl-materials.ads:109:3', 'var-spec'),
+new Array ('Medium_<wbr/>Gray', 'gl-materials.ads:117:3', 'var-spec'),
+new Array ('Light_<wbr/>Gray', 'gl-materials.ads:125:3', 'var-spec'),
+new Array ('Glass', 'gl-materials.ads:135:3', 'var-spec'),
+new Array ('Brass', 'gl-materials.ads:143:3', 'var-spec'),
+new Array ('Bronze', 'gl-materials.ads:149:3', 'var-spec'),
+new Array ('Polished_<wbr/>Bronze', 'gl-materials.ads:155:3', 'var-spec'),
+new Array ('Chrome', 'gl-materials.ads:161:3', 'var-spec'),
+new Array ('Copper', 'gl-materials.ads:167:3', 'var-spec'),
+new Array ('Polished_<wbr/>Copper', 'gl-materials.ads:173:3', 'var-spec'),
+new Array ('Gold', 'gl-materials.ads:179:3', 'var-spec'),
+new Array ('Polished_<wbr/>Gold', 'gl-materials.ads:185:3', 'var-spec'),
+new Array ('Pewter', 'gl-materials.ads:191:3', 'var-spec'),
+new Array ('Silver', 'gl-materials.ads:197:3', 'var-spec'),
+new Array ('Polished_<wbr/>Silver', 'gl-materials.ads:203:3', 'var-spec'),
+new Array ('Emerald', 'gl-materials.ads:209:3', 'var-spec'),
+new Array ('Jade', 'gl-materials.ads:215:3', 'var-spec'),
+new Array ('Obsidian', 'gl-materials.ads:221:3', 'var-spec'),
+new Array ('Pearl', 'gl-materials.ads:227:3', 'var-spec'),
+new Array ('Ruby', 'gl-materials.ads:233:3', 'var-spec'),
+new Array ('Turquoise', 'gl-materials.ads:239:3', 'var-spec'),
+new Array ('Black_<wbr/>Plastic', 'gl-materials.ads:245:3', 'var-spec'),
+new Array ('Black_<wbr/>Rubber', 'gl-materials.ads:251:3', 'var-spec'),
+new Array ('VRML_<wbr/>Defaults', 'gl-materials.ads:258:3', 'var-spec'),
+new Array ('is_<wbr/>Transparent', 'gl-materials.ads:33:12', 'subp-spec'),
+      new Array ('dummy', '', ''));
+    printIndexList (names);
+  </script>
+  <noscript>
+    <ul>
+      <li class='type-spec'><a href="#gl-materials.ads:25:8">Material_<wbr/>type</a></li>
+      <li class='var-spec'><a href="#gl-materials.ads:35:3">neutral_<wbr/>material</a></li>
+      <li class='var-spec'><a href="#gl-materials.ads:45:3">Red</a></li>
+      <li class='var-spec'><a href="#gl-materials.ads:53:3">Orange</a></li>
+      <li class='var-spec'><a href="#gl-materials.ads:61:3">Yellow</a></li>
+      <li class='var-spec'><a href="#gl-materials.ads:69:3">Green</a></li>
+      <li class='var-spec'><a href="#gl-materials.ads:77:3">Indigo</a></li>
+      <li class='var-spec'><a href="#gl-materials.ads:85:3">Blue</a></li>
+      <li class='var-spec'><a href="#gl-materials.ads:93:3">Violet</a></li>
+      <li class='var-spec'><a href="#gl-materials.ads:101:3">White</a></li>
+      <li class='var-spec'><a href="#gl-materials.ads:109:3">Black</a></li>
+      <li class='var-spec'><a href="#gl-materials.ads:117:3">Medium_<wbr/>Gray</a></li>
+      <li class='var-spec'><a href="#gl-materials.ads:125:3">Light_<wbr/>Gray</a></li>
+      <li class='var-spec'><a href="#gl-materials.ads:135:3">Glass</a></li>
+      <li class='var-spec'><a href="#gl-materials.ads:143:3">Brass</a></li>
+      <li class='var-spec'><a href="#gl-materials.ads:149:3">Bronze</a></li>
+      <li class='var-spec'><a href="#gl-materials.ads:155:3">Polished_<wbr/>Bronze</a></li>
+      <li class='var-spec'><a href="#gl-materials.ads:161:3">Chrome</a></li>
+      <li class='var-spec'><a href="#gl-materials.ads:167:3">Copper</a></li>
+      <li class='var-spec'><a href="#gl-materials.ads:173:3">Polished_<wbr/>Copper</a></li>
+      <li class='var-spec'><a href="#gl-materials.ads:179:3">Gold</a></li>
+      <li class='var-spec'><a href="#gl-materials.ads:185:3">Polished_<wbr/>Gold</a></li>
+      <li class='var-spec'><a href="#gl-materials.ads:191:3">Pewter</a></li>
+      <li class='var-spec'><a href="#gl-materials.ads:197:3">Silver</a></li>
+      <li class='var-spec'><a href="#gl-materials.ads:203:3">Polished_<wbr/>Silver</a></li>
+      <li class='var-spec'><a href="#gl-materials.ads:209:3">Emerald</a></li>
+      <li class='var-spec'><a href="#gl-materials.ads:215:3">Jade</a></li>
+      <li class='var-spec'><a href="#gl-materials.ads:221:3">Obsidian</a></li>
+      <li class='var-spec'><a href="#gl-materials.ads:227:3">Pearl</a></li>
+      <li class='var-spec'><a href="#gl-materials.ads:233:3">Ruby</a></li>
+      <li class='var-spec'><a href="#gl-materials.ads:239:3">Turquoise</a></li>
+      <li class='var-spec'><a href="#gl-materials.ads:245:3">Black_<wbr/>Plastic</a></li>
+      <li class='var-spec'><a href="#gl-materials.ads:251:3">Black_<wbr/>Rubber</a></li>
+      <li class='var-spec'><a href="#gl-materials.ads:258:3">VRML_<wbr/>Defaults</a></li>
+      <li class='subp-spec'><a href="#gl-materials.ads:33:12">is_<wbr/>Transparent</a></li>
+    </ul>
+  </noscript>
+ </div>
+ </div>
+</div>
+
+<div class='default' id='documentation'>
+  <div class='title'>
+    Package:
+<span class="droplink"><i>Materials</i><ul>
+  <li><a href="src_gl-materials.ads.html">Goto spec source</a></li>
+  <li><a href="src_gl-materials.adb.html">Goto body source</a></li>
+</ul></span>
+  </div>
+  <div class='subprograms'>
+    <h1><a name='Description' id='Description'></a>Description</h1>
+    <div class="class">
+    <div class='details'><pre><span class="keyword">package</span> <span class="name_emphasis">GL.Materials</span> <span class="keyword">is</span></pre></div>
+    </div>
+  </div>
+
+
+
+
+  <div class='subprograms'>
+    <h1><a name='Types' id='Types'></a>Types</h1>
+    <div class="class">
+      <h3>
+        <a name='gl-materials.ads:25:8' id='gl-materials.ads:25:8'></a>
+<span class="droplink">Material_type<ul>
+  <li><a href="src_gl-materials.ads.html#l25">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Material_type</span> <span class="keyword">is</span> <span class="keyword">record</span>
+    ambient,
+    diffuse,
+    specular,
+    emission   : <a href="gl.ads.html#gl.ads:154:9" title="defined at gl.ads:154:9">GL.Material_Float_vector</a>;
+    shininess  : <a href="gl.ads.html#gl.ads:126:9" title="defined at gl.ads:126:9">GL.C_Float</a>; <span class="comment">-- 0.0 .. 128.0
+</span>  <span class="keyword">end</span> <span class="keyword">record</span>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-materials.ads.html#l25" title="gl-materials.ads:25:8">gl-materials.ads:25:8</a> (declaration)</i></div>
+          <div><i><a href="src_gl-materials.adb.html#l3" title="gl-materials.adb:3:36">gl-materials.adb:3:36</a> (reference)</i></div>
+          <div><i><a href="src_gl-materials.ads.html#l33" title="gl-materials.ads:33:35">gl-materials.ads:33:35</a> (reference)</i></div>
+          <div><i><a href="src_gl-materials.ads.html#l36" title="gl-materials.ads:36:14">gl-materials.ads:36:14</a> (reference)</i></div>
+          <div><i><a href="src_gl-materials.ads.html#l45" title="gl-materials.ads:45:21">gl-materials.ads:45:21</a> (reference)</i></div>
+          <div><i><a href="src_gl-materials.ads.html#l53" title="gl-materials.ads:53:24">gl-materials.ads:53:24</a> (reference)</i></div>
+          <div><i><a href="src_gl-materials.ads.html#l61" title="gl-materials.ads:61:24">gl-materials.ads:61:24</a> (reference)</i></div>
+          <div><i><a href="src_gl-materials.ads.html#l69" title="gl-materials.ads:69:23">gl-materials.ads:69:23</a> (reference)</i></div>
+          <div><i><a href="src_gl-materials.ads.html#l77" title="gl-materials.ads:77:24">gl-materials.ads:77:24</a> (reference)</i></div>
+          <div><i><a href="src_gl-materials.ads.html#l85" title="gl-materials.ads:85:22">gl-materials.ads:85:22</a> (reference)</i></div>
+          <div><i><a href="src_gl-materials.ads.html#l93" title="gl-materials.ads:93:24">gl-materials.ads:93:24</a> (reference)</i></div>
+          <div><i><a href="src_gl-materials.ads.html#l101" title="gl-materials.ads:101:23">gl-materials.ads:101:23</a> (reference)</i></div>
+          <div><i><a href="src_gl-materials.ads.html#l109" title="gl-materials.ads:109:23">gl-materials.ads:109:23</a> (reference)</i></div>
+          <div><i><a href="src_gl-materials.ads.html#l117" title="gl-materials.ads:117:29">gl-materials.ads:117:29</a> (reference)</i></div>
+          <div><i><a href="src_gl-materials.ads.html#l125" title="gl-materials.ads:125:28">gl-materials.ads:125:28</a> (reference)</i></div>
+          <div><i><a href="src_gl-materials.ads.html#l135" title="gl-materials.ads:135:23">gl-materials.ads:135:23</a> (reference)</i></div>
+          <div><i><a href="src_gl-materials.ads.html#l143" title="gl-materials.ads:143:24">gl-materials.ads:143:24</a> (reference)</i></div>
+          <div><i><a href="src_gl-materials.ads.html#l149" title="gl-materials.ads:149:25">gl-materials.ads:149:25</a> (reference)</i></div>
+          <div><i><a href="src_gl-materials.ads.html#l155" title="gl-materials.ads:155:34">gl-materials.ads:155:34</a> (reference)</i></div>
+          <div><i><a href="src_gl-materials.ads.html#l161" title="gl-materials.ads:161:25">gl-materials.ads:161:25</a> (reference)</i></div>
+          <div><i><a href="src_gl-materials.ads.html#l167" title="gl-materials.ads:167:25">gl-materials.ads:167:25</a> (reference)</i></div>
+          <div><i><a href="src_gl-materials.ads.html#l173" title="gl-materials.ads:173:34">gl-materials.ads:173:34</a> (reference)</i></div>
+          <div><i><a href="src_gl-materials.ads.html#l179" title="gl-materials.ads:179:23">gl-materials.ads:179:23</a> (reference)</i></div>
+          <div><i><a href="src_gl-materials.ads.html#l185" title="gl-materials.ads:185:32">gl-materials.ads:185:32</a> (reference)</i></div>
+          <div><i><a href="src_gl-materials.ads.html#l191" title="gl-materials.ads:191:25">gl-materials.ads:191:25</a> (reference)</i></div>
+          <div><i><a href="src_gl-materials.ads.html#l197" title="gl-materials.ads:197:25">gl-materials.ads:197:25</a> (reference)</i></div>
+          <div><i><a href="src_gl-materials.ads.html#l203" title="gl-materials.ads:203:34">gl-materials.ads:203:34</a> (reference)</i></div>
+          <div><i><a href="src_gl-materials.ads.html#l209" title="gl-materials.ads:209:26">gl-materials.ads:209:26</a> (reference)</i></div>
+          <div><i><a href="src_gl-materials.ads.html#l215" title="gl-materials.ads:215:23">gl-materials.ads:215:23</a> (reference)</i></div>
+          <div><i><a href="src_gl-materials.ads.html#l221" title="gl-materials.ads:221:27">gl-materials.ads:221:27</a> (reference)</i></div>
+          <div><i><a href="src_gl-materials.ads.html#l227" title="gl-materials.ads:227:24">gl-materials.ads:227:24</a> (reference)</i></div>
+          <div><i><a href="src_gl-materials.ads.html#l233" title="gl-materials.ads:233:23">gl-materials.ads:233:23</a> (reference)</i></div>
+          <div><i><a href="src_gl-materials.ads.html#l239" title="gl-materials.ads:239:28">gl-materials.ads:239:28</a> (reference)</i></div>
+          <div><i><a href="src_gl-materials.ads.html#l245" title="gl-materials.ads:245:32">gl-materials.ads:245:32</a> (reference)</i></div>
+          <div><i><a href="src_gl-materials.ads.html#l251" title="gl-materials.ads:251:31">gl-materials.ads:251:31</a> (reference)</i></div>
+          <div><i><a href="src_gl-materials.ads.html#l258" title="gl-materials.ads:258:31">gl-materials.ads:258:31</a> (reference)</i></div>
+          <div><i><a href="src_gl-skins.adb.html#l57" title="gl-skins.adb:57:42">gl-skins.adb:57:42</a> (reference)</i></div>
+          <div><i><a href="src_gl-skins.ads.html#l71" title="gl-skins.ads:71:35">gl-skins.ads:71:35</a> (reference)</i></div>
+          <div><i><a href="src_globe_3d.adb.html#l88" title="globe_3d.adb:88:43">globe_3d.adb:88:43</a> (reference)</i></div>
+          <div><i><a href="src_globe_3d.adb.html#l97" title="globe_3d.adb:97:45">globe_3d.adb:97:45</a> (reference)</i></div>
+          <div><i><a href="src_globe_3d.ads.html#l313" title="globe_3d.ads:313:36">globe_3d.ads:313:36</a> (reference)</i></div>
+          <div><i><a href="src_globe_3d.ads.html#l590" title="globe_3d.ads:590:43">globe_3d.ads:590:43</a> (reference)</i></div>
+          <div><i><a href="src_globe_3d.ads.html#l594" title="globe_3d.ads:594:45">globe_3d.ads:594:45</a> (reference)</i></div>
+          <div><i><a href="src_models.adb.html#l19" title="models.adb:19:72">models.adb:19:72</a> (reference)</i></div>
+          <div><i><a href="src_models.adb.html#l47" title="models.adb:47:54">models.adb:47:54</a> (reference)</i></div>
+          <div><i><a href="src_models.adb.html#l47" title="models.adb:47:93">models.adb:47:93</a> (reference)</i></div>
+          <div><i><a href="src_spaceship_p.adb.html#l15" title="spaceship_p.adb:15:23">spaceship_p.adb:15:23</a> (reference)</i></div>
+          <div><i><a href="src_sphere_p.adb.html#l15" title="sphere_p.adb:15:23">sphere_p.adb:15:23</a> (reference)</i></div>
+      </div>
+    </div>
+  </div>
+
+  <div class='subprograms'>
+    <h1><a name='Constants' id='Constants'></a>Constants &amp; Global variables</h1>
+    <div class="class">
+      <h3><a name='gl-materials.ads:35:3' id='gl-materials.ads:35:3'></a>
+<span class="droplink">neutral_material<ul>
+  <li><a href="src_gl-materials.ads.html#l35">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">neutral_material</span> :
+    <span class="keyword">constant</span> <a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a> := (ambient =>        (0.2, 0.2, 0.2, 1.0),
+                              diffuse =>        (0.8, 0.8, 0.8, 1.0),
+                              specular =>       (0.0, 0.0, 0.0, 1.0),
+                              emission =>       (0.0, 0.0, 0.0, 1.0),
+                              shininess =>      0.0);</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-materials.ads.html#l35" title="gl-materials.ads:35:3">gl-materials.ads:35:3</a> (declaration)</i></div>
+          <div><i><a href="src_gl-skins.ads.html#l71" title="gl-skins.ads:71:62">gl-skins.ads:71:62</a> (reference)</i></div>
+          <div><i><a href="src_globe_3d.adb.html#l452" title="globe_3d.adb:452:46">globe_3d.adb:452:46</a> (reference)</i></div>
+          <div><i><a href="src_globe_3d.ads.html#l314" title="globe_3d.ads:314:22">globe_3d.ads:314:22</a> (reference)</i></div>
+      </div>
+      <div class='comment'>^ the values are <a href="gl.adb.html#gl.adb:17:14" title="GL">GL</a> defaults.
+</div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-materials.ads:45:3' id='gl-materials.ads:45:3'></a>
+<span class="droplink">Red<ul>
+  <li><a href="src_gl-materials.ads.html#l45">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Red</span>    : <span class="keyword">constant</span> <a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a> := (
+    ambient   => (0.0, 0.0, 0.0, 1.0),
+    diffuse   => (1.0, 0.0, 0.0, 1.0),
+    specular  => (0.0225, 0.0225, 0.0225, 1.0),
+    emission  => (0.0, 0.0, 0.0, 1.0),
+    shininess => 12.8
+);</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-materials.ads.html#l45" title="gl-materials.ads:45:3">gl-materials.ads:45:3</a> (declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-materials.ads:53:3' id='gl-materials.ads:53:3'></a>
+<span class="droplink">Orange<ul>
+  <li><a href="src_gl-materials.ads.html#l53">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Orange</span>    : <span class="keyword">constant</span> <a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a> := (
+    ambient   => (0.0, 0.0, 0.0, 1.0),
+    diffuse   => (0.992157, 0.513726, 0.0, 1.0),
+    specular  => (0.0225, 0.0225, 0.0225, 1.0),
+    emission  => (0.0, 0.0, 0.0, 1.0),
+    shininess => 12.8
+);</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-materials.ads.html#l53" title="gl-materials.ads:53:3">gl-materials.ads:53:3</a> (declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-materials.ads:61:3' id='gl-materials.ads:61:3'></a>
+<span class="droplink">Yellow<ul>
+  <li><a href="src_gl-materials.ads.html#l61">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Yellow</span>    : <span class="keyword">constant</span> <a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a> := (
+    ambient   => (0.0, 0.0, 0.0, 1.0),
+    diffuse   => (1.0, 0.964706, 0.0, 1.0),
+    specular  => (0.0225, 0.0225, 0.0225, 1.0),
+    emission  => (0.0, 0.0, 0.0, 1.0),
+    shininess => 12.8
+);</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-materials.ads.html#l61" title="gl-materials.ads:61:3">gl-materials.ads:61:3</a> (declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-materials.ads:69:3' id='gl-materials.ads:69:3'></a>
+<span class="droplink">Green<ul>
+  <li><a href="src_gl-materials.ads.html#l69">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Green</span>    : <span class="keyword">constant</span> <a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a> := (
+    ambient   => (0.0, 0.0, 0.0, 1.0),
+    diffuse   => (0.0, 1.0, 0.0, 1.0),
+    specular  => (0.0225, 0.0225, 0.0225, 1.0),
+    emission  => (0.0, 0.0, 0.0, 1.0),
+    shininess => 12.8
+);</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-materials.ads.html#l69" title="gl-materials.ads:69:3">gl-materials.ads:69:3</a> (declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-materials.ads:77:3' id='gl-materials.ads:77:3'></a>
+<span class="droplink">Indigo<ul>
+  <li><a href="src_gl-materials.ads.html#l77">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Indigo</span>    : <span class="keyword">constant</span> <a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a> := (
+    ambient   => (0.0, 0.0, 0.0, 1.0),
+    diffuse   => (0.0980392, 0.0, 0.458824, 1.0),
+    specular  => (0.0225, 0.0225, 0.0225, 1.0),
+    emission  => (0.0, 0.0, 0.0, 1.0),
+    shininess => 12.8
+);</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-materials.ads.html#l77" title="gl-materials.ads:77:3">gl-materials.ads:77:3</a> (declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-materials.ads:85:3' id='gl-materials.ads:85:3'></a>
+<span class="droplink">Blue<ul>
+  <li><a href="src_gl-materials.ads.html#l85">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Blue</span>    : <span class="keyword">constant</span> <a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a> := (
+    ambient   => (0.0, 0.0, 0.0, 1.0),
+    diffuse   => (0.0, 0.0, 1.0, 1.0),
+    specular  => (0.0225, 0.0225, 0.0225, 1.0),
+    emission  => (0.0, 0.0, 0.0, 1.0),
+    shininess => 12.8
+);</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-materials.ads.html#l85" title="gl-materials.ads:85:3">gl-materials.ads:85:3</a> (declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-materials.ads:93:3' id='gl-materials.ads:93:3'></a>
+<span class="droplink">Violet<ul>
+  <li><a href="src_gl-materials.ads.html#l93">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Violet</span>    : <span class="keyword">constant</span> <a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a> := (
+    ambient   => (0.0, 0.0, 0.0, 1.0),
+    diffuse   => (0.635294, 0.0, 1.0, 1.0),
+    specular  => (0.0225, 0.0225, 0.0225, 1.0),
+    emission  => (0.0, 0.0, 0.0, 1.0),
+    shininess => 12.8
+);</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-materials.ads.html#l93" title="gl-materials.ads:93:3">gl-materials.ads:93:3</a> (declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-materials.ads:101:3' id='gl-materials.ads:101:3'></a>
+<span class="droplink">White<ul>
+  <li><a href="src_gl-materials.ads.html#l101">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">White</span>    : <span class="keyword">constant</span> <a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a> := (
+    ambient   => (0.0, 0.0, 0.0, 1.0),
+    diffuse   => (0.992157, 0.992157, 0.992157, 1.0),
+    specular  => (0.0225, 0.0225, 0.0225, 1.0),
+    emission  => (0.0, 0.0, 0.0, 1.0),
+    shininess => 12.8
+);</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-materials.ads.html#l101" title="gl-materials.ads:101:3">gl-materials.ads:101:3</a> (declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-materials.ads:109:3' id='gl-materials.ads:109:3'></a>
+<span class="droplink">Black<ul>
+  <li><a href="src_gl-materials.ads.html#l109">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Black</span>    : <span class="keyword">constant</span> <a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a> := (
+    ambient   => (0.0, 0.0, 0.0, 1.0),
+    diffuse   => (0.0, 0.0, 0.0, 1.0),
+    specular  => (0.0225, 0.0225, 0.0225, 1.0),
+    emission  => (0.0, 0.0, 0.0, 1.0),
+    shininess => 12.8
+);</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-materials.ads.html#l109" title="gl-materials.ads:109:3">gl-materials.ads:109:3</a> (declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-materials.ads:117:3' id='gl-materials.ads:117:3'></a>
+<span class="droplink">Medium_Gray<ul>
+  <li><a href="src_gl-materials.ads.html#l117">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Medium_Gray</span>    : <span class="keyword">constant</span> <a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a> := (
+    ambient   => (0.0, 0.0, 0.0, 1.0),
+    diffuse   => (0.454902, 0.454902, 0.454902, 1.0),
+    specular  => (0.0225, 0.0225, 0.0225, 1.0),
+    emission  => (0.0, 0.0, 0.0, 1.0),
+    shininess => 12.8
+);</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-materials.ads.html#l117" title="gl-materials.ads:117:3">gl-materials.ads:117:3</a> (declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-materials.ads:125:3' id='gl-materials.ads:125:3'></a>
+<span class="droplink">Light_Gray<ul>
+  <li><a href="src_gl-materials.ads.html#l125">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Light_Gray</span>    : <span class="keyword">constant</span> <a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a> := (
+    ambient   => (0.0, 0.0, 0.0, 1.0),
+    diffuse   => (0.682353, 0.682353, 0.682353, 1.0),
+    specular  => (0.0225, 0.0225, 0.0225, 1.0),
+    emission  => (0.0, 0.0, 0.0, 1.0),
+    shininess => 12.8
+);</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-materials.ads.html#l125" title="gl-materials.ads:125:3">gl-materials.ads:125:3</a> (declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-materials.ads:135:3' id='gl-materials.ads:135:3'></a>
+<span class="droplink">Glass<ul>
+  <li><a href="src_gl-materials.ads.html#l135">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Glass</span>    : <span class="keyword">constant</span> <a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a> := (
+              ambient   => (0.0, 0.0, 0.0, 1.0),
+              diffuse   => (0.588235, 0.670588, 0.729412, 1.0),
+              specular  => (0.9, 0.9, 0.9, 1.0),
+              emission  => (0.0, 0.0, 0.0, 1.0),
+              shininess => 96.0
+);</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-materials.ads.html#l135" title="gl-materials.ads:135:3">gl-materials.ads:135:3</a> (declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-materials.ads:143:3' id='gl-materials.ads:143:3'></a>
+<span class="droplink">Brass<ul>
+  <li><a href="src_gl-materials.ads.html#l143">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Brass</span>     : <span class="keyword">constant</span> <a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a> := (
+            ambient =>        (0.329412, 0.223529, 0.027451, 1.0),
+            diffuse =>        (0.780392, 0.568627, 0.113725, 1.0),
+            specular =>       (0.992157, 0.941176, 0.807843, 1.0),
+            emission =>       (0.0, 0.0, 0.0, 0.0),
+            shininess =>      27.8974);</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-materials.ads.html#l143" title="gl-materials.ads:143:3">gl-materials.ads:143:3</a> (declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-materials.ads:149:3' id='gl-materials.ads:149:3'></a>
+<span class="droplink">Bronze<ul>
+  <li><a href="src_gl-materials.ads.html#l149">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Bronze</span>     : <span class="keyword">constant</span> <a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a> := (
+            ambient =>        (0.2125, 0.1275, 0.054, 1.0),
+            diffuse =>        (0.714, 0.4284, 0.18144, 1.0),
+            specular =>       (0.393548, 0.271906, 0.166721, 1.0),
+            emission =>       (0.0, 0.0, 0.0, 0.0),
+            shininess =>      25.6);</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-materials.ads.html#l149" title="gl-materials.ads:149:3">gl-materials.ads:149:3</a> (declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-materials.ads:155:3' id='gl-materials.ads:155:3'></a>
+<span class="droplink">Polished_Bronze<ul>
+  <li><a href="src_gl-materials.ads.html#l155">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Polished_Bronze</span>     : <span class="keyword">constant</span> <a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a> := (
+            ambient =>        (0.25, 0.148, 0.06475, 1.0),
+            diffuse =>        (0.4, 0.2368, 0.1036, 1.0),
+            specular =>       (0.774597, 0.458561, 0.200621, 1.0),
+            emission =>       (0.0, 0.0, 0.0, 0.0),
+            shininess =>      76.8);</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-materials.ads.html#l155" title="gl-materials.ads:155:3">gl-materials.ads:155:3</a> (declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-materials.ads:161:3' id='gl-materials.ads:161:3'></a>
+<span class="droplink">Chrome<ul>
+  <li><a href="src_gl-materials.ads.html#l161">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Chrome</span>     : <span class="keyword">constant</span> <a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a> := (
+            ambient =>        (0.25, 0.25, 0.25, 1.0),
+            diffuse =>        (0.4, 0.4, 0.4, 1.0),
+            specular =>       (0.774597, 0.774597, 0.774597, 1.0),
+            emission =>       (0.0, 0.0, 0.0, 0.0),
+            shininess =>      76.8);</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-materials.ads.html#l161" title="gl-materials.ads:161:3">gl-materials.ads:161:3</a> (declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-materials.ads:167:3' id='gl-materials.ads:167:3'></a>
+<span class="droplink">Copper<ul>
+  <li><a href="src_gl-materials.ads.html#l167">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Copper</span>     : <span class="keyword">constant</span> <a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a> := (
+            ambient =>        (0.19125, 0.0735, 0.0225, 1.0),
+            diffuse =>        (0.7038, 0.27048, 0.0828, 1.0),
+            specular =>       (0.256777, 0.137622, 0.086014, 1.0),
+            emission =>       (0.0, 0.0, 0.0, 0.0),
+            shininess =>      12.8);</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-materials.ads.html#l167" title="gl-materials.ads:167:3">gl-materials.ads:167:3</a> (declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-materials.ads:173:3' id='gl-materials.ads:173:3'></a>
+<span class="droplink">Polished_Copper<ul>
+  <li><a href="src_gl-materials.ads.html#l173">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Polished_Copper</span>     : <span class="keyword">constant</span> <a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a> := (
+            ambient =>        (0.2295, 0.08825, 0.0275, 1.0),
+            diffuse =>        (0.5508, 0.2118, 0.066, 1.0),
+            specular =>       (0.580594, 0.223257, 0.0695701, 1.0),
+            emission =>       (0.0, 0.0, 0.0, 0.0),
+            shininess =>      51.2);</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-materials.ads.html#l173" title="gl-materials.ads:173:3">gl-materials.ads:173:3</a> (declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-materials.ads:179:3' id='gl-materials.ads:179:3'></a>
+<span class="droplink">Gold<ul>
+  <li><a href="src_gl-materials.ads.html#l179">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Gold</span>     : <span class="keyword">constant</span> <a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a> := (
+            ambient =>        (0.24725, 0.1995, 0.0745, 1.0),
+            diffuse =>        (0.75164, 0.60648, 0.22648, 1.0),
+            specular =>       (0.628281, 0.555802, 0.366065, 1.0),
+            emission =>       (0.0, 0.0, 0.0, 0.0),
+            shininess =>      51.2);</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-materials.ads.html#l179" title="gl-materials.ads:179:3">gl-materials.ads:179:3</a> (declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-materials.ads:185:3' id='gl-materials.ads:185:3'></a>
+<span class="droplink">Polished_Gold<ul>
+  <li><a href="src_gl-materials.ads.html#l185">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Polished_Gold</span>     : <span class="keyword">constant</span> <a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a> := (
+            ambient =>        (0.24725, 0.2245, 0.0645, 1.0),
+            diffuse =>        (0.34615, 0.3143, 0.0903, 1.0),
+            specular =>       (0.797357, 0.723991, 0.208006, 1.0),
+            emission =>       (0.0, 0.0, 0.0, 0.0),
+            shininess =>      83.2);</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-materials.ads.html#l185" title="gl-materials.ads:185:3">gl-materials.ads:185:3</a> (declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-materials.ads:191:3' id='gl-materials.ads:191:3'></a>
+<span class="droplink">Pewter<ul>
+  <li><a href="src_gl-materials.ads.html#l191">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Pewter</span>     : <span class="keyword">constant</span> <a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a> := (
+            ambient =>        (0.105882, 0.058824, 0.113725, 1.0),
+            diffuse =>        (0.427451, 0.470588, 0.541176, 1.0),
+            specular =>       (0.333333, 0.333333, 0.521569, 1.0),
+            emission =>       (0.0, 0.0, 0.0, 0.0),
+            shininess =>      9.84615);</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-materials.ads.html#l191" title="gl-materials.ads:191:3">gl-materials.ads:191:3</a> (declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-materials.ads:197:3' id='gl-materials.ads:197:3'></a>
+<span class="droplink">Silver<ul>
+  <li><a href="src_gl-materials.ads.html#l197">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Silver</span>     : <span class="keyword">constant</span> <a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a> := (
+            ambient =>        (0.19225, 0.19225, 0.19225, 1.0),
+            diffuse =>        (0.50754, 0.50754, 0.50754, 1.0),
+            specular =>       (0.508273, 0.508273, 0.508273, 1.0),
+            emission =>       (0.0, 0.0, 0.0, 0.0),
+            shininess =>      51.2);</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-materials.ads.html#l197" title="gl-materials.ads:197:3">gl-materials.ads:197:3</a> (declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-materials.ads:203:3' id='gl-materials.ads:203:3'></a>
+<span class="droplink">Polished_Silver<ul>
+  <li><a href="src_gl-materials.ads.html#l203">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Polished_Silver</span>     : <span class="keyword">constant</span> <a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a> := (
+            ambient =>        (0.23125, 0.23125, 0.23125, 1.0),
+            diffuse =>        (0.2775, 0.2775, 0.2775, 1.0),
+            specular =>       (0.773911, 0.773911, 0.773911, 1.0),
+            emission =>       (0.0, 0.0, 0.0, 0.0),
+            shininess =>      89.6);</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-materials.ads.html#l203" title="gl-materials.ads:203:3">gl-materials.ads:203:3</a> (declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-materials.ads:209:3' id='gl-materials.ads:209:3'></a>
+<span class="droplink">Emerald<ul>
+  <li><a href="src_gl-materials.ads.html#l209">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Emerald</span>     : <span class="keyword">constant</span> <a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a> := (
+            ambient =>        (0.0215, 0.1745, 0.0215, 0.55),
+            diffuse =>        (0.07568, 0.61424, 0.07568, 0.55),
+            specular =>       (0.633, 0.727811, 0.633, 0.55),
+            emission =>       (0.0, 0.0, 0.0, 0.0),
+            shininess =>      76.8);</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-materials.ads.html#l209" title="gl-materials.ads:209:3">gl-materials.ads:209:3</a> (declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-materials.ads:215:3' id='gl-materials.ads:215:3'></a>
+<span class="droplink">Jade<ul>
+  <li><a href="src_gl-materials.ads.html#l215">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Jade</span>     : <span class="keyword">constant</span> <a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a> := (
+            ambient =>        (0.135, 0.2225, 0.1575, 0.95),
+            diffuse =>        (0.54, 0.89, 0.63, 0.95),
+            specular =>       (0.316228, 0.316228, 0.316228, 0.95),
+            emission =>       (0.0, 0.0, 0.0, 0.0),
+            shininess =>      12.8);</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-materials.ads.html#l215" title="gl-materials.ads:215:3">gl-materials.ads:215:3</a> (declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-materials.ads:221:3' id='gl-materials.ads:221:3'></a>
+<span class="droplink">Obsidian<ul>
+  <li><a href="src_gl-materials.ads.html#l221">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Obsidian</span>     : <span class="keyword">constant</span> <a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a> := (
+            ambient =>        (0.05375, 0.05, 0.06625, 0.82),
+            diffuse =>        (0.18275, 0.17, 0.22525, 0.82),
+            specular =>       (0.332741, 0.328634, 0.346435, 0.82),
+            emission =>       (0.0, 0.0, 0.0, 0.0),
+            shininess =>      38.4);</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-materials.ads.html#l221" title="gl-materials.ads:221:3">gl-materials.ads:221:3</a> (declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-materials.ads:227:3' id='gl-materials.ads:227:3'></a>
+<span class="droplink">Pearl<ul>
+  <li><a href="src_gl-materials.ads.html#l227">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Pearl</span>     : <span class="keyword">constant</span> <a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a> := (
+            ambient =>        (0.25, 0.20725, 0.20725, 0.922),
+            diffuse =>        (1.0, 0.829, 0.829, 0.922),
+            specular =>       (0.296648, 0.296648, 0.296648, 0.922),
+            emission =>       (0.0, 0.0, 0.0, 0.0),
+            shininess =>      11.264);</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-materials.ads.html#l227" title="gl-materials.ads:227:3">gl-materials.ads:227:3</a> (declaration)</i></div>
+          <div><i><a href="src_models.adb.html#l67" title="models.adb:67:173">models.adb:67:173</a> (reference)</i></div>
+          <div><i><a href="src_models.adb.html#l83" title="models.adb:83:107">models.adb:83:107</a> (reference)</i></div>
+          <div><i><a href="src_models.adb.html#l84" title="models.adb:84:107">models.adb:84:107</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-materials.ads:233:3' id='gl-materials.ads:233:3'></a>
+<span class="droplink">Ruby<ul>
+  <li><a href="src_gl-materials.ads.html#l233">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Ruby</span>     : <span class="keyword">constant</span> <a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a> := (
+            ambient =>        (0.1745, 0.01175, 0.01175, 0.55),
+            diffuse =>        (0.61424, 0.04136, 0.04136, 0.55),
+            specular =>       (0.727811, 0.626959, 0.626959, 0.55),
+            emission =>       (0.0, 0.0, 0.0, 0.0),
+            shininess =>      76.8);</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-materials.ads.html#l233" title="gl-materials.ads:233:3">gl-materials.ads:233:3</a> (declaration)</i></div>
+          <div><i><a href="src_models.adb.html#l69" title="models.adb:69:165">models.adb:69:165</a> (reference)</i></div>
+          <div><i><a href="src_models.adb.html#l83" title="models.adb:83:96">models.adb:83:96</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-materials.ads:239:3' id='gl-materials.ads:239:3'></a>
+<span class="droplink">Turquoise<ul>
+  <li><a href="src_gl-materials.ads.html#l239">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Turquoise</span>     : <span class="keyword">constant</span> <a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a> := (
+            ambient =>        (0.1, 0.18725, 0.1745, 0.8),
+            diffuse =>        (0.396, 0.74151, 0.69102, 0.8),
+            specular =>       (0.297254, 0.30829, 0.306678, 0.8),
+            emission =>       (0.0, 0.0, 0.0, 0.0),
+            shininess =>      12.8);</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-materials.ads.html#l239" title="gl-materials.ads:239:3">gl-materials.ads:239:3</a> (declaration)</i></div>
+          <div><i><a href="src_models.adb.html#l84" title="models.adb:84:96">models.adb:84:96</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-materials.ads:245:3' id='gl-materials.ads:245:3'></a>
+<span class="droplink">Black_Plastic<ul>
+  <li><a href="src_gl-materials.ads.html#l245">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Black_Plastic</span>     : <span class="keyword">constant</span> <a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a> := (
+            ambient =>        (0.0, 0.0, 0.0, 1.0),
+            diffuse =>        (0.01, 0.01, 0.01, 1.0),
+            specular =>       (0.50, 0.50, 0.50, 1.0),
+            emission =>       (0.0, 0.0, 0.0, 0.0),
+            shininess =>      32.0);</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-materials.ads.html#l245" title="gl-materials.ads:245:3">gl-materials.ads:245:3</a> (declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-materials.ads:251:3' id='gl-materials.ads:251:3'></a>
+<span class="droplink">Black_Rubber<ul>
+  <li><a href="src_gl-materials.ads.html#l251">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Black_Rubber</span>     : <span class="keyword">constant</span> <a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a> := (
+            ambient =>        (0.02, 0.02, 0.02, 1.0),
+            diffuse =>        (0.01, 0.01, 0.01, 1.0),
+            specular =>       (0.4, 0.4, 0.4, 1.0),
+            emission =>       (0.0, 0.0, 0.0, 0.0),
+            shininess =>      10.0);</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-materials.ads.html#l251" title="gl-materials.ads:251:3">gl-materials.ads:251:3</a> (declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-materials.ads:258:3' id='gl-materials.ads:258:3'></a>
+<span class="droplink">VRML_Defaults<ul>
+  <li><a href="src_gl-materials.ads.html#l258">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">VRML_Defaults</span>    : <span class="keyword">constant</span> <a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a> := (
+            ambient =>        (0.2, 0.2, 0.2, 1.0),
+            diffuse =>        (0.8, 0.8, 0.8, 1.0),
+            specular =>       (0.0, 0.0, 0.0, 1.0),
+            emission =>       (0.0, 0.0, 0.0, 1.0),
+            shininess =>       25.6);</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-materials.ads.html#l258" title="gl-materials.ads:258:3">gl-materials.ads:258:3</a> (declaration)</i></div>
+          <div><i><a href="src_spaceship_p.adb.html#l626" title="spaceship_p.adb:626:26">spaceship_p.adb:626:26</a> (reference)</i></div>
+          <div><i><a href="src_sphere_p.adb.html#l147" title="sphere_p.adb:147:26">sphere_p.adb:147:26</a> (reference)</i></div>
+      </div>
+    </div>
+  </div>
+
+    <div class='subprograms'>
+      <h1><a name='Methods' id='Methods'></a>Subprograms &amp; Entries</h1>
+      <div class="class">
+        <h3>
+          <a name='gl-materials.ads:33:12' id='gl-materials.ads:33:12'></a>
+<span class="droplink">is_Transparent<ul>
+  <li><a href="src_gl-materials.ads.html#l33">Goto spec in source</a></li>
+  <li><a href="src_gl-materials.adb.html#l3">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">is_Transparent</span> <table><tr><td>(</td><td><span class="name"><a name="gl-materials.ads:33:28"></a>Self</span></td><td>: <a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a>) <span class="keyword">return</span> Boolean;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-materials.ads.html#l33" title="gl-materials.ads:33:12">gl-materials.ads:33:12</a> (declaration)</i></div>
+            <div><i><a href="src_gl-materials.adb.html#l3" title="gl-materials.adb:3:13">gl-materials.adb:3:13</a> (body)</i></div>
+            <div><i><a href="src_gl-skins.adb.html#l121" title="gl-skins.adb:121:94">gl-skins.adb:121:94</a> (call)</i></div>
+        </div>
+      </div>
+    </div>
+</div> <!-- documentation -->
+
+</body>
+</html>

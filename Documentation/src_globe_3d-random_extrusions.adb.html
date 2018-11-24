@@ -1,0 +1,312 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    File: globe_3d-random_extrusions.adb
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+  </div>
+</div> <!-- leftSide -->
+
+<div class='subprograms'>
+  <div class='details'><ol><li id="l1"><pre><span class="keyword">pragma</span> Warnings (Off); </pre></li>
+<li id="l2"><pre><span class="keyword">pragma</span> Style_Checks (Off); </pre></li>
+<li id="l3"><pre> </pre></li>
+<li id="l4"><pre><span class="comment">--  Algorithm to generate a Sci - Fi - style extruded surface</span> </pre></li>
+<li id="l5"><pre> <span class="comment">--  Copyright (c) Gautier de Montmollin 2006</span> </pre></li>
+<li id="l6"><pre> <span class="comment">--  CH - 8810 Horgen</span> </pre></li>
+<li id="l7"><pre> <span class="comment">--  SWITZERLAND</span> </pre></li>
+<li id="l8"><pre> <span class="comment">--  Permission granted to use the herein contained algorithm for any purpose,</span> </pre></li>
+<li id="l9"><pre> <span class="comment">--  provided this copyright note remains attached and unmodified.</span> </pre></li>
+<li id="l10"><pre> <span class="comment">--</span> </pre></li>
+<li id="l11"><pre> <span class="comment">--  Change log:</span> </pre></li>
+<li id="l12"><pre> <span class="comment">--  xx - May - 2006 : - !! split a quad into triangles if not flat</span> </pre></li>
+<li id="l13"><pre> <span class="comment">--               - !! identify / remove degenerate faces, e.g. on a sphere</span> </pre></li>
+<li id="l14"><pre> <span class="comment">--                    (triangle ok, less - &gt; erase!)</span> </pre></li>
+<li id="l15"><pre> <span class="comment">--  26 - May - 2006 : optimized search for duplicate points</span> </pre></li>
+<li id="l16"><pre> <span class="comment">--  24 - May - 2006 : added explicit bound checks</span> </pre></li>
+<li id="l17"><pre> <span class="comment">--  14 - May - 2006 : created</span> </pre></li>
+<li id="l18"><pre> </pre></li>
+<li id="l19"><pre><span class="keyword">with</span> GLOBE_3D.Math; </pre></li>
+<li id="l20"><pre> </pre></li>
+<li id="l21"><pre><span class="keyword">with</span> Ada.Numerics.Float_Random;         <span class="keyword">use</span> Ada.Numerics.Float_Random; </pre></li>
+<li id="l22"><pre> </pre></li>
+<li id="l23"><pre><span class="keyword">package</span> <span class="keyword">body</span> GLOBE_3D.Random_extrusions <span class="keyword">is</span> </pre></li>
+<li id="l24"><pre> </pre></li>
+<li id="l25"><pre>  seed : Generator; </pre></li>
+<li id="l26"><pre> </pre></li>
+<li id="l27"><pre>  <span class="keyword">procedure</span> Extrude_on_rectangle ( </pre></li>
+<li id="l28"><pre>    T1, T2, T3, T4      :  <span class="keyword">in</span> Map_idx_pair;  <span class="comment">-- Texture edges, horizontal surface</span> </pre></li>
+<li id="l29"><pre>    V1, V2, V3, V4      :  <span class="keyword">in</span> Map_idx_pair;  <span class="comment">-- Texture edges, vertical surfaces</span> </pre></li>
+<li id="l30"><pre>    grid_1, grid_2    :  <span class="keyword">in</span> Positive; </pre></li>
+<li id="l31"><pre>    T_ID, V_ID       :  <span class="keyword">in</span> Image_ID;      <span class="comment">-- ID&apos;s of plane and vertical texture</span> </pre></li>
+<li id="l32"><pre>    max_u3           :  <span class="keyword">in</span> Real; </pre></li>
+<li id="l33"><pre>    iterations       :  <span class="keyword">in</span> Natural; </pre></li>
+<li id="l34"><pre>    last_point       : <span class="keyword">out</span> Natural; </pre></li>
+<li id="l35"><pre>    mesh             : <span class="keyword">out</span> Point_3D_array; </pre></li>
+<li id="l36"><pre>    last_face        : <span class="keyword">out</span> Natural; </pre></li>
+<li id="l37"><pre>    poly             : <span class="keyword">out</span> Face_array; </pre></li>
+<li id="l38"><pre>    random_initiator :  <span class="keyword">in</span> Integer := 0    <span class="comment">-- default 0 - &gt; time - dependent seed</span> </pre></li>
+<li id="l39"><pre>) </pre></li>
+<li id="l40"><pre>  <span class="keyword">is</span> </pre></li>
+<li id="l41"><pre>    <span class="keyword">use</span> GL, GLOBE_3D.Math; </pre></li>
+<li id="l42"><pre>    po, fa : Natural := 0; </pre></li>
+<li id="l43"><pre>    face_proto  : Face_type; <span class="comment">-- takes defaults values</span> </pre></li>
+<li id="l44"><pre> </pre></li>
+<li id="l45"><pre>    <span class="comment">-- grid : 0 | --- | --- | .. .| --- | --- | n + 2; we don&apos;t touch the main face&apos;s border</span> </pre></li>
+<li id="l46"><pre>    <span class="comment">-- cell :     0   1       n  n + 1</span> </pre></li>
+<li id="l47"><pre>    elevation : <span class="keyword">array</span> (0 .. grid_1 + 1, 0 .. grid_2 + 1) <span class="keyword">of</span> Real := </pre></li>
+<li id="l48"><pre>      (<span class="keyword">others</span> =&gt; (<span class="keyword">others</span> =&gt; 0.0));  <span class="comment">-- elevation of the middle of a cell</span> </pre></li>
+<li id="l49"><pre>    <span class="comment">-- Temporary data used to search faster existing points:</span> </pre></li>
+<li id="l50"><pre>    <span class="keyword">type</span> Point_stack <span class="keyword">is</span> <span class="keyword">array</span> (1 .. 36) <span class="keyword">of</span> Positive; <span class="comment">-- 16 should be sufficient .. .</span> </pre></li>
+<li id="l51"><pre>    <span class="comment">-- without redundancies : 16; with redundancies : 36</span> </pre></li>
+<li id="l52"><pre>    point_touching : <span class="keyword">array</span> (elevation&apos;Range (1), elevation&apos;Range (2)) <span class="keyword">of</span> Point_stack; </pre></li>
+<li id="l53"><pre>    total_points_touching : <span class="keyword">array</span> (elevation&apos;Range (1), elevation&apos;Range (2)) <span class="keyword">of</span> Natural := (<span class="keyword">others</span> =&gt; (<span class="keyword">others</span> =&gt; 0)); </pre></li>
+<li id="l54"><pre> </pre></li>
+<li id="l55"><pre>    <span class="keyword">procedure</span> Register (e1n, e2n : Integer; P_idx : Positive) <span class="keyword">is</span> </pre></li>
+<li id="l56"><pre>      e1, e2 : Integer; </pre></li>
+<li id="l57"><pre>      t : Natural; </pre></li>
+<li id="l58"><pre>    <span class="keyword">begin</span> </pre></li>
+<li id="l59"><pre>      e1 := e1n <span class="keyword">mod</span> (grid_1 + 2); </pre></li>
+<li id="l60"><pre>      e2 := e2n <span class="keyword">mod</span> (grid_2 + 2); </pre></li>
+<li id="l61"><pre>      t := total_points_touching (e1, e2); </pre></li>
+<li id="l62"><pre>      <span class="keyword">for</span> i <span class="keyword">in</span> <span class="keyword">reverse</span> 1 .. t <span class="keyword">loop</span> </pre></li>
+<li id="l63"><pre>        <span class="keyword">if</span> point_touching (e1, e2) (i)= P_idx <span class="keyword">then</span> <span class="comment">-- already in stack</span> </pre></li>
+<li id="l64"><pre>          <span class="keyword">return</span>; </pre></li>
+<li id="l65"><pre>        <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l66"><pre>      <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l67"><pre>      total_points_touching (e1, e2) := t + 1; </pre></li>
+<li id="l68"><pre>      <span class="comment">-- if t + 1 &gt; Point_Stack&apos;Last then raise Constraint_Error; end if;</span> </pre></li>
+<li id="l69"><pre>      point_touching (e1, e2) (t + 1) := P_idx; </pre></li>
+<li id="l70"><pre>    <span class="keyword">end</span> Register; </pre></li>
+<li id="l71"><pre> </pre></li>
+<li id="l72"><pre>    <span class="keyword">procedure</span> Do_Face ( </pre></li>
+<li id="l73"><pre>      P1, P2, P3, P4  : Point_3D; </pre></li>
+<li id="l74"><pre>      tex          : Map_idx_pair_4_array; </pre></li>
+<li id="l75"><pre>      tex_ID       : Image_ID; </pre></li>
+<li id="l76"><pre>      cell1, cell2  : Natural </pre></li>
+<li id="l77"><pre>) </pre></li>
+<li id="l78"><pre>    <span class="keyword">is</span> </pre></li>
+<li id="l79"><pre>      P : <span class="keyword">array</span> (1 .. 4) <span class="keyword">of</span> Point_3D; </pre></li>
+<li id="l80"><pre>      vtx : GLOBE_3D.Natural_Index_array (1 .. 4); </pre></li>
+<li id="l81"><pre>      pt_idx : Natural; </pre></li>
+<li id="l82"><pre>      found : Boolean; </pre></li>
+<li id="l83"><pre>      degen : Natural := 0; </pre></li>
+<li id="l84"><pre>      last_degen_vtx : Positive; </pre></li>
+<li id="l85"><pre>      <span class="keyword">procedure</span> Register_proto <span class="keyword">is</span> </pre></li>
+<li id="l86"><pre>      <span class="keyword">begin</span> </pre></li>
+<li id="l87"><pre>        fa := fa + 1; </pre></li>
+<li id="l88"><pre>        <span class="keyword">if</span> fa &gt; poly&apos;Last <span class="keyword">then</span> <span class="keyword">raise</span> Constraint_Error; <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l89"><pre>        <span class="comment">-- ^ useful if we disable range checks .. .</span> </pre></li>
+<li id="l90"><pre>        poly (fa) := face_proto; </pre></li>
+<li id="l91"><pre>      <span class="keyword">end</span> REgister_proto; </pre></li>
+<li id="l92"><pre>    <span class="keyword">begin</span> </pre></li>
+<li id="l93"><pre>      Geometric_mapping (P1, P (1)); </pre></li>
+<li id="l94"><pre>      Geometric_mapping (P2, P (2)); </pre></li>
+<li id="l95"><pre>      Geometric_mapping (P3, P (3)); </pre></li>
+<li id="l96"><pre>      Geometric_mapping (P4, P (4)); </pre></li>
+<li id="l97"><pre>      <span class="keyword">for</span> pt <span class="keyword">in</span> P&apos;Range <span class="keyword">loop</span> </pre></li>
+<li id="l98"><pre>        found := False; </pre></li>
+<li id="l99"><pre>        <span class="comment">-- Look in the stack of registered points:</span> </pre></li>
+<li id="l100"><pre>        <span class="keyword">for</span> op <span class="keyword">in</span> <span class="keyword">reverse</span> 1 .. total_points_touching (cell1, cell2) <span class="keyword">loop</span> </pre></li>
+<li id="l101"><pre>          pt_idx := point_touching (cell1, cell2) (op); </pre></li>
+<li id="l102"><pre>          <span class="keyword">if</span> Almost_zero (Norm2 (P (pt) - mesh (pt_idx))) <span class="keyword">then</span> <span class="comment">-- exists already</span> </pre></li>
+<li id="l103"><pre>            vtx (pt) := pt_idx; </pre></li>
+<li id="l104"><pre>            found := True; </pre></li>
+<li id="l105"><pre>          <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l106"><pre>        <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l107"><pre>        <span class="keyword">if</span> <span class="keyword">not</span> found <span class="keyword">then</span> <span class="comment">-- add a point when non existing</span> </pre></li>
+<li id="l108"><pre>          po := po + 1; </pre></li>
+<li id="l109"><pre>          <span class="keyword">if</span> po &gt; mesh&apos;Last <span class="keyword">then</span> <span class="keyword">raise</span> Constraint_Error; <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l110"><pre>          <span class="comment">-- ^ useful if we disable range checks .. .</span> </pre></li>
+<li id="l111"><pre>          mesh (po) := P (pt); </pre></li>
+<li id="l112"><pre>          vtx (pt) := po; </pre></li>
+<li id="l113"><pre>          <span class="keyword">for</span> i <span class="keyword">in</span> - 1 .. 1 <span class="keyword">loop</span> </pre></li>
+<li id="l114"><pre>            <span class="keyword">for</span> j <span class="keyword">in</span> - 1 .. 1 <span class="keyword">loop</span> </pre></li>
+<li id="l115"><pre>              Register (cell1 + i, cell2 + j, po); </pre></li>
+<li id="l116"><pre>            <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l117"><pre>          <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l118"><pre>        <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l119"><pre>      <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l120"><pre>      face_proto.texture_edge_map := tex; </pre></li>
+<li id="l121"><pre>      face_proto.texture := tex_ID; </pre></li>
+<li id="l122"><pre>      <span class="comment">-- Check degenerate faces</span> </pre></li>
+<li id="l123"><pre>      <span class="keyword">for</span> i <span class="keyword">in</span> 1 .. 4 <span class="keyword">loop</span> </pre></li>
+<li id="l124"><pre>        <span class="keyword">for</span> j <span class="keyword">in</span> i + 1 .. 4 <span class="keyword">loop</span> </pre></li>
+<li id="l125"><pre>          <span class="keyword">if</span> vtx (i)=vtx (j) <span class="keyword">then</span> </pre></li>
+<li id="l126"><pre>            degen := degen + 1; </pre></li>
+<li id="l127"><pre>            last_degen_vtx := j; </pre></li>
+<li id="l128"><pre>          <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l129"><pre>        <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l130"><pre>      <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l131"><pre>      <span class="keyword">case</span> degen <span class="keyword">is</span> </pre></li>
+<li id="l132"><pre>        <span class="keyword">when</span> 0 =&gt; <span class="comment">-- quadrilatere</span> </pre></li>
+<li id="l133"><pre>          <span class="comment">-- !! check if flat, otherwise make 2 triangles!</span> </pre></li>
+<li id="l134"><pre>          face_proto.P := vtx; </pre></li>
+<li id="l135"><pre>          Register_proto; </pre></li>
+<li id="l136"><pre>        <span class="keyword">when</span> 1 =&gt; <span class="comment">-- triangle</span> </pre></li>
+<li id="l137"><pre>          vtx (last_degen_vtx) := 0; </pre></li>
+<li id="l138"><pre>          face_proto.P := vtx; </pre></li>
+<li id="l139"><pre>          Register_proto; </pre></li>
+<li id="l140"><pre>        <span class="keyword">when</span> <span class="keyword">others</span> =&gt; </pre></li>
+<li id="l141"><pre>          <span class="keyword">return</span>; </pre></li>
+<li id="l142"><pre>      <span class="keyword">end</span> <span class="keyword">case</span>; </pre></li>
+<li id="l143"><pre>    <span class="keyword">end</span> Do_Face; </pre></li>
+<li id="l144"><pre> </pre></li>
+<li id="l145"><pre>    e : Real := 0.0; </pre></li>
+<li id="l146"><pre>    sc_1 : <span class="keyword">constant</span> Real := 1.0 / Real (grid_1 + 2); </pre></li>
+<li id="l147"><pre>    sc_2 : <span class="keyword">constant</span> Real := 1.0 / Real (grid_2 + 2); </pre></li>
+<li id="l148"><pre>    p_1, p_2, l_1, l_2 : Positive; </pre></li>
+<li id="l149"><pre>    xa, xb, ya, yb, en : Real; </pre></li>
+<li id="l150"><pre>    width_factor : Float; </pre></li>
+<li id="l151"><pre>    ta, tb : Map_idx_pair; </pre></li>
+<li id="l152"><pre> </pre></li>
+<li id="l153"><pre>  <span class="keyword">begin</span> </pre></li>
+<li id="l154"><pre>    face_proto.skin := coloured_texture; </pre></li>
+<li id="l155"><pre>    face_proto.colour := (0.5, 0.5, 0.5); </pre></li>
+<li id="l156"><pre>    face_proto.whole_texture := False; </pre></li>
+<li id="l157"><pre>    <span class="keyword">if</span> random_initiator /= 0 <span class="keyword">then</span> </pre></li>
+<li id="l158"><pre>      Reset (seed, random_initiator); </pre></li>
+<li id="l159"><pre>    <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l160"><pre>    <span class="comment">-- Generate elevation map by covering it with rectangle layers</span> </pre></li>
+<li id="l161"><pre>    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="keyword">reverse</span> 1 .. iterations <span class="keyword">loop</span> </pre></li>
+<li id="l162"><pre>      p_1 := 1 + Integer (Float (grid_1 - 2)*Random (seed) + 0.5); </pre></li>
+<li id="l163"><pre>      p_2 := 1 + Integer (Float (grid_2 - 2)*Random (seed) + 0.5); </pre></li>
+<li id="l164"><pre>      width_factor := Float (i)/Float (iterations); </pre></li>
+<li id="l165"><pre>      <span class="comment">-- ^ cover with decreasing widths</span> </pre></li>
+<li id="l166"><pre>      l_1 := Integer (Float (grid_1 - p_1 - 1)*Random (seed)*width_factor + 0.5); </pre></li>
+<li id="l167"><pre>      l_2 := Integer (Float (grid_2 - p_2 - 1)*Random (seed)*width_factor + 0.5); </pre></li>
+<li id="l168"><pre>      <span class="comment">-- e := e + Real (Random (seed))*max_u3/Real (iterations);</span> </pre></li>
+<li id="l169"><pre>      <span class="comment">-- ^ converges to a square of height max_u3 : - (</span> </pre></li>
+<li id="l170"><pre>      e := Real (Random (seed))*max_u3; </pre></li>
+<li id="l171"><pre>      <span class="keyword">for</span> r_1 <span class="keyword">in</span> <span class="keyword">reverse</span> 0 .. l_1 <span class="keyword">loop</span> </pre></li>
+<li id="l172"><pre>        <span class="keyword">for</span> r_2 <span class="keyword">in</span> <span class="keyword">reverse</span> 0 .. l_2 <span class="keyword">loop</span> </pre></li>
+<li id="l173"><pre>          elevation (p_1 + r_1, p_2 + r_2) := e; </pre></li>
+<li id="l174"><pre>        <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l175"><pre>      <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l176"><pre>    <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l177"><pre>    <span class="comment">-- Create the mesh</span> </pre></li>
+<li id="l178"><pre>    <span class="keyword">for</span> e1 <span class="keyword">in</span> <span class="keyword">reverse</span> elevation&apos;Range (1) <span class="keyword">loop</span> </pre></li>
+<li id="l179"><pre>      <span class="keyword">for</span> e2 <span class="keyword">in</span> <span class="keyword">reverse</span> elevation&apos;Range (2) <span class="keyword">loop</span> </pre></li>
+<li id="l180"><pre>        e := elevation (e1, e2); </pre></li>
+<li id="l181"><pre>        xa := Real (e1)*sc_1; </pre></li>
+<li id="l182"><pre>        xb := Real (e1 + 1)*sc_1; </pre></li>
+<li id="l183"><pre>        ya := Real (e2)*sc_2; </pre></li>
+<li id="l184"><pre>        yb := Real (e2 + 1)*sc_2; </pre></li>
+<li id="l185"><pre>        ta.u := T1.u + xa * (T2.u - T1.u) + ya * (xa * (T3.u - T2.u) + (1.0 - xa) * (T4.u - T1.u)); </pre></li>
+<li id="l186"><pre>        ta.v := T1.v + xa * (T2.v - T1.v) + ya * (xa * (T3.v - T2.v) + (1.0 - xa) * (T4.v - T1.v)); </pre></li>
+<li id="l187"><pre>        tb.u := T1.u + xb * (T2.u - T1.u) + yb * (xb * (T3.u - T2.u) + (1.0 - xb) * (T4.u - T1.u)); </pre></li>
+<li id="l188"><pre>        tb.v := T1.v + xb * (T2.v - T1.v) + yb * (xb * (T3.v - T2.v) + (1.0 - xb) * (T4.v - T1.v)); </pre></li>
+<li id="l189"><pre>        <span class="comment">-- The horizontal face</span> </pre></li>
+<li id="l190"><pre>        Do_Face ( </pre></li>
+<li id="l191"><pre>          (xa, ya, e), (xb, ya, e), (xb, yb, e), (xa, yb, e), </pre></li>
+<li id="l192"><pre>          (ta, (tb.u, ta.v), tb, (ta.u, tb.v)), </pre></li>
+<li id="l193"><pre>          T_ID, </pre></li>
+<li id="l194"><pre>          e1, e2 </pre></li>
+<li id="l195"><pre>); </pre></li>
+<li id="l196"><pre>        <span class="comment">--</span> </pre></li>
+<li id="l197"><pre>        <span class="comment">-- Now the funny part : the vertical faces!</span> </pre></li>
+<li id="l198"><pre>        <span class="comment">--</span> </pre></li>
+<li id="l199"><pre>        <span class="keyword">if</span> iterations &gt; 0 <span class="keyword">and</span> <span class="comment">-- &lt; - possible to generate no extrusion at all!</span> </pre></li>
+<li id="l200"><pre>           e1 &gt; 0 <span class="keyword">and</span> e2 &gt; 0 <span class="keyword">then</span> </pre></li>
+<li id="l201"><pre>          <span class="comment">--</span> </pre></li>
+<li id="l202"><pre>          <span class="comment">--    seen from above :    _|_|_ yb</span> </pre></li>
+<li id="l203"><pre>          <span class="comment">-- - &gt; southern neighbour  _|_|_ ya</span> </pre></li>
+<li id="l204"><pre>          <span class="comment">--                         |^|</span> </pre></li>
+<li id="l205"><pre>          <span class="comment">--</span> </pre></li>
+<li id="l206"><pre>          en := elevation (e1, e2 - 1); </pre></li>
+<li id="l207"><pre>          <span class="keyword">if</span> Almost_zero (e - en) <span class="keyword">then</span> </pre></li>
+<li id="l208"><pre>            <span class="keyword">null</span>; <span class="comment">-- do nothing, there is no face to add</span> </pre></li>
+<li id="l209"><pre>          <span class="keyword">else</span> </pre></li>
+<li id="l210"><pre>            <span class="keyword">if</span> e &gt; en <span class="keyword">then</span> <span class="comment">-- neighbour has a lower elevation : face visible from south</span> </pre></li>
+<li id="l211"><pre>              ta.u := V1.u + xa * (V2.u - V1.u) + en * (xa * (V3.u - V2.u) + (1.0 - xa) * (V4.u - V1.u)); </pre></li>
+<li id="l212"><pre>              ta.v := V1.v + xa * (V2.v - V1.v) + en * (xa * (V3.v - V2.v) + (1.0 - xa) * (V4.v - V1.v)); </pre></li>
+<li id="l213"><pre>              tb.u := V1.u + xb * (V2.u - V1.u) + e  * (xb * (V3.u - V2.u) + (1.0 - xb) * (V4.u - V1.u)); </pre></li>
+<li id="l214"><pre>              tb.v := V1.v + xb * (V2.v - V1.v) + e  * (xb * (V3.v - V2.v) + (1.0 - xb) * (V4.v - V1.v)); </pre></li>
+<li id="l215"><pre>              Do_Face ( </pre></li>
+<li id="l216"><pre>                (xa, ya, en), (xb, ya, en), (xb, ya, e), (xa, ya, e), </pre></li>
+<li id="l217"><pre>                (ta, (tb.u, ta.v), tb, (ta.u, tb.v)), </pre></li>
+<li id="l218"><pre>                V_ID, </pre></li>
+<li id="l219"><pre>                e1, e2 </pre></li>
+<li id="l220"><pre>); </pre></li>
+<li id="l221"><pre>            <span class="keyword">else</span>           <span class="comment">-- neighbour has a higher elevation : face visible from north</span> </pre></li>
+<li id="l222"><pre>              ta.u := V2.u + xb * (V1.u - V2.u) + e  * (xb * (V4.u - V1.u) + (1.0 - xb) * (V3.u - V2.u)); </pre></li>
+<li id="l223"><pre>              ta.v := V2.v + xb * (V1.v - V2.v) + e  * (xb * (V4.v - V1.v) + (1.0 - xb) * (V3.v - V2.v)); </pre></li>
+<li id="l224"><pre>              tb.u := V2.u + xa * (V1.u - V2.u) + en * (xa * (V4.u - V1.u) + (1.0 - xa) * (V3.u - V2.u)); </pre></li>
+<li id="l225"><pre>              tb.v := V2.v + xa * (V1.v - V2.v) + en * (xa * (V4.v - V1.v) + (1.0 - xa) * (V3.v - V2.v)); </pre></li>
+<li id="l226"><pre>              Do_Face ( </pre></li>
+<li id="l227"><pre>                (xb, ya, e), (xa, ya, e), (xa, ya, en), (xb, ya, en), </pre></li>
+<li id="l228"><pre>                (ta, (tb.u, ta.v), tb, (ta.u, tb.v)), </pre></li>
+<li id="l229"><pre>                V_ID, </pre></li>
+<li id="l230"><pre>                e1, e2 </pre></li>
+<li id="l231"><pre>); </pre></li>
+<li id="l232"><pre>            <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l233"><pre>          <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l234"><pre>          <span class="comment">--</span> </pre></li>
+<li id="l235"><pre>          <span class="comment">--    seen from above :    _|_|_</span> </pre></li>
+<li id="l236"><pre>          <span class="comment">-- - &gt; western neighbour  &gt;_|_|_</span> </pre></li>
+<li id="l237"><pre>          <span class="comment">--                         | |</span> </pre></li>
+<li id="l238"><pre>          <span class="comment">--</span> </pre></li>
+<li id="l239"><pre>          en := elevation (e1 - 1, e2); </pre></li>
+<li id="l240"><pre>          <span class="keyword">if</span> Almost_zero (e - en) <span class="keyword">then</span> </pre></li>
+<li id="l241"><pre>            <span class="keyword">null</span>; <span class="comment">-- do nothing, there is no face to add</span> </pre></li>
+<li id="l242"><pre>          <span class="keyword">else</span> </pre></li>
+<li id="l243"><pre>            <span class="keyword">if</span> e &gt; en <span class="keyword">then</span> <span class="comment">-- neighbour has a lower elevation : face visible from west</span> </pre></li>
+<li id="l244"><pre>              ta.u := V2.u + yb * (V1.u - V2.u) + en * (yb * (V4.u - V1.u) + (1.0 - yb) * (V3.u - V2.u)); </pre></li>
+<li id="l245"><pre>              ta.v := V2.v + yb * (V1.v - V2.v) + en * (yb * (V4.v - V1.v) + (1.0 - yb) * (V3.v - V2.v)); </pre></li>
+<li id="l246"><pre>              tb.u := V2.u + ya * (V1.u - V2.u) + e  * (ya * (V4.u - V1.u) + (1.0 - ya) * (V3.u - V2.u)); </pre></li>
+<li id="l247"><pre>              tb.v := V2.v + ya * (V1.v - V2.v) + e  * (ya * (V4.v - V1.v) + (1.0 - ya) * (V3.v - V2.v)); </pre></li>
+<li id="l248"><pre>              Do_Face ( </pre></li>
+<li id="l249"><pre>                (xa, yb, en), (xa, ya, en), (xa, ya, e), (xa, yb, e), </pre></li>
+<li id="l250"><pre>                (ta, (tb.u, ta.v), tb, (ta.u, tb.v)), </pre></li>
+<li id="l251"><pre>                V_ID, </pre></li>
+<li id="l252"><pre>                e1, e2 </pre></li>
+<li id="l253"><pre>); </pre></li>
+<li id="l254"><pre>            <span class="keyword">else</span>           <span class="comment">-- neighbour has a higher elevation : face visible from east</span> </pre></li>
+<li id="l255"><pre>              ta.u := V1.u + ya * (V2.u - V1.u) + e  * (ya * (V3.u - V2.u) + (1.0 - ya) * (V4.u - V1.u)); </pre></li>
+<li id="l256"><pre>              ta.v := V1.v + ya * (V2.v - V1.v) + e  * (ya * (V3.v - V2.v) + (1.0 - ya) * (V4.v - V1.v)); </pre></li>
+<li id="l257"><pre>              tb.u := V1.u + yb * (V2.u - V1.u) + en * (yb * (V3.u - V2.u) + (1.0 - yb) * (V4.u - V1.u)); </pre></li>
+<li id="l258"><pre>              tb.v := V1.v + yb * (V2.v - V1.v) + en * (yb * (V3.v - V2.v) + (1.0 - yb) * (V4.v - V1.v)); </pre></li>
+<li id="l259"><pre>              Do_Face ( </pre></li>
+<li id="l260"><pre>                (xa, ya, e), (xa, yb, e), (xa, yb, en), (xa, ya, en), </pre></li>
+<li id="l261"><pre>                (ta, (tb.u, ta.v), tb, (ta.u, tb.v)), </pre></li>
+<li id="l262"><pre>                V_ID, </pre></li>
+<li id="l263"><pre>                e1, e2 </pre></li>
+<li id="l264"><pre>); </pre></li>
+<li id="l265"><pre>            <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l266"><pre>          <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l267"><pre>          <span class="comment">--</span> </pre></li>
+<li id="l268"><pre>          <span class="comment">-- - &gt; eastern and northern neighbours : treated on next step</span> </pre></li>
+<li id="l269"><pre>          <span class="comment">--    as western and southern cases</span> </pre></li>
+<li id="l270"><pre>        <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l271"><pre>      <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l272"><pre>    <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l273"><pre>    last_point := po; </pre></li>
+<li id="l274"><pre>    last_face := fa; </pre></li>
+<li id="l275"><pre>  <span class="keyword">end</span> Extrude_on_rectangle; </pre></li>
+<li id="l276"><pre> </pre></li>
+<li id="l277"><pre><span class="keyword">begin</span> </pre></li>
+<li id="l278"><pre>  Reset (seed); </pre></li>
+<li id="l279"><pre><span class="keyword">end</span> GLOBE_3D.Random_extrusions; </pre></li>
+</ol></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,653 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    Package: Windows
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+
+  <div id='navigation'>
+    <h2 class="button">Navigation</h2>
+    <a href='#Description'><div class="button2">Description</div></a>
+    <a href='#Classes'><div class="button2">Classes</div></a>
+    <a href='#Types'><div class="button2">Types</div></a>
+    <a href='#Constants'><div class="button2">Constants &amp; Global variables</div></a>
+    <a href='#Methods'><div class="button2">Subprograms &amp; Entries</div></a>
+  </div><!-- navigation -->
+  </div>
+</div> <!-- leftSide -->
+
+<div class='default' id='rightSide'>
+ <div id='rightSideInside'>
+ <div id='Index'>
+  <h2>Index</h2>
+  <script type="text/javascript">
+    var names = new Array (
+new Array ('Window', 'glut-windows.ads:25:9', 'class-spec'),
+new Array ('Window_<wbr/>view', 'glut-windows.ads:26:9', 'type-spec'),
+new Array ('Smoothing_<wbr/>method', 'glut-windows.ads:55:9', 'type-spec'),
+new Array ('natural_<wbr/>Array (private)', 'glut-windows.ads:80:9', 'type-spec'),
+new Array ('no_<wbr/>such_<wbr/>Object', 'glut-windows.ads:50:4', 'var-spec'),
+new Array ('Initialize', 'glut-windows.ads:23:14', 'subp-spec'),
+new Array ('Define', 'glut-windows.ads:28:14', 'subp-spec'),
+new Array ('Destroy', 'glut-windows.ads:29:14', 'subp-spec'),
+new Array ('Name_<wbr/>is', 'glut-windows.ads:31:14', 'subp-spec'),
+new Array ('Name', 'glut-windows.ads:32:14', 'subp-spec'),
+new Array ('Enable', 'glut-windows.ads:34:25', 'subp-spec'),
+new Array ('Freshen', 'glut-windows.ads:36:25', 'subp-spec'),
+new Array ('is_<wbr/>Closed', 'glut-windows.ads:40:13', 'subp-spec'),
+new Array ('Add', 'glut-windows.ads:45:14', 'subp-spec'),
+new Array ('Rid', 'glut-windows.ads:46:14', 'subp-spec'),
+new Array ('object_<wbr/>Count', 'glut-windows.ads:48:14', 'subp-spec'),
+new Array ('Smoothing', 'glut-windows.ads:57:14', 'subp-spec'),
+new Array ('Smoothing_<wbr/>is', 'glut-windows.ads:58:14', 'subp-spec'),
+new Array ('Show_<wbr/>Status', 'glut-windows.ads:63:14', 'subp-spec'),
+new Array ('Show_<wbr/>Status', 'glut-windows.ads:64:14', 'subp-spec'),
+new Array ('Display_<wbr/>status', 'glut-windows.ads:67:14', 'subp-spec'),
+new Array ('Frames_<wbr/>per_<wbr/>second', 'glut-windows.ads:70:13', 'subp-spec'),
+new Array ('Keyboard', 'glut-windows.ads:75:13', 'subp-spec'),
+new Array ('Mouse', 'glut-windows.ads:76:13', 'subp-spec'),
+      new Array ('dummy', '', ''));
+    printIndexList (names);
+  </script>
+  <noscript>
+    <ul>
+      <li class='class-spec'><a href="#glut-windows.ads:25:9">Window</a></li>
+      <li class='type-spec'><a href="#glut-windows.ads:26:9">Window_<wbr/>view</a></li>
+      <li class='type-spec'><a href="#glut-windows.ads:55:9">Smoothing_<wbr/>method</a></li>
+      <li class='type-spec'><a href="#glut-windows.ads:80:9">natural_<wbr/>Array (private)</a></li>
+      <li class='var-spec'><a href="#glut-windows.ads:50:4">no_<wbr/>such_<wbr/>Object</a></li>
+      <li class='subp-spec'><a href="#glut-windows.ads:23:14">Initialize</a></li>
+      <li class='subp-spec'><a href="#glut-windows.ads:28:14">Define</a></li>
+      <li class='subp-spec'><a href="#glut-windows.ads:29:14">Destroy</a></li>
+      <li class='subp-spec'><a href="#glut-windows.ads:31:14">Name_<wbr/>is</a></li>
+      <li class='subp-spec'><a href="#glut-windows.ads:32:14">Name</a></li>
+      <li class='subp-spec'><a href="#glut-windows.ads:34:25">Enable</a></li>
+      <li class='subp-spec'><a href="#glut-windows.ads:36:25">Freshen</a></li>
+      <li class='subp-spec'><a href="#glut-windows.ads:40:13">is_<wbr/>Closed</a></li>
+      <li class='subp-spec'><a href="#glut-windows.ads:45:14">Add</a></li>
+      <li class='subp-spec'><a href="#glut-windows.ads:46:14">Rid</a></li>
+      <li class='subp-spec'><a href="#glut-windows.ads:48:14">object_<wbr/>Count</a></li>
+      <li class='subp-spec'><a href="#glut-windows.ads:57:14">Smoothing</a></li>
+      <li class='subp-spec'><a href="#glut-windows.ads:58:14">Smoothing_<wbr/>is</a></li>
+      <li class='subp-spec'><a href="#glut-windows.ads:63:14">Show_<wbr/>Status</a></li>
+      <li class='subp-spec'><a href="#glut-windows.ads:64:14">Show_<wbr/>Status</a></li>
+      <li class='subp-spec'><a href="#glut-windows.ads:67:14">Display_<wbr/>status</a></li>
+      <li class='subp-spec'><a href="#glut-windows.ads:70:13">Frames_<wbr/>per_<wbr/>second</a></li>
+      <li class='subp-spec'><a href="#glut-windows.ads:75:13">Keyboard</a></li>
+      <li class='subp-spec'><a href="#glut-windows.ads:76:13">Mouse</a></li>
+    </ul>
+  </noscript>
+ </div>
+ </div>
+</div>
+
+<div class='default' id='documentation'>
+  <div class='title'>
+    Package:
+<span class="droplink"><i>Windows</i><ul>
+  <li><a href="src_glut-windows.ads.html">Goto spec source</a></li>
+  <li><a href="src_glut-windows.adb.html">Goto body source</a></li>
+</ul></span>
+  </div>
+  <div class='subprograms'>
+    <h1><a name='Description' id='Description'></a>Description</h1>
+    <div class="class">
+    <div class='details'><pre><span class="keyword">package</span> <span class="name_emphasis">GLUT.Windows</span> <span class="keyword">is</span></pre></div>
+    <div class='comment'>with <a href="gl-geometry.adb.html#gl-geometry.adb:18:14" title="GL.Geometry">GL.Geometry</a>;
+with GL.skinned_Geometry;
+</div>
+    </div>
+  </div>
+
+
+  <div class='subprograms'>
+    <h1><a name='Classes' id='Classes'></a>Classes</h1>
+    <div class="class">
+      <h3><a name='glut-windows.ads:25:9' id='glut-windows.ads:25:9'></a>
+<span class="droplink">Window<ul>
+  <li><a href="src_glut-windows.ads.html#l25">Goto declaration in source</a></li>
+  <li><a href="src_glut-windows.ads.html#l82">Goto full declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Window</span> <span class="keyword">is</span> <span class="keyword">new</span> <a href="globe_3d.ads.html#globe_3d.ads:455:9" title="defined at globe_3d.ads:455:9">GLOBE_3D.Window</a> <span class="keyword">with</span> <span class="keyword">private</span>;</pre></div>
+      <div class='profile'>
+        <div>
+          <h4>Ancestors:</h4>
+            <div><a href="globe_3d.ads.html#globe_3d.ads:455:9" title="defined at globe_3d.ads:455:9">GLOBE_3D.Window</a></div>
+        </div>
+        <div>
+          <h4>Primitive operations:</h4>
+              <div><span class="droplink">Add<ul><li><a href="glut-windows.ads.html#glut-windows.ads:45:14" title="To API doc">To API doc</a></li><li><a href="src_glut-windows.ads.html#l45" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">Define<ul><li><a href="glut-windows.ads.html#glut-windows.ads:28:14" title="To API doc">To API doc</a></li><li><a href="src_glut-windows.ads.html#l28" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">Destroy<ul><li><a href="glut-windows.ads.html#glut-windows.ads:29:14" title="To API doc">To API doc</a></li><li><a href="src_glut-windows.ads.html#l29" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">Display_status<ul><li><a href="glut-windows.ads.html#glut-windows.ads:67:14" title="To API doc">To API doc</a></li><li><a href="src_glut-windows.ads.html#l67" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">Enable<ul><li><a href="glut-windows.ads.html#glut-windows.ads:34:25" title="To API doc">To API doc</a></li><li><a href="src_glut-windows.ads.html#l34" title="To spec">To spec</a></li></ul></span> <i>(overriding <a href="globe_3d.ads.html#globe_3d.ads:462:14" title="defined at globe_3d.ads:462:14">GLOBE_3D.Enable</a>)</i></div>
+              <div><span class="droplink">Frames_per_second<ul><li><a href="glut-windows.ads.html#glut-windows.ads:70:13" title="To API doc">To API doc</a></li><li><a href="src_glut-windows.ads.html#l70" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">Freshen<ul><li><a href="glut-windows.ads.html#glut-windows.ads:36:25" title="To API doc">To API doc</a></li><li><a href="src_glut-windows.ads.html#l36" title="To spec">To spec</a></li></ul></span> <i>(overriding <a href="globe_3d.ads.html#globe_3d.ads:463:14" title="defined at globe_3d.ads:463:14">GLOBE_3D.Freshen</a>)</i></div>
+              <div><span class="droplink">is_Closed<ul><li><a href="glut-windows.ads.html#glut-windows.ads:40:13" title="To API doc">To API doc</a></li><li><a href="src_glut-windows.ads.html#l40" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">Name<ul><li><a href="glut-windows.ads.html#glut-windows.ads:32:14" title="To API doc">To API doc</a></li><li><a href="src_glut-windows.ads.html#l32" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">Name_is<ul><li><a href="glut-windows.ads.html#glut-windows.ads:31:14" title="To API doc">To API doc</a></li><li><a href="src_glut-windows.ads.html#l31" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">object_Count<ul><li><a href="glut-windows.ads.html#glut-windows.ads:48:14" title="To API doc">To API doc</a></li><li><a href="src_glut-windows.ads.html#l48" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">Rid<ul><li><a href="glut-windows.ads.html#glut-windows.ads:46:14" title="To API doc">To API doc</a></li><li><a href="src_glut-windows.ads.html#l46" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">Show_Status<ul><li><a href="glut-windows.ads.html#glut-windows.ads:64:14" title="To API doc">To API doc</a></li><li><a href="src_glut-windows.ads.html#l64" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">Show_Status<ul><li><a href="glut-windows.ads.html#glut-windows.ads:63:14" title="To API doc">To API doc</a></li><li><a href="src_glut-windows.ads.html#l63" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">Smoothing<ul><li><a href="glut-windows.ads.html#glut-windows.ads:57:14" title="To API doc">To API doc</a></li><li><a href="src_glut-windows.ads.html#l57" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">Smoothing_is<ul><li><a href="glut-windows.ads.html#glut-windows.ads:58:14" title="To API doc">To API doc</a></li><li><a href="src_glut-windows.ads.html#l58" title="To spec">To spec</a></li></ul></span></div>
+        </div>
+      </div>
+      <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glut-windows.ads.html#l25" title="glut-windows.ads:25:9">glut-windows.ads:25:9</a> (declaration)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l50" title="glut-windows.adb:50:37">glut-windows.adb:50:37</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l56" title="glut-windows.adb:56:26">glut-windows.adb:56:26</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l58" title="glut-windows.adb:58:31">glut-windows.adb:58:31</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l60" title="glut-windows.adb:60:55">glut-windows.adb:60:55</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l118" title="glut-windows.adb:118:42">glut-windows.adb:118:42</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l130" title="glut-windows.adb:130:61">glut-windows.adb:130:61</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l150" title="glut-windows.adb:150:38">glut-windows.adb:150:38</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l215" title="glut-windows.adb:215:45">glut-windows.adb:215:45</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l267" title="glut-windows.adb:267:39">glut-windows.adb:267:39</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l269" title="glut-windows.adb:269:48">glut-windows.adb:269:48</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l282" title="glut-windows.adb:282:44">glut-windows.adb:282:44</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l321" title="glut-windows.adb:321:41">glut-windows.adb:321:41</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l331" title="glut-windows.adb:331:51">glut-windows.adb:331:51</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l519" title="glut-windows.adb:519:42">glut-windows.adb:519:42</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l563" title="glut-windows.adb:563:40">glut-windows.adb:563:40</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l595" title="glut-windows.adb:595:37">glut-windows.adb:595:37</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l605" title="glut-windows.adb:605:38">glut-windows.adb:605:38</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l611" title="glut-windows.adb:611:48">glut-windows.adb:611:48</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l618" title="glut-windows.adb:618:53">glut-windows.adb:618:53</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l630" title="glut-windows.adb:630:31">glut-windows.adb:630:31</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l632" title="glut-windows.adb:632:42">glut-windows.adb:632:42</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l639" title="glut-windows.adb:639:33">glut-windows.adb:639:33</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l646" title="glut-windows.adb:646:33">glut-windows.adb:646:33</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l668" title="glut-windows.adb:668:34">glut-windows.adb:668:34</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l673" title="glut-windows.adb:673:34">glut-windows.adb:673:34</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l675" title="glut-windows.adb:675:42">glut-windows.adb:675:42</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l685" title="glut-windows.adb:685:37">glut-windows.adb:685:37</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l687" title="glut-windows.adb:687:34">glut-windows.adb:687:34</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.ads.html#l26" title="glut-windows.ads:26:35">glut-windows.ads:26:35</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.ads.html#l28" title="glut-windows.ads:28:37">glut-windows.ads:28:37</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.ads.html#l29" title="glut-windows.ads:29:37">glut-windows.ads:29:37</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.ads.html#l31" title="glut-windows.ads:31:37">glut-windows.ads:31:37</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.ads.html#l32" title="glut-windows.ads:32:37">glut-windows.ads:32:37</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.ads.html#l34" title="glut-windows.ads:34:47">glut-windows.ads:34:47</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.ads.html#l36" title="glut-windows.ads:36:53">glut-windows.ads:36:53</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.ads.html#l40" title="glut-windows.ads:40:31">glut-windows.ads:40:31</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.ads.html#l45" title="glut-windows.ads:45:33">glut-windows.ads:45:33</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.ads.html#l46" title="glut-windows.ads:46:33">glut-windows.ads:46:33</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.ads.html#l48" title="glut-windows.ads:48:35">glut-windows.ads:48:35</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.ads.html#l57" title="glut-windows.ads:57:42">glut-windows.ads:57:42</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.ads.html#l58" title="glut-windows.ads:58:42">glut-windows.ads:58:42</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.ads.html#l63" title="glut-windows.ads:63:41">glut-windows.ads:63:41</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.ads.html#l64" title="glut-windows.ads:64:41">glut-windows.ads:64:41</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.ads.html#l67" title="glut-windows.ads:67:44">glut-windows.ads:67:44</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.ads.html#l70" title="glut-windows.ads:70:39">glut-windows.ads:70:39</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.ads.html#l75" title="glut-windows.ads:75:38">glut-windows.ads:75:38</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.ads.html#l76" title="glut-windows.ads:76:38">glut-windows.ads:76:38</a> (reference)</i></div>
+            <div><i><a href="src_glut-windows.ads.html#l82" title="glut-windows.ads:82:9">glut-windows.ads:82:9</a> (full declaration)</i></div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class='subprograms'>
+    <h1><a name='Types' id='Types'></a>Types</h1>
+    <div class="class">
+      <h3>
+        <a name='glut-windows.ads:26:9' id='glut-windows.ads:26:9'></a>
+<span class="droplink">Window_view<ul>
+  <li><a href="src_glut-windows.ads.html#l26">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Window_view</span> <span class="keyword">is</span> <span class="keyword">access</span> <span class="keyword">all</span> <a href="glut-windows.ads.html#glut-windows.ads:25:9" title="defined at glut-windows.ads:25:9">Window</a>'Class;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_glut-windows.ads.html#l26" title="glut-windows.ads:26:9">glut-windows.ads:26:9</a> (declaration)</i></div>
+          <div><i><a href="src_glut-devices.adb.html#l17" title="glut-devices.adb:17:43">glut-devices.adb:17:43</a> (reference)</i></div>
+          <div><i><a href="src_glut-devices.adb.html#l19" title="glut-devices.adb:19:83">glut-devices.adb:19:83</a> (reference)</i></div>
+          <div><i><a href="src_glut-devices.adb.html#l30" title="glut-devices.adb:30:46">glut-devices.adb:30:46</a> (reference)</i></div>
+          <div><i><a href="src_glut-devices.adb.html#l98" title="glut-devices.adb:98:46">glut-devices.adb:98:46</a> (reference)</i></div>
+          <div><i><a href="src_glut-windows.adb.html#l42" title="glut-windows.adb:42:35">glut-windows.adb:42:35</a> (reference)</i></div>
+          <div><i><a href="src_glut-windows.adb.html#l47" title="glut-windows.adb:47:27">glut-windows.adb:47:27</a> (reference)</i></div>
+          <div><i><a href="src_glut-windows.adb.html#l191" title="glut-windows.adb:191:43">glut-windows.adb:191:43</a> (reference)</i></div>
+          <div><i><a href="src_glut-windows.ads.html#l26" title="glut-windows.ads:26:76">glut-windows.ads:26:76</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='glut-windows.ads:55:9' id='glut-windows.ads:55:9'></a>
+<span class="droplink">Smoothing_method<ul>
+  <li><a href="src_glut-windows.ads.html#l55">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Smoothing_method</span> <span class="keyword">is</span> (None, Software, Hardware);</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_glut-windows.ads.html#l55" title="glut-windows.ads:55:9">glut-windows.ads:55:9</a> (declaration)</i></div>
+          <div><i><a href="src_glut-windows.adb.html#l630" title="glut-windows.adb:630:46">glut-windows.adb:630:46</a> (reference)</i></div>
+          <div><i><a href="src_glut-windows.adb.html#l633" title="glut-windows.adb:633:42">glut-windows.adb:633:42</a> (reference)</i></div>
+          <div><i><a href="src_glut-windows.ads.html#l57" title="glut-windows.ads:57:85">glut-windows.ads:57:85</a> (reference)</i></div>
+          <div><i><a href="src_glut-windows.ads.html#l58" title="glut-windows.ads:58:56">glut-windows.ads:58:56</a> (reference)</i></div>
+          <div><i><a href="src_glut-windows.ads.html#l90" title="glut-windows.ads:90:26">glut-windows.ads:90:26</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='glut-windows.ads:80:9' id='glut-windows.ads:80:9'></a>
+<span class="droplink">natural_Array (private)<ul>
+  <li><a href="src_glut-windows.ads.html#l80">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">natural_Array</span> <span class="keyword">is</span> <span class="keyword">array</span> (Positive <span class="keyword">range</span> 1 .. 123) <span class="keyword">of</span> Natural;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_glut-windows.ads.html#l80" title="glut-windows.ads:80:9">glut-windows.ads:80:9</a> (declaration)</i></div>
+          <div><i><a href="src_glut-windows.ads.html#l107" title="glut-windows.ads:107:23">glut-windows.ads:107:23</a> (reference)</i></div>
+      </div>
+    </div>
+  </div>
+
+  <div class='subprograms'>
+    <h1><a name='Constants' id='Constants'></a>Constants &amp; Global variables</h1>
+    <div class="class">
+      <h3><a name='glut-windows.ads:50:4' id='glut-windows.ads:50:4'></a>
+<span class="droplink">no_such_Object<ul>
+  <li><a href="src_glut-windows.ads.html#l50">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">no_such_Object</span>  : <span class="keyword">exception</span>;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_glut-windows.ads.html#l50" title="glut-windows.ads:50:4">glut-windows.ads:50:4</a> (declaration)</i></div>
+          <div><i><a href="src_glut-windows.adb.html#l665" title="glut-windows.adb:665:13">glut-windows.adb:665:13</a> (reference)</i></div>
+      </div>
+    </div>
+  </div>
+
+    <div class='subprograms'>
+      <h1><a name='Methods' id='Methods'></a>Subprograms &amp; Entries</h1>
+      <div class="class">
+        <h3>
+          <a name='glut-windows.ads:23:14' id='glut-windows.ads:23:14'></a>
+<span class="droplink">Initialize<ul>
+  <li><a href="src_glut-windows.ads.html#l23">Goto spec in source</a></li>
+  <li><a href="src_glut-windows.adb.html#l587">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Initialize</span>;</pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glut-windows.ads.html#l23" title="glut-windows.ads:23:14">glut-windows.ads:23:14</a> (declaration)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l587" title="glut-windows.adb:587:14">glut-windows.adb:587:14</a> (body)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l593" title="glut-windows.adb:593:8">glut-windows.adb:593:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="glut.ads.html#glut.ads:296:14" title="defined at glut.ads:296:14">GLUT.Init</a> defined at <a href="src_glut.ads.html#l296" title="glut.ads:296:14">glut.ads:296:14</a></i></div>
+            <div><i><a href="glut.ads.html#glut.ads:314:14" title="defined at glut.ads:314:14">GLUT.SetOption</a> defined at <a href="src_glut.ads.html#l314" title="glut.ads:314:14">glut.ads:314:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glut-windows.ads:28:14' id='glut-windows.ads:28:14'></a>
+<span class="droplink">Define<ul>
+  <li><a href="src_glut-windows.ads.html#l28">Goto spec in source</a></li>
+  <li><a href="src_glut-windows.adb.html#l595">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Define</span>  <table><tr><td>(</td><td><span class="name"><a name="glut-windows.ads:28:23"></a>Self</span></td><td>: <span class="keyword">in</span> <span class="keyword">out</span> <a href="glut-windows.ads.html#glut-windows.ads:25:9" title="defined at glut-windows.ads:25:9">Window</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glut-windows.ads.html#l28" title="glut-windows.ads:28:14">glut-windows.ads:28:14</a> (declaration)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l595" title="glut-windows.adb:595:14">glut-windows.adb:595:14</a> (body)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l603" title="glut-windows.adb:603:8">glut-windows.adb:603:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="glut-windows.ads.html#glut-windows.ads:36:25" title="defined at glut-windows.ads:36:25">Freshen</a> defined at <a href="src_glut-windows.ads.html#l36" title="glut-windows.ads:36:25">glut-windows.ads:36:25</a></i></div>
+            <div><i><a href="glut-windows.adb.html#glut-windows.adb:321:14" title="defined at glut-windows.adb:321:14">GLUT.Windows.Reset_eye</a> defined at <a href="src_glut-windows.adb.html#l321" title="glut-windows.adb:321:14">glut-windows.adb:321:14</a></i></div>
+            <div><i><a href="glut-windows.adb.html#glut-windows.adb:563:14" title="defined at glut-windows.adb:563:14">GLUT.Windows.Start_GLs</a> defined at <a href="src_glut-windows.adb.html#l563" title="glut-windows.adb:563:14">glut-windows.adb:563:14</a></i></div>
+            <div><i><a href="glut-windows.adb.html#glut-windows.adb:519:14" title="defined at glut-windows.adb:519:14">GLUT.Windows.Start_GLUTs</a> defined at <a href="src_glut-windows.adb.html#l519" title="glut-windows.adb:519:14">glut-windows.adb:519:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glut-windows.ads:29:14' id='glut-windows.ads:29:14'></a>
+<span class="droplink">Destroy<ul>
+  <li><a href="src_glut-windows.ads.html#l29">Goto spec in source</a></li>
+  <li><a href="src_glut-windows.adb.html#l605">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Destroy</span> <table><tr><td>(</td><td><span class="name"><a name="glut-windows.ads:29:23"></a>Self</span></td><td>: <span class="keyword">in</span> <span class="keyword">out</span> <a href="glut-windows.ads.html#glut-windows.ads:25:9" title="defined at glut-windows.ads:25:9">Window</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glut-windows.ads.html#l29" title="glut-windows.ads:29:14">glut-windows.ads:29:14</a> (declaration)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l605" title="glut-windows.adb:605:14">glut-windows.adb:605:14</a> (body)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l609" title="glut-windows.adb:609:8">glut-windows.adb:609:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="glut.ads.html#glut.ads:360:14" title="defined at glut.ads:360:14">GLUT.DestroyWindow</a> defined at <a href="src_glut.ads.html#l360" title="glut.ads:360:14">glut.ads:360:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glut-windows.ads:31:14' id='glut-windows.ads:31:14'></a>
+<span class="droplink">Name_is<ul>
+  <li><a href="src_glut-windows.ads.html#l31">Goto spec in source</a></li>
+  <li><a href="src_glut-windows.adb.html#l50">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Name_is</span> <table><tr><td>(</td><td><span class="name"><a name="glut-windows.ads:31:23"></a>Self</span></td><td>: <span class="keyword">in</span> <span class="keyword">out</span> <a href="glut-windows.ads.html#glut-windows.ads:25:9" title="defined at glut-windows.ads:25:9">Window</a>;</td></tr><tr><td></td><td><span class="name"><a name="glut-windows.ads:31:45"></a>Now</span></td><td>: String);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glut-windows.ads.html#l31" title="glut-windows.ads:31:14">glut-windows.ads:31:14</a> (declaration)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l50" title="glut-windows.adb:50:14">glut-windows.adb:50:14</a> (body)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l54" title="glut-windows.adb:54:8">glut-windows.adb:54:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>To_Unbounded_String defined at a-strunb.ads:94:13</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glut-windows.ads:32:14' id='glut-windows.ads:32:14'></a>
+<span class="droplink">Name<ul>
+  <li><a href="src_glut-windows.ads.html#l32">Goto spec in source</a></li>
+  <li><a href="src_glut-windows.adb.html#l56">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span>  <span class="name_emphasis">Name</span>    <table><tr><td>(</td><td><span class="name"><a name="glut-windows.ads:32:23"></a>Self</span></td><td>:        <a href="glut-windows.ads.html#glut-windows.ads:25:9" title="defined at glut-windows.ads:25:9">Window</a>) <span class="keyword">return</span> String;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glut-windows.ads.html#l32" title="glut-windows.ads:32:14">glut-windows.ads:32:14</a> (declaration)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l56" title="glut-windows.adb:56:13">glut-windows.adb:56:13</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glut-windows.ads:34:25' id='glut-windows.ads:34:25'></a>
+<span class="droplink">Enable<ul>
+  <li><a href="src_glut-windows.ads.html#l34">Goto spec in source</a></li>
+  <li><a href="src_glut-windows.adb.html#l611">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">overriding</span> <span class="keyword">procedure</span> <span class="name_emphasis">Enable</span> <table><tr><td>(</td><td><span class="name"><a name="glut-windows.ads:34:33"></a>Self</span></td><td>: <span class="keyword">in</span> <span class="keyword">out</span> <a href="glut-windows.ads.html#glut-windows.ads:25:9" title="defined at glut-windows.ads:25:9">Window</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glut-windows.ads.html#l34" title="glut-windows.ads:34:25">glut-windows.ads:34:25</a> (declaration)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l611" title="glut-windows.adb:611:25">glut-windows.adb:611:25</a> (body)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l616" title="glut-windows.adb:616:8">glut-windows.adb:616:8</a> (label)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l623" title="glut-windows.adb:623:7">glut-windows.adb:623:7</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="glut-windows.ads.html#glut-windows.ads:36:25" title="defined at glut-windows.ads:36:25">Freshen</a> defined at <a href="src_glut-windows.ads.html#l36" title="glut-windows.ads:36:25">glut-windows.ads:36:25</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="glut.ads.html#glut.ads:380:14" title="defined at glut.ads:380:14">GLUT.SetWindow</a> defined at <a href="src_glut.ads.html#l380" title="glut.ads:380:14">glut.ads:380:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glut-windows.ads:36:25' id='glut-windows.ads:36:25'></a>
+<span class="droplink">Freshen<ul>
+  <li><a href="src_glut-windows.ads.html#l36">Goto spec in source</a></li>
+  <li><a href="src_glut-windows.adb.html#l618">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">overriding</span> <span class="keyword">procedure</span> <span class="name_emphasis">Freshen</span> <table><tr><td>(</td><td><span class="name"><a name="glut-windows.ads:36:34"></a>Self</span></td><td>: <span class="keyword">in</span> <span class="keyword">out</span> <a href="glut-windows.ads.html#glut-windows.ads:25:9" title="defined at glut-windows.ads:25:9">Window</a>;</td></tr><tr><td></td><td><span class="name"><a name="glut-windows.ads:37:23"></a>time_Step</span></td><td>:        <a href="globe_3d.ads.html#globe_3d.ads:102:12" title="defined at globe_3d.ads:102:12">GLOBE_3D.Real</a>;</td></tr><tr><td></td><td><span class="name"><a name="glut-windows.ads:38:23"></a>Extras</span></td><td>:        <a href="globe_3d.ads.html#globe_3d.ads:210:9" title="defined at globe_3d.ads:210:9">GLOBE_3D.Visual_array</a> := <a href="globe_3d.ads.html#globe_3d.ads:241:4" title="defined at globe_3d.ads:241:4">GLOBE_3D.null_Visuals</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glut-windows.ads.html#l36" title="glut-windows.ads:36:25">glut-windows.ads:36:25</a> (declaration)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l602" title="glut-windows.adb:602:7">glut-windows.adb:602:7</a> (call)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l618" title="glut-windows.adb:618:25">glut-windows.adb:618:25</a> (body)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l625" title="glut-windows.adb:625:8">glut-windows.adb:625:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="glut-windows.ads.html#glut-windows.ads:28:14" title="defined at glut-windows.ads:28:14">Define</a> defined at <a href="src_glut-windows.ads.html#l28" title="glut-windows.ads:28:14">glut-windows.ads:28:14</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="glut-windows.ads.html#glut-windows.ads:34:25" title="defined at glut-windows.ads:34:25">Enable</a> defined at <a href="src_glut-windows.ads.html#l34" title="glut-windows.ads:34:25">glut-windows.ads:34:25</a></i></div>
+            <div><i><a href="glut-windows.adb.html#glut-windows.adb:331:14" title="defined at glut-windows.adb:331:14">GLUT.Windows.Main_Operations</a> defined at <a href="src_glut-windows.adb.html#l331" title="glut-windows.adb:331:14">glut-windows.adb:331:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glut-windows.ads:40:13' id='glut-windows.ads:40:13'></a>
+<span class="droplink">is_Closed<ul>
+  <li><a href="src_glut-windows.ads.html#l40">Goto spec in source</a></li>
+  <li><a href="src_glut-windows.adb.html#l58">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">is_Closed</span> <table><tr><td>(</td><td><span class="name"><a name="glut-windows.ads:40:24"></a>Self</span></td><td>: <a href="glut-windows.ads.html#glut-windows.ads:25:9" title="defined at glut-windows.ads:25:9">Window</a>) <span class="keyword">return</span> Boolean;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glut-windows.ads.html#l40" title="glut-windows.ads:40:13">glut-windows.ads:40:13</a> (declaration)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l58" title="glut-windows.adb:58:13">glut-windows.adb:58:13</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glut-windows.ads:45:14' id='glut-windows.ads:45:14'></a>
+<span class="droplink">Add<ul>
+  <li><a href="src_glut-windows.ads.html#l45">Goto spec in source</a></li>
+  <li><a href="src_glut-windows.adb.html#l639">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Add</span> <table><tr><td>(</td><td><span class="name"><a name="glut-windows.ads:45:19"></a>Self</span></td><td>: <span class="keyword">in</span> <span class="keyword">out</span> <a href="glut-windows.ads.html#glut-windows.ads:25:9" title="defined at glut-windows.ads:25:9">Window</a>;</td></tr><tr><td></td><td><span class="name"><a name="glut-windows.ads:45:41"></a>the_Object</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:209:9" title="defined at globe_3d.ads:209:9">GLOBE_3D.p_Visual</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glut-windows.ads.html#l45" title="glut-windows.ads:45:14">glut-windows.ads:45:14</a> (declaration)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l639" title="glut-windows.adb:639:14">glut-windows.adb:639:14</a> (body)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l644" title="glut-windows.adb:644:8">glut-windows.adb:644:8</a> (label)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glut-windows.ads:46:14' id='glut-windows.ads:46:14'></a>
+<span class="droplink">Rid<ul>
+  <li><a href="src_glut-windows.ads.html#l46">Goto spec in source</a></li>
+  <li><a href="src_glut-windows.adb.html#l646">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Rid</span> <table><tr><td>(</td><td><span class="name"><a name="glut-windows.ads:46:19"></a>Self</span></td><td>: <span class="keyword">in</span> <span class="keyword">out</span> <a href="glut-windows.ads.html#glut-windows.ads:25:9" title="defined at glut-windows.ads:25:9">Window</a>;</td></tr><tr><td></td><td><span class="name"><a name="glut-windows.ads:46:41"></a>the_Object</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:209:9" title="defined at globe_3d.ads:209:9">GLOBE_3D.p_Visual</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glut-windows.ads.html#l46" title="glut-windows.ads:46:14">glut-windows.ads:46:14</a> (declaration)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l646" title="glut-windows.adb:646:14">glut-windows.adb:646:14</a> (body)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l666" title="glut-windows.adb:666:8">glut-windows.adb:666:8</a> (label)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glut-windows.ads:48:14' id='glut-windows.ads:48:14'></a>
+<span class="droplink">object_Count<ul>
+  <li><a href="src_glut-windows.ads.html#l48">Goto spec in source</a></li>
+  <li><a href="src_glut-windows.adb.html#l668">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span>  <span class="name_emphasis">object_Count</span> <table><tr><td>(</td><td><span class="name"><a name="glut-windows.ads:48:28"></a>Self</span></td><td>: <a href="glut-windows.ads.html#glut-windows.ads:25:9" title="defined at glut-windows.ads:25:9">Window</a>) <span class="keyword">return</span> Natural;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glut-windows.ads.html#l48" title="glut-windows.ads:48:14">glut-windows.ads:48:14</a> (declaration)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l668" title="glut-windows.adb:668:13">glut-windows.adb:668:13</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glut-windows.ads:57:14' id='glut-windows.ads:57:14'></a>
+<span class="droplink">Smoothing<ul>
+  <li><a href="src_glut-windows.ads.html#l57">Goto spec in source</a></li>
+  <li><a href="src_glut-windows.adb.html#l630">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span>  <span class="name_emphasis">Smoothing</span>    <table><tr><td>(</td><td><span class="name"><a name="glut-windows.ads:57:28"></a>Self</span></td><td>:        <a href="glut-windows.ads.html#glut-windows.ads:25:9" title="defined at glut-windows.ads:25:9">Window</a>)                             <span class="keyword">return</span> <a href="glut-windows.ads.html#glut-windows.ads:55:9" title="defined at glut-windows.ads:55:9">Smoothing_method</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glut-windows.ads.html#l57" title="glut-windows.ads:57:14">glut-windows.ads:57:14</a> (declaration)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l630" title="glut-windows.adb:630:13">glut-windows.adb:630:13</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glut-windows.ads:58:14' id='glut-windows.ads:58:14'></a>
+<span class="droplink">Smoothing_is<ul>
+  <li><a href="src_glut-windows.ads.html#l58">Goto spec in source</a></li>
+  <li><a href="src_glut-windows.adb.html#l632">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Smoothing_is</span> <table><tr><td>(</td><td><span class="name"><a name="glut-windows.ads:58:28"></a>Self</span></td><td>: <span class="keyword">in</span> <span class="keyword">out</span> <a href="glut-windows.ads.html#glut-windows.ads:25:9" title="defined at glut-windows.ads:25:9">Window</a>;</td></tr><tr><td></td><td><span class="name"><a name="glut-windows.ads:58:50"></a>Now</span></td><td>: <a href="glut-windows.ads.html#glut-windows.ads:55:9" title="defined at glut-windows.ads:55:9">Smoothing_method</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glut-windows.ads.html#l58" title="glut-windows.ads:58:14">glut-windows.ads:58:14</a> (declaration)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l632" title="glut-windows.adb:632:14">glut-windows.adb:632:14</a> (body)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l637" title="glut-windows.adb:637:8">glut-windows.adb:637:8</a> (label)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glut-windows.ads:63:14' id='glut-windows.ads:63:14'></a>
+<span class="droplink">Show_Status<ul>
+  <li><a href="src_glut-windows.ads.html#l63">Goto spec in source</a></li>
+  <li><a href="src_glut-windows.adb.html#l673">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span>  <span class="name_emphasis">Show_Status</span> <table><tr><td>(</td><td><span class="name"><a name="glut-windows.ads:63:27"></a>Self</span></td><td>:        <a href="glut-windows.ads.html#glut-windows.ads:25:9" title="defined at glut-windows.ads:25:9">Window</a>) <span class="keyword">return</span> Boolean;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glut-windows.ads.html#l63" title="glut-windows.ads:63:14">glut-windows.ads:63:14</a> (declaration)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l673" title="glut-windows.adb:673:14">glut-windows.adb:673:14</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glut-windows.ads:64:14' id='glut-windows.ads:64:14'></a>
+<span class="droplink">Show_Status<ul>
+  <li><a href="src_glut-windows.ads.html#l64">Goto spec in source</a></li>
+  <li><a href="src_glut-windows.adb.html#l675">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Show_Status</span> <table><tr><td>(</td><td><span class="name"><a name="glut-windows.ads:64:27"></a>Self</span></td><td>: <span class="keyword">in</span> <span class="keyword">out</span> <a href="glut-windows.ads.html#glut-windows.ads:25:9" title="defined at glut-windows.ads:25:9">Window</a>;</td></tr><tr><td></td><td><span class="name"><a name="glut-windows.ads:65:27"></a>Show</span></td><td>:        Boolean := True);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glut-windows.ads.html#l64" title="glut-windows.ads:64:14">glut-windows.ads:64:14</a> (declaration)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l675" title="glut-windows.adb:675:14">glut-windows.adb:675:14</a> (body)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l680" title="glut-windows.adb:680:8">glut-windows.adb:680:8</a> (label)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glut-windows.ads:67:14' id='glut-windows.ads:67:14'></a>
+<span class="droplink">Display_status<ul>
+  <li><a href="src_glut-windows.ads.html#l67">Goto spec in source</a></li>
+  <li><a href="src_glut-windows.adb.html#l215">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Display_status</span> <table><tr><td>(</td><td><span class="name"><a name="glut-windows.ads:67:30"></a>Self</span></td><td>: <span class="keyword">in</span> <span class="keyword">out</span> <a href="glut-windows.ads.html#glut-windows.ads:25:9" title="defined at glut-windows.ads:25:9">Window</a>;</td></tr><tr><td></td><td><span class="name"><a name="glut-windows.ads:68:30"></a>sec</span></td><td>:        <a href="globe_3d.ads.html#globe_3d.ads:102:12" title="defined at globe_3d.ads:102:12">GLOBE_3D.Real</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glut-windows.ads.html#l67" title="glut-windows.ads:67:14">glut-windows.ads:67:14</a> (declaration)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l215" title="glut-windows.adb:215:14">glut-windows.adb:215:14</a> (body)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l265" title="glut-windows.adb:265:8">glut-windows.adb:265:8</a> (label)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l278" title="glut-windows.adb:278:10">glut-windows.adb:278:10</a> (dispatching call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="glut-windows.adb.html#glut-windows.adb:269:14" title="defined at glut-windows.adb:269:14">GLUT.Windows.Graphic_display</a> defined at <a href="src_glut-windows.adb.html#l269" title="glut-windows.adb:269:14">glut-windows.adb:269:14</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="gl.ads.html#gl.ads:3404:14" title="defined at gl.ads:3404:14">GL.Color</a> defined at <a href="src_gl.ads.html#l3404" title="gl.ads:3404:14">gl.ads:3404:14</a></i></div>
+            <div><i><a href="gl.ads.html#gl.ads:706:14" title="defined at gl.ads:706:14">GL.Disable</a> defined at <a href="src_gl.ads.html#l706" title="gl.ads:706:14">gl.ads:706:14</a></i></div>
+            <div><i><a href="gl.ads.html#gl.ads:3280:14" title="defined at gl.ads:3280:14">GL.PopMatrix</a> defined at <a href="src_gl.ads.html#l3280" title="gl.ads:3280:14">gl.ads:3280:14</a></i></div>
+            <div><i><a href="gl.ads.html#gl.ads:3278:14" title="defined at gl.ads:3278:14">GL.PushMatrix</a> defined at <a href="src_gl.ads.html#l3278" title="gl.ads:3278:14">gl.ads:3278:14</a></i></div>
+            <div><i><a href="globe_3d.ads.html#globe_3d.ads:507:13" title="defined at globe_3d.ads:507:13">GLOBE_3D.Coords</a> defined at <a href="src_globe_3d.ads.html#l507" title="globe_3d.ads:507:13">globe_3d.ads:507:13</a></i></div>
+            <div><i><a href="globe_3d.ads.html#globe_3d.ads:499:13" title="defined at globe_3d.ads:499:13">GLOBE_3D.Is_light_switched</a> defined at <a href="src_globe_3d.ads.html#l499" title="globe_3d.ads:499:13">globe_3d.ads:499:13</a></i></div>
+            <div><i><a href="glut_2d.ads.html#glut_2d.ads:36:13" title="defined at glut_2d.ads:36:13">GLUT_2D.Text_output</a> defined at <a href="src_glut_2d.ads.html#l36" title="glut_2d.ads:36:13">glut_2d.ads:36:13</a></i></div>
+            <div><i><a href="glut_2d.ads.html#glut_2d.ads:27:13" title="defined at glut_2d.ads:27:13">GLUT_2D.Text_output</a> defined at <a href="src_glut_2d.ads.html#l27" title="glut_2d.ads:27:13">glut_2d.ads:27:13</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glut-windows.ads:70:13' id='glut-windows.ads:70:13'></a>
+<span class="droplink">Frames_per_second<ul>
+  <li><a href="src_glut-windows.ads.html#l70">Goto spec in source</a></li>
+  <li><a href="src_glut-windows.adb.html#l267">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Frames_per_second</span> <table><tr><td>(</td><td><span class="name"><a name="glut-windows.ads:70:32"></a>Self</span></td><td>: <a href="glut-windows.ads.html#glut-windows.ads:25:9" title="defined at glut-windows.ads:25:9">Window</a>) <span class="keyword">return</span> Float;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glut-windows.ads.html#l70" title="glut-windows.ads:70:13">glut-windows.ads:70:13</a> (declaration)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l267" title="glut-windows.adb:267:13">glut-windows.adb:267:13</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glut-windows.ads:75:13' id='glut-windows.ads:75:13'></a>
+<span class="droplink">Keyboard<ul>
+  <li><a href="src_glut-windows.ads.html#l75">Goto spec in source</a></li>
+  <li><a href="src_glut-windows.adb.html#l685">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Keyboard</span> <table><tr><td>(</td><td><span class="name"><a name="glut-windows.ads:75:23"></a>Self</span></td><td>: <span class="keyword">access</span> <a href="glut-windows.ads.html#glut-windows.ads:25:9" title="defined at glut-windows.ads:25:9">Window</a>'Class) <span class="keyword">return</span> <a href="glut-devices.ads.html#glut-devices.ads:35:9" title="defined at glut-devices.ads:35:9">Devices.p_Keyboard</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glut-windows.ads.html#l75" title="glut-windows.ads:75:13">glut-windows.ads:75:13</a> (declaration)</i></div>
+            <div><i><a href="src_glut-devices.adb.html#l35" title="glut-devices.adb:35:44">glut-devices.adb:35:44</a> (call)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l685" title="glut-windows.adb:685:13">glut-windows.adb:685:13</a> (body)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="glut-devices.adb.html#glut-devices.adb:28:13" title="defined at glut-devices.adb:28:13">GLUT.Devices.current_Keyboard</a> defined at <a href="src_glut-devices.adb.html#l28" title="glut-devices.adb:28:13">glut-devices.adb:28:13</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glut-windows.ads:76:13' id='glut-windows.ads:76:13'></a>
+<span class="droplink">Mouse<ul>
+  <li><a href="src_glut-windows.ads.html#l76">Goto spec in source</a></li>
+  <li><a href="src_glut-windows.adb.html#l687">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Mouse</span>    <table><tr><td>(</td><td><span class="name"><a name="glut-windows.ads:76:23"></a>Self</span></td><td>: <span class="keyword">access</span> <a href="glut-windows.ads.html#glut-windows.ads:25:9" title="defined at glut-windows.ads:25:9">Window</a>'Class) <span class="keyword">return</span> <a href="glut-devices.ads.html#glut-devices.ads:56:9" title="defined at glut-devices.ads:56:9">Devices.p_Mouse</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glut-windows.ads.html#l76" title="glut-windows.ads:76:13">glut-windows.ads:76:13</a> (declaration)</i></div>
+            <div><i><a href="src_glut-devices.adb.html#l103" title="glut-devices.adb:103:44">glut-devices.adb:103:44</a> (call)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l687" title="glut-windows.adb:687:13">glut-windows.adb:687:13</a> (body)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="glut-devices.adb.html#glut-devices.adb:96:13" title="defined at glut-devices.adb:96:13">GLUT.Devices.current_Mouse</a> defined at <a href="src_glut-devices.adb.html#l96" title="glut-devices.adb:96:13">glut-devices.adb:96:13</a></i></div>
+        </div>
+      </div>
+    </div>
+</div> <!-- documentation -->
+
+</body>
+</html>

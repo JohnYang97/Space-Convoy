@@ -1,0 +1,217 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    Package: Graphics_FrameRates
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+
+  <div id='navigation'>
+    <h2 class="button">Navigation</h2>
+    <a href='#Description'><div class="button2">Description</div></a>
+    <a href='#Types'><div class="button2">Types</div></a>
+    <a href='#Constants'><div class="button2">Constants &amp; Global variables</div></a>
+    <a href='#Methods'><div class="button2">Subprograms &amp; Entries</div></a>
+  </div><!-- navigation -->
+  </div>
+</div> <!-- leftSide -->
+
+<div class='default' id='rightSide'>
+ <div id='rightSideInside'>
+ <div id='Index'>
+  <h2>Index</h2>
+  <script type="text/javascript">
+    var names = new Array (
+new Array ('Hz', 'graphics_framerates.ads:12:12', 'type-spec'),
+new Array ('Smoothing_<wbr/>Buffer_<wbr/>Size', 'graphics_framerates.ads:10:4', 'var-spec'),
+new Array ('Measure_<wbr/>Interval', 'graphics_framerates.ads:14:13', 'subp-spec'),
+new Array ('Average_<wbr/>Framerate', 'graphics_framerates.ads:16:13', 'subp-spec'),
+new Array ('Framerate_<wbr/>Limiter', 'graphics_framerates.ads:18:14', 'subp-spec'),
+      new Array ('dummy', '', ''));
+    printIndexList (names);
+  </script>
+  <noscript>
+    <ul>
+      <li class='type-spec'><a href="#graphics_framerates.ads:12:12">Hz</a></li>
+      <li class='var-spec'><a href="#graphics_framerates.ads:10:4">Smoothing_<wbr/>Buffer_<wbr/>Size</a></li>
+      <li class='subp-spec'><a href="#graphics_framerates.ads:14:13">Measure_<wbr/>Interval</a></li>
+      <li class='subp-spec'><a href="#graphics_framerates.ads:16:13">Average_<wbr/>Framerate</a></li>
+      <li class='subp-spec'><a href="#graphics_framerates.ads:18:14">Framerate_<wbr/>Limiter</a></li>
+    </ul>
+  </noscript>
+ </div>
+ </div>
+</div>
+
+<div class='default' id='documentation'>
+  <div class='title'>
+    Package:
+<span class="droplink"><i>Graphics_FrameRates</i><ul>
+  <li><a href="src_graphics_framerates.ads.html">Goto spec source</a></li>
+  <li><a href="src_graphics_framerates.adb.html">Goto body source</a></li>
+</ul></span>
+  </div>
+  <div class='subprograms'>
+    <h1><a name='Description' id='Description'></a>Description</h1>
+    <div class="class">
+    <div class='details'><pre><span class="keyword">package</span> <span class="name_emphasis">Graphics_FrameRates</span> <span class="keyword">is</span></pre></div>
+    <div class='comment'>
+Jan &amp; Uwe R. Zimmer, Australia, July 2011
+
+</div>
+    </div>
+  </div>
+
+
+
+
+  <div class='subprograms'>
+    <h1><a name='Types' id='Types'></a>Types</h1>
+    <div class="class">
+      <h3>
+        <a name='graphics_framerates.ads:12:12' id='graphics_framerates.ads:12:12'></a>
+<span class="droplink">Hz<ul>
+  <li><a href="src_graphics_framerates.ads.html#l12">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">subtype</span> <span class="name_emphasis">Hz</span> <span class="keyword">is</span> <a href="real_type.ads.html#real_type.ads:5:12" title="defined at real_type.ads:5:12">Real</a> <span class="keyword">range</span> 0.0 .. <a href="real_type.ads.html#real_type.ads:5:12" title="defined at real_type.ads:5:12">Real</a>'Last;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_graphics_framerates.ads.html#l12" title="graphics_framerates.ads:12:12">graphics_framerates.ads:12:12</a> (declaration)</i></div>
+          <div><i><a href="src_graphics_configuration.ads.html#l16" title="graphics_configuration.ads:16:34">graphics_configuration.ads:16:34</a> (reference)</i></div>
+          <div><i><a href="src_graphics_framerates.adb.html#l33" title="graphics_framerates.adb:33:61">graphics_framerates.adb:33:61</a> (reference)</i></div>
+          <div><i><a href="src_graphics_framerates.adb.html#l56" title="graphics_framerates.adb:56:49">graphics_framerates.adb:56:49</a> (reference)</i></div>
+          <div><i><a href="src_graphics_framerates.ads.html#l16" title="graphics_framerates.ads:16:61">graphics_framerates.ads:16:61</a> (reference)</i></div>
+          <div><i><a href="src_graphics_framerates.ads.html#l18" title="graphics_framerates.ads:18:49">graphics_framerates.ads:18:49</a> (reference)</i></div>
+      </div>
+    </div>
+  </div>
+
+  <div class='subprograms'>
+    <h1><a name='Constants' id='Constants'></a>Constants &amp; Global variables</h1>
+    <div class="class">
+      <h3><a name='graphics_framerates.ads:10:4' id='graphics_framerates.ads:10:4'></a>
+<span class="droplink">Smoothing_Buffer_Size<ul>
+  <li><a href="src_graphics_framerates.ads.html#l10">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(Positive)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Smoothing_Buffer_Size</span> : <span class="keyword">constant</span> Positive := 24;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_graphics_framerates.ads.html#l10" title="graphics_framerates.ads:10:4">graphics_framerates.ads:10:4</a> (declaration)</i></div>
+          <div><i><a href="src_graphics_framerates.adb.html#l7" title="graphics_framerates.adb:7:24">graphics_framerates.adb:7:24</a> (reference)</i></div>
+          <div><i><a href="src_graphics_framerates.adb.html#l48" title="graphics_framerates.adb:48:57">graphics_framerates.adb:48:57</a> (reference)</i></div>
+      </div>
+    </div>
+  </div>
+
+    <div class='subprograms'>
+      <h1><a name='Methods' id='Methods'></a>Subprograms &amp; Entries</h1>
+      <div class="class">
+        <h3>
+          <a name='graphics_framerates.ads:14:13' id='graphics_framerates.ads:14:13'></a>
+<span class="droplink">Measure_Interval<ul>
+  <li><a href="src_graphics_framerates.ads.html#l14">Goto spec in source</a></li>
+  <li><a href="src_graphics_framerates.adb.html#l20">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Measure_Interval</span> <span class="keyword">return</span> Time_Span;</pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_graphics_framerates.ads.html#l14" title="graphics_framerates.ads:14:13">graphics_framerates.ads:14:13</a> (declaration)</i></div>
+            <div><i><a href="src_callback_procedures.adb.html#l169" title="callback_procedures.adb:169:51">callback_procedures.adb:169:51</a> (call)</i></div>
+            <div><i><a href="src_graphics_framerates.adb.html#l20" title="graphics_framerates.adb:20:13">graphics_framerates.adb:20:13</a> (body)</i></div>
+            <div><i><a href="src_graphics_framerates.adb.html#l27" title="graphics_framerates.adb:27:8">graphics_framerates.adb:27:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>- defined at a-reatim.ads:58:14</i></div>
+            <div><i>Clock defined at a-reatim.ads:53:13</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='graphics_framerates.ads:16:13' id='graphics_framerates.ads:16:13'></a>
+<span class="droplink">Average_Framerate<ul>
+  <li><a href="src_graphics_framerates.ads.html#l16">Goto spec in source</a></li>
+  <li><a href="src_graphics_framerates.adb.html#l33">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Average_Framerate</span> <table><tr><td>(</td><td><span class="name"><a name="graphics_framerates.ads:16:32"></a>Interval</span></td><td>: Time_Span) <span class="keyword">return</span> <a href="graphics_framerates.ads.html#graphics_framerates.ads:12:12" title="defined at graphics_framerates.ads:12:12">Hz</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_graphics_framerates.ads.html#l16" title="graphics_framerates.ads:16:13">graphics_framerates.ads:16:13</a> (declaration)</i></div>
+            <div><i><a href="src_callback_procedures.adb.html#l170" title="callback_procedures.adb:170:60">callback_procedures.adb:170:60</a> (call)</i></div>
+            <div><i><a href="src_graphics_framerates.adb.html#l33" title="graphics_framerates.adb:33:13">graphics_framerates.adb:33:13</a> (body)</i></div>
+            <div><i><a href="src_graphics_framerates.adb.html#l50" title="graphics_framerates.adb:50:8">graphics_framerates.adb:50:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>+ defined at a-reatim.ads:65:14</i></div>
+            <div><i>/ defined at a-reatim.ads:71:14</i></div>
+            <div><i>To_Duration defined at a-reatim.ads:80:13</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='graphics_framerates.ads:18:14' id='graphics_framerates.ads:18:14'></a>
+<span class="droplink">Framerate_Limiter<ul>
+  <li><a href="src_graphics_framerates.ads.html#l18">Goto spec in source</a></li>
+  <li><a href="src_graphics_framerates.adb.html#l56">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Framerate_Limiter</span> <table><tr><td>(</td><td><span class="name"><a name="graphics_framerates.ads:18:33"></a>Max_Framerate</span></td><td>: <a href="graphics_framerates.ads.html#graphics_framerates.ads:12:12" title="defined at graphics_framerates.ads:12:12">Hz</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_graphics_framerates.ads.html#l18" title="graphics_framerates.ads:18:14">graphics_framerates.ads:18:14</a> (declaration)</i></div>
+            <div><i><a href="src_callback_procedures.adb.html#l176" title="callback_procedures.adb:176:7">callback_procedures.adb:176:7</a> (call)</i></div>
+            <div><i><a href="src_graphics_framerates.adb.html#l56" title="graphics_framerates.adb:56:14">graphics_framerates.adb:56:14</a> (body)</i></div>
+            <div><i><a href="src_graphics_framerates.adb.html#l72" title="graphics_framerates.adb:72:8">graphics_framerates.adb:72:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>- defined at a-reatim.ads:58:14</i></div>
+            <div><i>- defined at a-reatim.ads:66:14</i></div>
+            <div><i>- defined at a-reatim.ads:67:14</i></div>
+            <div><i>< defined at a-reatim.ads:75:14</i></div>
+            <div><i>> defined at a-reatim.ads:77:14</i></div>
+            <div><i>Clock defined at a-reatim.ads:53:13</i></div>
+            <div><i>To_Duration defined at a-reatim.ads:80:13</i></div>
+            <div><i>To_Time_Span defined at a-reatim.ads:81:13</i></div>
+        </div>
+      </div>
+    </div>
+</div> <!-- documentation -->
+
+</body>
+</html>

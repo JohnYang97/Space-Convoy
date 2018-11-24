@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    File: vectors_3d_lf.adb
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+  </div>
+</div> <!-- leftSide -->
+
+<div class='subprograms'>
+  <div class='details'><ol><li id="l1"><pre><span class="comment">--</span> </pre></li>
+<li id="l2"><pre><span class="comment">-- Jan &amp; Uwe R. Zimmer, Australia, July 2011</span> </pre></li>
+<li id="l3"><pre><span class="comment">--</span> </pre></li>
+<li id="l4"><pre> </pre></li>
+<li id="l5"><pre><span class="keyword">package</span> <span class="keyword">body</span> <span class="droplink">Vectors_3D_LF<ul><li><a href="vectors_3d_lf.ads.html#vectors_3d_lf.ads:7:9" title="To API doc">To API doc</a></li><li><a href="src_vectors_3d_lf.ads.html#l7" title="To spec">To spec</a></li></ul></span> <span class="keyword">is</span> </pre></li>
+<li id="l6"><pre> </pre></li>
+<li id="l7"><pre>   <span class="keyword">function</span> &quot;*&quot; (<span class="droplink">V_Left<ul><li><a href="vectors_3d_lf.ads.html#vectors_3d_lf.ads:25:18" title="To API doc">To API doc</a></li><li><a href="src_vectors_3d_lf.ads.html#l25" title="To spec">To spec</a></li></ul></span>, <span class="droplink">V_Right<ul><li><a href="vectors_3d_lf.ads.html#vectors_3d_lf.ads:25:26" title="To API doc">To API doc</a></li><li><a href="src_vectors_3d_lf.ads.html#l25" title="To spec">To spec</a></li></ul></span> : <span class="droplink">Vector_3D_LF<ul><li><a href="vectors_3d_lf.ads.html#vectors_3d_lf.ads:13:12" title="To API doc">To API doc</a></li><li><a href="src_vectors_3d_lf.ads.html#l13" title="To spec">To spec</a></li></ul></span>) <span class="keyword">return</span> <span class="droplink">Vector_3D_LF<ul><li><a href="vectors_3d_lf.ads.html#vectors_3d_lf.ads:13:12" title="To API doc">To API doc</a></li><li><a href="src_vectors_3d_lf.ads.html#l13" title="To spec">To spec</a></li></ul></span> <span class="keyword">is</span> </pre></li>
+<li id="l8"><pre>     (x =&gt; (<span class="droplink">V_Left<ul><li><a href="vectors_3d_lf.ads.html#vectors_3d_lf.ads:25:18" title="To API doc">To API doc</a></li><li><a href="src_vectors_3d_lf.ads.html#l25" title="To spec">To spec</a></li></ul></span> (y) * <span class="droplink">V_Right<ul><li><a href="vectors_3d_lf.ads.html#vectors_3d_lf.ads:25:26" title="To API doc">To API doc</a></li><li><a href="src_vectors_3d_lf.ads.html#l25" title="To spec">To spec</a></li></ul></span> (z) - <span class="droplink">V_Left<ul><li><a href="vectors_3d_lf.ads.html#vectors_3d_lf.ads:25:18" title="To API doc">To API doc</a></li><li><a href="src_vectors_3d_lf.ads.html#l25" title="To spec">To spec</a></li></ul></span> (z) * <span class="droplink">V_Right<ul><li><a href="vectors_3d_lf.ads.html#vectors_3d_lf.ads:25:26" title="To API doc">To API doc</a></li><li><a href="src_vectors_3d_lf.ads.html#l25" title="To spec">To spec</a></li></ul></span> (y)), </pre></li>
+<li id="l9"><pre>      y =&gt; (<span class="droplink">V_Left<ul><li><a href="vectors_3d_lf.ads.html#vectors_3d_lf.ads:25:18" title="To API doc">To API doc</a></li><li><a href="src_vectors_3d_lf.ads.html#l25" title="To spec">To spec</a></li></ul></span> (z) * <span class="droplink">V_Right<ul><li><a href="vectors_3d_lf.ads.html#vectors_3d_lf.ads:25:26" title="To API doc">To API doc</a></li><li><a href="src_vectors_3d_lf.ads.html#l25" title="To spec">To spec</a></li></ul></span> (x) - <span class="droplink">V_Left<ul><li><a href="vectors_3d_lf.ads.html#vectors_3d_lf.ads:25:18" title="To API doc">To API doc</a></li><li><a href="src_vectors_3d_lf.ads.html#l25" title="To spec">To spec</a></li></ul></span> (x) * <span class="droplink">V_Right<ul><li><a href="vectors_3d_lf.ads.html#vectors_3d_lf.ads:25:26" title="To API doc">To API doc</a></li><li><a href="src_vectors_3d_lf.ads.html#l25" title="To spec">To spec</a></li></ul></span> (z)), </pre></li>
+<li id="l10"><pre>      z =&gt; (<span class="droplink">V_Left<ul><li><a href="vectors_3d_lf.ads.html#vectors_3d_lf.ads:25:18" title="To API doc">To API doc</a></li><li><a href="src_vectors_3d_lf.ads.html#l25" title="To spec">To spec</a></li></ul></span> (x) * <span class="droplink">V_Right<ul><li><a href="vectors_3d_lf.ads.html#vectors_3d_lf.ads:25:26" title="To API doc">To API doc</a></li><li><a href="src_vectors_3d_lf.ads.html#l25" title="To spec">To spec</a></li></ul></span> (y) - <span class="droplink">V_Left<ul><li><a href="vectors_3d_lf.ads.html#vectors_3d_lf.ads:25:18" title="To API doc">To API doc</a></li><li><a href="src_vectors_3d_lf.ads.html#l25" title="To spec">To spec</a></li></ul></span> (y) * <span class="droplink">V_Right<ul><li><a href="vectors_3d_lf.ads.html#vectors_3d_lf.ads:25:26" title="To API doc">To API doc</a></li><li><a href="src_vectors_3d_lf.ads.html#l25" title="To spec">To spec</a></li></ul></span> (x))); </pre></li>
+<li id="l11"><pre> </pre></li>
+<li id="l12"><pre><span class="keyword">end</span> <span class="droplink">Vectors_3D_LF<ul><li><a href="vectors_3d_lf.ads.html#vectors_3d_lf.ads:7:9" title="To API doc">To API doc</a></li><li><a href="src_vectors_3d_lf.ads.html#l7" title="To spec">To spec</a></li><li><a href="src_vectors_3d_lf.adb.html#l5" title="To body">To body</a></li></ul></span>; </pre></li>
+</ol></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    File: globe_3d-textures.ads
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+  </div>
+</div> <!-- leftSide -->
+
+<div class='subprograms'>
+  <div class='details'><ol><li id="l1"><pre><span class="keyword">package</span> <span class="droplink">GLOBE_3D.Textures<ul><li><a href="globe_3d-textures.ads.html#globe_3d-textures.ads:1:18" title="To API doc">To API doc</a></li><li><a href="src_globe_3d-textures.ads.html#l1" title="To spec">To spec</a></li><li><a href="src_globe_3d-textures.adb.html#l11" title="To body">To body</a></li></ul></span> <span class="keyword">is</span> </pre></li>
+<li id="l2"><pre> </pre></li>
+<li id="l3"><pre>  <span class="comment">-- The textures are stored by GL in that way:</span> </pre></li>
+<li id="l4"><pre>  <span class="comment">--</span> </pre></li>
+<li id="l5"><pre>  <span class="comment">--   an image &lt; - &gt; a number (Image_ID)</span> </pre></li>
+<li id="l6"><pre>  <span class="comment">--</span> </pre></li>
+<li id="l7"><pre>  <span class="comment">-- To complete this, and facilitate things, GLOBE_3D adds the</span> </pre></li>
+<li id="l8"><pre>  <span class="comment">-- following associations:</span> </pre></li>
+<li id="l9"><pre>  <span class="comment">--</span> </pre></li>
+<li id="l10"><pre>  <span class="comment">--   a number (Image_ID) - &gt;</span> </pre></li>
+<li id="l11"><pre>  <span class="comment">--      a record (Texture_info) with an image name</span> </pre></li>
+<li id="l12"><pre>  <span class="comment">--      and whether the image was already stored into GL</span> </pre></li>
+<li id="l13"><pre>  <span class="comment">--      (images can be loaded on first use, or preloaded)</span> </pre></li>
+<li id="l14"><pre>  <span class="comment">--      and other infos</span> </pre></li>
+<li id="l15"><pre>  <span class="comment">--</span> </pre></li>
+<li id="l16"><pre>  <span class="comment">--   an image name - &gt; a number (Image_ID)</span> </pre></li>
+<li id="l17"><pre>  <span class="comment">--</span> </pre></li>
+<li id="l18"><pre>  <span class="comment">-- Names are case insensitive!</span> </pre></li>
+<li id="l19"><pre> </pre></li>
+<li id="l20"><pre>  <span class="comment">------------------------------------------------------------------------</span> </pre></li>
+<li id="l21"><pre>  <span class="comment">-- Here are three ways of registering the texture names that GLOBE_3D --</span> </pre></li>
+<li id="l22"><pre>  <span class="comment">-- will find in the resource files. You can use any mix of these      --</span> </pre></li>
+<li id="l23"><pre>  <span class="comment">-- methods at your convenience.                                       --</span> </pre></li>
+<li id="l24"><pre>  <span class="comment">------------------------------------------------------------------------</span> </pre></li>
+<li id="l25"><pre> </pre></li>
+<li id="l26"><pre>  <span class="comment">--------------------------------------------</span> </pre></li>
+<li id="l27"><pre>  <span class="comment">-- a) Texture - by - texture name association --</span> </pre></li>
+<li id="l28"><pre>  <span class="comment">--------------------------------------------</span> </pre></li>
+<li id="l29"><pre>  <span class="comment">--</span> </pre></li>
+<li id="l30"><pre>  <span class="comment">-- Free way of associating names. E.g., the texture name list could be</span> </pre></li>
+<li id="l31"><pre>  <span class="comment">-- simply stored on a text file, or obtained by a &quot;dir&quot;- like operation.</span> </pre></li>
+<li id="l32"><pre>  <span class="comment">-- The system associates a name to a texture id that it finds itself.</span> </pre></li>
+<li id="l33"><pre> </pre></li>
+<li id="l34"><pre>  <span class="keyword">procedure</span> <span class="droplink">Add_texture_name<ul><li><a href="globe_3d-textures.ads.html#globe_3d-textures.ads:34:13" title="To API doc">To API doc</a></li><li><a href="src_globe_3d-textures.adb.html#l137" title="To body">To body</a></li></ul></span> (<a href="globe_3d-textures.ads.html#globe_3d-textures.ads:34:31" title="defined at globe_3d-textures.ads:34:31">name</a> : String; <a href="globe_3d-textures.ads.html#globe_3d-textures.ads:34:46" title="defined at globe_3d-textures.ads:34:46">id</a> : <span class="keyword">out</span> <span class="droplink">Image_ID<ul><li><a href="globe_3d.ads.html#globe_3d.ads:99:9" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l99" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l35"><pre> </pre></li>
+<li id="l36"><pre>  <span class="comment">------------------------------------------------------------</span> </pre></li>
+<li id="l37"><pre>  <span class="comment">-- b) Texture name association by searching the .zip data --</span> </pre></li>
+<li id="l38"><pre>  <span class="comment">--    resource files for images                           --</span> </pre></li>
+<li id="l39"><pre>  <span class="comment">------------------------------------------------------------</span> </pre></li>
+<li id="l40"><pre>  <span class="comment">--</span> </pre></li>
+<li id="l41"><pre>  <span class="comment">-- For &quot;real life&quot; programs which don&apos;t know of the data.</span> </pre></li>
+<li id="l42"><pre>  <span class="comment">-- Allows subdirectories in resource (&apos;/&apos; or &apos;\&apos; in names)</span> </pre></li>
+<li id="l43"><pre>  <span class="comment">-- and a flexible management.</span> </pre></li>
+<li id="l44"><pre>  <span class="comment">--</span> </pre></li>
+<li id="l45"><pre>  <span class="comment">-- The texture name list is obtained by traversing the directory of</span> </pre></li>
+<li id="l46"><pre>  <span class="comment">-- both .zip data resource files, searching for images (anyway, the</span> </pre></li>
+<li id="l47"><pre>  <span class="comment">-- textures are read from there!).</span> </pre></li>
+<li id="l48"><pre>  <span class="comment">--</span> </pre></li>
+<li id="l49"><pre>  <span class="comment">-- The zip name (s) must be set first with</span> </pre></li>
+<li id="l50"><pre>  <span class="comment">-- GLOBE_3D.Set_level_data_name, GLOBE_3D.Set_global_data_name</span> </pre></li>
+<li id="l51"><pre> </pre></li>
+<li id="l52"><pre>  <span class="keyword">procedure</span> <span class="droplink">Register_textures_from_resources<ul><li><a href="globe_3d-textures.ads.html#globe_3d-textures.ads:52:13" title="To API doc">To API doc</a></li><li><a href="src_globe_3d-textures.adb.html#l175" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l53"><pre> </pre></li>
+<li id="l54"><pre>  <span class="comment">------------------------------------------------------------</span> </pre></li>
+<li id="l55"><pre>  <span class="comment">-- c) Texture name association through an enumarated type --</span> </pre></li>
+<li id="l56"><pre>  <span class="comment">------------------------------------------------------------</span> </pre></li>
+<li id="l57"><pre>  <span class="comment">--</span> </pre></li>
+<li id="l58"><pre>  <span class="comment">-- For test or demo programs.</span> </pre></li>
+<li id="l59"><pre>  <span class="comment">-- Easy, reliable, but : static, hard - coded and disallowing a</span> </pre></li>
+<li id="l60"><pre>  <span class="comment">-- directory structure.</span> </pre></li>
+<li id="l61"><pre> </pre></li>
+<li id="l62"><pre>  <span class="keyword">generic</span> </pre></li>
+<li id="l63"><pre>    <span class="keyword">type</span> <a href="globe_3d-textures.ads.html#globe_3d-textures.ads:63:10" title="defined at globe_3d-textures.ads:63:10">Texture_enum</a> <span class="keyword">is</span> (&lt;&gt;); </pre></li>
+<li id="l64"><pre>  <span class="keyword">procedure</span> <span class="droplink">Associate_textures<ul><li><a href="globe_3d-textures.ads.html#globe_3d-textures.ads:64:13" title="To API doc">To API doc</a></li><li><a href="src_globe_3d-textures.adb.html#l203" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l65"><pre> </pre></li>
+<li id="l66"><pre>  <span class="comment">---------------------------------------------------------------------</span> </pre></li>
+<li id="l67"><pre>  <span class="comment">-- When texture names are registered, you have the following tools --</span> </pre></li>
+<li id="l68"><pre>  <span class="comment">---------------------------------------------------------------------</span> </pre></li>
+<li id="l69"><pre> </pre></li>
+<li id="l70"><pre>  <span class="comment">-- - Recall a texture&apos;s ID - you need it to define objects&apos; faces.</span> </pre></li>
+<li id="l71"><pre>  <span class="keyword">function</span> <span class="droplink">Texture_ID<ul><li><a href="globe_3d-textures.ads.html#globe_3d-textures.ads:71:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d-textures.adb.html#l226" title="To body">To body</a></li></ul></span> (<a href="globe_3d-textures.ads.html#globe_3d-textures.ads:71:24" title="defined at globe_3d-textures.ads:71:24">name</a> : String) <span class="keyword">return</span> <span class="droplink">Image_ID<ul><li><a href="globe_3d.ads.html#globe_3d.ads:99:9" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l99" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l72"><pre>  <a href="globe_3d-textures.ads.html#globe_3d-textures.ads:72:3" title="defined at globe_3d-textures.ads:72:3">Texture_name_not_found</a> : <span class="keyword">exception</span>; </pre></li>
+<li id="l73"><pre> </pre></li>
+<li id="l74"><pre>  <span class="comment">-- - Recall a texture&apos;s name</span> </pre></li>
+<li id="l75"><pre>  <span class="keyword">function</span> <span class="droplink">Texture_name<ul><li><a href="globe_3d-textures.ads.html#globe_3d-textures.ads:75:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d-textures.adb.html#l212" title="To body">To body</a></li></ul></span> (<a href="globe_3d-textures.ads.html#globe_3d-textures.ads:75:26" title="defined at globe_3d-textures.ads:75:26">id</a> : <span class="droplink">Image_ID<ul><li><a href="globe_3d.ads.html#globe_3d.ads:99:9" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l99" title="To spec">To spec</a></li></ul></span>; <a href="globe_3d-textures.ads.html#globe_3d-textures.ads:75:41" title="defined at globe_3d-textures.ads:75:41">Trim_Flag</a> : Boolean) <span class="keyword">return</span> <span class="droplink">Ident<ul><li><a href="globe_3d.ads.html#globe_3d.ads:79:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l79" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l76"><pre> </pre></li>
+<li id="l77"><pre>  <span class="comment">-- Check if the texture image has been loaded and load it if needed.</span> </pre></li>
+<li id="l78"><pre>  <span class="comment">-- This is done automatically, but you may want to force the loading</span> </pre></li>
+<li id="l79"><pre>  <span class="comment">-- of the images before beginning to display.</span> </pre></li>
+<li id="l80"><pre>  <span class="keyword">procedure</span> <span class="droplink">Check_2D_texture<ul><li><a href="globe_3d-textures.ads.html#globe_3d-textures.ads:80:13" title="To API doc">To API doc</a></li><li><a href="src_globe_3d-textures.adb.html#l102" title="To body">To body</a></li></ul></span> (<a href="globe_3d-textures.ads.html#globe_3d-textures.ads:80:31" title="defined at globe_3d-textures.ads:80:31">id</a> : <span class="droplink">Image_ID<ul><li><a href="globe_3d.ads.html#globe_3d.ads:99:9" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l99" title="To spec">To spec</a></li></ul></span>; <a href="globe_3d-textures.ads.html#globe_3d-textures.ads:80:46" title="defined at globe_3d-textures.ads:80:46">blending_hint</a> : <span class="keyword">out</span> Boolean); </pre></li>
+<li id="l81"><pre>  <span class="comment">-- variant for situations where the blending information doesn&apos;t matter:</span> </pre></li>
+<li id="l82"><pre>  <span class="keyword">procedure</span> <span class="droplink">Check_2D_texture<ul><li><a href="globe_3d-textures.ads.html#globe_3d-textures.ads:82:13" title="To API doc">To API doc</a></li><li><a href="src_globe_3d-textures.adb.html#l116" title="To body">To body</a></li></ul></span> (<a href="globe_3d-textures.ads.html#globe_3d-textures.ads:82:31" title="defined at globe_3d-textures.ads:82:31">id</a> : <span class="droplink">Image_ID<ul><li><a href="globe_3d.ads.html#globe_3d.ads:99:9" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l99" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l83"><pre>  <span class="comment">-- same, but for all textures.</span> </pre></li>
+<li id="l84"><pre>  <span class="keyword">procedure</span> <span class="droplink">Check_all_textures<ul><li><a href="globe_3d-textures.ads.html#globe_3d-textures.ads:84:13" title="To API doc">To API doc</a></li><li><a href="src_globe_3d-textures.adb.html#l122" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l85"><pre> </pre></li>
+<li id="l86"><pre>  <span class="keyword">function</span> <span class="droplink">Valid_texture_ID<ul><li><a href="globe_3d-textures.ads.html#globe_3d-textures.ads:86:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d-textures.adb.html#l97" title="To body">To body</a></li></ul></span> (<a href="globe_3d-textures.ads.html#globe_3d-textures.ads:86:30" title="defined at globe_3d-textures.ads:86:30">id</a> : <span class="droplink">Image_ID<ul><li><a href="globe_3d.ads.html#globe_3d.ads:99:9" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l99" title="To spec">To spec</a></li></ul></span>) <span class="keyword">return</span> Boolean; </pre></li>
+<li id="l87"><pre> </pre></li>
+<li id="l88"><pre>  <span class="comment">-- &gt;= 16 - apr - 2008 : no more need to reserve anything; unbounded collection</span> </pre></li>
+<li id="l89"><pre>  <span class="comment">--</span> </pre></li>
+<li id="l90"><pre>  <span class="comment">--  Textures_not_reserved : exception;</span> </pre></li>
+<li id="l91"><pre>  <span class="comment">--  Texture_out_of_range : exception;</span> </pre></li>
+<li id="l92"><pre> </pre></li>
+<li id="l93"><pre>  <a href="globe_3d-textures.ads.html#globe_3d-textures.ads:93:3" title="defined at globe_3d-textures.ads:93:3">Undefined_texture_ID</a>   : <span class="keyword">exception</span>; </pre></li>
+<li id="l94"><pre>  <a href="globe_3d-textures.ads.html#globe_3d-textures.ads:94:3" title="defined at globe_3d-textures.ads:94:3">Undefined_texture_name</a> : <span class="keyword">exception</span>; </pre></li>
+<li id="l95"><pre> </pre></li>
+<li id="l96"><pre>  <span class="comment">-- - Erase the present texture collection</span> </pre></li>
+<li id="l97"><pre>  <span class="comment">--   (names, GL ID&apos;s, evenutally loaded images)</span> </pre></li>
+<li id="l98"><pre>  <span class="keyword">procedure</span> <span class="droplink">Reset_textures<ul><li><a href="globe_3d-textures.ads.html#globe_3d-textures.ads:98:13" title="To API doc">To API doc</a></li><li><a href="src_globe_3d-textures.adb.html#l129" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l99"><pre> </pre></li>
+<li id="l100"><pre><span class="keyword">end</span> <span class="droplink">GLOBE_3D.Textures<ul><li><a href="globe_3d-textures.ads.html#globe_3d-textures.ads:1:18" title="To API doc">To API doc</a></li><li><a href="src_globe_3d-textures.ads.html#l1" title="To spec">To spec</a></li><li><a href="src_globe_3d-textures.adb.html#l11" title="To body">To body</a></li></ul></span>; </pre></li>
+</ol></div>
+</div>
+
+</body>
+</html>

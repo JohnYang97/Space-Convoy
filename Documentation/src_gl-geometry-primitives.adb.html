@@ -1,0 +1,474 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    File: gl-geometry-primitives.adb
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+  </div>
+</div> <!-- leftSide -->
+
+<div class='subprograms'>
+  <div class='details'><ol><li id="l1"><pre><span class="keyword">pragma</span> Warnings (Off); </pre></li>
+<li id="l2"><pre><span class="keyword">pragma</span> Style_Checks (Off); </pre></li>
+<li id="l3"><pre> </pre></li>
+<li id="l4"><pre><span class="comment">-------------------------------------------------------------------------</span> </pre></li>
+<li id="l5"><pre> <span class="comment">--  GL.Geometry - GL geometry primitives</span> </pre></li>
+<li id="l6"><pre> <span class="comment">--</span> </pre></li>
+<li id="l7"><pre> <span class="comment">--  Copyright (c) Rod Kay 2007</span> </pre></li>
+<li id="l8"><pre> <span class="comment">--  AUSTRALIA</span> </pre></li>
+<li id="l9"><pre> <span class="comment">--  Permission granted to use this software, without any warranty,</span> </pre></li>
+<li id="l10"><pre> <span class="comment">--  for any purpose, provided this copyright note remains attached</span> </pre></li>
+<li id="l11"><pre> <span class="comment">--  and unmodified if sources are distributed further.</span> </pre></li>
+<li id="l12"><pre> <span class="comment">-------------------------------------------------------------------------</span> </pre></li>
+<li id="l13"><pre> </pre></li>
+<li id="l14"><pre><span class="keyword">with</span> Ada.Numerics.Generic_Elementary_functions; </pre></li>
+<li id="l15"><pre><span class="keyword">with</span> Ada.Text_IO; <span class="keyword">use</span> Ada.Text_IO; </pre></li>
+<li id="l16"><pre> </pre></li>
+<li id="l17"><pre><span class="keyword">package</span> <span class="keyword">body</span> GL.geometry.Primitives <span class="keyword">is</span> </pre></li>
+<li id="l18"><pre> </pre></li>
+<li id="l19"><pre>   <span class="keyword">procedure</span> destroy (Self  : <span class="keyword">in</span> <span class="keyword">out</span> Primitive) </pre></li>
+<li id="l20"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l21"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l22"><pre>      <span class="keyword">if</span> self.owns_Vertices <span class="keyword">then</span> </pre></li>
+<li id="l23"><pre>         free (self.Vertices); </pre></li>
+<li id="l24"><pre>      <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l25"><pre> </pre></li>
+<li id="l26"><pre>      free (self.Indices); </pre></li>
+<li id="l27"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l28"><pre> </pre></li>
+<li id="l29"><pre>   <span class="keyword">procedure</span> free (Self  : <span class="keyword">in</span> <span class="keyword">out</span> p_Primitive) </pre></li>
+<li id="l30"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l31"><pre>      <span class="keyword">procedure</span> deallocate <span class="keyword">is</span> <span class="keyword">new</span> ada.unchecked_Deallocation (Primitive&apos;Class, p_Primitive); </pre></li>
+<li id="l32"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l33"><pre>      destroy    (Self.<span class="keyword">all</span>); </pre></li>
+<li id="l34"><pre>      deallocate (Self); </pre></li>
+<li id="l35"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l36"><pre> </pre></li>
+<li id="l37"><pre>   <span class="keyword">procedure</span> Draw (Self  : <span class="keyword">access</span> Primitive&apos;Class) </pre></li>
+<li id="l38"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l39"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l40"><pre>      GL.bindBuffer    (gl.ARRAY_BUFFER, 0);                            <span class="comment">-- disable &apos;vertex buffer objects&apos;</span> </pre></li>
+<li id="l41"><pre>      GL.bindBuffer    (gl.ELEMENT_ARRAY_BUFFER, 0);                    <span class="comment">-- disable &apos;vertex buffer objects&apos; indices</span> </pre></li>
+<li id="l42"><pre> </pre></li>
+<li id="l43"><pre>      GL.Enable_Client_State (gl.VERTEX_ARRAY); </pre></li>
+<li id="l44"><pre>      GL.vertexPointer     (3, GL_DOUBLE,  0,  GL.to_Pointer (self.Vertices (1) (0)&apos;Unchecked_Access)); </pre></li>
+<li id="l45"><pre>      GL.drawElements      (primitive_Id (Self.<span class="keyword">all</span>), </pre></li>
+<li id="l46"><pre>                            self.Indices&apos;Length, </pre></li>
+<li id="l47"><pre>                            GL.UNSIGNED_INT, </pre></li>
+<li id="l48"><pre>                            to_void_Pointer (self.Indices (1)&apos;Unchecked_Access)); </pre></li>
+<li id="l49"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l50"><pre> </pre></li>
+<li id="l51"><pre>   <span class="keyword">procedure</span> set_Vertices  (Self  : <span class="keyword">in</span> <span class="keyword">out</span> Primitive;   To  : <span class="keyword">access</span> GL.geometry.GL_Vertex_array) </pre></li>
+<li id="l52"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l53"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l54"><pre>      <span class="keyword">if</span> self.Vertices = <span class="keyword">null</span> <span class="keyword">then</span> </pre></li>
+<li id="l55"><pre>         self.Vertices      := <span class="keyword">new</span> GL_Vertex_array&apos; (To.<span class="keyword">all</span>); </pre></li>
+<li id="l56"><pre>         self.owns_Vertices := True; </pre></li>
+<li id="l57"><pre> </pre></li>
+<li id="l58"><pre>      <span class="keyword">elsif</span> self.Vertices&apos;Length = To&apos;Length <span class="keyword">then</span> </pre></li>
+<li id="l59"><pre>         self.Vertices.<span class="keyword">all</span> := To.<span class="keyword">all</span>; </pre></li>
+<li id="l60"><pre>      <span class="keyword">else</span> </pre></li>
+<li id="l61"><pre>         free (self.Vertices); </pre></li>
+<li id="l62"><pre>         self.Vertices      := <span class="keyword">new</span> GL_Vertex_array&apos; (To.<span class="keyword">all</span>); </pre></li>
+<li id="l63"><pre>         self.owns_Vertices := True; </pre></li>
+<li id="l64"><pre>      <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l65"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l66"><pre> </pre></li>
+<li id="l67"><pre>   <span class="keyword">procedure</span> set_Indices   (Self  : <span class="keyword">in</span> <span class="keyword">out</span> Primitive;   To  : <span class="keyword">access</span> GL.geometry.vertex_Id_array) </pre></li>
+<li id="l68"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l69"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l70"><pre>      <span class="keyword">if</span> self.Indices = <span class="keyword">null</span> <span class="keyword">then</span> </pre></li>
+<li id="l71"><pre>         self.Indices := <span class="keyword">new</span> vertex_Id_array&apos; (To.<span class="keyword">all</span>); </pre></li>
+<li id="l72"><pre> </pre></li>
+<li id="l73"><pre>      <span class="keyword">elsif</span> self.Indices&apos;Length = To&apos;Length <span class="keyword">then</span> </pre></li>
+<li id="l74"><pre>         self.Indices.<span class="keyword">all</span> := To.<span class="keyword">all</span>; </pre></li>
+<li id="l75"><pre>      <span class="keyword">else</span> </pre></li>
+<li id="l76"><pre>         free (self.Indices); </pre></li>
+<li id="l77"><pre>         self.Indices := <span class="keyword">new</span> vertex_Id_array&apos; (To.<span class="keyword">all</span>); </pre></li>
+<li id="l78"><pre>      <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l79"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l80"><pre> </pre></li>
+<li id="l81"><pre>   <span class="comment">-- &apos;Points&apos;</span> </pre></li>
+<li id="l82"><pre> </pre></li>
+<li id="l83"><pre>   <span class="keyword">function</span> create_Points (point_Count  : <span class="keyword">in</span> vertex_Id;   Vertices  : p_vertex_array := <span class="keyword">null</span>) <span class="keyword">return</span> Points </pre></li>
+<li id="l84"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l85"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l86"><pre>      <span class="keyword">if</span> Vertices = <span class="keyword">null</span> <span class="keyword">then</span> </pre></li>
+<li id="l87"><pre>         <span class="keyword">return</span> (vertices         =&gt; <span class="keyword">new</span> GL_Vertex_array    (1 .. point_Count), </pre></li>
+<li id="l88"><pre>                 owns_vertices    =&gt; True, </pre></li>
+<li id="l89"><pre>                 indices          =&gt; <span class="keyword">new</span> vertex_Id_array (1 .. positive_uInt (point_Count))); </pre></li>
+<li id="l90"><pre>      <span class="keyword">else</span> </pre></li>
+<li id="l91"><pre>         <span class="keyword">return</span> (vertices         =&gt; Vertices, </pre></li>
+<li id="l92"><pre>                 owns_vertices    =&gt; False, </pre></li>
+<li id="l93"><pre>                 indices          =&gt; <span class="keyword">new</span> vertex_Id_array (1 .. positive_uInt (point_Count))); </pre></li>
+<li id="l94"><pre>      <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l95"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l96"><pre> </pre></li>
+<li id="l97"><pre>   <span class="keyword">function</span> primitive_Id (Self  : <span class="keyword">in</span> Points) <span class="keyword">return</span> GL.ObjectTypeEnm </pre></li>
+<li id="l98"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l99"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l100"><pre>      <span class="keyword">return</span> GL.POINTS; </pre></li>
+<li id="l101"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l102"><pre> </pre></li>
+<li id="l103"><pre>   <span class="comment">-- &apos;Lines&apos;</span> </pre></li>
+<li id="l104"><pre>   <span class="comment">--</span> </pre></li>
+<li id="l105"><pre> </pre></li>
+<li id="l106"><pre>   <span class="keyword">function</span> create_Lines (line_Count  : <span class="keyword">in</span> Natural;   Vertices  : p_Vertex_array := <span class="keyword">null</span>) <span class="keyword">return</span> Lines </pre></li>
+<li id="l107"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l108"><pre>      indices_Count  : positive_uInt := positive_uInt (2 * line_Count); </pre></li>
+<li id="l109"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l110"><pre>      <span class="keyword">if</span> Vertices = <span class="keyword">null</span> <span class="keyword">then</span> </pre></li>
+<li id="l111"><pre>         <span class="keyword">return</span> (vertices      =&gt; <span class="keyword">new</span> GL_Vertex_array (1 .. 2 * vertex_Id (line_Count)), </pre></li>
+<li id="l112"><pre>                 owns_vertices =&gt; True, </pre></li>
+<li id="l113"><pre>                 indices       =&gt; <span class="keyword">new</span> vertex_Id_array (1 .. indices_Count)); </pre></li>
+<li id="l114"><pre>      <span class="keyword">else</span> </pre></li>
+<li id="l115"><pre>         <span class="keyword">return</span> (vertices      =&gt; Vertices, </pre></li>
+<li id="l116"><pre>                 owns_vertices =&gt; False, </pre></li>
+<li id="l117"><pre>                 indices       =&gt; <span class="keyword">new</span> vertex_Id_array (1 .. indices_Count)); </pre></li>
+<li id="l118"><pre>      <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l119"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l120"><pre> </pre></li>
+<li id="l121"><pre>   <span class="keyword">function</span> primitive_Id (Self  : <span class="keyword">in</span> Lines) <span class="keyword">return</span> GL.ObjectTypeEnm </pre></li>
+<li id="l122"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l123"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l124"><pre>      <span class="keyword">return</span> GL.LINES; </pre></li>
+<li id="l125"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l126"><pre> </pre></li>
+<li id="l127"><pre>   <span class="keyword">function</span> get_vertex_Id (Self  : <span class="keyword">in</span> Lines;   Line    : <span class="keyword">in</span> Positive; </pre></li>
+<li id="l128"><pre>                                              Vertex  : <span class="keyword">in</span> Positive) </pre></li>
+<li id="l129"><pre>                                                                      <span class="keyword">return</span> vertex_Id </pre></li>
+<li id="l130"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l131"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l132"><pre>      <span class="keyword">return</span> self.Indices (positive_uInt (2 * (Line - 1)  +  Vertex)) + 1; </pre></li>
+<li id="l133"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l134"><pre> </pre></li>
+<li id="l135"><pre>   <span class="keyword">procedure</span> set_vertex_Id (Self  : <span class="keyword">in</span> <span class="keyword">out</span> Lines;   Line    : <span class="keyword">in</span> Positive; </pre></li>
+<li id="l136"><pre>                                                   Vertex  : <span class="keyword">in</span> Positive; </pre></li>
+<li id="l137"><pre>                                                   To      : <span class="keyword">in</span> vertex_Id) </pre></li>
+<li id="l138"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l139"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l140"><pre>      self.Indices (positive_uInt (2 * (Line - 1)  +  Vertex)) := To - 1; </pre></li>
+<li id="l141"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l142"><pre> </pre></li>
+<li id="l143"><pre>   <span class="comment">-- &apos;line Strip&apos;</span> </pre></li>
+<li id="l144"><pre>   <span class="comment">--</span> </pre></li>
+<li id="l145"><pre> </pre></li>
+<li id="l146"><pre>   <span class="keyword">function</span> create_line_Strip (line_Count  : <span class="keyword">in</span> Natural;   Vertices  : p_Vertex_array := <span class="keyword">null</span>) <span class="keyword">return</span> line_Strip </pre></li>
+<li id="l147"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l148"><pre>      indices_Count  : positive_uInt := positive_uInt (line_Count + 1); </pre></li>
+<li id="l149"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l150"><pre>      <span class="keyword">if</span> Vertices = <span class="keyword">null</span> <span class="keyword">then</span> </pre></li>
+<li id="l151"><pre>         <span class="keyword">return</span> (vertices      =&gt; <span class="keyword">new</span> GL_Vertex_array (1 .. vertex_Id (line_Count) + 1), </pre></li>
+<li id="l152"><pre>                 owns_vertices =&gt; True, </pre></li>
+<li id="l153"><pre>                 indices       =&gt; <span class="keyword">new</span> vertex_Id_array (1 .. indices_Count)); </pre></li>
+<li id="l154"><pre>      <span class="keyword">else</span> </pre></li>
+<li id="l155"><pre>         <span class="keyword">return</span> (vertices      =&gt; Vertices, </pre></li>
+<li id="l156"><pre>                 owns_vertices =&gt; False, </pre></li>
+<li id="l157"><pre>                 indices       =&gt; <span class="keyword">new</span> vertex_Id_array (1 .. indices_Count)); </pre></li>
+<li id="l158"><pre>      <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l159"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l160"><pre> </pre></li>
+<li id="l161"><pre>   <span class="keyword">function</span> primitive_Id (Self  : <span class="keyword">in</span> line_Strip) <span class="keyword">return</span> GL.ObjectTypeEnm </pre></li>
+<li id="l162"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l163"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l164"><pre>      <span class="keyword">return</span> GL.LINE_STRIP; </pre></li>
+<li id="l165"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l166"><pre> </pre></li>
+<li id="l167"><pre>   <span class="keyword">function</span> get_vertex_Id (Self  : <span class="keyword">in</span> line_Strip;   Line    : <span class="keyword">in</span> Positive; </pre></li>
+<li id="l168"><pre>                                                   Vertex  : <span class="keyword">in</span> Positive) </pre></li>
+<li id="l169"><pre>                                                                         <span class="keyword">return</span> vertex_Id </pre></li>
+<li id="l170"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l171"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l172"><pre>      <span class="keyword">return</span> self.Indices (positive_uInt (Line - 1  +  Vertex)) + 1; </pre></li>
+<li id="l173"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l174"><pre> </pre></li>
+<li id="l175"><pre>   <span class="keyword">procedure</span> set_vertex_Id (Self  : <span class="keyword">in</span> <span class="keyword">out</span> line_Strip;   Line    : <span class="keyword">in</span> Positive; </pre></li>
+<li id="l176"><pre>                                                        Vertex  : <span class="keyword">in</span> Positive; </pre></li>
+<li id="l177"><pre>                                                        To      : <span class="keyword">in</span> vertex_Id) </pre></li>
+<li id="l178"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l179"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l180"><pre>      self.Indices (positive_uInt (Line - 1  +  Vertex)) := To - 1; </pre></li>
+<li id="l181"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l182"><pre> </pre></li>
+<li id="l183"><pre>   <span class="comment">-- &apos;line Loop&apos;</span> </pre></li>
+<li id="l184"><pre>   <span class="comment">--</span> </pre></li>
+<li id="l185"><pre> </pre></li>
+<li id="l186"><pre>   <span class="keyword">function</span> create_line_Loop (line_Count  : <span class="keyword">in</span> Natural;   Vertices : p_Vertex_array := <span class="keyword">null</span>) <span class="keyword">return</span> line_Loop </pre></li>
+<li id="l187"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l188"><pre>      indices_Count  : positive_uInt :=  positive_uInt (line_Count) + 1; </pre></li>
+<li id="l189"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l190"><pre>      <span class="keyword">if</span> Vertices = <span class="keyword">null</span> <span class="keyword">then</span> </pre></li>
+<li id="l191"><pre>         <span class="keyword">return</span> (vertices =&gt; <span class="keyword">new</span> GL_Vertex_array (1 .. vertex_Id (line_Count) + 1), </pre></li>
+<li id="l192"><pre>                 owns_vertices =&gt; True, </pre></li>
+<li id="l193"><pre>                 indices       =&gt; <span class="keyword">new</span> vertex_Id_array (1 .. indices_Count)); </pre></li>
+<li id="l194"><pre>      <span class="keyword">else</span> </pre></li>
+<li id="l195"><pre>         <span class="keyword">return</span> (vertices      =&gt; Vertices, </pre></li>
+<li id="l196"><pre>                 owns_vertices =&gt; False, </pre></li>
+<li id="l197"><pre>                 indices       =&gt; <span class="keyword">new</span> vertex_Id_array (1 .. indices_Count)); </pre></li>
+<li id="l198"><pre>      <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l199"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l200"><pre> </pre></li>
+<li id="l201"><pre>   <span class="keyword">function</span> primitive_Id (Self  : <span class="keyword">in</span> line_Loop) <span class="keyword">return</span> GL.ObjectTypeEnm </pre></li>
+<li id="l202"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l203"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l204"><pre>      <span class="keyword">return</span> GL.LINE_LOOP; </pre></li>
+<li id="l205"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l206"><pre> </pre></li>
+<li id="l207"><pre>   <span class="keyword">function</span> get_vertex_Id (Self  : <span class="keyword">in</span> line_Loop;   Line    : <span class="keyword">in</span> Positive; </pre></li>
+<li id="l208"><pre>                                                  Vertex  : <span class="keyword">in</span> Positive) </pre></li>
+<li id="l209"><pre>                                                                         <span class="keyword">return</span> vertex_Id </pre></li>
+<li id="l210"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l211"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l212"><pre>      <span class="keyword">return</span> self.Indices (positive_uInt (Line - 1  +  Vertex)) + 1; </pre></li>
+<li id="l213"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l214"><pre> </pre></li>
+<li id="l215"><pre>   <span class="keyword">procedure</span> set_vertex_Id (Self  : <span class="keyword">in</span> <span class="keyword">out</span> line_Loop;   Line    : <span class="keyword">in</span> Positive; </pre></li>
+<li id="l216"><pre>                                                       Vertex  : <span class="keyword">in</span> Positive; </pre></li>
+<li id="l217"><pre>                                                       To      : <span class="keyword">in</span> vertex_Id) </pre></li>
+<li id="l218"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l219"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l220"><pre>      self.Indices (positive_uInt (Line - 1  +  Vertex)) := To - 1; </pre></li>
+<li id="l221"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l222"><pre> </pre></li>
+<li id="l223"><pre>   <span class="comment">-- &apos;Triangles&apos;</span> </pre></li>
+<li id="l224"><pre>   <span class="comment">--</span> </pre></li>
+<li id="l225"><pre> </pre></li>
+<li id="l226"><pre>   <span class="keyword">function</span> create_Triangles (triangle_Count  : <span class="keyword">in</span> Natural;   Vertices  : p_Vertex_array) <span class="keyword">return</span> Triangles </pre></li>
+<li id="l227"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l228"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l229"><pre>       <span class="keyword">return</span> (vertices      =&gt; Vertices, </pre></li>
+<li id="l230"><pre>               owns_vertices =&gt; False, </pre></li>
+<li id="l231"><pre>               indices       =&gt; <span class="keyword">new</span> vertex_Id_array (1 .. 3 * positive_uInt (triangle_Count))); </pre></li>
+<li id="l232"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l233"><pre> </pre></li>
+<li id="l234"><pre>   <span class="keyword">function</span> new_Triangles    (triangle_Count  : <span class="keyword">in</span> Natural;   Vertices  : <span class="keyword">in</span>     p_vertex_array) <span class="keyword">return</span> p_Triangles </pre></li>
+<li id="l235"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l236"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l237"><pre>      <span class="keyword">return</span> <span class="keyword">new</span> Triangles&apos; (create_Triangles (triangle_Count, Vertices)); </pre></li>
+<li id="l238"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l239"><pre> </pre></li>
+<li id="l240"><pre>   <span class="keyword">function</span> primitive_Id (Self  : <span class="keyword">in</span> Triangles) <span class="keyword">return</span> GL.ObjectTypeEnm </pre></li>
+<li id="l241"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l242"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l243"><pre>      <span class="keyword">return</span> GL.TRIANGLES; </pre></li>
+<li id="l244"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l245"><pre> </pre></li>
+<li id="l246"><pre>   <span class="keyword">function</span> get_vertex_Id (Self  : <span class="keyword">in</span> Triangles;   Triangle  : <span class="keyword">in</span> Positive; </pre></li>
+<li id="l247"><pre>                                                  Vertex    : <span class="keyword">in</span> Positive) </pre></li>
+<li id="l248"><pre>                                                                          <span class="keyword">return</span> vertex_Id </pre></li>
+<li id="l249"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l250"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l251"><pre>      <span class="keyword">return</span> self.Indices (positive_uInt (3 * (Triangle - 1)  +  Vertex)) + 1; </pre></li>
+<li id="l252"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l253"><pre> </pre></li>
+<li id="l254"><pre>   <span class="keyword">procedure</span> set_vertex_Id (Self  : <span class="keyword">in</span> <span class="keyword">out</span> Triangles;   Triangle  : <span class="keyword">in</span> Positive; </pre></li>
+<li id="l255"><pre>                                                       Vertex    : <span class="keyword">in</span> Positive; </pre></li>
+<li id="l256"><pre>                                                       To        : <span class="keyword">in</span> vertex_Id) </pre></li>
+<li id="l257"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l258"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l259"><pre>      self.Indices (positive_uInt (3 * (Triangle - 1)  +  Vertex)) := To - 1; </pre></li>
+<li id="l260"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l261"><pre> </pre></li>
+<li id="l262"><pre>   <span class="comment">-- &apos;triangle Strip&apos;</span> </pre></li>
+<li id="l263"><pre>   <span class="comment">--</span> </pre></li>
+<li id="l264"><pre> </pre></li>
+<li id="l265"><pre>   <span class="keyword">function</span> create_triangle_Strip (triangle_Count  : <span class="keyword">in</span> Natural;   Vertices  : p_Vertex_array) <span class="keyword">return</span> triangle_Strip&apos;Class </pre></li>
+<li id="l266"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l267"><pre>      the_Strip  : triangle_Strip; <span class="comment">-- (max_indices =&gt; positive_uInt (triangle_Count) + 2);</span> </pre></li>
+<li id="l268"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l269"><pre>      the_Strip.Vertices      := Vertices; </pre></li>
+<li id="l270"><pre>      the_Strip.owns_Vertices := False; </pre></li>
+<li id="l271"><pre>      the_Strip.Indices       := <span class="keyword">new</span> vertex_Id_array (1 .. positive_uInt (triangle_Count) + 2); </pre></li>
+<li id="l272"><pre> </pre></li>
+<li id="l273"><pre>      <span class="keyword">return</span> the_Strip; </pre></li>
+<li id="l274"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l275"><pre> </pre></li>
+<li id="l276"><pre>   <span class="keyword">function</span> new_triangle_Strip (triangle_Count  : <span class="keyword">in</span> Natural;   Vertices : p_Vertex_array) <span class="keyword">return</span> p_triangle_Strip </pre></li>
+<li id="l277"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l278"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l279"><pre>      <span class="keyword">return</span> <span class="keyword">new</span> triangle_Strip&apos;Class&apos; (create_triangle_Strip (triangle_Count, Vertices)); </pre></li>
+<li id="l280"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l281"><pre> </pre></li>
+<li id="l282"><pre>   <span class="keyword">function</span> primitive_Id (Self  : <span class="keyword">in</span> triangle_Strip) <span class="keyword">return</span> GL.ObjectTypeEnm </pre></li>
+<li id="l283"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l284"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l285"><pre>      <span class="keyword">return</span> GL.TRIANGLE_STRIP; </pre></li>
+<li id="l286"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l287"><pre> </pre></li>
+<li id="l288"><pre>   <span class="keyword">function</span> get_vertex_Id (Self  : <span class="keyword">in</span> triangle_Strip;   Triangle  : <span class="keyword">in</span> Positive; </pre></li>
+<li id="l289"><pre>                                                       Vertex    : <span class="keyword">in</span> Positive) </pre></li>
+<li id="l290"><pre>                                                                              <span class="keyword">return</span> vertex_Id </pre></li>
+<li id="l291"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l292"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l293"><pre>      <span class="keyword">return</span> self.Indices (positive_uInt (Triangle + Vertex - 1)) + 1; </pre></li>
+<li id="l294"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l295"><pre> </pre></li>
+<li id="l296"><pre>   <span class="keyword">procedure</span> set_vertex_Id (Self  : <span class="keyword">in</span> <span class="keyword">out</span> triangle_Strip;   Triangle  : <span class="keyword">in</span> Positive; </pre></li>
+<li id="l297"><pre>                                                            Vertex    : <span class="keyword">in</span> Positive; </pre></li>
+<li id="l298"><pre>                                                            To        : <span class="keyword">in</span> vertex_Id) </pre></li>
+<li id="l299"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l300"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l301"><pre>      self.Indices (positive_uInt (Triangle + Vertex - 1)) := To - 1; </pre></li>
+<li id="l302"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l303"><pre> </pre></li>
+<li id="l304"><pre>   <span class="comment">-- &apos;triangle Fan&apos;</span> </pre></li>
+<li id="l305"><pre>   <span class="comment">--</span> </pre></li>
+<li id="l306"><pre> </pre></li>
+<li id="l307"><pre>   <span class="keyword">function</span> create_triangle_Fan (triangle_Count  : <span class="keyword">in</span> Natural;   Vertices : p_Vertex_array) <span class="keyword">return</span> triangle_Fan </pre></li>
+<li id="l308"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l309"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l310"><pre>      <span class="keyword">return</span> (vertices      =&gt; Vertices, </pre></li>
+<li id="l311"><pre>              owns_vertices =&gt; False, </pre></li>
+<li id="l312"><pre>              indices       =&gt; <span class="keyword">new</span> vertex_Id_array (1 .. positive_uInt (triangle_Count) + 2)); </pre></li>
+<li id="l313"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l314"><pre> </pre></li>
+<li id="l315"><pre>   <span class="keyword">function</span> primitive_Id (Self  : <span class="keyword">in</span> triangle_Fan) <span class="keyword">return</span> GL.ObjectTypeEnm </pre></li>
+<li id="l316"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l317"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l318"><pre>      <span class="keyword">return</span> GL.TRIANGLE_FAN; </pre></li>
+<li id="l319"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l320"><pre> </pre></li>
+<li id="l321"><pre>   <span class="keyword">function</span> get_vertex_Id (Self  : <span class="keyword">in</span> triangle_Fan;   Triangle  : <span class="keyword">in</span> Positive; </pre></li>
+<li id="l322"><pre>                                                     Vertex    : <span class="keyword">in</span> Positive) </pre></li>
+<li id="l323"><pre>                                                                              <span class="keyword">return</span> vertex_Id </pre></li>
+<li id="l324"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l325"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l326"><pre>      <span class="keyword">if</span> Vertex = 1 <span class="keyword">then</span> </pre></li>
+<li id="l327"><pre>         <span class="keyword">return</span> self.Indices (1); </pre></li>
+<li id="l328"><pre>      <span class="keyword">else</span> </pre></li>
+<li id="l329"><pre>         <span class="keyword">return</span> self.Indices (positive_uInt (Triangle + Vertex - 1)) + 1; </pre></li>
+<li id="l330"><pre>      <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l331"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l332"><pre> </pre></li>
+<li id="l333"><pre>   <span class="keyword">procedure</span> set_vertex_Id (Self  : <span class="keyword">in</span> <span class="keyword">out</span> triangle_Fan;   Triangle  : <span class="keyword">in</span> Positive; </pre></li>
+<li id="l334"><pre>                                                          Vertex    : <span class="keyword">in</span> Positive; </pre></li>
+<li id="l335"><pre>                                                          To        : <span class="keyword">in</span> vertex_Id) </pre></li>
+<li id="l336"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l337"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l338"><pre>      <span class="keyword">if</span> Vertex = 1 <span class="keyword">then</span> </pre></li>
+<li id="l339"><pre>         self.Indices (1) := To; </pre></li>
+<li id="l340"><pre>      <span class="keyword">else</span> </pre></li>
+<li id="l341"><pre>         self.Indices (positive_uInt (Triangle + Vertex - 1)) := To - 1; </pre></li>
+<li id="l342"><pre>      <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l343"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l344"><pre> </pre></li>
+<li id="l345"><pre>   <span class="comment">-- &apos;Quads&apos;</span> </pre></li>
+<li id="l346"><pre>   <span class="comment">--</span> </pre></li>
+<li id="l347"><pre> </pre></li>
+<li id="l348"><pre>   <span class="keyword">function</span> create_Quads (quad_Count  : <span class="keyword">in</span> Natural;   Vertices : p_Vertex_array := <span class="keyword">null</span>) <span class="keyword">return</span> Quads </pre></li>
+<li id="l349"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l350"><pre>      indices_Count  : positive_uInt := 4 * positive_uInt (quad_Count); </pre></li>
+<li id="l351"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l352"><pre>      <span class="keyword">if</span> Vertices = <span class="keyword">null</span> <span class="keyword">then</span> </pre></li>
+<li id="l353"><pre>         <span class="keyword">return</span> (vertices      =&gt; <span class="keyword">new</span> GL_Vertex_array (1 .. vertex_Id (4 * quad_Count)), </pre></li>
+<li id="l354"><pre>                 owns_vertices =&gt; True, </pre></li>
+<li id="l355"><pre>                 indices       =&gt; <span class="keyword">new</span> vertex_Id_array (1 .. indices_Count)); </pre></li>
+<li id="l356"><pre>      <span class="keyword">else</span> </pre></li>
+<li id="l357"><pre>         <span class="keyword">return</span> (vertices      =&gt; Vertices, </pre></li>
+<li id="l358"><pre>                 owns_vertices =&gt; False, </pre></li>
+<li id="l359"><pre>                 indices       =&gt; <span class="keyword">new</span> vertex_Id_array (1 .. indices_Count)); </pre></li>
+<li id="l360"><pre>      <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l361"><pre> </pre></li>
+<li id="l362"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l363"><pre> </pre></li>
+<li id="l364"><pre>   <span class="keyword">function</span> new_Quads (quad_Count  : <span class="keyword">in</span> Natural;   Vertices : p_Vertex_array := <span class="keyword">null</span>) <span class="keyword">return</span> p_Quads </pre></li>
+<li id="l365"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l366"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l367"><pre>      <span class="keyword">return</span> <span class="keyword">new</span> Quads&apos; (create_Quads (quad_Count, Vertices)); </pre></li>
+<li id="l368"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l369"><pre> </pre></li>
+<li id="l370"><pre>   <span class="keyword">function</span> primitive_Id (Self  : <span class="keyword">in</span> Quads) <span class="keyword">return</span> GL.ObjectTypeEnm </pre></li>
+<li id="l371"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l372"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l373"><pre>      <span class="keyword">return</span> GL.QUADS; </pre></li>
+<li id="l374"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l375"><pre> </pre></li>
+<li id="l376"><pre>   <span class="keyword">function</span> get_vertex_Id (Self  : <span class="keyword">in</span> Quads;   Quad    : <span class="keyword">in</span> Positive; </pre></li>
+<li id="l377"><pre>                                              Vertex  : <span class="keyword">in</span> Positive) </pre></li>
+<li id="l378"><pre>                                                                          <span class="keyword">return</span> vertex_Id </pre></li>
+<li id="l379"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l380"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l381"><pre>      <span class="keyword">return</span> self.Indices (positive_uInt (4 * (Quad - 1)  +  Vertex)) + 1; </pre></li>
+<li id="l382"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l383"><pre> </pre></li>
+<li id="l384"><pre>   <span class="keyword">procedure</span> set_vertex_Id (Self  : <span class="keyword">in</span> <span class="keyword">out</span> Quads;   Quad      : <span class="keyword">in</span> Positive; </pre></li>
+<li id="l385"><pre>                                                   Vertex    : <span class="keyword">in</span> Positive; </pre></li>
+<li id="l386"><pre>                                                   To        : <span class="keyword">in</span> vertex_Id) </pre></li>
+<li id="l387"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l388"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l389"><pre>      self.Indices (positive_uInt (4 * (Quad - 1)  +  Vertex)) := To - 1; </pre></li>
+<li id="l390"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l391"><pre> </pre></li>
+<li id="l392"><pre>   <span class="comment">-- &apos;quad Strip&apos;</span> </pre></li>
+<li id="l393"><pre>   <span class="comment">--</span> </pre></li>
+<li id="l394"><pre> </pre></li>
+<li id="l395"><pre>   <span class="keyword">function</span> create_quad_Strip (quad_Count  : <span class="keyword">in</span> Natural;   Vertices : p_Vertex_array) <span class="keyword">return</span> quad_Strip </pre></li>
+<li id="l396"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l397"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l398"><pre>      <span class="keyword">return</span> (vertices      =&gt; Vertices, </pre></li>
+<li id="l399"><pre>              owns_vertices =&gt; False, </pre></li>
+<li id="l400"><pre>              indices       =&gt; <span class="keyword">new</span> vertex_Id_array (1 .. 2 * positive_uInt (quad_Count)  +  2)); </pre></li>
+<li id="l401"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l402"><pre> </pre></li>
+<li id="l403"><pre>   <span class="keyword">function</span> primitive_Id (Self  : <span class="keyword">in</span> quad_Strip) <span class="keyword">return</span> GL.ObjectTypeEnm </pre></li>
+<li id="l404"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l405"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l406"><pre>      <span class="keyword">return</span> GL.QUAD_STRIP; </pre></li>
+<li id="l407"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l408"><pre> </pre></li>
+<li id="l409"><pre>   <span class="keyword">function</span> get_vertex_Id (Self  : <span class="keyword">in</span> quad_Strip;   Quad      : <span class="keyword">in</span> Positive; </pre></li>
+<li id="l410"><pre>                                                   Vertex    : <span class="keyword">in</span> Positive) </pre></li>
+<li id="l411"><pre>                                                                              <span class="keyword">return</span> vertex_Id </pre></li>
+<li id="l412"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l413"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l414"><pre>      <span class="keyword">return</span> self.Indices (positive_uInt (2 * (Quad - 1) + Vertex)) + 1; </pre></li>
+<li id="l415"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l416"><pre> </pre></li>
+<li id="l417"><pre>   <span class="keyword">procedure</span> set_vertex_Id (Self  : <span class="keyword">in</span> <span class="keyword">out</span> quad_Strip;   Quad      : <span class="keyword">in</span> Positive; </pre></li>
+<li id="l418"><pre>                                                        Vertex    : <span class="keyword">in</span> Positive; </pre></li>
+<li id="l419"><pre>                                                        To        : <span class="keyword">in</span> vertex_Id) </pre></li>
+<li id="l420"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l421"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l422"><pre>      self.Indices (positive_uInt (2 * (Quad - 1) + Vertex)) := To - 1; </pre></li>
+<li id="l423"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l424"><pre> </pre></li>
+<li id="l425"><pre>   <span class="comment">-- &apos;Polygon&apos;</span> </pre></li>
+<li id="l426"><pre> </pre></li>
+<li id="l427"><pre>   <span class="keyword">function</span> create_Polygon (vertex_Count  : <span class="keyword">in</span> Natural;   Vertices : p_Vertex_array) <span class="keyword">return</span> Polygon </pre></li>
+<li id="l428"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l429"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l430"><pre>      <span class="keyword">return</span> (vertices      =&gt; Vertices, </pre></li>
+<li id="l431"><pre>              owns_vertices =&gt; False, </pre></li>
+<li id="l432"><pre>              indices       =&gt; <span class="keyword">new</span> vertex_Id_array (1 .. positive_uInt (vertex_Count))); </pre></li>
+<li id="l433"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l434"><pre> </pre></li>
+<li id="l435"><pre>   <span class="keyword">function</span> primitive_Id (Self  : <span class="keyword">in</span> Polygon) <span class="keyword">return</span> GL.ObjectTypeEnm </pre></li>
+<li id="l436"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l437"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l438"><pre>      <span class="keyword">return</span> GL.POLYGON; </pre></li>
+<li id="l439"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l440"><pre> </pre></li>
+<li id="l441"><pre><span class="keyword">end</span> GL.geometry.Primitives; </pre></li>
+</ol></div>
+</div>
+
+</body>
+</html>

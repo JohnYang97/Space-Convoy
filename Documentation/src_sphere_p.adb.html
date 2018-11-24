@@ -1,0 +1,197 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    File: sphere_p.adb
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+  </div>
+</div> <!-- leftSide -->
+
+<div class='subprograms'>
+  <div class='details'><ol><li id="l1"><pre><span class="comment">--</span> </pre></li>
+<li id="l2"><pre> <span class="comment">-- Jan &amp; Uwe R. Zimmer, Australia, July 2011</span> </pre></li>
+<li id="l3"><pre> <span class="comment">--</span> </pre></li>
+<li id="l4"><pre> </pre></li>
+<li id="l5"><pre><span class="keyword">with</span> <span class="droplink">GL<ul><li><a href="gl.ads.html#gl.ads:66:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l66" title="To spec">To spec</a></li><li><a href="src_gl.adb.html#l17" title="To body">To body</a></li></ul></span>, <span class="droplink">GL.Materials<ul><li><a href="gl-materials.ads.html#gl-materials.ads:1:12" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.ads.html#l1" title="To spec">To spec</a></li><li><a href="src_gl-materials.adb.html#l1" title="To body">To body</a></li></ul></span>, <span class="droplink">GLOBE_3D.Math<ul><li><a href="globe_3d-math.ads.html#globe_3d-math.ads:1:18" title="To API doc">To API doc</a></li><li><a href="src_globe_3d-math.ads.html#l1" title="To spec">To spec</a></li><li><a href="src_globe_3d-math.adb.html#l1" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l6"><pre> </pre></li>
+<li id="l7"><pre><span class="keyword">package</span> <span class="keyword">body</span> <span class="droplink">Sphere_P<ul><li><a href="sphere_p.ads.html#sphere_p.ads:7:9" title="To API doc">To API doc</a></li><li><a href="src_sphere_p.ads.html#l7" title="To spec">To spec</a></li></ul></span> <span class="keyword">is</span> </pre></li>
+<li id="l8"><pre>   <span class="comment">-- Pretty output: FALSE</span> </pre></li>
+<li id="l9"><pre>   <span class="keyword">use</span> <span class="droplink">GL<ul><li><a href="gl.ads.html#gl.ads:66:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l66" title="To spec">To spec</a></li><li><a href="src_gl.adb.html#l17" title="To body">To body</a></li></ul></span>, <span class="droplink">GL.Materials<ul><li><a href="gl-materials.ads.html#gl-materials.ads:1:12" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.ads.html#l1" title="To spec">To spec</a></li><li><a href="src_gl-materials.adb.html#l1" title="To body">To body</a></li></ul></span>, <span class="droplink">GLOBE_3D<ul><li><a href="globe_3d.ads.html#globe_3d.ads:77:9" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l77" title="To spec">To spec</a></li><li><a href="src_globe_3d.adb.html#l17" title="To body">To body</a></li></ul></span>, <span class="droplink">GLOBE_3D.Math<ul><li><a href="globe_3d-math.ads.html#globe_3d-math.ads:1:18" title="To API doc">To API doc</a></li><li><a href="src_globe_3d-math.ads.html#l1" title="To spec">To spec</a></li><li><a href="src_globe_3d-math.adb.html#l1" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l10"><pre> </pre></li>
+<li id="l11"><pre>   <span class="comment">-- begin Separator # 1</span> </pre></li>
+<li id="l12"><pre>   <span class="comment">-- VRML: [# triangle mesh</span> </pre></li>
+<li id="l13"><pre>   <span class="comment">-- ]</span> </pre></li>
+<li id="l14"><pre> </pre></li>
+<li id="l15"><pre>   matos_1 : <span class="keyword">constant</span> <span class="droplink">Material_type<ul><li><a href="gl-materials.ads.html#gl-materials.ads:25:8" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.ads.html#l25" title="To spec">To spec</a></li></ul></span> := ( </pre></li>
+<li id="l16"><pre>                                        ambient =&gt;   (0.0, 0.0, 0.0, 1.0), </pre></li>
+<li id="l17"><pre>                                        specular =&gt;  (0.0, 0.0, 0.0, 1.0), </pre></li>
+<li id="l18"><pre>                                        diffuse =&gt;   (1.0, 1.0, 1.0, 1.0), </pre></li>
+<li id="l19"><pre>                                        emission =&gt;  (0.0, 0.0, 0.0, 1.0), </pre></li>
+<li id="l20"><pre>                                        shininess =&gt; 128.0 </pre></li>
+<li id="l21"><pre>                                       ); </pre></li>
+<li id="l22"><pre>   coord_1 : <span class="keyword">constant</span> <span class="droplink">Point_3D_array<ul><li><a href="globe_3d.ads.html#globe_3d.ads:121:9" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l121" title="To spec">To spec</a></li></ul></span> := </pre></li>
+<li id="l23"><pre>     ((0.0, 0.0, -1.0), <span class="comment">-- VRML: [# coord point    0</span> </pre></li>
+<li id="l24"><pre>      <span class="comment">-- ]</span> </pre></li>
+<li id="l25"><pre>      (0.382683, 0.0, -0.92388), (0.707107, 0.0, -0.707107), (0.92388, 0.0, -0.382683), (1.0, 0.0, -0.0), </pre></li>
+<li id="l26"><pre>      (0.92388, 0.0, 0.382683), (0.707107, 0.0, 0.707107), (0.382683, 0.0, 0.92388), (0.0, 0.0, 1.0), (0.0, 0.0, -1.0), </pre></li>
+<li id="l27"><pre>      (0.353553, 0.146447, -0.92388), (0.653282, 0.270598, -0.707107), (0.853553, 0.353553, -0.382683), (0.92388, 0.382683, -0.0), (0.853553, 0.353553, 0.382683), </pre></li>
+<li id="l28"><pre>      (0.653282, 0.270598, 0.707107), (0.353553, 0.146447, 0.92388), (0.0, 0.0, 1.0), (0.0, 0.0, -1.0), (0.270598, 0.270598, -0.92388), </pre></li>
+<li id="l29"><pre>      (0.5, 0.5, -0.707107), (0.653282, 0.653282, -0.382683), (0.707107, 0.707107, -0.0), (0.653282, 0.653282, 0.382683), (0.5, 0.5, 0.707107), </pre></li>
+<li id="l30"><pre>      (0.270598, 0.270598, 0.92388), <span class="comment">-- VRML: [# coord point   25</span> </pre></li>
+<li id="l31"><pre>      <span class="comment">-- ]</span> </pre></li>
+<li id="l32"><pre>      (0.0, 0.0, 1.0), (0.0, 0.0, -1.0), (0.146447, 0.353553, -0.92388), (0.270598, 0.653282, -0.707107), </pre></li>
+<li id="l33"><pre>      (0.353553, 0.853553, -0.382683), (0.382683, 0.92388, -0.0), (0.353553, 0.853553, 0.382683), (0.270598, 0.653282, 0.707107), (0.146447, 0.353553, 0.92388), </pre></li>
+<li id="l34"><pre>      (0.0, 0.0, 1.0), (0.0, 0.0, -1.0), (0.0, 0.382683, -0.92388), (0.0, 0.707107, -0.707107), (0.0, 0.92388, -0.382683), </pre></li>
+<li id="l35"><pre>      (0.0, 1.0, -0.0), (0.0, 0.92388, 0.382683), (0.0, 0.707107, 0.707107), (0.0, 0.382683, 0.92388), (0.0, 0.0, 1.0), </pre></li>
+<li id="l36"><pre>      (0.0, 0.0, -1.0), (-0.146447, 0.353553, -0.92388), (-0.270598, 0.653282, -0.707107), (-0.353553, 0.853553, -0.382683), (-0.382683, 0.92388, -0.0), </pre></li>
+<li id="l37"><pre>      (-0.353553, 0.853553, 0.382683), <span class="comment">-- VRML: [# coord point   50</span> </pre></li>
+<li id="l38"><pre>      <span class="comment">-- ]</span> </pre></li>
+<li id="l39"><pre>      (-0.270598, 0.653282, 0.707107), (-0.146447, 0.353553, 0.92388), (0.0, 0.0, 1.0), (0.0, 0.0, -1.0), </pre></li>
+<li id="l40"><pre>      (-0.270598, 0.270598, -0.92388), (-0.5, 0.5, -0.707107), (-0.653282, 0.653282, -0.382683), (-0.707107, 0.707107, -0.0), (-0.653282, 0.653282, 0.382683), </pre></li>
+<li id="l41"><pre>      (-0.5, 0.5, 0.707107), (-0.270598, 0.270598, 0.92388), (0.0, 0.0, 1.0), (0.0, 0.0, -1.0), (-0.353553, 0.146447, -0.92388), </pre></li>
+<li id="l42"><pre>      (-0.653282, 0.270598, -0.707107), (-0.853553, 0.353553, -0.382683), (-0.92388, 0.382683, -0.0), (-0.853553, 0.353553, 0.382683), (-0.653282, 0.270598, 0.707107), </pre></li>
+<li id="l43"><pre>      (-0.353553, 0.146447, 0.92388), (0.0, 0.0, 1.0), (0.0, 0.0, -1.0), (-0.382683, 0.0, -0.92388), (-0.707107, 0.0, -0.707107), </pre></li>
+<li id="l44"><pre>      (-0.92388, 0.0, -0.382683), <span class="comment">-- VRML: [# coord point   75</span> </pre></li>
+<li id="l45"><pre>      <span class="comment">-- ]</span> </pre></li>
+<li id="l46"><pre>      (-1.0, 0.0, -0.0), (-0.92388, 0.0, 0.382683), (-0.707107, 0.0, 0.707107), (-0.382683, 0.0, 0.92388), </pre></li>
+<li id="l47"><pre>      (0.0, 0.0, 1.0), (0.0, 0.0, -1.0), (-0.353553, -0.146447, -0.92388), (-0.653282, -0.270598, -0.707107), (-0.853553, -0.353553, -0.382683), </pre></li>
+<li id="l48"><pre>      (-0.92388, -0.382683, -0.0), (-0.853553, -0.353553, 0.382683), (-0.653282, -0.270598, 0.707107), (-0.353553, -0.146447, 0.92388), (0.0, 0.0, 1.0), </pre></li>
+<li id="l49"><pre>      (0.0, 0.0, -1.0), (-0.270598, -0.270598, -0.92388), (-0.5, -0.5, -0.707107), (-0.653282, -0.653282, -0.382683), (-0.707107, -0.707107, -0.0), </pre></li>
+<li id="l50"><pre>      (-0.653282, -0.653282, 0.382683), (-0.5, -0.5, 0.707107), (-0.270598, -0.270598, 0.92388), (0.0, 0.0, 1.0), (0.0, 0.0, -1.0), </pre></li>
+<li id="l51"><pre>      (-0.146447, -0.353553, -0.92388), <span class="comment">-- VRML: [# coord point  100</span> </pre></li>
+<li id="l52"><pre>      <span class="comment">-- ]</span> </pre></li>
+<li id="l53"><pre>      (-0.270598, -0.653282, -0.707107), (-0.353553, -0.853553, -0.382683), (-0.382683, -0.92388, -0.0), (-0.353553, -0.853553, 0.382683), </pre></li>
+<li id="l54"><pre>      (-0.270598, -0.653282, 0.707107), (-0.146447, -0.353553, 0.92388), (0.0, 0.0, 1.0), (0.0, 0.0, -1.0), (-0.0, -0.382683, -0.92388), </pre></li>
+<li id="l55"><pre>      (-0.0, -0.707107, -0.707107), (-0.0, -0.92388, -0.382683), (-0.0, -1.0, -0.0), (-0.0, -0.92388, 0.382683), (-0.0, -0.707107, 0.707107), </pre></li>
+<li id="l56"><pre>      (-0.0, -0.382683, 0.92388), (0.0, 0.0, 1.0), (0.0, 0.0, -1.0), (0.146447, -0.353553, -0.92388), (0.270598, -0.653282, -0.707107), </pre></li>
+<li id="l57"><pre>      (0.353553, -0.853553, -0.382683), (0.382683, -0.92388, -0.0), (0.353553, -0.853553, 0.382683), (0.270598, -0.653282, 0.707107), (0.146447, -0.353553, 0.92388), </pre></li>
+<li id="l58"><pre>      (0.0, 0.0, 1.0), <span class="comment">-- VRML: [# coord point  125</span> </pre></li>
+<li id="l59"><pre>      <span class="comment">-- ]</span> </pre></li>
+<li id="l60"><pre>      (0.0, 0.0, -1.0), (0.270598, -0.270598, -0.92388), (0.5, -0.5, -0.707107), (0.653282, -0.653282, -0.382683), </pre></li>
+<li id="l61"><pre>      (0.707107, -0.707107, -0.0), (0.653282, -0.653282, 0.382683), (0.5, -0.5, 0.707107), (0.270598, -0.270598, 0.92388), (0.0, 0.0, 1.0), </pre></li>
+<li id="l62"><pre>      (0.0, 0.0, -1.0), (0.353553, -0.146447, -0.92388), (0.653282, -0.270598, -0.707107), (0.853553, -0.353553, -0.382683), (0.92388, -0.382683, -0.0), </pre></li>
+<li id="l63"><pre>      (0.853553, -0.353553, 0.382683), (0.653282, -0.270598, 0.707107), (0.353553, -0.146447, 0.92388), (0.0, 0.0, 1.0), (0.0, 0.0, -1.0), </pre></li>
+<li id="l64"><pre>      (0.382683, 0.0, -0.92388), (0.707107, 0.0, -0.707107), (0.92388, 0.0, -0.382683), (1.0, 0.0, -0.0), (0.92388, 0.0, 0.382683), </pre></li>
+<li id="l65"><pre>      (0.707107, 0.0, 0.707107), <span class="comment">-- VRML: [# coord point  150</span> </pre></li>
+<li id="l66"><pre>      <span class="comment">-- ]</span> </pre></li>
+<li id="l67"><pre>      (0.382683, 0.0, 0.92388), (0.0, 0.0, 1.0)  <span class="comment">--  153</span> </pre></li>
+<li id="l68"><pre>     ); </pre></li>
+<li id="l69"><pre>   <span class="comment">-- VRML: [# 153 vertices</span> </pre></li>
+<li id="l70"><pre>   <span class="comment">-- ]</span> </pre></li>
+<li id="l71"><pre>   <span class="comment">-- begin Separator # 2</span> </pre></li>
+<li id="l72"><pre>   <span class="comment">-- VRML: [#triangle mesh</span> </pre></li>
+<li id="l73"><pre>   <span class="comment">-- ]</span> </pre></li>
+<li id="l74"><pre> </pre></li>
+<li id="l75"><pre>   idx_2 : <span class="keyword">constant</span> <span class="droplink">Idx_4_array_array<ul><li><a href="globe_3d.ads.html#globe_3d.ads:288:9" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l288" title="To spec">To spec</a></li></ul></span> := </pre></li>
+<li id="l76"><pre>     ((11, 2, 1, 0), <span class="comment">-- VRML: [# triangle    0</span> </pre></li>
+<li id="l77"><pre>      <span class="comment">-- ]</span> </pre></li>
+<li id="l78"><pre>      (12, 3, 2, 0), (12, 2, 11, 0), (13, 4, 3, 0), (13, 3, 12, 0), (14, 5, 4, 0), (14, 4, 13, 0), (15, 6, 5, 0), </pre></li>
+<li id="l79"><pre>      (15, 5, 14, 0), (16, 7, 6, 0), (16, 6, 15, 0), (17, 8, 7, 0), (17, 7, 16, 0), (18, 8, 17, 0), (20, 11, 10, 0), (21, 12, 11, 0), </pre></li>
+<li id="l80"><pre>      (21, 11, 20, 0), (22, 13, 12, 0), (22, 12, 21, 0), (23, 14, 13, 0), (23, 13, 22, 0), (24, 15, 14, 0), (24, 14, 23, 0), (25, 16, 15, 0), </pre></li>
+<li id="l81"><pre>      (25, 15, 24, 0), (26, 17, 16, 0), <span class="comment">-- VRML: [# triangle   25</span> </pre></li>
+<li id="l82"><pre>      <span class="comment">-- ]</span> </pre></li>
+<li id="l83"><pre>      (26, 16, 25, 0), (27, 17, 26, 0), (29, 20, 19, 0), (30, 21, 20, 0), (30, 20, 29, 0), (31, 22, 21, 0), </pre></li>
+<li id="l84"><pre>      (31, 21, 30, 0), (32, 23, 22, 0), (32, 22, 31, 0), (33, 24, 23, 0), (33, 23, 32, 0), (34, 25, 24, 0), (34, 24, 33, 0), (35, 26, 25, 0), </pre></li>
+<li id="l85"><pre>      (35, 25, 34, 0), (36, 26, 35, 0), (38, 29, 28, 0), (39, 30, 29, 0), (39, 29, 38, 0), (40, 31, 30, 0), (40, 30, 39, 0), (41, 32, 31, 0), </pre></li>
+<li id="l86"><pre>      (41, 31, 40, 0), (42, 33, 32, 0), (42, 32, 41, 0), <span class="comment">-- VRML: [# triangle   50</span> </pre></li>
+<li id="l87"><pre>      <span class="comment">-- ]</span> </pre></li>
+<li id="l88"><pre>      (43, 34, 33, 0), (43, 33, 42, 0), (44, 35, 34, 0), (44, 34, 43, 0), (45, 35, 44, 0), </pre></li>
+<li id="l89"><pre>      (47, 38, 37, 0), (48, 39, 38, 0), (48, 38, 47, 0), (49, 40, 39, 0), (49, 39, 48, 0), (50, 41, 40, 0), (50, 40, 49, 0), (51, 42, 41, 0), </pre></li>
+<li id="l90"><pre>      (51, 41, 50, 0), (52, 43, 42, 0), (52, 42, 51, 0), (53, 44, 43, 0), (53, 43, 52, 0), (54, 44, 53, 0), (56, 47, 46, 0), (57, 48, 47, 0), </pre></li>
+<li id="l91"><pre>      (57, 47, 56, 0), (58, 49, 48, 0), (58, 48, 57, 0), (59, 50, 49, 0), <span class="comment">-- VRML: [# triangle   75</span> </pre></li>
+<li id="l92"><pre>      <span class="comment">-- ]</span> </pre></li>
+<li id="l93"><pre>      (59, 49, 58, 0), (60, 51, 50, 0), (60, 50, 59, 0), (61, 52, 51, 0), </pre></li>
+<li id="l94"><pre>      (61, 51, 60, 0), (62, 53, 52, 0), (62, 52, 61, 0), (63, 53, 62, 0), (65, 56, 55, 0), (66, 57, 56, 0), (66, 56, 65, 0), (67, 58, 57, 0), </pre></li>
+<li id="l95"><pre>      (67, 57, 66, 0), (68, 59, 58, 0), (68, 58, 67, 0), (69, 60, 59, 0), (69, 59, 68, 0), (70, 61, 60, 0), (70, 60, 69, 0), (71, 62, 61, 0), </pre></li>
+<li id="l96"><pre>      (71, 61, 70, 0), (72, 62, 71, 0), (74, 65, 64, 0), (75, 66, 65, 0), (75, 65, 74, 0), <span class="comment">-- VRML: [# triangle  100</span> </pre></li>
+<li id="l97"><pre>      <span class="comment">-- ]</span> </pre></li>
+<li id="l98"><pre>      (76, 67, 66, 0), (76, 66, 75, 0), (77, 68, 67, 0), </pre></li>
+<li id="l99"><pre>      (77, 67, 76, 0), (78, 69, 68, 0), (78, 68, 77, 0), (79, 70, 69, 0), (79, 69, 78, 0), (80, 71, 70, 0), (80, 70, 79, 0), (81, 71, 80, 0), </pre></li>
+<li id="l100"><pre>      (83, 74, 73, 0), (84, 75, 74, 0), (84, 74, 83, 0), (85, 76, 75, 0), (85, 75, 84, 0), (86, 77, 76, 0), (86, 76, 85, 0), (87, 78, 77, 0), </pre></li>
+<li id="l101"><pre>      (87, 77, 86, 0), (88, 79, 78, 0), (88, 78, 87, 0), (89, 80, 79, 0), (89, 79, 88, 0), (90, 80, 89, 0), <span class="comment">-- VRML: [# triangle  125</span> </pre></li>
+<li id="l102"><pre>      <span class="comment">-- ]</span> </pre></li>
+<li id="l103"><pre>      (92, 83, 82, 0), (93, 84, 83, 0), </pre></li>
+<li id="l104"><pre>      (93, 83, 92, 0), (94, 85, 84, 0), (94, 84, 93, 0), (95, 86, 85, 0), (95, 85, 94, 0), (96, 87, 86, 0), (96, 86, 95, 0), (97, 88, 87, 0), </pre></li>
+<li id="l105"><pre>      (97, 87, 96, 0), (98, 89, 88, 0), (98, 88, 97, 0), (99, 89, 98, 0), (101, 92, 91, 0), (102, 93, 92, 0), (102, 92, 101, 0), (103, 94, 93, 0), </pre></li>
+<li id="l106"><pre>      (103, 93, 102, 0), (104, 95, 94, 0), (104, 94, 103, 0), (105, 96, 95, 0), (105, 95, 104, 0), (106, 97, 96, 0), (106, 96, 105, 0), <span class="comment">-- VRML: [# triangle  150</span> </pre></li>
+<li id="l107"><pre>      <span class="comment">-- ]</span> </pre></li>
+<li id="l108"><pre>      (107, 98, 97, 0), </pre></li>
+<li id="l109"><pre>      (107, 97, 106, 0), (108, 98, 107, 0), (110, 101, 100, 0), (111, 102, 101, 0), (111, 101, 110, 0), (112, 103, 102, 0), (112, 102, 111, 0), (113, 104, 103, 0), </pre></li>
+<li id="l110"><pre>      (113, 103, 112, 0), (114, 105, 104, 0), (114, 104, 113, 0), (115, 106, 105, 0), (115, 105, 114, 0), (116, 107, 106, 0), (116, 106, 115, 0), (117, 107, 116, 0), </pre></li>
+<li id="l111"><pre>      (119, 110, 109, 0), (120, 111, 110, 0), (120, 110, 119, 0), (121, 112, 111, 0), (121, 111, 120, 0), (122, 113, 112, 0), (122, 112, 121, 0), (123, 114, 113, 0), </pre></li>
+<li id="l112"><pre>      <span class="comment">-- VRML: [# triangle  175</span> </pre></li>
+<li id="l113"><pre>      <span class="comment">-- ]</span> </pre></li>
+<li id="l114"><pre>      (123, 113, 122, 0), (124, 115, 114, 0), (124, 114, 123, 0), (125, 116, 115, 0), (125, 115, 124, 0), (126, 116, 125, 0), (128, 119, 118, 0), (129, 120, 119, 0), </pre></li>
+<li id="l115"><pre>      (129, 119, 128, 0), (130, 121, 120, 0), (130, 120, 129, 0), (131, 122, 121, 0), (131, 121, 130, 0), (132, 123, 122, 0), (132, 122, 131, 0), (133, 124, 123, 0), </pre></li>
+<li id="l116"><pre>      (133, 123, 132, 0), (134, 125, 124, 0), (134, 124, 133, 0), (135, 125, 134, 0), (137, 128, 127, 0), (138, 129, 128, 0), (138, 128, 137, 0), (139, 130, 129, 0), </pre></li>
+<li id="l117"><pre>      (139, 129, 138, 0), <span class="comment">-- VRML: [# triangle  200</span> </pre></li>
+<li id="l118"><pre>      <span class="comment">-- ]</span> </pre></li>
+<li id="l119"><pre>      (140, 131, 130, 0), (140, 130, 139, 0), (141, 132, 131, 0), (141, 131, 140, 0), (142, 133, 132, 0), (142, 132, 141, 0), (143, 134, 133, 0), </pre></li>
+<li id="l120"><pre>      (143, 133, 142, 0), (144, 134, 143, 0), (146, 137, 136, 0), (147, 138, 137, 0), (147, 137, 146, 0), (148, 139, 138, 0), (148, 138, 147, 0), (149, 140, 139, 0), </pre></li>
+<li id="l121"><pre>      (149, 139, 148, 0), (150, 141, 140, 0), (150, 140, 149, 0), (151, 142, 141, 0), (151, 141, 150, 0), (152, 143, 142, 0), (152, 142, 151, 0), (153, 143, 152, 0) <span class="comment">--  224</span> </pre></li>
+<li id="l122"><pre>     ); </pre></li>
+<li id="l123"><pre>   <span class="comment">-- VRML: [# 224 triangles</span> </pre></li>
+<li id="l124"><pre>   <span class="comment">-- ]</span> </pre></li>
+<li id="l125"><pre>   <span class="comment">-- last index now: 0</span> </pre></li>
+<li id="l126"><pre>   <span class="comment">-- end Separator # 2</span> </pre></li>
+<li id="l127"><pre>   <span class="comment">-- VRML: [#triangle mesh</span> </pre></li>
+<li id="l128"><pre>   <span class="comment">-- ]</span> </pre></li>
+<li id="l129"><pre>   <span class="comment">-- last index now: 0</span> </pre></li>
+<li id="l130"><pre>   <span class="comment">-- end Separator # 2</span> </pre></li>
+<li id="l131"><pre>   <span class="comment">-- VRML: [# triangle mesh</span> </pre></li>
+<li id="l132"><pre>   <span class="comment">-- ]</span> </pre></li>
+<li id="l133"><pre> </pre></li>
+<li id="l134"><pre>   <span class="keyword">procedure</span> <span class="droplink">Create<ul><li><a href="sphere_p.ads.html#sphere_p.ads:9:13" title="To API doc">To API doc</a></li><li><a href="src_sphere_p.ads.html#l9" title="To spec">To spec</a></li></ul></span> ( </pre></li>
+<li id="l135"><pre>                    <span class="droplink">object<ul><li><a href="sphere_p.ads.html#sphere_p.ads:9:21" title="To API doc">To API doc</a></li><li><a href="src_sphere_p.ads.html#l9" title="To spec">To spec</a></li></ul></span>        : <span class="keyword">in</span> <span class="keyword">out</span> <span class="droplink">GLOBE_3D.p_Object_3D<ul><li><a href="globe_3d.ads.html#globe_3d.ads:264:9" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l264" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l136"><pre>                    <span class="droplink">Object_Scale<ul><li><a href="sphere_p.ads.html#sphere_p.ads:10:21" title="To API doc">To API doc</a></li><li><a href="src_sphere_p.ads.html#l10" title="To spec">To spec</a></li></ul></span>  :        <span class="droplink">GLOBE_3D.Real<ul><li><a href="globe_3d.ads.html#globe_3d.ads:102:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l102" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l137"><pre>                    <span class="droplink">centre<ul><li><a href="sphere_p.ads.html#sphere_p.ads:11:21" title="To API doc">To API doc</a></li><li><a href="src_sphere_p.ads.html#l11" title="To spec">To spec</a></li></ul></span>        :        <span class="droplink">GLOBE_3D.Point_3D<ul><li><a href="globe_3d.ads.html#globe_3d.ads:111:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l111" title="To spec">To spec</a></li></ul></span> </pre></li>
+<li id="l138"><pre>                   ) </pre></li>
+<li id="l139"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l140"><pre>      face_0 : <span class="droplink">Face_type<ul><li><a href="globe_3d.ads.html#globe_3d.ads:294:9" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l294" title="To spec">To spec</a></li></ul></span>; <span class="comment">-- takes defaults values</span> </pre></li>
+<li id="l141"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l142"><pre>      <span class="droplink">object<ul><li><a href="sphere_p.ads.html#sphere_p.ads:9:21" title="To API doc">To API doc</a></li><li><a href="src_sphere_p.ads.html#l9" title="To spec">To spec</a></li></ul></span> := </pre></li>
+<li id="l143"><pre>        <span class="keyword">new</span> <span class="droplink">Object_3D<ul><li><a href="globe_3d.ads.html#globe_3d.ads:263:9" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l263" title="To spec">To spec</a></li><li><a href="src_globe_3d.ads.html#l371" title="To body">To body</a></li></ul></span> (Max_points =&gt; 153, Max_faces =&gt; 224); </pre></li>
+<li id="l144"><pre>      <span class="droplink">object<ul><li><a href="sphere_p.ads.html#sphere_p.ads:9:21" title="To API doc">To API doc</a></li><li><a href="src_sphere_p.ads.html#l9" title="To spec">To spec</a></li></ul></span>.<span class="keyword">all</span>.Centre := <span class="droplink">centre<ul><li><a href="sphere_p.ads.html#sphere_p.ads:11:21" title="To API doc">To API doc</a></li><li><a href="src_sphere_p.ads.html#l11" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l145"><pre>      <span class="droplink">Set_name<ul><li><a href="globe_3d.ads.html#globe_3d.ads:232:14" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l232" title="To spec">To spec</a></li><li><a href="src_globe_3d.adb.html#l941" title="To body">To body</a></li></ul></span> (<span class="droplink">object<ul><li><a href="sphere_p.ads.html#sphere_p.ads:9:21" title="To API doc">To API doc</a></li><li><a href="src_sphere_p.ads.html#l9" title="To spec">To spec</a></li></ul></span>.<span class="keyword">all</span>, <span class="string">&quot;insect_body&quot;</span>); </pre></li>
+<li id="l146"><pre>      face_0.skin := material_only; </pre></li>
+<li id="l147"><pre>      face_0.material := <span class="droplink">VRML_Defaults<ul><li><a href="gl-materials.ads.html#gl-materials.ads:258:3" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.ads.html#l258" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l148"><pre>      <span class="comment">-- Creating separator # 1</span> </pre></li>
+<li id="l149"><pre>      <span class="keyword">if</span> <span class="droplink">Almost_zero<ul><li><a href="globe_3d-math.ads.html#globe_3d-math.ads:83:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d-math.ads.html#l83" title="To spec">To spec</a></li><li><a href="src_globe_3d-math.adb.html#l302" title="To body">To body</a></li></ul></span> (<span class="droplink">Object_Scale<ul><li><a href="sphere_p.ads.html#sphere_p.ads:10:21" title="To API doc">To API doc</a></li><li><a href="src_sphere_p.ads.html#l10" title="To spec">To spec</a></li></ul></span> - 1.0) <span class="keyword">then</span> </pre></li>
+<li id="l150"><pre>         <span class="droplink">object<ul><li><a href="sphere_p.ads.html#sphere_p.ads:9:21" title="To API doc">To API doc</a></li><li><a href="src_sphere_p.ads.html#l9" title="To spec">To spec</a></li></ul></span>.<span class="keyword">all</span>.Point (1 .. 153) := <a href="src_sphere_p.adb.html#l22" title="defined at sphere_p.adb:22:4">coord_1</a>; </pre></li>
+<li id="l151"><pre>      <span class="keyword">else</span> </pre></li>
+<li id="l152"><pre>         <span class="keyword">for</span> p <span class="keyword">in</span> 1 .. 153 <span class="keyword">loop</span> </pre></li>
+<li id="l153"><pre>            <span class="droplink">object<ul><li><a href="sphere_p.ads.html#sphere_p.ads:9:21" title="To API doc">To API doc</a></li><li><a href="src_sphere_p.ads.html#l9" title="To spec">To spec</a></li></ul></span>.<span class="keyword">all</span>.Point (0 + p) := <span class="droplink">Object_Scale<ul><li><a href="sphere_p.ads.html#sphere_p.ads:10:21" title="To API doc">To API doc</a></li><li><a href="src_sphere_p.ads.html#l10" title="To spec">To spec</a></li></ul></span> * <a href="src_sphere_p.adb.html#l22" title="defined at sphere_p.adb:22:4">coord_1</a> (p); </pre></li>
+<li id="l154"><pre>         <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l155"><pre>      <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l156"><pre>      face_0.material := <a href="src_sphere_p.adb.html#l15" title="defined at sphere_p.adb:15:4">matos_1</a>; </pre></li>
+<li id="l157"><pre>      <span class="comment">-- Creating separator # 2</span> </pre></li>
+<li id="l158"><pre>      <span class="keyword">for</span> f <span class="keyword">in</span> 1 .. 224 <span class="keyword">loop</span> </pre></li>
+<li id="l159"><pre>         face_0.P := <a href="src_sphere_p.adb.html#l75" title="defined at sphere_p.adb:75:4">idx_2</a> (f); </pre></li>
+<li id="l160"><pre>         <span class="droplink">object<ul><li><a href="sphere_p.ads.html#sphere_p.ads:9:21" title="To API doc">To API doc</a></li><li><a href="src_sphere_p.ads.html#l9" title="To spec">To spec</a></li></ul></span>.<span class="keyword">all</span>.face (0 + f) := <a href="src_sphere_p.adb.html#l140" title="defined at sphere_p.adb:140:7">face_0</a>; </pre></li>
+<li id="l161"><pre>      <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l162"><pre>   <span class="keyword">end</span> <span class="droplink">Create<ul><li><a href="sphere_p.ads.html#sphere_p.ads:9:13" title="To API doc">To API doc</a></li><li><a href="src_sphere_p.ads.html#l9" title="To spec">To spec</a></li><li><a href="src_sphere_p.adb.html#l134" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l163"><pre><span class="keyword">end</span> <span class="droplink">Sphere_P<ul><li><a href="sphere_p.ads.html#sphere_p.ads:7:9" title="To API doc">To API doc</a></li><li><a href="src_sphere_p.ads.html#l7" title="To spec">To spec</a></li><li><a href="src_sphere_p.adb.html#l7" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l164"><pre> <span class="comment">-- Converted by Wrl2Ada</span> </pre></li>
+</ol></div>
+</div>
+
+</body>
+</html>

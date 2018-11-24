@@ -1,0 +1,1019 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    Package: Swarm_Control
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+
+  <div id='navigation'>
+    <h2 class="button">Navigation</h2>
+    <a href='#Description'><div class="button2">Description</div></a>
+    <a href='#Tasks'><div class="button2">Tasks &amp; Protected</div></a>
+    <a href='#Constants'><div class="button2">Constants &amp; Global variables</div></a>
+    <a href='#Methods'><div class="button2">Subprograms &amp; Entries</div></a>
+  </div><!-- navigation -->
+  </div>
+</div> <!-- leftSide -->
+
+<div class='default' id='rightSide'>
+ <div id='rightSideInside'>
+ <div id='Index'>
+  <h2>Index</h2>
+  <script type="text/javascript">
+    var names = new Array (
+new Array ('Swarm_<wbr/>Monitor', 'swarm_control.ads:17:14', 'var-spec'),
+new Array ('Vehicle_<wbr/>could_<wbr/>not_<wbr/>be_<wbr/>created', 'swarm_control.ads:48:4', 'var-spec'),
+new Array ('Task_<wbr/>did_<wbr/>not_<wbr/>repond_<wbr/>to_<wbr/>Identfiy_<wbr/>Call', 'swarm_control.ads:49:4', 'var-spec'),
+new Array ('No_<wbr/>Such_<wbr/>Task', 'swarm_control.ads:50:4', 'var-spec'),
+new Array ('Remove_<wbr/>Vehicles', 'swarm_control.ads:52:14', 'subp-spec'),
+new Array ('Set_<wbr/>Acceleration', 'swarm_control.ads:54:14', 'subp-spec'),
+new Array ('Set_<wbr/>All_<wbr/>Accelerations', 'swarm_control.ads:55:14', 'subp-spec'),
+new Array ('Forward_<wbr/>Messages', 'swarm_control.ads:57:14', 'subp-spec'),
+new Array ('Forward_<wbr/>All_<wbr/>Messages', 'swarm_control.ads:58:14', 'subp-spec'),
+new Array ('Move_<wbr/>Element', 'swarm_control.ads:60:14', 'subp-spec'),
+new Array ('Move_<wbr/>All_<wbr/>Elements', 'swarm_control.ads:61:14', 'subp-spec'),
+new Array ('Update_<wbr/>Rotation', 'swarm_control.ads:63:14', 'subp-spec'),
+new Array ('Update_<wbr/>All_<wbr/>Rotations', 'swarm_control.ads:64:14', 'subp-spec'),
+new Array ('Remove_<wbr/>Empties', 'swarm_control.ads:66:14', 'subp-spec'),
+new Array ('Swarm_<wbr/>Monitor.<wbr/>Id_<wbr/>Task', 'swarm_control.ads:19:16', 'subp-spec'),
+new Array ('Swarm_<wbr/>Monitor.<wbr/>Id_<wbr/>Task', 'swarm_control.ads:20:16', 'subp-spec'),
+new Array ('Swarm_<wbr/>Monitor.<wbr/>Position', 'swarm_control.ads:22:16', 'subp-spec'),
+new Array ('Swarm_<wbr/>Monitor.<wbr/>Velocity', 'swarm_control.ads:23:16', 'subp-spec'),
+new Array ('Swarm_<wbr/>Monitor.<wbr/>Acceleration', 'swarm_control.ads:24:16', 'subp-spec'),
+new Array ('Swarm_<wbr/>Monitor.<wbr/>Controls', 'swarm_control.ads:25:16', 'subp-spec'),
+new Array ('Swarm_<wbr/>Monitor.<wbr/>Comms', 'swarm_control.ads:26:16', 'subp-spec'),
+new Array ('Swarm_<wbr/>Monitor.<wbr/>Charge', 'swarm_control.ads:27:16', 'subp-spec'),
+new Array ('Swarm_<wbr/>Monitor.<wbr/>Process_<wbr/>abort', 'swarm_control.ads:28:16', 'subp-spec'),
+new Array ('Swarm_<wbr/>Monitor.<wbr/>Append_<wbr/>Random_<wbr/>Swarm', 'swarm_control.ads:30:17', 'subp-spec'),
+new Array ('Swarm_<wbr/>Monitor.<wbr/>Remove_<wbr/>Vehicle', 'swarm_control.ads:34:17', 'subp-spec'),
+new Array ('Swarm_<wbr/>Monitor.<wbr/>Centre_<wbr/>Of_<wbr/>Gravity', 'swarm_control.ads:36:16', 'subp-spec'),
+new Array ('Swarm_<wbr/>Monitor.<wbr/>Mean_<wbr/>Velocity', 'swarm_control.ads:37:16', 'subp-spec'),
+new Array ('Swarm_<wbr/>Monitor.<wbr/>Mean_<wbr/>Velocity', 'swarm_control.ads:38:16', 'subp-spec'),
+new Array ('Swarm_<wbr/>Monitor.<wbr/>Maximal_<wbr/>Radius', 'swarm_control.ads:39:16', 'subp-spec'),
+new Array ('Swarm_<wbr/>Monitor.<wbr/>Mean_<wbr/>Radius', 'swarm_control.ads:40:16', 'subp-spec'),
+new Array ('Swarm_<wbr/>Monitor.<wbr/>Mean_<wbr/>Closest_<wbr/>Distance', 'swarm_control.ads:41:16', 'subp-spec'),
+new Array ('Swarm_<wbr/>Monitor.<wbr/>Last_<wbr/>Vehicle_<wbr/>Id (private)', 'swarm_control.ads:44:7', 'subp-spec'),
+      new Array ('dummy', '', ''));
+    printIndexList (names);
+  </script>
+  <noscript>
+    <ul>
+      <li class='task-spec'><a href="#swarm_control.ads:17:14">Swarm_<wbr/>Monitor</a></li>
+      <li class='var-spec'><a href="#swarm_control.ads:48:4">Vehicle_<wbr/>could_<wbr/>not_<wbr/>be_<wbr/>created</a></li>
+      <li class='var-spec'><a href="#swarm_control.ads:49:4">Task_<wbr/>did_<wbr/>not_<wbr/>repond_<wbr/>to_<wbr/>Identfiy_<wbr/>Call</a></li>
+      <li class='var-spec'><a href="#swarm_control.ads:50:4">No_<wbr/>Such_<wbr/>Task</a></li>
+      <li class='subp-spec'><a href="#swarm_control.ads:52:14">Remove_<wbr/>Vehicles</a></li>
+      <li class='subp-spec'><a href="#swarm_control.ads:54:14">Set_<wbr/>Acceleration</a></li>
+      <li class='subp-spec'><a href="#swarm_control.ads:55:14">Set_<wbr/>All_<wbr/>Accelerations</a></li>
+      <li class='subp-spec'><a href="#swarm_control.ads:57:14">Forward_<wbr/>Messages</a></li>
+      <li class='subp-spec'><a href="#swarm_control.ads:58:14">Forward_<wbr/>All_<wbr/>Messages</a></li>
+      <li class='subp-spec'><a href="#swarm_control.ads:60:14">Move_<wbr/>Element</a></li>
+      <li class='subp-spec'><a href="#swarm_control.ads:61:14">Move_<wbr/>All_<wbr/>Elements</a></li>
+      <li class='subp-spec'><a href="#swarm_control.ads:63:14">Update_<wbr/>Rotation</a></li>
+      <li class='subp-spec'><a href="#swarm_control.ads:64:14">Update_<wbr/>All_<wbr/>Rotations</a></li>
+      <li class='subp-spec'><a href="#swarm_control.ads:66:14">Remove_<wbr/>Empties</a></li>
+        <li class='subp-spec'><a href="#swarm_control.ads:19:16">Id_<wbr/>Task</a></li>
+        <li class='subp-spec'><a href="#swarm_control.ads:20:16">Id_<wbr/>Task</a></li>
+        <li class='subp-spec'><a href="#swarm_control.ads:22:16">Position</a></li>
+        <li class='subp-spec'><a href="#swarm_control.ads:23:16">Velocity</a></li>
+        <li class='subp-spec'><a href="#swarm_control.ads:24:16">Acceleration</a></li>
+        <li class='subp-spec'><a href="#swarm_control.ads:25:16">Controls</a></li>
+        <li class='subp-spec'><a href="#swarm_control.ads:26:16">Comms</a></li>
+        <li class='subp-spec'><a href="#swarm_control.ads:27:16">Charge</a></li>
+        <li class='subp-spec'><a href="#swarm_control.ads:28:16">Process_<wbr/>abort</a></li>
+        <li class='subp-spec'><a href="#swarm_control.ads:30:17">Append_<wbr/>Random_<wbr/>Swarm</a></li>
+        <li class='subp-spec'><a href="#swarm_control.ads:34:17">Remove_<wbr/>Vehicle</a></li>
+        <li class='subp-spec'><a href="#swarm_control.ads:36:16">Centre_<wbr/>Of_<wbr/>Gravity</a></li>
+        <li class='subp-spec'><a href="#swarm_control.ads:37:16">Mean_<wbr/>Velocity</a></li>
+        <li class='subp-spec'><a href="#swarm_control.ads:38:16">Mean_<wbr/>Velocity</a></li>
+        <li class='subp-spec'><a href="#swarm_control.ads:39:16">Maximal_<wbr/>Radius</a></li>
+        <li class='subp-spec'><a href="#swarm_control.ads:40:16">Mean_<wbr/>Radius</a></li>
+        <li class='subp-spec'><a href="#swarm_control.ads:41:16">Mean_<wbr/>Closest_<wbr/>Distance</a></li>
+        <li class='subp-spec'><a href="#swarm_control.ads:44:7">Last_<wbr/>Vehicle_<wbr/>Id (private)</a></li>
+    </ul>
+  </noscript>
+ </div>
+ </div>
+</div>
+
+<div class='default' id='documentation'>
+  <div class='title'>
+    Package:
+<span class="droplink"><i>Swarm_Control</i><ul>
+  <li><a href="src_swarm_control.ads.html">Goto spec source</a></li>
+  <li><a href="src_swarm_control.adb.html">Goto body source</a></li>
+</ul></span>
+  </div>
+  <div class='subprograms'>
+    <h1><a name='Description' id='Description'></a>Description</h1>
+    <div class="class">
+    <div class='details'><pre><span class="keyword">package</span> <span class="name_emphasis">Swarm_Control</span> <span class="keyword">is</span></pre></div>
+    <div class='comment'>
+Jan &amp; Uwe R. Zimmer, Australia, 2013
+
+</div>
+    </div>
+  </div>
+
+
+
+  <div class='subprograms'>
+    <h1><a name='Tasks' id='Tasks'></a>Tasks &amp; Protected</h1>
+    <div class="class">
+      <h3>
+        <a name='swarm_control.ads:17:14' id='swarm_control.ads:17:14'></a>
+<span class="droplink">Swarm_Monitor<ul>
+  <li><a href="src_swarm_control.ads.html#l17">Goto spec in source</a></li>
+</ul></span>
+         (protected)
+      </h3>
+      <div class="details"><b>Entries:</b><a href="swarm_control.ads.html#swarm_control.ads:19:16" title="Id_Task">Id_Task</a>, <a href="swarm_control.ads.html#swarm_control.ads:20:16" title="Id_Task">Id_Task</a>, <a href="swarm_control.ads.html#swarm_control.ads:22:16" title="Position">Position</a>, <a href="swarm_control.ads.html#swarm_control.ads:23:16" title="Velocity">Velocity</a>, <a href="swarm_control.ads.html#swarm_control.ads:24:16" title="Acceleration">Acceleration</a>, <a href="swarm_control.ads.html#swarm_control.ads:25:16" title="Controls">Controls</a>, <a href="swarm_control.ads.html#swarm_control.ads:26:16" title="Comms">Comms</a>, <a href="swarm_control.ads.html#swarm_control.ads:27:16" title="Charge">Charge</a>, <a href="swarm_control.ads.html#swarm_control.ads:28:16" title="Process_abort">Process_abort</a>, <a href="swarm_control.ads.html#swarm_control.ads:30:17" title="Append_Random_Swarm">Append_Random_Swarm</a>, <a href="swarm_control.ads.html#swarm_control.ads:34:17" title="Remove_Vehicle">Remove_Vehicle</a>, <a href="swarm_control.ads.html#swarm_control.ads:36:16" title="Centre_Of_Gravity">Centre_Of_Gravity</a>, <a href="swarm_control.ads.html#swarm_control.ads:37:16" title="Mean_Velocity">Mean_Velocity</a>, <a href="swarm_control.ads.html#swarm_control.ads:38:16" title="Mean_Velocity">Mean_Velocity</a>, <a href="swarm_control.ads.html#swarm_control.ads:39:16" title="Maximal_Radius">Maximal_Radius</a>, <a href="swarm_control.ads.html#swarm_control.ads:40:16" title="Mean_Radius">Mean_Radius</a>, <a href="swarm_control.ads.html#swarm_control.ads:41:16" title="Mean_Closest_Distance">Mean_Closest_Distance</a>, <a href="swarm_control.ads.html#swarm_control.ads:44:7" title="Last_Vehicle_Id">Last_Vehicle_Id</a></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_swarm_control.ads.html#l17" title="swarm_control.ads:17:14">swarm_control.ads:17:14</a> (declaration)</i></div>
+          <div><i><a href="src_callback_procedures.adb.html#l136" title="callback_procedures.adb:136:28">callback_procedures.adb:136:28</a> (reference)</i></div>
+          <div><i><a href="src_callback_procedures.adb.html#l138" title="callback_procedures.adb:138:28">callback_procedures.adb:138:28</a> (reference)</i></div>
+          <div><i><a href="src_callback_procedures.adb.html#l138" title="callback_procedures.adb:138:66">callback_procedures.adb:138:66</a> (reference)</i></div>
+          <div><i><a href="src_callback_procedures.adb.html#l185" title="callback_procedures.adb:185:35">callback_procedures.adb:185:35</a> (reference)</i></div>
+          <div><i><a href="src_callback_procedures.adb.html#l257" title="callback_procedures.adb:257:54">callback_procedures.adb:257:54</a> (reference)</i></div>
+          <div><i><a href="src_callback_procedures.adb.html#l263" title="callback_procedures.adb:263:65">callback_procedures.adb:263:65</a> (reference)</i></div>
+          <div><i><a href="src_callback_procedures.adb.html#l286" title="callback_procedures.adb:286:54">callback_procedures.adb:286:54</a> (reference)</i></div>
+          <div><i><a href="src_callback_procedures.adb.html#l296" title="callback_procedures.adb:296:67">callback_procedures.adb:296:67</a> (reference)</i></div>
+          <div><i><a href="src_callback_procedures.adb.html#l297" title="callback_procedures.adb:297:67">callback_procedures.adb:297:67</a> (reference)</i></div>
+          <div><i><a href="src_callback_procedures.adb.html#l327" title="callback_procedures.adb:327:54">callback_procedures.adb:327:54</a> (reference)</i></div>
+          <div><i><a href="src_callback_procedures.adb.html#l337" title="callback_procedures.adb:337:67">callback_procedures.adb:337:67</a> (reference)</i></div>
+          <div><i><a href="src_callback_procedures.adb.html#l338" title="callback_procedures.adb:338:67">callback_procedures.adb:338:67</a> (reference)</i></div>
+          <div><i><a href="src_callback_procedures.adb.html#l358" title="callback_procedures.adb:358:65">callback_procedures.adb:358:65</a> (reference)</i></div>
+          <div><i><a href="src_callback_procedures.adb.html#l417" title="callback_procedures.adb:417:105">callback_procedures.adb:417:105</a> (reference)</i></div>
+          <div><i><a href="src_callback_procedures.adb.html#l418" title="callback_procedures.adb:418:87">callback_procedures.adb:418:87</a> (reference)</i></div>
+          <div><i><a href="src_callback_procedures.adb.html#l419" title="callback_procedures.adb:419:87">callback_procedures.adb:419:87</a> (reference)</i></div>
+          <div><i><a href="src_callback_procedures.adb.html#l420" title="callback_procedures.adb:420:87">callback_procedures.adb:420:87</a> (reference)</i></div>
+          <div><i><a href="src_callback_procedures.adb.html#l421" title="callback_procedures.adb:421:87">callback_procedures.adb:421:87</a> (reference)</i></div>
+          <div><i><a href="src_callback_procedures.adb.html#l466" title="callback_procedures.adb:466:7">callback_procedures.adb:466:7</a> (reference)</i></div>
+          <div><i><a href="src_swarm_control.adb.html#l23" title="swarm_control.adb:23:19">swarm_control.adb:23:19</a> (body)</i></div>
+          <div><i><a href="src_swarm_control.adb.html#l48" title="swarm_control.adb:48:33">swarm_control.adb:48:33</a> (reference)</i></div>
+          <div><i><a href="src_swarm_control.adb.html#l51" title="swarm_control.adb:51:33">swarm_control.adb:51:33</a> (reference)</i></div>
+          <div><i><a href="src_swarm_control.adb.html#l54" title="swarm_control.adb:54:32">swarm_control.adb:54:32</a> (reference)</i></div>
+          <div><i><a href="src_swarm_control.adb.html#l57" title="swarm_control.adb:57:33">swarm_control.adb:57:33</a> (reference)</i></div>
+          <div><i><a href="src_swarm_control.adb.html#l60" title="swarm_control.adb:60:32">swarm_control.adb:60:32</a> (reference)</i></div>
+          <div><i><a href="src_swarm_control.adb.html#l63" title="swarm_control.adb:63:32">swarm_control.adb:63:32</a> (reference)</i></div>
+          <div><i><a href="src_swarm_control.adb.html#l66" title="swarm_control.adb:66:32">swarm_control.adb:66:32</a> (reference)</i></div>
+          <div><i><a href="src_swarm_control.adb.html#l263" title="swarm_control.adb:263:8">swarm_control.adb:263:8</a> (label)</i></div>
+          <div><i><a href="src_swarm_control.adb.html#l294" title="swarm_control.adb:294:7">swarm_control.adb:294:7</a> (reference)</i></div>
+          <div><i><a href="src_vehicle_interface.adb.html#l21" title="vehicle_interface.adb:21:7">vehicle_interface.adb:21:7</a> (reference)</i></div>
+          <div><i><a href="src_vehicle_interface.adb.html#l24" title="vehicle_interface.adb:24:7">vehicle_interface.adb:24:7</a> (reference)</i></div>
+          <div><i><a href="src_vehicle_interface.adb.html#l27" title="vehicle_interface.adb:27:7">vehicle_interface.adb:27:7</a> (reference)</i></div>
+          <div><i><a href="src_vehicle_interface.adb.html#l36" title="vehicle_interface.adb:36:7">vehicle_interface.adb:36:7</a> (reference)</i></div>
+          <div><i><a href="src_vehicle_interface.adb.html#l46" title="vehicle_interface.adb:46:7">vehicle_interface.adb:46:7</a> (reference)</i></div>
+          <div><i><a href="src_vehicle_interface.adb.html#l50" title="vehicle_interface.adb:50:7">vehicle_interface.adb:50:7</a> (reference)</i></div>
+          <div><i><a href="src_vehicle_interface.adb.html#l59" title="vehicle_interface.adb:59:7">vehicle_interface.adb:59:7</a> (reference)</i></div>
+          <div><i><a href="src_vehicle_interface.adb.html#l65" title="vehicle_interface.adb:65:7">vehicle_interface.adb:65:7</a> (reference)</i></div>
+          <div><i><a href="src_vehicle_interface.adb.html#l69" title="vehicle_interface.adb:69:7">vehicle_interface.adb:69:7</a> (reference)</i></div>
+          <div><i><a href="src_vehicle_interface.adb.html#l76" title="vehicle_interface.adb:76:7">vehicle_interface.adb:76:7</a> (reference)</i></div>
+          <div><i><a href="src_vehicle_interface.adb.html#l127" title="vehicle_interface.adb:127:18">vehicle_interface.adb:127:18</a> (reference)</i></div>
+      </div>
+      <div class='profile'>
+          <h4>Called by:</h4>
+          <div><i><a href="callback_procedures.adb-2.html#callback_procedures.adb:47:17" title="defined at callback_procedures.adb:47:17">Callback_Procedures.Execute_Commands.Act_On_Input</a> defined at <a href="src_callback_procedures.adb.html#l47" title="callback_procedures.adb:47:17">callback_procedures.adb:47:17</a></i></div>
+          <div><i><a href="callback_procedures.adb-2.html#callback_procedures.adb:47:17" title="defined at callback_procedures.adb:47:17">Callback_Procedures.Execute_Commands.Act_On_Input</a> defined at <a href="src_callback_procedures.adb.html#l47" title="callback_procedures.adb:47:17">callback_procedures.adb:47:17</a></i></div>
+          <div><i><a href="callback_procedures.adb-2.html#callback_procedures.adb:47:17" title="defined at callback_procedures.adb:47:17">Callback_Procedures.Execute_Commands.Act_On_Input</a> defined at <a href="src_callback_procedures.adb.html#l47" title="callback_procedures.adb:47:17">callback_procedures.adb:47:17</a></i></div>
+          <div><i><a href="callback_procedures.adb.html#callback_procedures.adb:462:14" title="defined at callback_procedures.adb:462:14">Callback_Procedures.Initialize_Environment</a> defined at <a href="src_callback_procedures.adb.html#l462" title="callback_procedures.adb:462:14">callback_procedures.adb:462:14</a></i></div>
+          <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+          <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+          <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+          <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+          <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+          <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+          <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+          <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+          <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+          <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+          <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+          <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+          <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+          <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+          <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+          <div><i><a href="swarm_control.adb.html#swarm_control.adb:269:14" title="defined at swarm_control.adb:269:14">Swarm_Control.Remove_Vehicle_in_Stages</a> defined at <a href="src_swarm_control.adb.html#l269" title="swarm_control.adb:269:14">swarm_control.adb:269:14</a></i></div>
+          <div><i><a href="vehicle_interface.ads.html#vehicle_interface.ads:39:14" title="defined at vehicle_interface.ads:39:14">Vehicle_Interface.Receive</a> defined at <a href="src_vehicle_interface.ads.html#l39" title="vehicle_interface.ads:39:14">vehicle_interface.ads:39:14</a></i></div>
+          <div><i><a href="vehicle_interface.ads.html#vehicle_interface.ads:38:14" title="defined at vehicle_interface.ads:38:14">Vehicle_Interface.Send</a> defined at <a href="src_vehicle_interface.ads.html#l38" title="vehicle_interface.ads:38:14">vehicle_interface.ads:38:14</a></i></div>
+          <div><i><a href="vehicle_interface.ads.html#vehicle_interface.ads:24:14" title="defined at vehicle_interface.ads:24:14">Vehicle_Interface.Set_Destination</a> defined at <a href="src_vehicle_interface.ads.html#l24" title="vehicle_interface.ads:24:14">vehicle_interface.ads:24:14</a></i></div>
+          <div><i><a href="vehicle_interface.ads.html#vehicle_interface.ads:30:14" title="defined at vehicle_interface.ads:30:14">Vehicle_Interface.Set_Throttle</a> defined at <a href="src_vehicle_interface.ads.html#l30" title="vehicle_interface.ads:30:14">vehicle_interface.ads:30:14</a></i></div>
+          <div><i><a href="vehicle_interface.ads.html#vehicle_interface.ads:62:13" title="defined at vehicle_interface.ads:62:13">Vehicle_Interface.Stop</a> defined at <a href="src_vehicle_interface.ads.html#l62" title="vehicle_interface.ads:62:13">vehicle_interface.ads:62:13</a></i></div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class='subprograms'>
+    <h1><a name='Constants' id='Constants'></a>Constants &amp; Global variables</h1>
+    <div class="class">
+      <h3><a name='swarm_control.ads:48:4' id='swarm_control.ads:48:4'></a>
+<span class="droplink">Vehicle_could_not_be_created<ul>
+  <li><a href="src_swarm_control.ads.html#l48">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Vehicle_could_not_be_created</span>,
+   <span class="name"><a name="swarm_control.ads:49:4"></a>Task_did_not_repond_to_Identfiy_Call</span>,
+   <span class="name"><a name="swarm_control.ads:50:4"></a>No_Such_Task</span> : <span class="keyword">exception</span>;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_swarm_control.ads.html#l48" title="swarm_control.ads:48:4">swarm_control.ads:48:4</a> (declaration)</i></div>
+          <div><i><a href="src_swarm_control.adb.html#l85" title="swarm_control.adb:85:22">swarm_control.adb:85:22</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='swarm_control.ads:49:4' id='swarm_control.ads:49:4'></a>
+<span class="droplink">Task_did_not_repond_to_Identfiy_Call<ul>
+  <li><a href="src_swarm_control.ads.html#l49">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Task_did_not_repond_to_Identfiy_Call</span>,
+   <span class="name"><a name="swarm_control.ads:50:4"></a>No_Such_Task</span> : <span class="keyword">exception</span>;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_swarm_control.ads.html#l49" title="swarm_control.ads:49:4">swarm_control.ads:49:4</a> (declaration)</i></div>
+          <div><i><a href="src_swarm_control.adb.html#l112" title="swarm_control.adb:112:28">swarm_control.adb:112:28</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='swarm_control.ads:50:4' id='swarm_control.ads:50:4'></a>
+<span class="droplink">No_Such_Task<ul>
+  <li><a href="src_swarm_control.ads.html#l50">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">No_Such_Task</span> : <span class="keyword">exception</span>;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_swarm_control.ads.html#l50" title="swarm_control.ads:50:4">swarm_control.ads:50:4</a> (declaration)</i></div>
+          <div><i><a href="src_swarm_control.adb.html#l33" title="swarm_control.adb:33:16">swarm_control.adb:33:16</a> (reference)</i></div>
+          <div><i><a href="src_swarm_control.adb.html#l44" title="swarm_control.adb:44:16">swarm_control.adb:44:16</a> (reference)</i></div>
+      </div>
+    </div>
+  </div>
+
+    <div class='subprograms'>
+      <h1><a name='Methods' id='Methods'></a>Subprograms &amp; Entries</h1>
+        <div class='class'>
+          <div>
+            <h3>
+              <a name='swarm_control.ads:19:16' id='swarm_control.ads:19:16'></a>
+              <span class="type"><a href="#swarm_control.ads:17:14">Swarm_Monitor</a></span>.
+<span class="droplink">Id_Task<ul>
+  <li><a href="src_swarm_control.ads.html#l19">Goto spec in source</a></li>
+  <li><a href="src_swarm_control.adb.html#l25">Goto body in source</a></li>
+</ul></span>
+            </h3>
+            <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Id_Task</span>                <span class="keyword">return</span> <a href="swarm_structures_base.ads.html#swarm_structures_base.ads:19:12" title="defined at swarm_structures_base.ads:19:12">Swarm_Element_Index</a>;</pre></div>
+            <div class='profile'>
+              <h4>References:</h4>
+                <div><i><a href="src_swarm_control.ads.html#l19" title="swarm_control.ads:19:16">swarm_control.ads:19:16</a> (declaration)</i></div>
+                <div><i><a href="src_swarm_control.adb.html#l25" title="swarm_control.adb:25:16">swarm_control.adb:25:16</a> (body)</i></div>
+                <div><i><a href="src_swarm_control.adb.html#l34" title="swarm_control.adb:34:11">swarm_control.adb:34:11</a> (label)</i></div>
+                <div><i><a href="src_swarm_control.adb.html#l66" title="swarm_control.adb:66:46">swarm_control.adb:66:46</a> (call)</i></div>
+            </div>
+          </div>
+        </div>
+        <div class='class'>
+          <div>
+            <h3>
+              <a name='swarm_control.ads:20:16' id='swarm_control.ads:20:16'></a>
+              <span class="type"><a href="#swarm_control.ads:17:14">Swarm_Monitor</a></span>.
+<span class="droplink">Id_Task<ul>
+  <li><a href="src_swarm_control.ads.html#l20">Goto spec in source</a></li>
+  <li><a href="src_swarm_control.adb.html#l36">Goto body in source</a></li>
+</ul></span>
+            </h3>
+            <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Id_Task</span> <table><tr><td>(</td><td><span class="name"><a name="swarm_control.ads:20:25"></a>Id</span></td><td>: Task_Id) <span class="keyword">return</span> <a href="swarm_structures_base.ads.html#swarm_structures_base.ads:19:12" title="defined at swarm_structures_base.ads:19:12">Swarm_Element_Index</a>;</td></tr></table></pre></div>
+            <div class='profile'>
+              <h4>References:</h4>
+                <div><i><a href="src_swarm_control.ads.html#l20" title="swarm_control.ads:20:16">swarm_control.ads:20:16</a> (declaration)</i></div>
+                <div><i><a href="src_swarm_control.adb.html#l36" title="swarm_control.adb:36:16">swarm_control.adb:36:16</a> (body)</i></div>
+                <div><i><a href="src_swarm_control.adb.html#l45" title="swarm_control.adb:45:11">swarm_control.adb:45:11</a> (label)</i></div>
+                <div><i><a href="src_swarm_control.adb.html#l48" title="swarm_control.adb:48:47">swarm_control.adb:48:47</a> (call)</i></div>
+                <div><i><a href="src_swarm_control.adb.html#l51" title="swarm_control.adb:51:47">swarm_control.adb:51:47</a> (call)</i></div>
+                <div><i><a href="src_swarm_control.adb.html#l54" title="swarm_control.adb:54:46">swarm_control.adb:54:46</a> (call)</i></div>
+                <div><i><a href="src_swarm_control.adb.html#l57" title="swarm_control.adb:57:47">swarm_control.adb:57:47</a> (call)</i></div>
+                <div><i><a href="src_swarm_control.adb.html#l60" title="swarm_control.adb:60:46">swarm_control.adb:60:46</a> (call)</i></div>
+                <div><i><a href="src_swarm_control.adb.html#l63" title="swarm_control.adb:63:46">swarm_control.adb:63:46</a> (call)</i></div>
+            </div>
+          </div>
+        </div>
+        <div class='class'>
+          <div>
+            <h3>
+              <a name='swarm_control.ads:22:16' id='swarm_control.ads:22:16'></a>
+              <span class="type"><a href="#swarm_control.ads:17:14">Swarm_Monitor</a></span>.
+<span class="droplink">Position<ul>
+  <li><a href="src_swarm_control.ads.html#l22">Goto spec in source</a></li>
+  <li><a href="src_swarm_control.adb.html#l47">Goto body in source</a></li>
+</ul></span>
+            </h3>
+            <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Position</span>      <table><tr><td>(</td><td><span class="name"><a name="swarm_control.ads:22:31"></a>Id</span></td><td>: Task_Id) <span class="keyword">return</span> <a href="generic_protected.ads.html#generic_protected.ads:28:9" title="defined at generic_protected.ads:28:9">Protected_Point_3D.Monitor_Ptr</a>;</td></tr></table></pre></div>
+            <div class='profile'>
+              <h4>References:</h4>
+                <div><i><a href="src_swarm_control.ads.html#l22" title="swarm_control.ads:22:16">swarm_control.ads:22:16</a> (declaration)</i></div>
+                <div><i><a href="src_swarm_control.adb.html#l47" title="swarm_control.adb:47:16">swarm_control.adb:47:16</a> (body)</i></div>
+                <div><i><a href="src_vehicle_interface.adb.html#l21" title="vehicle_interface.adb:21:21">vehicle_interface.adb:21:21</a> (call)</i></div>
+            </div>
+          </div>
+        </div>
+        <div class='class'>
+          <div>
+            <h3>
+              <a name='swarm_control.ads:23:16' id='swarm_control.ads:23:16'></a>
+              <span class="type"><a href="#swarm_control.ads:17:14">Swarm_Monitor</a></span>.
+<span class="droplink">Velocity<ul>
+  <li><a href="src_swarm_control.ads.html#l23">Goto spec in source</a></li>
+  <li><a href="src_swarm_control.adb.html#l50">Goto body in source</a></li>
+</ul></span>
+            </h3>
+            <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Velocity</span>      <table><tr><td>(</td><td><span class="name"><a name="swarm_control.ads:23:31"></a>Id</span></td><td>: Task_Id) <span class="keyword">return</span> <a href="generic_protected.ads.html#generic_protected.ads:28:9" title="defined at generic_protected.ads:28:9">Protected_Vector_3D.Monitor_Ptr</a>;</td></tr></table></pre></div>
+            <div class='profile'>
+              <h4>References:</h4>
+                <div><i><a href="src_swarm_control.ads.html#l23" title="swarm_control.ads:23:16">swarm_control.ads:23:16</a> (declaration)</i></div>
+                <div><i><a href="src_swarm_control.adb.html#l50" title="swarm_control.adb:50:16">swarm_control.adb:50:16</a> (body)</i></div>
+                <div><i><a href="src_vehicle_interface.adb.html#l24" title="vehicle_interface.adb:24:21">vehicle_interface.adb:24:21</a> (call)</i></div>
+            </div>
+          </div>
+        </div>
+        <div class='class'>
+          <div>
+            <h3>
+              <a name='swarm_control.ads:24:16' id='swarm_control.ads:24:16'></a>
+              <span class="type"><a href="#swarm_control.ads:17:14">Swarm_Monitor</a></span>.
+<span class="droplink">Acceleration<ul>
+  <li><a href="src_swarm_control.ads.html#l24">Goto spec in source</a></li>
+  <li><a href="src_swarm_control.adb.html#l53">Goto body in source</a></li>
+</ul></span>
+            </h3>
+            <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Acceleration</span>  <table><tr><td>(</td><td><span class="name"><a name="swarm_control.ads:24:31"></a>Id</span></td><td>: Task_Id) <span class="keyword">return</span> <a href="generic_protected.ads.html#generic_protected.ads:28:9" title="defined at generic_protected.ads:28:9">Protected_Vector_3D.Monitor_Ptr</a>;</td></tr></table></pre></div>
+            <div class='profile'>
+              <h4>References:</h4>
+                <div><i><a href="src_swarm_control.ads.html#l24" title="swarm_control.ads:24:16">swarm_control.ads:24:16</a> (declaration)</i></div>
+                <div><i><a href="src_swarm_control.adb.html#l53" title="swarm_control.adb:53:16">swarm_control.adb:53:16</a> (body)</i></div>
+                <div><i><a href="src_vehicle_interface.adb.html#l27" title="vehicle_interface.adb:27:21">vehicle_interface.adb:27:21</a> (call)</i></div>
+            </div>
+          </div>
+        </div>
+        <div class='class'>
+          <div>
+            <h3>
+              <a name='swarm_control.ads:25:16' id='swarm_control.ads:25:16'></a>
+              <span class="type"><a href="#swarm_control.ads:17:14">Swarm_Monitor</a></span>.
+<span class="droplink">Controls<ul>
+  <li><a href="src_swarm_control.ads.html#l25">Goto spec in source</a></li>
+  <li><a href="src_swarm_control.adb.html#l56">Goto body in source</a></li>
+</ul></span>
+            </h3>
+            <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Controls</span>      <table><tr><td>(</td><td><span class="name"><a name="swarm_control.ads:25:31"></a>Id</span></td><td>: Task_Id) <span class="keyword">return</span> <a href="swarm_structures.ads.html#swarm_structures.ads:88:9" title="defined at swarm_structures.ads:88:9">Vehicle_Controls_P</a>;</td></tr></table></pre></div>
+            <div class='profile'>
+              <h4>References:</h4>
+                <div><i><a href="src_swarm_control.ads.html#l25" title="swarm_control.ads:25:16">swarm_control.ads:25:16</a> (declaration)</i></div>
+                <div><i><a href="src_swarm_control.adb.html#l56" title="swarm_control.adb:56:16">swarm_control.adb:56:16</a> (body)</i></div>
+                <div><i><a href="src_vehicle_interface.adb.html#l36" title="vehicle_interface.adb:36:21">vehicle_interface.adb:36:21</a> (call)</i></div>
+                <div><i><a href="src_vehicle_interface.adb.html#l46" title="vehicle_interface.adb:46:21">vehicle_interface.adb:46:21</a> (call)</i></div>
+                <div><i><a href="src_vehicle_interface.adb.html#l50" title="vehicle_interface.adb:50:21">vehicle_interface.adb:50:21</a> (call)</i></div>
+            </div>
+            <div class='profile'>
+              <h4>Called by:</h4>
+                <div><i><a href="vehicle_interface.ads.html#vehicle_interface.ads:24:14" title="defined at vehicle_interface.ads:24:14">Vehicle_Interface.Set_Destination</a> defined at <a href="src_vehicle_interface.ads.html#l24" title="vehicle_interface.ads:24:14">vehicle_interface.ads:24:14</a></i></div>
+                <div><i><a href="vehicle_interface.ads.html#vehicle_interface.ads:30:14" title="defined at vehicle_interface.ads:30:14">Vehicle_Interface.Set_Throttle</a> defined at <a href="src_vehicle_interface.ads.html#l30" title="vehicle_interface.ads:30:14">vehicle_interface.ads:30:14</a></i></div>
+            </div>
+          </div>
+        </div>
+        <div class='class'>
+          <div>
+            <h3>
+              <a name='swarm_control.ads:26:16' id='swarm_control.ads:26:16'></a>
+              <span class="type"><a href="#swarm_control.ads:17:14">Swarm_Monitor</a></span>.
+<span class="droplink">Comms<ul>
+  <li><a href="src_swarm_control.ads.html#l26">Goto spec in source</a></li>
+  <li><a href="src_swarm_control.adb.html#l59">Goto body in source</a></li>
+</ul></span>
+            </h3>
+            <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Comms</span>         <table><tr><td>(</td><td><span class="name"><a name="swarm_control.ads:26:31"></a>Id</span></td><td>: Task_Id) <span class="keyword">return</span> <a href="swarm_structures.ads.html#swarm_structures.ads:87:9" title="defined at swarm_structures.ads:87:9">Vehicle_Comms_P</a>;</td></tr></table></pre></div>
+            <div class='profile'>
+              <h4>References:</h4>
+                <div><i><a href="src_swarm_control.ads.html#l26" title="swarm_control.ads:26:16">swarm_control.ads:26:16</a> (declaration)</i></div>
+                <div><i><a href="src_swarm_control.adb.html#l59" title="swarm_control.adb:59:16">swarm_control.adb:59:16</a> (body)</i></div>
+                <div><i><a href="src_vehicle_interface.adb.html#l59" title="vehicle_interface.adb:59:21">vehicle_interface.adb:59:21</a> (call)</i></div>
+                <div><i><a href="src_vehicle_interface.adb.html#l65" title="vehicle_interface.adb:65:21">vehicle_interface.adb:65:21</a> (call)</i></div>
+                <div><i><a href="src_vehicle_interface.adb.html#l69" title="vehicle_interface.adb:69:21">vehicle_interface.adb:69:21</a> (call)</i></div>
+            </div>
+            <div class='profile'>
+              <h4>Called by:</h4>
+                <div><i><a href="vehicle_interface.ads.html#vehicle_interface.ads:39:14" title="defined at vehicle_interface.ads:39:14">Vehicle_Interface.Receive</a> defined at <a href="src_vehicle_interface.ads.html#l39" title="vehicle_interface.ads:39:14">vehicle_interface.ads:39:14</a></i></div>
+                <div><i><a href="vehicle_interface.ads.html#vehicle_interface.ads:38:14" title="defined at vehicle_interface.ads:38:14">Vehicle_Interface.Send</a> defined at <a href="src_vehicle_interface.ads.html#l38" title="vehicle_interface.ads:38:14">vehicle_interface.ads:38:14</a></i></div>
+            </div>
+          </div>
+        </div>
+        <div class='class'>
+          <div>
+            <h3>
+              <a name='swarm_control.ads:27:16' id='swarm_control.ads:27:16'></a>
+              <span class="type"><a href="#swarm_control.ads:17:14">Swarm_Monitor</a></span>.
+<span class="droplink">Charge<ul>
+  <li><a href="src_swarm_control.ads.html#l27">Goto spec in source</a></li>
+  <li><a href="src_swarm_control.adb.html#l62">Goto body in source</a></li>
+</ul></span>
+            </h3>
+            <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Charge</span>        <table><tr><td>(</td><td><span class="name"><a name="swarm_control.ads:27:31"></a>Id</span></td><td>: Task_Id) <span class="keyword">return</span> <a href="swarm_structures.ads.html#swarm_structures.ads:79:9" title="defined at swarm_structures.ads:79:9">Charge_Info</a>;</td></tr></table></pre></div>
+            <div class='profile'>
+              <h4>References:</h4>
+                <div><i><a href="src_swarm_control.ads.html#l27" title="swarm_control.ads:27:16">swarm_control.ads:27:16</a> (declaration)</i></div>
+                <div><i><a href="src_swarm_control.adb.html#l62" title="swarm_control.adb:62:16">swarm_control.adb:62:16</a> (body)</i></div>
+                <div><i><a href="src_vehicle_interface.adb.html#l76" title="vehicle_interface.adb:76:21">vehicle_interface.adb:76:21</a> (call)</i></div>
+            </div>
+          </div>
+        </div>
+        <div class='class'>
+          <div>
+            <h3>
+              <a name='swarm_control.ads:28:16' id='swarm_control.ads:28:16'></a>
+              <span class="type"><a href="#swarm_control.ads:17:14">Swarm_Monitor</a></span>.
+<span class="droplink">Process_abort<ul>
+  <li><a href="src_swarm_control.ads.html#l28">Goto spec in source</a></li>
+  <li><a href="src_swarm_control.adb.html#l65">Goto body in source</a></li>
+</ul></span>
+            </h3>
+            <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Process_abort</span>                <span class="keyword">return</span> <a href="barrier_type.ads.html#barrier_type.ads:20:9" title="defined at barrier_type.ads:20:9">Barrier_Ptr</a>;</pre></div>
+            <div class='profile'>
+              <h4>References:</h4>
+                <div><i><a href="src_swarm_control.ads.html#l28" title="swarm_control.ads:28:16">swarm_control.ads:28:16</a> (declaration)</i></div>
+                <div><i><a href="src_swarm_control.adb.html#l65" title="swarm_control.adb:65:16">swarm_control.adb:65:16</a> (body)</i></div>
+                <div><i><a href="src_vehicle_interface.adb.html#l127" title="vehicle_interface.adb:127:32">vehicle_interface.adb:127:32</a> (call)</i></div>
+            </div>
+            <div class='profile'>
+              <h4>Called by:</h4>
+                <div><i><a href="vehicle_interface.ads.html#vehicle_interface.ads:62:13" title="defined at vehicle_interface.ads:62:13">Vehicle_Interface.Stop</a> defined at <a href="src_vehicle_interface.ads.html#l62" title="vehicle_interface.ads:62:13">vehicle_interface.ads:62:13</a></i></div>
+            </div>
+          </div>
+        </div>
+        <div class='class'>
+          <div>
+            <h3>
+              <a name='swarm_control.ads:30:17' id='swarm_control.ads:30:17'></a>
+              <span class="type"><a href="#swarm_control.ads:17:14">Swarm_Monitor</a></span>.
+<span class="droplink">Append_Random_Swarm<ul>
+  <li><a href="src_swarm_control.ads.html#l30">Goto spec in source</a></li>
+  <li><a href="src_swarm_control.adb.html#l71">Goto body in source</a></li>
+</ul></span>
+            </h3>
+            <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Append_Random_Swarm</span> <table><tr><td>(</td><td><span class="name"><a name="swarm_control.ads:30:38"></a>No_Of_Swarm_Elements</span></td><td>: Positive  := <a href="swarm_configuration.ads.html#swarm_configuration.ads:23:4" title="defined at swarm_configuration.ads:23:4">Initial_No_of_Elements</a>;</td></tr><tr><td></td><td><span class="name"><a name="swarm_control.ads:31:38"></a>Centre</span></td><td>: <a href="swarm_structures_base.ads.html#swarm_structures_base.ads:15:12" title="defined at swarm_structures_base.ads:15:12">Positions</a> := <a href="swarm_configuration.ads.html#swarm_configuration.ads:24:4" title="defined at swarm_configuration.ads:24:4">Initial_Swarm_Position</a>;</td></tr><tr><td></td><td><span class="name"><a name="swarm_control.ads:32:38"></a>Volume_Edge_Length</span></td><td>: <a href="real_type.ads.html#real_type.ads:5:12" title="defined at real_type.ads:5:12">Real</a>      := <a href="swarm_configuration.ads.html#swarm_configuration.ads:25:4" title="defined at swarm_configuration.ads:25:4">Initual_Edge_Length</a>);</td></tr></table></pre></div>
+            <div class='profile'>
+              <h4>References:</h4>
+                <div><i><a href="src_swarm_control.ads.html#l30" title="swarm_control.ads:30:17">swarm_control.ads:30:17</a> (declaration)</i></div>
+                <div><i><a href="src_callback_procedures.adb.html#l136" title="callback_procedures.adb:136:42">callback_procedures.adb:136:42</a> (call)</i></div>
+                <div><i><a href="src_callback_procedures.adb.html#l138" title="callback_procedures.adb:138:42">callback_procedures.adb:138:42</a> (call)</i></div>
+                <div><i><a href="src_callback_procedures.adb.html#l466" title="callback_procedures.adb:466:21">callback_procedures.adb:466:21</a> (call)</i></div>
+                <div><i><a href="src_swarm_control.adb.html#l71" title="swarm_control.adb:71:17">swarm_control.adb:71:17</a> (body)</i></div>
+                <div><i><a href="src_swarm_control.adb.html#l119" title="swarm_control.adb:119:11">swarm_control.adb:119:11</a> (label)</i></div>
+            </div>
+            <div class='profile'>
+              <h4>Called by:</h4>
+                <div><i><a href="callback_procedures.adb-2.html#callback_procedures.adb:47:17" title="defined at callback_procedures.adb:47:17">Callback_Procedures.Execute_Commands.Act_On_Input</a> defined at <a href="src_callback_procedures.adb.html#l47" title="callback_procedures.adb:47:17">callback_procedures.adb:47:17</a></i></div>
+                <div><i><a href="callback_procedures.adb-2.html#callback_procedures.adb:47:17" title="defined at callback_procedures.adb:47:17">Callback_Procedures.Execute_Commands.Act_On_Input</a> defined at <a href="src_callback_procedures.adb.html#l47" title="callback_procedures.adb:47:17">callback_procedures.adb:47:17</a></i></div>
+                <div><i><a href="callback_procedures.adb.html#callback_procedures.adb:462:14" title="defined at callback_procedures.adb:462:14">Callback_Procedures.Initialize_Environment</a> defined at <a href="src_callback_procedures.adb.html#l462" title="callback_procedures.adb:462:14">callback_procedures.adb:462:14</a></i></div>
+            </div>
+          </div>
+        </div>
+        <div class='class'>
+          <div>
+            <h3>
+              <a name='swarm_control.ads:34:17' id='swarm_control.ads:34:17'></a>
+              <span class="type"><a href="#swarm_control.ads:17:14">Swarm_Monitor</a></span>.
+<span class="droplink">Remove_Vehicle<ul>
+  <li><a href="src_swarm_control.ads.html#l34">Goto spec in source</a></li>
+  <li><a href="src_swarm_control.adb.html#l125">Goto body in source</a></li>
+</ul></span>
+            </h3>
+            <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Remove_Vehicle</span> <table><tr><td>(</td><td><span class="name"><a name="swarm_control.ads:34:33"></a>Element_Ix</span></td><td>: <a href="swarm_structures_base.ads.html#swarm_structures_base.ads:19:12" title="defined at swarm_structures_base.ads:19:12">Swarm_Element_Index</a>);</td></tr></table></pre></div>
+            <div class='profile'>
+              <h4>References:</h4>
+                <div><i><a href="src_swarm_control.ads.html#l34" title="swarm_control.ads:34:17">swarm_control.ads:34:17</a> (declaration)</i></div>
+                <div><i><a href="src_swarm_control.adb.html#l125" title="swarm_control.adb:125:17">swarm_control.adb:125:17</a> (body)</i></div>
+                <div><i><a href="src_swarm_control.adb.html#l145" title="swarm_control.adb:145:11">swarm_control.adb:145:11</a> (label)</i></div>
+                <div><i><a href="src_swarm_control.adb.html#l294" title="swarm_control.adb:294:21">swarm_control.adb:294:21</a> (call)</i></div>
+            </div>
+            <div class='profile'>
+              <h4>Called by:</h4>
+                <div><i><a href="swarm_control.adb.html#swarm_control.adb:269:14" title="defined at swarm_control.adb:269:14">Swarm_Control.Remove_Vehicle_in_Stages</a> defined at <a href="src_swarm_control.adb.html#l269" title="swarm_control.adb:269:14">swarm_control.adb:269:14</a></i></div>
+            </div>
+          </div>
+        </div>
+        <div class='class'>
+          <div>
+            <h3>
+              <a name='swarm_control.ads:36:16' id='swarm_control.ads:36:16'></a>
+              <span class="type"><a href="#swarm_control.ads:17:14">Swarm_Monitor</a></span>.
+<span class="droplink">Centre_Of_Gravity<ul>
+  <li><a href="src_swarm_control.ads.html#l36">Goto spec in source</a></li>
+  <li><a href="src_swarm_control.adb.html#l151">Goto body in source</a></li>
+</ul></span>
+            </h3>
+            <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Centre_Of_Gravity</span>     <span class="keyword">return</span> <a href="vectors_3d.ads.html#vectors_3d.ads:14:12" title="defined at vectors_3d.ads:14:12">Vector_3D</a>;</pre></div>
+            <div class='profile'>
+              <h4>References:</h4>
+                <div><i><a href="src_swarm_control.ads.html#l36" title="swarm_control.ads:36:16">swarm_control.ads:36:16</a> (declaration)</i></div>
+                <div><i><a href="src_callback_procedures.adb.html#l138" title="callback_procedures.adb:138:80">callback_procedures.adb:138:80</a> (call)</i></div>
+                <div><i><a href="src_callback_procedures.adb.html#l185" title="callback_procedures.adb:185:49">callback_procedures.adb:185:49</a> (call)</i></div>
+                <div><i><a href="src_callback_procedures.adb.html#l263" title="callback_procedures.adb:263:79">callback_procedures.adb:263:79</a> (call)</i></div>
+                <div><i><a href="src_callback_procedures.adb.html#l296" title="callback_procedures.adb:296:81">callback_procedures.adb:296:81</a> (call)</i></div>
+                <div><i><a href="src_callback_procedures.adb.html#l297" title="callback_procedures.adb:297:81">callback_procedures.adb:297:81</a> (call)</i></div>
+                <div><i><a href="src_callback_procedures.adb.html#l337" title="callback_procedures.adb:337:81">callback_procedures.adb:337:81</a> (call)</i></div>
+                <div><i><a href="src_callback_procedures.adb.html#l338" title="callback_procedures.adb:338:81">callback_procedures.adb:338:81</a> (call)</i></div>
+                <div><i><a href="src_callback_procedures.adb.html#l358" title="callback_procedures.adb:358:79">callback_procedures.adb:358:79</a> (call)</i></div>
+                <div><i><a href="src_swarm_control.adb.html#l151" title="swarm_control.adb:151:16">swarm_control.adb:151:16</a> (body)</i></div>
+                <div><i><a href="src_swarm_control.adb.html#l160" title="swarm_control.adb:160:11">swarm_control.adb:160:11</a> (label)</i></div>
+                <div><i><a href="src_swarm_control.adb.html#l198" title="swarm_control.adb:198:41">swarm_control.adb:198:41</a> (call)</i></div>
+                <div><i><a href="src_swarm_control.adb.html#l219" title="swarm_control.adb:219:38">swarm_control.adb:219:38</a> (call)</i></div>
+            </div>
+            <div class='profile'>
+              <h4>Called by:</h4>
+                <div><i><a href="callback_procedures.adb-2.html#callback_procedures.adb:47:17" title="defined at callback_procedures.adb:47:17">Callback_Procedures.Execute_Commands.Act_On_Input</a> defined at <a href="src_callback_procedures.adb.html#l47" title="callback_procedures.adb:47:17">callback_procedures.adb:47:17</a></i></div>
+                <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+                <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+                <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+                <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+                <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+                <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+                <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+                <div><i><a href="swarm_control.ads.html#swarm_control.ads:39:16" title="defined at swarm_control.ads:39:16">Maximal_Radius</a> defined at <a href="src_swarm_control.ads.html#l39" title="swarm_control.ads:39:16">swarm_control.ads:39:16</a></i></div>
+                <div><i><a href="swarm_control.ads.html#swarm_control.ads:40:16" title="defined at swarm_control.ads:40:16">Mean_Radius</a> defined at <a href="src_swarm_control.ads.html#l40" title="swarm_control.ads:40:16">swarm_control.ads:40:16</a></i></div>
+            </div>
+          </div>
+        </div>
+        <div class='class'>
+          <div>
+            <h3>
+              <a name='swarm_control.ads:37:16' id='swarm_control.ads:37:16'></a>
+              <span class="type"><a href="#swarm_control.ads:17:14">Swarm_Monitor</a></span>.
+<span class="droplink">Mean_Velocity<ul>
+  <li><a href="src_swarm_control.ads.html#l37">Goto spec in source</a></li>
+  <li><a href="src_swarm_control.adb.html#l166">Goto body in source</a></li>
+</ul></span>
+            </h3>
+            <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Mean_Velocity</span>         <span class="keyword">return</span> <a href="vectors_3d.ads.html#vectors_3d.ads:14:12" title="defined at vectors_3d.ads:14:12">Vector_3D</a>;</pre></div>
+            <div class='profile'>
+              <h4>References:</h4>
+                <div><i><a href="src_swarm_control.ads.html#l37" title="swarm_control.ads:37:16">swarm_control.ads:37:16</a> (declaration)</i></div>
+                <div><i><a href="src_callback_procedures.adb.html#l417" title="callback_procedures.adb:417:119">callback_procedures.adb:417:119</a> (call)</i></div>
+                <div><i><a href="src_swarm_control.adb.html#l166" title="swarm_control.adb:166:16">swarm_control.adb:166:16</a> (body)</i></div>
+                <div><i><a href="src_swarm_control.adb.html#l175" title="swarm_control.adb:175:11">swarm_control.adb:175:11</a> (label)</i></div>
+            </div>
+            <div class='profile'>
+              <h4>Called by:</h4>
+                <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+            </div>
+          </div>
+        </div>
+        <div class='class'>
+          <div>
+            <h3>
+              <a name='swarm_control.ads:38:16' id='swarm_control.ads:38:16'></a>
+              <span class="type"><a href="#swarm_control.ads:17:14">Swarm_Monitor</a></span>.
+<span class="droplink">Mean_Velocity<ul>
+  <li><a href="src_swarm_control.ads.html#l38">Goto spec in source</a></li>
+  <li><a href="src_swarm_control.adb.html#l181">Goto body in source</a></li>
+</ul></span>
+            </h3>
+            <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Mean_Velocity</span>         <span class="keyword">return</span> <a href="real_type.ads.html#real_type.ads:5:12" title="defined at real_type.ads:5:12">Real</a>;</pre></div>
+            <div class='profile'>
+              <h4>References:</h4>
+                <div><i><a href="src_swarm_control.ads.html#l38" title="swarm_control.ads:38:16">swarm_control.ads:38:16</a> (declaration)</i></div>
+                <div><i><a href="src_callback_procedures.adb.html#l418" title="callback_procedures.adb:418:101">callback_procedures.adb:418:101</a> (call)</i></div>
+                <div><i><a href="src_swarm_control.adb.html#l181" title="swarm_control.adb:181:16">swarm_control.adb:181:16</a> (body)</i></div>
+                <div><i><a href="src_swarm_control.adb.html#l190" title="swarm_control.adb:190:11">swarm_control.adb:190:11</a> (label)</i></div>
+            </div>
+            <div class='profile'>
+              <h4>Called by:</h4>
+                <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+            </div>
+          </div>
+        </div>
+        <div class='class'>
+          <div>
+            <h3>
+              <a name='swarm_control.ads:39:16' id='swarm_control.ads:39:16'></a>
+              <span class="type"><a href="#swarm_control.ads:17:14">Swarm_Monitor</a></span>.
+<span class="droplink">Maximal_Radius<ul>
+  <li><a href="src_swarm_control.ads.html#l39">Goto spec in source</a></li>
+  <li><a href="src_swarm_control.adb.html#l196">Goto body in source</a></li>
+</ul></span>
+            </h3>
+            <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Maximal_Radius</span>        <span class="keyword">return</span> <a href="real_type.ads.html#real_type.ads:5:12" title="defined at real_type.ads:5:12">Real</a>;</pre></div>
+            <div class='profile'>
+              <h4>References:</h4>
+                <div><i><a href="src_swarm_control.ads.html#l39" title="swarm_control.ads:39:16">swarm_control.ads:39:16</a> (declaration)</i></div>
+                <div><i><a href="src_callback_procedures.adb.html#l419" title="callback_procedures.adb:419:101">callback_procedures.adb:419:101</a> (call)</i></div>
+                <div><i><a href="src_swarm_control.adb.html#l196" title="swarm_control.adb:196:16">swarm_control.adb:196:16</a> (body)</i></div>
+                <div><i><a href="src_swarm_control.adb.html#l211" title="swarm_control.adb:211:11">swarm_control.adb:211:11</a> (label)</i></div>
+            </div>
+            <div class='profile'>
+              <h4>Called by:</h4>
+                <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+            </div>
+          </div>
+        </div>
+        <div class='class'>
+          <div>
+            <h3>
+              <a name='swarm_control.ads:40:16' id='swarm_control.ads:40:16'></a>
+              <span class="type"><a href="#swarm_control.ads:17:14">Swarm_Monitor</a></span>.
+<span class="droplink">Mean_Radius<ul>
+  <li><a href="src_swarm_control.ads.html#l40">Goto spec in source</a></li>
+  <li><a href="src_swarm_control.adb.html#l217">Goto body in source</a></li>
+</ul></span>
+            </h3>
+            <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Mean_Radius</span>           <span class="keyword">return</span> <a href="real_type.ads.html#real_type.ads:5:12" title="defined at real_type.ads:5:12">Real</a>;</pre></div>
+            <div class='profile'>
+              <h4>References:</h4>
+                <div><i><a href="src_swarm_control.ads.html#l40" title="swarm_control.ads:40:16">swarm_control.ads:40:16</a> (declaration)</i></div>
+                <div><i><a href="src_callback_procedures.adb.html#l257" title="callback_procedures.adb:257:68">callback_procedures.adb:257:68</a> (call)</i></div>
+                <div><i><a href="src_callback_procedures.adb.html#l286" title="callback_procedures.adb:286:68">callback_procedures.adb:286:68</a> (call)</i></div>
+                <div><i><a href="src_callback_procedures.adb.html#l327" title="callback_procedures.adb:327:68">callback_procedures.adb:327:68</a> (call)</i></div>
+                <div><i><a href="src_callback_procedures.adb.html#l420" title="callback_procedures.adb:420:101">callback_procedures.adb:420:101</a> (call)</i></div>
+                <div><i><a href="src_swarm_control.adb.html#l217" title="swarm_control.adb:217:16">swarm_control.adb:217:16</a> (body)</i></div>
+                <div><i><a href="src_swarm_control.adb.html#l232" title="swarm_control.adb:232:11">swarm_control.adb:232:11</a> (label)</i></div>
+            </div>
+            <div class='profile'>
+              <h4>Called by:</h4>
+                <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+                <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+                <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+                <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+            </div>
+          </div>
+        </div>
+        <div class='class'>
+          <div>
+            <h3>
+              <a name='swarm_control.ads:41:16' id='swarm_control.ads:41:16'></a>
+              <span class="type"><a href="#swarm_control.ads:17:14">Swarm_Monitor</a></span>.
+<span class="droplink">Mean_Closest_Distance<ul>
+  <li><a href="src_swarm_control.ads.html#l41">Goto spec in source</a></li>
+  <li><a href="src_swarm_control.adb.html#l238">Goto body in source</a></li>
+</ul></span>
+            </h3>
+            <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Mean_Closest_Distance</span> <span class="keyword">return</span> <a href="real_type.ads.html#real_type.ads:5:12" title="defined at real_type.ads:5:12">Real</a>;</pre></div>
+            <div class='profile'>
+              <h4>References:</h4>
+                <div><i><a href="src_swarm_control.ads.html#l41" title="swarm_control.ads:41:16">swarm_control.ads:41:16</a> (declaration)</i></div>
+                <div><i><a href="src_callback_procedures.adb.html#l421" title="callback_procedures.adb:421:101">callback_procedures.adb:421:101</a> (call)</i></div>
+                <div><i><a href="src_swarm_control.adb.html#l238" title="swarm_control.adb:238:16">swarm_control.adb:238:16</a> (body)</i></div>
+                <div><i><a href="src_swarm_control.adb.html#l259" title="swarm_control.adb:259:11">swarm_control.adb:259:11</a> (label)</i></div>
+            </div>
+            <div class='profile'>
+              <h4>Called by:</h4>
+                <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+            </div>
+          </div>
+        </div>
+        <div class='class'>
+          <div>
+            <h3>
+              <a name='swarm_control.ads:44:7' id='swarm_control.ads:44:7'></a>
+              <span class="type"><a href="#swarm_control.ads:17:14">Swarm_Monitor</a></span>.
+<span class="droplink">Last_Vehicle_Id (private)<ul>
+  <li><a href="src_swarm_control.ads.html#l44">Goto spec in source</a></li>
+</ul></span>
+            </h3>
+            <div class='details'><pre><span class="name_emphasis">Last_Vehicle_Id</span></td><td>: Natural := 0;</pre></div>
+            <div class='profile'>
+              <h4>References:</h4>
+                <div><i><a href="src_swarm_control.ads.html#l44" title="swarm_control.ads:44:7">swarm_control.ads:44:7</a> (declaration)</i></div>
+                <div><i><a href="src_swarm_control.adb.html#l103" title="swarm_control.adb:103:53">swarm_control.adb:103:53</a> (reference)</i></div>
+                <div><i><a href="src_swarm_control.adb.html#l106" title="swarm_control.adb:106:19">swarm_control.adb:106:19</a> (reference)</i></div>
+            </div>
+            <div class='profile'>
+              <h4>Called by:</h4>
+                <div><i><a href="swarm_control.ads.html#swarm_control.ads:30:17" title="defined at swarm_control.ads:30:17">Append_Random_Swarm</a> defined at <a href="src_swarm_control.ads.html#l30" title="swarm_control.ads:30:17">swarm_control.ads:30:17</a></i></div>
+                <div><i><a href="swarm_control.ads.html#swarm_control.ads:30:17" title="defined at swarm_control.ads:30:17">Append_Random_Swarm</a> defined at <a href="src_swarm_control.ads.html#l30" title="swarm_control.ads:30:17">swarm_control.ads:30:17</a></i></div>
+            </div>
+          </div>
+        </div>
+      <div class="class">
+        <h3>
+          <a name='swarm_control.ads:52:14' id='swarm_control.ads:52:14'></a>
+<span class="droplink">Remove_Vehicles<ul>
+  <li><a href="src_swarm_control.ads.html#l52">Goto spec in source</a></li>
+  <li><a href="src_swarm_control.adb.html#l297">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Remove_Vehicles</span> <table><tr><td>(</td><td><span class="name"><a name="swarm_control.ads:52:31"></a>No_Of_Swarm_Elements</span></td><td>: Positive  := 1);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_swarm_control.ads.html#l52" title="swarm_control.ads:52:14">swarm_control.ads:52:14</a> (declaration)</i></div>
+            <div><i><a href="src_callback_procedures.adb.html#l143" title="callback_procedures.adb:143:25">callback_procedures.adb:143:25</a> (call)</i></div>
+            <div><i><a href="src_swarm_control.adb.html#l297" title="swarm_control.adb:297:14">swarm_control.adb:297:14</a> (body)</i></div>
+            <div><i><a href="src_swarm_control.adb.html#l305" title="swarm_control.adb:305:8">swarm_control.adb:305:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="callback_procedures.adb-2.html#callback_procedures.adb:47:17" title="defined at callback_procedures.adb:47:17">Callback_Procedures.Execute_Commands.Act_On_Input</a> defined at <a href="src_callback_procedures.adb.html#l47" title="callback_procedures.adb:47:17">callback_procedures.adb:47:17</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>Ada.Containers.Vectors.Last_Index defined at a-convec.ads:289:13</i></div>
+            <div><i>Ada.Containers.Vectors.Length defined at a-convec.ads:97:13</i></div>
+            <div><i><a href="swarm_control.adb.html#swarm_control.adb:269:14" title="defined at swarm_control.adb:269:14">Swarm_Control.Remove_Vehicle_in_Stages</a> defined at <a href="src_swarm_control.adb.html#l269" title="swarm_control.adb:269:14">swarm_control.adb:269:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='swarm_control.ads:54:14' id='swarm_control.ads:54:14'></a>
+<span class="droplink">Set_Acceleration<ul>
+  <li><a href="src_swarm_control.ads.html#l54">Goto spec in source</a></li>
+  <li><a href="src_swarm_control.adb.html#l345">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Set_Acceleration</span> <table><tr><td>(</td><td><span class="name"><a name="swarm_control.ads:54:32"></a>Element_Index</span></td><td>: <a href="swarm_structures_base.ads.html#swarm_structures_base.ads:19:12" title="defined at swarm_structures_base.ads:19:12">Swarm_Element_Index</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_swarm_control.ads.html#l54" title="swarm_control.ads:54:14">swarm_control.ads:54:14</a> (declaration)</i></div>
+            <div><i><a href="src_swarm_control.adb.html#l345" title="swarm_control.adb:345:14">swarm_control.adb:345:14</a> (body)</i></div>
+            <div><i><a href="src_swarm_control.adb.html#l408" title="swarm_control.adb:408:8">swarm_control.adb:408:8</a> (label)</i></div>
+            <div><i><a href="src_swarm_control.adb.html#l418" title="swarm_control.adb:418:10">swarm_control.adb:418:10</a> (call)</i></div>
+            <div><i><a href="src_swarm_control_concurrent_generic.adb.html#l60" title="swarm_control_concurrent_generic.adb:60:45">swarm_control_concurrent_generic.adb:60:45</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="swarm_control.ads.html#swarm_control.ads:55:14" title="defined at swarm_control.ads:55:14">Set_All_Accelerations</a> defined at <a href="src_swarm_control.ads.html#l55" title="swarm_control.ads:55:14">swarm_control.ads:55:14</a></i></div>
+            <div><i><a href="swarm_control_concurrent_generic.adb.html#swarm_control_concurrent_generic.adb:35:14" title="defined at swarm_control_concurrent_generic.adb:35:14">Swarm_Control_Concurrent_Generic.Worker</a> defined at <a href="src_swarm_control_concurrent_generic.adb.html#l35" title="swarm_control_concurrent_generic.adb:35:14">swarm_control_concurrent_generic.adb:35:14</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>Ada.Containers.Vectors.Element defined at a-convec.ads:113:13</i></div>
+            <div><i>Ada.Containers.Vectors.First_Index defined at a-convec.ads:283:13</i></div>
+            <div><i>Ada.Containers.Vectors.Last_Index defined at a-convec.ads:289:13</i></div>
+            <div><i>Ada.Containers.Vectors.Replace_Element defined at a-convec.ads:119:14</i></div>
+            <div><i>Ada.Numerics.Generic_Elementary_Functions.Cos defined at a-ngelfu.ads:78:13</i></div>
+            <div><i>Ada.Numerics.Generic_Elementary_Functions.Sin defined at a-ngelfu.ads:68:13</i></div>
+            <div><i><a href="generic_protected.ads.html#generic_protected.ads:16:16" title="defined at generic_protected.ads:16:16">Generic_Protected.Monitor.Read</a> defined at <a href="src_generic_protected.ads.html#l16" title="generic_protected.ads:16:16">generic_protected.ads:16:16</a></i></div>
+            <div><i><a href="generic_protected.ads.html#generic_protected.ads:18:17" title="defined at generic_protected.ads:18:17">Generic_Protected.Monitor.Write</a> defined at <a href="src_generic_protected.ads.html#l18" title="generic_protected.ads:18:17">generic_protected.ads:18:17</a></i></div>
+            <div><i><a href="swarm_configuration.ads.html#swarm_configuration.ads:77:13" title="defined at swarm_configuration.ads:77:13">Swarm_Configuration.Approach_Acceleration</a> defined at <a href="src_swarm_configuration.ads.html#l77" title="swarm_configuration.ads:77:13">swarm_configuration.ads:77:13</a></i></div>
+            <div><i><a href="swarm_configuration.ads.html#swarm_configuration.ads:75:13" title="defined at swarm_configuration.ads:75:13">Swarm_Configuration.Inter_Swarm_Acceleration</a> defined at <a href="src_swarm_configuration.ads.html#l75" title="swarm_configuration.ads:75:13">swarm_configuration.ads:75:13</a></i></div>
+            <div><i><a href="swarm_configuration.ads.html#swarm_configuration.ads:74:13" title="defined at swarm_configuration.ads:74:13">Swarm_Configuration.Inter_Swarm_Repulsion</a> defined at <a href="src_swarm_configuration.ads.html#l74" title="swarm_configuration.ads:74:13">swarm_configuration.ads:74:13</a></i></div>
+            <div><i><a href="swarm_configuration.ads.html#swarm_configuration.ads:81:13" title="defined at swarm_configuration.ads:81:13">Swarm_Configuration.Velocity_Matching</a> defined at <a href="src_swarm_configuration.ads.html#l81" title="swarm_configuration.ads:81:13">swarm_configuration.ads:81:13</a></i></div>
+            <div><i><a href="swarm_control.adb.html#swarm_control.adb:311:14" title="defined at swarm_control.adb:311:14">Swarm_Control.Sorted_Close_Distances</a> defined at <a href="src_swarm_control.adb.html#l311" title="swarm_control.adb:311:14">swarm_control.adb:311:14</a></i></div>
+            <div><i><a href="swarm_structures.ads.html#swarm_structures.ads:66:16" title="defined at swarm_structures.ads:66:16">Swarm_Structures.Vehicle_Controls.Read_Steering</a> defined at <a href="src_swarm_structures.ads.html#l66" title="swarm_structures.ads:66:16">swarm_structures.ads:66:16</a></i></div>
+            <div><i><a href="swarm_structures.ads.html#swarm_structures.ads:67:16" title="defined at swarm_structures.ads:67:16">Swarm_Structures.Vehicle_Controls.Read_Throttle</a> defined at <a href="src_swarm_structures.ads.html#l67" title="swarm_structures.ads:67:16">swarm_structures.ads:67:16</a></i></div>
+            <div><i><a href="swarm_structures.ads.html#swarm_structures.ads:65:17" title="defined at swarm_structures.ads:65:17">Swarm_Structures.Vehicle_Controls.Set_Throttle</a> defined at <a href="src_swarm_structures.ads.html#l65" title="swarm_structures.ads:65:17">swarm_structures.ads:65:17</a></i></div>
+            <div><i>Vectors_3D.* defined at <a href="src_vectors_3d.ads.html#l23" title="vectors_3d.ads:23:14">vectors_3d.ads:23:14</a></i></div>
+            <div><i>Vectors_3D.* defined at <a href="src_vectors_3d.ads.html#l22" title="vectors_3d.ads:22:14">vectors_3d.ads:22:14</a></i></div>
+            <div><i>Vectors_3D.+ defined at <a href="src_vectors_3d.ads.html#l31" title="vectors_3d.ads:31:14">vectors_3d.ads:31:14</a></i></div>
+            <div><i>Vectors_3D.- defined at <a href="src_vectors_3d.ads.html#l32" title="vectors_3d.ads:32:14">vectors_3d.ads:32:14</a></i></div>
+            <div><i>Vectors_3D.abs defined at <a href="src_vectors_3d.ads.html#l34" title="vectors_3d.ads:34:14">vectors_3d.ads:34:14</a></i></div>
+            <div><i><a href="vectors_3d.ads.html#vectors_3d.ads:29:13" title="defined at vectors_3d.ads:29:13">Vectors_3D.Angle_Between</a> defined at <a href="src_vectors_3d.ads.html#l29" title="vectors_3d.ads:29:13">vectors_3d.ads:29:13</a></i></div>
+            <div><i><a href="vectors_3d.ads.html#vectors_3d.ads:20:13" title="defined at vectors_3d.ads:20:13">Vectors_3D.Norm</a> defined at <a href="src_vectors_3d.ads.html#l20" title="vectors_3d.ads:20:13">vectors_3d.ads:20:13</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='swarm_control.ads:55:14' id='swarm_control.ads:55:14'></a>
+<span class="droplink">Set_All_Accelerations<ul>
+  <li><a href="src_swarm_control.ads.html#l55">Goto spec in source</a></li>
+  <li><a href="src_swarm_control.adb.html#l414">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Set_All_Accelerations</span>;</pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_swarm_control.ads.html#l55" title="swarm_control.ads:55:14">swarm_control.ads:55:14</a> (declaration)</i></div>
+            <div><i><a href="src_swarm_control.adb.html#l414" title="swarm_control.adb:414:14">swarm_control.adb:414:14</a> (body)</i></div>
+            <div><i><a href="src_swarm_control.adb.html#l420" title="swarm_control.adb:420:8">swarm_control.adb:420:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>Ada.Containers.Vectors.First_Index defined at a-convec.ads:283:13</i></div>
+            <div><i>Ada.Containers.Vectors.Last_Index defined at a-convec.ads:289:13</i></div>
+            <div><i><a href="swarm_control.ads.html#swarm_control.ads:54:14" title="defined at swarm_control.ads:54:14">Set_Acceleration</a> defined at <a href="src_swarm_control.ads.html#l54" title="swarm_control.ads:54:14">swarm_control.ads:54:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='swarm_control.ads:57:14' id='swarm_control.ads:57:14'></a>
+<span class="droplink">Forward_Messages<ul>
+  <li><a href="src_swarm_control.ads.html#l57">Goto spec in source</a></li>
+  <li><a href="src_swarm_control.adb.html#l426">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Forward_Messages</span> <table><tr><td>(</td><td><span class="name"><a name="swarm_control.ads:57:32"></a>Element_Index</span></td><td>: <a href="swarm_structures_base.ads.html#swarm_structures_base.ads:19:12" title="defined at swarm_structures_base.ads:19:12">Swarm_Element_Index</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_swarm_control.ads.html#l57" title="swarm_control.ads:57:14">swarm_control.ads:57:14</a> (declaration)</i></div>
+            <div><i><a href="src_swarm_control.adb.html#l426" title="swarm_control.adb:426:14">swarm_control.adb:426:14</a> (body)</i></div>
+            <div><i><a href="src_swarm_control.adb.html#l446" title="swarm_control.adb:446:8">swarm_control.adb:446:8</a> (label)</i></div>
+            <div><i><a href="src_swarm_control.adb.html#l456" title="swarm_control.adb:456:10">swarm_control.adb:456:10</a> (call)</i></div>
+            <div><i><a href="src_swarm_control_concurrent_generic.adb.html#l61" title="swarm_control_concurrent_generic.adb:61:45">swarm_control_concurrent_generic.adb:61:45</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="swarm_control.ads.html#swarm_control.ads:58:14" title="defined at swarm_control.ads:58:14">Forward_All_Messages</a> defined at <a href="src_swarm_control.ads.html#l58" title="swarm_control.ads:58:14">swarm_control.ads:58:14</a></i></div>
+            <div><i><a href="swarm_control_concurrent_generic.adb.html#swarm_control_concurrent_generic.adb:35:14" title="defined at swarm_control_concurrent_generic.adb:35:14">Swarm_Control_Concurrent_Generic.Worker</a> defined at <a href="src_swarm_control_concurrent_generic.adb.html#l35" title="swarm_control_concurrent_generic.adb:35:14">swarm_control_concurrent_generic.adb:35:14</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>Ada.Containers.Vectors.Element defined at a-convec.ads:113:13</i></div>
+            <div><i>Ada.Containers.Vectors.First_Index defined at a-convec.ads:283:13</i></div>
+            <div><i>Ada.Containers.Vectors.Last_Index defined at a-convec.ads:289:13</i></div>
+            <div><i><a href="swarm_structures.ads.html#swarm_structures.ads:55:17" title="defined at swarm_structures.ads:55:17">Swarm_Structures.Vehicle_Comms.Fetch_Message</a> defined at <a href="src_swarm_structures.ads.html#l55" title="swarm_structures.ads:55:17">swarm_structures.ads:55:17</a></i></div>
+            <div><i><a href="swarm_structures.ads.html#swarm_structures.ads:57:17" title="defined at swarm_structures.ads:57:17">Swarm_Structures.Vehicle_Comms.Has_Outgoing_Messages</a> defined at <a href="src_swarm_structures.ads.html#l57" title="swarm_structures.ads:57:17">swarm_structures.ads:57:17</a></i></div>
+            <div><i><a href="swarm_structures.ads.html#swarm_structures.ads:54:17" title="defined at swarm_structures.ads:54:17">Swarm_Structures.Vehicle_Comms.Push_Message</a> defined at <a href="src_swarm_structures.ads.html#l54" title="swarm_structures.ads:54:17">swarm_structures.ads:54:17</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='swarm_control.ads:58:14' id='swarm_control.ads:58:14'></a>
+<span class="droplink">Forward_All_Messages<ul>
+  <li><a href="src_swarm_control.ads.html#l58">Goto spec in source</a></li>
+  <li><a href="src_swarm_control.adb.html#l452">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Forward_All_Messages</span>;</pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_swarm_control.ads.html#l58" title="swarm_control.ads:58:14">swarm_control.ads:58:14</a> (declaration)</i></div>
+            <div><i><a href="src_swarm_control.adb.html#l452" title="swarm_control.adb:452:14">swarm_control.adb:452:14</a> (body)</i></div>
+            <div><i><a href="src_swarm_control.adb.html#l458" title="swarm_control.adb:458:8">swarm_control.adb:458:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>Ada.Containers.Vectors.First_Index defined at a-convec.ads:283:13</i></div>
+            <div><i>Ada.Containers.Vectors.Last_Index defined at a-convec.ads:289:13</i></div>
+            <div><i><a href="swarm_control.ads.html#swarm_control.ads:57:14" title="defined at swarm_control.ads:57:14">Forward_Messages</a> defined at <a href="src_swarm_control.ads.html#l57" title="swarm_control.ads:57:14">swarm_control.ads:57:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='swarm_control.ads:60:14' id='swarm_control.ads:60:14'></a>
+<span class="droplink">Move_Element<ul>
+  <li><a href="src_swarm_control.ads.html#l60">Goto spec in source</a></li>
+  <li><a href="src_swarm_control.adb.html#l464">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Move_Element</span> <table><tr><td>(</td><td><span class="name"><a name="swarm_control.ads:60:28"></a>Element_Index</span></td><td>: <a href="swarm_structures_base.ads.html#swarm_structures_base.ads:19:12" title="defined at swarm_structures_base.ads:19:12">Swarm_Element_Index</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_swarm_control.ads.html#l60" title="swarm_control.ads:60:14">swarm_control.ads:60:14</a> (declaration)</i></div>
+            <div><i><a href="src_swarm_control.adb.html#l464" title="swarm_control.adb:464:14">swarm_control.adb:464:14</a> (body)</i></div>
+            <div><i><a href="src_swarm_control.adb.html#l519" title="swarm_control.adb:519:8">swarm_control.adb:519:8</a> (label)</i></div>
+            <div><i><a href="src_swarm_control.adb.html#l529" title="swarm_control.adb:529:10">swarm_control.adb:529:10</a> (call)</i></div>
+            <div><i><a href="src_swarm_control_concurrent_generic.adb.html#l62" title="swarm_control_concurrent_generic.adb:62:45">swarm_control_concurrent_generic.adb:62:45</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="swarm_control.ads.html#swarm_control.ads:61:14" title="defined at swarm_control.ads:61:14">Move_All_Elements</a> defined at <a href="src_swarm_control.ads.html#l61" title="swarm_control.ads:61:14">swarm_control.ads:61:14</a></i></div>
+            <div><i><a href="swarm_control_concurrent_generic.adb.html#swarm_control_concurrent_generic.adb:35:14" title="defined at swarm_control_concurrent_generic.adb:35:14">Swarm_Control_Concurrent_Generic.Worker</a> defined at <a href="src_swarm_control_concurrent_generic.adb.html#l35" title="swarm_control_concurrent_generic.adb:35:14">swarm_control_concurrent_generic.adb:35:14</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>- defined at a-reatim.ads:58:14</i></div>
+            <div><i>> defined at a-reatim.ads:77:14</i></div>
+            <div><i>Ada.Containers.Vectors.Element defined at a-convec.ads:113:13</i></div>
+            <div><i>Ada.Containers.Vectors.Replace_Element defined at a-convec.ads:119:14</i></div>
+            <div><i>Clock defined at a-reatim.ads:53:13</i></div>
+            <div><i><a href="generic_protected.ads.html#generic_protected.ads:16:16" title="defined at generic_protected.ads:16:16">Generic_Protected.Monitor.Read</a> defined at <a href="src_generic_protected.ads.html#l16" title="generic_protected.ads:16:16">generic_protected.ads:16:16</a></i></div>
+            <div><i><a href="generic_protected.ads.html#generic_protected.ads:18:17" title="defined at generic_protected.ads:18:17">Generic_Protected.Monitor.Write</a> defined at <a href="src_generic_protected.ads.html#l18" title="generic_protected.ads:18:17">generic_protected.ads:18:17</a></i></div>
+            <div><i>To_Duration defined at a-reatim.ads:80:13</i></div>
+            <div><i>Vectors_3D.* defined at <a href="src_vectors_3d.ads.html#l22" title="vectors_3d.ads:22:14">vectors_3d.ads:22:14</a></i></div>
+            <div><i>Vectors_3D.* defined at <a href="src_vectors_3d.ads.html#l26" title="vectors_3d.ads:26:14">vectors_3d.ads:26:14</a></i></div>
+            <div><i>Vectors_3D.+ defined at <a href="src_vectors_3d.ads.html#l31" title="vectors_3d.ads:31:14">vectors_3d.ads:31:14</a></i></div>
+            <div><i>Vectors_3D.- defined at <a href="src_vectors_3d.ads.html#l32" title="vectors_3d.ads:32:14">vectors_3d.ads:32:14</a></i></div>
+            <div><i>Vectors_3D./ defined at <a href="src_vectors_3d.ads.html#l24" title="vectors_3d.ads:24:14">vectors_3d.ads:24:14</a></i></div>
+            <div><i>Vectors_3D.abs defined at <a href="src_vectors_3d.ads.html#l34" title="vectors_3d.ads:34:14">vectors_3d.ads:34:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='swarm_control.ads:61:14' id='swarm_control.ads:61:14'></a>
+<span class="droplink">Move_All_Elements<ul>
+  <li><a href="src_swarm_control.ads.html#l61">Goto spec in source</a></li>
+  <li><a href="src_swarm_control.adb.html#l525">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Move_All_Elements</span>;</pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_swarm_control.ads.html#l61" title="swarm_control.ads:61:14">swarm_control.ads:61:14</a> (declaration)</i></div>
+            <div><i><a href="src_swarm_control.adb.html#l525" title="swarm_control.adb:525:14">swarm_control.adb:525:14</a> (body)</i></div>
+            <div><i><a href="src_swarm_control.adb.html#l531" title="swarm_control.adb:531:8">swarm_control.adb:531:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>Ada.Containers.Vectors.First_Index defined at a-convec.ads:283:13</i></div>
+            <div><i>Ada.Containers.Vectors.Last_Index defined at a-convec.ads:289:13</i></div>
+            <div><i><a href="swarm_control.ads.html#swarm_control.ads:60:14" title="defined at swarm_control.ads:60:14">Move_Element</a> defined at <a href="src_swarm_control.ads.html#l60" title="swarm_control.ads:60:14">swarm_control.ads:60:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='swarm_control.ads:63:14' id='swarm_control.ads:63:14'></a>
+<span class="droplink">Update_Rotation<ul>
+  <li><a href="src_swarm_control.ads.html#l63">Goto spec in source</a></li>
+  <li><a href="src_swarm_control.adb.html#l537">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Update_Rotation</span> <table><tr><td>(</td><td><span class="name"><a name="swarm_control.ads:63:31"></a>Element_Index</span></td><td>: <a href="swarm_structures_base.ads.html#swarm_structures_base.ads:19:12" title="defined at swarm_structures_base.ads:19:12">Swarm_Element_Index</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_swarm_control.ads.html#l63" title="swarm_control.ads:63:14">swarm_control.ads:63:14</a> (declaration)</i></div>
+            <div><i><a href="src_swarm_control.adb.html#l537" title="swarm_control.adb:537:14">swarm_control.adb:537:14</a> (body)</i></div>
+            <div><i><a href="src_swarm_control.adb.html#l564" title="swarm_control.adb:564:8">swarm_control.adb:564:8</a> (label)</i></div>
+            <div><i><a href="src_swarm_control.adb.html#l574" title="swarm_control.adb:574:10">swarm_control.adb:574:10</a> (call)</i></div>
+            <div><i><a href="src_swarm_control_concurrent_generic.adb.html#l63" title="swarm_control_concurrent_generic.adb:63:45">swarm_control_concurrent_generic.adb:63:45</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="swarm_control_concurrent_generic.adb.html#swarm_control_concurrent_generic.adb:35:14" title="defined at swarm_control_concurrent_generic.adb:35:14">Swarm_Control_Concurrent_Generic.Worker</a> defined at <a href="src_swarm_control_concurrent_generic.adb.html#l35" title="swarm_control_concurrent_generic.adb:35:14">swarm_control_concurrent_generic.adb:35:14</a></i></div>
+            <div><i><a href="swarm_control.ads.html#swarm_control.ads:64:14" title="defined at swarm_control.ads:64:14">Update_All_Rotations</a> defined at <a href="src_swarm_control.ads.html#l64" title="swarm_control.ads:64:14">swarm_control.ads:64:14</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>Ada.Containers.Vectors.Element defined at a-convec.ads:113:13</i></div>
+            <div><i>Ada.Containers.Vectors.Replace_Element defined at a-convec.ads:119:14</i></div>
+            <div><i>Ada.Numerics.Generic_Elementary_Functions.Arctan defined at a-ngelfu.ads:116:13</i></div>
+            <div><i><a href="generic_protected.ads.html#generic_protected.ads:16:16" title="defined at generic_protected.ads:16:16">Generic_Protected.Monitor.Read</a> defined at <a href="src_generic_protected.ads.html#l16" title="generic_protected.ads:16:16">generic_protected.ads:16:16</a></i></div>
+            <div><i><a href="generic_protected.ads.html#generic_protected.ads:18:17" title="defined at generic_protected.ads:18:17">Generic_Protected.Monitor.Write</a> defined at <a href="src_generic_protected.ads.html#l18" title="generic_protected.ads:18:17">generic_protected.ads:18:17</a></i></div>
+            <div><i><a href="rotations.ads.html#rotations.ads:49:13" title="defined at rotations.ads:49:13">Rotations.Rotate</a> defined at <a href="src_rotations.ads.html#l49" title="rotations.ads:49:13">rotations.ads:49:13</a></i></div>
+            <div><i><a href="rotations.ads.html#rotations.ads:37:13" title="defined at rotations.ads:37:13">Rotations.To_Rotation</a> defined at <a href="src_rotations.ads.html#l37" title="rotations.ads:37:13">rotations.ads:37:13</a></i></div>
+            <div><i><a href="swarm_control.adb.html#swarm_control.adb:544:16" title="defined at swarm_control.adb:544:16">Swarm_Control.Update_Rotation.Vector_Pitch</a> defined at <a href="src_swarm_control.adb.html#l544" title="swarm_control.adb:544:16">swarm_control.adb:544:16</a></i></div>
+            <div><i><a href="swarm_control.adb.html#swarm_control.adb:539:16" title="defined at swarm_control.adb:539:16">Swarm_Control.Update_Rotation.Vector_Yaw</a> defined at <a href="src_swarm_control.adb.html#l539" title="swarm_control.adb:539:16">swarm_control.adb:539:16</a></i></div>
+            <div><i>Vectors_3D.abs defined at <a href="src_vectors_3d.ads.html#l34" title="vectors_3d.ads:34:14">vectors_3d.ads:34:14</a></i></div>
+            <div><i><a href="vectors_3d.ads.html#vectors_3d.ads:29:13" title="defined at vectors_3d.ads:29:13">Vectors_3D.Angle_Between</a> defined at <a href="src_vectors_3d.ads.html#l29" title="vectors_3d.ads:29:13">vectors_3d.ads:29:13</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='swarm_control.ads:64:14' id='swarm_control.ads:64:14'></a>
+<span class="droplink">Update_All_Rotations<ul>
+  <li><a href="src_swarm_control.ads.html#l64">Goto spec in source</a></li>
+  <li><a href="src_swarm_control.adb.html#l570">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Update_All_Rotations</span>;</pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_swarm_control.ads.html#l64" title="swarm_control.ads:64:14">swarm_control.ads:64:14</a> (declaration)</i></div>
+            <div><i><a href="src_swarm_control.adb.html#l570" title="swarm_control.adb:570:14">swarm_control.adb:570:14</a> (body)</i></div>
+            <div><i><a href="src_swarm_control.adb.html#l576" title="swarm_control.adb:576:8">swarm_control.adb:576:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>Ada.Containers.Vectors.First_Index defined at a-convec.ads:283:13</i></div>
+            <div><i>Ada.Containers.Vectors.Last_Index defined at a-convec.ads:289:13</i></div>
+            <div><i><a href="swarm_control.ads.html#swarm_control.ads:63:14" title="defined at swarm_control.ads:63:14">Update_Rotation</a> defined at <a href="src_swarm_control.ads.html#l63" title="swarm_control.ads:63:14">swarm_control.ads:63:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='swarm_control.ads:66:14' id='swarm_control.ads:66:14'></a>
+<span class="droplink">Remove_Empties<ul>
+  <li><a href="src_swarm_control.ads.html#l66">Goto spec in source</a></li>
+  <li><a href="src_swarm_control.adb.html#l582">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Remove_Empties</span>;</pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_swarm_control.ads.html#l66" title="swarm_control.ads:66:14">swarm_control.ads:66:14</a> (declaration)</i></div>
+            <div><i><a href="src_callback_procedures.adb.html#l449" title="callback_procedures.adb:449:7">callback_procedures.adb:449:7</a> (call)</i></div>
+            <div><i><a href="src_swarm_control.adb.html#l582" title="swarm_control.adb:582:14">swarm_control.adb:582:14</a> (body)</i></div>
+            <div><i><a href="src_swarm_control.adb.html#l598" title="swarm_control.adb:598:8">swarm_control.adb:598:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>Ada.Containers.Vectors.Element defined at a-convec.ads:113:13</i></div>
+            <div><i>Ada.Containers.Vectors.First_Index defined at a-convec.ads:283:13</i></div>
+            <div><i>Ada.Containers.Vectors.Last_Index defined at a-convec.ads:289:13</i></div>
+            <div><i>Ada.Containers.Vectors.Length defined at a-convec.ads:97:13</i></div>
+            <div><i><a href="swarm_control.adb.html#swarm_control.adb:269:14" title="defined at swarm_control.adb:269:14">Swarm_Control.Remove_Vehicle_in_Stages</a> defined at <a href="src_swarm_control.adb.html#l269" title="swarm_control.adb:269:14">swarm_control.adb:269:14</a></i></div>
+        </div>
+      </div>
+    </div>
+</div> <!-- documentation -->
+
+</body>
+</html>

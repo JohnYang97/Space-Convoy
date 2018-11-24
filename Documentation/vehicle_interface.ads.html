@@ -1,0 +1,436 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    Package: Vehicle_Interface
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+
+  <div id='navigation'>
+    <h2 class="button">Navigation</h2>
+    <a href='#Description'><div class="button2">Description</div></a>
+    <a href='#Tasks'><div class="button2">Tasks &amp; Protected</div></a>
+    <a href='#Constants'><div class="button2">Constants &amp; Global variables</div></a>
+    <a href='#Methods'><div class="button2">Subprograms &amp; Entries</div></a>
+  </div><!-- navigation -->
+  </div>
+</div> <!-- leftSide -->
+
+<div class='default' id='rightSide'>
+ <div id='rightSideInside'>
+ <div id='Index'>
+  <h2>Index</h2>
+  <script type="text/javascript">
+    var names = new Array (
+new Array ('Flight_<wbr/>Termination', 'vehicle_interface.ads:60:14', 'var-spec'),
+new Array ('Target_<wbr/>No_<wbr/>of_<wbr/>Elements', 'vehicle_interface.ads:54:4', 'var-spec'),
+new Array ('Position', 'vehicle_interface.ads:16:13', 'subp-spec'),
+new Array ('Velocity', 'vehicle_interface.ads:17:13', 'subp-spec'),
+new Array ('Acceleration', 'vehicle_interface.ads:18:13', 'subp-spec'),
+new Array ('Set_<wbr/>Destination', 'vehicle_interface.ads:24:14', 'subp-spec'),
+new Array ('Set_<wbr/>Throttle', 'vehicle_interface.ads:30:14', 'subp-spec'),
+new Array ('Throttle_<wbr/>Is_<wbr/>On_<wbr/>Idle', 'vehicle_interface.ads:32:13', 'subp-spec'),
+new Array ('Send', 'vehicle_interface.ads:38:14', 'subp-spec'),
+new Array ('Receive', 'vehicle_interface.ads:39:14', 'subp-spec'),
+new Array ('Messages_<wbr/>Waiting', 'vehicle_interface.ads:40:13', 'subp-spec'),
+new Array ('Current_<wbr/>Charge', 'vehicle_interface.ads:42:13', 'subp-spec'),
+new Array ('Current_<wbr/>Discharge_<wbr/>Per_<wbr/>Sec', 'vehicle_interface.ads:43:13', 'subp-spec'),
+new Array ('Energy_<wbr/>Globes_<wbr/>Around', 'vehicle_interface.ads:45:13', 'subp-spec'),
+new Array ('Wait_<wbr/>For_<wbr/>Next_<wbr/>Physics_<wbr/>Update', 'vehicle_interface.ads:47:14', 'subp-spec'),
+new Array ('Flight_<wbr/>Termination.<wbr/>Stop (abstract)', 'vehicle_interface.ads:62:13', 'subp-spec'),
+      new Array ('dummy', '', ''));
+    printIndexList (names);
+  </script>
+  <noscript>
+    <ul>
+      <li class='task-spec'><a href="#vehicle_interface.ads:60:14">Flight_<wbr/>Termination</a></li>
+      <li class='var-spec'><a href="#vehicle_interface.ads:54:4">Target_<wbr/>No_<wbr/>of_<wbr/>Elements</a></li>
+      <li class='subp-spec'><a href="#vehicle_interface.ads:16:13">Position</a></li>
+      <li class='subp-spec'><a href="#vehicle_interface.ads:17:13">Velocity</a></li>
+      <li class='subp-spec'><a href="#vehicle_interface.ads:18:13">Acceleration</a></li>
+      <li class='subp-spec'><a href="#vehicle_interface.ads:24:14">Set_<wbr/>Destination</a></li>
+      <li class='subp-spec'><a href="#vehicle_interface.ads:30:14">Set_<wbr/>Throttle</a></li>
+      <li class='subp-spec'><a href="#vehicle_interface.ads:32:13">Throttle_<wbr/>Is_<wbr/>On_<wbr/>Idle</a></li>
+      <li class='subp-spec'><a href="#vehicle_interface.ads:38:14">Send</a></li>
+      <li class='subp-spec'><a href="#vehicle_interface.ads:39:14">Receive</a></li>
+      <li class='subp-spec'><a href="#vehicle_interface.ads:40:13">Messages_<wbr/>Waiting</a></li>
+      <li class='subp-spec'><a href="#vehicle_interface.ads:42:13">Current_<wbr/>Charge</a></li>
+      <li class='subp-spec'><a href="#vehicle_interface.ads:43:13">Current_<wbr/>Discharge_<wbr/>Per_<wbr/>Sec</a></li>
+      <li class='subp-spec'><a href="#vehicle_interface.ads:45:13">Energy_<wbr/>Globes_<wbr/>Around</a></li>
+      <li class='subp-spec'><a href="#vehicle_interface.ads:47:14">Wait_<wbr/>For_<wbr/>Next_<wbr/>Physics_<wbr/>Update</a></li>
+        <li class='subp-spec'><a href="#vehicle_interface.ads:62:13">Stop (abstract)</a></li>
+    </ul>
+  </noscript>
+ </div>
+ </div>
+</div>
+
+<div class='default' id='documentation'>
+  <div class='title'>
+    Package:
+<span class="droplink"><i>Vehicle_Interface</i><ul>
+  <li><a href="src_vehicle_interface.ads.html">Goto spec source</a></li>
+  <li><a href="src_vehicle_interface.adb.html">Goto body source</a></li>
+</ul></span>
+  </div>
+  <div class='subprograms'>
+    <h1><a name='Description' id='Description'></a>Description</h1>
+    <div class="class">
+    <div class='details'><pre><span class="keyword">package</span> <span class="name_emphasis">Vehicle_Interface</span> <span class="keyword">is</span></pre></div>
+    <div class='comment'>
+Uwe R. Zimmer, Australia, July 2015
+
+</div>
+    </div>
+  </div>
+
+
+
+  <div class='subprograms'>
+    <h1><a name='Tasks' id='Tasks'></a>Tasks &amp; Protected</h1>
+    <div class="class">
+      <h3>
+        <a name='vehicle_interface.ads:60:14' id='vehicle_interface.ads:60:14'></a>
+<span class="droplink">Flight_Termination<ul>
+  <li><a href="src_vehicle_interface.ads.html#l60">Goto spec in source</a></li>
+</ul></span>
+         (protected)
+      </h3>
+      <div class="details"><b>Entries:</b><a href="vehicle_interface.ads.html#vehicle_interface.ads:62:13" title="Stop">Stop</a></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_vehicle_interface.ads.html#l60" title="vehicle_interface.ads:60:14">vehicle_interface.ads:60:14</a> (declaration)</i></div>
+          <div><i><a href="src_vehicle_task_type.adb.html#l41" title="vehicle_task_type.adb:41:10">vehicle_task_type.adb:41:10</a> (reference)</i></div>
+          <div><i><a href="src_vehicle_interface.adb.html#l122" title="vehicle_interface.adb:122:19">vehicle_interface.adb:122:19</a> (body)</i></div>
+          <div><i><a href="src_vehicle_interface.adb.html#l130" title="vehicle_interface.adb:130:8">vehicle_interface.adb:130:8</a> (label)</i></div>
+      </div>
+      <div class='profile'>
+          <h4>Called by:</h4>
+          <div><i><a href="vehicle_task_type.ads.html#vehicle_task_type.ads:5:14" title="defined at vehicle_task_type.ads:5:14">Vehicle_Task_Type.Vehicle_Task</a> defined at <a href="src_vehicle_task_type.ads.html#l5" title="vehicle_task_type.ads:5:14">vehicle_task_type.ads:5:14</a></i></div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class='subprograms'>
+    <h1><a name='Constants' id='Constants'></a>Constants &amp; Global variables</h1>
+    <div class="class">
+      <h3><a name='vehicle_interface.ads:54:4' id='vehicle_interface.ads:54:4'></a>
+<span class="droplink">Target_No_of_Elements<ul>
+  <li><a href="src_vehicle_interface.ads.html#l54">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(Positive)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Target_No_of_Elements</span> : <span class="keyword">constant</span> Positive  := 42;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_vehicle_interface.ads.html#l54" title="vehicle_interface.ads:54:4">vehicle_interface.ads:54:4</a> (declaration)</i></div>
+      </div>
+    </div>
+  </div>
+
+    <div class='subprograms'>
+      <h1><a name='Methods' id='Methods'></a>Subprograms &amp; Entries</h1>
+        <div class='class'>
+          <div>
+            <h3>
+              <a name='vehicle_interface.ads:62:13' id='vehicle_interface.ads:62:13'></a>
+              <span class="type"><a href="#vehicle_interface.ads:60:14">Flight_Termination</a></span>.
+<span class="droplink">Stop (abstract)<ul>
+  <li><a href="src_vehicle_interface.ads.html#l62">Goto spec in source</a></li>
+  <li><a href="src_vehicle_interface.adb.html#l124">Goto body in source</a></li>
+</ul></span>
+            </h3>
+            <div class='details'><pre><span class="keyword">entry</span> <span class="name_emphasis">Stop</span>;</pre></div>
+            <div class='profile'>
+              <h4>References:</h4>
+                <div><i><a href="src_vehicle_interface.ads.html#l62" title="vehicle_interface.ads:62:13">vehicle_interface.ads:62:13</a> (declaration)</i></div>
+                <div><i><a href="src_vehicle_task_type.adb.html#l41" title="vehicle_task_type.adb:41:29">vehicle_task_type.adb:41:29</a> (call)</i></div>
+                <div><i><a href="src_vehicle_interface.adb.html#l124" title="vehicle_interface.adb:124:13">vehicle_interface.adb:124:13</a> (body)</i></div>
+                <div><i><a href="src_vehicle_interface.adb.html#l128" title="vehicle_interface.adb:128:11">vehicle_interface.adb:128:11</a> (label)</i></div>
+            </div>
+            <div class='profile'>
+              <h4>Called by:</h4>
+                <div><i><a href="vehicle_task_type.ads.html#vehicle_task_type.ads:5:14" title="defined at vehicle_task_type.ads:5:14">Vehicle_Task_Type.Vehicle_Task</a> defined at <a href="src_vehicle_task_type.ads.html#l5" title="vehicle_task_type.ads:5:14">vehicle_task_type.ads:5:14</a></i></div>
+            </div>
+          </div>
+        </div>
+      <div class="class">
+        <h3>
+          <a name='vehicle_interface.ads:16:13' id='vehicle_interface.ads:16:13'></a>
+<span class="droplink">Position<ul>
+  <li><a href="src_vehicle_interface.ads.html#l16">Goto spec in source</a></li>
+  <li><a href="src_vehicle_interface.adb.html#l20">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Position</span>     <span class="keyword">return</span> <a href="swarm_structures_base.ads.html#swarm_structures_base.ads:15:12" title="defined at swarm_structures_base.ads:15:12">Positions</a>;</pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_vehicle_interface.ads.html#l16" title="vehicle_interface.ads:16:13">vehicle_interface.ads:16:13</a> (declaration)</i></div>
+            <div><i><a href="src_vehicle_interface.adb.html#l20" title="vehicle_interface.adb:20:13">vehicle_interface.adb:20:13</a> (body)</i></div>
+            <div><i><a href="src_vehicle_interface.adb.html#l85" title="vehicle_interface.adb:85:66">vehicle_interface.adb:85:66</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="vehicle_interface.ads.html#vehicle_interface.ads:45:13" title="defined at vehicle_interface.ads:45:13">Energy_Globes_Around</a> defined at <a href="src_vehicle_interface.ads.html#l45" title="vehicle_interface.ads:45:13">vehicle_interface.ads:45:13</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='vehicle_interface.ads:17:13' id='vehicle_interface.ads:17:13'></a>
+<span class="droplink">Velocity<ul>
+  <li><a href="src_vehicle_interface.ads.html#l17">Goto spec in source</a></li>
+  <li><a href="src_vehicle_interface.adb.html#l23">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Velocity</span>     <span class="keyword">return</span> <a href="swarm_structures_base.ads.html#swarm_structures_base.ads:16:12" title="defined at swarm_structures_base.ads:16:12">Velocities</a>;</pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_vehicle_interface.ads.html#l17" title="vehicle_interface.ads:17:13">vehicle_interface.ads:17:13</a> (declaration)</i></div>
+            <div><i><a href="src_vehicle_interface.adb.html#l23" title="vehicle_interface.adb:23:13">vehicle_interface.adb:23:13</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='vehicle_interface.ads:18:13' id='vehicle_interface.ads:18:13'></a>
+<span class="droplink">Acceleration<ul>
+  <li><a href="src_vehicle_interface.ads.html#l18">Goto spec in source</a></li>
+  <li><a href="src_vehicle_interface.adb.html#l26">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Acceleration</span> <span class="keyword">return</span> <a href="swarm_structures_base.ads.html#swarm_structures_base.ads:17:12" title="defined at swarm_structures_base.ads:17:12">Accelerations</a>;</pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_vehicle_interface.ads.html#l18" title="vehicle_interface.ads:18:13">vehicle_interface.ads:18:13</a> (declaration)</i></div>
+            <div><i><a href="src_vehicle_interface.adb.html#l26" title="vehicle_interface.adb:26:13">vehicle_interface.adb:26:13</a> (body)</i></div>
+            <div><i><a href="src_vehicle_interface.adb.html#l79" title="vehicle_interface.adb:79:112">vehicle_interface.adb:79:112</a> (call)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='vehicle_interface.ads:24:14' id='vehicle_interface.ads:24:14'></a>
+<span class="droplink">Set_Destination<ul>
+  <li><a href="src_vehicle_interface.ads.html#l24">Goto spec in source</a></li>
+  <li><a href="src_vehicle_interface.adb.html#l33">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Set_Destination</span> <table><tr><td>(</td><td><span class="name"><a name="vehicle_interface.ads:24:31"></a>V</span></td><td>: <a href="vectors_3d.ads.html#vectors_3d.ads:14:12" title="defined at vectors_3d.ads:14:12">Vector_3D</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_vehicle_interface.ads.html#l24" title="vehicle_interface.ads:24:14">vehicle_interface.ads:24:14</a> (declaration)</i></div>
+            <div><i><a href="src_vehicle_interface.adb.html#l33" title="vehicle_interface.adb:33:14">vehicle_interface.adb:33:14</a> (body)</i></div>
+            <div><i><a href="src_vehicle_interface.adb.html#l37" title="vehicle_interface.adb:37:8">vehicle_interface.adb:37:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>Current_Task defined at a-taside.ads:53:13</i></div>
+            <div><i><a href="swarm_control.ads.html#swarm_control.ads:25:16" title="defined at swarm_control.ads:25:16">Swarm_Control.Controls</a> defined at <a href="src_swarm_control.ads.html#l25" title="swarm_control.ads:25:16">swarm_control.ads:25:16</a></i></div>
+            <div><i><a href="swarm_structures.ads.html#swarm_structures.ads:64:17" title="defined at swarm_structures.ads:64:17">Swarm_Structures.Vehicle_Controls.Set_Steering</a> defined at <a href="src_swarm_structures.ads.html#l64" title="swarm_structures.ads:64:17">swarm_structures.ads:64:17</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='vehicle_interface.ads:30:14' id='vehicle_interface.ads:30:14'></a>
+<span class="droplink">Set_Throttle<ul>
+  <li><a href="src_vehicle_interface.ads.html#l30">Goto spec in source</a></li>
+  <li><a href="src_vehicle_interface.adb.html#l43">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Set_Throttle</span>    <table><tr><td>(</td><td><span class="name"><a name="vehicle_interface.ads:30:31"></a>T</span></td><td>: <a href="swarm_structures_base.ads.html#swarm_structures_base.ads:20:12" title="defined at swarm_structures_base.ads:20:12">Throttle_T</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_vehicle_interface.ads.html#l30" title="vehicle_interface.ads:30:14">vehicle_interface.ads:30:14</a> (declaration)</i></div>
+            <div><i><a href="src_vehicle_interface.adb.html#l43" title="vehicle_interface.adb:43:14">vehicle_interface.adb:43:14</a> (body)</i></div>
+            <div><i><a href="src_vehicle_interface.adb.html#l47" title="vehicle_interface.adb:47:8">vehicle_interface.adb:47:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>Current_Task defined at a-taside.ads:53:13</i></div>
+            <div><i><a href="swarm_control.ads.html#swarm_control.ads:25:16" title="defined at swarm_control.ads:25:16">Swarm_Control.Controls</a> defined at <a href="src_swarm_control.ads.html#l25" title="swarm_control.ads:25:16">swarm_control.ads:25:16</a></i></div>
+            <div><i><a href="swarm_structures.ads.html#swarm_structures.ads:65:17" title="defined at swarm_structures.ads:65:17">Swarm_Structures.Vehicle_Controls.Set_Throttle</a> defined at <a href="src_swarm_structures.ads.html#l65" title="swarm_structures.ads:65:17">swarm_structures.ads:65:17</a></i></div>
+        </div>
+        <div class='comment'>Throttle automatically switched to Idle_Throttle when the destination has been reached.
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='vehicle_interface.ads:32:13' id='vehicle_interface.ads:32:13'></a>
+<span class="droplink">Throttle_Is_On_Idle<ul>
+  <li><a href="src_vehicle_interface.ads.html#l32">Goto spec in source</a></li>
+  <li><a href="src_vehicle_interface.adb.html#l49">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Throttle_Is_On_Idle</span> <span class="keyword">return</span> Boolean;</pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_vehicle_interface.ads.html#l32" title="vehicle_interface.ads:32:13">vehicle_interface.ads:32:13</a> (declaration)</i></div>
+            <div><i><a href="src_vehicle_interface.adb.html#l49" title="vehicle_interface.adb:49:13">vehicle_interface.adb:49:13</a> (body)</i></div>
+        </div>
+        <div class='comment'>Throttle automatically switched to Idle_Throttle when the destination has been reached.
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='vehicle_interface.ads:38:14' id='vehicle_interface.ads:38:14'></a>
+<span class="droplink">Send<ul>
+  <li><a href="src_vehicle_interface.ads.html#l38">Goto spec in source</a></li>
+  <li><a href="src_vehicle_interface.adb.html#l56">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Send</span>    <table><tr><td>(</td><td><span class="name"><a name="vehicle_interface.ads:38:23"></a>Message</span></td><td>:     <a href="vehicle_message_type.ads.html#vehicle_message_type.ads:10:9" title="defined at vehicle_message_type.ads:10:9">Inter_Vehicle_Messages</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_vehicle_interface.ads.html#l38" title="vehicle_interface.ads:38:14">vehicle_interface.ads:38:14</a> (declaration)</i></div>
+            <div><i><a href="src_vehicle_interface.adb.html#l56" title="vehicle_interface.adb:56:14">vehicle_interface.adb:56:14</a> (body)</i></div>
+            <div><i><a href="src_vehicle_interface.adb.html#l60" title="vehicle_interface.adb:60:8">vehicle_interface.adb:60:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>Current_Task defined at a-taside.ads:53:13</i></div>
+            <div><i><a href="swarm_control.ads.html#swarm_control.ads:26:16" title="defined at swarm_control.ads:26:16">Swarm_Control.Comms</a> defined at <a href="src_swarm_control.ads.html#l26" title="swarm_control.ads:26:16">swarm_control.ads:26:16</a></i></div>
+            <div><i><a href="swarm_structures.ads.html#swarm_structures.ads:52:17" title="defined at swarm_structures.ads:52:17">Swarm_Structures.Vehicle_Comms.Send</a> defined at <a href="src_swarm_structures.ads.html#l52" title="swarm_structures.ads:52:17">swarm_structures.ads:52:17</a></i></div>
+        </div>
+        <div class='comment'>blocking if no messages
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='vehicle_interface.ads:39:14' id='vehicle_interface.ads:39:14'></a>
+<span class="droplink">Receive<ul>
+  <li><a href="src_vehicle_interface.ads.html#l39">Goto spec in source</a></li>
+  <li><a href="src_vehicle_interface.adb.html#l62">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Receive</span> <table><tr><td>(</td><td><span class="name"><a name="vehicle_interface.ads:39:23"></a>Message</span></td><td>: <span class="keyword">out</span> <a href="vehicle_message_type.ads.html#vehicle_message_type.ads:10:9" title="defined at vehicle_message_type.ads:10:9">Inter_Vehicle_Messages</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_vehicle_interface.ads.html#l39" title="vehicle_interface.ads:39:14">vehicle_interface.ads:39:14</a> (declaration)</i></div>
+            <div><i><a href="src_vehicle_interface.adb.html#l62" title="vehicle_interface.adb:62:14">vehicle_interface.adb:62:14</a> (body)</i></div>
+            <div><i><a href="src_vehicle_interface.adb.html#l66" title="vehicle_interface.adb:66:8">vehicle_interface.adb:66:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>Current_Task defined at a-taside.ads:53:13</i></div>
+            <div><i><a href="swarm_control.ads.html#swarm_control.ads:26:16" title="defined at swarm_control.ads:26:16">Swarm_Control.Comms</a> defined at <a href="src_swarm_control.ads.html#l26" title="swarm_control.ads:26:16">swarm_control.ads:26:16</a></i></div>
+            <div><i><a href="swarm_structures.ads.html#swarm_structures.ads:53:17" title="defined at swarm_structures.ads:53:17">Swarm_Structures.Vehicle_Comms.Receive</a> defined at <a href="src_swarm_structures.ads.html#l53" title="swarm_structures.ads:53:17">swarm_structures.ads:53:17</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='vehicle_interface.ads:40:13' id='vehicle_interface.ads:40:13'></a>
+<span class="droplink">Messages_Waiting<ul>
+  <li><a href="src_vehicle_interface.ads.html#l40">Goto spec in source</a></li>
+  <li><a href="src_vehicle_interface.adb.html#l68">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Messages_Waiting</span> <span class="keyword">return</span> Boolean;</pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_vehicle_interface.ads.html#l40" title="vehicle_interface.ads:40:13">vehicle_interface.ads:40:13</a> (declaration)</i></div>
+            <div><i><a href="src_vehicle_interface.adb.html#l68" title="vehicle_interface.adb:68:13">vehicle_interface.adb:68:13</a> (body)</i></div>
+        </div>
+        <div class='comment'>blocking if no messages
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='vehicle_interface.ads:42:13' id='vehicle_interface.ads:42:13'></a>
+<span class="droplink">Current_Charge<ul>
+  <li><a href="src_vehicle_interface.ads.html#l42">Goto spec in source</a></li>
+  <li><a href="src_vehicle_interface.adb.html#l75">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Current_Charge</span>    <span class="keyword">return</span> <a href="swarm_structures_base.ads.html#swarm_structures_base.ads:25:9" title="defined at swarm_structures_base.ads:25:9">Vehicle_Charges</a>;</pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_vehicle_interface.ads.html#l42" title="vehicle_interface.ads:42:13">vehicle_interface.ads:42:13</a> (declaration)</i></div>
+            <div><i><a href="src_vehicle_interface.adb.html#l75" title="vehicle_interface.adb:75:13">vehicle_interface.adb:75:13</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='vehicle_interface.ads:43:13' id='vehicle_interface.ads:43:13'></a>
+<span class="droplink">Current_Discharge_Per_Sec<ul>
+  <li><a href="src_vehicle_interface.ads.html#l43">Goto spec in source</a></li>
+  <li><a href="src_vehicle_interface.adb.html#l78">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Current_Discharge_Per_Sec</span> <span class="keyword">return</span> <a href="real_type.ads.html#real_type.ads:5:12" title="defined at real_type.ads:5:12">Real</a>;</pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_vehicle_interface.ads.html#l43" title="vehicle_interface.ads:43:13">vehicle_interface.ads:43:13</a> (declaration)</i></div>
+            <div><i><a href="src_vehicle_interface.adb.html#l78" title="vehicle_interface.adb:78:13">vehicle_interface.adb:78:13</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='vehicle_interface.ads:45:13' id='vehicle_interface.ads:45:13'></a>
+<span class="droplink">Energy_Globes_Around<ul>
+  <li><a href="src_vehicle_interface.ads.html#l45">Goto spec in source</a></li>
+  <li><a href="src_vehicle_interface.adb.html#l81">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Energy_Globes_Around</span> <span class="keyword">return</span> <a href="swarm_structures_base.ads.html#swarm_structures_base.ads:36:9" title="defined at swarm_structures_base.ads:36:9">Energy_Globes</a>;</pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_vehicle_interface.ads.html#l45" title="vehicle_interface.ads:45:13">vehicle_interface.ads:45:13</a> (declaration)</i></div>
+            <div><i><a href="src_vehicle_interface.adb.html#l81" title="vehicle_interface.adb:81:13">vehicle_interface.adb:81:13</a> (body)</i></div>
+            <div><i><a href="src_vehicle_interface.adb.html#l108" title="vehicle_interface.adb:108:8">vehicle_interface.adb:108:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="generic_protected.ads.html#generic_protected.ads:16:16" title="defined at generic_protected.ads:16:16">Generic_Protected.Monitor.Read</a> defined at <a href="src_generic_protected.ads.html#l16" title="generic_protected.ads:16:16">generic_protected.ads:16:16</a></i></div>
+            <div><i><a href="vehicle_interface.ads.html#vehicle_interface.ads:16:13" title="defined at vehicle_interface.ads:16:13">Position</a> defined at <a href="src_vehicle_interface.ads.html#l16" title="vehicle_interface.ads:16:13">vehicle_interface.ads:16:13</a></i></div>
+            <div><i>Vectors_3D.- defined at <a href="src_vectors_3d.ads.html#l32" title="vectors_3d.ads:32:14">vectors_3d.ads:32:14</a></i></div>
+            <div><i>Vectors_3D.abs defined at <a href="src_vectors_3d.ads.html#l34" title="vectors_3d.ads:34:14">vectors_3d.ads:34:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='vehicle_interface.ads:47:14' id='vehicle_interface.ads:47:14'></a>
+<span class="droplink">Wait_For_Next_Physics_Update<ul>
+  <li><a href="src_vehicle_interface.ads.html#l47">Goto spec in source</a></li>
+  <li><a href="src_vehicle_interface.adb.html#l112">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Wait_For_Next_Physics_Update</span>;</pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_vehicle_interface.ads.html#l47" title="vehicle_interface.ads:47:14">vehicle_interface.ads:47:14</a> (declaration)</i></div>
+            <div><i><a href="src_vehicle_task_type.adb.html#l47" title="vehicle_task_type.adb:47:13">vehicle_task_type.adb:47:13</a> (call)</i></div>
+            <div><i><a href="src_vehicle_interface.adb.html#l112" title="vehicle_interface.adb:112:14">vehicle_interface.adb:112:14</a> (body)</i></div>
+            <div><i><a href="src_vehicle_interface.adb.html#l116" title="vehicle_interface.adb:116:8">vehicle_interface.adb:116:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="vehicle_task_type.ads.html#vehicle_task_type.ads:5:14" title="defined at vehicle_task_type.ads:5:14">Vehicle_Task_Type.Vehicle_Task</a> defined at <a href="src_vehicle_task_type.ads.html#l5" title="vehicle_task_type.ads:5:14">vehicle_task_type.ads:5:14</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="swarm_structures.ads.html#swarm_structures.ads:118:13" title="defined at swarm_structures.ads:118:13">Swarm_Structures.Wait_For_Next_Tick</a> defined at <a href="src_swarm_structures.ads.html#l118" title="swarm_structures.ads:118:13">swarm_structures.ads:118:13</a></i></div>
+        </div>
+        <div class='comment'>blocking until the underlying physics engine updated swarm and globe positions.
+</div>
+      </div>
+    </div>
+</div> <!-- documentation -->
+
+</body>
+</html>

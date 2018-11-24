@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    File: swarm_structures.adb
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+  </div>
+</div> <!-- leftSide -->
+
+<div class='subprograms'>
+  <div class='details'><ol><li id="l1"><pre><span class="comment">--</span> </pre></li>
+<li id="l2"><pre><span class="comment">-- Jan &amp; Uwe R. Zimmer, Australia, 2013</span> </pre></li>
+<li id="l3"><pre><span class="comment">--</span> </pre></li>
+<li id="l4"><pre> </pre></li>
+<li id="l5"><pre><span class="keyword">package</span> <span class="keyword">body</span> <span class="droplink">Swarm_Structures<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:19:9" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l19" title="To spec">To spec</a></li></ul></span> <span class="keyword">is</span> </pre></li>
+<li id="l6"><pre> </pre></li>
+<li id="l7"><pre>   <span class="comment">--</span> </pre></li>
+<li id="l8"><pre> </pre></li>
+<li id="l9"><pre>   <span class="keyword">protected</span> <span class="keyword">body</span> <span class="droplink">Vehicle_Comms<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:51:19" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l51" title="To spec">To spec</a></li></ul></span> <span class="keyword">is</span> </pre></li>
+<li id="l10"><pre> </pre></li>
+<li id="l11"><pre>      <span class="keyword">procedure</span> <span class="droplink">Send<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:52:17" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l52" title="To spec">To spec</a></li></ul></span> (<span class="droplink">Message<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:52:32" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l52" title="To spec">To spec</a></li></ul></span> : <span class="droplink">Inter_Vehicle_Messages<ul><li><a href="vehicle_message_type.ads.html#vehicle_message_type.ads:10:9" title="To API doc">To API doc</a></li><li><a href="src_vehicle_message_type.ads.html#l10" title="To spec">To spec</a></li></ul></span>) <span class="keyword">is</span> </pre></li>
+<li id="l12"><pre> </pre></li>
+<li id="l13"><pre>      <span class="keyword">begin</span> </pre></li>
+<li id="l14"><pre>         <span class="droplink">Put<ul><li><a href="generic_realtime_buffer.ads.html#generic_realtime_buffer.ads:16:14" title="To API doc">To API doc</a></li><li><a href="src_generic_realtime_buffer.ads.html#l16" title="To spec">To spec</a></li><li><a href="src_generic_realtime_buffer.adb.html#l7" title="To body">To body</a></li></ul></span> (<span class="droplink">Sent_Messages<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:59:7" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l59" title="To spec">To spec</a></li></ul></span>, <span class="droplink">Message<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:52:32" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l52" title="To spec">To spec</a></li><li><a href="src_swarm_structures.adb.html#l11" title="To body">To body</a></li></ul></span>); </pre></li>
+<li id="l15"><pre>      <span class="keyword">end</span> <span class="droplink">Send<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:52:17" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l52" title="To spec">To spec</a></li><li><a href="src_swarm_structures.adb.html#l11" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l16"><pre> </pre></li>
+<li id="l17"><pre>      <span class="comment">--</span> </pre></li>
+<li id="l18"><pre> </pre></li>
+<li id="l19"><pre>      <span class="keyword">procedure</span> <span class="droplink">Push_Message<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:54:17" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l54" title="To spec">To spec</a></li></ul></span> (<span class="droplink">Message<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:54:32" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l54" title="To spec">To spec</a></li></ul></span> : <span class="droplink">Inter_Vehicle_Messages<ul><li><a href="vehicle_message_type.ads.html#vehicle_message_type.ads:10:9" title="To API doc">To API doc</a></li><li><a href="src_vehicle_message_type.ads.html#l10" title="To spec">To spec</a></li></ul></span>) <span class="keyword">is</span> </pre></li>
+<li id="l20"><pre> </pre></li>
+<li id="l21"><pre>      <span class="keyword">begin</span> </pre></li>
+<li id="l22"><pre>         <span class="droplink">Put<ul><li><a href="generic_realtime_buffer.ads.html#generic_realtime_buffer.ads:16:14" title="To API doc">To API doc</a></li><li><a href="src_generic_realtime_buffer.ads.html#l16" title="To spec">To spec</a></li><li><a href="src_generic_realtime_buffer.adb.html#l7" title="To body">To body</a></li></ul></span> (<span class="droplink">Received_Messages<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:60:7" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l60" title="To spec">To spec</a></li></ul></span>, <span class="droplink">Message<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:54:32" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l54" title="To spec">To spec</a></li><li><a href="src_swarm_structures.adb.html#l19" title="To body">To body</a></li></ul></span>); </pre></li>
+<li id="l23"><pre>      <span class="keyword">end</span> <span class="droplink">Push_Message<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:54:17" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l54" title="To spec">To spec</a></li><li><a href="src_swarm_structures.adb.html#l19" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l24"><pre> </pre></li>
+<li id="l25"><pre>      <span class="comment">--</span> </pre></li>
+<li id="l26"><pre> </pre></li>
+<li id="l27"><pre>      <span class="keyword">procedure</span> <span class="droplink">Fetch_Message<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:55:17" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l55" title="To spec">To spec</a></li></ul></span> (<span class="droplink">Message<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:55:32" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l55" title="To spec">To spec</a></li></ul></span> : <span class="keyword">out</span> <span class="droplink">Inter_Vehicle_Messages<ul><li><a href="vehicle_message_type.ads.html#vehicle_message_type.ads:10:9" title="To API doc">To API doc</a></li><li><a href="src_vehicle_message_type.ads.html#l10" title="To spec">To spec</a></li></ul></span>) <span class="keyword">is</span> </pre></li>
+<li id="l28"><pre> </pre></li>
+<li id="l29"><pre>      <span class="keyword">begin</span> </pre></li>
+<li id="l30"><pre>         <span class="droplink">Get<ul><li><a href="generic_realtime_buffer.ads.html#generic_realtime_buffer.ads:17:14" title="To API doc">To API doc</a></li><li><a href="src_generic_realtime_buffer.ads.html#l17" title="To spec">To spec</a></li><li><a href="src_generic_realtime_buffer.adb.html#l23" title="To body">To body</a></li></ul></span> (<span class="droplink">Sent_Messages<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:59:7" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l59" title="To spec">To spec</a></li></ul></span>, <span class="droplink">Message<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:55:32" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l55" title="To spec">To spec</a></li><li><a href="src_swarm_structures.adb.html#l27" title="To body">To body</a></li></ul></span>); </pre></li>
+<li id="l31"><pre>      <span class="keyword">end</span> <span class="droplink">Fetch_Message<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:55:17" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l55" title="To spec">To spec</a></li><li><a href="src_swarm_structures.adb.html#l27" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l32"><pre> </pre></li>
+<li id="l33"><pre>      <span class="comment">--</span> </pre></li>
+<li id="l34"><pre> </pre></li>
+<li id="l35"><pre>      <span class="keyword">function</span> <span class="droplink">Has_Incoming_Messages<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:56:17" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l56" title="To spec">To spec</a></li></ul></span> <span class="keyword">return</span> Boolean <span class="keyword">is</span> (<span class="droplink">Element_Available<ul><li><a href="generic_realtime_buffer.ads.html#generic_realtime_buffer.ads:19:13" title="To API doc">To API doc</a></li><li><a href="src_generic_realtime_buffer.ads.html#l19" title="To spec">To spec</a></li><li><a href="src_generic_realtime_buffer.adb.html#l39" title="To body">To body</a></li></ul></span> (<span class="droplink">Received_Messages<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:60:7" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l60" title="To spec">To spec</a></li></ul></span>)); </pre></li>
+<li id="l36"><pre> </pre></li>
+<li id="l37"><pre>      <span class="keyword">function</span> <span class="droplink">Has_Outgoing_Messages<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:57:17" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l57" title="To spec">To spec</a></li></ul></span> <span class="keyword">return</span> Boolean <span class="keyword">is</span> (<span class="droplink">Element_Available<ul><li><a href="generic_realtime_buffer.ads.html#generic_realtime_buffer.ads:19:13" title="To API doc">To API doc</a></li><li><a href="src_generic_realtime_buffer.ads.html#l19" title="To spec">To spec</a></li><li><a href="src_generic_realtime_buffer.adb.html#l39" title="To body">To body</a></li></ul></span> (<span class="droplink">Sent_Messages<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:59:7" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l59" title="To spec">To spec</a></li></ul></span>)); </pre></li>
+<li id="l38"><pre> </pre></li>
+<li id="l39"><pre>      <span class="comment">--</span> </pre></li>
+<li id="l40"><pre> </pre></li>
+<li id="l41"><pre>      <span class="keyword">entry</span> <span class="droplink">Receive<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:53:17" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l53" title="To spec">To spec</a></li></ul></span> (Message : <span class="keyword">out</span> <span class="droplink">Inter_Vehicle_Messages<ul><li><a href="vehicle_message_type.ads.html#vehicle_message_type.ads:10:9" title="To API doc">To API doc</a></li><li><a href="src_vehicle_message_type.ads.html#l10" title="To spec">To spec</a></li></ul></span>) <span class="keyword">when</span> <span class="droplink">Element_Available<ul><li><a href="generic_realtime_buffer.ads.html#generic_realtime_buffer.ads:19:13" title="To API doc">To API doc</a></li><li><a href="src_generic_realtime_buffer.ads.html#l19" title="To spec">To spec</a></li><li><a href="src_generic_realtime_buffer.adb.html#l39" title="To body">To body</a></li></ul></span> (<span class="droplink">Received_Messages<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:60:7" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l60" title="To spec">To spec</a></li></ul></span>) <span class="keyword">is</span> </pre></li>
+<li id="l42"><pre> </pre></li>
+<li id="l43"><pre>      <span class="keyword">begin</span> </pre></li>
+<li id="l44"><pre>         <span class="droplink">Get<ul><li><a href="generic_realtime_buffer.ads.html#generic_realtime_buffer.ads:17:14" title="To API doc">To API doc</a></li><li><a href="src_generic_realtime_buffer.ads.html#l17" title="To spec">To spec</a></li><li><a href="src_generic_realtime_buffer.adb.html#l23" title="To body">To body</a></li></ul></span> (<span class="droplink">Received_Messages<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:60:7" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l60" title="To spec">To spec</a></li></ul></span>, <span class="droplink">Message<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:53:32" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l53" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l45"><pre>      <span class="keyword">end</span> <span class="droplink">Receive<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:53:17" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l53" title="To spec">To spec</a></li><li><a href="src_swarm_structures.adb.html#l41" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l46"><pre> </pre></li>
+<li id="l47"><pre>   <span class="keyword">end</span> <span class="droplink">Vehicle_Comms<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:51:19" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l51" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l48"><pre> </pre></li>
+<li id="l49"><pre>   <span class="comment">--</span> </pre></li>
+<li id="l50"><pre>   <span class="comment">--</span> </pre></li>
+<li id="l51"><pre>   <span class="comment">--</span> </pre></li>
+<li id="l52"><pre> </pre></li>
+<li id="l53"><pre>   <span class="keyword">protected</span> <span class="keyword">body</span> <span class="droplink">Vehicle_Controls<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:63:19" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l63" title="To spec">To spec</a></li></ul></span> <span class="keyword">is</span> </pre></li>
+<li id="l54"><pre> </pre></li>
+<li id="l55"><pre>      <span class="keyword">procedure</span> <span class="droplink">Set_Steering<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:64:17" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l64" title="To spec">To spec</a></li></ul></span> (<span class="droplink">V<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:64:31" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l64" title="To spec">To spec</a></li></ul></span> : <span class="droplink">Vector_3D<ul><li><a href="vectors_3d.ads.html#vectors_3d.ads:14:12" title="To API doc">To API doc</a></li><li><a href="src_vectors_3d.ads.html#l14" title="To spec">To spec</a></li></ul></span>) <span class="keyword">is</span> </pre></li>
+<li id="l56"><pre> </pre></li>
+<li id="l57"><pre>      <span class="keyword">begin</span> </pre></li>
+<li id="l58"><pre>         <span class="droplink">Steering_Direction<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:69:7" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l69" title="To spec">To spec</a></li></ul></span> := <span class="droplink">V<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:64:31" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l64" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l59"><pre>      <span class="keyword">end</span> <span class="droplink">Set_Steering<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:64:17" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l64" title="To spec">To spec</a></li><li><a href="src_swarm_structures.adb.html#l55" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l60"><pre> </pre></li>
+<li id="l61"><pre>      <span class="comment">--</span> </pre></li>
+<li id="l62"><pre> </pre></li>
+<li id="l63"><pre>      <span class="keyword">procedure</span> <span class="droplink">Set_Throttle<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:65:17" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l65" title="To spec">To spec</a></li></ul></span> (<span class="droplink">T<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:65:31" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l65" title="To spec">To spec</a></li></ul></span> : <span class="droplink">Throttle_T<ul><li><a href="swarm_structures_base.ads.html#swarm_structures_base.ads:20:12" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures_base.ads.html#l20" title="To spec">To spec</a></li></ul></span>) <span class="keyword">is</span> </pre></li>
+<li id="l64"><pre> </pre></li>
+<li id="l65"><pre>      <span class="keyword">begin</span> </pre></li>
+<li id="l66"><pre>         <span class="droplink">Throttle<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:70:7" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l70" title="To spec">To spec</a></li></ul></span> := <span class="droplink">T<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:65:31" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l65" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l67"><pre>      <span class="keyword">end</span> <span class="droplink">Set_Throttle<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:65:17" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l65" title="To spec">To spec</a></li><li><a href="src_swarm_structures.adb.html#l63" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l68"><pre> </pre></li>
+<li id="l69"><pre>      <span class="comment">--</span> </pre></li>
+<li id="l70"><pre> </pre></li>
+<li id="l71"><pre>      <span class="keyword">function</span> <span class="droplink">Read_Steering<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:66:16" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l66" title="To spec">To spec</a></li></ul></span> <span class="keyword">return</span> <span class="droplink">Vector_3D<ul><li><a href="vectors_3d.ads.html#vectors_3d.ads:14:12" title="To API doc">To API doc</a></li><li><a href="src_vectors_3d.ads.html#l14" title="To spec">To spec</a></li></ul></span> <span class="keyword">is</span> (<span class="droplink">Steering_Direction<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:69:7" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l69" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l72"><pre> </pre></li>
+<li id="l73"><pre>      <span class="keyword">function</span> <span class="droplink">Read_Throttle<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:67:16" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l67" title="To spec">To spec</a></li></ul></span> <span class="keyword">return</span> <span class="droplink">Throttle_T<ul><li><a href="swarm_structures_base.ads.html#swarm_structures_base.ads:20:12" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures_base.ads.html#l20" title="To spec">To spec</a></li></ul></span> <span class="keyword">is</span> (<span class="droplink">Throttle<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:70:7" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l70" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l74"><pre> </pre></li>
+<li id="l75"><pre>      <span class="comment">--</span> </pre></li>
+<li id="l76"><pre> </pre></li>
+<li id="l77"><pre>   <span class="keyword">end</span> <span class="droplink">Vehicle_Controls<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:63:19" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l63" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l78"><pre> </pre></li>
+<li id="l79"><pre>   <span class="comment">---------</span> </pre></li>
+<li id="l80"><pre>   <span class="comment">-- &quot;&lt;&quot; --</span> </pre></li>
+<li id="l81"><pre>   <span class="comment">---------</span> </pre></li>
+<li id="l82"><pre> </pre></li>
+<li id="l83"><pre>   <span class="keyword">function</span> &quot;&lt;&quot; (<span class="droplink">L<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:35:18" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l35" title="To spec">To spec</a></li></ul></span>, <span class="droplink">R<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:35:21" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l35" title="To spec">To spec</a></li></ul></span> : <span class="droplink">Distance_Entries<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:26:9" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l26" title="To spec">To spec</a></li></ul></span>) <span class="keyword">return</span> Boolean <span class="keyword">is</span> (L.Distance &lt; R.Distance); </pre></li>
+<li id="l84"><pre> </pre></li>
+<li id="l85"><pre>   <span class="comment">--</span> </pre></li>
+<li id="l86"><pre> </pre></li>
+<li id="l87"><pre>   <span class="keyword">protected</span> <span class="keyword">body</span> <span class="droplink">Simulator_Tick<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:117:14" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l117" title="To spec">To spec</a></li></ul></span> <span class="keyword">is</span> </pre></li>
+<li id="l88"><pre> </pre></li>
+<li id="l89"><pre>      <span class="keyword">entry</span> <span class="droplink">Wait_For_Next_Tick<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:118:13" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l118" title="To spec">To spec</a></li></ul></span> <span class="keyword">when</span> <span class="droplink">Trigger<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:121:7" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l121" title="To spec">To spec</a></li></ul></span> <span class="keyword">is</span> </pre></li>
+<li id="l90"><pre> </pre></li>
+<li id="l91"><pre>      <span class="keyword">begin</span> </pre></li>
+<li id="l92"><pre>         <span class="droplink">Trigger<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:121:7" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l121" title="To spec">To spec</a></li></ul></span> := <span class="droplink">Wait_For_Next_Tick<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:118:13" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l118" title="To spec">To spec</a></li><li><a href="src_swarm_structures.adb.html#l89" title="To body">To body</a></li></ul></span>&apos;Count &gt; 0; </pre></li>
+<li id="l93"><pre>      <span class="keyword">end</span> <span class="droplink">Wait_For_Next_Tick<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:118:13" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l118" title="To spec">To spec</a></li><li><a href="src_swarm_structures.adb.html#l89" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l94"><pre> </pre></li>
+<li id="l95"><pre>      <span class="keyword">procedure</span> <span class="droplink">Tick<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:119:17" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l119" title="To spec">To spec</a></li></ul></span> <span class="keyword">is</span> </pre></li>
+<li id="l96"><pre> </pre></li>
+<li id="l97"><pre>      <span class="keyword">begin</span> </pre></li>
+<li id="l98"><pre>         <span class="droplink">Trigger<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:121:7" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l121" title="To spec">To spec</a></li></ul></span> := True; </pre></li>
+<li id="l99"><pre>      <span class="keyword">end</span> <span class="droplink">Tick<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:119:17" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l119" title="To spec">To spec</a></li><li><a href="src_swarm_structures.adb.html#l95" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l100"><pre> </pre></li>
+<li id="l101"><pre>   <span class="keyword">end</span> <span class="droplink">Simulator_Tick<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:117:14" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l117" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l102"><pre> </pre></li>
+<li id="l103"><pre>   <span class="comment">--</span> </pre></li>
+<li id="l104"><pre> </pre></li>
+<li id="l105"><pre><span class="keyword">end</span> <span class="droplink">Swarm_Structures<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:19:9" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l19" title="To spec">To spec</a></li><li><a href="src_swarm_structures.adb.html#l5" title="To body">To body</a></li></ul></span>; </pre></li>
+</ol></div>
+</div>
+
+</body>
+</html>

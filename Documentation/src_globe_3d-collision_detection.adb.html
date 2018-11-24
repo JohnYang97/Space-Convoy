@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    File: globe_3d-collision_detection.adb
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+  </div>
+</div> <!-- leftSide -->
+
+<div class='subprograms'>
+  <div class='details'><ol><li id="l1"><pre><span class="keyword">pragma</span> Style_Checks (Off); </pre></li>
+<li id="l2"><pre><span class="keyword">pragma</span> Warnings (Off); </pre></li>
+<li id="l3"><pre> </pre></li>
+<li id="l4"><pre><span class="comment">-------------------------------------------------------------------------</span> </pre></li>
+<li id="l5"><pre> <span class="comment">--  GLOBE_3D.Collision_detection</span> </pre></li>
+<li id="l6"><pre> <span class="comment">--</span> </pre></li>
+<li id="l7"><pre> <span class="comment">--  Copyright (c) Gautier de Montmollin 1999 .. 2008</span> </pre></li>
+<li id="l8"><pre> <span class="comment">--  SWITZERLAND</span> </pre></li>
+<li id="l9"><pre> <span class="comment">--</span> </pre></li>
+<li id="l10"><pre> <span class="comment">--  Permission is hereby granted, free of charge, to any person obtaining a copy</span> </pre></li>
+<li id="l11"><pre> <span class="comment">--  of this software and associated documentation files (the &quot;Software&quot;), to deal</span> </pre></li>
+<li id="l12"><pre> <span class="comment">--  in the Software without restriction, including without limitation the rights</span> </pre></li>
+<li id="l13"><pre> <span class="comment">--  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span> </pre></li>
+<li id="l14"><pre> <span class="comment">--  copies of the Software, and to permit persons to whom the Software is</span> </pre></li>
+<li id="l15"><pre> <span class="comment">--  furnished to do so, subject to the following conditions:</span> </pre></li>
+<li id="l16"><pre> </pre></li>
+<li id="l17"><pre> <span class="comment">--  The above copyright notice and this permission notice shall be included in</span> </pre></li>
+<li id="l18"><pre> <span class="comment">--  all copies or substantial portions of the Software.</span> </pre></li>
+<li id="l19"><pre> </pre></li>
+<li id="l20"><pre> <span class="comment">--  THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span> </pre></li>
+<li id="l21"><pre> <span class="comment">--  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span> </pre></li>
+<li id="l22"><pre> <span class="comment">--  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span> </pre></li>
+<li id="l23"><pre> <span class="comment">--  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span> </pre></li>
+<li id="l24"><pre> <span class="comment">--  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span> </pre></li>
+<li id="l25"><pre> <span class="comment">--  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN</span> </pre></li>
+<li id="l26"><pre> <span class="comment">--  THE SOFTWARE.</span> </pre></li>
+<li id="l27"><pre> </pre></li>
+<li id="l28"><pre> <span class="comment">-- NB : this is the MIT License, as found 12 - Sep - 2007 on the site</span> </pre></li>
+<li id="l29"><pre> <span class="comment">-- http://www.opensource.org/licenses/mit - license.php</span> </pre></li>
+<li id="l30"><pre> </pre></li>
+<li id="l31"><pre> <span class="comment">-------------------------------------------------------------------------</span> </pre></li>
+<li id="l32"><pre> </pre></li>
+<li id="l33"><pre><span class="keyword">with</span> GLOBE_3D.Math;                     <span class="keyword">use</span> GLOBE_3D.Math; </pre></li>
+<li id="l34"><pre><span class="keyword">with</span> GLOBE_3D.Options; </pre></li>
+<li id="l35"><pre> </pre></li>
+<li id="l36"><pre><span class="keyword">package</span> <span class="keyword">body</span> GLOBE_3D.Collision_detection <span class="keyword">is</span> </pre></li>
+<li id="l37"><pre> </pre></li>
+<li id="l38"><pre>  check_normals : <span class="keyword">constant</span> Boolean := GLOBE_3D.Options.strict_geometry; </pre></li>
+<li id="l39"><pre> </pre></li>
+<li id="l40"><pre>  <span class="keyword">procedure</span> Reaction ( </pre></li>
+<li id="l41"><pre>    o            : Object_3D&apos;Class; </pre></li>
+<li id="l42"><pre>    ball         : Ball_type; </pre></li>
+<li id="l43"><pre>    method       : Reaction_method; </pre></li>
+<li id="l44"><pre>    step         : <span class="keyword">in</span> <span class="keyword">out</span> Vector_3D; <span class="comment">-- Whole step (in : desired, out : effective)</span> </pre></li>
+<li id="l45"><pre>    reacted      : <span class="keyword">out</span> Real          <span class="comment">-- in proportion to step</span> </pre></li>
+<li id="l46"><pre>) </pre></li>
+<li id="l47"><pre>  <span class="keyword">is</span> </pre></li>
+<li id="l48"><pre>    P_after_step, P_face : Point_3D; </pre></li>
+<li id="l49"><pre>    u, n  : Vector_3D; </pre></li>
+<li id="l50"><pre>    dist_after, dist_before, nn : Real; <span class="comment">-- distance orientee</span> </pre></li>
+<li id="l51"><pre>    retour : Real := 0.0; </pre></li>
+<li id="l52"><pre>    lstep0 : <span class="keyword">constant</span> Real := Norm (step); </pre></li>
+<li id="l53"><pre> </pre></li>
+<li id="l54"><pre>    <span class="comment">-- This function check whether we are inside the prism above face f</span> </pre></li>
+<li id="l55"><pre> </pre></li>
+<li id="l56"><pre>    <span class="keyword">function</span> Dans_prisme_epaissi (f : Positive) <span class="keyword">return</span> Boolean <span class="keyword">is</span> </pre></li>
+<li id="l57"><pre>      sfp1 : Positive; </pre></li>
+<li id="l58"><pre>      Ps, Psp1 : Point_3D; </pre></li>
+<li id="l59"><pre>      u, edge_vector, npa : Vector_3D; </pre></li>
+<li id="l60"><pre>      dist_edge, nnpa : Real; </pre></li>
+<li id="l61"><pre>      facteur : <span class="keyword">constant</span> := 1.05; </pre></li>
+<li id="l62"><pre>    <span class="keyword">begin</span> </pre></li>
+<li id="l63"><pre>      <span class="comment">-- Cycle through face&apos;s vertices</span> </pre></li>
+<li id="l64"><pre>      <span class="keyword">for</span> sf <span class="keyword">in</span> <span class="keyword">reverse</span> 1 .. o.Face_Invariant (f).last_edge <span class="keyword">loop</span> </pre></li>
+<li id="l65"><pre>        sfp1 := 1 + sf <span class="keyword">mod</span> o.Face_Invariant (f).last_edge; </pre></li>
+<li id="l66"><pre>        Ps  := o.point (o.Face_Invariant (f).P_compact (sf)); </pre></li>
+<li id="l67"><pre>        Psp1 := o.point (o.Face_Invariant (f).P_compact (sfp1)); </pre></li>
+<li id="l68"><pre>        edge_vector := Psp1 - Ps; </pre></li>
+<li id="l69"><pre>        npa := n * edge_vector; </pre></li>
+<li id="l70"><pre>        nnpa := Norm (npa); </pre></li>
+<li id="l71"><pre>        <span class="keyword">if</span> Almost_Zero (nnpa) <span class="keyword">then</span> <span class="comment">-- degenerated edge</span> </pre></li>
+<li id="l72"><pre>          <span class="keyword">return</span> False; </pre></li>
+<li id="l73"><pre>        <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l74"><pre>        npa := 1.0/nnpa * npa; </pre></li>
+<li id="l75"><pre>        <span class="comment">-- npa points towards the prism&apos;s interior</span> </pre></li>
+<li id="l76"><pre>        u := P_after_step - (Ps + o.Centre); </pre></li>
+<li id="l77"><pre>        dist_edge := u * npa; </pre></li>
+<li id="l78"><pre>        <span class="keyword">if</span> dist_edge &lt; - ball.radius * facteur <span class="keyword">then</span> </pre></li>
+<li id="l79"><pre>          <span class="keyword">return</span> False; </pre></li>
+<li id="l80"><pre>        <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l81"><pre>      <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l82"><pre>      <span class="keyword">return</span> True; </pre></li>
+<li id="l83"><pre>    <span class="keyword">end</span> Dans_prisme_epaissi; </pre></li>
+<li id="l84"><pre> </pre></li>
+<li id="l85"><pre>  <span class="keyword">begin</span> </pre></li>
+<li id="l86"><pre>    reacted := 0.0; </pre></li>
+<li id="l87"><pre>    <span class="keyword">if</span> Almost_Zero (lstep0) <span class="keyword">then</span> </pre></li>
+<li id="l88"><pre>      <span class="keyword">return</span>; </pre></li>
+<li id="l89"><pre>    <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l90"><pre> </pre></li>
+<li id="l91"><pre>    P_after_step := ball.centre + step; </pre></li>
+<li id="l92"><pre> </pre></li>
+<li id="l93"><pre>    <span class="keyword">for</span> face <span class="keyword">in</span> <span class="keyword">reverse</span> 1 .. o.Max_faces <span class="keyword">loop</span> </pre></li>
+<li id="l94"><pre>      n := o.Face_Invariant (face).normal; </pre></li>
+<li id="l95"><pre>      <span class="keyword">if</span> check_normals <span class="keyword">then</span> </pre></li>
+<li id="l96"><pre>        nn := Norm (n); </pre></li>
+<li id="l97"><pre>        <span class="keyword">if</span> Almost_zero (nn) <span class="keyword">then</span> </pre></li>
+<li id="l98"><pre>          <span class="keyword">raise</span> Zero_normal; </pre></li>
+<li id="l99"><pre>        <span class="keyword">elsif</span> <span class="keyword">abs</span> (nn - 1.0) &gt; 1.0e-7 <span class="keyword">then</span> </pre></li>
+<li id="l100"><pre>          <span class="keyword">raise</span> Not_one_normal <span class="keyword">with</span> <span class="string">&quot; norm = &quot;</span> &amp; Real&apos;Image (nn); </pre></li>
+<li id="l101"><pre>        <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l102"><pre>      <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l103"><pre>      <span class="keyword">if</span> step * n &lt; 0.0 <span class="keyword">then</span> </pre></li>
+<li id="l104"><pre>        P_face := o.point (o.Face_Invariant (face).P_compact (1)) + o.Centre; </pre></li>
+<li id="l105"><pre>        <span class="comment">-- ^ any point on the face, to measure distance to face&apos;s plane.</span> </pre></li>
+<li id="l106"><pre>        u := ball.centre - P_face; </pre></li>
+<li id="l107"><pre>        dist_before := u * n; </pre></li>
+<li id="l108"><pre>        <span class="keyword">if</span> dist_before &gt; 0.0 <span class="keyword">then</span> </pre></li>
+<li id="l109"><pre>          <span class="comment">-- ^ Fine, we are on the right side of the face.</span> </pre></li>
+<li id="l110"><pre>          <span class="comment">--   Test added to Engine_3D&apos;s algo, since objects are</span> </pre></li>
+<li id="l111"><pre>          <span class="comment">--   not always hollow, convex polyhedrons anymore.</span> </pre></li>
+<li id="l112"><pre>          u := P_after_step - P_face; </pre></li>
+<li id="l113"><pre>          dist_after := u * n; </pre></li>
+<li id="l114"><pre>          <span class="keyword">if</span> dist_after &lt; ball.radius </pre></li>
+<li id="l115"><pre>            <span class="comment">-- ^ Ouch! React we must!</span> </pre></li>
+<li id="l116"><pre>            <span class="comment">-- This includes negatives values of dist_after, in cases</span> </pre></li>
+<li id="l117"><pre>            <span class="comment">-- the intended step makes going through the face!</span> </pre></li>
+<li id="l118"><pre>          <span class="keyword">and</span> <span class="keyword">then</span> </pre></li>
+<li id="l119"><pre>             Dans_prisme_epaissi (face) </pre></li>
+<li id="l120"><pre>          <span class="keyword">then</span> </pre></li>
+<li id="l121"><pre>            <span class="keyword">if</span> o.face (face).skin /= invisible <span class="keyword">then</span> </pre></li>
+<li id="l122"><pre>            <span class="comment">-- ^ this assumes : invisible &lt; =&gt; can go through</span> </pre></li>
+<li id="l123"><pre>              reacted := reacted + retour / lstep0; </pre></li>
+<li id="l124"><pre>              <span class="comment">-- !! seems wrong if reactions in different directions</span> </pre></li>
+<li id="l125"><pre>              <span class="comment">--    should be something like step * step0</span> </pre></li>
+<li id="l126"><pre>              <span class="keyword">case</span> method <span class="keyword">is</span> </pre></li>
+<li id="l127"><pre>                <span class="keyword">when</span> elastic =&gt; </pre></li>
+<li id="l128"><pre>                  <span class="keyword">raise</span> Unsupported <span class="keyword">with</span> <span class="string">&quot;elastic reaction&quot;</span>; </pre></li>
+<li id="l129"><pre>                  <span class="comment">-- should compute the time the &quot;ball&quot; takes from rebound to</span> </pre></li>
+<li id="l130"><pre>                  <span class="comment">-- next face or portal.</span> </pre></li>
+<li id="l131"><pre>                <span class="keyword">when</span> slide =&gt; </pre></li>
+<li id="l132"><pre>                  retour := ball.radius - dist_after; <span class="comment">-- always &gt; 0</span> </pre></li>
+<li id="l133"><pre>                  step := step + retour * n; </pre></li>
+<li id="l134"><pre>                  <span class="comment">-- Since step and n have a negative dot product      - checked -</span> </pre></li>
+<li id="l135"><pre>                  <span class="comment">-- and dist (ball.centre + step_old, face) &lt; ball.radius - checked -</span> </pre></li>
+<li id="l136"><pre>                  <span class="comment">-- then:</span> </pre></li>
+<li id="l137"><pre>                  <span class="comment">-- ||step_new|| &lt; ||step_old|| --&gt; decreasing algo : - )</span> </pre></li>
+<li id="l138"><pre>              <span class="keyword">end</span> <span class="keyword">case</span>; </pre></li>
+<li id="l139"><pre>            <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l140"><pre>          <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l141"><pre>        <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l142"><pre>      <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l143"><pre>    <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l144"><pre> <span class="keyword">end</span> Reaction; </pre></li>
+<li id="l145"><pre> </pre></li>
+<li id="l146"><pre><span class="keyword">end</span> GLOBE_3D.Collision_detection; </pre></li>
+</ol></div>
+</div>
+
+</body>
+</html>

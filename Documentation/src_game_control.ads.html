@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    File: game_control.ads
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+  </div>
+</div> <!-- leftSide -->
+
+<div class='subprograms'>
+  <div class='details'><ol><li id="l1"><pre><span class="comment">------------------------------------------------------------------------------</span> </pre></li>
+<li id="l2"><pre> <span class="comment">--  File :            Game_control.ads</span> </pre></li>
+<li id="l3"><pre> <span class="comment">--  Description :     Command set for games, based on GLUT</span> </pre></li>
+<li id="l4"><pre> <span class="comment">--  Copyright (c) Gautier de Montmollin 2002, 2005 .. 2008</span> </pre></li>
+<li id="l5"><pre> <span class="comment">------------------------------------------------------------------------------</span> </pre></li>
+<li id="l6"><pre> <span class="comment">-- Cannibalized from Game_Driving (see Engine_3D)</span> </pre></li>
+<li id="l7"><pre> </pre></li>
+<li id="l8"><pre> <span class="comment">--  To do : programmable behaviour</span> </pre></li>
+<li id="l9"><pre> </pre></li>
+<li id="l10"><pre><span class="keyword">with</span> <span class="droplink">GL<ul><li><a href="gl.ads.html#gl.ads:66:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l66" title="To spec">To spec</a></li><li><a href="src_gl.adb.html#l17" title="To body">To body</a></li></ul></span>, <span class="droplink">GLUT.Devices<ul><li><a href="glut-devices.ads.html#glut-devices.ads:11:14" title="To API doc">To API doc</a></li><li><a href="src_glut-devices.ads.html#l11" title="To spec">To spec</a></li><li><a href="src_glut-devices.adb.html#l11" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l11"><pre> </pre></li>
+<li id="l12"><pre><span class="keyword">package</span> <span class="droplink">Game_Control<ul><li><a href="game_control.ads.html#game_control.ads:12:9" title="To API doc">To API doc</a></li><li><a href="src_game_control.adb.html#l8" title="To body">To body</a></li></ul></span> <span class="keyword">is</span> </pre></li>
+<li id="l13"><pre> </pre></li>
+<li id="l14"><pre>   <span class="keyword">type</span> <a href="game_control.ads.html#game_control.ads:14:9" title="defined at game_control.ads:14:9">Command</a> <span class="keyword">is</span> ( </pre></li>
+<li id="l15"><pre>                    go_forward, </pre></li>
+<li id="l16"><pre>                    go_backwards, </pre></li>
+<li id="l17"><pre>                    go_graduated, </pre></li>
+<li id="l18"><pre>                    slide_left, </pre></li>
+<li id="l19"><pre>                    slide_right, </pre></li>
+<li id="l20"><pre>                    slide_lateral_graduated, </pre></li>
+<li id="l21"><pre>                    turn_left, </pre></li>
+<li id="l22"><pre>                    turn_right, </pre></li>
+<li id="l23"><pre>                    turn_lateral_graduated, </pre></li>
+<li id="l24"><pre>                    slide_up, </pre></li>
+<li id="l25"><pre>                    slide_down, </pre></li>
+<li id="l26"><pre>                    slide_vertical_graduated, </pre></li>
+<li id="l27"><pre>                    turn_up, </pre></li>
+<li id="l28"><pre>                    turn_down, </pre></li>
+<li id="l29"><pre>                    turn_vertical_graduated, </pre></li>
+<li id="l30"><pre>                    run_mode, </pre></li>
+<li id="l31"><pre>                    ctrl_mode, <span class="comment">-- &quot;shoot&quot;, but useless with GLUT</span> </pre></li>
+<li id="l32"><pre>                    slide_mode, </pre></li>
+<li id="l33"><pre>                    swing_plus, </pre></li>
+<li id="l34"><pre>                    swing_minus, </pre></li>
+<li id="l35"><pre>                    jump, </pre></li>
+<li id="l36"><pre>                    special_plus, </pre></li>
+<li id="l37"><pre>                    special_minus, </pre></li>
+<li id="l38"><pre>                    photo, video, </pre></li>
+<li id="l39"><pre>                    toggle_10, </pre></li>
+<li id="l40"><pre>                    interrupt_game, </pre></li>
+<li id="l41"><pre>                    n0, n1, n2, n3, n4, n5, n6, n7, n8, n9, <span class="comment">-- numeric keys</span> </pre></li>
+<li id="l42"><pre>                    bogus_command  <span class="comment">-- a control can be directed on this</span> </pre></li>
+<li id="l43"><pre>                   ); </pre></li>
+<li id="l44"><pre>   <span class="keyword">pragma</span> Ordered (<span class="droplink">Command<ul><li><a href="game_control.ads.html#game_control.ads:14:9" title="To API doc">To API doc</a></li><li><a href="src_game_control.ads.html#l14" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l45"><pre> </pre></li>
+<li id="l46"><pre>  <span class="keyword">type</span> <a href="game_control.ads.html#game_control.ads:46:8" title="defined at game_control.ads:46:8">Command_set</a> <span class="keyword">is</span> <span class="keyword">array</span> (<span class="droplink">Command<ul><li><a href="game_control.ads.html#game_control.ads:14:9" title="To API doc">To API doc</a></li><li><a href="src_game_control.ads.html#l14" title="To spec">To spec</a></li></ul></span>) <span class="keyword">of</span> Boolean; </pre></li>
+<li id="l47"><pre> </pre></li>
+<li id="l48"><pre>  <span class="comment">-- The empty command set:</span> </pre></li>
+<li id="l49"><pre>  <a href="game_control.ads.html#game_control.ads:49:3" title="defined at game_control.ads:49:3">no_command</a> : <span class="keyword">constant</span> <span class="droplink">Command_set<ul><li><a href="game_control.ads.html#game_control.ads:46:8" title="To API doc">To API doc</a></li><li><a href="src_game_control.ads.html#l46" title="To spec">To spec</a></li></ul></span> := (<span class="keyword">others</span> =&gt; False); </pre></li>
+<li id="l50"><pre> </pre></li>
+<li id="l51"><pre>  <span class="comment">-- Function Set_ .. .</span> </pre></li>
+<li id="l52"><pre> </pre></li>
+<li id="l53"><pre>  <span class="comment">--  keyboard_command_mapping : array (Multi_keys.key_value) of Command :=</span> </pre></li>
+<li id="l54"><pre>  <span class="comment">--    (others =&gt; bogus_command); -- for later !!</span> </pre></li>
+<li id="l55"><pre> </pre></li>
+<li id="l56"><pre>  <span class="comment">--  mouse_command_mapping    : array (PC_Mouse.Mouse_button) of Command :=</span> </pre></li>
+<li id="l57"><pre>  <span class="comment">--    (others =&gt; bogus_command); -- for later !!</span> </pre></li>
+<li id="l58"><pre> </pre></li>
+<li id="l59"><pre>  <span class="comment">-- Record game commands from peripherals (keyboard, mouse) --</span> </pre></li>
+<li id="l60"><pre> </pre></li>
+<li id="l61"><pre>  <span class="keyword">procedure</span> <span class="droplink">Append_Commands<ul><li><a href="game_control.ads.html#game_control.ads:61:13" title="To API doc">To API doc</a></li><li><a href="src_game_control.adb.html#l12" title="To body">To body</a></li></ul></span> (<a href="game_control.ads.html#game_control.ads:61:30" title="defined at game_control.ads:61:30">size_x</a>, </pre></li>
+<li id="l62"><pre>                             <a href="game_control.ads.html#game_control.ads:62:30" title="defined at game_control.ads:62:30">size_y</a>      :        Integer;                  <span class="comment">-- screen dimensions for mouse</span> </pre></li>
+<li id="l63"><pre>                             <a href="game_control.ads.html#game_control.ads:63:30" title="defined at game_control.ads:63:30">warp_mouse</a>  :        Boolean;                  <span class="comment">-- recenter mouse cursor</span> </pre></li>
+<li id="l64"><pre>                             <a href="game_control.ads.html#game_control.ads:64:30" title="defined at game_control.ads:64:30">c</a>           : <span class="keyword">in</span> <span class="keyword">out</span> <span class="droplink">Game_Control.Command_set<ul><li><a href="game_control.ads.html#game_control.ads:46:8" title="To API doc">To API doc</a></li><li><a href="src_game_control.ads.html#l46" title="To spec">To spec</a></li></ul></span>; <span class="comment">-- commands are added to c</span> </pre></li>
+<li id="l65"><pre>                             <a href="game_control.ads.html#game_control.ads:65:30" title="defined at game_control.ads:65:30">gx</a>, <a href="game_control.ads.html#game_control.ads:65:34" title="defined at game_control.ads:65:34">gy</a>      :    <span class="keyword">out</span> <span class="droplink">GL.Double<ul><li><a href="gl.ads.html#gl.ads:128:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l128" title="To spec">To spec</a></li></ul></span>;                <span class="comment">-- mouse movement since last call</span> </pre></li>
+<li id="l66"><pre>                             <a href="game_control.ads.html#game_control.ads:66:30" title="defined at game_control.ads:66:30">Keyboard</a>    : <span class="keyword">access</span> <span class="droplink">GLUT.Devices.Keyboard<ul><li><a href="glut-devices.ads.html#glut-devices.ads:25:9" title="To API doc">To API doc</a></li><li><a href="src_glut-devices.ads.html#l25" title="To spec">To spec</a></li></ul></span> := <span class="droplink">GLUT.Devices.default_Keyboard<ul><li><a href="glut-devices.ads.html#glut-devices.ads:37:4" title="To API doc">To API doc</a></li><li><a href="src_glut-devices.ads.html#l37" title="To spec">To spec</a></li></ul></span>&apos;Access; </pre></li>
+<li id="l67"><pre>                             <a href="game_control.ads.html#game_control.ads:67:30" title="defined at game_control.ads:67:30">Mouse</a>       : <span class="keyword">access</span> <span class="droplink">GLUT.Devices.Mouse<ul><li><a href="glut-devices.ads.html#glut-devices.ads:50:9" title="To API doc">To API doc</a></li><li><a href="src_glut-devices.ads.html#l50" title="To spec">To spec</a></li></ul></span>    := <span class="droplink">GLUT.Devices.default_Mouse<ul><li><a href="glut-devices.ads.html#glut-devices.ads:58:4" title="To API doc">To API doc</a></li><li><a href="src_glut-devices.ads.html#l58" title="To spec">To spec</a></li></ul></span>&apos;Access); </pre></li>
+<li id="l68"><pre> </pre></li>
+<li id="l69"><pre><span class="keyword">end</span> <span class="droplink">Game_Control<ul><li><a href="game_control.ads.html#game_control.ads:12:9" title="To API doc">To API doc</a></li><li><a href="src_game_control.ads.html#l12" title="To spec">To spec</a></li><li><a href="src_game_control.adb.html#l8" title="To body">To body</a></li></ul></span>; </pre></li>
+</ol></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    File: globe_3d-sprite.adb
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+  </div>
+</div> <!-- leftSide -->
+
+<div class='subprograms'>
+  <div class='details'><ol><li id="l1"><pre><span class="keyword">pragma</span> Warnings (Off); </pre></li>
+<li id="l2"><pre><span class="keyword">pragma</span> Style_Checks (Off); </pre></li>
+<li id="l3"><pre> </pre></li>
+<li id="l4"><pre><span class="keyword">with</span> GLOBE_3D.Textures, </pre></li>
+<li id="l5"><pre>     GLOBE_3D.Math; </pre></li>
+<li id="l6"><pre> </pre></li>
+<li id="l7"><pre><span class="keyword">package</span> <span class="keyword">body</span> GLOBE_3D.Sprite <span class="keyword">is</span> </pre></li>
+<li id="l8"><pre> </pre></li>
+<li id="l9"><pre>   <span class="keyword">package</span> G3DT <span class="keyword">renames</span> GLOBE_3D.Textures; </pre></li>
+<li id="l10"><pre>   <span class="keyword">package</span> G3DM <span class="keyword">renames</span> GLOBE_3D.Math; </pre></li>
+<li id="l11"><pre> </pre></li>
+<li id="l12"><pre>   <span class="keyword">function</span> skinned_Geometrys (o  : <span class="keyword">in</span> Sprite) <span class="keyword">return</span> GL.skinned_geometry.skinned_Geometrys </pre></li>
+<li id="l13"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l14"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l15"><pre>      <span class="keyword">return</span> o.skinned_Geometrys (1 .. o.skinned_geometry_Count); </pre></li>
+<li id="l16"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l17"><pre> </pre></li>
+<li id="l18"><pre>   <span class="keyword">procedure</span> add (o  : <span class="keyword">in</span> <span class="keyword">out</span> Sprite;   Geometry  : <span class="keyword">access</span> GL.geometry.Geometry_t&apos;Class; </pre></li>
+<li id="l19"><pre>                                       Skin      : <span class="keyword">access</span> GL.skins.Skin&apos;Class) </pre></li>
+<li id="l20"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l21"><pre>      new_skinned_Geometry  : <span class="keyword">access</span> GL.skinned_Geometry.Skinned_Geometry_t := <span class="keyword">new</span> GL.skinned_Geometry.Skinned_Geometry_t; </pre></li>
+<li id="l22"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l23"><pre>      o.skinned_geometry_Count                       := o.skinned_geometry_Count + 1; </pre></li>
+<li id="l24"><pre>      o.skinned_Geometrys (o.skinned_geometry_Count) := (geometry =&gt; Geometry.<span class="keyword">all</span>&apos;Access, </pre></li>
+<li id="l25"><pre>                                                         skin     =&gt; Skin.<span class="keyword">all</span>&apos;Access, </pre></li>
+<li id="l26"><pre>                                                         veneer   =&gt; Skin.new_Veneer (for_geometry =&gt; Geometry.<span class="keyword">all</span>)); </pre></li>
+<li id="l27"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l28"><pre> </pre></li>
+<li id="l29"><pre>   <span class="keyword">procedure</span> Pre_calculate (o : <span class="keyword">in</span> <span class="keyword">out</span> Sprite) </pre></li>
+<li id="l30"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l31"><pre>      <span class="keyword">use</span> GL, GL.Geometry, G3DM; </pre></li>
+<li id="l32"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l33"><pre>      <span class="comment">--vertex_cache_optimise (o);  -- tbd : doesn&apos;t seem to help !! . .. : (</span> </pre></li>
+<li id="l34"><pre>                                  <span class="comment">-- at least with terrain . .. (terrain dataset may already naturally be in optimal order ?)</span> </pre></li>
+<li id="l35"><pre>                                  <span class="comment">-- so need to test with other dataset</span> </pre></li>
+<li id="l36"><pre> </pre></li>
+<li id="l37"><pre>      o.Bounds     := null_Bounds; </pre></li>
+<li id="l38"><pre>      o.face_Count := 0; </pre></li>
+<li id="l39"><pre> </pre></li>
+<li id="l40"><pre>      <span class="keyword">for</span> Each <span class="keyword">in</span> 1 .. o.skinned_geometry_Count <span class="keyword">loop</span> </pre></li>
+<li id="l41"><pre>         o.Bounds     := max (o.Bounds,  o.skinned_Geometrys (Each).geometry.Bounds); </pre></li>
+<li id="l42"><pre>         o.face_Count := o.face_Count + o.skinned_Geometrys (Each).geometry.face_Count; </pre></li>
+<li id="l43"><pre>      <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l44"><pre> </pre></li>
+<li id="l45"><pre>      <span class="comment">-- setup bounding_sphere (for debug)</span> </pre></li>
+<li id="l46"><pre>      <span class="comment">--</span> </pre></li>
+<li id="l47"><pre> <span class="comment">--        declare</span> </pre></li>
+<li id="l48"><pre> <span class="comment">--           use GLU;</span> </pre></li>
+<li id="l49"><pre> <span class="comment">--        begin</span> </pre></li>
+<li id="l50"><pre> <span class="comment">--           if o.bounding_sphere_Quadric /= null then</span> </pre></li>
+<li id="l51"><pre> <span class="comment">--              glu.quadricDrawStyle (o.bounding_sphere_Quadric, glu.glu_LINE);</span> </pre></li>
+<li id="l52"><pre> <span class="comment">--           end if;</span> </pre></li>
+<li id="l53"><pre> <span class="comment">--        end;</span> </pre></li>
+<li id="l54"><pre> </pre></li>
+<li id="l55"><pre>    <span class="comment">-- Ooof. Now we can certify:</span> </pre></li>
+<li id="l56"><pre>      <span class="comment">--o.pre_calculated := True;</span> </pre></li>
+<li id="l57"><pre>   <span class="keyword">end</span> Pre_calculate; </pre></li>
+<li id="l58"><pre> </pre></li>
+<li id="l59"><pre>   <span class="keyword">procedure</span> destroy (o  : <span class="keyword">in</span> <span class="keyword">out</span> Sprite) </pre></li>
+<li id="l60"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l61"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l62"><pre>      <span class="keyword">null</span>; </pre></li>
+<li id="l63"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l64"><pre> </pre></li>
+<li id="l65"><pre>   <span class="keyword">function</span> face_Count (o  : <span class="keyword">in</span> Sprite) <span class="keyword">return</span> Natural </pre></li>
+<li id="l66"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l67"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l68"><pre>      <span class="keyword">return</span> o.face_Count; </pre></li>
+<li id="l69"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l70"><pre> </pre></li>
+<li id="l71"><pre>   <span class="keyword">function</span> Bounds (o  : <span class="keyword">in</span> Sprite) <span class="keyword">return</span> GL.geometry.Bounds_record </pre></li>
+<li id="l72"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l73"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l74"><pre>      <span class="keyword">return</span> o.Bounds; </pre></li>
+<li id="l75"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l76"><pre> </pre></li>
+<li id="l77"><pre>   <span class="keyword">procedure</span> Display (o     : <span class="keyword">in</span> <span class="keyword">out</span> Sprite; </pre></li>
+<li id="l78"><pre>                      clip  : <span class="keyword">in</span>     Clipping_data) </pre></li>
+<li id="l79"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l80"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l81"><pre>      <span class="keyword">null</span>;   <span class="comment">-- actual display is done by the renderer (ie glut.Windows), which requests all skinned Geometry&apos;s</span> </pre></li>
+<li id="l82"><pre>              <span class="comment">-- and then applies &apos;gl state&apos; sorting for performance, before drawing.</span> </pre></li>
+<li id="l83"><pre>   <span class="keyword">end</span> Display; </pre></li>
+<li id="l84"><pre> </pre></li>
+<li id="l85"><pre>   <span class="keyword">procedure</span> set_Alpha (o     : <span class="keyword">in</span> <span class="keyword">out</span> Sprite;   Alpha  : <span class="keyword">in</span> GL.Double) </pre></li>
+<li id="l86"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l87"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l88"><pre>      <span class="keyword">null</span>;   <span class="comment">-- tbd</span> </pre></li>
+<li id="l89"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l90"><pre> </pre></li>
+<li id="l91"><pre>   <span class="keyword">function</span>  is_Transparent (o     : <span class="keyword">in</span> Sprite) <span class="keyword">return</span> Boolean </pre></li>
+<li id="l92"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l93"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l94"><pre>      <span class="keyword">return</span> o.is_Transparent;  <span class="comment">-- tbd : ensure this is updated when new primitives (with possible transparent appearance&apos; are added.</span> </pre></li>
+<li id="l95"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l96"><pre> </pre></li>
+<li id="l97"><pre><span class="keyword">end</span> GLOBE_3D.Sprite; </pre></li>
+<li id="l98"><pre> </pre></li>
+</ol></div>
+</div>
+
+</body>
+</html>

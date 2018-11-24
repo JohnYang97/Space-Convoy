@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    File: unzip-decompress-huffman.ads
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+  </div>
+</div> <!-- leftSide -->
+
+<div class='subprograms'>
+  <div class='details'><ol><li id="l1"><pre><span class="comment">-- UnZip.Decompress.Huffman</span> </pre></li>
+<li id="l2"><pre> <span class="comment">---------------------------</span> </pre></li>
+<li id="l3"><pre> <span class="comment">-- Huffman tree generation and deletion.</span> </pre></li>
+<li id="l4"><pre> <span class="comment">-- Originally from info - zip&apos;s unzip, data structure rewritten by G. de Montmollin</span> </pre></li>
+<li id="l5"><pre> </pre></li>
+<li id="l6"><pre><span class="keyword">private</span> <span class="keyword">package</span> <span class="droplink">UnZip.Decompress.Huffman<ul><li><a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:6:34" title="To API doc">To API doc</a></li><li><a href="src_unzip-decompress-huffman.ads.html#l6" title="To spec">To spec</a></li><li><a href="src_unzip-decompress-huffman.adb.html#l5" title="To body">To body</a></li></ul></span> <span class="keyword">is</span> </pre></li>
+<li id="l7"><pre> </pre></li>
+<li id="l8"><pre>  <span class="keyword">type</span> <a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:8:8" title="defined at unzip-decompress-huffman.ads:8:8">HufT_table</a>; </pre></li>
+<li id="l9"><pre>  <span class="keyword">type</span> <a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:9:8" title="defined at unzip-decompress-huffman.ads:9:8">p_HufT_table</a> <span class="keyword">is</span> <span class="keyword">access</span> <span class="droplink">HufT_table<ul><li><a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:8:8" title="To API doc">To API doc</a></li><li><a href="src_unzip-decompress-huffman.ads.html#l8" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l10"><pre> </pre></li>
+<li id="l11"><pre>  <span class="keyword">type</span> <a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:11:8" title="defined at unzip-decompress-huffman.ads:11:8">HufT</a> <span class="keyword">is</span> <span class="keyword">record</span> </pre></li>
+<li id="l12"><pre>    extra_bits  : Natural; </pre></li>
+<li id="l13"><pre>    bits        : Natural; </pre></li>
+<li id="l14"><pre>    n           : Natural; </pre></li>
+<li id="l15"><pre>    next_table  : <span class="droplink">p_HufT_table<ul><li><a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:9:8" title="To API doc">To API doc</a></li><li><a href="src_unzip-decompress-huffman.ads.html#l9" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l16"><pre>  <span class="keyword">end</span> <span class="keyword">record</span>; </pre></li>
+<li id="l17"><pre> </pre></li>
+<li id="l18"><pre>  <a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:18:3" title="defined at unzip-decompress-huffman.ads:18:3">invalid</a> : <span class="keyword">constant</span> := 99; <span class="comment">-- invalid value for extra bits</span> </pre></li>
+<li id="l19"><pre> </pre></li>
+<li id="l20"><pre>  <span class="keyword">type</span> <span class="droplink">HufT_table<ul><li><a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:8:8" title="To API doc">To API doc</a></li><li><a href="src_unzip-decompress-huffman.ads.html#l8" title="To spec">To spec</a></li></ul></span> <span class="keyword">is</span> <span class="keyword">array</span> (Integer <span class="keyword">range</span> &lt;&gt;) <span class="keyword">of</span> <span class="keyword">aliased</span> <span class="droplink">HufT<ul><li><a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:11:8" title="To API doc">To API doc</a></li><li><a href="src_unzip-decompress-huffman.ads.html#l11" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l21"><pre> </pre></li>
+<li id="l22"><pre>  <span class="keyword">type</span> <a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:22:8" title="defined at unzip-decompress-huffman.ads:22:8">p_HufT</a> <span class="keyword">is</span> <span class="keyword">access</span> <span class="keyword">all</span> <span class="droplink">HufT<ul><li><a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:11:8" title="To API doc">To API doc</a></li><li><a href="src_unzip-decompress-huffman.ads.html#l11" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l23"><pre> </pre></li>
+<li id="l24"><pre>  <span class="comment">-- Linked list just for destroying Huffman tables</span> </pre></li>
+<li id="l25"><pre> </pre></li>
+<li id="l26"><pre>  <span class="keyword">type</span> <span class="droplink">Table_list<ul><li><a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:26:8" title="To API doc">To API doc</a></li><li><a href="src_unzip-decompress-huffman.ads.html#l29" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l27"><pre>  <span class="keyword">type</span> <a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:27:8" title="defined at unzip-decompress-huffman.ads:27:8">p_Table_list</a> <span class="keyword">is</span> <span class="keyword">access</span> <span class="droplink">Table_list<ul><li><a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:26:8" title="To API doc">To API doc</a></li><li><a href="src_unzip-decompress-huffman.ads.html#l26" title="To spec">To spec</a></li><li><a href="src_unzip-decompress-huffman.ads.html#l29" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l28"><pre> </pre></li>
+<li id="l29"><pre>  <span class="keyword">type</span> <span class="droplink">Table_list<ul><li><a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:26:8" title="To API doc">To API doc</a></li><li><a href="src_unzip-decompress-huffman.ads.html#l26" title="To spec">To spec</a></li></ul></span> <span class="keyword">is</span> <span class="keyword">record</span> </pre></li>
+<li id="l30"><pre>    table : <span class="droplink">p_HufT_table<ul><li><a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:9:8" title="To API doc">To API doc</a></li><li><a href="src_unzip-decompress-huffman.ads.html#l9" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l31"><pre>    next  : <span class="droplink">p_Table_list<ul><li><a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:27:8" title="To API doc">To API doc</a></li><li><a href="src_unzip-decompress-huffman.ads.html#l27" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l32"><pre>  <span class="keyword">end</span> <span class="keyword">record</span>; </pre></li>
+<li id="l33"><pre> </pre></li>
+<li id="l34"><pre>  <span class="keyword">type</span> <a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:34:8" title="defined at unzip-decompress-huffman.ads:34:8">Length_array</a> <span class="keyword">is</span> <span class="keyword">array</span> (Integer <span class="keyword">range</span> &lt;&gt;) <span class="keyword">of</span> Natural; </pre></li>
+<li id="l35"><pre> </pre></li>
+<li id="l36"><pre>  <a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:36:3" title="defined at unzip-decompress-huffman.ads:36:3">empty</a>  : <span class="keyword">constant</span> <span class="droplink">Length_array<ul><li><a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:34:8" title="To API doc">To API doc</a></li><li><a href="src_unzip-decompress-huffman.ads.html#l34" title="To spec">To spec</a></li></ul></span> (1 .. 0) := (<span class="keyword">others</span> =&gt; 0); </pre></li>
+<li id="l37"><pre> </pre></li>
+<li id="l38"><pre>  <span class="comment">-- Free huffman tables starting with table where t points to</span> </pre></li>
+<li id="l39"><pre>  <span class="keyword">procedure</span> <span class="droplink">HufT_free<ul><li><a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:39:13" title="To API doc">To API doc</a></li><li><a href="src_unzip-decompress-huffman.adb.html#l13" title="To body">To body</a></li></ul></span> (<a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:39:24" title="defined at unzip-decompress-huffman.ads:39:24">tl</a> : <span class="keyword">in</span> <span class="keyword">out</span> <span class="droplink">p_Table_list<ul><li><a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:27:8" title="To API doc">To API doc</a></li><li><a href="src_unzip-decompress-huffman.ads.html#l27" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l40"><pre> </pre></li>
+<li id="l41"><pre>  <span class="comment">-- Build huffman table from code lengths given by array b.all</span> </pre></li>
+<li id="l42"><pre>  <span class="keyword">procedure</span> <span class="droplink">HufT_build<ul><li><a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:42:13" title="To API doc">To API doc</a></li><li><a href="src_unzip-decompress-huffman.adb.html#l50" title="To body">To body</a></li></ul></span> (<a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:42:25" title="defined at unzip-decompress-huffman.ads:42:25">b</a>     : <span class="droplink">Length_array<ul><li><a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:34:8" title="To API doc">To API doc</a></li><li><a href="src_unzip-decompress-huffman.ads.html#l34" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l43"><pre>                         <a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:43:26" title="defined at unzip-decompress-huffman.ads:43:26">s</a>     : Integer; </pre></li>
+<li id="l44"><pre>                         <a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:44:26" title="defined at unzip-decompress-huffman.ads:44:26">d</a>, <a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:44:29" title="defined at unzip-decompress-huffman.ads:44:29">e</a>  : <span class="droplink">Length_array<ul><li><a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:34:8" title="To API doc">To API doc</a></li><li><a href="src_unzip-decompress-huffman.ads.html#l34" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l45"><pre>                         <a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:45:26" title="defined at unzip-decompress-huffman.ads:45:26">tl</a>    :    <span class="keyword">out</span> <span class="droplink">p_Table_list<ul><li><a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:27:8" title="To API doc">To API doc</a></li><li><a href="src_unzip-decompress-huffman.ads.html#l27" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l46"><pre>                         <a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:46:26" title="defined at unzip-decompress-huffman.ads:46:26">m</a>     : <span class="keyword">in</span> <span class="keyword">out</span> Integer; </pre></li>
+<li id="l47"><pre>              <a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:47:15" title="defined at unzip-decompress-huffman.ads:47:15">huft_incomplete</a>  :    <span class="keyword">out</span> Boolean); </pre></li>
+<li id="l48"><pre> </pre></li>
+<li id="l49"><pre>  <span class="comment">-- Possible exceptions occuring in huft_build</span> </pre></li>
+<li id="l50"><pre>  <a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:50:3" title="defined at unzip-decompress-huffman.ads:50:3">huft_error</a>,                    <span class="comment">-- bad tree constructed</span> </pre></li>
+<li id="l51"><pre>  <a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:51:3" title="defined at unzip-decompress-huffman.ads:51:3">huft_out_of_memory</a> : <span class="keyword">exception</span>; <span class="comment">-- not enough memory</span> </pre></li>
+<li id="l52"><pre> </pre></li>
+<li id="l53"><pre><span class="keyword">end</span> <span class="droplink">UnZip.Decompress.Huffman<ul><li><a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:6:34" title="To API doc">To API doc</a></li><li><a href="src_unzip-decompress-huffman.ads.html#l6" title="To spec">To spec</a></li><li><a href="src_unzip-decompress-huffman.adb.html#l5" title="To body">To body</a></li></ul></span>; </pre></li>
+</ol></div>
+</div>
+
+</body>
+</html>

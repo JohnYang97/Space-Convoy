@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    File: gl-extended.ads
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+  </div>
+</div> <!-- leftSide -->
+
+<div class='subprograms'>
+  <div class='details'><ol><li id="l1"><pre><span class="comment">-- This package contains extensions to GL as well as items</span> </pre></li>
+<li id="l2"><pre> <span class="comment">-- that are in the GL standard but are not (yet) in the GL libraries</span> </pre></li>
+<li id="l3"><pre> <span class="comment">-- on all platforms. For instance, standard Opengl32.dll on Windows up</span> </pre></li>
+<li id="l4"><pre> <span class="comment">-- to XP support up to GL 1.1; Vista, up to GL 1.4; and even versions</span> </pre></li>
+<li id="l5"><pre> <span class="comment">-- provided by graphics card makers lack 1.5 support (as in 2007).</span> </pre></li>
+<li id="l6"><pre> </pre></li>
+<li id="l7"><pre> <span class="comment">-- *** Non - Windows version (just part of GL) ***</span> </pre></li>
+<li id="l8"><pre> </pre></li>
+<li id="l9"><pre><span class="keyword">with</span> <span class="droplink">GL<ul><li><a href="gl.ads.html#gl.ads:66:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l66" title="To spec">To spec</a></li><li><a href="src_gl.adb.html#l17" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l10"><pre> </pre></li>
+<li id="l11"><pre><span class="keyword">package</span> <span class="droplink">GL.Extended<ul><li><a href="gl-extended.ads.html#gl-extended.ads:11:12" title="To API doc">To API doc</a></li><li><a href="src_gl-extended.ads.html#l11" title="To spec">To spec</a></li></ul></span> <span class="keyword">is</span> </pre></li>
+<li id="l12"><pre> </pre></li>
+<li id="l13"><pre>  <span class="keyword">procedure</span> <span class="droplink">GenBuffers<ul><li><a href="gl-extended.ads.html#gl-extended.ads:13:13" title="To API doc">To API doc</a></li><li><a href="src_gl-extended.ads.html#l43" title="To body">To body</a></li></ul></span> (<a href="gl-extended.ads.html#gl-extended.ads:13:25" title="defined at gl-extended.ads:13:25">n</a>        : <span class="droplink">GL.Sizei<ul><li><a href="gl.ads.html#gl.ads:125:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l125" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l14"><pre>                        <a href="gl-extended.ads.html#gl-extended.ads:14:25" title="defined at gl-extended.ads:14:25">buffers</a>  : <span class="droplink">GL.uintPtr<ul><li><a href="gl.ads.html#gl.ads:142:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l142" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l15"><pre> </pre></li>
+<li id="l16"><pre>  <span class="keyword">procedure</span> <span class="droplink">DeleteBuffers<ul><li><a href="gl-extended.ads.html#gl-extended.ads:16:13" title="To API doc">To API doc</a></li><li><a href="src_gl-extended.ads.html#l44" title="To body">To body</a></li></ul></span> (<a href="gl-extended.ads.html#gl-extended.ads:16:28" title="defined at gl-extended.ads:16:28">n</a>        : <span class="droplink">GL.Sizei<ul><li><a href="gl.ads.html#gl.ads:125:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l125" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l17"><pre>                           <a href="gl-extended.ads.html#gl-extended.ads:17:28" title="defined at gl-extended.ads:17:28">buffers</a>  : <span class="droplink">GL.uintPtr<ul><li><a href="gl.ads.html#gl.ads:142:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l142" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l18"><pre> </pre></li>
+<li id="l19"><pre>  <span class="keyword">procedure</span> <span class="droplink">BindBuffer<ul><li><a href="gl-extended.ads.html#gl-extended.ads:19:13" title="To API doc">To API doc</a></li><li><a href="src_gl-extended.ads.html#l45" title="To body">To body</a></li></ul></span> (<a href="gl-extended.ads.html#gl-extended.ads:19:25" title="defined at gl-extended.ads:19:25">target</a>  : <span class="droplink">GL.VBO_Target<ul><li><a href="gl.ads.html#gl.ads:3783:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l3783" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l20"><pre>                        <a href="gl-extended.ads.html#gl-extended.ads:20:25" title="defined at gl-extended.ads:20:25">buffer</a>  : <span class="droplink">GL.Uint<ul><li><a href="gl.ads.html#gl.ads:124:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l124" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l21"><pre> </pre></li>
+<li id="l22"><pre>  <span class="keyword">procedure</span> <span class="droplink">BufferData<ul><li><a href="gl-extended.ads.html#gl-extended.ads:22:13" title="To API doc">To API doc</a></li><li><a href="src_gl-extended.ads.html#l46" title="To body">To body</a></li></ul></span> (<a href="gl-extended.ads.html#gl-extended.ads:22:25" title="defined at gl-extended.ads:22:25">target</a>  : <span class="droplink">GL.VBO_Target<ul><li><a href="gl.ads.html#gl.ads:3783:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l3783" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l23"><pre>                        <a href="gl-extended.ads.html#gl-extended.ads:23:25" title="defined at gl-extended.ads:23:25">size</a>    : <span class="droplink">GL.sizeiPtr<ul><li><a href="gl.ads.html#gl.ads:147:12" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l147" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l24"><pre>                        <a href="gl-extended.ads.html#gl-extended.ads:24:25" title="defined at gl-extended.ads:24:25">data</a>    : <span class="droplink">GL.pointer<ul><li><a href="gl.ads.html#gl.ads:150:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l150" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l25"><pre>                        <a href="gl-extended.ads.html#gl-extended.ads:25:25" title="defined at gl-extended.ads:25:25">usage</a>   : <span class="droplink">GL.VBO_Usage<ul><li><a href="gl.ads.html#gl.ads:3801:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l3801" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l26"><pre> </pre></li>
+<li id="l27"><pre>  <span class="keyword">procedure</span> <span class="droplink">BufferSubData<ul><li><a href="gl-extended.ads.html#gl-extended.ads:27:13" title="To API doc">To API doc</a></li><li><a href="src_gl-extended.ads.html#l47" title="To body">To body</a></li></ul></span> (<a href="gl-extended.ads.html#gl-extended.ads:27:28" title="defined at gl-extended.ads:27:28">target</a>  : <span class="droplink">GL.VBO_Target<ul><li><a href="gl.ads.html#gl.ads:3783:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l3783" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l28"><pre>                           <a href="gl-extended.ads.html#gl-extended.ads:28:28" title="defined at gl-extended.ads:28:28">offset</a>  : <span class="droplink">GL.intPtr<ul><li><a href="gl.ads.html#gl.ads:148:12" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l148" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l29"><pre>                           <a href="gl-extended.ads.html#gl-extended.ads:29:28" title="defined at gl-extended.ads:29:28">size</a>    : <span class="droplink">GL.sizeiPtr<ul><li><a href="gl.ads.html#gl.ads:147:12" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l147" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l30"><pre>                           <a href="gl-extended.ads.html#gl-extended.ads:30:28" title="defined at gl-extended.ads:30:28">data</a>    : <span class="droplink">GL.pointer<ul><li><a href="gl.ads.html#gl.ads:150:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l150" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l31"><pre> </pre></li>
+<li id="l32"><pre>  <span class="keyword">function</span> <span class="droplink">MapBuffer<ul><li><a href="gl-extended.ads.html#gl-extended.ads:32:12" title="To API doc">To API doc</a></li><li><a href="src_gl-extended.ads.html#l48" title="To body">To body</a></li></ul></span>   (<a href="gl-extended.ads.html#gl-extended.ads:32:25" title="defined at gl-extended.ads:32:25">target</a>  : <span class="droplink">GL.VBO_Target<ul><li><a href="gl.ads.html#gl.ads:3783:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l3783" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l33"><pre>                        <a href="gl-extended.ads.html#gl-extended.ads:33:25" title="defined at gl-extended.ads:33:25">Policy</a>  : <span class="droplink">GL.Access_Policy<ul><li><a href="gl.ads.html#gl.ads:3836:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l3836" title="To spec">To spec</a></li></ul></span>) <span class="keyword">return</span> <span class="droplink">GL.pointer<ul><li><a href="gl.ads.html#gl.ads:150:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l150" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l34"><pre> </pre></li>
+<li id="l35"><pre>  <span class="keyword">function</span> <span class="droplink">UnmapBuffer<ul><li><a href="gl-extended.ads.html#gl-extended.ads:35:12" title="To API doc">To API doc</a></li><li><a href="src_gl-extended.ads.html#l49" title="To body">To body</a></li></ul></span> (<a href="gl-extended.ads.html#gl-extended.ads:35:25" title="defined at gl-extended.ads:35:25">target</a>  : <span class="droplink">GL.VBO_Target<ul><li><a href="gl.ads.html#gl.ads:3783:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l3783" title="To spec">To spec</a></li></ul></span>) <span class="keyword">return</span> <span class="droplink">GL.GL_Boolean<ul><li><a href="gl.ads.html#gl.ads:118:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l118" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l36"><pre> </pre></li>
+<li id="l37"><pre>  <span class="keyword">procedure</span> <span class="droplink">GetBufferParameter<ul><li><a href="gl-extended.ads.html#gl-extended.ads:37:13" title="To API doc">To API doc</a></li><li><a href="src_gl-extended.ads.html#l50" title="To body">To body</a></li></ul></span> (<a href="gl-extended.ads.html#gl-extended.ads:37:33" title="defined at gl-extended.ads:37:33">target</a>  : <span class="droplink">GL.VBO_Target<ul><li><a href="gl.ads.html#gl.ads:3783:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l3783" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l38"><pre>                                <a href="gl-extended.ads.html#gl-extended.ads:38:33" title="defined at gl-extended.ads:38:33">value</a>   : <span class="droplink">GL.Buffer_Parameter<ul><li><a href="gl.ads.html#gl.ads:3854:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l3854" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l39"><pre>                                <a href="gl-extended.ads.html#gl-extended.ads:39:33" title="defined at gl-extended.ads:39:33">data</a>    : <span class="droplink">GL.intPointer<ul><li><a href="gl.ads.html#gl.ads:139:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l139" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l40"><pre> </pre></li>
+<li id="l41"><pre>  <span class="comment">-- vertex buffer object imports (GL 1.5)</span> </pre></li>
+<li id="l42"><pre>  <span class="comment">--</span> </pre></li>
+<li id="l43"><pre>  <span class="keyword">pragma</span> Import (Stdcall, <span class="droplink">GenBuffers<ul><li><a href="gl-extended.ads.html#gl-extended.ads:13:13" title="To API doc">To API doc</a></li><li><a href="src_gl-extended.ads.html#l13" title="To spec">To spec</a></li></ul></span>,         <span class="string">&quot;glGenBuffers&quot;</span>); </pre></li>
+<li id="l44"><pre>  <span class="keyword">pragma</span> Import (Stdcall, <span class="droplink">DeleteBuffers<ul><li><a href="gl-extended.ads.html#gl-extended.ads:16:13" title="To API doc">To API doc</a></li><li><a href="src_gl-extended.ads.html#l16" title="To spec">To spec</a></li></ul></span>,      <span class="string">&quot;glDeleteBuffers&quot;</span>); </pre></li>
+<li id="l45"><pre>  <span class="keyword">pragma</span> Import (Stdcall, <span class="droplink">BindBuffer<ul><li><a href="gl-extended.ads.html#gl-extended.ads:19:13" title="To API doc">To API doc</a></li><li><a href="src_gl-extended.ads.html#l19" title="To spec">To spec</a></li></ul></span>,         <span class="string">&quot;glBindBuffer&quot;</span>); </pre></li>
+<li id="l46"><pre>  <span class="keyword">pragma</span> Import (Stdcall, <span class="droplink">BufferData<ul><li><a href="gl-extended.ads.html#gl-extended.ads:22:13" title="To API doc">To API doc</a></li><li><a href="src_gl-extended.ads.html#l22" title="To spec">To spec</a></li></ul></span>,         <span class="string">&quot;glBufferData&quot;</span>); </pre></li>
+<li id="l47"><pre>  <span class="keyword">pragma</span> Import (Stdcall, <span class="droplink">BufferSubData<ul><li><a href="gl-extended.ads.html#gl-extended.ads:27:13" title="To API doc">To API doc</a></li><li><a href="src_gl-extended.ads.html#l27" title="To spec">To spec</a></li></ul></span>,      <span class="string">&quot;glBufferSubData&quot;</span>); </pre></li>
+<li id="l48"><pre>  <span class="keyword">pragma</span> Import (Stdcall, <span class="droplink">MapBuffer<ul><li><a href="gl-extended.ads.html#gl-extended.ads:32:12" title="To API doc">To API doc</a></li><li><a href="src_gl-extended.ads.html#l32" title="To spec">To spec</a></li></ul></span>,          <span class="string">&quot;glMapBuffer&quot;</span>); </pre></li>
+<li id="l49"><pre>  <span class="keyword">pragma</span> Import (Stdcall, <span class="droplink">UnmapBuffer<ul><li><a href="gl-extended.ads.html#gl-extended.ads:35:12" title="To API doc">To API doc</a></li><li><a href="src_gl-extended.ads.html#l35" title="To spec">To spec</a></li></ul></span>,        <span class="string">&quot;glUnmapBuffer&quot;</span>); </pre></li>
+<li id="l50"><pre>  <span class="keyword">pragma</span> Import (Stdcall, <span class="droplink">GetBufferParameter<ul><li><a href="gl-extended.ads.html#gl-extended.ads:37:13" title="To API doc">To API doc</a></li><li><a href="src_gl-extended.ads.html#l37" title="To spec">To spec</a></li></ul></span>, <span class="string">&quot;glGetBufferParameteriv&quot;</span>); </pre></li>
+<li id="l51"><pre> </pre></li>
+<li id="l52"><pre><span class="keyword">end</span> <span class="droplink">GL.Extended<ul><li><a href="gl-extended.ads.html#gl-extended.ads:11:12" title="To API doc">To API doc</a></li><li><a href="src_gl-extended.ads.html#l11" title="To spec">To spec</a></li></ul></span>; </pre></li>
+</ol></div>
+</div>
+
+</body>
+</html>

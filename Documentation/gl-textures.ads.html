@@ -1,0 +1,1012 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    Package: Textures
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+
+  <div id='navigation'>
+    <h2 class="button">Navigation</h2>
+    <a href='#Description'><div class="button2">Description</div></a>
+    <a href='#Classes'><div class="button2">Classes</div></a>
+    <a href='#Types'><div class="button2">Types</div></a>
+    <a href='#Constants'><div class="button2">Constants &amp; Global variables</div></a>
+    <a href='#Methods'><div class="button2">Subprograms &amp; Entries</div></a>
+  </div><!-- navigation -->
+  </div>
+</div> <!-- leftSide -->
+
+<div class='default' id='rightSide'>
+ <div id='rightSideInside'>
+ <div id='Index'>
+  <h2>Index</h2>
+  <script type="text/javascript">
+    var names = new Array (
+new Array ('coordinate_<wbr/>Generator (abstract)', 'gl-textures.ads:53:9', 'class-spec'),
+new Array ('xz_<wbr/>Generator', 'gl-textures.ads:59:9', 'class-spec'),
+new Array ('texture_<wbr/>Name', 'gl-textures.ads:20:12', 'type-spec'),
+new Array ('texture_<wbr/>Transform', 'gl-textures.ads:22:9', 'type-spec'),
+new Array ('Coordinate_<wbr/>1D', 'gl-textures.ads:31:9', 'type-spec'),
+new Array ('Coordinate_<wbr/>1D_<wbr/>array', 'gl-textures.ads:36:9', 'type-spec'),
+new Array ('Coordinate_<wbr/>2D', 'gl-textures.ads:38:9', 'type-spec'),
+new Array ('Coordinate_<wbr/>2D_<wbr/>array', 'gl-textures.ads:43:11', 'type-spec'),
+new Array ('p_<wbr/>Coordinate_<wbr/>2D_<wbr/>array', 'gl-textures.ads:44:9', 'type-spec'),
+new Array ('p_<wbr/>coordinate_<wbr/>Generator', 'gl-textures.ads:54:9', 'type-spec'),
+new Array ('Coordinate_<wbr/>3D', 'gl-textures.ads:68:9', 'type-spec'),
+new Array ('Coordinate_<wbr/>3D_<wbr/>array', 'gl-textures.ads:73:9', 'type-spec'),
+new Array ('Coordinate_<wbr/>4D', 'gl-textures.ads:75:9', 'type-spec'),
+new Array ('Coordinate_<wbr/>4D_<wbr/>array', 'gl-textures.ads:80:9', 'type-spec'),
+new Array ('Size', 'gl-textures.ads:82:9', 'type-spec'),
+new Array ('Object', 'gl-textures.ads:89:9', 'type-spec'),
+new Array ('Objects', 'gl-textures.ads:90:9', 'type-spec'),
+new Array ('Pool', 'gl-textures.ads:111:9', 'type-spec'),
+new Array ('p_<wbr/>Pool', 'gl-textures.ads:112:9', 'type-spec'),
+new Array ('pool_<wbr/>texture_<wbr/>List (private)', 'gl-textures.ads:151:9', 'type-spec'),
+new Array ('p_<wbr/>pool_<wbr/>texture_<wbr/>List (private)', 'gl-textures.ads:157:9', 'type-spec'),
+new Array ('pool_<wbr/>texture_<wbr/>Lists_<wbr/>by_<wbr/>size (private)', 'gl-textures.ads:159:9', 'type-spec'),
+new Array ('unsupported_<wbr/>format_<wbr/>Error', 'gl-textures.ads:94:4', 'var-spec'),
+new Array ('free', 'gl-textures.ads:46:14', 'subp-spec'),
+new Array ('To_<wbr/>Texture_<wbr/>Coordinates_<wbr/>xz', 'gl-textures.ads:48:13', 'subp-spec'),
+new Array ('To_<wbr/>Coordinates (abstract)', 'gl-textures.ads:56:13', 'subp-spec'),
+new Array ('To_<wbr/>Coordinates (abstract)', 'gl-textures.ads:57:13', 'subp-spec'),
+new Array ('To_<wbr/>Coordinates', 'gl-textures.ads:65:24', 'subp-spec'),
+new Array ('to_<wbr/>Coordinates', 'gl-textures.ads:66:24', 'subp-spec'),
+new Array ('To_<wbr/>Size', 'gl-textures.ads:84:13', 'subp-spec'),
+new Array ('New_<wbr/>Texture', 'gl-textures.ads:92:13', 'subp-spec'),
+new Array ('Destroy', 'gl-textures.ads:96:14', 'subp-spec'),
+new Array ('Set_<wbr/>Name', 'gl-textures.ads:98:14', 'subp-spec'),
+new Array ('Name', 'gl-textures.ads:99:14', 'subp-spec'),
+new Array ('Enable', 'gl-textures.ads:101:14', 'subp-spec'),
+new Array ('Size_<wbr/>Width', 'gl-textures.ads:103:13', 'subp-spec'),
+new Array ('Size_<wbr/>Height', 'gl-textures.ads:104:13', 'subp-spec'),
+new Array ('Is_<wbr/>Transparent', 'gl-textures.ads:106:14', 'subp-spec'),
+new Array ('New_<wbr/>Texture', 'gl-textures.ads:114:13', 'subp-spec'),
+new Array ('Free', 'gl-textures.ads:121:14', 'subp-spec'),
+new Array ('Vacuum', 'gl-textures.ads:125:14', 'subp-spec'),
+new Array ('Power_<wbr/>of_<wbr/>2_<wbr/>Ceiling', 'gl-textures.ads:132:13', 'subp-spec'),
+      new Array ('dummy', '', ''));
+    printIndexList (names);
+  </script>
+  <noscript>
+    <ul>
+      <li class='class-spec'><a href="#gl-textures.ads:53:9">coordinate_<wbr/>Generator (abstract)</a></li>
+      <li class='class-spec'><a href="#gl-textures.ads:59:9">xz_<wbr/>Generator</a></li>
+      <li class='type-spec'><a href="#gl-textures.ads:20:12">texture_<wbr/>Name</a></li>
+      <li class='type-spec'><a href="#gl-textures.ads:22:9">texture_<wbr/>Transform</a></li>
+      <li class='type-spec'><a href="#gl-textures.ads:31:9">Coordinate_<wbr/>1D</a></li>
+      <li class='type-spec'><a href="#gl-textures.ads:36:9">Coordinate_<wbr/>1D_<wbr/>array</a></li>
+      <li class='type-spec'><a href="#gl-textures.ads:38:9">Coordinate_<wbr/>2D</a></li>
+      <li class='type-spec'><a href="#gl-textures.ads:43:11">Coordinate_<wbr/>2D_<wbr/>array</a></li>
+      <li class='type-spec'><a href="#gl-textures.ads:44:9">p_<wbr/>Coordinate_<wbr/>2D_<wbr/>array</a></li>
+      <li class='type-spec'><a href="#gl-textures.ads:54:9">p_<wbr/>coordinate_<wbr/>Generator</a></li>
+      <li class='type-spec'><a href="#gl-textures.ads:68:9">Coordinate_<wbr/>3D</a></li>
+      <li class='type-spec'><a href="#gl-textures.ads:73:9">Coordinate_<wbr/>3D_<wbr/>array</a></li>
+      <li class='type-spec'><a href="#gl-textures.ads:75:9">Coordinate_<wbr/>4D</a></li>
+      <li class='type-spec'><a href="#gl-textures.ads:80:9">Coordinate_<wbr/>4D_<wbr/>array</a></li>
+      <li class='type-spec'><a href="#gl-textures.ads:82:9">Size</a></li>
+      <li class='type-spec'><a href="#gl-textures.ads:89:9">Object</a></li>
+      <li class='type-spec'><a href="#gl-textures.ads:90:9">Objects</a></li>
+      <li class='type-spec'><a href="#gl-textures.ads:111:9">Pool</a></li>
+      <li class='type-spec'><a href="#gl-textures.ads:112:9">p_<wbr/>Pool</a></li>
+      <li class='type-spec'><a href="#gl-textures.ads:151:9">pool_<wbr/>texture_<wbr/>List (private)</a></li>
+      <li class='type-spec'><a href="#gl-textures.ads:157:9">p_<wbr/>pool_<wbr/>texture_<wbr/>List (private)</a></li>
+      <li class='type-spec'><a href="#gl-textures.ads:159:9">pool_<wbr/>texture_<wbr/>Lists_<wbr/>by_<wbr/>size (private)</a></li>
+      <li class='var-spec'><a href="#gl-textures.ads:94:4">unsupported_<wbr/>format_<wbr/>Error</a></li>
+      <li class='subp-spec'><a href="#gl-textures.ads:46:14">free</a></li>
+      <li class='subp-spec'><a href="#gl-textures.ads:48:13">To_<wbr/>Texture_<wbr/>Coordinates_<wbr/>xz</a></li>
+      <li class='subp-spec'><a href="#gl-textures.ads:56:13">To_<wbr/>Coordinates (abstract)</a></li>
+      <li class='subp-spec'><a href="#gl-textures.ads:57:13">To_<wbr/>Coordinates (abstract)</a></li>
+      <li class='subp-spec'><a href="#gl-textures.ads:65:24">To_<wbr/>Coordinates</a></li>
+      <li class='subp-spec'><a href="#gl-textures.ads:66:24">to_<wbr/>Coordinates</a></li>
+      <li class='subp-spec'><a href="#gl-textures.ads:84:13">To_<wbr/>Size</a></li>
+      <li class='subp-spec'><a href="#gl-textures.ads:92:13">New_<wbr/>Texture</a></li>
+      <li class='subp-spec'><a href="#gl-textures.ads:96:14">Destroy</a></li>
+      <li class='subp-spec'><a href="#gl-textures.ads:98:14">Set_<wbr/>Name</a></li>
+      <li class='subp-spec'><a href="#gl-textures.ads:99:14">Name</a></li>
+      <li class='subp-spec'><a href="#gl-textures.ads:101:14">Enable</a></li>
+      <li class='subp-spec'><a href="#gl-textures.ads:103:13">Size_<wbr/>Width</a></li>
+      <li class='subp-spec'><a href="#gl-textures.ads:104:13">Size_<wbr/>Height</a></li>
+      <li class='subp-spec'><a href="#gl-textures.ads:106:14">Is_<wbr/>Transparent</a></li>
+      <li class='subp-spec'><a href="#gl-textures.ads:114:13">New_<wbr/>Texture</a></li>
+      <li class='subp-spec'><a href="#gl-textures.ads:121:14">Free</a></li>
+      <li class='subp-spec'><a href="#gl-textures.ads:125:14">Vacuum</a></li>
+      <li class='subp-spec'><a href="#gl-textures.ads:132:13">Power_<wbr/>of_<wbr/>2_<wbr/>Ceiling</a></li>
+    </ul>
+  </noscript>
+ </div>
+ </div>
+</div>
+
+<div class='default' id='documentation'>
+  <div class='title'>
+    Package:
+<span class="droplink"><i>Textures</i><ul>
+  <li><a href="src_gl-textures.ads.html">Goto spec source</a></li>
+  <li><a href="src_gl-textures.adb.html">Goto body source</a></li>
+</ul></span>
+  </div>
+  <div class='subprograms'>
+    <h1><a name='Description' id='Description'></a>Description</h1>
+    <div class="class">
+    <div class='details'><pre><span class="keyword">package</span> <span class="name_emphasis">GL.Textures</span> <span class="keyword">is</span></pre></div>
+    <div class='comment'>-----------------------------------------------------------------------
+<a href="gl-textures.adb.html#gl-textures.adb:18:14" title="GL.Textures">GL.Textures</a> - <a href="gl.adb.html#gl.adb:17:14" title="GL">GL</a> Texture model
+
+Copyright (c) Rod Kay 2007
+AUSTRALIA
+Permission granted to use this software, without any warranty,
+for any purpose, provided this copyright note remains attached
+and unmodified if sources are distributed further.
+-----------------------------------------------------------------------
+</div>
+    </div>
+  </div>
+
+
+  <div class='subprograms'>
+    <h1><a name='Classes' id='Classes'></a>Classes</h1>
+    <div class="class">
+      <h3><a name='gl-textures.ads:53:9' id='gl-textures.ads:53:9'></a>
+<span class="droplink">coordinate_Generator (abstract)<ul>
+  <li><a href="src_gl-textures.ads.html#l53">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">coordinate_Generator</span>   <span class="keyword">is</span> <span class="keyword">abstract</span> <span class="keyword">tagged</span> <span class="keyword">null</span> <span class="keyword">record</span>;</pre></div>
+      <div class='profile'>
+        <div>
+          <h4>Immediate Children:</h4>
+            <div><a href="gl-textures.ads.html#gl-textures.ads:59:9" title="defined at gl-textures.ads:59:9">GL.Textures.xz_Generator</a></div>
+        </div>
+        <div>
+          <h4>Primitive operations:</h4>
+              <div><span class="droplink">To_Coordinates<ul><li><a href="gl-textures.ads.html#gl-textures.ads:56:13" title="To API doc">To API doc</a></li><li><a href="src_gl-textures.ads.html#l56" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">To_Coordinates<ul><li><a href="gl-textures.ads.html#gl-textures.ads:57:13" title="To API doc">To API doc</a></li><li><a href="src_gl-textures.ads.html#l57" title="To spec">To spec</a></li></ul></span></div>
+        </div>
+      </div>
+      <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-textures.ads.html#l53" title="gl-textures.ads:53:9">gl-textures.ads:53:9</a> (declaration)</i></div>
+            <div><i><a href="src_gl-textures.ads.html#l54" title="gl-textures.ads:54:46">gl-textures.ads:54:46</a> (reference)</i></div>
+            <div><i><a href="src_gl-textures.ads.html#l56" title="gl-textures.ads:56:36">gl-textures.ads:56:36</a> (reference)</i></div>
+            <div><i><a href="src_gl-textures.ads.html#l57" title="gl-textures.ads:57:36">gl-textures.ads:57:36</a> (reference)</i></div>
+            <div><i><a href="src_gl-textures.ads.html#l59" title="gl-textures.ads:59:29">gl-textures.ads:59:29</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-textures.ads:59:9' id='gl-textures.ads:59:9'></a>
+<span class="droplink">xz_Generator<ul>
+  <li><a href="src_gl-textures.ads.html#l59">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">xz_Generator</span> <span class="keyword">is</span> <span class="keyword">new</span> <a href="gl-textures.ads.html#gl-textures.ads:53:9" title="defined at gl-textures.ads:53:9">coordinate_Generator</a> <span class="keyword">with</span>
+      <span class="keyword">record</span>
+         Transform_S  : <a href="gl-textures.ads.html#gl-textures.ads:22:9" title="defined at gl-textures.ads:22:9">texture_Transform</a>;          <span class="comment">-- transforms point X ordinate.
+</span>         Transform_T  : <a href="gl-textures.ads.html#gl-textures.ads:22:9" title="defined at gl-textures.ads:22:9">texture_Transform</a>;          <span class="comment">-- transforms point Z ordinate.
+</span>      <span class="keyword">end</span> <span class="keyword">record</span>;</pre></div>
+      <div class='profile'>
+        <div>
+          <h4>Ancestors:</h4>
+            <div><a href="gl-textures.ads.html#gl-textures.ads:53:9" title="defined at gl-textures.ads:53:9">GL.Textures.coordinate_Generator</a></div>
+        </div>
+        <div>
+          <h4>Primitive operations:</h4>
+              <div><span class="droplink">To_Coordinates<ul><li><a href="gl-textures.ads.html#gl-textures.ads:65:24" title="To API doc">To API doc</a></li><li><a href="src_gl-textures.ads.html#l65" title="To spec">To spec</a></li></ul></span> <i>(overriding <a href="gl-textures.ads.html#gl-textures.ads:56:13" title="defined at gl-textures.ads:56:13">To_Coordinates</a>)</i></div>
+              <div><span class="droplink">to_Coordinates<ul><li><a href="gl-textures.ads.html#gl-textures.ads:66:24" title="To API doc">To API doc</a></li><li><a href="src_gl-textures.ads.html#l66" title="To spec">To spec</a></li></ul></span> <i>(overriding <a href="gl-textures.ads.html#gl-textures.ads:57:13" title="defined at gl-textures.ads:57:13">To_Coordinates</a>)</i></div>
+        </div>
+      </div>
+      <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-textures.ads.html#l59" title="gl-textures.ads:59:9">gl-textures.ads:59:9</a> (declaration)</i></div>
+            <div><i><a href="src_gl-textures.adb.html#l84" title="gl-textures.adb:84:47">gl-textures.adb:84:47</a> (reference)</i></div>
+            <div><i><a href="src_gl-textures.adb.html#l87" title="gl-textures.adb:87:47">gl-textures.adb:87:47</a> (reference)</i></div>
+            <div><i><a href="src_gl-textures.ads.html#l65" title="gl-textures.ads:65:47">gl-textures.ads:65:47</a> (reference)</i></div>
+            <div><i><a href="src_gl-textures.ads.html#l66" title="gl-textures.ads:66:47">gl-textures.ads:66:47</a> (reference)</i></div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class='subprograms'>
+    <h1><a name='Types' id='Types'></a>Types</h1>
+    <div class="class">
+      <h3>
+        <a name='gl-textures.ads:20:12' id='gl-textures.ads:20:12'></a>
+<span class="droplink">texture_Name<ul>
+  <li><a href="src_gl-textures.ads.html#l20">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">subtype</span> <span class="name_emphasis">texture_Name</span> <span class="keyword">is</span> <a href="gl.ads.html#gl.ads:124:9" title="defined at gl.ads:124:9">GL.Uint</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-textures.ads.html#l20" title="gl-textures.ads:20:12">gl-textures.ads:20:12</a> (declaration)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l22" title="gl-textures.adb:22:37">gl-textures.adb:22:37</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l24" title="gl-textures.adb:24:26">gl-textures.adb:24:26</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l31" title="gl-textures.adb:31:39">gl-textures.adb:31:39</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l33" title="gl-textures.adb:33:26">gl-textures.adb:33:26</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l98" title="gl-textures.ads:98:51">gl-textures.ads:98:51</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l99" title="gl-textures.ads:99:53">gl-textures.ads:99:53</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l138" title="gl-textures.ads:138:28">gl-textures.ads:138:28</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-textures.ads:22:9' id='gl-textures.ads:22:9'></a>
+<span class="droplink">texture_Transform<ul>
+  <li><a href="src_gl-textures.ads.html#l22">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">texture_Transform</span> <span class="keyword">is</span>
+     <span class="keyword">record</span>
+       Offset  : <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">Double</a>;
+       Scale   : <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">Double</a>;
+     <span class="keyword">end</span> <span class="keyword">record</span>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-textures.ads.html#l22" title="gl-textures.ads:22:9">gl-textures.ads:22:9</a> (declaration)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l43" title="gl-textures.adb:43:54">gl-textures.adb:43:54</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l44" title="gl-textures.adb:44:54">gl-textures.adb:44:54</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l63" title="gl-textures.adb:63:54">gl-textures.adb:63:54</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l64" title="gl-textures.adb:64:54">gl-textures.adb:64:54</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l49" title="gl-textures.ads:49:54">gl-textures.ads:49:54</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l50" title="gl-textures.ads:50:54">gl-textures.ads:50:54</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l61" title="gl-textures.ads:61:25">gl-textures.ads:61:25</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l62" title="gl-textures.ads:62:25">gl-textures.ads:62:25</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-textures.ads:31:9' id='gl-textures.ads:31:9'></a>
+<span class="droplink">Coordinate_1D<ul>
+  <li><a href="src_gl-textures.ads.html#l31">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Coordinate_1D</span> <span class="keyword">is</span>
+      <span class="keyword">record</span>
+         S  : <span class="keyword">aliased</span> <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;
+      <span class="keyword">end</span> <span class="keyword">record</span>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-textures.ads.html#l31" title="gl-textures.ads:31:9">gl-textures.ads:31:9</a> (declaration)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l36" title="gl-textures.ads:36:60">gl-textures.ads:36:60</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-textures.ads:36:9' id='gl-textures.ads:36:9'></a>
+<span class="droplink">Coordinate_1D_array<ul>
+  <li><a href="src_gl-textures.ads.html#l36">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Coordinate_1D_array</span> <span class="keyword">is</span> <span class="keyword">array</span> (Natural <span class="keyword">range</span> <>) <span class="keyword">of</span> <a href="gl-textures.ads.html#gl-textures.ads:31:9" title="defined at gl-textures.ads:31:9">Coordinate_1D</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-textures.ads.html#l36" title="gl-textures.ads:36:9">gl-textures.ads:36:9</a> (declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-textures.ads:38:9' id='gl-textures.ads:38:9'></a>
+<span class="droplink">Coordinate_2D<ul>
+  <li><a href="src_gl-textures.ads.html#l38">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Coordinate_2D</span> <span class="keyword">is</span>
+      <span class="keyword">record</span>
+         S, T  : <span class="keyword">aliased</span> <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;
+      <span class="keyword">end</span> <span class="keyword">record</span>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-textures.ads.html#l38" title="gl-textures.ads:38:9">gl-textures.ads:38:9</a> (declaration)</i></div>
+          <div><i><a href="src_gl-buffer-texture_coords.ads.html#l8" title="gl-buffer-texture_coords.ads:8:89">gl-buffer-texture_coords.ads:8:89</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l43" title="gl-textures.ads:43:93">gl-textures.ads:43:93</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-textures.ads:43:11' id='gl-textures.ads:43:11'></a>
+<span class="droplink">Coordinate_2D_array<ul>
+  <li><a href="src_gl-textures.ads.html#l43">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span>   <span class="name_emphasis">Coordinate_2D_array</span> <span class="keyword">is</span> <span class="keyword">array</span> (<a href="gl-geometry.ads.html#gl-geometry.ads:79:12" title="defined at gl-geometry.ads:79:12">GL.Geometry.Positive_Vertex_Id</a> <span class="keyword">range</span> <>) <span class="keyword">of</span> <span class="keyword">aliased</span> <a href="gl-textures.ads.html#gl-textures.ads:38:9" title="defined at gl-textures.ads:38:9">Coordinate_2D</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-textures.ads.html#l43" title="gl-textures.ads:43:11">gl-textures.ads:43:11</a> (declaration)</i></div>
+          <div><i><a href="src_gl-buffer-texture_coords.ads.html#l9" title="gl-buffer-texture_coords.ads:9:89">gl-buffer-texture_coords.ads:9:89</a> (reference)</i></div>
+          <div><i><a href="src_gl-skins.ads.html#l84" title="gl-skins.ads:84:45">gl-skins.ads:84:45</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l47" title="gl-textures.adb:47:58">gl-textures.adb:47:58</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l65" title="gl-textures.adb:65:47">gl-textures.adb:65:47</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l67" title="gl-textures.adb:67:21">gl-textures.adb:67:21</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l87" title="gl-textures.adb:87:124">gl-textures.adb:87:124</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l44" title="gl-textures.ads:44:45">gl-textures.ads:44:45</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l46" title="gl-textures.ads:46:54">gl-textures.ads:46:54</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l57" title="gl-textures.ads:57:121">gl-textures.ads:57:121</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l66" title="gl-textures.ads:66:124">gl-textures.ads:66:124</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-textures.ads:44:9' id='gl-textures.ads:44:9'></a>
+<span class="droplink">p_Coordinate_2D_array<ul>
+  <li><a href="src_gl-textures.ads.html#l44">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">p_Coordinate_2D_array</span> <span class="keyword">is</span> <span class="keyword">access</span> <span class="keyword">all</span> <a href="gl-textures.ads.html#gl-textures.ads:43:11" title="defined at gl-textures.ads:43:11">Coordinate_2D_array</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-textures.ads.html#l44" title="gl-textures.ads:44:9">gl-textures.ads:44:9</a> (declaration)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l45" title="gl-textures.adb:45:47">gl-textures.adb:45:47</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l47" title="gl-textures.adb:47:29">gl-textures.adb:47:29</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l84" title="gl-textures.adb:84:124">gl-textures.adb:84:124</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l46" title="gl-textures.ads:46:75">gl-textures.ads:46:75</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l51" title="gl-textures.ads:51:47">gl-textures.ads:51:47</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l56" title="gl-textures.ads:56:121">gl-textures.ads:56:121</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l65" title="gl-textures.ads:65:124">gl-textures.ads:65:124</a> (reference)</i></div>
+      </div>
+      <div class='comment'>tbd : can the index be &apos;1&apos;- based ?
+</div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-textures.ads:54:9' id='gl-textures.ads:54:9'></a>
+<span class="droplink">p_coordinate_Generator<ul>
+  <li><a href="src_gl-textures.ads.html#l54">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">p_coordinate_Generator</span> <span class="keyword">is</span> <span class="keyword">access</span> <span class="keyword">all</span> <a href="gl-textures.ads.html#gl-textures.ads:53:9" title="defined at gl-textures.ads:53:9">coordinate_Generator</a>'Class;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-textures.ads.html#l54" title="gl-textures.ads:54:9">gl-textures.ads:54:9</a> (declaration)</i></div>
+          <div><i><a href="src_gl-skins.ads.html#l94" title="gl-skins.ads:94:46">gl-skins.ads:94:46</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-textures.ads:68:9' id='gl-textures.ads:68:9'></a>
+<span class="droplink">Coordinate_3D<ul>
+  <li><a href="src_gl-textures.ads.html#l68">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Coordinate_3D</span> <span class="keyword">is</span>
+      <span class="keyword">record</span>
+         S, T, R  : <span class="keyword">aliased</span> <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;
+      <span class="keyword">end</span> <span class="keyword">record</span>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-textures.ads.html#l68" title="gl-textures.ads:68:9">gl-textures.ads:68:9</a> (declaration)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l73" title="gl-textures.ads:73:60">gl-textures.ads:73:60</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-textures.ads:73:9' id='gl-textures.ads:73:9'></a>
+<span class="droplink">Coordinate_3D_array<ul>
+  <li><a href="src_gl-textures.ads.html#l73">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Coordinate_3D_array</span> <span class="keyword">is</span> <span class="keyword">array</span> (Natural <span class="keyword">range</span> <>) <span class="keyword">of</span> <a href="gl-textures.ads.html#gl-textures.ads:68:9" title="defined at gl-textures.ads:68:9">Coordinate_3D</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-textures.ads.html#l73" title="gl-textures.ads:73:9">gl-textures.ads:73:9</a> (declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-textures.ads:75:9' id='gl-textures.ads:75:9'></a>
+<span class="droplink">Coordinate_4D<ul>
+  <li><a href="src_gl-textures.ads.html#l75">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Coordinate_4D</span> <span class="keyword">is</span>
+      <span class="keyword">record</span>
+         S, T, R, Q  : <span class="keyword">aliased</span> <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;
+      <span class="keyword">end</span> <span class="keyword">record</span>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-textures.ads.html#l75" title="gl-textures.ads:75:9">gl-textures.ads:75:9</a> (declaration)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l80" title="gl-textures.ads:80:60">gl-textures.ads:80:60</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-textures.ads:80:9' id='gl-textures.ads:80:9'></a>
+<span class="droplink">Coordinate_4D_array<ul>
+  <li><a href="src_gl-textures.ads.html#l80">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Coordinate_4D_array</span> <span class="keyword">is</span> <span class="keyword">array</span> (Natural <span class="keyword">range</span> <>) <span class="keyword">of</span> <a href="gl-textures.ads.html#gl-textures.ads:75:9" title="defined at gl-textures.ads:75:9">Coordinate_4D</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-textures.ads.html#l80" title="gl-textures.ads:80:9">gl-textures.ads:80:9</a> (declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-textures.ads:82:9' id='gl-textures.ads:82:9'></a>
+<span class="droplink">Size<ul>
+  <li><a href="src_gl-textures.ads.html#l82">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Size</span> <span class="keyword">is</span> (Unknown, s2, s4, s8, s16, s32, s64, s128, s256, s512, s1024, s2048);</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-textures.ads.html#l82" title="gl-textures.ads:82:9">gl-textures.ads:82:9</a> (declaration)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l156" title="gl-textures.adb:156:35">gl-textures.adb:156:35</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l157" title="gl-textures.adb:157:35">gl-textures.adb:157:35</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l257" title="gl-textures.adb:257:46">gl-textures.adb:257:46</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l319" title="gl-textures.adb:319:48">gl-textures.adb:319:48</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l321" title="gl-textures.adb:321:48">gl-textures.adb:321:48</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l84" title="gl-textures.ads:84:46">gl-textures.ads:84:46</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l103" title="gl-textures.ads:103:48">gl-textures.ads:103:48</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l104" title="gl-textures.ads:104:48">gl-textures.ads:104:48</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l140" title="gl-textures.ads:140:28">gl-textures.ads:140:28</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l159" title="gl-textures.ads:159:46">gl-textures.ads:159:46</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l159" title="gl-textures.ads:159:52">gl-textures.ads:159:52</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-textures.ads:89:9' id='gl-textures.ads:89:9'></a>
+<span class="droplink">Object<ul>
+  <li><a href="src_gl-textures.ads.html#l89">Goto declaration in source</a></li>
+  <li><a href="src_gl-textures.ads.html#l136">Goto full declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Object</span>  <span class="keyword">is</span> <span class="keyword">private</span>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-textures.ads.html#l89" title="gl-textures.ads:89:9">gl-textures.ads:89:9</a> (declaration)</i></div>
+          <div><i><a href="src_gl-skins.ads.html#l93" title="gl-skins.ads:93:46">gl-skins.ads:93:46</a> (reference)</i></div>
+          <div><i><a href="src_gl-skins.ads.html#l122" title="gl-skins.ads:122:33">gl-skins.ads:122:33</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l92" title="gl-textures.adb:92:58">gl-textures.adb:92:58</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l97" title="gl-textures.adb:97:30">gl-textures.adb:97:30</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l115" title="gl-textures.adb:115:37">gl-textures.adb:115:37</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l124" title="gl-textures.adb:124:38">gl-textures.adb:124:38</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l130" title="gl-textures.adb:130:26">gl-textures.adb:130:26</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l132" title="gl-textures.adb:132:36">gl-textures.adb:132:36</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l134" title="gl-textures.adb:134:36">gl-textures.adb:134:36</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l152" title="gl-textures.adb:152:63">gl-textures.adb:152:63</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l154" title="gl-textures.adb:154:30">gl-textures.adb:154:30</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l219" title="gl-textures.adb:219:54">gl-textures.adb:219:54</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l319" title="gl-textures.adb:319:33">gl-textures.adb:319:33</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l321" title="gl-textures.adb:321:33">gl-textures.adb:321:33</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l90" title="gl-textures.ads:90:49">gl-textures.ads:90:49</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l92" title="gl-textures.ads:92:58">gl-textures.ads:92:58</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l96" title="gl-textures.ads:96:38">gl-textures.ads:96:38</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l98" title="gl-textures.ads:98:38">gl-textures.ads:98:38</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l99" title="gl-textures.ads:99:38">gl-textures.ads:99:38</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l101" title="gl-textures.ads:101:36">gl-textures.ads:101:36</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l103" title="gl-textures.ads:103:33">gl-textures.ads:103:33</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l104" title="gl-textures.ads:104:33">gl-textures.ads:104:33</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l106" title="gl-textures.ads:106:38">gl-textures.ads:106:38</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l116" title="gl-textures.ads:116:63">gl-textures.ads:116:63</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l121" title="gl-textures.ads:121:54">gl-textures.ads:121:54</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l136" title="gl-textures.ads:136:9">gl-textures.ads:136:9</a> (full declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-textures.ads:90:9' id='gl-textures.ads:90:9'></a>
+<span class="droplink">Objects<ul>
+  <li><a href="src_gl-textures.ads.html#l90">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Objects</span> <span class="keyword">is</span> <span class="keyword">array</span> (Positive <span class="keyword">range</span> <>) <span class="keyword">of</span> <a href="gl-textures.ads.html#gl-textures.ads:89:9" title="defined at gl-textures.ads:89:9">Object</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-textures.ads.html#l90" title="gl-textures.ads:90:9">gl-textures.ads:90:9</a> (declaration)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l153" title="gl-textures.ads:153:22">gl-textures.ads:153:22</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-textures.ads:111:9' id='gl-textures.ads:111:9'></a>
+<span class="droplink">Pool<ul>
+  <li><a href="src_gl-textures.ads.html#l111">Goto declaration in source</a></li>
+  <li><a href="src_gl-textures.ads.html#l161">Goto full declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Pool</span> <span class="keyword">is</span> <span class="keyword">private</span>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-textures.ads.html#l111" title="gl-textures.ads:111:9">gl-textures.ads:111:9</a> (declaration)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l150" title="gl-textures.adb:150:46">gl-textures.adb:150:46</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l219" title="gl-textures.adb:219:34">gl-textures.adb:219:34</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l234" title="gl-textures.adb:234:36">gl-textures.adb:234:36</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l112" title="gl-textures.ads:112:30">gl-textures.ads:112:30</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l114" title="gl-textures.ads:114:46">gl-textures.ads:114:46</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l121" title="gl-textures.ads:121:34">gl-textures.ads:121:34</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l125" title="gl-textures.ads:125:36">gl-textures.ads:125:36</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l161" title="gl-textures.ads:161:9">gl-textures.ads:161:9</a> (full declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-textures.ads:112:9' id='gl-textures.ads:112:9'></a>
+<span class="droplink">p_Pool<ul>
+  <li><a href="src_gl-textures.ads.html#l112">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">p_Pool</span> <span class="keyword">is</span> <span class="keyword">access</span> <span class="keyword">all</span> <a href="gl-textures.ads.html#gl-textures.ads:111:9" title="defined at gl-textures.ads:111:9">Pool</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-textures.ads.html#l112" title="gl-textures.ads:112:9">gl-textures.ads:112:9</a> (declaration)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l144" title="gl-textures.ads:144:29">gl-textures.ads:144:29</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-textures.ads:151:9' id='gl-textures.ads:151:9'></a>
+<span class="droplink">pool_texture_List (private)<ul>
+  <li><a href="src_gl-textures.ads.html#l151">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">pool_texture_List</span> <span class="keyword">is</span>
+      <span class="keyword">record</span>
+         Textures  : <a href="gl-textures.ads.html#gl-textures.ads:90:9" title="defined at gl-textures.ads:90:9">Objects</a> (1 .. 3000);
+         Last      : Natural            := 0;
+      <span class="keyword">end</span> <span class="keyword">record</span>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-textures.ads.html#l151" title="gl-textures.ads:151:9">gl-textures.ads:151:9</a> (declaration)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l163" title="gl-textures.adb:163:85">gl-textures.adb:163:85</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l157" title="gl-textures.ads:157:43">gl-textures.ads:157:43</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-textures.ads:157:9' id='gl-textures.ads:157:9'></a>
+<span class="droplink">p_pool_texture_List (private)<ul>
+  <li><a href="src_gl-textures.ads.html#l157">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">p_pool_texture_List</span> <span class="keyword">is</span> <span class="keyword">access</span> <span class="keyword">all</span> <a href="gl-textures.ads.html#gl-textures.ads:151:9" title="defined at gl-textures.ads:151:9">pool_texture_List</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-textures.ads.html#l157" title="gl-textures.ads:157:9">gl-textures.ads:157:9</a> (declaration)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l159" title="gl-textures.adb:159:30">gl-textures.adb:159:30</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l227" title="gl-textures.adb:227:41">gl-textures.adb:227:41</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l241" title="gl-textures.adb:241:48">gl-textures.adb:241:48</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l159" title="gl-textures.ads:159:61">gl-textures.ads:159:61</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-textures.ads:159:9' id='gl-textures.ads:159:9'></a>
+<span class="droplink">pool_texture_Lists_by_size (private)<ul>
+  <li><a href="src_gl-textures.ads.html#l159">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">pool_texture_Lists_by_size</span> <span class="keyword">is</span> <span class="keyword">array</span> (<a href="gl-textures.ads.html#gl-textures.ads:82:9" title="defined at gl-textures.ads:82:9">Size</a>, <a href="gl-textures.ads.html#gl-textures.ads:82:9" title="defined at gl-textures.ads:82:9">Size</a>) <span class="keyword">of</span> <a href="gl-textures.ads.html#gl-textures.ads:157:9" title="defined at gl-textures.ads:157:9">p_pool_texture_List</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-textures.ads.html#l159" title="gl-textures.ads:159:9">gl-textures.ads:159:9</a> (declaration)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l163" title="gl-textures.ads:163:38">gl-textures.ads:163:38</a> (reference)</i></div>
+      </div>
+    </div>
+  </div>
+
+  <div class='subprograms'>
+    <h1><a name='Constants' id='Constants'></a>Constants &amp; Global variables</h1>
+    <div class="class">
+      <h3><a name='gl-textures.ads:94:4' id='gl-textures.ads:94:4'></a>
+<span class="droplink">unsupported_format_Error<ul>
+  <li><a href="src_gl-textures.ads.html#l94">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">unsupported_format_Error</span>  : <span class="keyword">exception</span>;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-textures.ads.html#l94" title="gl-textures.ads:94:4">gl-textures.ads:94:4</a> (declaration)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l108" title="gl-textures.adb:108:16">gl-textures.adb:108:16</a> (reference)</i></div>
+      </div>
+    </div>
+  </div>
+
+    <div class='subprograms'>
+      <h1><a name='Methods' id='Methods'></a>Subprograms &amp; Entries</h1>
+      <div class="class">
+        <h3>
+          <a name='gl-textures.ads:46:14' id='gl-textures.ads:46:14'></a>
+<span class="droplink">free<ul>
+  <li><a href="src_gl-textures.ads.html#l46">Goto spec in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">free</span> <span class="keyword">is</span> <span class="keyword">new</span> Ada.Unchecked_Deallocation <table><tr><td>(</td><td><a href="gl-textures.ads.html#gl-textures.ads:43:11" title="defined at gl-textures.ads:43:11">Coordinate_2D_array</a>, <a href="gl-textures.ads.html#gl-textures.ads:44:9" title="defined at gl-textures.ads:44:9">p_Coordinate_2D_array</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-textures.ads.html#l46" title="gl-textures.ads:46:14">gl-textures.ads:46:14</a> (declaration)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-textures.ads:48:13' id='gl-textures.ads:48:13'></a>
+<span class="droplink">To_Texture_Coordinates_xz<ul>
+  <li><a href="src_gl-textures.ads.html#l48">Goto spec in source</a></li>
+  <li><a href="src_gl-textures.adb.html#l42">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">To_Texture_Coordinates_xz</span> <table><tr><td>(</td><td><span class="name"><a name="gl-textures.ads:48:40"></a>the_Points</span></td><td>: <a href="gl-geometry.ads.html#gl-geometry.ads:85:12" title="defined at gl-geometry.ads:85:12">GL.Geometry.GL_Vertex_array</a>;</td></tr><tr><td></td><td><span class="name"><a name="gl-textures.ads:49:40"></a>Transform_S</span></td><td>: <a href="gl-textures.ads.html#gl-textures.ads:22:9" title="defined at gl-textures.ads:22:9">texture_Transform</a>;</td></tr><tr><td></td><td><span class="comment">-- transforms point X ordinate. </span>                                       <span class="name"><a name="gl-textures.ads:50:40"></a>Transform_T</span></td><td>: <a href="gl-textures.ads.html#gl-textures.ads:22:9" title="defined at gl-textures.ads:22:9">texture_Transform</a>)          <span class="comment">-- transforms point Z ordinate. </span>                                       <span class="keyword">return</span> <a href="gl-textures.ads.html#gl-textures.ads:44:9" title="defined at gl-textures.ads:44:9">p_Coordinate_2D_array</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-textures.ads.html#l48" title="gl-textures.ads:48:13">gl-textures.ads:48:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-textures.adb.html#l42" title="gl-textures.adb:42:13">gl-textures.adb:42:13</a> (body)</i></div>
+            <div><i><a href="src_gl-textures.adb.html#l60" title="gl-textures.adb:60:8">gl-textures.adb:60:8</a> (label)</i></div>
+            <div><i><a href="src_gl-textures.adb.html#l85" title="gl-textures.adb:85:7">gl-textures.adb:85:7</a> (call)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-textures.ads:56:13' id='gl-textures.ads:56:13'></a>
+<span class="droplink">To_Coordinates (abstract)<ul>
+  <li><a href="src_gl-textures.ads.html#l56">Goto spec in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">To_Coordinates</span> <table><tr><td>(</td><td><span class="name"><a name="gl-textures.ads:56:29"></a>Self</span></td><td>: <a href="gl-textures.ads.html#gl-textures.ads:53:9" title="defined at gl-textures.ads:53:9">coordinate_Generator</a>;</td></tr><tr><td></td><td><span class="name"><a name="gl-textures.ads:56:58"></a>the_Vertices</span></td><td>: <a href="gl-geometry.ads.html#gl-geometry.ads:85:12" title="defined at gl-geometry.ads:85:12">GL.Geometry.GL_Vertex_array</a>) <span class="keyword">return</span> <a href="gl-textures.ads.html#gl-textures.ads:44:9" title="defined at gl-textures.ads:44:9">GL.Textures.p_Coordinate_2D_array</a> <span class="keyword">is</span> <span class="keyword">abstract</span>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-textures.ads.html#l56" title="gl-textures.ads:56:13">gl-textures.ads:56:13</a> (declaration)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-textures.ads:57:13' id='gl-textures.ads:57:13'></a>
+<span class="droplink">To_Coordinates (abstract)<ul>
+  <li><a href="src_gl-textures.ads.html#l57">Goto spec in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">To_Coordinates</span> <table><tr><td>(</td><td><span class="name"><a name="gl-textures.ads:57:29"></a>Self</span></td><td>: <a href="gl-textures.ads.html#gl-textures.ads:53:9" title="defined at gl-textures.ads:53:9">coordinate_Generator</a>;</td></tr><tr><td></td><td><span class="name"><a name="gl-textures.ads:57:58"></a>the_Vertices</span></td><td>: <a href="gl-geometry.ads.html#gl-geometry.ads:85:12" title="defined at gl-geometry.ads:85:12">GL.Geometry.GL_Vertex_array</a>) <span class="keyword">return</span> <a href="gl-textures.ads.html#gl-textures.ads:43:11" title="defined at gl-textures.ads:43:11">GL.Textures.Coordinate_2D_array</a> <span class="keyword">is</span> <span class="keyword">abstract</span>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-textures.ads.html#l57" title="gl-textures.ads:57:13">gl-textures.ads:57:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-skins.adb.html#l148" title="gl-skins.adb:148:48">gl-skins.adb:148:48</a> (dispatching call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="gl-skins.ads.html#gl-skins.ads:101:25" title="defined at gl-skins.ads:101:25">GL.Skins.New_Veneer</a> defined at <a href="src_gl-skins.ads.html#l101" title="gl-skins.ads:101:25">gl-skins.ads:101:25</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-textures.ads:65:24' id='gl-textures.ads:65:24'></a>
+<span class="droplink">To_Coordinates<ul>
+  <li><a href="src_gl-textures.ads.html#l65">Goto spec in source</a></li>
+  <li><a href="src_gl-textures.adb.html#l84">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">overriding</span> <span class="keyword">function</span> <span class="name_emphasis">To_Coordinates</span> <table><tr><td>(</td><td><span class="name"><a name="gl-textures.ads:65:40"></a>Self</span></td><td>: <a href="gl-textures.ads.html#gl-textures.ads:59:9" title="defined at gl-textures.ads:59:9">xz_Generator</a>;</td></tr><tr><td></td><td><span class="name"><a name="gl-textures.ads:65:61"></a>the_Vertices</span></td><td>: <a href="gl-geometry.ads.html#gl-geometry.ads:85:12" title="defined at gl-geometry.ads:85:12">GL.Geometry.GL_Vertex_array</a>) <span class="keyword">return</span> <a href="gl-textures.ads.html#gl-textures.ads:44:9" title="defined at gl-textures.ads:44:9">GL.Textures.p_Coordinate_2D_array</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-textures.ads.html#l65" title="gl-textures.ads:65:24">gl-textures.ads:65:24</a> (declaration)</i></div>
+            <div><i><a href="src_gl-textures.adb.html#l84" title="gl-textures.adb:84:24">gl-textures.adb:84:24</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-textures.ads:66:24' id='gl-textures.ads:66:24'></a>
+<span class="droplink">to_Coordinates<ul>
+  <li><a href="src_gl-textures.ads.html#l66">Goto spec in source</a></li>
+  <li><a href="src_gl-textures.adb.html#l87">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">overriding</span> <span class="keyword">function</span> <span class="name_emphasis">to_Coordinates</span> <table><tr><td>(</td><td><span class="name"><a name="gl-textures.ads:66:40"></a>Self</span></td><td>: <a href="gl-textures.ads.html#gl-textures.ads:59:9" title="defined at gl-textures.ads:59:9">xz_Generator</a>;</td></tr><tr><td></td><td><span class="name"><a name="gl-textures.ads:66:61"></a>the_Vertices</span></td><td>: <a href="gl-geometry.ads.html#gl-geometry.ads:85:12" title="defined at gl-geometry.ads:85:12">GL.Geometry.GL_Vertex_array</a>) <span class="keyword">return</span> <a href="gl-textures.ads.html#gl-textures.ads:43:11" title="defined at gl-textures.ads:43:11">GL.Textures.Coordinate_2D_array</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-textures.ads.html#l66" title="gl-textures.ads:66:24">gl-textures.ads:66:24</a> (declaration)</i></div>
+            <div><i><a href="src_gl-textures.adb.html#l87" title="gl-textures.adb:87:24">gl-textures.adb:87:24</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-textures.ads:84:13' id='gl-textures.ads:84:13'></a>
+<span class="droplink">To_Size<ul>
+  <li><a href="src_gl-textures.ads.html#l84">Goto spec in source</a></li>
+  <li><a href="src_gl-textures.adb.html#l257">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">To_Size</span> <table><tr><td>(</td><td><span class="name"><a name="gl-textures.ads:84:22"></a>From</span></td><td>: Positive) <span class="keyword">return</span> <a href="gl-textures.ads.html#gl-textures.ads:82:9" title="defined at gl-textures.ads:82:9">Size</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-textures.ads.html#l84" title="gl-textures.ads:84:13">gl-textures.ads:84:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-textures.adb.html#l156" title="gl-textures.adb:156:43">gl-textures.adb:156:43</a> (call)</i></div>
+            <div><i><a href="src_gl-textures.adb.html#l157" title="gl-textures.adb:157:43">gl-textures.adb:157:43</a> (call)</i></div>
+            <div><i><a href="src_gl-textures.adb.html#l257" title="gl-textures.adb:257:13">gl-textures.adb:257:13</a> (body)</i></div>
+            <div><i><a href="src_gl-textures.adb.html#l287" title="gl-textures.adb:287:8">gl-textures.adb:287:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="gl-textures.ads.html#gl-textures.ads:114:13" title="defined at gl-textures.ads:114:13">New_Texture</a> defined at <a href="src_gl-textures.ads.html#l114" title="gl-textures.ads:114:13">gl-textures.ads:114:13</a></i></div>
+            <div><i><a href="gl-textures.ads.html#gl-textures.ads:114:13" title="defined at gl-textures.ads:114:13">New_Texture</a> defined at <a href="src_gl-textures.ads.html#l114" title="gl-textures.ads:114:13">gl-textures.ads:114:13</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>Put_Line defined at a-textio.ads:263:14</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-textures.ads:92:13' id='gl-textures.ads:92:13'></a>
+<span class="droplink">New_Texture<ul>
+  <li><a href="src_gl-textures.ads.html#l92">Goto spec in source</a></li>
+  <li><a href="src_gl-textures.adb.html#l92">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">New_Texture</span> <table><tr><td>(</td><td><span class="name"><a name="gl-textures.ads:92:26"></a>image_Filename</span></td><td>: String) <span class="keyword">return</span> <a href="gl-textures.ads.html#gl-textures.ads:89:9" title="defined at gl-textures.ads:89:9">Object</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-textures.ads.html#l92" title="gl-textures.ads:92:13">gl-textures.ads:92:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-textures.adb.html#l92" title="gl-textures.adb:92:13">gl-textures.adb:92:13</a> (body)</i></div>
+            <div><i><a href="src_gl-textures.adb.html#l113" title="gl-textures.adb:113:8">gl-textures.adb:113:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="gl-io.ads.html#gl-io.ads:78:14" title="defined at gl-io.ads:78:14">GL.IO.Load</a> defined at <a href="src_gl-io.ads.html#l78" title="gl-io.ads:78:14">gl-io.ads:78:14</a></i></div>
+            <div><i><a href="gl-textures.adb.html#gl-textures.adb:22:13" title="defined at gl-textures.adb:22:13">GL.Textures.New_Texture_Name</a> defined at <a href="src_gl-textures.adb.html#l22" title="gl-textures.adb:22:13">gl-textures.adb:22:13</a></i></div>
+            <div><i>To_Lower defined at a-chahan.ads:66:13</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-textures.ads:96:14' id='gl-textures.ads:96:14'></a>
+<span class="droplink">Destroy<ul>
+  <li><a href="src_gl-textures.ads.html#l96">Goto spec in source</a></li>
+  <li><a href="src_gl-textures.adb.html#l115">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Destroy</span> <table><tr><td>(</td><td><span class="name"><a name="gl-textures.ads:96:23"></a>Self</span></td><td>: <span class="keyword">in</span> <span class="keyword">out</span> <a href="gl-textures.ads.html#gl-textures.ads:89:9" title="defined at gl-textures.ads:89:9">Object</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-textures.ads.html#l96" title="gl-textures.ads:96:14">gl-textures.ads:96:14</a> (declaration)</i></div>
+            <div><i><a href="src_gl-skins.adb.html#l137" title="gl-skins.adb:137:7">gl-skins.adb:137:7</a> (call)</i></div>
+            <div><i><a href="src_gl-textures.adb.html#l115" title="gl-textures.adb:115:14">gl-textures.adb:115:14</a> (body)</i></div>
+            <div><i><a href="src_gl-textures.adb.html#l122" title="gl-textures.adb:122:8">gl-textures.adb:122:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="gl-skins.ads.html#gl-skins.ads:99:25" title="defined at gl-skins.ads:99:25">GL.Skins.Destroy</a> defined at <a href="src_gl-skins.ads.html#l99" title="gl-skins.ads:99:25">gl-skins.ads:99:25</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="gl-textures.ads.html#gl-textures.ads:121:14" title="defined at gl-textures.ads:121:14">Free</a> defined at <a href="src_gl-textures.ads.html#l121" title="gl-textures.ads:121:14">gl-textures.ads:121:14</a></i></div>
+            <div><i><a href="gl-textures.adb.html#gl-textures.adb:31:14" title="defined at gl-textures.adb:31:14">GL.Textures.Free</a> defined at <a href="src_gl-textures.adb.html#l31" title="gl-textures.adb:31:14">gl-textures.adb:31:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-textures.ads:98:14' id='gl-textures.ads:98:14'></a>
+<span class="droplink">Set_Name<ul>
+  <li><a href="src_gl-textures.ads.html#l98">Goto spec in source</a></li>
+  <li><a href="src_gl-textures.adb.html#l124">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Set_Name</span> <table><tr><td>(</td><td><span class="name"><a name="gl-textures.ads:98:24"></a>Self</span></td><td>: <span class="keyword">in</span> <span class="keyword">out</span> <a href="gl-textures.ads.html#gl-textures.ads:89:9" title="defined at gl-textures.ads:89:9">Object</a>;</td></tr><tr><td></td><td><span class="name"><a name="gl-textures.ads:98:46"></a>To</span></td><td>: <a href="gl-textures.ads.html#gl-textures.ads:20:12" title="defined at gl-textures.ads:20:12">texture_Name</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-textures.ads.html#l98" title="gl-textures.ads:98:14">gl-textures.ads:98:14</a> (declaration)</i></div>
+            <div><i><a href="src_gl-textures.adb.html#l124" title="gl-textures.adb:124:14">gl-textures.adb:124:14</a> (body)</i></div>
+            <div><i><a href="src_gl-textures.adb.html#l128" title="gl-textures.adb:128:8">gl-textures.adb:128:8</a> (label)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-textures.ads:99:14' id='gl-textures.ads:99:14'></a>
+<span class="droplink">Name<ul>
+  <li><a href="src_gl-textures.ads.html#l99">Goto spec in source</a></li>
+  <li><a href="src_gl-textures.adb.html#l130">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span>  <span class="name_emphasis">Name</span>     <table><tr><td>(</td><td><span class="name"><a name="gl-textures.ads:99:24"></a>Self</span></td><td>:        <a href="gl-textures.ads.html#gl-textures.ads:89:9" title="defined at gl-textures.ads:89:9">Object</a>) <span class="keyword">return</span> <a href="gl-textures.ads.html#gl-textures.ads:20:12" title="defined at gl-textures.ads:20:12">texture_Name</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-textures.ads.html#l99" title="gl-textures.ads:99:14">gl-textures.ads:99:14</a> (declaration)</i></div>
+            <div><i><a href="src_gl-textures.adb.html#l130" title="gl-textures.adb:130:13">gl-textures.adb:130:13</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-textures.ads:101:14' id='gl-textures.ads:101:14'></a>
+<span class="droplink">Enable<ul>
+  <li><a href="src_gl-textures.ads.html#l101">Goto spec in source</a></li>
+  <li><a href="src_gl-textures.adb.html#l134">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Enable</span> <table><tr><td>(</td><td><span class="name"><a name="gl-textures.ads:101:22"></a>Self</span></td><td>: <span class="keyword">in</span> <span class="keyword">out</span> <a href="gl-textures.ads.html#gl-textures.ads:89:9" title="defined at gl-textures.ads:89:9">Object</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-textures.ads.html#l101" title="gl-textures.ads:101:14">gl-textures.ads:101:14</a> (declaration)</i></div>
+            <div><i><a href="src_gl-skins.adb.html#l166" title="gl-skins.adb:166:7">gl-skins.adb:166:7</a> (call)</i></div>
+            <div><i><a href="src_gl-skins.adb.html#l200" title="gl-skins.adb:200:7">gl-skins.adb:200:7</a> (call)</i></div>
+            <div><i><a href="src_gl-textures.adb.html#l134" title="gl-textures.adb:134:14">gl-textures.adb:134:14</a> (body)</i></div>
+            <div><i><a href="src_gl-textures.adb.html#l141" title="gl-textures.adb:141:8">gl-textures.adb:141:8</a> (label)</i></div>
+            <div><i><a href="src_gl-textures.adb.html#l173" title="gl-textures.adb:173:10">gl-textures.adb:173:10</a> (call)</i></div>
+            <div><i><a href="src_gl-textures.adb.html#l189" title="gl-textures.adb:189:10">gl-textures.adb:189:10</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="gl-skins.ads.html#gl-skins.ads:102:25" title="defined at gl-skins.ads:102:25">GL.Skins.Enable</a> defined at <a href="src_gl-skins.ads.html#l102" title="gl-skins.ads:102:25">gl-skins.ads:102:25</a></i></div>
+            <div><i><a href="gl-skins.ads.html#gl-skins.ads:130:25" title="defined at gl-skins.ads:130:25">GL.Skins.Enable</a> defined at <a href="src_gl-skins.ads.html#l130" title="gl-skins.ads:130:25">gl-skins.ads:130:25</a></i></div>
+            <div><i><a href="gl-textures.ads.html#gl-textures.ads:114:13" title="defined at gl-textures.ads:114:13">New_Texture</a> defined at <a href="src_gl-textures.ads.html#l114" title="gl-textures.ads:114:13">gl-textures.ads:114:13</a></i></div>
+            <div><i><a href="gl-textures.ads.html#gl-textures.ads:114:13" title="defined at gl-textures.ads:114:13">New_Texture</a> defined at <a href="src_gl-textures.ads.html#l114" title="gl-textures.ads:114:13">gl-textures.ads:114:13</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="gl.ads.html#gl.ads:2629:14" title="defined at gl.ads:2629:14">GL.BindTexture</a> defined at <a href="src_gl.ads.html#l2629" title="gl.ads:2629:14">gl.ads:2629:14</a></i></div>
+            <div><i><a href="gl.ads.html#gl.ads:704:14" title="defined at gl.ads:704:14">GL.Enable</a> defined at <a href="src_gl.ads.html#l704" title="gl.ads:704:14">gl.ads:704:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-textures.ads:103:13' id='gl-textures.ads:103:13'></a>
+<span class="droplink">Size_Width<ul>
+  <li><a href="src_gl-textures.ads.html#l103">Goto spec in source</a></li>
+  <li><a href="src_gl-textures.adb.html#l319">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Size_Width</span>  <table><tr><td>(</td><td><span class="name"><a name="gl-textures.ads:103:26"></a>Self</span></td><td>: <a href="gl-textures.ads.html#gl-textures.ads:89:9" title="defined at gl-textures.ads:89:9">Object</a>) <span class="keyword">return</span> <a href="gl-textures.ads.html#gl-textures.ads:82:9" title="defined at gl-textures.ads:82:9">Size</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-textures.ads.html#l103" title="gl-textures.ads:103:13">gl-textures.ads:103:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-textures.adb.html#l319" title="gl-textures.adb:319:13">gl-textures.adb:319:13</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-textures.ads:104:13' id='gl-textures.ads:104:13'></a>
+<span class="droplink">Size_Height<ul>
+  <li><a href="src_gl-textures.ads.html#l104">Goto spec in source</a></li>
+  <li><a href="src_gl-textures.adb.html#l321">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Size_Height</span> <table><tr><td>(</td><td><span class="name"><a name="gl-textures.ads:104:26"></a>Self</span></td><td>: <a href="gl-textures.ads.html#gl-textures.ads:89:9" title="defined at gl-textures.ads:89:9">Object</a>) <span class="keyword">return</span> <a href="gl-textures.ads.html#gl-textures.ads:82:9" title="defined at gl-textures.ads:82:9">Size</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-textures.ads.html#l104" title="gl-textures.ads:104:13">gl-textures.ads:104:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-textures.adb.html#l321" title="gl-textures.adb:321:13">gl-textures.adb:321:13</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-textures.ads:106:14' id='gl-textures.ads:106:14'></a>
+<span class="droplink">Is_Transparent<ul>
+  <li><a href="src_gl-textures.ads.html#l106">Goto spec in source</a></li>
+  <li><a href="src_gl-textures.adb.html#l132">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span>  <span class="name_emphasis">Is_Transparent</span> <table><tr><td>(</td><td><span class="name"><a name="gl-textures.ads:106:30"></a>Self</span></td><td>:  <a href="gl-textures.ads.html#gl-textures.ads:89:9" title="defined at gl-textures.ads:89:9">Object</a>) <span class="keyword">return</span> Boolean;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-textures.ads.html#l106" title="gl-textures.ads:106:14">gl-textures.ads:106:14</a> (declaration)</i></div>
+            <div><i><a href="src_gl-skins.adb.html#l169" title="gl-skins.adb:169:99">gl-skins.adb:169:99</a> (call)</i></div>
+            <div><i><a href="src_gl-skins.adb.html#l203" title="gl-skins.adb:203:91">gl-skins.adb:203:91</a> (call)</i></div>
+            <div><i><a href="src_gl-textures.adb.html#l132" title="gl-textures.adb:132:13">gl-textures.adb:132:13</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-textures.ads:114:13' id='gl-textures.ads:114:13'></a>
+<span class="droplink">New_Texture<ul>
+  <li><a href="src_gl-textures.ads.html#l114">Goto spec in source</a></li>
+  <li><a href="src_gl-textures.adb.html#l150">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">New_Texture</span> <table><tr><td>(</td><td><span class="name"><a name="gl-textures.ads:114:26"></a>From</span></td><td>: <span class="keyword">access</span> <a href="gl-textures.ads.html#gl-textures.ads:111:9" title="defined at gl-textures.ads:111:9">Pool</a>;</td></tr><tr><td></td><td><span class="name"><a name="gl-textures.ads:115:26"></a>min_Width</span></td><td>:        Positive;</td></tr><tr><td></td><td><span class="name"><a name="gl-textures.ads:116:26"></a>min_Height</span></td><td>:        Positive) <span class="keyword">return</span> <a href="gl-textures.ads.html#gl-textures.ads:89:9" title="defined at gl-textures.ads:89:9">Object</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-textures.ads.html#l114" title="gl-textures.ads:114:13">gl-textures.ads:114:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-textures.adb.html#l150" title="gl-textures.adb:150:13">gl-textures.adb:150:13</a> (body)</i></div>
+            <div><i><a href="src_gl-textures.adb.html#l217" title="gl-textures.adb:217:8">gl-textures.adb:217:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="gl-textures.ads.html#gl-textures.ads:101:14" title="defined at gl-textures.ads:101:14">Enable</a> defined at <a href="src_gl-textures.ads.html#l101" title="gl-textures.ads:101:14">gl-textures.ads:101:14</a></i></div>
+            <div><i><a href="gl-errors.ads.html#gl-errors.ads:21:14" title="defined at gl-errors.ads:21:14">GL.Errors.log</a> defined at <a href="src_gl-errors.ads.html#l21" title="gl-errors.ads:21:14">gl-errors.ads:21:14</a></i></div>
+            <div><i><a href="gl.ads.html#gl.ads:2041:14" title="defined at gl.ads:2041:14">GL.PixelStore</a> defined at <a href="src_gl.ads.html#l2041" title="gl.ads:2041:14">gl.ads:2041:14</a></i></div>
+            <div><i><a href="gl.ads.html#gl.ads:2544:14" title="defined at gl.ads:2544:14">GL.TexEnv</a> defined at <a href="src_gl.ads.html#l2544" title="gl.ads:2544:14">gl.ads:2544:14</a></i></div>
+            <div><i><a href="gl.ads.html#gl.ads:2607:14" title="defined at gl.ads:2607:14">GL.TexImage2D</a> defined at <a href="src_gl.ads.html#l2607" title="gl.ads:2607:14">gl.ads:2607:14</a></i></div>
+            <div><i><a href="gl.ads.html#gl.ads:2568:14" title="defined at gl.ads:2568:14">GL.TexParameter</a> defined at <a href="src_gl.ads.html#l2568" title="gl.ads:2568:14">gl.ads:2568:14</a></i></div>
+            <div><i><a href="gl-textures.adb.html#gl-textures.adb:22:13" title="defined at gl-textures.adb:22:13">GL.Textures.New_Texture_Name</a> defined at <a href="src_gl-textures.adb.html#l22" title="gl-textures.adb:22:13">gl-textures.adb:22:13</a></i></div>
+            <div><i><a href="gl-textures.ads.html#gl-textures.ads:132:13" title="defined at gl-textures.ads:132:13">Power_of_2_Ceiling</a> defined at <a href="src_gl-textures.ads.html#l132" title="gl-textures.ads:132:13">gl-textures.ads:132:13</a></i></div>
+            <div><i><a href="gl-textures.ads.html#gl-textures.ads:84:13" title="defined at gl-textures.ads:84:13">To_Size</a> defined at <a href="src_gl-textures.ads.html#l84" title="gl-textures.ads:84:13">gl-textures.ads:84:13</a></i></div>
+        </div>
+        <div class='comment'>
+returns a texture object, whose width and height are powers of two, sufficient to contain the requested minimums.
+tbd : add texture properties to construction parameters !
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-textures.ads:121:14' id='gl-textures.ads:121:14'></a>
+<span class="droplink">Free<ul>
+  <li><a href="src_gl-textures.ads.html#l121">Goto spec in source</a></li>
+  <li><a href="src_gl-textures.adb.html#l219">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Free</span> <table><tr><td>(</td><td><span class="name"><a name="gl-textures.ads:121:20"></a>Self</span></td><td>: <span class="keyword">in</span> <span class="keyword">out</span> <a href="gl-textures.ads.html#gl-textures.ads:111:9" title="defined at gl-textures.ads:111:9">Pool</a>;</td></tr><tr><td></td><td><span class="name"><a name="gl-textures.ads:121:40"></a>the_Texture</span></td><td>: <a href="gl-textures.ads.html#gl-textures.ads:89:9" title="defined at gl-textures.ads:89:9">Object</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-textures.ads.html#l121" title="gl-textures.ads:121:14">gl-textures.ads:121:14</a> (declaration)</i></div>
+            <div><i><a href="src_gl-textures.adb.html#l120" title="gl-textures.adb:120:24">gl-textures.adb:120:24</a> (call)</i></div>
+            <div><i><a href="src_gl-textures.adb.html#l219" title="gl-textures.adb:219:14">gl-textures.adb:219:14</a> (body)</i></div>
+            <div><i><a href="src_gl-textures.adb.html#l232" title="gl-textures.adb:232:8">gl-textures.adb:232:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="gl-textures.ads.html#gl-textures.ads:96:14" title="defined at gl-textures.ads:96:14">Destroy</a> defined at <a href="src_gl-textures.ads.html#l96" title="gl-textures.ads:96:14">gl-textures.ads:96:14</a></i></div>
+        </div>
+        <div class='comment'>
+<a href="gl-textures.ads.html#gl-textures.ads:46:14" title="free">free</a>&apos;s a texture, for future use.
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-textures.ads:125:14' id='gl-textures.ads:125:14'></a>
+<span class="droplink">Vacuum<ul>
+  <li><a href="src_gl-textures.ads.html#l125">Goto spec in source</a></li>
+  <li><a href="src_gl-textures.adb.html#l234">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Vacuum</span> <table><tr><td>(</td><td><span class="name"><a name="gl-textures.ads:125:22"></a>Self</span></td><td>: <span class="keyword">in</span> <span class="keyword">out</span> <a href="gl-textures.ads.html#gl-textures.ads:111:9" title="defined at gl-textures.ads:111:9">Pool</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-textures.ads.html#l125" title="gl-textures.ads:125:14">gl-textures.ads:125:14</a> (declaration)</i></div>
+            <div><i><a href="src_gl-textures.adb.html#l234" title="gl-textures.adb:234:14">gl-textures.adb:234:14</a> (body)</i></div>
+            <div><i><a href="src_gl-textures.adb.html#l255" title="gl-textures.adb:255:8">gl-textures.adb:255:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="gl-textures.adb.html#gl-textures.adb:31:14" title="defined at gl-textures.adb:31:14">GL.Textures.Free</a> defined at <a href="src_gl-textures.adb.html#l31" title="gl-textures.adb:31:14">gl-textures.adb:31:14</a></i></div>
+        </div>
+        <div class='comment'>
+releases any allocated, but unused, texture objects.
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-textures.ads:132:13' id='gl-textures.ads:132:13'></a>
+<span class="droplink">Power_of_2_Ceiling<ul>
+  <li><a href="src_gl-textures.ads.html#l132">Goto spec in source</a></li>
+  <li><a href="src_gl-textures.adb.html#l289">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Power_of_2_Ceiling</span> <table><tr><td>(</td><td><span class="name"><a name="gl-textures.ads:132:33"></a>From</span></td><td>: Positive) <span class="keyword">return</span> <a href="gl.ads.html#gl.ads:125:9" title="defined at gl.ads:125:9">GL.Sizei</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-textures.ads.html#l132" title="gl-textures.ads:132:13">gl-textures.ads:132:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-textures.adb.html#l176" title="gl-textures.adb:176:26">gl-textures.adb:176:26</a> (call)</i></div>
+            <div><i><a href="src_gl-textures.adb.html#l176" title="gl-textures.adb:176:58">gl-textures.adb:176:58</a> (call)</i></div>
+            <div><i><a href="src_gl-textures.adb.html#l208" title="gl-textures.adb:208:26">gl-textures.adb:208:26</a> (call)</i></div>
+            <div><i><a href="src_gl-textures.adb.html#l208" title="gl-textures.adb:208:58">gl-textures.adb:208:58</a> (call)</i></div>
+            <div><i><a href="src_gl-textures.adb.html#l289" title="gl-textures.adb:289:13">gl-textures.adb:289:13</a> (body)</i></div>
+            <div><i><a href="src_gl-textures.adb.html#l317" title="gl-textures.adb:317:8">gl-textures.adb:317:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="gl-textures.ads.html#gl-textures.ads:114:13" title="defined at gl-textures.ads:114:13">New_Texture</a> defined at <a href="src_gl-textures.ads.html#l114" title="gl-textures.ads:114:13">gl-textures.ads:114:13</a></i></div>
+            <div><i><a href="gl-textures.ads.html#gl-textures.ads:114:13" title="defined at gl-textures.ads:114:13">New_Texture</a> defined at <a href="src_gl-textures.ads.html#l114" title="gl-textures.ads:114:13">gl-textures.ads:114:13</a></i></div>
+            <div><i><a href="gl-textures.ads.html#gl-textures.ads:114:13" title="defined at gl-textures.ads:114:13">New_Texture</a> defined at <a href="src_gl-textures.ads.html#l114" title="gl-textures.ads:114:13">gl-textures.ads:114:13</a></i></div>
+            <div><i><a href="gl-textures.ads.html#gl-textures.ads:114:13" title="defined at gl-textures.ads:114:13">New_Texture</a> defined at <a href="src_gl-textures.ads.html#l114" title="gl-textures.ads:114:13">gl-textures.ads:114:13</a></i></div>
+        </div>
+      </div>
+    </div>
+</div> <!-- documentation -->
+
+</body>
+</html>

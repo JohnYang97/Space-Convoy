@@ -1,0 +1,196 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    File: gl-io.ads
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+  </div>
+</div> <!-- leftSide -->
+
+<div class='subprograms'>
+  <div class='details'><ol><li id="l1"><pre><span class="comment">------------------------------------------------------------------------------</span> </pre></li>
+<li id="l2"><pre> <span class="comment">--  File :            GL - IO.ads</span> </pre></li>
+<li id="l3"><pre> <span class="comment">--  Description :     I/O for (Open)GL graphics</span> </pre></li>
+<li id="l4"><pre> <span class="comment">--</span> </pre></li>
+<li id="l5"><pre> <span class="comment">--                   This package provides currently:</span> </pre></li>
+<li id="l6"><pre> <span class="comment">--</span> </pre></li>
+<li id="l7"><pre> <span class="comment">--                   ******************************************************</span> </pre></li>
+<li id="l8"><pre> <span class="comment">--                   * INPUT * from a file or a data stream, to a texture *</span> </pre></li>
+<li id="l9"><pre> <span class="comment">--                   ******************************************************</span> </pre></li>
+<li id="l10"><pre> <span class="comment">--</span> </pre></li>
+<li id="l11"><pre> <span class="comment">--                    - TGA image : RGA, RGBA, Grey</span> </pre></li>
+<li id="l12"><pre> <span class="comment">--                    - BMP image : B&amp;W, 16 colours indexed (palette),</span> </pre></li>
+<li id="l13"><pre> <span class="comment">--                        256 colours indexed</span> </pre></li>
+<li id="l14"><pre> <span class="comment">--</span> </pre></li>
+<li id="l15"><pre> <span class="comment">--                   ***************************************************</span> </pre></li>
+<li id="l16"><pre> <span class="comment">--                   * OUTPUT * from the GL active viewport, to a file *</span> </pre></li>
+<li id="l17"><pre> <span class="comment">--                   ***************************************************</span> </pre></li>
+<li id="l18"><pre> <span class="comment">--</span> </pre></li>
+<li id="l19"><pre> <span class="comment">--                    - BMP image : screenshot</span> </pre></li>
+<li id="l20"><pre> <span class="comment">--                    - AVI video : video capture</span> </pre></li>
+<li id="l21"><pre> <span class="comment">--</span> </pre></li>
+<li id="l22"><pre> <span class="comment">------------------------------------------------------------------------------</span> </pre></li>
+<li id="l23"><pre> <span class="comment">-- Change log:</span> </pre></li>
+<li id="l24"><pre> <span class="comment">--</span> </pre></li>
+<li id="l25"><pre> <span class="comment">-- 19 - Jan - 2010 (GdM) : using workaround to the slow attribute I/O issue (GNAT, OA);</span> </pre></li>
+<li id="l26"><pre> <span class="comment">--                      buffered input; improvements on BMP</span> </pre></li>
+<li id="l27"><pre> <span class="comment">--</span> </pre></li>
+<li id="l28"><pre> <span class="comment">-- 26 - May - 2008 (GdM) : added support for TGA images with RLE encoding</span> </pre></li>
+<li id="l29"><pre> <span class="comment">--</span> </pre></li>
+<li id="l30"><pre> <span class="comment">-- 27 - Jan - 2008 (RK) :  added &apos;Image&apos; record and a function to get greyscale pixels from an Image.</span> </pre></li>
+<li id="l31"><pre> <span class="comment">--</span> </pre></li>
+<li id="l32"><pre> <span class="comment">-- 10 - May - 2007 (GdM) : screenshot and video capture</span> </pre></li>
+<li id="l33"><pre> <span class="comment">--</span> </pre></li>
+<li id="l34"><pre> <span class="comment">-- 13 - Oct - 2006 (GdM) : new blending_hint out parameter, indicates possible</span> </pre></li>
+<li id="l35"><pre> <span class="comment">--                      blending/transparency</span> </pre></li>
+<li id="l36"><pre> <span class="comment">--</span> </pre></li>
+<li id="l37"><pre> <span class="comment">-- 30 - Apr - 2006 (GdM) : - added multi - format loaders</span> </pre></li>
+<li id="l38"><pre> <span class="comment">--                    - dimensions not power of two allowed, but</span> </pre></li>
+<li id="l39"><pre> <span class="comment">--                      discouraged in the docs.</span> </pre></li>
+<li id="l40"><pre> <span class="comment">--                      - &gt; removed TGA_BAD_DIMENSION</span> </pre></li>
+<li id="l41"><pre> </pre></li>
+<li id="l42"><pre><span class="keyword">with</span> Ada.Streams.Stream_IO; </pre></li>
+<li id="l43"><pre><span class="keyword">with</span> Ada.Unchecked_Deallocation; </pre></li>
+<li id="l44"><pre> </pre></li>
+<li id="l45"><pre><span class="keyword">package</span> <span class="droplink">GL.IO<ul><li><a href="gl-io.ads.html#gl-io.ads:45:12" title="To API doc">To API doc</a></li><li><a href="src_gl-io.ads.html#l45" title="To spec">To spec</a></li><li><a href="src_gl-io.adb.html#l14" title="To body">To body</a></li></ul></span> <span class="keyword">is</span> </pre></li>
+<li id="l46"><pre> </pre></li>
+<li id="l47"><pre>  <a href="gl-io.ads.html#gl-io.ads:47:3" title="defined at gl-io.ads:47:3">File_Not_Found</a>  : <span class="keyword">exception</span>; </pre></li>
+<li id="l48"><pre> </pre></li>
+<li id="l49"><pre>  <span class="keyword">type</span> <a href="gl-io.ads.html#gl-io.ads:49:8" title="defined at gl-io.ads:49:8">Supported_format</a> <span class="keyword">is</span> (BMP, TGA); </pre></li>
+<li id="l50"><pre> </pre></li>
+<li id="l51"><pre>  <span class="keyword">type</span> <a href="gl-io.ads.html#gl-io.ads:51:8" title="defined at gl-io.ads:51:8">Byte_Array</a> <span class="keyword">is</span> <span class="keyword">array</span> (Integer <span class="keyword">range</span> &lt;&gt;) <span class="keyword">of</span> <span class="keyword">aliased</span> <span class="droplink">GL.Ubyte<ul><li><a href="gl.ads.html#gl.ads:122:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l122" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l52"><pre>  <span class="keyword">type</span> <a href="gl-io.ads.html#gl-io.ads:52:8" title="defined at gl-io.ads:52:8">Byte_Array_Ptr</a> <span class="keyword">is</span> <span class="keyword">access</span> <span class="keyword">all</span> <span class="droplink">Byte_Array<ul><li><a href="gl-io.ads.html#gl-io.ads:51:8" title="To API doc">To API doc</a></li><li><a href="src_gl-io.ads.html#l51" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l53"><pre> </pre></li>
+<li id="l54"><pre>  <span class="keyword">procedure</span> <a href="gl-io.ads.html#gl-io.ads:54:13" title="defined at gl-io.ads:54:13">Free</a> <span class="keyword">is</span> </pre></li>
+<li id="l55"><pre>    <span class="keyword">new</span> Ada.Unchecked_Deallocation (<span class="droplink">Byte_Array<ul><li><a href="gl-io.ads.html#gl-io.ads:51:8" title="To API doc">To API doc</a></li><li><a href="src_gl-io.ads.html#l51" title="To spec">To spec</a></li></ul></span>, <span class="droplink">Byte_Array_Ptr<ul><li><a href="gl-io.ads.html#gl-io.ads:52:8" title="To API doc">To API doc</a></li><li><a href="src_gl-io.ads.html#l52" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l56"><pre> </pre></li>
+<li id="l57"><pre>  <span class="keyword">type</span> <a href="gl-io.ads.html#gl-io.ads:57:8" title="defined at gl-io.ads:57:8">Byte_Grid</a> <span class="keyword">is</span> <span class="keyword">array</span> (Integer <span class="keyword">range</span> &lt;&gt;, Integer <span class="keyword">range</span> &lt;&gt;) <span class="keyword">of</span> <span class="keyword">aliased</span> <span class="droplink">GL.Ubyte<ul><li><a href="gl.ads.html#gl.ads:122:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l122" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l58"><pre> </pre></li>
+<li id="l59"><pre>  <span class="keyword">type</span> <a href="gl-io.ads.html#gl-io.ads:59:8" title="defined at gl-io.ads:59:8">Image</a> <span class="keyword">is</span> </pre></li>
+<li id="l60"><pre>    <span class="keyword">record</span> </pre></li>
+<li id="l61"><pre>      blending_hint     : Boolean;        <span class="comment">-- has the image blending / transparency /alpha ?</span> </pre></li>
+<li id="l62"><pre>      tex_Format        : <span class="droplink">GL.TexFormatEnm<ul><li><a href="gl.ads.html#gl.ads:2294:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l2294" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l63"><pre>      tex_pixel_Format  : <span class="droplink">GL.TexPixelFormatEnm<ul><li><a href="gl.ads.html#gl.ads:2382:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l2382" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l64"><pre>      size              : Integer; </pre></li>
+<li id="l65"><pre>      Width, </pre></li>
+<li id="l66"><pre>      Height            : Integer; </pre></li>
+<li id="l67"><pre>      Data              : <span class="droplink">Byte_Array_Ptr<ul><li><a href="gl-io.ads.html#gl-io.ads:52:8" title="To API doc">To API doc</a></li><li><a href="src_gl-io.ads.html#l52" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l68"><pre>    <span class="keyword">end</span> <span class="keyword">record</span>; </pre></li>
+<li id="l69"><pre> </pre></li>
+<li id="l70"><pre>  <span class="keyword">function</span> <span class="droplink">To_TGA_Image<ul><li><a href="gl-io.ads.html#gl-io.ads:70:12" title="To API doc">To API doc</a></li><li><a href="src_gl-io.adb.html#l389" title="To body">To body</a></li></ul></span> (<a href="gl-io.ads.html#gl-io.ads:70:26" title="defined at gl-io.ads:70:26">Filename</a> : String) <span class="keyword">return</span> <span class="droplink">Image<ul><li><a href="gl-io.ads.html#gl-io.ads:59:8" title="To API doc">To API doc</a></li><li><a href="src_gl-io.ads.html#l59" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l71"><pre> </pre></li>
+<li id="l72"><pre>  <span class="keyword">function</span> <span class="droplink">To_TGA_Image<ul><li><a href="gl-io.ads.html#gl-io.ads:72:12" title="To API doc">To API doc</a></li><li><a href="src_gl-io.adb.html#l153" title="To body">To body</a></li></ul></span> (<a href="gl-io.ads.html#gl-io.ads:72:26" title="defined at gl-io.ads:72:26">S</a> : Ada.Streams.Stream_IO.Stream_Access) <span class="keyword">return</span> <span class="droplink">Image<ul><li><a href="gl-io.ads.html#gl-io.ads:59:8" title="To API doc">To API doc</a></li><li><a href="src_gl-io.ads.html#l59" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l73"><pre> </pre></li>
+<li id="l74"><pre>  <span class="keyword">function</span> <span class="droplink">to_greyscale_Pixels<ul><li><a href="gl-io.ads.html#gl-io.ads:74:12" title="To API doc">To API doc</a></li><li><a href="src_gl-io.adb.html#l26" title="To body">To body</a></li></ul></span> (<span class="droplink">the_Image<ul><li><a href="gl-io.ads.html#gl-io.ads:74:33" title="To API doc">To API doc</a></li><li><a href="src_gl-io.adb.html#l26" title="To body">To body</a></li></ul></span> : <span class="droplink">Image<ul><li><a href="gl-io.ads.html#gl-io.ads:59:8" title="To API doc">To API doc</a></li><li><a href="src_gl-io.ads.html#l59" title="To spec">To spec</a></li></ul></span>) <span class="keyword">return</span> <span class="droplink">Byte_Grid<ul><li><a href="gl-io.ads.html#gl-io.ads:57:8" title="To API doc">To API doc</a></li><li><a href="src_gl-io.ads.html#l57" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l75"><pre> </pre></li>
+<li id="l76"><pre>  <span class="comment">-- Multi - format loader:</span> </pre></li>
+<li id="l77"><pre> </pre></li>
+<li id="l78"><pre>   <span class="keyword">procedure</span> <span class="droplink">Load<ul><li><a href="gl-io.ads.html#gl-io.ads:78:14" title="To API doc">To API doc</a></li><li><a href="src_gl-io.adb.html#l728" title="To body">To body</a></li></ul></span> (<a href="gl-io.ads.html#gl-io.ads:78:20" title="defined at gl-io.ads:78:20">name</a>          :     String;            <span class="comment">-- file name</span> </pre></li>
+<li id="l79"><pre>                   <span class="droplink">format<ul><li><a href="gl-io.ads.html#gl-io.ads:79:20" title="To API doc">To API doc</a></li><li><a href="src_gl-io.adb.html#l729" title="To body">To body</a></li></ul></span>        :     <span class="droplink">Supported_format<ul><li><a href="gl-io.ads.html#gl-io.ads:49:8" title="To API doc">To API doc</a></li><li><a href="src_gl-io.ads.html#l49" title="To spec">To spec</a></li></ul></span>;  <span class="comment">-- expected file format</span> </pre></li>
+<li id="l80"><pre>                   <a href="gl-io.ads.html#gl-io.ads:80:20" title="defined at gl-io.ads:80:20">ID</a>            :     Integer;           <span class="comment">-- ID is the texture identifier to bind to</span> </pre></li>
+<li id="l81"><pre>                   <a href="gl-io.ads.html#gl-io.ads:81:20" title="defined at gl-io.ads:81:20">blending_hint</a> : <span class="keyword">out</span> Boolean);          <span class="comment">-- has blending / transparency /alpha ?</span> </pre></li>
+<li id="l82"><pre> </pre></li>
+<li id="l83"><pre>   <span class="keyword">procedure</span> <span class="droplink">Load<ul><li><a href="gl-io.ads.html#gl-io.ads:83:14" title="To API doc">To API doc</a></li><li><a href="src_gl-io.adb.html#l740" title="To body">To body</a></li></ul></span> (<a href="gl-io.ads.html#gl-io.ads:83:20" title="defined at gl-io.ads:83:20">s</a>             :     Ada.Streams.Stream_IO.Stream_Access; <span class="comment">-- input data stream (e.g. UnZip.Streams)</span> </pre></li>
+<li id="l84"><pre>                   <span class="droplink">format<ul><li><a href="gl-io.ads.html#gl-io.ads:84:20" title="To API doc">To API doc</a></li><li><a href="src_gl-io.adb.html#l741" title="To body">To body</a></li></ul></span>        :     <span class="droplink">Supported_format<ul><li><a href="gl-io.ads.html#gl-io.ads:49:8" title="To API doc">To API doc</a></li><li><a href="src_gl-io.ads.html#l49" title="To spec">To spec</a></li></ul></span>;  <span class="comment">-- expected file format</span> </pre></li>
+<li id="l85"><pre>                   <a href="gl-io.ads.html#gl-io.ads:85:20" title="defined at gl-io.ads:85:20">ID</a>            :     Integer;           <span class="comment">-- ID is the texture identifier to bind to</span> </pre></li>
+<li id="l86"><pre>                   <a href="gl-io.ads.html#gl-io.ads:86:20" title="defined at gl-io.ads:86:20">blending_hint</a> : <span class="keyword">out</span> Boolean);          <span class="comment">-- has blending / transparency /alpha ?</span> </pre></li>
+<li id="l87"><pre> </pre></li>
+<li id="l88"><pre>  <span class="comment">-- Loaders specific to different formats:</span> </pre></li>
+<li id="l89"><pre> </pre></li>
+<li id="l90"><pre>  <span class="comment">----------------------</span> </pre></li>
+<li id="l91"><pre>  <span class="comment">-- BMP format Input --</span> </pre></li>
+<li id="l92"><pre>  <span class="comment">----------------------</span> </pre></li>
+<li id="l93"><pre> </pre></li>
+<li id="l94"><pre>   <span class="keyword">procedure</span> <span class="droplink">Load_BMP<ul><li><a href="gl-io.ads.html#gl-io.ads:94:14" title="To API doc">To API doc</a></li><li><a href="src_gl-io.adb.html#l726" title="To body">To body</a></li></ul></span> (<a href="gl-io.ads.html#gl-io.ads:94:24" title="defined at gl-io.ads:94:24">Name</a>          :     String;   <span class="comment">-- File name</span> </pre></li>
+<li id="l95"><pre>                       <a href="gl-io.ads.html#gl-io.ads:95:24" title="defined at gl-io.ads:95:24">Id</a>            :     Integer;  <span class="comment">-- Id is the texture identifier to bind to</span> </pre></li>
+<li id="l96"><pre>                       <a href="gl-io.ads.html#gl-io.ads:96:24" title="defined at gl-io.ads:96:24">blending_hint</a> : <span class="keyword">out</span> Boolean); <span class="comment">-- has the image blending / transparency /alpha ?</span> </pre></li>
+<li id="l97"><pre> </pre></li>
+<li id="l98"><pre>  <span class="keyword">procedure</span> <span class="droplink">Load_BMP<ul><li><a href="gl-io.ads.html#gl-io.ads:98:13" title="To API doc">To API doc</a></li><li><a href="src_gl-io.adb.html#l466" title="To body">To body</a></li></ul></span> (<a href="gl-io.ads.html#gl-io.ads:98:23" title="defined at gl-io.ads:98:23">S</a>             :     Ada.Streams.Stream_IO.Stream_Access;  <span class="comment">-- Input data stream</span> </pre></li>
+<li id="l99"><pre>                      <a href="gl-io.ads.html#gl-io.ads:99:23" title="defined at gl-io.ads:99:23">Id</a>            :     Integer;  <span class="comment">-- Id is the texture identifier to bind to</span> </pre></li>
+<li id="l100"><pre>                      <a href="gl-io.ads.html#gl-io.ads:100:23" title="defined at gl-io.ads:100:23">blending_hint</a> : <span class="keyword">out</span> Boolean); <span class="comment">-- has the image blending / transparency /alpha ?</span> </pre></li>
+<li id="l101"><pre> </pre></li>
+<li id="l102"><pre>  <a href="gl-io.ads.html#gl-io.ads:102:3" title="defined at gl-io.ads:102:3">Unsupported_BMP_format</a>, </pre></li>
+<li id="l103"><pre>  <a href="gl-io.ads.html#gl-io.ads:103:3" title="defined at gl-io.ads:103:3">Not_BMP_format</a>, </pre></li>
+<li id="l104"><pre>  <a href="gl-io.ads.html#gl-io.ads:104:3" title="defined at gl-io.ads:104:3">BMP_Unsupported_Bits_per_Pixel</a>, </pre></li>
+<li id="l105"><pre>  <a href="gl-io.ads.html#gl-io.ads:105:3" title="defined at gl-io.ads:105:3">Unsupported_compression</a> :      <span class="keyword">exception</span>; </pre></li>
+<li id="l106"><pre> </pre></li>
+<li id="l107"><pre>  <span class="comment">----------------------</span> </pre></li>
+<li id="l108"><pre>  <span class="comment">-- TGA format Input --</span> </pre></li>
+<li id="l109"><pre>  <span class="comment">----------------------</span> </pre></li>
+<li id="l110"><pre> </pre></li>
+<li id="l111"><pre>   <span class="keyword">procedure</span> <span class="droplink">Load_TGA<ul><li><a href="gl-io.ads.html#gl-io.ads:111:14" title="To API doc">To API doc</a></li><li><a href="src_gl-io.adb.html#l462" title="To body">To body</a></li></ul></span> (<a href="gl-io.ads.html#gl-io.ads:111:24" title="defined at gl-io.ads:111:24">Name</a>          :     String;   <span class="comment">-- File name</span> </pre></li>
+<li id="l112"><pre>                       <a href="gl-io.ads.html#gl-io.ads:112:24" title="defined at gl-io.ads:112:24">Id</a>            :     Integer;  <span class="comment">-- Id is the texture identifier to bind to</span> </pre></li>
+<li id="l113"><pre>                       <a href="gl-io.ads.html#gl-io.ads:113:24" title="defined at gl-io.ads:113:24">blending_hint</a> : <span class="keyword">out</span> Boolean); <span class="comment">-- has the image blending / transparency /alpha ?</span> </pre></li>
+<li id="l114"><pre> </pre></li>
+<li id="l115"><pre>   <span class="keyword">procedure</span> <span class="droplink">Load_TGA<ul><li><a href="gl-io.ads.html#gl-io.ads:115:14" title="To API doc">To API doc</a></li><li><a href="src_gl-io.adb.html#l418" title="To body">To body</a></li></ul></span> (<a href="gl-io.ads.html#gl-io.ads:115:24" title="defined at gl-io.ads:115:24">S</a>             :     Ada.Streams.Stream_IO.Stream_Access; <span class="comment">-- Input data stream</span> </pre></li>
+<li id="l116"><pre>                       <a href="gl-io.ads.html#gl-io.ads:116:24" title="defined at gl-io.ads:116:24">Id</a>            :     Integer;  <span class="comment">-- Id is the texture identifier to bind to</span> </pre></li>
+<li id="l117"><pre>                       <a href="gl-io.ads.html#gl-io.ads:117:24" title="defined at gl-io.ads:117:24">blending_hint</a> : <span class="keyword">out</span> Boolean); <span class="comment">-- has the image blending / transparency /alpha ?</span> </pre></li>
+<li id="l118"><pre> </pre></li>
+<li id="l119"><pre>  <a href="gl-io.ads.html#gl-io.ads:119:3" title="defined at gl-io.ads:119:3">TGA_Unsupported_Image_Type</a>      : <span class="keyword">exception</span>;   <span class="comment">-- color mapped or compressed image</span> </pre></li>
+<li id="l120"><pre>  <a href="gl-io.ads.html#gl-io.ads:120:3" title="defined at gl-io.ads:120:3">TGA_Unsupported_Bits_per_pixel</a>  : <span class="keyword">exception</span>;   <span class="comment">-- image bits is not 8, 24 or 32</span> </pre></li>
+<li id="l121"><pre>  <a href="gl-io.ads.html#gl-io.ads:121:3" title="defined at gl-io.ads:121:3">TGA_Bad_Data</a>                    : <span class="keyword">exception</span>;   <span class="comment">-- image data could not be loaded</span> </pre></li>
+<li id="l122"><pre> </pre></li>
+<li id="l123"><pre>  <span class="comment">---------------------------------------------------------------------------</span> </pre></li>
+<li id="l124"><pre>  <span class="comment">-- Image (&quot;screenshot&quot;) of the current, active viewport (RGB BMP format) --</span> </pre></li>
+<li id="l125"><pre>  <span class="comment">---------------------------------------------------------------------------</span> </pre></li>
+<li id="l126"><pre> </pre></li>
+<li id="l127"><pre>  <span class="keyword">procedure</span> <span class="droplink">Screenshot<ul><li><a href="gl-io.ads.html#gl-io.ads:127:13" title="To API doc">To API doc</a></li><li><a href="src_gl-io.adb.html#l819" title="To body">To body</a></li></ul></span> (<a href="gl-io.ads.html#gl-io.ads:127:25" title="defined at gl-io.ads:127:25">Name</a> : String); </pre></li>
+<li id="l128"><pre> </pre></li>
+<li id="l129"><pre>  <span class="comment">--------------------------------------------------</span> </pre></li>
+<li id="l130"><pre>  <span class="comment">-- Video capture (RGB uncompressed, AVI format) --</span> </pre></li>
+<li id="l131"><pre>  <span class="comment">--------------------------------------------------</span> </pre></li>
+<li id="l132"><pre> </pre></li>
+<li id="l133"><pre>  <span class="keyword">procedure</span> <span class="droplink">Start_Capture<ul><li><a href="gl-io.ads.html#gl-io.ads:133:13" title="To API doc">To API doc</a></li><li><a href="src_gl-io.adb.html#l1023" title="To body">To body</a></li></ul></span> (<a href="gl-io.ads.html#gl-io.ads:133:28" title="defined at gl-io.ads:133:28">AVI_Name</a> : String; <a href="gl-io.ads.html#gl-io.ads:133:47" title="defined at gl-io.ads:133:47">frame_rate</a> : Positive); </pre></li>
+<li id="l134"><pre> </pre></li>
+<li id="l135"><pre>  <span class="keyword">procedure</span> <span class="droplink">Capture_Frame<ul><li><a href="gl-io.ads.html#gl-io.ads:135:13" title="To API doc">To API doc</a></li><li><a href="src_gl-io.adb.html#l1044" title="To body">To body</a></li></ul></span>; <span class="comment">-- captures the current, active viewport.</span> </pre></li>
+<li id="l136"><pre> </pre></li>
+<li id="l137"><pre>  <span class="keyword">procedure</span> <span class="droplink">Stop_Capture<ul><li><a href="gl-io.ads.html#gl-io.ads:137:13" title="To API doc">To API doc</a></li><li><a href="src_gl-io.adb.html#l1056" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l138"><pre> </pre></li>
+<li id="l139"><pre>  <span class="comment">--------------------------------------------------------------------------</span> </pre></li>
+<li id="l140"><pre>  <span class="comment">-- An object - oriented stream buffering, initially for reading images to --</span> </pre></li>
+<li id="l141"><pre>  <span class="comment">-- the GL system, but that may be useful elsewhere, hence its presence  --</span> </pre></li>
+<li id="l142"><pre>  <span class="comment">-- in this package&apos;s specification                                      --</span> </pre></li>
+<li id="l143"><pre>  <span class="comment">--------------------------------------------------------------------------</span> </pre></li>
+<li id="l144"><pre>  <span class="comment">--</span> </pre></li>
+<li id="l145"><pre>  <span class="keyword">type</span> <span class="droplink">Input_buffer<ul><li><a href="gl-io.ads.html#gl-io.ads:145:8" title="To API doc">To API doc</a></li><li><a href="src_gl-io.ads.html#l155" title="To body">To body</a></li></ul></span> <span class="keyword">is</span> <span class="keyword">private</span>; </pre></li>
+<li id="l146"><pre> </pre></li>
+<li id="l147"><pre>  <span class="keyword">procedure</span> <span class="droplink">Attach_Stream<ul><li><a href="gl-io.ads.html#gl-io.ads:147:13" title="To API doc">To API doc</a></li><li><a href="src_gl-io.adb.html#l132" title="To body">To body</a></li></ul></span> (<span class="droplink">b<ul><li><a href="gl-io.ads.html#gl-io.ads:147:28" title="To API doc">To API doc</a></li><li><a href="src_gl-io.adb.html#l132" title="To body">To body</a></li></ul></span>   : <span class="keyword">out</span> <span class="droplink">Input_buffer<ul><li><a href="gl-io.ads.html#gl-io.ads:145:8" title="To API doc">To API doc</a></li><li><a href="src_gl-io.ads.html#l145" title="To spec">To spec</a></li><li><a href="src_gl-io.ads.html#l155" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l148"><pre>                           <a href="gl-io.ads.html#gl-io.ads:148:28" title="defined at gl-io.ads:148:28">stm</a> :     Ada.Streams.Stream_IO.Stream_Access); </pre></li>
+<li id="l149"><pre> </pre></li>
+<li id="l150"><pre>  <span class="keyword">procedure</span> <span class="droplink">Get_Byte<ul><li><a href="gl-io.ads.html#gl-io.ads:150:13" title="To API doc">To API doc</a></li><li><a href="src_gl-io.adb.html#l140" title="To body">To body</a></li></ul></span> (<span class="droplink">b<ul><li><a href="gl-io.ads.html#gl-io.ads:150:23" title="To API doc">To API doc</a></li><li><a href="src_gl-io.adb.html#l140" title="To body">To body</a></li></ul></span> : <span class="keyword">in</span> <span class="keyword">out</span> <span class="droplink">Input_buffer<ul><li><a href="gl-io.ads.html#gl-io.ads:145:8" title="To API doc">To API doc</a></li><li><a href="src_gl-io.ads.html#l145" title="To spec">To spec</a></li><li><a href="src_gl-io.ads.html#l155" title="To body">To body</a></li></ul></span>; <a href="gl-io.ads.html#gl-io.ads:150:48" title="defined at gl-io.ads:150:48">Return_Byte</a> : <span class="keyword">out</span> <span class="droplink">Ubyte<ul><li><a href="gl.ads.html#gl.ads:122:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l122" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l151"><pre>  <span class="keyword">pragma</span> Inline (<span class="droplink">Get_Byte<ul><li><a href="gl-io.ads.html#gl-io.ads:150:13" title="To API doc">To API doc</a></li><li><a href="src_gl-io.ads.html#l150" title="To spec">To spec</a></li><li><a href="src_gl-io.adb.html#l140" title="To body">To body</a></li></ul></span>); </pre></li>
+<li id="l152"><pre> </pre></li>
+<li id="l153"><pre><span class="keyword">private</span> </pre></li>
+<li id="l154"><pre> </pre></li>
+<li id="l155"><pre>  <span class="keyword">type</span> <span class="droplink">Input_buffer<ul><li><a href="gl-io.ads.html#gl-io.ads:145:8" title="To API doc">To API doc</a></li><li><a href="src_gl-io.ads.html#l145" title="To spec">To spec</a></li></ul></span> <span class="keyword">is</span> <span class="keyword">record</span> </pre></li>
+<li id="l156"><pre>    data        : <span class="droplink">Byte_Array<ul><li><a href="gl-io.ads.html#gl-io.ads:51:8" title="To API doc">To API doc</a></li><li><a href="src_gl-io.ads.html#l51" title="To spec">To spec</a></li></ul></span> (1 .. 1024); </pre></li>
+<li id="l157"><pre>    stm         : Ada.Streams.Stream_IO.Stream_Access; </pre></li>
+<li id="l158"><pre>    InBufIdx    : Positive;   <span class="comment">--  Points to next char in buffer to be read</span> </pre></li>
+<li id="l159"><pre>    MaxInBufIdx : Natural;    <span class="comment">--  Count of valid chars in input buffer</span> </pre></li>
+<li id="l160"><pre>    InputEoF    : Boolean;    <span class="comment">--  End of file indicator</span> </pre></li>
+<li id="l161"><pre>  <span class="keyword">end</span> <span class="keyword">record</span>; </pre></li>
+<li id="l162"><pre> </pre></li>
+<li id="l163"><pre><span class="keyword">end</span> <span class="droplink">GL.IO<ul><li><a href="gl-io.ads.html#gl-io.ads:45:12" title="To API doc">To API doc</a></li><li><a href="src_gl-io.ads.html#l45" title="To spec">To spec</a></li><li><a href="src_gl-io.adb.html#l14" title="To body">To body</a></li></ul></span>; </pre></li>
+</ol></div>
+</div>
+
+</body>
+</html>

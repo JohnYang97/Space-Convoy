@@ -1,0 +1,2 @@
+vectors_xd.adb:5:49: warning: use clause for package "Numerics" has no effect
+vectors_xd.adb:7:49: warning: use clause for package "Bounded" has no effect

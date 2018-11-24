@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    Package: Matrices (generic)
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+
+  <div id='navigation'>
+    <h2 class="button">Navigation</h2>
+    <a href='#Description'><div class="button2">Description</div></a>
+    <a href='#Types'><div class="button2">Types</div></a>
+    <a href='#Constants'><div class="button2">Constants &amp; Global variables</div></a>
+    <a href='#Methods'><div class="button2">Subprograms &amp; Entries</div></a>
+  </div><!-- navigation -->
+  </div>
+</div> <!-- leftSide -->
+
+<div class='default' id='rightSide'>
+ <div id='rightSideInside'>
+ <div id='Index'>
+  <h2>Index</h2>
+  <script type="text/javascript">
+    var names = new Array (
+new Array ('Matrix', 'matrices.ads:12:9', 'type-spec'),
+new Array ('Dimension', 'matrices.ads:8:4', 'var-spec'),
+new Array ('"*"', 'matrices.ads:16:13', 'subp-spec'),
+new Array ('Transpose', 'matrices.ads:18:13', 'subp-spec'),
+      new Array ('dummy', '', ''));
+    printIndexList (names);
+  </script>
+  <noscript>
+    <ul>
+      <li class='type-spec'><a href="#matrices.ads:12:9">Matrix</a></li>
+      <li class='var-spec'><a href="#matrices.ads:8:4">Dimension</a></li>
+      <li class='subp-spec'><a href="#matrices.ads:16:13">"*"</a></li>
+      <li class='subp-spec'><a href="#matrices.ads:18:13">Transpose</a></li>
+    </ul>
+  </noscript>
+ </div>
+ </div>
+</div>
+
+<div class='default' id='documentation'>
+  <div class='title'>
+    Package:
+<span class="droplink"><i>Matrices (generic)</i><ul>
+  <li><a href="src_matrices.ads.html">Goto spec source</a></li>
+  <li><a href="src_matrices.adb.html">Goto body source</a></li>
+</ul></span>
+  </div>
+  <div class='subprograms'>
+    <h1><a name='Description' id='Description'></a>Description</h1>
+    <div class="class">
+    <div class='details'><pre><span class="keyword">generic</span>
+   <span class="name"><a name="matrices.ads:8:4"></a>Dimension</span> : Positive;
+
+<span class="keyword">package</span> <span class="name_emphasis">Matrices</span> <span class="keyword">is</span></pre></div>
+    <div class='comment'>
+Jan &amp; Uwe R. Zimmer, Australia, July 2011
+
+</div>
+    </div>
+  </div>
+
+
+
+
+  <div class='subprograms'>
+    <h1><a name='Types' id='Types'></a>Types</h1>
+    <div class="class">
+      <h3>
+        <a name='matrices.ads:12:9' id='matrices.ads:12:9'></a>
+<span class="droplink">Matrix<ul>
+  <li><a href="src_matrices.ads.html#l12">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Matrix</span> <span class="keyword">is</span> <span class="keyword">array</span> (1 .. <a href="matrices.ads.html#matrices.ads:8:4" title="defined at matrices.ads:8:4">Dimension</a>, 1 .. <a href="matrices.ads.html#matrices.ads:8:4" title="defined at matrices.ads:8:4">Dimension</a>) <span class="keyword">of</span> <a href="real_type.ads.html#real_type.ads:5:12" title="defined at real_type.ads:5:12">Real</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_matrices.ads.html#l12" title="matrices.ads:12:9">matrices.ads:12:9</a> (declaration)</i></div>
+          <div><i><a href="src_matrices.adb.html#l7" title="matrices.adb:7:25">matrices.adb:7:25</a> (reference)</i></div>
+          <div><i><a href="src_matrices.adb.html#l7" title="matrices.adb:7:40">matrices.adb:7:40</a> (reference)</i></div>
+          <div><i><a href="src_matrices.adb.html#l9" title="matrices.adb:9:12">matrices.adb:9:12</a> (reference)</i></div>
+          <div><i><a href="src_matrices.adb.html#l12" title="matrices.adb:12:18">matrices.adb:12:18</a> (reference)</i></div>
+          <div><i><a href="src_matrices.adb.html#l13" title="matrices.adb:13:21">matrices.adb:13:21</a> (reference)</i></div>
+          <div><i><a href="src_matrices.adb.html#l17" title="matrices.adb:17:25">matrices.adb:17:25</a> (reference)</i></div>
+          <div><i><a href="src_matrices.adb.html#l31" title="matrices.adb:31:28">matrices.adb:31:28</a> (reference)</i></div>
+          <div><i><a href="src_matrices.adb.html#l31" title="matrices.adb:31:43">matrices.adb:31:43</a> (reference)</i></div>
+          <div><i><a href="src_matrices.adb.html#l33" title="matrices.adb:33:13">matrices.adb:33:13</a> (reference)</i></div>
+          <div><i><a href="src_matrices.adb.html#l36" title="matrices.adb:36:18">matrices.adb:36:18</a> (reference)</i></div>
+          <div><i><a href="src_matrices.adb.html#l37" title="matrices.adb:37:21">matrices.adb:37:21</a> (reference)</i></div>
+          <div><i><a href="src_matrices.ads.html#l16" title="matrices.ads:16:25">matrices.ads:16:25</a> (reference)</i></div>
+          <div><i><a href="src_matrices.ads.html#l16" title="matrices.ads:16:40">matrices.ads:16:40</a> (reference)</i></div>
+          <div><i><a href="src_matrices.ads.html#l18" title="matrices.ads:18:28">matrices.ads:18:28</a> (reference)</i></div>
+          <div><i><a href="src_matrices.ads.html#l18" title="matrices.ads:18:43">matrices.ads:18:43</a> (reference)</i></div>
+          <div><i><a href="src_rotations.ads.html#l21" title="rotations.ads:21:47">rotations.ads:21:47</a> (reference)</i></div>
+          <div><i><a href="src_rotations.ads.html#l22" title="rotations.ads:22:47">rotations.ads:22:47</a> (reference)</i></div>
+      </div>
+    </div>
+  </div>
+
+  <div class='subprograms'>
+    <h1><a name='Constants' id='Constants'></a>Constants &amp; Global variables</h1>
+    <div class="class">
+      <h3><a name='matrices.ads:8:4' id='matrices.ads:8:4'></a>
+<span class="droplink">Dimension<ul>
+  <li><a href="src_matrices.ads.html#l8">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(Positive)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Dimension</span> : Positive;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_matrices.ads.html#l8" title="matrices.ads:8:4">matrices.ads:8:4</a> (declaration)</i></div>
+          <div><i><a href="src_matrices.ads.html#l12" title="matrices.ads:12:31">matrices.ads:12:31</a> (reference)</i></div>
+          <div><i><a href="src_matrices.ads.html#l12" title="matrices.ads:12:47">matrices.ads:12:47</a> (reference)</i></div>
+          <div><i><a href="src_rotations.ads.html#l16" title="rotations.ads:16:52">rotations.ads:16:52</a> (reference)</i></div>
+          <div><i><a href="src_rotations.ads.html#l17" title="rotations.ads:17:52">rotations.ads:17:52</a> (reference)</i></div>
+      </div>
+    </div>
+  </div>
+
+    <div class='subprograms'>
+      <h1><a name='Methods' id='Methods'></a>Subprograms &amp; Entries</h1>
+      <div class="class">
+        <h3>
+          <a name='matrices.ads:16:13' id='matrices.ads:16:13'></a>
+<span class="droplink">"*"<ul>
+  <li><a href="src_matrices.ads.html#l16">Goto spec in source</a></li>
+  <li><a href="src_matrices.adb.html#l7">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">"*"</span> <table><tr><td>(</td><td><span class="name"><a name="matrices.ads:16:18"></a>A</span>, <span class="name"><a name="matrices.ads:16:21"></a>B</span></td><td>: <a href="matrices.ads.html#matrices.ads:12:9" title="defined at matrices.ads:12:9">Matrix</a>) <span class="keyword">return</span> <a href="matrices.ads.html#matrices.ads:12:9" title="defined at matrices.ads:12:9">Matrix</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_matrices.ads.html#l16" title="matrices.ads:16:14">matrices.ads:16:14</a> (declaration)</i></div>
+            <div><i><a href="src_matrices.adb.html#l7" title="matrices.adb:7:14">matrices.adb:7:14</a> (body)</i></div>
+            <div><i><a href="src_matrices.adb.html#l25" title="matrices.adb:25:9">matrices.adb:25:9</a> (label)</i></div>
+            <div><i><a href="src_rotations.adb.html#l392" title="rotations.adb:392:33">rotations.adb:392:33</a> (call)</i></div>
+            <div><i><a href="src_rotations.adb.html#l392" title="rotations.adb:392:38">rotations.adb:392:38</a> (call)</i></div>
+            <div><i><a href="src_rotations.adb.html#l393" title="rotations.adb:393:33">rotations.adb:393:33</a> (call)</i></div>
+            <div><i><a href="src_rotations.adb.html#l393" title="rotations.adb:393:38">rotations.adb:393:38</a> (call)</i></div>
+            <div><i><a href="src_rotations.adb.html#l394" title="rotations.adb:394:33">rotations.adb:394:33</a> (call)</i></div>
+            <div><i><a href="src_rotations.adb.html#l394" title="rotations.adb:394:38">rotations.adb:394:38</a> (call)</i></div>
+            <div><i><a href="src_rotations.adb.html#l395" title="rotations.adb:395:33">rotations.adb:395:33</a> (call)</i></div>
+            <div><i><a href="src_rotations.adb.html#l395" title="rotations.adb:395:38">rotations.adb:395:38</a> (call)</i></div>
+            <div><i><a href="src_rotations.adb.html#l396" title="rotations.adb:396:33">rotations.adb:396:33</a> (call)</i></div>
+            <div><i><a href="src_rotations.adb.html#l396" title="rotations.adb:396:38">rotations.adb:396:38</a> (call)</i></div>
+            <div><i><a href="src_rotations.adb.html#l397" title="rotations.adb:397:33">rotations.adb:397:33</a> (call)</i></div>
+            <div><i><a href="src_rotations.adb.html#l397" title="rotations.adb:397:38">rotations.adb:397:38</a> (call)</i></div>
+            <div><i><a href="src_rotations.adb.html#l435" title="rotations.adb:435:17">rotations.adb:435:17</a> (call)</i></div>
+            <div><i><a href="src_rotations.adb.html#l435" title="rotations.adb:435:22">rotations.adb:435:22</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="rotations.ads.html#rotations.ads:63:13" title="defined at rotations.ads:63:13">Rotations.To_Matrix_3D</a> defined at <a href="src_rotations.ads.html#l63" title="rotations.ads:63:13">rotations.ads:63:13</a></i></div>
+            <div><i><a href="rotations.ads.html#rotations.ads:63:13" title="defined at rotations.ads:63:13">Rotations.To_Matrix_3D</a> defined at <a href="src_rotations.ads.html#l63" title="rotations.ads:63:13">rotations.ads:63:13</a></i></div>
+            <div><i><a href="rotations.ads.html#rotations.ads:64:13" title="defined at rotations.ads:64:13">Rotations.To_Matrix_3D_OpenGL</a> defined at <a href="src_rotations.ads.html#l64" title="rotations.ads:64:13">rotations.ads:64:13</a></i></div>
+            <div><i><a href="rotations.ads.html#rotations.ads:64:13" title="defined at rotations.ads:64:13">Rotations.To_Matrix_3D_OpenGL</a> defined at <a href="src_rotations.ads.html#l64" title="rotations.ads:64:13">rotations.ads:64:13</a></i></div>
+            <div><i><a href="rotations.ads.html#rotations.ads:64:13" title="defined at rotations.ads:64:13">Rotations.To_Matrix_3D_OpenGL</a> defined at <a href="src_rotations.ads.html#l64" title="rotations.ads:64:13">rotations.ads:64:13</a></i></div>
+            <div><i><a href="rotations.ads.html#rotations.ads:64:13" title="defined at rotations.ads:64:13">Rotations.To_Matrix_3D_OpenGL</a> defined at <a href="src_rotations.ads.html#l64" title="rotations.ads:64:13">rotations.ads:64:13</a></i></div>
+            <div><i><a href="rotations.ads.html#rotations.ads:64:13" title="defined at rotations.ads:64:13">Rotations.To_Matrix_3D_OpenGL</a> defined at <a href="src_rotations.ads.html#l64" title="rotations.ads:64:13">rotations.ads:64:13</a></i></div>
+            <div><i><a href="rotations.ads.html#rotations.ads:64:13" title="defined at rotations.ads:64:13">Rotations.To_Matrix_3D_OpenGL</a> defined at <a href="src_rotations.ads.html#l64" title="rotations.ads:64:13">rotations.ads:64:13</a></i></div>
+            <div><i><a href="rotations.ads.html#rotations.ads:64:13" title="defined at rotations.ads:64:13">Rotations.To_Matrix_3D_OpenGL</a> defined at <a href="src_rotations.ads.html#l64" title="rotations.ads:64:13">rotations.ads:64:13</a></i></div>
+            <div><i><a href="rotations.ads.html#rotations.ads:64:13" title="defined at rotations.ads:64:13">Rotations.To_Matrix_3D_OpenGL</a> defined at <a href="src_rotations.ads.html#l64" title="rotations.ads:64:13">rotations.ads:64:13</a></i></div>
+            <div><i><a href="rotations.ads.html#rotations.ads:64:13" title="defined at rotations.ads:64:13">Rotations.To_Matrix_3D_OpenGL</a> defined at <a href="src_rotations.ads.html#l64" title="rotations.ads:64:13">rotations.ads:64:13</a></i></div>
+            <div><i><a href="rotations.ads.html#rotations.ads:64:13" title="defined at rotations.ads:64:13">Rotations.To_Matrix_3D_OpenGL</a> defined at <a href="src_rotations.ads.html#l64" title="rotations.ads:64:13">rotations.ads:64:13</a></i></div>
+            <div><i><a href="rotations.ads.html#rotations.ads:64:13" title="defined at rotations.ads:64:13">Rotations.To_Matrix_3D_OpenGL</a> defined at <a href="src_rotations.ads.html#l64" title="rotations.ads:64:13">rotations.ads:64:13</a></i></div>
+            <div><i><a href="rotations.ads.html#rotations.ads:64:13" title="defined at rotations.ads:64:13">Rotations.To_Matrix_3D_OpenGL</a> defined at <a href="src_rotations.ads.html#l64" title="rotations.ads:64:13">rotations.ads:64:13</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='matrices.ads:18:13' id='matrices.ads:18:13'></a>
+<span class="droplink">Transpose<ul>
+  <li><a href="src_matrices.ads.html#l18">Goto spec in source</a></li>
+  <li><a href="src_matrices.adb.html#l31">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Transpose</span> <table><tr><td>(</td><td><span class="name"><a name="matrices.ads:18:24"></a>M</span></td><td>: <a href="matrices.ads.html#matrices.ads:12:9" title="defined at matrices.ads:12:9">Matrix</a>) <span class="keyword">return</span> <a href="matrices.ads.html#matrices.ads:12:9" title="defined at matrices.ads:12:9">Matrix</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_matrices.ads.html#l18" title="matrices.ads:18:13">matrices.ads:18:13</a> (declaration)</i></div>
+            <div><i><a href="src_matrices.adb.html#l31" title="matrices.adb:31:13">matrices.adb:31:13</a> (body)</i></div>
+            <div><i><a href="src_matrices.adb.html#l42" title="matrices.adb:42:8">matrices.adb:42:8</a> (label)</i></div>
+        </div>
+      </div>
+    </div>
+</div> <!-- documentation -->
+
+</body>
+</html>

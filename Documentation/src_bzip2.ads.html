@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    File: bzip2.ads
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+  </div>
+</div> <!-- leftSide -->
+
+<div class='subprograms'>
+  <div class='details'><ol><li id="l1"><pre><span class="comment">--</span> </pre></li>
+<li id="l2"><pre> <span class="comment">-- BZip2.Decompress - decompression of bzip2 data streams.</span> </pre></li>
+<li id="l3"><pre> <span class="comment">--</span> </pre></li>
+<li id="l4"><pre> <span class="comment">-- bzip2 compresses files using the Burrows - Wheeler block - sorting text</span> </pre></li>
+<li id="l5"><pre> <span class="comment">-- compression algorithm, and Huffman coding. Compression is generally</span> </pre></li>
+<li id="l6"><pre> <span class="comment">-- considerably better than that achieved by more conventional</span> </pre></li>
+<li id="l7"><pre> <span class="comment">-- LZ77/LZ78 - based compressors, and approaches the performance of the</span> </pre></li>
+<li id="l8"><pre> <span class="comment">-- PPM family of statistical compressors.</span> </pre></li>
+<li id="l9"><pre> <span class="comment">--</span> </pre></li>
+<li id="l10"><pre> <span class="comment">-- This Ada code (a) is a reworked translation of a Pascal version (b)</span> </pre></li>
+<li id="l11"><pre> <span class="comment">-- by Daniel Mantione of the decompression code of libbzip2 (c)</span> </pre></li>
+<li id="l12"><pre> <span class="comment">-- by Julian Seward.</span> </pre></li>
+<li id="l13"><pre> <span class="comment">-- Both (a) and (b) refer to (c)&apos;s license which follows here, as in</span> </pre></li>
+<li id="l14"><pre> <span class="comment">-- bzip version 1.0.5, from http://www.bzip.org :</span> </pre></li>
+<li id="l15"><pre> <span class="comment">--</span> </pre></li>
+<li id="l16"><pre> <span class="comment">--***************************************************************************</span> </pre></li>
+<li id="l17"><pre> <span class="comment">--  bzip2 and libbzip2, version 1.0.5 : A program and library for data</span> </pre></li>
+<li id="l18"><pre> <span class="comment">--   compression by Julian Seward</span> </pre></li>
+<li id="l19"><pre> <span class="comment">--  Copyright (c) 1996 - 2007 Julian Seward</span> </pre></li>
+<li id="l20"><pre> <span class="comment">--  This program, bzip2, the associated library libbzip2, and all</span> </pre></li>
+<li id="l21"><pre> <span class="comment">--   documentation, are copyright (c) 1996 - 2007 Julian Seward.</span> </pre></li>
+<li id="l22"><pre> <span class="comment">--  All rights reserved.</span> </pre></li>
+<li id="l23"><pre> <span class="comment">--  Redistribution and use in source and binary forms, with or without</span> </pre></li>
+<li id="l24"><pre> <span class="comment">--  modification, are permitted provided that the following conditions</span> </pre></li>
+<li id="l25"><pre> <span class="comment">--  are met:</span> </pre></li>
+<li id="l26"><pre> <span class="comment">--  * Redistributions of source code must retain the above copyright notice,</span> </pre></li>
+<li id="l27"><pre> <span class="comment">--     this list of conditions and the following disclaimer.</span> </pre></li>
+<li id="l28"><pre> <span class="comment">--  * The origin of this software must not be misrepresented; you must not</span> </pre></li>
+<li id="l29"><pre> <span class="comment">--     claim that you wrote the original software. If you use this software</span> </pre></li>
+<li id="l30"><pre> <span class="comment">--     in a product, an acknowledgment in the product documentation would be</span> </pre></li>
+<li id="l31"><pre> <span class="comment">--     appreciated but is not required.</span> </pre></li>
+<li id="l32"><pre> <span class="comment">--  * Altered source versions must be plainly marked as such, and must not be</span> </pre></li>
+<li id="l33"><pre> <span class="comment">--     misrepresented as being the original software.</span> </pre></li>
+<li id="l34"><pre> <span class="comment">--  * The name of the author may not be used to endorse or promote products</span> </pre></li>
+<li id="l35"><pre> <span class="comment">--     derived from this software without specific prior written permission.</span> </pre></li>
+<li id="l36"><pre> <span class="comment">--  THIS SOFTWARE IS PROVIDED BY THE AUTHOR &quot;AS IS&quot; AND ANY EXPRESS OR</span> </pre></li>
+<li id="l37"><pre> <span class="comment">--  IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES</span> </pre></li>
+<li id="l38"><pre> <span class="comment">--  OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.</span> </pre></li>
+<li id="l39"><pre> <span class="comment">--  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,</span> </pre></li>
+<li id="l40"><pre> <span class="comment">--  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT</span> </pre></li>
+<li id="l41"><pre> <span class="comment">--  NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,</span> </pre></li>
+<li id="l42"><pre> <span class="comment">--  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY</span> </pre></li>
+<li id="l43"><pre> <span class="comment">--  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT</span> </pre></li>
+<li id="l44"><pre> <span class="comment">--  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF</span> </pre></li>
+<li id="l45"><pre> <span class="comment">--  THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</span> </pre></li>
+<li id="l46"><pre> <span class="comment">--  PATENTS : To the best of my knowledge, bzip2 and libbzip2 do not use any</span> </pre></li>
+<li id="l47"><pre> <span class="comment">--  patented algorithms. However, I do not have the resources to</span> </pre></li>
+<li id="l48"><pre> <span class="comment">--  carry out a patent search.</span> </pre></li>
+<li id="l49"><pre> <span class="comment">--  Therefore I cannot give any guarantee of the above statement.</span> </pre></li>
+<li id="l50"><pre> <span class="comment">--***************************************************************************</span> </pre></li>
+<li id="l51"><pre> <span class="comment">--</span> </pre></li>
+<li id="l52"><pre> <span class="comment">-- Translated on 20 - Oct - 2009 by (New) P2Ada v. 15 - Nov - 2006</span> </pre></li>
+<li id="l53"><pre> <span class="comment">-- Rework by G. de Montmollin</span> </pre></li>
+<li id="l54"><pre> <span class="comment">--</span> </pre></li>
+<li id="l55"><pre> <span class="comment">-- Main difference over the FreePascal version : there is no more pointer</span> </pre></li>
+<li id="l56"><pre> <span class="comment">-- arithmetics. The only pointer is tt, for dynamically allocating the biggest</span> </pre></li>
+<li id="l57"><pre> <span class="comment">-- decoding array.</span> </pre></li>
+<li id="l58"><pre> <span class="comment">-- With the appropriate options, the performance is very close to</span> </pre></li>
+<li id="l59"><pre> <span class="comment">-- the bzip2 tool in C : it takes around 7% - 11% more time according to data</span> </pre></li>
+<li id="l60"><pre> <span class="comment">-- to be decompressed. Add 5% when CRC checking is enabled.</span> </pre></li>
+<li id="l61"><pre> <span class="comment">-- These timings are obtained with bunzip.adb compiled on GNAT 2008, Win32,</span> </pre></li>
+<li id="l62"><pre> <span class="comment">-- with the - O2 - gnatpn - fpeel - loops - funroll - loops - fweb - frename - registers</span> </pre></li>
+<li id="l63"><pre> <span class="comment">-- options, average on several runs (see bz_test.cmd).</span> </pre></li>
+<li id="l64"><pre> </pre></li>
+<li id="l65"><pre><span class="keyword">with</span> Interfaces; </pre></li>
+<li id="l66"><pre> </pre></li>
+<li id="l67"><pre><span class="keyword">generic</span> </pre></li>
+<li id="l68"><pre> </pre></li>
+<li id="l69"><pre>  <a href="bzip2.ads.html#bzip2.ads:69:3" title="defined at bzip2.ads:69:3">input_buffer_size</a>  : Integer := 1024; </pre></li>
+<li id="l70"><pre>  <a href="bzip2.ads.html#bzip2.ads:70:3" title="defined at bzip2.ads:70:3">output_buffer_size</a> : Integer := 4096; </pre></li>
+<li id="l71"><pre> </pre></li>
+<li id="l72"><pre>  <span class="keyword">type</span> <a href="bzip2.ads.html#bzip2.ads:72:8" title="defined at bzip2.ads:72:8">Buffer</a> <span class="keyword">is</span> <span class="keyword">array</span> (Natural <span class="keyword">range</span> &lt;&gt;) <span class="keyword">of</span> Interfaces.Unsigned_8; </pre></li>
+<li id="l73"><pre> </pre></li>
+<li id="l74"><pre>  <a href="bzip2.ads.html#bzip2.ads:74:3" title="defined at bzip2.ads:74:3">check_CRC</a> : Boolean; </pre></li>
+<li id="l75"><pre>  <span class="comment">-- ^ useless if the whole bzip stream is in</span> </pre></li>
+<li id="l76"><pre>  <span class="comment">-- another CRC - checked stream, like a Zip archive</span> </pre></li>
+<li id="l77"><pre> </pre></li>
+<li id="l78"><pre>  <span class="keyword">with</span> <span class="keyword">procedure</span> <a href="bzip2.ads.html#bzip2.ads:78:18" title="defined at bzip2.ads:78:18">Read</a>  (<a href="bzip2.ads.html#bzip2.ads:78:25" title="defined at bzip2.ads:78:25">buf</a> : <span class="keyword">out</span> <span class="droplink">Buffer<ul><li><a href="bzip2.ads.html#bzip2.ads:72:8" title="To API doc">To API doc</a></li><li><a href="src_bzip2.ads.html#l72" title="To spec">To spec</a></li></ul></span>); <span class="comment">-- Input</span> </pre></li>
+<li id="l79"><pre>  <span class="keyword">with</span> <span class="keyword">procedure</span> <a href="bzip2.ads.html#bzip2.ads:79:18" title="defined at bzip2.ads:79:18">Write</a> (<a href="bzip2.ads.html#bzip2.ads:79:25" title="defined at bzip2.ads:79:25">buf</a> :     <span class="droplink">Buffer<ul><li><a href="bzip2.ads.html#bzip2.ads:72:8" title="To API doc">To API doc</a></li><li><a href="src_bzip2.ads.html#l72" title="To spec">To spec</a></li></ul></span>); <span class="comment">-- Output</span> </pre></li>
+<li id="l80"><pre> </pre></li>
+<li id="l81"><pre><span class="keyword">package</span> <span class="droplink">BZip2<ul><li><a href="bzip2.ads.html#bzip2.ads:81:9" title="To API doc">To API doc</a></li><li><a href="src_bzip2.adb.html#l16" title="To body">To body</a></li></ul></span> <span class="keyword">is</span> </pre></li>
+<li id="l82"><pre> </pre></li>
+<li id="l83"><pre>  <a href="bzip2.ads.html#bzip2.ads:83:3" title="defined at bzip2.ads:83:3">bad_header_magic</a>, </pre></li>
+<li id="l84"><pre>  <a href="bzip2.ads.html#bzip2.ads:84:3" title="defined at bzip2.ads:84:3">bad_block_magic</a>, </pre></li>
+<li id="l85"><pre>  <a href="bzip2.ads.html#bzip2.ads:85:3" title="defined at bzip2.ads:85:3">data_error</a>, </pre></li>
+<li id="l86"><pre>  <a href="bzip2.ads.html#bzip2.ads:86:3" title="defined at bzip2.ads:86:3">block_crc_check_failed</a>, </pre></li>
+<li id="l87"><pre>  <a href="bzip2.ads.html#bzip2.ads:87:3" title="defined at bzip2.ads:87:3">randomized_not_yet_implemented</a> : <span class="keyword">exception</span>; </pre></li>
+<li id="l88"><pre> </pre></li>
+<li id="l89"><pre>  <span class="keyword">procedure</span> <span class="droplink">Decompress<ul><li><a href="bzip2.ads.html#bzip2.ads:89:13" title="To API doc">To API doc</a></li><li><a href="src_bzip2.adb.html#l18" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l90"><pre> </pre></li>
+<li id="l91"><pre><span class="keyword">end</span> <span class="droplink">BZip2<ul><li><a href="bzip2.ads.html#bzip2.ads:81:9" title="To API doc">To API doc</a></li><li><a href="src_bzip2.ads.html#l81" title="To spec">To spec</a></li><li><a href="src_bzip2.adb.html#l16" title="To body">To body</a></li></ul></span>; </pre></li>
+</ol></div>
+</div>
+
+</body>
+</html>

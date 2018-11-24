@@ -1,0 +1,298 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    File: gl-materials.ads
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+  </div>
+</div> <!-- leftSide -->
+
+<div class='subprograms'>
+  <div class='details'><ol><li id="l1"><pre><span class="keyword">package</span> <span class="droplink">GL.Materials<ul><li><a href="gl-materials.ads.html#gl-materials.ads:1:12" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.ads.html#l1" title="To spec">To spec</a></li><li><a href="src_gl-materials.adb.html#l1" title="To body">To body</a></li></ul></span> <span class="keyword">is</span> </pre></li>
+<li id="l2"><pre> </pre></li>
+<li id="l3"><pre>  <span class="comment">-- Material. Doc from the VRML 1.0 spec (refers to OpenGL):</span> </pre></li>
+<li id="l4"><pre> </pre></li>
+<li id="l5"><pre>  <span class="comment">--  * The ambient color reflects ambient light evenly from all parts of</span> </pre></li>
+<li id="l6"><pre>  <span class="comment">--    an object regardless of viewing and lighting angles.</span> </pre></li>
+<li id="l7"><pre>  <span class="comment">--</span> </pre></li>
+<li id="l8"><pre>  <span class="comment">--  * The diffuse color reflects all VRML light sources depending on the</span> </pre></li>
+<li id="l9"><pre>  <span class="comment">--    angle of the surface with respect to the light source.</span> </pre></li>
+<li id="l10"><pre>  <span class="comment">--    The more directly the surface faces the light, the more</span> </pre></li>
+<li id="l11"><pre>  <span class="comment">--    diffuse light reflects.</span> </pre></li>
+<li id="l12"><pre>  <span class="comment">--</span> </pre></li>
+<li id="l13"><pre>  <span class="comment">--  * The specular color and shininess determine the specular highlights,</span> </pre></li>
+<li id="l14"><pre>  <span class="comment">--    e.g., the shiny spots on an apple. When the angle from the light</span> </pre></li>
+<li id="l15"><pre>  <span class="comment">--    to the surface is close to the angle from the surface to the viewer,</span> </pre></li>
+<li id="l16"><pre>  <span class="comment">--    the specular color is added to the diffuse and ambient color</span> </pre></li>
+<li id="l17"><pre>  <span class="comment">--    calculations.</span> </pre></li>
+<li id="l18"><pre>  <span class="comment">--    Lower shininess values produce soft glows, while higher values</span> </pre></li>
+<li id="l19"><pre>  <span class="comment">--    result in sharper, smaller highlights.</span> </pre></li>
+<li id="l20"><pre>  <span class="comment">--</span> </pre></li>
+<li id="l21"><pre>  <span class="comment">--  * Emissive color models &quot;glowing&quot; objects. This can be useful for</span> </pre></li>
+<li id="l22"><pre>  <span class="comment">--    displaying radiosity - based models (where the light energy of the</span> </pre></li>
+<li id="l23"><pre>  <span class="comment">--    room is computed explicitly), or for displaying scientific data.</span> </pre></li>
+<li id="l24"><pre> </pre></li>
+<li id="l25"><pre>  <span class="keyword">type</span> <a href="gl-materials.ads.html#gl-materials.ads:25:8" title="defined at gl-materials.ads:25:8">Material_type</a> <span class="keyword">is</span> <span class="keyword">record</span> </pre></li>
+<li id="l26"><pre>    ambient, </pre></li>
+<li id="l27"><pre>    diffuse, </pre></li>
+<li id="l28"><pre>    specular, </pre></li>
+<li id="l29"><pre>    emission   : <span class="droplink">GL.Material_Float_vector<ul><li><a href="gl.ads.html#gl.ads:154:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l154" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l30"><pre>    shininess  : <span class="droplink">GL.C_Float<ul><li><a href="gl.ads.html#gl.ads:126:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l126" title="To spec">To spec</a></li></ul></span>; <span class="comment">-- 0.0 .. 128.0</span> </pre></li>
+<li id="l31"><pre>  <span class="keyword">end</span> <span class="keyword">record</span>; </pre></li>
+<li id="l32"><pre> </pre></li>
+<li id="l33"><pre>  <span class="keyword">function</span> <span class="droplink">is_Transparent<ul><li><a href="gl-materials.ads.html#gl-materials.ads:33:12" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.adb.html#l3" title="To body">To body</a></li></ul></span> (<a href="gl-materials.ads.html#gl-materials.ads:33:28" title="defined at gl-materials.ads:33:28">Self</a> : <span class="droplink">Material_type<ul><li><a href="gl-materials.ads.html#gl-materials.ads:25:8" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.ads.html#l25" title="To spec">To spec</a></li></ul></span>) <span class="keyword">return</span> Boolean; </pre></li>
+<li id="l34"><pre> </pre></li>
+<li id="l35"><pre>  <a href="gl-materials.ads.html#gl-materials.ads:35:3" title="defined at gl-materials.ads:35:3">neutral_material</a> : </pre></li>
+<li id="l36"><pre>    <span class="keyword">constant</span> <span class="droplink">Material_type<ul><li><a href="gl-materials.ads.html#gl-materials.ads:25:8" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.ads.html#l25" title="To spec">To spec</a></li></ul></span> := (ambient =&gt;        (0.2, 0.2, 0.2, 1.0), </pre></li>
+<li id="l37"><pre>                              diffuse =&gt;        (0.8, 0.8, 0.8, 1.0), </pre></li>
+<li id="l38"><pre>                              specular =&gt;       (0.0, 0.0, 0.0, 1.0), </pre></li>
+<li id="l39"><pre>                              emission =&gt;       (0.0, 0.0, 0.0, 1.0), </pre></li>
+<li id="l40"><pre>                              shininess =&gt;      0.0); </pre></li>
+<li id="l41"><pre>                              <span class="comment">-- ^ the values are GL defaults.</span> </pre></li>
+<li id="l42"><pre> </pre></li>
+<li id="l43"><pre>  <span class="comment">-- A few colour - dominant materials:</span> </pre></li>
+<li id="l44"><pre> </pre></li>
+<li id="l45"><pre>  <a href="gl-materials.ads.html#gl-materials.ads:45:3" title="defined at gl-materials.ads:45:3">Red</a>    : <span class="keyword">constant</span> <span class="droplink">Material_type<ul><li><a href="gl-materials.ads.html#gl-materials.ads:25:8" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.ads.html#l25" title="To spec">To spec</a></li></ul></span> := ( </pre></li>
+<li id="l46"><pre>    ambient   =&gt; (0.0, 0.0, 0.0, 1.0), </pre></li>
+<li id="l47"><pre>    diffuse   =&gt; (1.0, 0.0, 0.0, 1.0), </pre></li>
+<li id="l48"><pre>    specular  =&gt; (0.0225, 0.0225, 0.0225, 1.0), </pre></li>
+<li id="l49"><pre>    emission  =&gt; (0.0, 0.0, 0.0, 1.0), </pre></li>
+<li id="l50"><pre>    shininess =&gt; 12.8 </pre></li>
+<li id="l51"><pre>); </pre></li>
+<li id="l52"><pre> </pre></li>
+<li id="l53"><pre>  <a href="gl-materials.ads.html#gl-materials.ads:53:3" title="defined at gl-materials.ads:53:3">Orange</a>    : <span class="keyword">constant</span> <span class="droplink">Material_type<ul><li><a href="gl-materials.ads.html#gl-materials.ads:25:8" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.ads.html#l25" title="To spec">To spec</a></li></ul></span> := ( </pre></li>
+<li id="l54"><pre>    ambient   =&gt; (0.0, 0.0, 0.0, 1.0), </pre></li>
+<li id="l55"><pre>    diffuse   =&gt; (0.992157, 0.513726, 0.0, 1.0), </pre></li>
+<li id="l56"><pre>    specular  =&gt; (0.0225, 0.0225, 0.0225, 1.0), </pre></li>
+<li id="l57"><pre>    emission  =&gt; (0.0, 0.0, 0.0, 1.0), </pre></li>
+<li id="l58"><pre>    shininess =&gt; 12.8 </pre></li>
+<li id="l59"><pre>); </pre></li>
+<li id="l60"><pre> </pre></li>
+<li id="l61"><pre>  <a href="gl-materials.ads.html#gl-materials.ads:61:3" title="defined at gl-materials.ads:61:3">Yellow</a>    : <span class="keyword">constant</span> <span class="droplink">Material_type<ul><li><a href="gl-materials.ads.html#gl-materials.ads:25:8" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.ads.html#l25" title="To spec">To spec</a></li></ul></span> := ( </pre></li>
+<li id="l62"><pre>    ambient   =&gt; (0.0, 0.0, 0.0, 1.0), </pre></li>
+<li id="l63"><pre>    diffuse   =&gt; (1.0, 0.964706, 0.0, 1.0), </pre></li>
+<li id="l64"><pre>    specular  =&gt; (0.0225, 0.0225, 0.0225, 1.0), </pre></li>
+<li id="l65"><pre>    emission  =&gt; (0.0, 0.0, 0.0, 1.0), </pre></li>
+<li id="l66"><pre>    shininess =&gt; 12.8 </pre></li>
+<li id="l67"><pre>); </pre></li>
+<li id="l68"><pre> </pre></li>
+<li id="l69"><pre>  <a href="gl-materials.ads.html#gl-materials.ads:69:3" title="defined at gl-materials.ads:69:3">Green</a>    : <span class="keyword">constant</span> <span class="droplink">Material_type<ul><li><a href="gl-materials.ads.html#gl-materials.ads:25:8" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.ads.html#l25" title="To spec">To spec</a></li></ul></span> := ( </pre></li>
+<li id="l70"><pre>    ambient   =&gt; (0.0, 0.0, 0.0, 1.0), </pre></li>
+<li id="l71"><pre>    diffuse   =&gt; (0.0, 1.0, 0.0, 1.0), </pre></li>
+<li id="l72"><pre>    specular  =&gt; (0.0225, 0.0225, 0.0225, 1.0), </pre></li>
+<li id="l73"><pre>    emission  =&gt; (0.0, 0.0, 0.0, 1.0), </pre></li>
+<li id="l74"><pre>    shininess =&gt; 12.8 </pre></li>
+<li id="l75"><pre>); </pre></li>
+<li id="l76"><pre> </pre></li>
+<li id="l77"><pre>  <a href="gl-materials.ads.html#gl-materials.ads:77:3" title="defined at gl-materials.ads:77:3">Indigo</a>    : <span class="keyword">constant</span> <span class="droplink">Material_type<ul><li><a href="gl-materials.ads.html#gl-materials.ads:25:8" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.ads.html#l25" title="To spec">To spec</a></li></ul></span> := ( </pre></li>
+<li id="l78"><pre>    ambient   =&gt; (0.0, 0.0, 0.0, 1.0), </pre></li>
+<li id="l79"><pre>    diffuse   =&gt; (0.0980392, 0.0, 0.458824, 1.0), </pre></li>
+<li id="l80"><pre>    specular  =&gt; (0.0225, 0.0225, 0.0225, 1.0), </pre></li>
+<li id="l81"><pre>    emission  =&gt; (0.0, 0.0, 0.0, 1.0), </pre></li>
+<li id="l82"><pre>    shininess =&gt; 12.8 </pre></li>
+<li id="l83"><pre>); </pre></li>
+<li id="l84"><pre> </pre></li>
+<li id="l85"><pre>  <a href="gl-materials.ads.html#gl-materials.ads:85:3" title="defined at gl-materials.ads:85:3">Blue</a>    : <span class="keyword">constant</span> <span class="droplink">Material_type<ul><li><a href="gl-materials.ads.html#gl-materials.ads:25:8" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.ads.html#l25" title="To spec">To spec</a></li></ul></span> := ( </pre></li>
+<li id="l86"><pre>    ambient   =&gt; (0.0, 0.0, 0.0, 1.0), </pre></li>
+<li id="l87"><pre>    diffuse   =&gt; (0.0, 0.0, 1.0, 1.0), </pre></li>
+<li id="l88"><pre>    specular  =&gt; (0.0225, 0.0225, 0.0225, 1.0), </pre></li>
+<li id="l89"><pre>    emission  =&gt; (0.0, 0.0, 0.0, 1.0), </pre></li>
+<li id="l90"><pre>    shininess =&gt; 12.8 </pre></li>
+<li id="l91"><pre>); </pre></li>
+<li id="l92"><pre> </pre></li>
+<li id="l93"><pre>  <a href="gl-materials.ads.html#gl-materials.ads:93:3" title="defined at gl-materials.ads:93:3">Violet</a>    : <span class="keyword">constant</span> <span class="droplink">Material_type<ul><li><a href="gl-materials.ads.html#gl-materials.ads:25:8" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.ads.html#l25" title="To spec">To spec</a></li></ul></span> := ( </pre></li>
+<li id="l94"><pre>    ambient   =&gt; (0.0, 0.0, 0.0, 1.0), </pre></li>
+<li id="l95"><pre>    diffuse   =&gt; (0.635294, 0.0, 1.0, 1.0), </pre></li>
+<li id="l96"><pre>    specular  =&gt; (0.0225, 0.0225, 0.0225, 1.0), </pre></li>
+<li id="l97"><pre>    emission  =&gt; (0.0, 0.0, 0.0, 1.0), </pre></li>
+<li id="l98"><pre>    shininess =&gt; 12.8 </pre></li>
+<li id="l99"><pre>); </pre></li>
+<li id="l100"><pre> </pre></li>
+<li id="l101"><pre>  <a href="gl-materials.ads.html#gl-materials.ads:101:3" title="defined at gl-materials.ads:101:3">White</a>    : <span class="keyword">constant</span> <span class="droplink">Material_type<ul><li><a href="gl-materials.ads.html#gl-materials.ads:25:8" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.ads.html#l25" title="To spec">To spec</a></li></ul></span> := ( </pre></li>
+<li id="l102"><pre>    ambient   =&gt; (0.0, 0.0, 0.0, 1.0), </pre></li>
+<li id="l103"><pre>    diffuse   =&gt; (0.992157, 0.992157, 0.992157, 1.0), </pre></li>
+<li id="l104"><pre>    specular  =&gt; (0.0225, 0.0225, 0.0225, 1.0), </pre></li>
+<li id="l105"><pre>    emission  =&gt; (0.0, 0.0, 0.0, 1.0), </pre></li>
+<li id="l106"><pre>    shininess =&gt; 12.8 </pre></li>
+<li id="l107"><pre>); </pre></li>
+<li id="l108"><pre> </pre></li>
+<li id="l109"><pre>  <a href="gl-materials.ads.html#gl-materials.ads:109:3" title="defined at gl-materials.ads:109:3">Black</a>    : <span class="keyword">constant</span> <span class="droplink">Material_type<ul><li><a href="gl-materials.ads.html#gl-materials.ads:25:8" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.ads.html#l25" title="To spec">To spec</a></li></ul></span> := ( </pre></li>
+<li id="l110"><pre>    ambient   =&gt; (0.0, 0.0, 0.0, 1.0), </pre></li>
+<li id="l111"><pre>    diffuse   =&gt; (0.0, 0.0, 0.0, 1.0), </pre></li>
+<li id="l112"><pre>    specular  =&gt; (0.0225, 0.0225, 0.0225, 1.0), </pre></li>
+<li id="l113"><pre>    emission  =&gt; (0.0, 0.0, 0.0, 1.0), </pre></li>
+<li id="l114"><pre>    shininess =&gt; 12.8 </pre></li>
+<li id="l115"><pre>); </pre></li>
+<li id="l116"><pre> </pre></li>
+<li id="l117"><pre>  <a href="gl-materials.ads.html#gl-materials.ads:117:3" title="defined at gl-materials.ads:117:3">Medium_Gray</a>    : <span class="keyword">constant</span> <span class="droplink">Material_type<ul><li><a href="gl-materials.ads.html#gl-materials.ads:25:8" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.ads.html#l25" title="To spec">To spec</a></li></ul></span> := ( </pre></li>
+<li id="l118"><pre>    ambient   =&gt; (0.0, 0.0, 0.0, 1.0), </pre></li>
+<li id="l119"><pre>    diffuse   =&gt; (0.454902, 0.454902, 0.454902, 1.0), </pre></li>
+<li id="l120"><pre>    specular  =&gt; (0.0225, 0.0225, 0.0225, 1.0), </pre></li>
+<li id="l121"><pre>    emission  =&gt; (0.0, 0.0, 0.0, 1.0), </pre></li>
+<li id="l122"><pre>    shininess =&gt; 12.8 </pre></li>
+<li id="l123"><pre>); </pre></li>
+<li id="l124"><pre> </pre></li>
+<li id="l125"><pre>  <a href="gl-materials.ads.html#gl-materials.ads:125:3" title="defined at gl-materials.ads:125:3">Light_Gray</a>    : <span class="keyword">constant</span> <span class="droplink">Material_type<ul><li><a href="gl-materials.ads.html#gl-materials.ads:25:8" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.ads.html#l25" title="To spec">To spec</a></li></ul></span> := ( </pre></li>
+<li id="l126"><pre>    ambient   =&gt; (0.0, 0.0, 0.0, 1.0), </pre></li>
+<li id="l127"><pre>    diffuse   =&gt; (0.682353, 0.682353, 0.682353, 1.0), </pre></li>
+<li id="l128"><pre>    specular  =&gt; (0.0225, 0.0225, 0.0225, 1.0), </pre></li>
+<li id="l129"><pre>    emission  =&gt; (0.0, 0.0, 0.0, 1.0), </pre></li>
+<li id="l130"><pre>    shininess =&gt; 12.8 </pre></li>
+<li id="l131"><pre>); </pre></li>
+<li id="l132"><pre> </pre></li>
+<li id="l133"><pre>  <span class="comment">-- A few &quot;material&quot; materials:</span> </pre></li>
+<li id="l134"><pre> </pre></li>
+<li id="l135"><pre>  <a href="gl-materials.ads.html#gl-materials.ads:135:3" title="defined at gl-materials.ads:135:3">Glass</a>    : <span class="keyword">constant</span> <span class="droplink">Material_type<ul><li><a href="gl-materials.ads.html#gl-materials.ads:25:8" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.ads.html#l25" title="To spec">To spec</a></li></ul></span> := ( </pre></li>
+<li id="l136"><pre>              ambient   =&gt; (0.0, 0.0, 0.0, 1.0), </pre></li>
+<li id="l137"><pre>              diffuse   =&gt; (0.588235, 0.670588, 0.729412, 1.0), </pre></li>
+<li id="l138"><pre>              specular  =&gt; (0.9, 0.9, 0.9, 1.0), </pre></li>
+<li id="l139"><pre>              emission  =&gt; (0.0, 0.0, 0.0, 1.0), </pre></li>
+<li id="l140"><pre>              shininess =&gt; 96.0 </pre></li>
+<li id="l141"><pre>); </pre></li>
+<li id="l142"><pre> </pre></li>
+<li id="l143"><pre>  <a href="gl-materials.ads.html#gl-materials.ads:143:3" title="defined at gl-materials.ads:143:3">Brass</a>     : <span class="keyword">constant</span> <span class="droplink">Material_type<ul><li><a href="gl-materials.ads.html#gl-materials.ads:25:8" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.ads.html#l25" title="To spec">To spec</a></li></ul></span> := ( </pre></li>
+<li id="l144"><pre>            ambient =&gt;        (0.329412, 0.223529, 0.027451, 1.0), </pre></li>
+<li id="l145"><pre>            diffuse =&gt;        (0.780392, 0.568627, 0.113725, 1.0), </pre></li>
+<li id="l146"><pre>            specular =&gt;       (0.992157, 0.941176, 0.807843, 1.0), </pre></li>
+<li id="l147"><pre>            emission =&gt;       (0.0, 0.0, 0.0, 0.0), </pre></li>
+<li id="l148"><pre>            shininess =&gt;      27.8974); </pre></li>
+<li id="l149"><pre>  <a href="gl-materials.ads.html#gl-materials.ads:149:3" title="defined at gl-materials.ads:149:3">Bronze</a>     : <span class="keyword">constant</span> <span class="droplink">Material_type<ul><li><a href="gl-materials.ads.html#gl-materials.ads:25:8" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.ads.html#l25" title="To spec">To spec</a></li></ul></span> := ( </pre></li>
+<li id="l150"><pre>            ambient =&gt;        (0.2125, 0.1275, 0.054, 1.0), </pre></li>
+<li id="l151"><pre>            diffuse =&gt;        (0.714, 0.4284, 0.18144, 1.0), </pre></li>
+<li id="l152"><pre>            specular =&gt;       (0.393548, 0.271906, 0.166721, 1.0), </pre></li>
+<li id="l153"><pre>            emission =&gt;       (0.0, 0.0, 0.0, 0.0), </pre></li>
+<li id="l154"><pre>            shininess =&gt;      25.6); </pre></li>
+<li id="l155"><pre>  <a href="gl-materials.ads.html#gl-materials.ads:155:3" title="defined at gl-materials.ads:155:3">Polished_Bronze</a>     : <span class="keyword">constant</span> <span class="droplink">Material_type<ul><li><a href="gl-materials.ads.html#gl-materials.ads:25:8" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.ads.html#l25" title="To spec">To spec</a></li></ul></span> := ( </pre></li>
+<li id="l156"><pre>            ambient =&gt;        (0.25, 0.148, 0.06475, 1.0), </pre></li>
+<li id="l157"><pre>            diffuse =&gt;        (0.4, 0.2368, 0.1036, 1.0), </pre></li>
+<li id="l158"><pre>            specular =&gt;       (0.774597, 0.458561, 0.200621, 1.0), </pre></li>
+<li id="l159"><pre>            emission =&gt;       (0.0, 0.0, 0.0, 0.0), </pre></li>
+<li id="l160"><pre>            shininess =&gt;      76.8); </pre></li>
+<li id="l161"><pre>  <a href="gl-materials.ads.html#gl-materials.ads:161:3" title="defined at gl-materials.ads:161:3">Chrome</a>     : <span class="keyword">constant</span> <span class="droplink">Material_type<ul><li><a href="gl-materials.ads.html#gl-materials.ads:25:8" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.ads.html#l25" title="To spec">To spec</a></li></ul></span> := ( </pre></li>
+<li id="l162"><pre>            ambient =&gt;        (0.25, 0.25, 0.25, 1.0), </pre></li>
+<li id="l163"><pre>            diffuse =&gt;        (0.4, 0.4, 0.4, 1.0), </pre></li>
+<li id="l164"><pre>            specular =&gt;       (0.774597, 0.774597, 0.774597, 1.0), </pre></li>
+<li id="l165"><pre>            emission =&gt;       (0.0, 0.0, 0.0, 0.0), </pre></li>
+<li id="l166"><pre>            shininess =&gt;      76.8); </pre></li>
+<li id="l167"><pre>  <a href="gl-materials.ads.html#gl-materials.ads:167:3" title="defined at gl-materials.ads:167:3">Copper</a>     : <span class="keyword">constant</span> <span class="droplink">Material_type<ul><li><a href="gl-materials.ads.html#gl-materials.ads:25:8" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.ads.html#l25" title="To spec">To spec</a></li></ul></span> := ( </pre></li>
+<li id="l168"><pre>            ambient =&gt;        (0.19125, 0.0735, 0.0225, 1.0), </pre></li>
+<li id="l169"><pre>            diffuse =&gt;        (0.7038, 0.27048, 0.0828, 1.0), </pre></li>
+<li id="l170"><pre>            specular =&gt;       (0.256777, 0.137622, 0.086014, 1.0), </pre></li>
+<li id="l171"><pre>            emission =&gt;       (0.0, 0.0, 0.0, 0.0), </pre></li>
+<li id="l172"><pre>            shininess =&gt;      12.8); </pre></li>
+<li id="l173"><pre>  <a href="gl-materials.ads.html#gl-materials.ads:173:3" title="defined at gl-materials.ads:173:3">Polished_Copper</a>     : <span class="keyword">constant</span> <span class="droplink">Material_type<ul><li><a href="gl-materials.ads.html#gl-materials.ads:25:8" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.ads.html#l25" title="To spec">To spec</a></li></ul></span> := ( </pre></li>
+<li id="l174"><pre>            ambient =&gt;        (0.2295, 0.08825, 0.0275, 1.0), </pre></li>
+<li id="l175"><pre>            diffuse =&gt;        (0.5508, 0.2118, 0.066, 1.0), </pre></li>
+<li id="l176"><pre>            specular =&gt;       (0.580594, 0.223257, 0.0695701, 1.0), </pre></li>
+<li id="l177"><pre>            emission =&gt;       (0.0, 0.0, 0.0, 0.0), </pre></li>
+<li id="l178"><pre>            shininess =&gt;      51.2); </pre></li>
+<li id="l179"><pre>  <a href="gl-materials.ads.html#gl-materials.ads:179:3" title="defined at gl-materials.ads:179:3">Gold</a>     : <span class="keyword">constant</span> <span class="droplink">Material_type<ul><li><a href="gl-materials.ads.html#gl-materials.ads:25:8" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.ads.html#l25" title="To spec">To spec</a></li></ul></span> := ( </pre></li>
+<li id="l180"><pre>            ambient =&gt;        (0.24725, 0.1995, 0.0745, 1.0), </pre></li>
+<li id="l181"><pre>            diffuse =&gt;        (0.75164, 0.60648, 0.22648, 1.0), </pre></li>
+<li id="l182"><pre>            specular =&gt;       (0.628281, 0.555802, 0.366065, 1.0), </pre></li>
+<li id="l183"><pre>            emission =&gt;       (0.0, 0.0, 0.0, 0.0), </pre></li>
+<li id="l184"><pre>            shininess =&gt;      51.2); </pre></li>
+<li id="l185"><pre>  <a href="gl-materials.ads.html#gl-materials.ads:185:3" title="defined at gl-materials.ads:185:3">Polished_Gold</a>     : <span class="keyword">constant</span> <span class="droplink">Material_type<ul><li><a href="gl-materials.ads.html#gl-materials.ads:25:8" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.ads.html#l25" title="To spec">To spec</a></li></ul></span> := ( </pre></li>
+<li id="l186"><pre>            ambient =&gt;        (0.24725, 0.2245, 0.0645, 1.0), </pre></li>
+<li id="l187"><pre>            diffuse =&gt;        (0.34615, 0.3143, 0.0903, 1.0), </pre></li>
+<li id="l188"><pre>            specular =&gt;       (0.797357, 0.723991, 0.208006, 1.0), </pre></li>
+<li id="l189"><pre>            emission =&gt;       (0.0, 0.0, 0.0, 0.0), </pre></li>
+<li id="l190"><pre>            shininess =&gt;      83.2); </pre></li>
+<li id="l191"><pre>  <a href="gl-materials.ads.html#gl-materials.ads:191:3" title="defined at gl-materials.ads:191:3">Pewter</a>     : <span class="keyword">constant</span> <span class="droplink">Material_type<ul><li><a href="gl-materials.ads.html#gl-materials.ads:25:8" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.ads.html#l25" title="To spec">To spec</a></li></ul></span> := ( </pre></li>
+<li id="l192"><pre>            ambient =&gt;        (0.105882, 0.058824, 0.113725, 1.0), </pre></li>
+<li id="l193"><pre>            diffuse =&gt;        (0.427451, 0.470588, 0.541176, 1.0), </pre></li>
+<li id="l194"><pre>            specular =&gt;       (0.333333, 0.333333, 0.521569, 1.0), </pre></li>
+<li id="l195"><pre>            emission =&gt;       (0.0, 0.0, 0.0, 0.0), </pre></li>
+<li id="l196"><pre>            shininess =&gt;      9.84615); </pre></li>
+<li id="l197"><pre>  <a href="gl-materials.ads.html#gl-materials.ads:197:3" title="defined at gl-materials.ads:197:3">Silver</a>     : <span class="keyword">constant</span> <span class="droplink">Material_type<ul><li><a href="gl-materials.ads.html#gl-materials.ads:25:8" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.ads.html#l25" title="To spec">To spec</a></li></ul></span> := ( </pre></li>
+<li id="l198"><pre>            ambient =&gt;        (0.19225, 0.19225, 0.19225, 1.0), </pre></li>
+<li id="l199"><pre>            diffuse =&gt;        (0.50754, 0.50754, 0.50754, 1.0), </pre></li>
+<li id="l200"><pre>            specular =&gt;       (0.508273, 0.508273, 0.508273, 1.0), </pre></li>
+<li id="l201"><pre>            emission =&gt;       (0.0, 0.0, 0.0, 0.0), </pre></li>
+<li id="l202"><pre>            shininess =&gt;      51.2); </pre></li>
+<li id="l203"><pre>  <a href="gl-materials.ads.html#gl-materials.ads:203:3" title="defined at gl-materials.ads:203:3">Polished_Silver</a>     : <span class="keyword">constant</span> <span class="droplink">Material_type<ul><li><a href="gl-materials.ads.html#gl-materials.ads:25:8" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.ads.html#l25" title="To spec">To spec</a></li></ul></span> := ( </pre></li>
+<li id="l204"><pre>            ambient =&gt;        (0.23125, 0.23125, 0.23125, 1.0), </pre></li>
+<li id="l205"><pre>            diffuse =&gt;        (0.2775, 0.2775, 0.2775, 1.0), </pre></li>
+<li id="l206"><pre>            specular =&gt;       (0.773911, 0.773911, 0.773911, 1.0), </pre></li>
+<li id="l207"><pre>            emission =&gt;       (0.0, 0.0, 0.0, 0.0), </pre></li>
+<li id="l208"><pre>            shininess =&gt;      89.6); </pre></li>
+<li id="l209"><pre>  <a href="gl-materials.ads.html#gl-materials.ads:209:3" title="defined at gl-materials.ads:209:3">Emerald</a>     : <span class="keyword">constant</span> <span class="droplink">Material_type<ul><li><a href="gl-materials.ads.html#gl-materials.ads:25:8" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.ads.html#l25" title="To spec">To spec</a></li></ul></span> := ( </pre></li>
+<li id="l210"><pre>            ambient =&gt;        (0.0215, 0.1745, 0.0215, 0.55), </pre></li>
+<li id="l211"><pre>            diffuse =&gt;        (0.07568, 0.61424, 0.07568, 0.55), </pre></li>
+<li id="l212"><pre>            specular =&gt;       (0.633, 0.727811, 0.633, 0.55), </pre></li>
+<li id="l213"><pre>            emission =&gt;       (0.0, 0.0, 0.0, 0.0), </pre></li>
+<li id="l214"><pre>            shininess =&gt;      76.8); </pre></li>
+<li id="l215"><pre>  <a href="gl-materials.ads.html#gl-materials.ads:215:3" title="defined at gl-materials.ads:215:3">Jade</a>     : <span class="keyword">constant</span> <span class="droplink">Material_type<ul><li><a href="gl-materials.ads.html#gl-materials.ads:25:8" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.ads.html#l25" title="To spec">To spec</a></li></ul></span> := ( </pre></li>
+<li id="l216"><pre>            ambient =&gt;        (0.135, 0.2225, 0.1575, 0.95), </pre></li>
+<li id="l217"><pre>            diffuse =&gt;        (0.54, 0.89, 0.63, 0.95), </pre></li>
+<li id="l218"><pre>            specular =&gt;       (0.316228, 0.316228, 0.316228, 0.95), </pre></li>
+<li id="l219"><pre>            emission =&gt;       (0.0, 0.0, 0.0, 0.0), </pre></li>
+<li id="l220"><pre>            shininess =&gt;      12.8); </pre></li>
+<li id="l221"><pre>  <a href="gl-materials.ads.html#gl-materials.ads:221:3" title="defined at gl-materials.ads:221:3">Obsidian</a>     : <span class="keyword">constant</span> <span class="droplink">Material_type<ul><li><a href="gl-materials.ads.html#gl-materials.ads:25:8" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.ads.html#l25" title="To spec">To spec</a></li></ul></span> := ( </pre></li>
+<li id="l222"><pre>            ambient =&gt;        (0.05375, 0.05, 0.06625, 0.82), </pre></li>
+<li id="l223"><pre>            diffuse =&gt;        (0.18275, 0.17, 0.22525, 0.82), </pre></li>
+<li id="l224"><pre>            specular =&gt;       (0.332741, 0.328634, 0.346435, 0.82), </pre></li>
+<li id="l225"><pre>            emission =&gt;       (0.0, 0.0, 0.0, 0.0), </pre></li>
+<li id="l226"><pre>            shininess =&gt;      38.4); </pre></li>
+<li id="l227"><pre>  <a href="gl-materials.ads.html#gl-materials.ads:227:3" title="defined at gl-materials.ads:227:3">Pearl</a>     : <span class="keyword">constant</span> <span class="droplink">Material_type<ul><li><a href="gl-materials.ads.html#gl-materials.ads:25:8" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.ads.html#l25" title="To spec">To spec</a></li></ul></span> := ( </pre></li>
+<li id="l228"><pre>            ambient =&gt;        (0.25, 0.20725, 0.20725, 0.922), </pre></li>
+<li id="l229"><pre>            diffuse =&gt;        (1.0, 0.829, 0.829, 0.922), </pre></li>
+<li id="l230"><pre>            specular =&gt;       (0.296648, 0.296648, 0.296648, 0.922), </pre></li>
+<li id="l231"><pre>            emission =&gt;       (0.0, 0.0, 0.0, 0.0), </pre></li>
+<li id="l232"><pre>            shininess =&gt;      11.264); </pre></li>
+<li id="l233"><pre>  <a href="gl-materials.ads.html#gl-materials.ads:233:3" title="defined at gl-materials.ads:233:3">Ruby</a>     : <span class="keyword">constant</span> <span class="droplink">Material_type<ul><li><a href="gl-materials.ads.html#gl-materials.ads:25:8" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.ads.html#l25" title="To spec">To spec</a></li></ul></span> := ( </pre></li>
+<li id="l234"><pre>            ambient =&gt;        (0.1745, 0.01175, 0.01175, 0.55), </pre></li>
+<li id="l235"><pre>            diffuse =&gt;        (0.61424, 0.04136, 0.04136, 0.55), </pre></li>
+<li id="l236"><pre>            specular =&gt;       (0.727811, 0.626959, 0.626959, 0.55), </pre></li>
+<li id="l237"><pre>            emission =&gt;       (0.0, 0.0, 0.0, 0.0), </pre></li>
+<li id="l238"><pre>            shininess =&gt;      76.8); </pre></li>
+<li id="l239"><pre>  <a href="gl-materials.ads.html#gl-materials.ads:239:3" title="defined at gl-materials.ads:239:3">Turquoise</a>     : <span class="keyword">constant</span> <span class="droplink">Material_type<ul><li><a href="gl-materials.ads.html#gl-materials.ads:25:8" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.ads.html#l25" title="To spec">To spec</a></li></ul></span> := ( </pre></li>
+<li id="l240"><pre>            ambient =&gt;        (0.1, 0.18725, 0.1745, 0.8), </pre></li>
+<li id="l241"><pre>            diffuse =&gt;        (0.396, 0.74151, 0.69102, 0.8), </pre></li>
+<li id="l242"><pre>            specular =&gt;       (0.297254, 0.30829, 0.306678, 0.8), </pre></li>
+<li id="l243"><pre>            emission =&gt;       (0.0, 0.0, 0.0, 0.0), </pre></li>
+<li id="l244"><pre>            shininess =&gt;      12.8); </pre></li>
+<li id="l245"><pre>  <a href="gl-materials.ads.html#gl-materials.ads:245:3" title="defined at gl-materials.ads:245:3">Black_Plastic</a>     : <span class="keyword">constant</span> <span class="droplink">Material_type<ul><li><a href="gl-materials.ads.html#gl-materials.ads:25:8" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.ads.html#l25" title="To spec">To spec</a></li></ul></span> := ( </pre></li>
+<li id="l246"><pre>            ambient =&gt;        (0.0, 0.0, 0.0, 1.0), </pre></li>
+<li id="l247"><pre>            diffuse =&gt;        (0.01, 0.01, 0.01, 1.0), </pre></li>
+<li id="l248"><pre>            specular =&gt;       (0.50, 0.50, 0.50, 1.0), </pre></li>
+<li id="l249"><pre>            emission =&gt;       (0.0, 0.0, 0.0, 0.0), </pre></li>
+<li id="l250"><pre>            shininess =&gt;      32.0); </pre></li>
+<li id="l251"><pre>  <a href="gl-materials.ads.html#gl-materials.ads:251:3" title="defined at gl-materials.ads:251:3">Black_Rubber</a>     : <span class="keyword">constant</span> <span class="droplink">Material_type<ul><li><a href="gl-materials.ads.html#gl-materials.ads:25:8" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.ads.html#l25" title="To spec">To spec</a></li></ul></span> := ( </pre></li>
+<li id="l252"><pre>            ambient =&gt;        (0.02, 0.02, 0.02, 1.0), </pre></li>
+<li id="l253"><pre>            diffuse =&gt;        (0.01, 0.01, 0.01, 1.0), </pre></li>
+<li id="l254"><pre>            specular =&gt;       (0.4, 0.4, 0.4, 1.0), </pre></li>
+<li id="l255"><pre>            emission =&gt;       (0.0, 0.0, 0.0, 0.0), </pre></li>
+<li id="l256"><pre>            shininess =&gt;      10.0); </pre></li>
+<li id="l257"><pre> </pre></li>
+<li id="l258"><pre>  <a href="gl-materials.ads.html#gl-materials.ads:258:3" title="defined at gl-materials.ads:258:3">VRML_Defaults</a>    : <span class="keyword">constant</span> <span class="droplink">Material_type<ul><li><a href="gl-materials.ads.html#gl-materials.ads:25:8" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.ads.html#l25" title="To spec">To spec</a></li></ul></span> := ( </pre></li>
+<li id="l259"><pre>            ambient =&gt;        (0.2, 0.2, 0.2, 1.0), </pre></li>
+<li id="l260"><pre>            diffuse =&gt;        (0.8, 0.8, 0.8, 1.0), </pre></li>
+<li id="l261"><pre>            specular =&gt;       (0.0, 0.0, 0.0, 1.0), </pre></li>
+<li id="l262"><pre>            emission =&gt;       (0.0, 0.0, 0.0, 1.0), </pre></li>
+<li id="l263"><pre>            shininess =&gt;       25.6); </pre></li>
+<li id="l264"><pre> </pre></li>
+<li id="l265"><pre><span class="keyword">end</span> <span class="droplink">GL.Materials<ul><li><a href="gl-materials.ads.html#gl-materials.ads:1:12" title="To API doc">To API doc</a></li><li><a href="src_gl-materials.ads.html#l1" title="To spec">To spec</a></li><li><a href="src_gl-materials.adb.html#l1" title="To body">To body</a></li></ul></span>; </pre></li>
+</ol></div>
+</div>
+
+</body>
+</html>

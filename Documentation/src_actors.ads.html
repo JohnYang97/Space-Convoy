@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    File: actors.ads
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+  </div>
+</div> <!-- leftSide -->
+
+<div class='subprograms'>
+  <div class='details'><ol><li id="l1"><pre><span class="comment">------------</span> </pre></li>
+<li id="l2"><pre><span class="comment">-- Actors --</span> </pre></li>
+<li id="l3"><pre><span class="comment">------------</span> </pre></li>
+<li id="l4"><pre> </pre></li>
+<li id="l5"><pre><span class="comment">-- Change log:</span> </pre></li>
+<li id="l6"><pre><span class="comment">-- GM 18 - May - 2008 : Changed from Ego to Actors : object - oriented,</span> </pre></li>
+<li id="l7"><pre><span class="comment">--   no more ego - centric, esp. : globals removed, wrapping Actor type .. .</span> </pre></li>
+<li id="l8"><pre> </pre></li>
+<li id="l9"><pre><span class="keyword">with</span> <span class="droplink">Game_Control<ul><li><a href="game_control.ads.html#game_control.ads:12:9" title="To API doc">To API doc</a></li><li><a href="src_game_control.ads.html#l12" title="To spec">To spec</a></li><li><a href="src_game_control.adb.html#l8" title="To body">To body</a></li></ul></span>, <span class="droplink">GLOBE_3D<ul><li><a href="globe_3d.ads.html#globe_3d.ads:77:9" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l77" title="To spec">To spec</a></li><li><a href="src_globe_3d.adb.html#l17" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l10"><pre> </pre></li>
+<li id="l11"><pre><span class="keyword">package</span> <span class="droplink">Actors<ul><li><a href="actors.ads.html#actors.ads:11:9" title="To API doc">To API doc</a></li><li><a href="src_actors.adb.html#l4" title="To body">To body</a></li></ul></span> <span class="keyword">is</span> </pre></li>
+<li id="l12"><pre> </pre></li>
+<li id="l13"><pre>   <span class="comment">------------------</span> </pre></li>
+<li id="l14"><pre>   <span class="comment">-- Translations --</span> </pre></li>
+<li id="l15"><pre>   <span class="comment">------------------</span> </pre></li>
+<li id="l16"><pre> </pre></li>
+<li id="l17"><pre>   <span class="keyword">procedure</span> <span class="droplink">Translation<ul><li><a href="actors.ads.html#actors.ads:17:14" title="To API doc">To API doc</a></li><li><a href="src_actors.adb.html#l59" title="To body">To body</a></li></ul></span> (<span class="droplink">actor<ul><li><a href="actors.ads.html#actors.ads:17:27" title="To API doc">To API doc</a></li><li><a href="src_actors.adb.html#l59" title="To body">To body</a></li></ul></span>          : <span class="keyword">in</span> <span class="keyword">out</span> <span class="droplink">GLOBE_3D.Camera<ul><li><a href="globe_3d.ads.html#globe_3d.ads:156:9" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l156" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l18"><pre>                          <a href="actors.ads.html#actors.ads:18:27" title="defined at actors.ads:18:27">gc</a>             :        <span class="droplink">Game_Control.Command_set<ul><li><a href="game_control.ads.html#game_control.ads:46:8" title="To API doc">To API doc</a></li><li><a href="src_game_control.ads.html#l46" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l19"><pre>                          <a href="actors.ads.html#actors.ads:19:27" title="defined at actors.ads:19:27">gx</a>, <a href="actors.ads.html#actors.ads:19:31" title="defined at actors.ads:19:31">gy</a>         :        <span class="droplink">GLOBE_3D.Real<ul><li><a href="globe_3d.ads.html#globe_3d.ads:102:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l102" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l20"><pre>                          <a href="actors.ads.html#actors.ads:20:27" title="defined at actors.ads:20:27">unitary_change</a> :        <span class="droplink">GLOBE_3D.Real<ul><li><a href="globe_3d.ads.html#globe_3d.ads:102:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l102" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l21"><pre>                          <a href="actors.ads.html#actors.ads:21:27" title="defined at actors.ads:21:27">deceleration</a>   :        <span class="droplink">GLOBE_3D.Real<ul><li><a href="globe_3d.ads.html#globe_3d.ads:102:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l102" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l22"><pre>                          <a href="actors.ads.html#actors.ads:22:27" title="defined at actors.ads:22:27">time_step</a>      :        <span class="droplink">GLOBE_3D.Real<ul><li><a href="globe_3d.ads.html#globe_3d.ads:102:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l102" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l23"><pre> </pre></li>
+<li id="l24"><pre>   <span class="keyword">generic</span> </pre></li>
+<li id="l25"><pre>      <span class="keyword">with</span> <span class="keyword">procedure</span> <a href="actors.ads.html#actors.ads:25:22" title="defined at actors.ads:25:22">Limiting</a> (<a href="actors.ads.html#actors.ads:25:32" title="defined at actors.ads:25:32">step</a> : <span class="keyword">in</span> <span class="keyword">out</span> <span class="droplink">GLOBE_3D.Vector_3D<ul><li><a href="globe_3d.ads.html#globe_3d.ads:106:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l106" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l26"><pre> </pre></li>
+<li id="l27"><pre>   <span class="keyword">procedure</span> <span class="droplink">Limited_Translation<ul><li><a href="actors.ads.html#actors.ads:27:14" title="To API doc">To API doc</a></li><li><a href="src_actors.adb.html#l8" title="To body">To body</a></li></ul></span> (<span class="droplink">actor<ul><li><a href="actors.ads.html#actors.ads:27:35" title="To API doc">To API doc</a></li><li><a href="src_actors.adb.html#l8" title="To body">To body</a></li></ul></span>          : <span class="keyword">in</span> <span class="keyword">out</span> <span class="droplink">GLOBE_3D.Camera<ul><li><a href="globe_3d.ads.html#globe_3d.ads:156:9" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l156" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l28"><pre>                                  <a href="actors.ads.html#actors.ads:28:35" title="defined at actors.ads:28:35">gc</a>             :        <span class="droplink">Game_Control.Command_set<ul><li><a href="game_control.ads.html#game_control.ads:46:8" title="To API doc">To API doc</a></li><li><a href="src_game_control.ads.html#l46" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l29"><pre>                                  <a href="actors.ads.html#actors.ads:29:35" title="defined at actors.ads:29:35">gx</a>, <a href="actors.ads.html#actors.ads:29:39" title="defined at actors.ads:29:39">gy</a>         :        <span class="droplink">GLOBE_3D.Real<ul><li><a href="globe_3d.ads.html#globe_3d.ads:102:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l102" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l30"><pre>                                  <a href="actors.ads.html#actors.ads:30:35" title="defined at actors.ads:30:35">unitary_change</a> :        <span class="droplink">GLOBE_3D.Real<ul><li><a href="globe_3d.ads.html#globe_3d.ads:102:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l102" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l31"><pre>                                  <a href="actors.ads.html#actors.ads:31:35" title="defined at actors.ads:31:35">deceleration</a>   :        <span class="droplink">GLOBE_3D.Real<ul><li><a href="globe_3d.ads.html#globe_3d.ads:102:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l102" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l32"><pre>                                  <a href="actors.ads.html#actors.ads:32:35" title="defined at actors.ads:32:35">time_step</a>      :        <span class="droplink">GLOBE_3D.Real<ul><li><a href="globe_3d.ads.html#globe_3d.ads:102:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l102" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l33"><pre> </pre></li>
+<li id="l34"><pre>   <span class="comment">---------------</span> </pre></li>
+<li id="l35"><pre>   <span class="comment">-- Rotations --</span> </pre></li>
+<li id="l36"><pre>   <span class="comment">---------------</span> </pre></li>
+<li id="l37"><pre> </pre></li>
+<li id="l38"><pre>   <span class="keyword">procedure</span> <span class="droplink">Rotation<ul><li><a href="actors.ads.html#actors.ads:38:14" title="To API doc">To API doc</a></li><li><a href="src_actors.adb.html#l66" title="To body">To body</a></li></ul></span> (<span class="droplink">actor<ul><li><a href="actors.ads.html#actors.ads:38:24" title="To API doc">To API doc</a></li><li><a href="src_actors.adb.html#l66" title="To body">To body</a></li></ul></span>          : <span class="keyword">in</span> <span class="keyword">out</span> <span class="droplink">GLOBE_3D.Camera<ul><li><a href="globe_3d.ads.html#globe_3d.ads:156:9" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l156" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l39"><pre>                       <a href="actors.ads.html#actors.ads:39:24" title="defined at actors.ads:39:24">gc</a>             :        <span class="droplink">Game_Control.Command_set<ul><li><a href="game_control.ads.html#game_control.ads:46:8" title="To API doc">To API doc</a></li><li><a href="src_game_control.ads.html#l46" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l40"><pre>                       <a href="actors.ads.html#actors.ads:40:24" title="defined at actors.ads:40:24">gx</a>, <a href="actors.ads.html#actors.ads:40:28" title="defined at actors.ads:40:28">gy</a>         :        <span class="droplink">GLOBE_3D.Real<ul><li><a href="globe_3d.ads.html#globe_3d.ads:102:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l102" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l41"><pre>                       <a href="actors.ads.html#actors.ads:41:24" title="defined at actors.ads:41:24">unitary_change</a> :        <span class="droplink">GLOBE_3D.Real<ul><li><a href="globe_3d.ads.html#globe_3d.ads:102:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l102" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l42"><pre>                       <a href="actors.ads.html#actors.ads:42:24" title="defined at actors.ads:42:24">deceleration</a>   :        <span class="droplink">GLOBE_3D.Real<ul><li><a href="globe_3d.ads.html#globe_3d.ads:102:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l102" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l43"><pre>                       <a href="actors.ads.html#actors.ads:43:24" title="defined at actors.ads:43:24">time_step</a>      :        <span class="droplink">GLOBE_3D.Real<ul><li><a href="globe_3d.ads.html#globe_3d.ads:102:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l102" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l44"><pre> </pre></li>
+<li id="l45"><pre>   <span class="comment">-- Version with a vector of angles in radians</span> </pre></li>
+<li id="l46"><pre>   <span class="keyword">procedure</span> <span class="droplink">Abstract_rotation<ul><li><a href="actors.ads.html#actors.ads:46:14" title="To API doc">To API doc</a></li><li><a href="src_actors.adb.html#l97" title="To body">To body</a></li></ul></span> (<a href="actors.ads.html#actors.ads:46:33" title="defined at actors.ads:46:33">gc</a>             :        <span class="droplink">Game_Control.Command_set<ul><li><a href="game_control.ads.html#game_control.ads:46:8" title="To API doc">To API doc</a></li><li><a href="src_game_control.ads.html#l46" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l47"><pre>                                <a href="actors.ads.html#actors.ads:47:33" title="defined at actors.ads:47:33">gx</a>, <a href="actors.ads.html#actors.ads:47:37" title="defined at actors.ads:47:37">gy</a>         :        <span class="droplink">GLOBE_3D.Real<ul><li><a href="globe_3d.ads.html#globe_3d.ads:102:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l102" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l48"><pre>                                <a href="actors.ads.html#actors.ads:48:33" title="defined at actors.ads:48:33">unitary_change</a> :        <span class="droplink">GLOBE_3D.Real<ul><li><a href="globe_3d.ads.html#globe_3d.ads:102:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l102" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l49"><pre>                                <a href="actors.ads.html#actors.ads:49:33" title="defined at actors.ads:49:33">deceleration</a>   :        <span class="droplink">GLOBE_3D.Real<ul><li><a href="globe_3d.ads.html#globe_3d.ads:102:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l102" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l50"><pre>                                <a href="actors.ads.html#actors.ads:50:33" title="defined at actors.ads:50:33">vector</a>         : <span class="keyword">in</span> <span class="keyword">out</span> <span class="droplink">GLOBE_3D.Vector_3D<ul><li><a href="globe_3d.ads.html#globe_3d.ads:106:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l106" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l51"><pre>                                <a href="actors.ads.html#actors.ads:51:33" title="defined at actors.ads:51:33">time_step</a>      :        <span class="droplink">GLOBE_3D.Real<ul><li><a href="globe_3d.ads.html#globe_3d.ads:102:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l102" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l52"><pre>                                <a href="actors.ads.html#actors.ads:52:33" title="defined at actors.ads:52:33">rotation_speed</a> : <span class="keyword">in</span> <span class="keyword">out</span> <span class="droplink">GLOBE_3D.Vector_3D<ul><li><a href="globe_3d.ads.html#globe_3d.ads:106:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l106" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l53"><pre> </pre></li>
+<li id="l54"><pre>   <span class="comment">-- Version with a rotation matrix</span> </pre></li>
+<li id="l55"><pre>   <span class="keyword">procedure</span> <span class="droplink">Abstract_rotation<ul><li><a href="actors.ads.html#actors.ads:55:14" title="To API doc">To API doc</a></li><li><a href="src_actors.adb.html#l145" title="To body">To body</a></li></ul></span> (<a href="actors.ads.html#actors.ads:55:33" title="defined at actors.ads:55:33">gc</a>             :        <span class="droplink">Game_Control.Command_set<ul><li><a href="game_control.ads.html#game_control.ads:46:8" title="To API doc">To API doc</a></li><li><a href="src_game_control.ads.html#l46" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l56"><pre>                                <a href="actors.ads.html#actors.ads:56:33" title="defined at actors.ads:56:33">gx</a>, <a href="actors.ads.html#actors.ads:56:37" title="defined at actors.ads:56:37">gy</a>         :        <span class="droplink">GLOBE_3D.Real<ul><li><a href="globe_3d.ads.html#globe_3d.ads:102:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l102" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l57"><pre>                                <a href="actors.ads.html#actors.ads:57:33" title="defined at actors.ads:57:33">unitary_change</a> :        <span class="droplink">GLOBE_3D.Real<ul><li><a href="globe_3d.ads.html#globe_3d.ads:102:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l102" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l58"><pre>                                <a href="actors.ads.html#actors.ads:58:33" title="defined at actors.ads:58:33">deceleration</a>   :        <span class="droplink">GLOBE_3D.Real<ul><li><a href="globe_3d.ads.html#globe_3d.ads:102:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l102" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l59"><pre>                                <a href="actors.ads.html#actors.ads:59:33" title="defined at actors.ads:59:33">rot_matrix</a>     : <span class="keyword">in</span> <span class="keyword">out</span> <span class="droplink">GLOBE_3D.Matrix_33<ul><li><a href="globe_3d.ads.html#globe_3d.ads:114:9" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l114" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l60"><pre>                                <a href="actors.ads.html#actors.ads:60:33" title="defined at actors.ads:60:33">time_step</a>      :        <span class="droplink">GLOBE_3D.Real<ul><li><a href="globe_3d.ads.html#globe_3d.ads:102:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l102" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l61"><pre>                                <a href="actors.ads.html#actors.ads:61:33" title="defined at actors.ads:61:33">rotation_speed</a> : <span class="keyword">in</span> <span class="keyword">out</span> <span class="droplink">GLOBE_3D.Vector_3D<ul><li><a href="globe_3d.ads.html#globe_3d.ads:106:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l106" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l62"><pre> </pre></li>
+<li id="l63"><pre><span class="keyword">end</span> <span class="droplink">Actors<ul><li><a href="actors.ads.html#actors.ads:11:9" title="To API doc">To API doc</a></li><li><a href="src_actors.ads.html#l11" title="To spec">To spec</a></li><li><a href="src_actors.adb.html#l4" title="To body">To body</a></li></ul></span>; </pre></li>
+</ol></div>
+</div>
+
+</body>
+</html>

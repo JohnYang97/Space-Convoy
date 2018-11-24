@@ -1,0 +1,2 @@
+unzip-decompress.adb:353:13: warning: use clause for package "UnZip" has no effect
+unzip-decompress.adb:584:22: warning: "UnZip" is already use-visible through previous use_clause at line 353

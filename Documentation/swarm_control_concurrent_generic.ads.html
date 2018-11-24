@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    Package: Swarm_Control_Concurrent_Generic (generic)
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+
+  <div id='navigation'>
+    <h2 class="button">Navigation</h2>
+    <a href='#Description'><div class="button2">Description</div></a>
+    <a href='#Types'><div class="button2">Types</div></a>
+    <a href='#Constants'><div class="button2">Constants &amp; Global variables</div></a>
+    <a href='#Methods'><div class="button2">Subprograms &amp; Entries</div></a>
+  </div><!-- navigation -->
+  </div>
+</div> <!-- leftSide -->
+
+<div class='default' id='rightSide'>
+ <div id='rightSideInside'>
+ <div id='Index'>
+  <h2>Index</h2>
+  <script type="text/javascript">
+    var names = new Array (
+new Array ('Job_<wbr/>Type', 'swarm_control_concurrent_generic.ads:11:9', 'type-spec'),
+new Array ('No_<wbr/>Of_<wbr/>CPU_<wbr/>Cores', 'swarm_control_concurrent_generic.ads:7:4', 'var-spec'),
+new Array ('Distribute_<wbr/>Jobs', 'swarm_control_concurrent_generic.ads:13:14', 'subp-spec'),
+      new Array ('dummy', '', ''));
+    printIndexList (names);
+  </script>
+  <noscript>
+    <ul>
+      <li class='type-spec'><a href="#swarm_control_concurrent_generic.ads:11:9">Job_<wbr/>Type</a></li>
+      <li class='var-spec'><a href="#swarm_control_concurrent_generic.ads:7:4">No_<wbr/>Of_<wbr/>CPU_<wbr/>Cores</a></li>
+      <li class='subp-spec'><a href="#swarm_control_concurrent_generic.ads:13:14">Distribute_<wbr/>Jobs</a></li>
+    </ul>
+  </noscript>
+ </div>
+ </div>
+</div>
+
+<div class='default' id='documentation'>
+  <div class='title'>
+    Package:
+<span class="droplink"><i>Swarm_Control_Concurrent_Generic (generic)</i><ul>
+  <li><a href="src_swarm_control_concurrent_generic.ads.html">Goto spec source</a></li>
+  <li><a href="src_swarm_control_concurrent_generic.adb.html">Goto body source</a></li>
+</ul></span>
+  </div>
+  <div class='subprograms'>
+    <h1><a name='Description' id='Description'></a>Description</h1>
+    <div class="class">
+    <div class='details'><pre><span class="keyword">generic</span>
+
+   <span class="name"><a name="swarm_control_concurrent_generic.ads:7:4"></a>No_Of_CPU_Cores</span> : Positive;
+
+<span class="keyword">package</span> <span class="name_emphasis">Swarm_Control_Concurrent_Generic</span> <span class="keyword">is</span></pre></div>
+    <div class='comment'>
+Jan &amp; Uwe R. Zimmer, Australia, July 2011
+
+</div>
+    </div>
+  </div>
+
+
+
+
+  <div class='subprograms'>
+    <h1><a name='Types' id='Types'></a>Types</h1>
+    <div class="class">
+      <h3>
+        <a name='swarm_control_concurrent_generic.ads:11:9' id='swarm_control_concurrent_generic.ads:11:9'></a>
+<span class="droplink">Job_Type<ul>
+  <li><a href="src_swarm_control_concurrent_generic.ads.html#l11">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Job_Type</span> <span class="keyword">is</span> (Set_Accelerations, Forward_Messages, Move_Elements, Update_Rotations, No_Job);</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_swarm_control_concurrent_generic.ads.html#l11" title="swarm_control_concurrent_generic.ads:11:9">swarm_control_concurrent_generic.ads:11:9</a> (declaration)</i></div>
+          <div><i><a href="src_swarm_control_concurrent_generic.adb.html#l36" title="swarm_control_concurrent_generic.adb:36:28">swarm_control_concurrent_generic.adb:36:28</a> (reference)</i></div>
+          <div><i><a href="src_swarm_control_concurrent_generic.adb.html#l47" title="swarm_control_concurrent_generic.adb:47:23">swarm_control_concurrent_generic.adb:47:23</a> (reference)</i></div>
+          <div><i><a href="src_swarm_control_concurrent_generic.adb.html#l53" title="swarm_control_concurrent_generic.adb:53:35">swarm_control_concurrent_generic.adb:53:35</a> (reference)</i></div>
+          <div><i><a href="src_swarm_control_concurrent_generic.adb.html#l82" title="swarm_control_concurrent_generic.adb:82:37">swarm_control_concurrent_generic.adb:82:37</a> (reference)</i></div>
+          <div><i><a href="src_swarm_control_concurrent_generic.ads.html#l13" title="swarm_control_concurrent_generic.ads:13:37">swarm_control_concurrent_generic.ads:13:37</a> (reference)</i></div>
+      </div>
+    </div>
+  </div>
+
+  <div class='subprograms'>
+    <h1><a name='Constants' id='Constants'></a>Constants &amp; Global variables</h1>
+    <div class="class">
+      <h3><a name='swarm_control_concurrent_generic.ads:7:4' id='swarm_control_concurrent_generic.ads:7:4'></a>
+<span class="droplink">No_Of_CPU_Cores<ul>
+  <li><a href="src_swarm_control_concurrent_generic.ads.html#l7">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(Positive)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">No_Of_CPU_Cores</span> : Positive;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_swarm_control_concurrent_generic.ads.html#l7" title="swarm_control_concurrent_generic.ads:7:4">swarm_control_concurrent_generic.ads:7:4</a> (declaration)</i></div>
+          <div><i><a href="src_swarm_control_concurrent_generic.adb.html#l25" title="swarm_control_concurrent_generic.adb:25:31">swarm_control_concurrent_generic.adb:25:31</a> (reference)</i></div>
+          <div><i><a href="src_swarm_control_concurrent_generic.adb.html#l41" title="swarm_control_concurrent_generic.adb:41:26">swarm_control_concurrent_generic.adb:41:26</a> (reference)</i></div>
+          <div><i><a href="src_swarm_control_concurrent_generic.adb.html#l89" title="swarm_control_concurrent_generic.adb:89:92">swarm_control_concurrent_generic.adb:89:92</a> (reference)</i></div>
+      </div>
+    </div>
+  </div>
+
+    <div class='subprograms'>
+      <h1><a name='Methods' id='Methods'></a>Subprograms &amp; Entries</h1>
+      <div class="class">
+        <h3>
+          <a name='swarm_control_concurrent_generic.ads:13:14' id='swarm_control_concurrent_generic.ads:13:14'></a>
+<span class="droplink">Distribute_Jobs<ul>
+  <li><a href="src_swarm_control_concurrent_generic.ads.html#l13">Goto spec in source</a></li>
+  <li><a href="src_swarm_control_concurrent_generic.adb.html#l82">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Distribute_Jobs</span> <table><tr><td>(</td><td><span class="name"><a name="swarm_control_concurrent_generic.ads:13:31"></a>Job</span></td><td>: <a href="swarm_control_concurrent_generic.ads.html#swarm_control_concurrent_generic.ads:11:9" title="defined at swarm_control_concurrent_generic.ads:11:9">Job_Type</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_swarm_control_concurrent_generic.ads.html#l13" title="swarm_control_concurrent_generic.ads:13:14">swarm_control_concurrent_generic.ads:13:14</a> (declaration)</i></div>
+            <div><i><a href="src_callback_procedures.adb.html#l445" title="callback_procedures.adb:445:7">callback_procedures.adb:445:7</a> (call)</i></div>
+            <div><i><a href="src_callback_procedures.adb.html#l446" title="callback_procedures.adb:446:7">callback_procedures.adb:446:7</a> (call)</i></div>
+            <div><i><a href="src_callback_procedures.adb.html#l447" title="callback_procedures.adb:447:7">callback_procedures.adb:447:7</a> (call)</i></div>
+            <div><i><a href="src_callback_procedures.adb.html#l448" title="callback_procedures.adb:448:7">callback_procedures.adb:448:7</a> (call)</i></div>
+            <div><i><a href="src_swarm_control_concurrent_generic.adb.html#l82" title="swarm_control_concurrent_generic.adb:82:14">swarm_control_concurrent_generic.adb:82:14</a> (body)</i></div>
+            <div><i><a href="src_swarm_control_concurrent_generic.adb.html#l117" title="swarm_control_concurrent_generic.adb:117:8">swarm_control_concurrent_generic.adb:117:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+            <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+            <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+            <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>Ada.Containers.Vectors.First_Index defined at a-convec.ads:283:13</i></div>
+            <div><i>Ada.Containers.Vectors.Last_Index defined at a-convec.ads:289:13</i></div>
+            <div><i>Ada.Containers.Vectors.Length defined at a-convec.ads:97:13</i></div>
+            <div><i><a href="swarm_control_concurrent_generic.adb.html#swarm_control_concurrent_generic.adb:16:13" title="defined at swarm_control_concurrent_generic.adb:16:13">Swarm_Control_Concurrent_Generic.All_Jobs_Done</a> defined at <a href="src_swarm_control_concurrent_generic.adb.html#l16" title="swarm_control_concurrent_generic.adb:16:13">swarm_control_concurrent_generic.adb:16:13</a></i></div>
+            <div><i><a href="swarm_control_concurrent_generic.adb.html#swarm_control_concurrent_generic.adb:36:13" title="defined at swarm_control_concurrent_generic.adb:36:13">Swarm_Control_Concurrent_Generic.Worker.Set_Job</a> defined at <a href="src_swarm_control_concurrent_generic.adb.html#l36" title="swarm_control_concurrent_generic.adb:36:13">swarm_control_concurrent_generic.adb:36:13</a></i></div>
+        </div>
+      </div>
+    </div>
+</div> <!-- documentation -->
+
+</body>
+</html>

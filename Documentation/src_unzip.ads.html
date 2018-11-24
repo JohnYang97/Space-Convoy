@@ -1,0 +1,343 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    File: unzip.ads
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+  </div>
+</div> <!-- leftSide -->
+
+<div class='subprograms'>
+  <div class='details'><ol><li id="l1"><pre><span class="comment">--  ________  ___   ______       ______     ___</span> </pre></li>
+<li id="l2"><pre> <span class="comment">-- /___ .. ._/  |.|   |.___.\     /. __ .\  __|.|   ____</span> </pre></li>
+<li id="l3"><pre> <span class="comment">--    / .. /    |.|   |.____/     |.|__|.| / .. ..|  __\ .. \</span> </pre></li>
+<li id="l4"><pre> <span class="comment">--  _/ .. /___  |.|   |.|    ===  | .. __ .. ||. = .| | = .. |</span> </pre></li>
+<li id="l5"><pre> <span class="comment">-- /_______/  |_|  /__|        /__|  |_| \__\_|  \__\_|</span> </pre></li>
+<li id="l6"><pre> </pre></li>
+<li id="l7"><pre> <span class="comment">-- UnZip</span> </pre></li>
+<li id="l8"><pre> <span class="comment">--------</span> </pre></li>
+<li id="l9"><pre> <span class="comment">-- This library allows to uncompress deflated, enhanced deflated, bzip2 - ed,</span> </pre></li>
+<li id="l10"><pre> <span class="comment">-- imploded, reduced, shrunk and stored streams from a Zip archive stream.</span> </pre></li>
+<li id="l11"><pre> <span class="comment">--</span> </pre></li>
+<li id="l12"><pre> <span class="comment">-- Pure Ada 95 code, 100% portable : OS - , CPU - and compiler - independent.</span> </pre></li>
+<li id="l13"><pre> </pre></li>
+<li id="l14"><pre> <span class="comment">--  Ada translation and substantial rewriting by Gautier de Montmollin</span> </pre></li>
+<li id="l15"><pre> <span class="comment">--    On the web : see the Zip.web constant below.</span> </pre></li>
+<li id="l16"><pre> <span class="comment">--  based on Pascal version 2.10 by Abimbola A Olowofoyeku,</span> </pre></li>
+<li id="l17"><pre> <span class="comment">--    http://www.greatchief.plus.com/</span> </pre></li>
+<li id="l18"><pre> <span class="comment">--  itself based on Pascal version by Christian Ghisler,</span> </pre></li>
+<li id="l19"><pre> <span class="comment">--  itself based on C code by Info - Zip group (Mark Adler et al.)</span> </pre></li>
+<li id="l20"><pre> <span class="comment">--    http://www.info - zip.org/UnZip.html</span> </pre></li>
+<li id="l21"><pre> </pre></li>
+<li id="l22"><pre> <span class="comment">-- Technical documentation : read appnote.txt</span> </pre></li>
+<li id="l23"><pre> </pre></li>
+<li id="l24"><pre> <span class="comment">-- Legal licensing note:</span> </pre></li>
+<li id="l25"><pre> </pre></li>
+<li id="l26"><pre> <span class="comment">--  Copyright (c) 1999 .. 2010 Gautier de Montmollin</span> </pre></li>
+<li id="l27"><pre> </pre></li>
+<li id="l28"><pre> <span class="comment">--  Permission is hereby granted, free of charge, to any person obtaining a copy</span> </pre></li>
+<li id="l29"><pre> <span class="comment">--  of this software and associated documentation files (the &quot;Software&quot;), to deal</span> </pre></li>
+<li id="l30"><pre> <span class="comment">--  in the Software without restriction, including without limitation the rights</span> </pre></li>
+<li id="l31"><pre> <span class="comment">--  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span> </pre></li>
+<li id="l32"><pre> <span class="comment">--  copies of the Software, and to permit persons to whom the Software is</span> </pre></li>
+<li id="l33"><pre> <span class="comment">--  furnished to do so, subject to the following conditions:</span> </pre></li>
+<li id="l34"><pre> </pre></li>
+<li id="l35"><pre> <span class="comment">--  The above copyright notice and this permission notice shall be included in</span> </pre></li>
+<li id="l36"><pre> <span class="comment">--  all copies or substantial portions of the Software.</span> </pre></li>
+<li id="l37"><pre> </pre></li>
+<li id="l38"><pre> <span class="comment">--  THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span> </pre></li>
+<li id="l39"><pre> <span class="comment">--  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span> </pre></li>
+<li id="l40"><pre> <span class="comment">--  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span> </pre></li>
+<li id="l41"><pre> <span class="comment">--  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span> </pre></li>
+<li id="l42"><pre> <span class="comment">--  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span> </pre></li>
+<li id="l43"><pre> <span class="comment">--  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN</span> </pre></li>
+<li id="l44"><pre> <span class="comment">--  THE SOFTWARE.</span> </pre></li>
+<li id="l45"><pre> </pre></li>
+<li id="l46"><pre> <span class="comment">-- NB : this is the MIT License, as found 12 - Sep - 2007 on the site</span> </pre></li>
+<li id="l47"><pre> <span class="comment">-- http://www.opensource.org/licenses/mit - license.php</span> </pre></li>
+<li id="l48"><pre> </pre></li>
+<li id="l49"><pre><span class="keyword">with</span> <span class="droplink">Zip<ul><li><a href="zip.ads.html#zip.ads:45:9" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l45" title="To spec">To spec</a></li><li><a href="src_zip.adb.html#l9" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l50"><pre> </pre></li>
+<li id="l51"><pre><span class="keyword">with</span> Ada.Calendar, Ada.Streams, Ada.Strings.Unbounded; </pre></li>
+<li id="l52"><pre> </pre></li>
+<li id="l53"><pre><span class="keyword">package</span> <span class="droplink">UnZip<ul><li><a href="unzip.ads.html#unzip.ads:53:9" title="To API doc">To API doc</a></li><li><a href="src_unzip.adb.html#l6" title="To body">To body</a></li></ul></span> <span class="keyword">is</span> </pre></li>
+<li id="l54"><pre> </pre></li>
+<li id="l55"><pre>  <span class="keyword">type</span> <a href="unzip.ads.html#unzip.ads:55:8" title="defined at unzip.ads:55:8">option</a> <span class="keyword">is</span> ( </pre></li>
+<li id="l56"><pre>    test_only,            <span class="comment">-- test .zip file integrity, no write</span> </pre></li>
+<li id="l57"><pre>    junk_directories,     <span class="comment">-- ignore directory info - &gt; extract to current one</span> </pre></li>
+<li id="l58"><pre>    case_sensitive_match, <span class="comment">-- case sensitive name matching</span> </pre></li>
+<li id="l59"><pre>    extract_as_text       <span class="comment">-- files will be written with native line endings</span> </pre></li>
+<li id="l60"><pre>); </pre></li>
+<li id="l61"><pre> </pre></li>
+<li id="l62"><pre>  <span class="keyword">type</span> <a href="unzip.ads.html#unzip.ads:62:8" title="defined at unzip.ads:62:8">Option_set</a> <span class="keyword">is</span> <span class="keyword">array</span> (<span class="droplink">option<ul><li><a href="unzip.ads.html#unzip.ads:55:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l55" title="To spec">To spec</a></li></ul></span>) <span class="keyword">of</span> Boolean; </pre></li>
+<li id="l63"><pre> </pre></li>
+<li id="l64"><pre>  <a href="unzip.ads.html#unzip.ads:64:3" title="defined at unzip.ads:64:3">no_option</a> : <span class="keyword">constant</span> <span class="droplink">Option_set<ul><li><a href="unzip.ads.html#unzip.ads:62:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l62" title="To spec">To spec</a></li></ul></span> := (<span class="keyword">others</span> =&gt; False); </pre></li>
+<li id="l65"><pre> </pre></li>
+<li id="l66"><pre>  <span class="comment">-- Ada 2005&apos;s Ada.Directories.Create_Path.</span> </pre></li>
+<li id="l67"><pre>  <span class="comment">-- For Ada 95 compatibility we pass it as an optional procedure access.</span> </pre></li>
+<li id="l68"><pre>  <span class="keyword">type</span> <a href="unzip.ads.html#unzip.ads:68:8" title="defined at unzip.ads:68:8">Create_Path_proc</a> <span class="keyword">is</span> <span class="keyword">access</span> </pre></li>
+<li id="l69"><pre>    <span class="keyword">procedure</span> (New_Directory : String; </pre></li>
+<li id="l70"><pre>               Form          : String := <span class="string">&quot;&quot;</span>); </pre></li>
+<li id="l71"><pre> </pre></li>
+<li id="l72"><pre>  <span class="comment">-- This is system - dependent (or in a future Ada)</span> </pre></li>
+<li id="l73"><pre>  <span class="keyword">type</span> <a href="unzip.ads.html#unzip.ads:73:8" title="defined at unzip.ads:73:8">Set_Time_Stamp_proc</a> <span class="keyword">is</span> <span class="keyword">access</span> </pre></li>
+<li id="l74"><pre>    <span class="keyword">procedure</span> (file_name : String; stamp : Ada.Calendar.Time); </pre></li>
+<li id="l75"><pre> </pre></li>
+<li id="l76"><pre>  <span class="comment">-- Alternatively, you can use Zip.Time to set file time stamps</span> </pre></li>
+<li id="l77"><pre>  <span class="keyword">type</span> <a href="unzip.ads.html#unzip.ads:77:8" title="defined at unzip.ads:77:8">Set_ZTime_Stamp_proc</a> <span class="keyword">is</span> <span class="keyword">access</span> </pre></li>
+<li id="l78"><pre>    <span class="keyword">procedure</span> (file_name : String; stamp : <span class="droplink">Zip.Time<ul><li><a href="zip.ads.html#zip.ads:128:12" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l128" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l79"><pre>  <span class="comment">-- NB : you can use Zip.Convert to change Ada.Calendar.Time from/to Zip.Time</span> </pre></li>
+<li id="l80"><pre>  <span class="comment">--     or use our Split to avoid using Ada.Calendar at all.</span> </pre></li>
+<li id="l81"><pre> </pre></li>
+<li id="l82"><pre>  <span class="comment">-- This is for modifying output file names (e.g. adding a</span> </pre></li>
+<li id="l83"><pre>  <span class="comment">-- work directory, modifying the archived path, etc.)</span> </pre></li>
+<li id="l84"><pre>  <span class="keyword">type</span> <a href="unzip.ads.html#unzip.ads:84:8" title="defined at unzip.ads:84:8">Compose_func</a> <span class="keyword">is</span> <span class="keyword">access</span> <span class="keyword">function</span> (File_Name  : String) <span class="keyword">return</span> String; </pre></li>
+<li id="l85"><pre> </pre></li>
+<li id="l86"><pre>  <span class="comment">-- File System dependent settings</span> </pre></li>
+<li id="l87"><pre>  <span class="keyword">type</span> <a href="unzip.ads.html#unzip.ads:87:8" title="defined at unzip.ads:87:8">FS_routines_type</a> <span class="keyword">is</span> <span class="keyword">record</span> </pre></li>
+<li id="l88"><pre>    Create_Path             : <span class="droplink">Create_Path_proc<ul><li><a href="unzip.ads.html#unzip.ads:68:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l68" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l89"><pre>    Set_Time_Stamp          : <span class="droplink">Set_Time_Stamp_proc<ul><li><a href="unzip.ads.html#unzip.ads:73:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l73" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l90"><pre>    Compose_File_Name       : <span class="droplink">Compose_func<ul><li><a href="unzip.ads.html#unzip.ads:84:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l84" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l91"><pre>    Set_ZTime_Stamp         : <span class="droplink">Set_ZTime_Stamp_proc<ul><li><a href="unzip.ads.html#unzip.ads:77:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l77" title="To spec">To spec</a></li></ul></span>; <span class="comment">-- alt. to Set_Time_Stamp</span> </pre></li>
+<li id="l92"><pre>  <span class="keyword">end</span> <span class="keyword">record</span>; </pre></li>
+<li id="l93"><pre> </pre></li>
+<li id="l94"><pre>  <a href="unzip.ads.html#unzip.ads:94:3" title="defined at unzip.ads:94:3">null_routines</a> : <span class="keyword">constant</span> <span class="droplink">FS_routines_type<ul><li><a href="unzip.ads.html#unzip.ads:87:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l87" title="To spec">To spec</a></li></ul></span> := (<span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>); </pre></li>
+<li id="l95"><pre> </pre></li>
+<li id="l96"><pre>  <span class="comment">----------------------------------</span> </pre></li>
+<li id="l97"><pre>  <span class="comment">-- Simple extraction procedures --</span> </pre></li>
+<li id="l98"><pre>  <span class="comment">----------------------------------</span> </pre></li>
+<li id="l99"><pre> </pre></li>
+<li id="l100"><pre>  <span class="comment">-- Extract all files from an archive (from)</span> </pre></li>
+<li id="l101"><pre> </pre></li>
+<li id="l102"><pre>  <span class="keyword">procedure</span> <span class="droplink">Extract<ul><li><a href="unzip.ads.html#unzip.ads:102:13" title="To API doc">To API doc</a></li><li><a href="src_unzip.adb.html#l368" title="To body">To body</a></li></ul></span> (<a href="unzip.ads.html#unzip.ads:102:22" title="defined at unzip.ads:102:22">from</a>                  : String; </pre></li>
+<li id="l103"><pre>                     <a href="unzip.ads.html#unzip.ads:103:22" title="defined at unzip.ads:103:22">options</a>               : <span class="droplink">Option_set<ul><li><a href="unzip.ads.html#unzip.ads:62:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l62" title="To spec">To spec</a></li></ul></span> := <span class="droplink">no_option<ul><li><a href="unzip.ads.html#unzip.ads:64:3" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l64" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l104"><pre>                     <a href="unzip.ads.html#unzip.ads:104:22" title="defined at unzip.ads:104:22">password</a>              : String := <span class="string">&quot;&quot;</span>; </pre></li>
+<li id="l105"><pre>                     <span class="droplink">file_system_routines<ul><li><a href="unzip.ads.html#unzip.ads:105:22" title="To API doc">To API doc</a></li><li><a href="src_unzip.adb.html#l371" title="To body">To body</a></li></ul></span>  : <span class="droplink">FS_routines_type<ul><li><a href="unzip.ads.html#unzip.ads:87:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l87" title="To spec">To spec</a></li></ul></span> := <span class="droplink">null_routines<ul><li><a href="unzip.ads.html#unzip.ads:94:3" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l94" title="To spec">To spec</a></li></ul></span> </pre></li>
+<li id="l106"><pre>); </pre></li>
+<li id="l107"><pre> </pre></li>
+<li id="l108"><pre>  <span class="comment">-- Extract one precise file (what) from an archive (from)</span> </pre></li>
+<li id="l109"><pre> </pre></li>
+<li id="l110"><pre>  <span class="keyword">procedure</span> <span class="droplink">Extract<ul><li><a href="unzip.ads.html#unzip.ads:110:13" title="To API doc">To API doc</a></li><li><a href="src_unzip.adb.html#l378" title="To body">To body</a></li></ul></span> (<a href="unzip.ads.html#unzip.ads:110:22" title="defined at unzip.ads:110:22">from</a>                  : String; </pre></li>
+<li id="l111"><pre>                     <a href="unzip.ads.html#unzip.ads:111:22" title="defined at unzip.ads:111:22">what</a>                  : String; </pre></li>
+<li id="l112"><pre>                     <a href="unzip.ads.html#unzip.ads:112:22" title="defined at unzip.ads:112:22">options</a>               : <span class="droplink">Option_set<ul><li><a href="unzip.ads.html#unzip.ads:62:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l62" title="To spec">To spec</a></li></ul></span> := <span class="droplink">no_option<ul><li><a href="unzip.ads.html#unzip.ads:64:3" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l64" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l113"><pre>                     <a href="unzip.ads.html#unzip.ads:113:22" title="defined at unzip.ads:113:22">password</a>              : String := <span class="string">&quot;&quot;</span>; </pre></li>
+<li id="l114"><pre>                     <span class="droplink">file_system_routines<ul><li><a href="unzip.ads.html#unzip.ads:114:22" title="To API doc">To API doc</a></li><li><a href="src_unzip.adb.html#l382" title="To body">To body</a></li></ul></span>  : <span class="droplink">FS_routines_type<ul><li><a href="unzip.ads.html#unzip.ads:87:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l87" title="To spec">To spec</a></li></ul></span> := <span class="droplink">null_routines<ul><li><a href="unzip.ads.html#unzip.ads:94:3" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l94" title="To spec">To spec</a></li></ul></span> </pre></li>
+<li id="l115"><pre>); </pre></li>
+<li id="l116"><pre> </pre></li>
+<li id="l117"><pre>  <span class="comment">-- Extract one precise file (what) from an archive (from),</span> </pre></li>
+<li id="l118"><pre>  <span class="comment">-- but save under a new name (rename)</span> </pre></li>
+<li id="l119"><pre> </pre></li>
+<li id="l120"><pre>  <span class="keyword">procedure</span> <span class="droplink">Extract<ul><li><a href="unzip.ads.html#unzip.ads:120:13" title="To API doc">To API doc</a></li><li><a href="src_unzip.adb.html#l389" title="To body">To body</a></li></ul></span> (<a href="unzip.ads.html#unzip.ads:120:22" title="defined at unzip.ads:120:22">from</a>                  : String; </pre></li>
+<li id="l121"><pre>                     <a href="unzip.ads.html#unzip.ads:121:22" title="defined at unzip.ads:121:22">what</a>                  : String; </pre></li>
+<li id="l122"><pre>                     <a href="unzip.ads.html#unzip.ads:122:22" title="defined at unzip.ads:122:22">rename</a>                : String; </pre></li>
+<li id="l123"><pre>                     <a href="unzip.ads.html#unzip.ads:123:22" title="defined at unzip.ads:123:22">options</a>               : <span class="droplink">Option_set<ul><li><a href="unzip.ads.html#unzip.ads:62:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l62" title="To spec">To spec</a></li></ul></span> := <span class="droplink">no_option<ul><li><a href="unzip.ads.html#unzip.ads:64:3" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l64" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l124"><pre>                     <a href="unzip.ads.html#unzip.ads:124:22" title="defined at unzip.ads:124:22">password</a>              : String := <span class="string">&quot;&quot;</span>; </pre></li>
+<li id="l125"><pre>                     <span class="droplink">file_system_routines<ul><li><a href="unzip.ads.html#unzip.ads:125:22" title="To API doc">To API doc</a></li><li><a href="src_unzip.adb.html#l394" title="To body">To body</a></li></ul></span>  : <span class="droplink">FS_routines_type<ul><li><a href="unzip.ads.html#unzip.ads:87:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l87" title="To spec">To spec</a></li></ul></span> := <span class="droplink">null_routines<ul><li><a href="unzip.ads.html#unzip.ads:94:3" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l94" title="To spec">To spec</a></li></ul></span> </pre></li>
+<li id="l126"><pre>); </pre></li>
+<li id="l127"><pre> </pre></li>
+<li id="l128"><pre>  <span class="comment">-------------------------------------------------------------------------</span> </pre></li>
+<li id="l129"><pre>  <span class="comment">-- Simple extraction procedures without re - searching central directory --</span> </pre></li>
+<li id="l130"><pre>  <span class="comment">-------------------------------------------------------------------------</span> </pre></li>
+<li id="l131"><pre> </pre></li>
+<li id="l132"><pre>  <span class="comment">-- Extract all files from an archive (from)</span> </pre></li>
+<li id="l133"><pre>  <span class="comment">-- Needs Zip.Load (from, . .. ) prior to the extraction</span> </pre></li>
+<li id="l134"><pre> </pre></li>
+<li id="l135"><pre>  <span class="keyword">procedure</span> <span class="droplink">Extract<ul><li><a href="unzip.ads.html#unzip.ads:135:13" title="To API doc">To API doc</a></li><li><a href="src_unzip.adb.html#l401" title="To body">To body</a></li></ul></span> (<span class="droplink">from<ul><li><a href="unzip.ads.html#unzip.ads:135:22" title="To API doc">To API doc</a></li><li><a href="src_unzip.adb.html#l401" title="To body">To body</a></li></ul></span>                  : <span class="droplink">Zip.Zip_info<ul><li><a href="zip.ads.html#zip.ads:53:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l53" title="To spec">To spec</a></li><li><a href="src_zip.ads.html#l308" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l136"><pre>                     <a href="unzip.ads.html#unzip.ads:136:22" title="defined at unzip.ads:136:22">options</a>               : <span class="droplink">Option_set<ul><li><a href="unzip.ads.html#unzip.ads:62:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l62" title="To spec">To spec</a></li></ul></span> := <span class="droplink">no_option<ul><li><a href="unzip.ads.html#unzip.ads:64:3" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l64" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l137"><pre>                     <a href="unzip.ads.html#unzip.ads:137:22" title="defined at unzip.ads:137:22">password</a>              : String := <span class="string">&quot;&quot;</span>; </pre></li>
+<li id="l138"><pre>                     <span class="droplink">file_system_routines<ul><li><a href="unzip.ads.html#unzip.ads:138:22" title="To API doc">To API doc</a></li><li><a href="src_unzip.adb.html#l404" title="To body">To body</a></li></ul></span>  : <span class="droplink">FS_routines_type<ul><li><a href="unzip.ads.html#unzip.ads:87:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l87" title="To spec">To spec</a></li></ul></span> := <span class="droplink">null_routines<ul><li><a href="unzip.ads.html#unzip.ads:94:3" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l94" title="To spec">To spec</a></li></ul></span> </pre></li>
+<li id="l139"><pre>); </pre></li>
+<li id="l140"><pre> </pre></li>
+<li id="l141"><pre>  <span class="comment">-- Extract one precise file (what) from an archive (from)</span> </pre></li>
+<li id="l142"><pre>  <span class="comment">-- Needs Zip.Load (from, . .. ) prior to the extraction</span> </pre></li>
+<li id="l143"><pre> </pre></li>
+<li id="l144"><pre>  <span class="keyword">procedure</span> <span class="droplink">Extract<ul><li><a href="unzip.ads.html#unzip.ads:144:13" title="To API doc">To API doc</a></li><li><a href="src_unzip.adb.html#l411" title="To body">To body</a></li></ul></span> (<span class="droplink">from<ul><li><a href="unzip.ads.html#unzip.ads:144:22" title="To API doc">To API doc</a></li><li><a href="src_unzip.adb.html#l411" title="To body">To body</a></li></ul></span>                  : <span class="droplink">Zip.Zip_info<ul><li><a href="zip.ads.html#zip.ads:53:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l53" title="To spec">To spec</a></li><li><a href="src_zip.ads.html#l308" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l145"><pre>                     <a href="unzip.ads.html#unzip.ads:145:22" title="defined at unzip.ads:145:22">what</a>                  : String; </pre></li>
+<li id="l146"><pre>                     <a href="unzip.ads.html#unzip.ads:146:22" title="defined at unzip.ads:146:22">options</a>               : <span class="droplink">Option_set<ul><li><a href="unzip.ads.html#unzip.ads:62:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l62" title="To spec">To spec</a></li></ul></span> := <span class="droplink">no_option<ul><li><a href="unzip.ads.html#unzip.ads:64:3" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l64" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l147"><pre>                     <a href="unzip.ads.html#unzip.ads:147:22" title="defined at unzip.ads:147:22">password</a>              : String := <span class="string">&quot;&quot;</span>; </pre></li>
+<li id="l148"><pre>                     <span class="droplink">file_system_routines<ul><li><a href="unzip.ads.html#unzip.ads:148:22" title="To API doc">To API doc</a></li><li><a href="src_unzip.adb.html#l415" title="To body">To body</a></li></ul></span>  : <span class="droplink">FS_routines_type<ul><li><a href="unzip.ads.html#unzip.ads:87:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l87" title="To spec">To spec</a></li></ul></span> := <span class="droplink">null_routines<ul><li><a href="unzip.ads.html#unzip.ads:94:3" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l94" title="To spec">To spec</a></li></ul></span> </pre></li>
+<li id="l149"><pre>); </pre></li>
+<li id="l150"><pre> </pre></li>
+<li id="l151"><pre>  <span class="comment">-- Extract one precise file (what) from an archive (from),</span> </pre></li>
+<li id="l152"><pre>  <span class="comment">-- but save under a new name (rename)</span> </pre></li>
+<li id="l153"><pre>  <span class="comment">-- Needs Zip.Load (from, . .. ) prior to the extraction</span> </pre></li>
+<li id="l154"><pre> </pre></li>
+<li id="l155"><pre>  <span class="keyword">procedure</span> <span class="droplink">Extract<ul><li><a href="unzip.ads.html#unzip.ads:155:13" title="To API doc">To API doc</a></li><li><a href="src_unzip.adb.html#l422" title="To body">To body</a></li></ul></span> (<span class="droplink">from<ul><li><a href="unzip.ads.html#unzip.ads:155:22" title="To API doc">To API doc</a></li><li><a href="src_unzip.adb.html#l422" title="To body">To body</a></li></ul></span>                  : <span class="droplink">Zip.Zip_info<ul><li><a href="zip.ads.html#zip.ads:53:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l53" title="To spec">To spec</a></li><li><a href="src_zip.ads.html#l308" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l156"><pre>                     <a href="unzip.ads.html#unzip.ads:156:22" title="defined at unzip.ads:156:22">what</a>                  : String; </pre></li>
+<li id="l157"><pre>                     <a href="unzip.ads.html#unzip.ads:157:22" title="defined at unzip.ads:157:22">rename</a>                : String; </pre></li>
+<li id="l158"><pre>                     <a href="unzip.ads.html#unzip.ads:158:22" title="defined at unzip.ads:158:22">options</a>               : <span class="droplink">Option_set<ul><li><a href="unzip.ads.html#unzip.ads:62:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l62" title="To spec">To spec</a></li></ul></span> := <span class="droplink">no_option<ul><li><a href="unzip.ads.html#unzip.ads:64:3" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l64" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l159"><pre>                     <a href="unzip.ads.html#unzip.ads:159:22" title="defined at unzip.ads:159:22">password</a>              : String := <span class="string">&quot;&quot;</span>; </pre></li>
+<li id="l160"><pre>                     <span class="droplink">file_system_routines<ul><li><a href="unzip.ads.html#unzip.ads:160:22" title="To API doc">To API doc</a></li><li><a href="src_unzip.adb.html#l427" title="To body">To body</a></li></ul></span>  : <span class="droplink">FS_routines_type<ul><li><a href="unzip.ads.html#unzip.ads:87:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l87" title="To spec">To spec</a></li></ul></span> := <span class="droplink">null_routines<ul><li><a href="unzip.ads.html#unzip.ads:94:3" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l94" title="To spec">To spec</a></li></ul></span> </pre></li>
+<li id="l161"><pre>); </pre></li>
+<li id="l162"><pre> </pre></li>
+<li id="l163"><pre>  <span class="keyword">subtype</span> <a href="unzip.ads.html#unzip.ads:163:11" title="defined at unzip.ads:163:11">PKZip_method</a> <span class="keyword">is</span> <span class="droplink">Zip.PKZip_method<ul><li><a href="zip.ads.html#zip.ads:106:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l106" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l164"><pre> </pre></li>
+<li id="l165"><pre>  <span class="comment">----------------------------------------------</span> </pre></li>
+<li id="l166"><pre>  <span class="comment">-- Extraction procedures for user interface --</span> </pre></li>
+<li id="l167"><pre>  <span class="comment">----------------------------------------------</span> </pre></li>
+<li id="l168"><pre> </pre></li>
+<li id="l169"><pre>  <span class="comment">-- NB : the *_proc types are accesses to procedures - their usage</span> </pre></li>
+<li id="l170"><pre>  <span class="comment">-- may require the non - standard attribute &quot;unrestricted_access&quot;,</span> </pre></li>
+<li id="l171"><pre>  <span class="comment">-- or some changes.</span> </pre></li>
+<li id="l172"><pre>  <span class="comment">-- Read unzipada.adb for details and examples.</span> </pre></li>
+<li id="l173"><pre> </pre></li>
+<li id="l174"><pre>  <span class="keyword">type</span> <a href="unzip.ads.html#unzip.ads:174:8" title="defined at unzip.ads:174:8">Name_conflict_intervention</a> <span class="keyword">is</span> </pre></li>
+<li id="l175"><pre>    (yes, no, yes_to_all, none, rename_it, abort_now); </pre></li>
+<li id="l176"><pre> </pre></li>
+<li id="l177"><pre>  <a href="unzip.ads.html#unzip.ads:177:3" title="defined at unzip.ads:177:3">current_user_attitude</a>  : <span class="droplink">Name_conflict_intervention<ul><li><a href="unzip.ads.html#unzip.ads:174:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l174" title="To spec">To spec</a></li></ul></span> := yes; </pre></li>
+<li id="l178"><pre>  <span class="comment">-- reset to &quot;yes&quot; for a new session (in case of yes_to_all / none state!)</span> </pre></li>
+<li id="l179"><pre> </pre></li>
+<li id="l180"><pre>   <span class="keyword">type</span> <a href="unzip.ads.html#unzip.ads:180:9" title="defined at unzip.ads:180:9">Resolve_conflict_proc</a> <span class="keyword">is</span> <span class="keyword">access</span> </pre></li>
+<li id="l181"><pre>     <span class="keyword">procedure</span> (name             :     String; </pre></li>
+<li id="l182"><pre>                action           : <span class="keyword">out</span> <span class="droplink">Name_conflict_intervention<ul><li><a href="unzip.ads.html#unzip.ads:174:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l174" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l183"><pre>                new_name         : <span class="keyword">out</span> String; </pre></li>
+<li id="l184"><pre>                new_name_length  : <span class="keyword">out</span> Natural); </pre></li>
+<li id="l185"><pre> </pre></li>
+<li id="l186"><pre>  <span class="keyword">type</span> <a href="unzip.ads.html#unzip.ads:186:8" title="defined at unzip.ads:186:8">Get_password_proc</a> <span class="keyword">is</span> <span class="keyword">access</span> </pre></li>
+<li id="l187"><pre>    <span class="keyword">procedure</span> (password : <span class="keyword">out</span> Ada.Strings.Unbounded.Unbounded_String); </pre></li>
+<li id="l188"><pre> </pre></li>
+<li id="l189"><pre>  <span class="comment">-- Data sizes in archive</span> </pre></li>
+<li id="l190"><pre>  <span class="keyword">subtype</span> <a href="unzip.ads.html#unzip.ads:190:11" title="defined at unzip.ads:190:11">File_size_type</a> <span class="keyword">is</span> <span class="droplink">Zip.File_size_type<ul><li><a href="zip.ads.html#zip.ads:97:11" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l97" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l191"><pre> </pre></li>
+<li id="l192"><pre>  <span class="comment">-- Inform user about some archive data</span> </pre></li>
+<li id="l193"><pre> </pre></li>
+<li id="l194"><pre>  <span class="keyword">type</span> <a href="unzip.ads.html#unzip.ads:194:8" title="defined at unzip.ads:194:8">Tell_data_proc</a> <span class="keyword">is</span> <span class="keyword">access</span> </pre></li>
+<li id="l195"><pre>    <span class="keyword">procedure</span> (name                : String; </pre></li>
+<li id="l196"><pre>                compressed_bytes    : <span class="droplink">File_size_type<ul><li><a href="unzip.ads.html#unzip.ads:190:11" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l190" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l197"><pre>                uncompressed_bytes  : <span class="droplink">File_size_type<ul><li><a href="unzip.ads.html#unzip.ads:190:11" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l190" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l198"><pre>                method              : <span class="droplink">PKZip_method<ul><li><a href="unzip.ads.html#unzip.ads:163:11" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l163" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l199"><pre> </pre></li>
+<li id="l200"><pre>  <span class="comment">-- Extract all files from an archive (from)</span> </pre></li>
+<li id="l201"><pre> </pre></li>
+<li id="l202"><pre>  <span class="keyword">procedure</span> <span class="droplink">Extract<ul><li><a href="unzip.ads.html#unzip.ads:202:13" title="To API doc">To API doc</a></li><li><a href="src_unzip.adb.html#l540" title="To body">To body</a></li></ul></span> (<a href="unzip.ads.html#unzip.ads:202:22" title="defined at unzip.ads:202:22">from</a>                  : String; </pre></li>
+<li id="l203"><pre>                     <a href="unzip.ads.html#unzip.ads:203:22" title="defined at unzip.ads:203:22">feedback</a>              : <span class="droplink">Zip.Feedback_proc<ul><li><a href="zip.ads.html#zip.ads:203:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l203" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l204"><pre>                     <a href="unzip.ads.html#unzip.ads:204:22" title="defined at unzip.ads:204:22">help_the_file_exists</a>  : <span class="droplink">Resolve_conflict_proc<ul><li><a href="unzip.ads.html#unzip.ads:180:9" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l180" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l205"><pre>                     <a href="unzip.ads.html#unzip.ads:205:22" title="defined at unzip.ads:205:22">tell_data</a>             : <span class="droplink">Tell_data_proc<ul><li><a href="unzip.ads.html#unzip.ads:194:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l194" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l206"><pre>                     <a href="unzip.ads.html#unzip.ads:206:22" title="defined at unzip.ads:206:22">get_pwd</a>               : <span class="droplink">Get_password_proc<ul><li><a href="unzip.ads.html#unzip.ads:186:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l186" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l207"><pre>                     <a href="unzip.ads.html#unzip.ads:207:22" title="defined at unzip.ads:207:22">options</a>               : <span class="droplink">Option_set<ul><li><a href="unzip.ads.html#unzip.ads:62:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l62" title="To spec">To spec</a></li></ul></span> := <span class="droplink">no_option<ul><li><a href="unzip.ads.html#unzip.ads:64:3" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l64" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l208"><pre>                     <a href="unzip.ads.html#unzip.ads:208:22" title="defined at unzip.ads:208:22">password</a>              : String := <span class="string">&quot;&quot;</span>; </pre></li>
+<li id="l209"><pre>                     <span class="droplink">file_system_routines<ul><li><a href="unzip.ads.html#unzip.ads:209:22" title="To API doc">To API doc</a></li><li><a href="src_unzip.adb.html#l547" title="To body">To body</a></li></ul></span>  : <span class="droplink">FS_routines_type<ul><li><a href="unzip.ads.html#unzip.ads:87:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l87" title="To spec">To spec</a></li></ul></span> := <span class="droplink">null_routines<ul><li><a href="unzip.ads.html#unzip.ads:94:3" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l94" title="To spec">To spec</a></li></ul></span> </pre></li>
+<li id="l210"><pre>); </pre></li>
+<li id="l211"><pre> </pre></li>
+<li id="l212"><pre>  <span class="comment">-- Extract one precise file (what) from an archive (from)</span> </pre></li>
+<li id="l213"><pre> </pre></li>
+<li id="l214"><pre>  <span class="keyword">procedure</span> <span class="droplink">Extract<ul><li><a href="unzip.ads.html#unzip.ads:214:13" title="To API doc">To API doc</a></li><li><a href="src_unzip.adb.html#l444" title="To body">To body</a></li></ul></span> (<a href="unzip.ads.html#unzip.ads:214:22" title="defined at unzip.ads:214:22">from</a>                  : String; </pre></li>
+<li id="l215"><pre>                     <a href="unzip.ads.html#unzip.ads:215:22" title="defined at unzip.ads:215:22">what</a>                  : String; </pre></li>
+<li id="l216"><pre>                     <a href="unzip.ads.html#unzip.ads:216:22" title="defined at unzip.ads:216:22">feedback</a>              : <span class="droplink">Zip.Feedback_proc<ul><li><a href="zip.ads.html#zip.ads:203:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l203" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l217"><pre>                     <a href="unzip.ads.html#unzip.ads:217:22" title="defined at unzip.ads:217:22">help_the_file_exists</a>  : <span class="droplink">Resolve_conflict_proc<ul><li><a href="unzip.ads.html#unzip.ads:180:9" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l180" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l218"><pre>                     <a href="unzip.ads.html#unzip.ads:218:22" title="defined at unzip.ads:218:22">tell_data</a>             : <span class="droplink">Tell_data_proc<ul><li><a href="unzip.ads.html#unzip.ads:194:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l194" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l219"><pre>                     <a href="unzip.ads.html#unzip.ads:219:22" title="defined at unzip.ads:219:22">get_pwd</a>               : <span class="droplink">Get_password_proc<ul><li><a href="unzip.ads.html#unzip.ads:186:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l186" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l220"><pre>                     <a href="unzip.ads.html#unzip.ads:220:22" title="defined at unzip.ads:220:22">options</a>               : <span class="droplink">Option_set<ul><li><a href="unzip.ads.html#unzip.ads:62:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l62" title="To spec">To spec</a></li></ul></span> := <span class="droplink">no_option<ul><li><a href="unzip.ads.html#unzip.ads:64:3" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l64" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l221"><pre>                     <a href="unzip.ads.html#unzip.ads:221:22" title="defined at unzip.ads:221:22">password</a>              : String := <span class="string">&quot;&quot;</span>; </pre></li>
+<li id="l222"><pre>                     <span class="droplink">file_system_routines<ul><li><a href="unzip.ads.html#unzip.ads:222:22" title="To API doc">To API doc</a></li><li><a href="src_unzip.adb.html#l452" title="To body">To body</a></li></ul></span>  : <span class="droplink">FS_routines_type<ul><li><a href="unzip.ads.html#unzip.ads:87:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l87" title="To spec">To spec</a></li></ul></span> := <span class="droplink">null_routines<ul><li><a href="unzip.ads.html#unzip.ads:94:3" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l94" title="To spec">To spec</a></li></ul></span> </pre></li>
+<li id="l223"><pre>); </pre></li>
+<li id="l224"><pre> </pre></li>
+<li id="l225"><pre>  <span class="comment">-- Extract one precise file (what) from an archive (from),</span> </pre></li>
+<li id="l226"><pre>  <span class="comment">-- but save under a new name (rename)</span> </pre></li>
+<li id="l227"><pre> </pre></li>
+<li id="l228"><pre>  <span class="keyword">procedure</span> <span class="droplink">Extract<ul><li><a href="unzip.ads.html#unzip.ads:228:13" title="To API doc">To API doc</a></li><li><a href="src_unzip.adb.html#l493" title="To body">To body</a></li></ul></span> (<a href="unzip.ads.html#unzip.ads:228:22" title="defined at unzip.ads:228:22">from</a>         : String; </pre></li>
+<li id="l229"><pre>                     <a href="unzip.ads.html#unzip.ads:229:22" title="defined at unzip.ads:229:22">what</a>         : String; </pre></li>
+<li id="l230"><pre>                     <a href="unzip.ads.html#unzip.ads:230:22" title="defined at unzip.ads:230:22">rename</a>       : String; </pre></li>
+<li id="l231"><pre>                     <a href="unzip.ads.html#unzip.ads:231:22" title="defined at unzip.ads:231:22">feedback</a>     : <span class="droplink">Zip.Feedback_proc<ul><li><a href="zip.ads.html#zip.ads:203:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l203" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l232"><pre>                     <a href="unzip.ads.html#unzip.ads:232:22" title="defined at unzip.ads:232:22">tell_data</a>    : <span class="droplink">Tell_data_proc<ul><li><a href="unzip.ads.html#unzip.ads:194:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l194" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l233"><pre>                     <a href="unzip.ads.html#unzip.ads:233:22" title="defined at unzip.ads:233:22">get_pwd</a>      : <span class="droplink">Get_password_proc<ul><li><a href="unzip.ads.html#unzip.ads:186:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l186" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l234"><pre>                     <a href="unzip.ads.html#unzip.ads:234:22" title="defined at unzip.ads:234:22">options</a>      : <span class="droplink">Option_set<ul><li><a href="unzip.ads.html#unzip.ads:62:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l62" title="To spec">To spec</a></li></ul></span> := <span class="droplink">no_option<ul><li><a href="unzip.ads.html#unzip.ads:64:3" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l64" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l235"><pre>                     <a href="unzip.ads.html#unzip.ads:235:22" title="defined at unzip.ads:235:22">password</a>     : String := <span class="string">&quot;&quot;</span>; </pre></li>
+<li id="l236"><pre>                     <span class="droplink">file_system_routines<ul><li><a href="unzip.ads.html#unzip.ads:236:22" title="To API doc">To API doc</a></li><li><a href="src_unzip.adb.html#l501" title="To body">To body</a></li></ul></span>  : <span class="droplink">FS_routines_type<ul><li><a href="unzip.ads.html#unzip.ads:87:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l87" title="To spec">To spec</a></li></ul></span> := <span class="droplink">null_routines<ul><li><a href="unzip.ads.html#unzip.ads:94:3" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l94" title="To spec">To spec</a></li></ul></span> </pre></li>
+<li id="l237"><pre>); </pre></li>
+<li id="l238"><pre> </pre></li>
+<li id="l239"><pre>  <span class="comment">-- Using Zip_info structure:</span> </pre></li>
+<li id="l240"><pre> </pre></li>
+<li id="l241"><pre>  <span class="comment">-- Extract all files from an archive (from)</span> </pre></li>
+<li id="l242"><pre>  <span class="comment">-- Needs Zip.Load (from, . .. ) prior to the extraction</span> </pre></li>
+<li id="l243"><pre> </pre></li>
+<li id="l244"><pre>  <span class="keyword">procedure</span> <span class="droplink">Extract<ul><li><a href="unzip.ads.html#unzip.ads:244:13" title="To API doc">To API doc</a></li><li><a href="src_unzip.adb.html#l590" title="To body">To body</a></li></ul></span> (<span class="droplink">from<ul><li><a href="unzip.ads.html#unzip.ads:244:22" title="To API doc">To API doc</a></li><li><a href="src_unzip.adb.html#l590" title="To body">To body</a></li></ul></span>                  : <span class="droplink">Zip.Zip_info<ul><li><a href="zip.ads.html#zip.ads:53:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l53" title="To spec">To spec</a></li><li><a href="src_zip.ads.html#l308" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l245"><pre>                     <a href="unzip.ads.html#unzip.ads:245:22" title="defined at unzip.ads:245:22">feedback</a>              : <span class="droplink">Zip.Feedback_proc<ul><li><a href="zip.ads.html#zip.ads:203:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l203" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l246"><pre>                     <a href="unzip.ads.html#unzip.ads:246:22" title="defined at unzip.ads:246:22">help_the_file_exists</a>  : <span class="droplink">Resolve_conflict_proc<ul><li><a href="unzip.ads.html#unzip.ads:180:9" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l180" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l247"><pre>                     <a href="unzip.ads.html#unzip.ads:247:22" title="defined at unzip.ads:247:22">tell_data</a>             : <span class="droplink">Tell_data_proc<ul><li><a href="unzip.ads.html#unzip.ads:194:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l194" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l248"><pre>                     <a href="unzip.ads.html#unzip.ads:248:22" title="defined at unzip.ads:248:22">get_pwd</a>               : <span class="droplink">Get_password_proc<ul><li><a href="unzip.ads.html#unzip.ads:186:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l186" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l249"><pre>                     <a href="unzip.ads.html#unzip.ads:249:22" title="defined at unzip.ads:249:22">options</a>               : <span class="droplink">Option_set<ul><li><a href="unzip.ads.html#unzip.ads:62:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l62" title="To spec">To spec</a></li></ul></span> := <span class="droplink">no_option<ul><li><a href="unzip.ads.html#unzip.ads:64:3" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l64" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l250"><pre>                     <a href="unzip.ads.html#unzip.ads:250:22" title="defined at unzip.ads:250:22">password</a>              : String := <span class="string">&quot;&quot;</span>; </pre></li>
+<li id="l251"><pre>                     <span class="droplink">file_system_routines<ul><li><a href="unzip.ads.html#unzip.ads:251:22" title="To API doc">To API doc</a></li><li><a href="src_unzip.adb.html#l597" title="To body">To body</a></li></ul></span>  : <span class="droplink">FS_routines_type<ul><li><a href="unzip.ads.html#unzip.ads:87:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l87" title="To spec">To spec</a></li></ul></span> := <span class="droplink">null_routines<ul><li><a href="unzip.ads.html#unzip.ads:94:3" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l94" title="To spec">To spec</a></li></ul></span> </pre></li>
+<li id="l252"><pre>); </pre></li>
+<li id="l253"><pre> </pre></li>
+<li id="l254"><pre>  <span class="comment">-- Extract one precise file (what) from an archive (from)</span> </pre></li>
+<li id="l255"><pre>  <span class="comment">-- Needs Zip.Load (from, . .. ) prior to the extraction</span> </pre></li>
+<li id="l256"><pre> </pre></li>
+<li id="l257"><pre>  <span class="keyword">procedure</span> <span class="droplink">Extract<ul><li><a href="unzip.ads.html#unzip.ads:257:13" title="To API doc">To API doc</a></li><li><a href="src_unzip.adb.html#l623" title="To body">To body</a></li></ul></span> (<span class="droplink">from<ul><li><a href="unzip.ads.html#unzip.ads:257:22" title="To API doc">To API doc</a></li><li><a href="src_unzip.adb.html#l623" title="To body">To body</a></li></ul></span>                  : <span class="droplink">Zip.Zip_info<ul><li><a href="zip.ads.html#zip.ads:53:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l53" title="To spec">To spec</a></li><li><a href="src_zip.ads.html#l308" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l258"><pre>                     <a href="unzip.ads.html#unzip.ads:258:22" title="defined at unzip.ads:258:22">what</a>                  : String; </pre></li>
+<li id="l259"><pre>                     <a href="unzip.ads.html#unzip.ads:259:22" title="defined at unzip.ads:259:22">feedback</a>              : <span class="droplink">Zip.Feedback_proc<ul><li><a href="zip.ads.html#zip.ads:203:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l203" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l260"><pre>                     <a href="unzip.ads.html#unzip.ads:260:22" title="defined at unzip.ads:260:22">help_the_file_exists</a>  : <span class="droplink">Resolve_conflict_proc<ul><li><a href="unzip.ads.html#unzip.ads:180:9" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l180" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l261"><pre>                     <a href="unzip.ads.html#unzip.ads:261:22" title="defined at unzip.ads:261:22">tell_data</a>             : <span class="droplink">Tell_data_proc<ul><li><a href="unzip.ads.html#unzip.ads:194:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l194" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l262"><pre>                     <a href="unzip.ads.html#unzip.ads:262:22" title="defined at unzip.ads:262:22">get_pwd</a>               : <span class="droplink">Get_password_proc<ul><li><a href="unzip.ads.html#unzip.ads:186:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l186" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l263"><pre>                     <a href="unzip.ads.html#unzip.ads:263:22" title="defined at unzip.ads:263:22">options</a>               : <span class="droplink">Option_set<ul><li><a href="unzip.ads.html#unzip.ads:62:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l62" title="To spec">To spec</a></li></ul></span> := <span class="droplink">no_option<ul><li><a href="unzip.ads.html#unzip.ads:64:3" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l64" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l264"><pre>                     <a href="unzip.ads.html#unzip.ads:264:22" title="defined at unzip.ads:264:22">password</a>              : String := <span class="string">&quot;&quot;</span>; </pre></li>
+<li id="l265"><pre>                     <span class="droplink">file_system_routines<ul><li><a href="unzip.ads.html#unzip.ads:265:22" title="To API doc">To API doc</a></li><li><a href="src_unzip.adb.html#l631" title="To body">To body</a></li></ul></span>  : <span class="droplink">FS_routines_type<ul><li><a href="unzip.ads.html#unzip.ads:87:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l87" title="To spec">To spec</a></li></ul></span> := <span class="droplink">null_routines<ul><li><a href="unzip.ads.html#unzip.ads:94:3" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l94" title="To spec">To spec</a></li></ul></span> </pre></li>
+<li id="l266"><pre>); </pre></li>
+<li id="l267"><pre> </pre></li>
+<li id="l268"><pre>  <span class="comment">-- Extract one precise file (what) from an archive (from),</span> </pre></li>
+<li id="l269"><pre>  <span class="comment">-- but save under a new name (rename)</span> </pre></li>
+<li id="l270"><pre>  <span class="comment">-- Needs Zip.Load (from, . .. ) prior to the extraction</span> </pre></li>
+<li id="l271"><pre> </pre></li>
+<li id="l272"><pre>  <span class="keyword">procedure</span> <span class="droplink">Extract<ul><li><a href="unzip.ads.html#unzip.ads:272:13" title="To API doc">To API doc</a></li><li><a href="src_unzip.adb.html#l678" title="To body">To body</a></li></ul></span> (<span class="droplink">from<ul><li><a href="unzip.ads.html#unzip.ads:272:22" title="To API doc">To API doc</a></li><li><a href="src_unzip.adb.html#l678" title="To body">To body</a></li></ul></span>                  : <span class="droplink">Zip.Zip_info<ul><li><a href="zip.ads.html#zip.ads:53:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l53" title="To spec">To spec</a></li><li><a href="src_zip.ads.html#l308" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l273"><pre>                     <a href="unzip.ads.html#unzip.ads:273:22" title="defined at unzip.ads:273:22">what</a>                  : String; </pre></li>
+<li id="l274"><pre>                     <a href="unzip.ads.html#unzip.ads:274:22" title="defined at unzip.ads:274:22">rename</a>                : String; </pre></li>
+<li id="l275"><pre>                     <a href="unzip.ads.html#unzip.ads:275:22" title="defined at unzip.ads:275:22">feedback</a>              : <span class="droplink">Zip.Feedback_proc<ul><li><a href="zip.ads.html#zip.ads:203:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l203" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l276"><pre>                     <a href="unzip.ads.html#unzip.ads:276:22" title="defined at unzip.ads:276:22">tell_data</a>             : <span class="droplink">Tell_data_proc<ul><li><a href="unzip.ads.html#unzip.ads:194:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l194" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l277"><pre>                     <a href="unzip.ads.html#unzip.ads:277:22" title="defined at unzip.ads:277:22">get_pwd</a>               : <span class="droplink">Get_password_proc<ul><li><a href="unzip.ads.html#unzip.ads:186:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l186" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l278"><pre>                     <a href="unzip.ads.html#unzip.ads:278:22" title="defined at unzip.ads:278:22">options</a>               : <span class="droplink">Option_set<ul><li><a href="unzip.ads.html#unzip.ads:62:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l62" title="To spec">To spec</a></li></ul></span> := <span class="droplink">no_option<ul><li><a href="unzip.ads.html#unzip.ads:64:3" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l64" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l279"><pre>                     <a href="unzip.ads.html#unzip.ads:279:22" title="defined at unzip.ads:279:22">password</a>              : String := <span class="string">&quot;&quot;</span>; </pre></li>
+<li id="l280"><pre>                     <span class="droplink">file_system_routines<ul><li><a href="unzip.ads.html#unzip.ads:280:22" title="To API doc">To API doc</a></li><li><a href="src_unzip.adb.html#l686" title="To body">To body</a></li></ul></span>  : <span class="droplink">FS_routines_type<ul><li><a href="unzip.ads.html#unzip.ads:87:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l87" title="To spec">To spec</a></li></ul></span> := <span class="droplink">null_routines<ul><li><a href="unzip.ads.html#unzip.ads:94:3" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l94" title="To spec">To spec</a></li></ul></span> </pre></li>
+<li id="l281"><pre>); </pre></li>
+<li id="l282"><pre> </pre></li>
+<li id="l283"><pre>  <span class="comment">-- Errors</span> </pre></li>
+<li id="l284"><pre> </pre></li>
+<li id="l285"><pre>  <a href="unzip.ads.html#unzip.ads:285:3" title="defined at unzip.ads:285:3">CRC_Error</a>, </pre></li>
+<li id="l286"><pre>  <a href="unzip.ads.html#unzip.ads:286:3" title="defined at unzip.ads:286:3">Uncompressed_size_Error</a>, </pre></li>
+<li id="l287"><pre>  <a href="unzip.ads.html#unzip.ads:287:3" title="defined at unzip.ads:287:3">Write_Error</a>, </pre></li>
+<li id="l288"><pre>  <a href="unzip.ads.html#unzip.ads:288:3" title="defined at unzip.ads:288:3">Read_Error</a>, </pre></li>
+<li id="l289"><pre>  <a href="unzip.ads.html#unzip.ads:289:3" title="defined at unzip.ads:289:3">Wrong_password</a>, </pre></li>
+<li id="l290"><pre>  <a href="unzip.ads.html#unzip.ads:290:3" title="defined at unzip.ads:290:3">User_abort</a>, </pre></li>
+<li id="l291"><pre>  <a href="unzip.ads.html#unzip.ads:291:3" title="defined at unzip.ads:291:3">Not_supported</a>, </pre></li>
+<li id="l292"><pre>  <a href="unzip.ads.html#unzip.ads:292:3" title="defined at unzip.ads:292:3">Unsupported_method</a>, </pre></li>
+<li id="l293"><pre>  <a href="unzip.ads.html#unzip.ads:293:3" title="defined at unzip.ads:293:3">Wrong_or_no_password</a>, </pre></li>
+<li id="l294"><pre>  <a href="unzip.ads.html#unzip.ads:294:3" title="defined at unzip.ads:294:3">Internal_Error</a>  : <span class="keyword">exception</span>; </pre></li>
+<li id="l295"><pre> </pre></li>
+<li id="l296"><pre><span class="keyword">private</span> </pre></li>
+<li id="l297"><pre> </pre></li>
+<li id="l298"><pre>  <span class="keyword">type</span> <a href="unzip.ads.html#unzip.ads:298:8" title="defined at unzip.ads:298:8">Write_mode</a> <span class="keyword">is</span> </pre></li>
+<li id="l299"><pre>    (write_to_binary_file, </pre></li>
+<li id="l300"><pre>      write_to_text_file, </pre></li>
+<li id="l301"><pre>      write_to_memory, </pre></li>
+<li id="l302"><pre>      just_test </pre></li>
+<li id="l303"><pre>); </pre></li>
+<li id="l304"><pre> </pre></li>
+<li id="l305"><pre>  <span class="keyword">subtype</span> <a href="unzip.ads.html#unzip.ads:305:11" title="defined at unzip.ads:305:11">Write_to_file</a> <span class="keyword">is</span> <span class="droplink">Write_mode<ul><li><a href="unzip.ads.html#unzip.ads:298:8" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l298" title="To spec">To spec</a></li></ul></span> </pre></li>
+<li id="l306"><pre>    <span class="keyword">range</span> write_to_binary_file .. write_to_text_file; </pre></li>
+<li id="l307"><pre> </pre></li>
+<li id="l308"><pre>  <span class="keyword">type</span> <a href="unzip.ads.html#unzip.ads:308:8" title="defined at unzip.ads:308:8">p_Stream_Element_Array</a> <span class="keyword">is</span> <span class="keyword">access</span> <span class="keyword">all</span> Ada.Streams.Stream_Element_Array; </pre></li>
+<li id="l309"><pre> </pre></li>
+<li id="l310"><pre><span class="keyword">end</span> <span class="droplink">UnZip<ul><li><a href="unzip.ads.html#unzip.ads:53:9" title="To API doc">To API doc</a></li><li><a href="src_unzip.ads.html#l53" title="To spec">To spec</a></li><li><a href="src_unzip.adb.html#l6" title="To body">To body</a></li></ul></span>; </pre></li>
+</ol></div>
+</div>
+
+</body>
+</html>

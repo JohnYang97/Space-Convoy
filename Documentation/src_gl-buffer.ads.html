@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    File: gl-buffer.ads
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+  </div>
+</div> <!-- leftSide -->
+
+<div class='subprograms'>
+  <div class='details'><ol><li id="l1"><pre><span class="comment">-------------------------------------------------------------------------</span> </pre></li>
+<li id="l2"><pre> <span class="comment">--  GL.Geometry - GL vertex buffer Object</span> </pre></li>
+<li id="l3"><pre> <span class="comment">--</span> </pre></li>
+<li id="l4"><pre> <span class="comment">--  Copyright (c) Rod Kay 2007</span> </pre></li>
+<li id="l5"><pre> <span class="comment">--  AUSTRALIA</span> </pre></li>
+<li id="l6"><pre> <span class="comment">--  Permission granted to use this software, without any warranty,</span> </pre></li>
+<li id="l7"><pre> <span class="comment">--  for any purpose, provided this copyright note remains attached</span> </pre></li>
+<li id="l8"><pre> <span class="comment">--  and unmodified if sources are distributed further.</span> </pre></li>
+<li id="l9"><pre> <span class="comment">-------------------------------------------------------------------------</span> </pre></li>
+<li id="l10"><pre> </pre></li>
+<li id="l11"><pre><span class="comment">--  with GL.Geometry;</span> </pre></li>
+<li id="l12"><pre><span class="comment">--  with GL.Textures;</span> </pre></li>
+<li id="l13"><pre> </pre></li>
+<li id="l14"><pre><span class="keyword">package</span> <span class="droplink">GL.Buffer<ul><li><a href="gl-buffer.ads.html#gl-buffer.ads:14:12" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer.ads.html#l14" title="To spec">To spec</a></li><li><a href="src_gl-buffer.adb.html#l18" title="To body">To body</a></li></ul></span> <span class="keyword">is</span> </pre></li>
+<li id="l15"><pre> </pre></li>
+<li id="l16"><pre>   <span class="keyword">subtype</span> <a href="gl-buffer.ads.html#gl-buffer.ads:16:12" title="defined at gl-buffer.ads:16:12">vbo_Name</a> <span class="keyword">is</span> <span class="droplink">GL.Uint<ul><li><a href="gl.ads.html#gl.ads:124:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l124" title="To spec">To spec</a></li></ul></span>;     <span class="comment">-- an openGL vertex buffer &apos;name&apos;, which is a natural integer.</span> </pre></li>
+<li id="l17"><pre> </pre></li>
+<li id="l18"><pre>   <span class="comment">-- buffer object</span> </pre></li>
+<li id="l19"><pre>   <span class="comment">--</span> </pre></li>
+<li id="l20"><pre>   <span class="keyword">type</span> <span class="droplink">Object<ul><li><a href="gl-buffer.ads.html#gl-buffer.ads:20:9" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer.ads.html#l48" title="To body">To body</a></li></ul></span> <span class="keyword">is</span> <span class="keyword">abstract</span> <span class="keyword">tagged</span> <span class="keyword">private</span>; </pre></li>
+<li id="l21"><pre> </pre></li>
+<li id="l22"><pre>   <span class="keyword">procedure</span> <span class="droplink">Enable<ul><li><a href="gl-buffer.ads.html#gl-buffer.ads:22:14" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer.adb.html#l53" title="To body">To body</a></li></ul></span>  (<a href="gl-buffer.ads.html#gl-buffer.ads:22:23" title="defined at gl-buffer.ads:22:23">Self</a>  :        <span class="droplink">Object<ul><li><a href="gl-buffer.ads.html#gl-buffer.ads:20:9" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer.ads.html#l20" title="To spec">To spec</a></li><li><a href="src_gl-buffer.ads.html#l48" title="To body">To body</a></li></ul></span>&apos;Class); </pre></li>
+<li id="l23"><pre>   <span class="keyword">procedure</span> <span class="droplink">Destroy<ul><li><a href="gl-buffer.ads.html#gl-buffer.ads:23:14" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer.adb.html#l61" title="To body">To body</a></li></ul></span> (<a href="gl-buffer.ads.html#gl-buffer.ads:23:23" title="defined at gl-buffer.ads:23:23">Self</a>  : <span class="keyword">in</span> <span class="keyword">out</span> <span class="droplink">Object<ul><li><a href="gl-buffer.ads.html#gl-buffer.ads:20:9" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer.ads.html#l20" title="To spec">To spec</a></li><li><a href="src_gl-buffer.ads.html#l48" title="To body">To body</a></li></ul></span>&apos;Class); </pre></li>
+<li id="l24"><pre> </pre></li>
+<li id="l25"><pre>   <span class="keyword">function</span> <a href="gl-buffer.ads.html#gl-buffer.ads:25:13" title="defined at gl-buffer.ads:25:13">Extract_VBO_Target</a> (<a href="gl-buffer.ads.html#gl-buffer.ads:25:33" title="defined at gl-buffer.ads:25:33">Self</a> : <span class="droplink">Object<ul><li><a href="gl-buffer.ads.html#gl-buffer.ads:20:9" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer.ads.html#l20" title="To spec">To spec</a></li><li><a href="src_gl-buffer.ads.html#l48" title="To body">To body</a></li></ul></span>) <span class="keyword">return</span> <span class="droplink">GL.VBO_Target<ul><li><a href="gl.ads.html#gl.ads:3783:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l3783" title="To spec">To spec</a></li></ul></span> <span class="keyword">is</span> <span class="keyword">abstract</span>; </pre></li>
+<li id="l26"><pre> </pre></li>
+<li id="l27"><pre>   <span class="comment">-- &apos;array&apos; and &apos;element array&apos; base classes</span> </pre></li>
+<li id="l28"><pre>   <span class="comment">--</span> </pre></li>
+<li id="l29"><pre> </pre></li>
+<li id="l30"><pre>   <span class="keyword">type</span> <span class="droplink">array_Object<ul><li><a href="gl-buffer.ads.html#gl-buffer.ads:30:9" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer.ads.html#l57" title="To body">To body</a></li></ul></span>         <span class="keyword">is</span> <span class="keyword">new</span> <span class="droplink">Object<ul><li><a href="gl-buffer.ads.html#gl-buffer.ads:20:9" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer.ads.html#l20" title="To spec">To spec</a></li><li><a href="src_gl-buffer.ads.html#l48" title="To body">To body</a></li></ul></span> <span class="keyword">with</span> <span class="keyword">private</span>; </pre></li>
+<li id="l31"><pre>   <span class="keyword">type</span> <span class="droplink">element_array_Object<ul><li><a href="gl-buffer.ads.html#gl-buffer.ads:31:9" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer.ads.html#l58" title="To body">To body</a></li></ul></span> <span class="keyword">is</span> <span class="keyword">new</span> <span class="droplink">Object<ul><li><a href="gl-buffer.ads.html#gl-buffer.ads:20:9" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer.ads.html#l20" title="To spec">To spec</a></li><li><a href="src_gl-buffer.ads.html#l48" title="To body">To body</a></li></ul></span> <span class="keyword">with</span> <span class="keyword">private</span>; </pre></li>
+<li id="l32"><pre> </pre></li>
+<li id="l33"><pre>   <span class="comment">-- refer to child packages, for specific buffers:</span> </pre></li>
+<li id="l34"><pre>   <span class="comment">--</span> </pre></li>
+<li id="l35"><pre>   <span class="comment">-- - GL.Buffer.vertex</span> </pre></li>
+<li id="l36"><pre>   <span class="comment">-- - GL.Buffer.texture_coords</span> </pre></li>
+<li id="l37"><pre>   <span class="comment">-- - GL.Buffer.normals</span> </pre></li>
+<li id="l38"><pre>   <span class="comment">-- - GL.Buffer.indices</span> </pre></li>
+<li id="l39"><pre>   <span class="comment">--</span> </pre></li>
+<li id="l40"><pre>   <span class="comment">-- (tbd : pixel pack/unpack buffers)</span> </pre></li>
+<li id="l41"><pre> </pre></li>
+<li id="l42"><pre>   <a href="gl-buffer.ads.html#gl-buffer.ads:42:4" title="defined at gl-buffer.ads:42:4">no_platform_Support</a>  : <span class="keyword">exception</span>; </pre></li>
+<li id="l43"><pre>   <span class="comment">--</span> </pre></li>
+<li id="l44"><pre>   <span class="comment">-- raised by buffer &apos;Map&apos; functions when OS platform does not support GL Buffer objects.</span> </pre></li>
+<li id="l45"><pre> </pre></li>
+<li id="l46"><pre><span class="keyword">private</span> </pre></li>
+<li id="l47"><pre> </pre></li>
+<li id="l48"><pre>   <span class="keyword">type</span> <span class="droplink">Object<ul><li><a href="gl-buffer.ads.html#gl-buffer.ads:20:9" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer.ads.html#l20" title="To spec">To spec</a></li></ul></span> <span class="keyword">is</span> <span class="keyword">abstract</span> <span class="keyword">tagged</span> </pre></li>
+<li id="l49"><pre>      <span class="keyword">record</span> </pre></li>
+<li id="l50"><pre>         Name    : <span class="keyword">aliased</span> <span class="droplink">vbo_Name<ul><li><a href="gl-buffer.ads.html#gl-buffer.ads:16:12" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer.ads.html#l16" title="To spec">To spec</a></li></ul></span> := 0; </pre></li>
+<li id="l51"><pre>         Length  :         Positive; </pre></li>
+<li id="l52"><pre>      <span class="keyword">end</span> <span class="keyword">record</span>; </pre></li>
+<li id="l53"><pre> </pre></li>
+<li id="l54"><pre>   <span class="keyword">overriding</span> <span class="keyword">function</span> <span class="droplink">Extract_VBO_Target<ul><li><a href="gl-buffer.ads.html#gl-buffer.ads:54:24" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer.adb.html#l71" title="To body">To body</a></li></ul></span> (<a href="gl-buffer.ads.html#gl-buffer.ads:54:44" title="defined at gl-buffer.ads:54:44">Self</a> : <span class="droplink">array_Object<ul><li><a href="gl-buffer.ads.html#gl-buffer.ads:30:9" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer.ads.html#l30" title="To spec">To spec</a></li><li><a href="src_gl-buffer.ads.html#l57" title="To body">To body</a></li></ul></span>)         <span class="keyword">return</span> <span class="droplink">GL.VBO_Target<ul><li><a href="gl.ads.html#gl.ads:3783:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l3783" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l55"><pre>   <span class="keyword">overriding</span> <span class="keyword">function</span> <span class="droplink">Extract_VBO_Target<ul><li><a href="gl-buffer.ads.html#gl-buffer.ads:55:24" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer.adb.html#l76" title="To body">To body</a></li></ul></span> (<a href="gl-buffer.ads.html#gl-buffer.ads:55:44" title="defined at gl-buffer.ads:55:44">Self</a> : <span class="droplink">element_array_Object<ul><li><a href="gl-buffer.ads.html#gl-buffer.ads:31:9" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer.ads.html#l31" title="To spec">To spec</a></li><li><a href="src_gl-buffer.ads.html#l58" title="To body">To body</a></li></ul></span>) <span class="keyword">return</span> <span class="droplink">GL.VBO_Target<ul><li><a href="gl.ads.html#gl.ads:3783:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l3783" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l56"><pre> </pre></li>
+<li id="l57"><pre>   <span class="keyword">type</span> <span class="droplink">array_Object<ul><li><a href="gl-buffer.ads.html#gl-buffer.ads:30:9" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer.ads.html#l30" title="To spec">To spec</a></li></ul></span>         <span class="keyword">is</span> <span class="keyword">new</span> <span class="droplink">Object<ul><li><a href="gl-buffer.ads.html#gl-buffer.ads:20:9" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer.ads.html#l20" title="To spec">To spec</a></li><li><a href="src_gl-buffer.ads.html#l48" title="To body">To body</a></li></ul></span> <span class="keyword">with</span> <span class="keyword">null</span> <span class="keyword">record</span>; </pre></li>
+<li id="l58"><pre>   <span class="keyword">type</span> <span class="droplink">element_array_Object<ul><li><a href="gl-buffer.ads.html#gl-buffer.ads:31:9" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer.ads.html#l31" title="To spec">To spec</a></li></ul></span> <span class="keyword">is</span> <span class="keyword">new</span> <span class="droplink">Object<ul><li><a href="gl-buffer.ads.html#gl-buffer.ads:20:9" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer.ads.html#l20" title="To spec">To spec</a></li><li><a href="src_gl-buffer.ads.html#l48" title="To body">To body</a></li></ul></span> <span class="keyword">with</span> <span class="keyword">null</span> <span class="keyword">record</span>; </pre></li>
+<li id="l59"><pre> </pre></li>
+<li id="l60"><pre>   <span class="keyword">type</span> <a href="gl-buffer.ads.html#gl-buffer.ads:60:9" title="defined at gl-buffer.ads:60:9">vertex_buffer_Object</a> <span class="keyword">is</span> <span class="keyword">new</span> <span class="droplink">array_Object<ul><li><a href="gl-buffer.ads.html#gl-buffer.ads:30:9" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer.ads.html#l30" title="To spec">To spec</a></li><li><a href="src_gl-buffer.ads.html#l57" title="To body">To body</a></li></ul></span> <span class="keyword">with</span> <span class="keyword">null</span> <span class="keyword">record</span>; </pre></li>
+<li id="l61"><pre> </pre></li>
+<li id="l62"><pre>   <span class="comment">-- support</span> </pre></li>
+<li id="l63"><pre> </pre></li>
+<li id="l64"><pre>   <span class="keyword">procedure</span> <span class="droplink">Verify_Name<ul><li><a href="gl-buffer.ads.html#gl-buffer.ads:64:14" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer.adb.html#l45" title="To body">To body</a></li></ul></span> (<a href="gl-buffer.ads.html#gl-buffer.ads:64:27" title="defined at gl-buffer.ads:64:27">Self</a>  : <span class="keyword">in</span> <span class="keyword">out</span> <span class="droplink">Object<ul><li><a href="gl-buffer.ads.html#gl-buffer.ads:20:9" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer.ads.html#l20" title="To spec">To spec</a></li><li><a href="src_gl-buffer.ads.html#l48" title="To body">To body</a></li></ul></span>&apos;Class); </pre></li>
+<li id="l65"><pre> </pre></li>
+<li id="l66"><pre><span class="keyword">end</span> <span class="droplink">GL.Buffer<ul><li><a href="gl-buffer.ads.html#gl-buffer.ads:14:12" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer.ads.html#l14" title="To spec">To spec</a></li><li><a href="src_gl-buffer.adb.html#l18" title="To body">To body</a></li></ul></span>; </pre></li>
+</ol></div>
+</div>
+
+</body>
+</html>

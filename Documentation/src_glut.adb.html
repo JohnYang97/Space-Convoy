@@ -1,0 +1,311 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    File: glut.adb
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+  </div>
+</div> <!-- leftSide -->
+
+<div class='subprograms'>
+  <div class='details'><ol><li id="l1"><pre><span class="keyword">with</span> Ada.Containers.Ordered_Maps; <span class="keyword">use</span> Ada.Containers; </pre></li>
+<li id="l2"><pre> </pre></li>
+<li id="l3"><pre><span class="keyword">with</span> Ada.Unchecked_Conversion; </pre></li>
+<li id="l4"><pre><span class="keyword">with</span> Ada.Command_Line; </pre></li>
+<li id="l5"><pre><span class="keyword">with</span> Ada.Finalization; </pre></li>
+<li id="l6"><pre> </pre></li>
+<li id="l7"><pre><span class="keyword">package</span> <span class="keyword">body</span> <span class="droplink">GLUT<ul><li><a href="glut.ads.html#glut.ads:22:9" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l22" title="To spec">To spec</a></li></ul></span> <span class="keyword">is</span> </pre></li>
+<li id="l8"><pre> </pre></li>
+<li id="l9"><pre>   <span class="keyword">use</span> System; </pre></li>
+<li id="l10"><pre>   <span class="keyword">package</span> User_Data_Vector <span class="keyword">is</span> <span class="keyword">new</span> Ordered_Maps (Integer, System.Address); </pre></li>
+<li id="l11"><pre>   <span class="keyword">use</span> <a href="src_glut.adb.html#l10" title="defined at glut.adb:10:12">User_Data_Vector</a>; </pre></li>
+<li id="l12"><pre> </pre></li>
+<li id="l13"><pre>   User_Window_Data  : Map := Empty_Map; </pre></li>
+<li id="l14"><pre> </pre></li>
+<li id="l15"><pre>   <span class="keyword">function</span> <span class="droplink">GetWindowData<ul><li><a href="glut.ads.html#glut.ads:377:13" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l377" title="To spec">To spec</a></li></ul></span> <span class="keyword">return</span> System.Address <span class="keyword">is</span> </pre></li>
+<li id="l16"><pre> </pre></li>
+<li id="l17"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l18"><pre>      <span class="keyword">if</span> Find (<a href="src_glut.adb.html#l13" title="defined at glut.adb:13:4">User_Window_Data</a>, <span class="droplink">GetWindow<ul><li><a href="glut.ads.html#glut.ads:372:13" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l372" title="To spec">To spec</a></li><li><a href="src_glut.ads.html#l373" title="To body">To body</a></li></ul></span>) = No_Element <span class="keyword">then</span> </pre></li>
+<li id="l19"><pre>         <span class="keyword">return</span> System.Null_Address; </pre></li>
+<li id="l20"><pre>      <span class="keyword">else</span> </pre></li>
+<li id="l21"><pre>         <span class="keyword">return</span> Element (<a href="src_glut.adb.html#l13" title="defined at glut.adb:13:4">User_Window_Data</a>, <span class="droplink">GetWindow<ul><li><a href="glut.ads.html#glut.ads:372:13" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l372" title="To spec">To spec</a></li><li><a href="src_glut.ads.html#l373" title="To body">To body</a></li></ul></span>); </pre></li>
+<li id="l22"><pre>      <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l23"><pre>   <span class="keyword">end</span> <span class="droplink">GetWindowData<ul><li><a href="glut.ads.html#glut.ads:377:13" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l377" title="To spec">To spec</a></li><li><a href="src_glut.adb.html#l15" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l24"><pre> </pre></li>
+<li id="l25"><pre>   <span class="keyword">procedure</span> <span class="droplink">SetWindowData<ul><li><a href="glut.ads.html#glut.ads:385:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l385" title="To spec">To spec</a></li></ul></span> (<span class="droplink">Data<ul><li><a href="glut.ads.html#glut.ads:385:29" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l385" title="To spec">To spec</a></li></ul></span>  : System.Address) <span class="keyword">is</span> </pre></li>
+<li id="l26"><pre> </pre></li>
+<li id="l27"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l28"><pre>      <span class="keyword">if</span> Find (<a href="src_glut.adb.html#l13" title="defined at glut.adb:13:4">User_Window_Data</a>, <span class="droplink">GetWindow<ul><li><a href="glut.ads.html#glut.ads:372:13" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l372" title="To spec">To spec</a></li><li><a href="src_glut.ads.html#l373" title="To body">To body</a></li></ul></span>) = No_Element <span class="keyword">then</span> </pre></li>
+<li id="l29"><pre>         Insert (<a href="src_glut.adb.html#l13" title="defined at glut.adb:13:4">User_Window_Data</a>, <span class="droplink">GetWindow<ul><li><a href="glut.ads.html#glut.ads:372:13" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l372" title="To spec">To spec</a></li><li><a href="src_glut.ads.html#l373" title="To body">To body</a></li></ul></span>, <span class="droplink">Data<ul><li><a href="glut.ads.html#glut.ads:385:29" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l385" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l30"><pre>      <span class="keyword">else</span> </pre></li>
+<li id="l31"><pre>         Replace (<a href="src_glut.adb.html#l13" title="defined at glut.adb:13:4">User_Window_Data</a>, <span class="droplink">GetWindow<ul><li><a href="glut.ads.html#glut.ads:372:13" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l372" title="To spec">To spec</a></li><li><a href="src_glut.ads.html#l373" title="To body">To body</a></li></ul></span>, <span class="droplink">Data<ul><li><a href="glut.ads.html#glut.ads:385:29" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l385" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l32"><pre>      <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l33"><pre>   <span class="keyword">end</span> <span class="droplink">SetWindowData<ul><li><a href="glut.ads.html#glut.ads:385:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l385" title="To spec">To spec</a></li><li><a href="src_glut.adb.html#l25" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l34"><pre> </pre></li>
+<li id="l35"><pre>   <span class="keyword">procedure</span> <span class="droplink">LeaveMainLoop<ul><li><a href="glut.ads.html#glut.ads:336:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l336" title="To spec">To spec</a></li></ul></span> <span class="keyword">is</span> </pre></li>
+<li id="l36"><pre> </pre></li>
+<li id="l37"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l38"><pre>      <span class="keyword">null</span>; </pre></li>
+<li id="l39"><pre>   <span class="keyword">end</span> <span class="droplink">LeaveMainLoop<ul><li><a href="glut.ads.html#glut.ads:336:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l336" title="To spec">To spec</a></li><li><a href="src_glut.adb.html#l35" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l40"><pre> </pre></li>
+<li id="l41"><pre>   <span class="keyword">procedure</span> <span class="droplink">CloseFunc<ul><li><a href="glut.ads.html#glut.ads:539:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l539" title="To spec">To spec</a></li></ul></span> (<span class="droplink">Callback<ul><li><a href="glut.ads.html#glut.ads:539:25" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l539" title="To spec">To spec</a></li></ul></span>  : <span class="droplink">Glut_Proc_2<ul><li><a href="glut.ads.html#glut.ads:535:9" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l535" title="To spec">To spec</a></li></ul></span>) <span class="keyword">is</span> </pre></li>
+<li id="l42"><pre> </pre></li>
+<li id="l43"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l44"><pre>      <span class="keyword">null</span>; </pre></li>
+<li id="l45"><pre>   <span class="keyword">end</span> <span class="droplink">CloseFunc<ul><li><a href="glut.ads.html#glut.ads:539:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l539" title="To spec">To spec</a></li><li><a href="src_glut.adb.html#l41" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l46"><pre> </pre></li>
+<li id="l47"><pre>   <span class="keyword">procedure</span> <span class="droplink">SetOption<ul><li><a href="glut.ads.html#glut.ads:314:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l314" title="To spec">To spec</a></li></ul></span> (<span class="droplink">option_flag<ul><li><a href="glut.ads.html#glut.ads:314:25" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l314" title="To spec">To spec</a></li></ul></span>  : Integer;   <span class="droplink">value<ul><li><a href="glut.ads.html#glut.ads:314:51" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l314" title="To spec">To spec</a></li></ul></span>  : Integer) <span class="keyword">is</span> </pre></li>
+<li id="l48"><pre> </pre></li>
+<li id="l49"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l50"><pre>      <span class="keyword">null</span>; </pre></li>
+<li id="l51"><pre>   <span class="keyword">end</span> <span class="droplink">SetOption<ul><li><a href="glut.ads.html#glut.ads:314:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l314" title="To spec">To spec</a></li><li><a href="src_glut.adb.html#l47" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l52"><pre> </pre></li>
+<li id="l53"><pre>   <span class="comment">-- finalization - free Argv strings</span> </pre></li>
+<li id="l54"><pre>   <span class="comment">--</span> </pre></li>
+<li id="l55"><pre>   <span class="comment">-- RK 23 - Oct - 2006, to remove the memory leak in question.</span> </pre></li>
+<li id="l56"><pre>   <span class="comment">--</span> </pre></li>
+<li id="l57"><pre> </pre></li>
+<li id="l58"><pre>   <span class="keyword">type</span> Argvz <span class="keyword">is</span> <span class="keyword">array</span> (0 .. 500) <span class="keyword">of</span> <span class="keyword">aliased</span> Interfaces.C.Strings.chars_ptr; </pre></li>
+<li id="l59"><pre> </pre></li>
+<li id="l60"><pre>   <span class="keyword">type</span> Arg_Type <span class="keyword">is</span> <span class="keyword">new</span> Ada.Finalization.Controlled <span class="keyword">with</span> <span class="keyword">record</span> </pre></li>
+<li id="l61"><pre>     v        : <a href="src_glut.adb.html#l58" title="defined at glut.adb:58:9">Argvz</a> := (<span class="keyword">others</span> =&gt; Interfaces.C.Strings.Null_Ptr); </pre></li>
+<li id="l62"><pre>     v_Count  : Natural := 0; </pre></li>
+<li id="l63"><pre>   <span class="keyword">end</span> <span class="keyword">record</span>; </pre></li>
+<li id="l64"><pre> </pre></li>
+<li id="l65"><pre>   <span class="keyword">overriding</span> <span class="keyword">procedure</span> Finalize (Self  : <span class="keyword">in</span> <span class="keyword">out</span> <a href="src_glut.adb.html#l60" title="defined at glut.adb:60:9">Arg_Type</a>) </pre></li>
+<li id="l66"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l67"><pre>      <span class="keyword">use</span> Interfaces.C.Strings; </pre></li>
+<li id="l68"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l69"><pre>      <span class="keyword">if</span> Self.v (0) /= Interfaces.C.Strings.Null_Ptr <span class="keyword">then</span> </pre></li>
+<li id="l70"><pre>        Free (Self.v (0)); </pre></li>
+<li id="l71"><pre>      <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l72"><pre> </pre></li>
+<li id="l73"><pre>      <span class="keyword">for</span> I <span class="keyword">in</span> 1 .. Self.v_Count <span class="keyword">loop</span> </pre></li>
+<li id="l74"><pre>         Free (Self.v (I)); </pre></li>
+<li id="l75"><pre>      <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l76"><pre>   <span class="keyword">end</span> <span class="droplink">Finalize<ul><li><a href="src_glut.adb.html#l65" title="To spec">To spec</a></li><li><a href="src_glut.adb.html#l65" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l77"><pre> </pre></li>
+<li id="l78"><pre>   Arg  : <a href="src_glut.adb.html#l60" title="defined at glut.adb:60:9">Arg_Type</a>; </pre></li>
+<li id="l79"><pre> </pre></li>
+<li id="l80"><pre>   <span class="keyword">procedure</span> <a href="src_glut.adb.html#l83" title="defined at glut.adb:80:14">Glutinit</a> (Argcp  : <span class="keyword">access</span> Integer; </pre></li>
+<li id="l81"><pre>      Argv  : <span class="keyword">access</span> Interfaces.C.Strings.chars_ptr); </pre></li>
+<li id="l82"><pre>   <span class="comment">-- pragma Import (C, Glutinit, &quot;glutInit&quot;, &quot;glutInit&quot;); -- APEX</span> </pre></li>
+<li id="l83"><pre>   <span class="keyword">pragma</span> Import (StdCall, <a href="src_glut.adb.html#l80" title="defined at glut.adb:80:14">Glutinit</a>, <span class="string">&quot;glutInit&quot;</span>); <span class="comment">-- GNAT/OA</span> </pre></li>
+<li id="l84"><pre> </pre></li>
+<li id="l85"><pre>   <span class="comment">-- Pure Ada method, from IBM / Rational Apex support:</span> </pre></li>
+<li id="l86"><pre> </pre></li>
+<li id="l87"><pre>   <span class="comment">-- &quot;This procedure may be a useful replacement when porting an</span> </pre></li>
+<li id="l88"><pre>   <span class="comment">--  Ada program written for Gnat, which imports argc and argv like this:</span> </pre></li>
+<li id="l89"><pre>   <span class="comment">--  argc  : aliased integer;</span> </pre></li>
+<li id="l90"><pre>   <span class="comment">--  pragma Import (C, argc, &quot;gnat_argc&quot;);</span> </pre></li>
+<li id="l91"><pre>   <span class="comment">--</span> </pre></li>
+<li id="l92"><pre>   <span class="comment">--  argv  : chars_ptr_ptr;</span> </pre></li>
+<li id="l93"><pre>   <span class="comment">--  pragma Import (C, argv, &quot;gnat_argv&quot;);</span> </pre></li>
+<li id="l94"><pre>   <span class="comment">-- &quot;</span> </pre></li>
+<li id="l95"><pre> </pre></li>
+<li id="l96"><pre>   <span class="comment">-- http://www - 1.ibm.com/support/docview.wss?uid=swg21125019</span> </pre></li>
+<li id="l97"><pre> </pre></li>
+<li id="l98"><pre>   <span class="keyword">procedure</span> <span class="droplink">Init<ul><li><a href="glut.ads.html#glut.ads:296:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l296" title="To spec">To spec</a></li></ul></span> <span class="keyword">is</span> </pre></li>
+<li id="l99"><pre>      <span class="keyword">use</span> Ada.Command_Line; </pre></li>
+<li id="l100"><pre>      <span class="keyword">use</span> Interfaces.C.Strings; </pre></li>
+<li id="l101"><pre> </pre></li>
+<li id="l102"><pre>      Argc  : <span class="keyword">aliased</span> Integer := Argument_Count + 1; </pre></li>
+<li id="l103"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l104"><pre>      Arg.v_Count := Argument_Count; </pre></li>
+<li id="l105"><pre> </pre></li>
+<li id="l106"><pre>      Arg.v (0) := New_String (Command_Name); </pre></li>
+<li id="l107"><pre>      <span class="keyword">for</span> I <span class="keyword">in</span> 1 .. Arg.v_Count <span class="keyword">loop</span> </pre></li>
+<li id="l108"><pre>          Arg.v (I) := New_String (Argument (I)); </pre></li>
+<li id="l109"><pre>      <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l110"><pre> </pre></li>
+<li id="l111"><pre>      <span class="droplink">Glutinit<ul><li><a href="src_glut.adb.html#l80" title="To spec">To spec</a></li><li><a href="src_glut.adb.html#l83" title="To body">To body</a></li></ul></span> (<a href="src_glut.adb.html#l102" title="defined at glut.adb:102:7">Argc</a>&apos;Access, Arg.v (0)&apos;Access); </pre></li>
+<li id="l112"><pre>   <span class="keyword">end</span> <span class="droplink">Init<ul><li><a href="glut.ads.html#glut.ads:296:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l296" title="To spec">To spec</a></li><li><a href="src_glut.adb.html#l98" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l113"><pre> </pre></li>
+<li id="l114"><pre>   <span class="keyword">function</span> <span class="droplink">CreateWindow<ul><li><a href="glut.ads.html#glut.ads:349:13" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l349" title="To spec">To spec</a></li></ul></span> (<span class="droplink">Title<ul><li><a href="glut.ads.html#glut.ads:349:27" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l349" title="To spec">To spec</a></li></ul></span>  : String) <span class="keyword">return</span> Integer <span class="keyword">is</span> </pre></li>
+<li id="l115"><pre>      Result  : Integer; </pre></li>
+<li id="l116"><pre>      C_Title  : Interfaces.C.Strings.chars_ptr </pre></li>
+<li id="l117"><pre>        := Interfaces.C.Strings.New_String (<span class="droplink">Title<ul><li><a href="glut.ads.html#glut.ads:349:27" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l349" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l118"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l119"><pre>      <a href="src_glut.adb.html#l115" title="defined at glut.adb:115:7">Result</a> := <span class="droplink">CreateWindow<ul><li><a href="glut.ads.html#glut.ads:344:13" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l344" title="To spec">To spec</a></li><li><a href="src_glut.ads.html#l347" title="To body">To body</a></li></ul></span> (<a href="src_glut.adb.html#l116" title="defined at glut.adb:116:7">C_Title</a>); </pre></li>
+<li id="l120"><pre>      Interfaces.C.Strings.Free (<a href="src_glut.adb.html#l116" title="defined at glut.adb:116:7">C_Title</a>); </pre></li>
+<li id="l121"><pre>      <span class="keyword">return</span> <a href="src_glut.adb.html#l115" title="defined at glut.adb:115:7">Result</a>; </pre></li>
+<li id="l122"><pre>   <span class="keyword">end</span> <span class="droplink">CreateWindow<ul><li><a href="glut.ads.html#glut.ads:349:13" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l349" title="To spec">To spec</a></li><li><a href="src_glut.adb.html#l114" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l123"><pre> </pre></li>
+<li id="l124"><pre>   <span class="keyword">procedure</span> <span class="droplink">InitDisplayString<ul><li><a href="glut.ads.html#glut.ads:323:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l323" title="To spec">To spec</a></li></ul></span> (<span class="droplink">str<ul><li><a href="glut.ads.html#glut.ads:323:33" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l323" title="To spec">To spec</a></li></ul></span>  : String) <span class="keyword">is</span> </pre></li>
+<li id="l125"><pre>      C_Name  : Interfaces.C.Strings.chars_ptr </pre></li>
+<li id="l126"><pre>        := Interfaces.C.Strings.New_String (<span class="droplink">str<ul><li><a href="glut.ads.html#glut.ads:323:33" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l323" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l127"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l128"><pre>      <span class="droplink">InitDisplayString<ul><li><a href="glut.ads.html#glut.ads:320:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l320" title="To spec">To spec</a></li><li><a href="src_glut.ads.html#l321" title="To body">To body</a></li></ul></span> (<a href="src_glut.adb.html#l125" title="defined at glut.adb:125:7">C_Name</a>); </pre></li>
+<li id="l129"><pre>      Interfaces.C.Strings.Free (<a href="src_glut.adb.html#l125" title="defined at glut.adb:125:7">C_Name</a>); </pre></li>
+<li id="l130"><pre>      <span class="keyword">pragma</span> Unreferenced (<a href="src_glut.adb.html#l125" title="defined at glut.adb:125:7">C_Name</a>); </pre></li>
+<li id="l131"><pre>   <span class="keyword">end</span> <span class="droplink">InitDisplayString<ul><li><a href="glut.ads.html#glut.ads:323:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l323" title="To spec">To spec</a></li><li><a href="src_glut.adb.html#l124" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l132"><pre> </pre></li>
+<li id="l133"><pre>   <span class="keyword">procedure</span> <span class="droplink">SetWindowTitle<ul><li><a href="glut.ads.html#glut.ads:391:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l391" title="To spec">To spec</a></li></ul></span> (<span class="droplink">Title<ul><li><a href="glut.ads.html#glut.ads:391:30" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l391" title="To spec">To spec</a></li></ul></span>  : String) <span class="keyword">is</span> </pre></li>
+<li id="l134"><pre>      C_Title  : Interfaces.C.Strings.chars_ptr </pre></li>
+<li id="l135"><pre>        := Interfaces.C.Strings.New_String (<span class="droplink">Title<ul><li><a href="glut.ads.html#glut.ads:391:30" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l391" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l136"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l137"><pre>      <span class="droplink">SetWindowTitle<ul><li><a href="glut.ads.html#glut.ads:388:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l388" title="To spec">To spec</a></li><li><a href="src_glut.ads.html#l389" title="To body">To body</a></li></ul></span> (<a href="src_glut.adb.html#l134" title="defined at glut.adb:134:7">C_Title</a>); </pre></li>
+<li id="l138"><pre>      Interfaces.C.Strings.Free (<a href="src_glut.adb.html#l134" title="defined at glut.adb:134:7">C_Title</a>); </pre></li>
+<li id="l139"><pre>      <span class="keyword">pragma</span> Unreferenced (<a href="src_glut.adb.html#l134" title="defined at glut.adb:134:7">C_Title</a>); </pre></li>
+<li id="l140"><pre>   <span class="keyword">end</span> <span class="droplink">SetWindowTitle<ul><li><a href="glut.ads.html#glut.ads:391:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l391" title="To spec">To spec</a></li><li><a href="src_glut.adb.html#l133" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l141"><pre> </pre></li>
+<li id="l142"><pre>   <span class="keyword">procedure</span> <span class="droplink">SetIconTitle<ul><li><a href="glut.ads.html#glut.ads:396:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l396" title="To spec">To spec</a></li></ul></span> (<span class="droplink">Title<ul><li><a href="glut.ads.html#glut.ads:396:28" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l396" title="To spec">To spec</a></li></ul></span>  : String) <span class="keyword">is</span> </pre></li>
+<li id="l143"><pre>      C_Title  : Interfaces.C.Strings.chars_ptr </pre></li>
+<li id="l144"><pre>        := Interfaces.C.Strings.New_String (<span class="droplink">Title<ul><li><a href="glut.ads.html#glut.ads:396:28" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l396" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l145"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l146"><pre>      <span class="droplink">SetIconTitle<ul><li><a href="glut.ads.html#glut.ads:393:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l393" title="To spec">To spec</a></li><li><a href="src_glut.ads.html#l394" title="To body">To body</a></li></ul></span> (<a href="src_glut.adb.html#l143" title="defined at glut.adb:143:7">C_Title</a>); </pre></li>
+<li id="l147"><pre>      Interfaces.C.Strings.Free (<a href="src_glut.adb.html#l143" title="defined at glut.adb:143:7">C_Title</a>); </pre></li>
+<li id="l148"><pre>      <span class="keyword">pragma</span> Unreferenced (<a href="src_glut.adb.html#l143" title="defined at glut.adb:143:7">C_Title</a>); </pre></li>
+<li id="l149"><pre>   <span class="keyword">end</span> <span class="droplink">SetIconTitle<ul><li><a href="glut.ads.html#glut.ads:396:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l396" title="To spec">To spec</a></li><li><a href="src_glut.adb.html#l142" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l150"><pre> </pre></li>
+<li id="l151"><pre>   <span class="keyword">procedure</span> <span class="droplink">AddMenuEntry<ul><li><a href="glut.ads.html#glut.ads:493:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l493" title="To spec">To spec</a></li></ul></span> (<span class="droplink">Label<ul><li><a href="glut.ads.html#glut.ads:493:28" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l493" title="To spec">To spec</a></li></ul></span>  : String; <span class="droplink">Value<ul><li><a href="glut.ads.html#glut.ads:493:45" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l493" title="To spec">To spec</a></li></ul></span>  : Integer) <span class="keyword">is</span> </pre></li>
+<li id="l152"><pre>      C_Label  : Interfaces.C.Strings.chars_ptr </pre></li>
+<li id="l153"><pre>        := Interfaces.C.Strings.New_String (<span class="droplink">Label<ul><li><a href="glut.ads.html#glut.ads:493:28" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l493" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l154"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l155"><pre>      <span class="droplink">AddMenuEntry<ul><li><a href="glut.ads.html#glut.ads:488:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l488" title="To spec">To spec</a></li><li><a href="src_glut.ads.html#l491" title="To body">To body</a></li></ul></span> (<a href="src_glut.adb.html#l152" title="defined at glut.adb:152:7">C_Label</a>, <span class="droplink">Value<ul><li><a href="glut.ads.html#glut.ads:493:45" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l493" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l156"><pre>      Interfaces.C.Strings.Free (<a href="src_glut.adb.html#l152" title="defined at glut.adb:152:7">C_Label</a>); </pre></li>
+<li id="l157"><pre>      <span class="keyword">pragma</span> Unreferenced (<a href="src_glut.adb.html#l152" title="defined at glut.adb:152:7">C_Label</a>); </pre></li>
+<li id="l158"><pre>   <span class="keyword">end</span> <span class="droplink">AddMenuEntry<ul><li><a href="glut.ads.html#glut.ads:493:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l493" title="To spec">To spec</a></li><li><a href="src_glut.adb.html#l151" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l159"><pre> </pre></li>
+<li id="l160"><pre>   <span class="keyword">procedure</span> <span class="droplink">AddSubMenu<ul><li><a href="glut.ads.html#glut.ads:500:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l500" title="To spec">To spec</a></li></ul></span> (<span class="droplink">Label<ul><li><a href="glut.ads.html#glut.ads:500:26" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l500" title="To spec">To spec</a></li></ul></span>  : String; <span class="droplink">Submenu<ul><li><a href="glut.ads.html#glut.ads:500:43" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l500" title="To spec">To spec</a></li></ul></span>  : Integer) <span class="keyword">is</span> </pre></li>
+<li id="l161"><pre>      C_Label  : Interfaces.C.Strings.chars_ptr </pre></li>
+<li id="l162"><pre>        := Interfaces.C.Strings.New_String (<span class="droplink">Label<ul><li><a href="glut.ads.html#glut.ads:500:26" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l500" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l163"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l164"><pre>      <span class="droplink">AddSubMenu<ul><li><a href="glut.ads.html#glut.ads:495:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l495" title="To spec">To spec</a></li><li><a href="src_glut.ads.html#l498" title="To body">To body</a></li></ul></span> (<a href="src_glut.adb.html#l161" title="defined at glut.adb:161:7">C_Label</a>, <span class="droplink">Submenu<ul><li><a href="glut.ads.html#glut.ads:500:43" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l500" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l165"><pre>      Interfaces.C.Strings.Free (<a href="src_glut.adb.html#l161" title="defined at glut.adb:161:7">C_Label</a>); </pre></li>
+<li id="l166"><pre>      <span class="keyword">pragma</span> Unreferenced (<a href="src_glut.adb.html#l161" title="defined at glut.adb:161:7">C_Label</a>); </pre></li>
+<li id="l167"><pre>   <span class="keyword">end</span> <span class="droplink">AddSubMenu<ul><li><a href="glut.ads.html#glut.ads:500:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l500" title="To spec">To spec</a></li><li><a href="src_glut.adb.html#l160" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l168"><pre> </pre></li>
+<li id="l169"><pre>   <span class="keyword">procedure</span> <span class="droplink">ChangeToMenuEntry<ul><li><a href="glut.ads.html#glut.ads:508:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l508" title="To spec">To spec</a></li></ul></span> </pre></li>
+<li id="l170"><pre>     (<span class="droplink">Item<ul><li><a href="glut.ads.html#glut.ads:509:7" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l509" title="To spec">To spec</a></li></ul></span>   : Integer; </pre></li>
+<li id="l171"><pre>      <span class="droplink">Label<ul><li><a href="glut.ads.html#glut.ads:510:7" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l510" title="To spec">To spec</a></li></ul></span>  : String; </pre></li>
+<li id="l172"><pre>      <span class="droplink">Value<ul><li><a href="glut.ads.html#glut.ads:511:7" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l511" title="To spec">To spec</a></li></ul></span>  : Integer) </pre></li>
+<li id="l173"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l174"><pre>      C_Label  : Interfaces.C.Strings.chars_ptr </pre></li>
+<li id="l175"><pre>        := Interfaces.C.Strings.New_String (<span class="droplink">Label<ul><li><a href="glut.ads.html#glut.ads:510:7" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l510" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l176"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l177"><pre>      <span class="droplink">ChangeToMenuEntry<ul><li><a href="glut.ads.html#glut.ads:502:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l502" title="To spec">To spec</a></li><li><a href="src_glut.ads.html#l506" title="To body">To body</a></li></ul></span> (<span class="droplink">Item<ul><li><a href="glut.ads.html#glut.ads:509:7" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l509" title="To spec">To spec</a></li></ul></span>, <a href="src_glut.adb.html#l174" title="defined at glut.adb:174:7">C_Label</a>, <span class="droplink">Value<ul><li><a href="glut.ads.html#glut.ads:511:7" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l511" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l178"><pre>      Interfaces.C.Strings.Free (<a href="src_glut.adb.html#l174" title="defined at glut.adb:174:7">C_Label</a>); </pre></li>
+<li id="l179"><pre>      <span class="keyword">pragma</span> Unreferenced (<a href="src_glut.adb.html#l174" title="defined at glut.adb:174:7">C_Label</a>); </pre></li>
+<li id="l180"><pre>   <span class="keyword">end</span> <span class="droplink">ChangeToMenuEntry<ul><li><a href="glut.ads.html#glut.ads:508:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l508" title="To spec">To spec</a></li><li><a href="src_glut.adb.html#l169" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l181"><pre> </pre></li>
+<li id="l182"><pre>   <span class="keyword">procedure</span> <span class="droplink">ChangeToSubMenu<ul><li><a href="glut.ads.html#glut.ads:519:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l519" title="To spec">To spec</a></li></ul></span> </pre></li>
+<li id="l183"><pre>     (<span class="droplink">Item<ul><li><a href="glut.ads.html#glut.ads:520:7" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l520" title="To spec">To spec</a></li></ul></span>     : Integer; </pre></li>
+<li id="l184"><pre>      <span class="droplink">Label<ul><li><a href="glut.ads.html#glut.ads:521:7" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l521" title="To spec">To spec</a></li></ul></span>    : String; </pre></li>
+<li id="l185"><pre>      <span class="droplink">Submenu<ul><li><a href="glut.ads.html#glut.ads:522:7" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l522" title="To spec">To spec</a></li></ul></span>  : Integer) </pre></li>
+<li id="l186"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l187"><pre>      C_Label  : Interfaces.C.Strings.chars_ptr </pre></li>
+<li id="l188"><pre>        := Interfaces.C.Strings.New_String (<span class="droplink">Label<ul><li><a href="glut.ads.html#glut.ads:521:7" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l521" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l189"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l190"><pre>      <span class="droplink">ChangeToSubMenu<ul><li><a href="glut.ads.html#glut.ads:513:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l513" title="To spec">To spec</a></li><li><a href="src_glut.ads.html#l517" title="To body">To body</a></li></ul></span> (<span class="droplink">Item<ul><li><a href="glut.ads.html#glut.ads:520:7" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l520" title="To spec">To spec</a></li></ul></span>, <a href="src_glut.adb.html#l187" title="defined at glut.adb:187:7">C_Label</a>, <span class="droplink">Submenu<ul><li><a href="glut.ads.html#glut.ads:522:7" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l522" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l191"><pre>      Interfaces.C.Strings.Free (<a href="src_glut.adb.html#l187" title="defined at glut.adb:187:7">C_Label</a>); </pre></li>
+<li id="l192"><pre>      <span class="keyword">pragma</span> Unreferenced (<a href="src_glut.adb.html#l187" title="defined at glut.adb:187:7">C_Label</a>); </pre></li>
+<li id="l193"><pre>   <span class="keyword">end</span> <span class="droplink">ChangeToSubMenu<ul><li><a href="glut.ads.html#glut.ads:519:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l519" title="To spec">To spec</a></li><li><a href="src_glut.adb.html#l182" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l194"><pre> </pre></li>
+<li id="l195"><pre>   <span class="keyword">function</span> <span class="droplink">ExtensionSupported<ul><li><a href="glut.ads.html#glut.ads:712:13" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l712" title="To spec">To spec</a></li></ul></span> (<span class="droplink">str<ul><li><a href="glut.ads.html#glut.ads:712:33" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l712" title="To spec">To spec</a></li></ul></span>  : String) <span class="keyword">return</span> Integer <span class="keyword">is</span> </pre></li>
+<li id="l196"><pre>      Result  : Integer; </pre></li>
+<li id="l197"><pre>      C_Name  : Interfaces.C.Strings.chars_ptr </pre></li>
+<li id="l198"><pre>        := Interfaces.C.Strings.New_String (<span class="droplink">str<ul><li><a href="glut.ads.html#glut.ads:712:33" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l712" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l199"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l200"><pre>      <a href="src_glut.adb.html#l196" title="defined at glut.adb:196:7">Result</a> := <span class="droplink">ExtensionSupported<ul><li><a href="glut.ads.html#glut.ads:707:13" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l707" title="To spec">To spec</a></li><li><a href="src_glut.ads.html#l710" title="To body">To body</a></li></ul></span> (<a href="src_glut.adb.html#l197" title="defined at glut.adb:197:7">C_Name</a>); </pre></li>
+<li id="l201"><pre>      Interfaces.C.Strings.Free (<a href="src_glut.adb.html#l197" title="defined at glut.adb:197:7">C_Name</a>); </pre></li>
+<li id="l202"><pre>      <span class="keyword">return</span> <a href="src_glut.adb.html#l196" title="defined at glut.adb:196:7">Result</a>; </pre></li>
+<li id="l203"><pre>   <span class="keyword">end</span> <span class="droplink">ExtensionSupported<ul><li><a href="glut.ads.html#glut.ads:712:13" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l712" title="To spec">To spec</a></li><li><a href="src_glut.adb.html#l195" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l204"><pre> </pre></li>
+<li id="l205"><pre>   <span class="comment">-----------------------------------------------------</span> </pre></li>
+<li id="l206"><pre>   <span class="comment">-- GdM 2005 : callbacks with the &apos;Address attribute --</span> </pre></li>
+<li id="l207"><pre>   <span class="comment">-----------------------------------------------------</span> </pre></li>
+<li id="l208"><pre> </pre></li>
+<li id="l209"><pre>  <span class="comment">-- This method is functionally identical as GNAT&apos;s Unrestricted_Access</span> </pre></li>
+<li id="l210"><pre>  <span class="comment">-- but has no type safety (cf GNAT Docs)</span> </pre></li>
+<li id="l211"><pre> </pre></li>
+<li id="l212"><pre>   <span class="keyword">function</span> <span class="droplink">CreateMenu<ul><li><a href="glut.ads.html#glut.ads:477:13" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l477" title="To spec">To spec</a></li></ul></span> (<span class="droplink">P1<ul><li><a href="glut.ads.html#glut.ads:477:25" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l477" title="To spec">To spec</a></li></ul></span>  : System.Address) <span class="keyword">return</span> Integer <span class="keyword">is</span> </pre></li>
+<li id="l213"><pre>     <span class="keyword">function</span> Cvt <span class="keyword">is</span> <span class="keyword">new</span> Ada.Unchecked_Conversion (System.Address, <span class="droplink">Glut_Proc_1<ul><li><a href="glut.ads.html#glut.ads:473:9" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l473" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l214"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l215"><pre>     <span class="keyword">return</span> <span class="droplink">CreateMenu<ul><li><a href="glut.ads.html#glut.ads:475:13" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l475" title="To spec">To spec</a></li><li><a href="src_glut.ads.html#l476" title="To body">To body</a></li></ul></span> (<a href="src_glut.adb.html#l213" title="defined at glut.adb:213:15">Cvt</a> (<span class="droplink">P1<ul><li><a href="glut.ads.html#glut.ads:477:25" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l477" title="To spec">To spec</a></li></ul></span>)); </pre></li>
+<li id="l216"><pre>   <span class="keyword">end</span> <span class="droplink">CreateMenu<ul><li><a href="glut.ads.html#glut.ads:477:13" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l477" title="To spec">To spec</a></li><li><a href="src_glut.adb.html#l212" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l217"><pre> </pre></li>
+<li id="l218"><pre>   <span class="keyword">procedure</span> <span class="droplink">DisplayFunc<ul><li><a href="glut.ads.html#glut.ads:544:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l544" title="To spec">To spec</a></li></ul></span> (<span class="droplink">P1<ul><li><a href="glut.ads.html#glut.ads:544:27" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l544" title="To spec">To spec</a></li></ul></span>  : System.Address) <span class="keyword">is</span> </pre></li>
+<li id="l219"><pre>     <span class="keyword">function</span> Cvt <span class="keyword">is</span> <span class="keyword">new</span> Ada.Unchecked_Conversion (System.Address, <span class="droplink">Glut_Proc_2<ul><li><a href="glut.ads.html#glut.ads:535:9" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l535" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l220"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l221"><pre>     <span class="droplink">DisplayFunc<ul><li><a href="glut.ads.html#glut.ads:542:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l542" title="To spec">To spec</a></li><li><a href="src_glut.ads.html#l543" title="To body">To body</a></li></ul></span> (<a href="src_glut.adb.html#l219" title="defined at glut.adb:219:15">Cvt</a> (<span class="droplink">P1<ul><li><a href="glut.ads.html#glut.ads:544:27" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l544" title="To spec">To spec</a></li></ul></span>)); </pre></li>
+<li id="l222"><pre>   <span class="keyword">end</span> <span class="droplink">DisplayFunc<ul><li><a href="glut.ads.html#glut.ads:544:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l544" title="To spec">To spec</a></li><li><a href="src_glut.adb.html#l218" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l223"><pre> </pre></li>
+<li id="l224"><pre>   <span class="keyword">procedure</span> <span class="droplink">ReshapeFunc<ul><li><a href="glut.ads.html#glut.ads:550:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l550" title="To spec">To spec</a></li></ul></span> (<span class="droplink">P1<ul><li><a href="glut.ads.html#glut.ads:550:27" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l550" title="To spec">To spec</a></li></ul></span>  : System.Address) <span class="keyword">is</span> </pre></li>
+<li id="l225"><pre>     <span class="keyword">function</span> Cvt <span class="keyword">is</span> <span class="keyword">new</span> Ada.Unchecked_Conversion (System.Address, <span class="droplink">Glut_Proc_3<ul><li><a href="glut.ads.html#glut.ads:546:9" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l546" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l226"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l227"><pre>     <span class="droplink">ReshapeFunc<ul><li><a href="glut.ads.html#glut.ads:548:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l548" title="To spec">To spec</a></li><li><a href="src_glut.ads.html#l549" title="To body">To body</a></li></ul></span> (<a href="src_glut.adb.html#l225" title="defined at glut.adb:225:15">Cvt</a> (<span class="droplink">P1<ul><li><a href="glut.ads.html#glut.ads:550:27" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l550" title="To spec">To spec</a></li></ul></span>)); </pre></li>
+<li id="l228"><pre>   <span class="keyword">end</span> <span class="droplink">ReshapeFunc<ul><li><a href="glut.ads.html#glut.ads:550:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l550" title="To spec">To spec</a></li><li><a href="src_glut.adb.html#l224" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l229"><pre> </pre></li>
+<li id="l230"><pre>   <span class="keyword">procedure</span> <span class="droplink">KeyboardFunc<ul><li><a href="glut.ads.html#glut.ads:559:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l559" title="To spec">To spec</a></li></ul></span> (<span class="droplink">P1<ul><li><a href="glut.ads.html#glut.ads:559:28" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l559" title="To spec">To spec</a></li></ul></span>  : System.Address) <span class="keyword">is</span> </pre></li>
+<li id="l231"><pre>     <span class="keyword">function</span> Cvt <span class="keyword">is</span> <span class="keyword">new</span> Ada.Unchecked_Conversion (System.Address, <span class="droplink">Glut_Proc_4<ul><li><a href="glut.ads.html#glut.ads:554:9" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l554" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l232"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l233"><pre>     <span class="droplink">KeyboardFunc<ul><li><a href="glut.ads.html#glut.ads:557:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l557" title="To spec">To spec</a></li><li><a href="src_glut.ads.html#l558" title="To body">To body</a></li></ul></span> (<a href="src_glut.adb.html#l231" title="defined at glut.adb:231:15">Cvt</a> (<span class="droplink">P1<ul><li><a href="glut.ads.html#glut.ads:559:28" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l559" title="To spec">To spec</a></li></ul></span>)); </pre></li>
+<li id="l234"><pre>   <span class="keyword">end</span> <span class="droplink">KeyboardFunc<ul><li><a href="glut.ads.html#glut.ads:559:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l559" title="To spec">To spec</a></li><li><a href="src_glut.adb.html#l230" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l235"><pre> </pre></li>
+<li id="l236"><pre>   <span class="keyword">procedure</span> <span class="droplink">KeyboardUpFunc<ul><li><a href="glut.ads.html#glut.ads:568:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l568" title="To spec">To spec</a></li></ul></span> (<span class="droplink">P1<ul><li><a href="glut.ads.html#glut.ads:568:30" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l568" title="To spec">To spec</a></li></ul></span>  : System.Address) <span class="keyword">is</span> </pre></li>
+<li id="l237"><pre>     <span class="keyword">function</span> Cvt <span class="keyword">is</span> <span class="keyword">new</span> Ada.Unchecked_Conversion (System.Address, <span class="droplink">Glut_KeyUpFunc<ul><li><a href="glut.ads.html#glut.ads:561:9" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l561" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l238"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l239"><pre>     <span class="droplink">KeyboardUpFunc<ul><li><a href="glut.ads.html#glut.ads:566:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l566" title="To spec">To spec</a></li><li><a href="src_glut.ads.html#l567" title="To body">To body</a></li></ul></span> (<a href="src_glut.adb.html#l237" title="defined at glut.adb:237:15">Cvt</a> (<span class="droplink">P1<ul><li><a href="glut.ads.html#glut.ads:568:30" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l568" title="To spec">To spec</a></li></ul></span>)); </pre></li>
+<li id="l240"><pre>   <span class="keyword">end</span> <span class="droplink">KeyboardUpFunc<ul><li><a href="glut.ads.html#glut.ads:568:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l568" title="To spec">To spec</a></li><li><a href="src_glut.adb.html#l236" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l241"><pre> </pre></li>
+<li id="l242"><pre>   <span class="keyword">procedure</span> <span class="droplink">MouseFunc<ul><li><a href="glut.ads.html#glut.ads:575:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l575" title="To spec">To spec</a></li></ul></span> (<span class="droplink">P1<ul><li><a href="glut.ads.html#glut.ads:575:25" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l575" title="To spec">To spec</a></li></ul></span>  : System.Address) <span class="keyword">is</span> </pre></li>
+<li id="l243"><pre>     <span class="keyword">function</span> Cvt <span class="keyword">is</span> <span class="keyword">new</span> Ada.Unchecked_Conversion (System.Address, <span class="droplink">Glut_Proc_5<ul><li><a href="glut.ads.html#glut.ads:570:9" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l570" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l244"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l245"><pre>     <span class="droplink">MouseFunc<ul><li><a href="glut.ads.html#glut.ads:573:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l573" title="To spec">To spec</a></li><li><a href="src_glut.ads.html#l574" title="To body">To body</a></li></ul></span> (<a href="src_glut.adb.html#l243" title="defined at glut.adb:243:15">Cvt</a> (<span class="droplink">P1<ul><li><a href="glut.ads.html#glut.ads:575:25" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l575" title="To spec">To spec</a></li></ul></span>)); </pre></li>
+<li id="l246"><pre>   <span class="keyword">end</span> <span class="droplink">MouseFunc<ul><li><a href="glut.ads.html#glut.ads:575:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l575" title="To spec">To spec</a></li><li><a href="src_glut.adb.html#l242" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l247"><pre> </pre></li>
+<li id="l248"><pre>   <span class="keyword">procedure</span> <span class="droplink">MotionFunc<ul><li><a href="glut.ads.html#glut.ads:581:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l581" title="To spec">To spec</a></li></ul></span> (<span class="droplink">P1<ul><li><a href="glut.ads.html#glut.ads:581:26" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l581" title="To spec">To spec</a></li></ul></span>  : System.Address) <span class="keyword">is</span> </pre></li>
+<li id="l249"><pre>     <span class="keyword">function</span> Cvt <span class="keyword">is</span> <span class="keyword">new</span> Ada.Unchecked_Conversion (System.Address, <span class="droplink">Glut_Proc_6<ul><li><a href="glut.ads.html#glut.ads:577:9" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l577" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l250"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l251"><pre>     <span class="droplink">MotionFunc<ul><li><a href="glut.ads.html#glut.ads:579:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l579" title="To spec">To spec</a></li><li><a href="src_glut.ads.html#l580" title="To body">To body</a></li></ul></span> (<a href="src_glut.adb.html#l249" title="defined at glut.adb:249:15">Cvt</a> (<span class="droplink">P1<ul><li><a href="glut.ads.html#glut.ads:581:26" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l581" title="To spec">To spec</a></li></ul></span>)); </pre></li>
+<li id="l252"><pre>   <span class="keyword">end</span> <span class="droplink">MotionFunc<ul><li><a href="glut.ads.html#glut.ads:581:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l581" title="To spec">To spec</a></li><li><a href="src_glut.adb.html#l248" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l253"><pre> </pre></li>
+<li id="l254"><pre>   <span class="keyword">procedure</span> <span class="droplink">PassiveMotionFunc<ul><li><a href="glut.ads.html#glut.ads:587:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l587" title="To spec">To spec</a></li></ul></span> (<span class="droplink">P1<ul><li><a href="glut.ads.html#glut.ads:587:33" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l587" title="To spec">To spec</a></li></ul></span>  : System.Address) <span class="keyword">is</span> </pre></li>
+<li id="l255"><pre>     <span class="keyword">function</span> Cvt <span class="keyword">is</span> <span class="keyword">new</span> Ada.Unchecked_Conversion (System.Address, <span class="droplink">Glut_Proc_7<ul><li><a href="glut.ads.html#glut.ads:583:9" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l583" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l256"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l257"><pre>     <span class="droplink">PassiveMotionFunc<ul><li><a href="glut.ads.html#glut.ads:585:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l585" title="To spec">To spec</a></li><li><a href="src_glut.ads.html#l586" title="To body">To body</a></li></ul></span> (<a href="src_glut.adb.html#l255" title="defined at glut.adb:255:15">Cvt</a> (<span class="droplink">P1<ul><li><a href="glut.ads.html#glut.ads:587:33" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l587" title="To spec">To spec</a></li></ul></span>)); </pre></li>
+<li id="l258"><pre>   <span class="keyword">end</span> <span class="droplink">PassiveMotionFunc<ul><li><a href="glut.ads.html#glut.ads:587:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l587" title="To spec">To spec</a></li><li><a href="src_glut.adb.html#l254" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l259"><pre> </pre></li>
+<li id="l260"><pre>   <span class="keyword">procedure</span> <span class="droplink">IdleFunc<ul><li><a href="glut.ads.html#glut.ads:603:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l603" title="To spec">To spec</a></li></ul></span> (<span class="droplink">P1<ul><li><a href="glut.ads.html#glut.ads:603:24" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l603" title="To spec">To spec</a></li></ul></span>  : System.Address) <span class="keyword">is</span> </pre></li>
+<li id="l261"><pre>     <span class="keyword">function</span> Cvt <span class="keyword">is</span> <span class="keyword">new</span> Ada.Unchecked_Conversion (System.Address, <span class="droplink">Glut_Proc_10<ul><li><a href="glut.ads.html#glut.ads:599:9" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l599" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l262"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l263"><pre>     <span class="droplink">IdleFunc<ul><li><a href="glut.ads.html#glut.ads:601:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l601" title="To spec">To spec</a></li><li><a href="src_glut.ads.html#l602" title="To body">To body</a></li></ul></span> (<a href="src_glut.adb.html#l261" title="defined at glut.adb:261:15">Cvt</a> (<span class="droplink">P1<ul><li><a href="glut.ads.html#glut.ads:603:24" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l603" title="To spec">To spec</a></li></ul></span>)); </pre></li>
+<li id="l264"><pre>   <span class="keyword">end</span> <span class="droplink">IdleFunc<ul><li><a href="glut.ads.html#glut.ads:603:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l603" title="To spec">To spec</a></li><li><a href="src_glut.adb.html#l260" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l265"><pre> </pre></li>
+<li id="l266"><pre>   <span class="keyword">procedure</span> <span class="droplink">SpecialFunc<ul><li><a href="glut.ads.html#glut.ads:623:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l623" title="To spec">To spec</a></li></ul></span> (<span class="droplink">P1<ul><li><a href="glut.ads.html#glut.ads:623:27" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l623" title="To spec">To spec</a></li></ul></span>  : System.Address) <span class="keyword">is</span> </pre></li>
+<li id="l267"><pre>     <span class="keyword">function</span> Cvt <span class="keyword">is</span> <span class="keyword">new</span> Ada.Unchecked_Conversion (System.Address, <span class="droplink">Glut_Proc_13<ul><li><a href="glut.ads.html#glut.ads:618:9" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l618" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l268"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l269"><pre>     <span class="droplink">SpecialFunc<ul><li><a href="glut.ads.html#glut.ads:621:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l621" title="To spec">To spec</a></li><li><a href="src_glut.ads.html#l622" title="To body">To body</a></li></ul></span> (<a href="src_glut.adb.html#l267" title="defined at glut.adb:267:15">Cvt</a> (<span class="droplink">P1<ul><li><a href="glut.ads.html#glut.ads:623:27" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l623" title="To spec">To spec</a></li></ul></span>)); </pre></li>
+<li id="l270"><pre>   <span class="keyword">end</span> <span class="droplink">SpecialFunc<ul><li><a href="glut.ads.html#glut.ads:623:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l623" title="To spec">To spec</a></li><li><a href="src_glut.adb.html#l266" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l271"><pre> </pre></li>
+<li id="l272"><pre>   <span class="keyword">procedure</span> <span class="droplink">SpecialUpFunc<ul><li><a href="glut.ads.html#glut.ads:435:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l435" title="To spec">To spec</a></li></ul></span> (<span class="droplink">Func<ul><li><a href="glut.ads.html#glut.ads:435:29" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l435" title="To spec">To spec</a></li></ul></span>  : System.Address) <span class="keyword">is</span> </pre></li>
+<li id="l273"><pre>     <span class="keyword">function</span> Cvt <span class="keyword">is</span> <span class="keyword">new</span> Ada.Unchecked_Conversion (System.Address, <span class="droplink">Glut_SpecialUp<ul><li><a href="glut.ads.html#glut.ads:428:9" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l428" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l274"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l275"><pre>     <span class="droplink">SpecialUpFunc<ul><li><a href="glut.ads.html#glut.ads:433:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l433" title="To spec">To spec</a></li><li><a href="src_glut.ads.html#l434" title="To body">To body</a></li></ul></span> (<a href="src_glut.adb.html#l273" title="defined at glut.adb:273:15">Cvt</a> (<span class="droplink">Func<ul><li><a href="glut.ads.html#glut.ads:435:29" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l435" title="To spec">To spec</a></li></ul></span>)); </pre></li>
+<li id="l276"><pre>   <span class="keyword">end</span> <span class="droplink">SpecialUpFunc<ul><li><a href="glut.ads.html#glut.ads:435:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l435" title="To spec">To spec</a></li><li><a href="src_glut.adb.html#l272" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l277"><pre> </pre></li>
+<li id="l278"><pre><span class="keyword">end</span> <span class="droplink">GLUT<ul><li><a href="glut.ads.html#glut.ads:22:9" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l22" title="To spec">To spec</a></li><li><a href="src_glut.adb.html#l7" title="To body">To body</a></li></ul></span>; </pre></li>
+</ol></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,351 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    File: zip.ads
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+  </div>
+</div> <!-- leftSide -->
+
+<div class='subprograms'>
+  <div class='details'><ol><li id="l1"><pre><span class="comment">--  ________  ___   ______       ______     ___</span> </pre></li>
+<li id="l2"><pre> <span class="comment">-- /___ .. ._/  |.|   |.___.\     /. __ .\  __|.|   ____</span> </pre></li>
+<li id="l3"><pre> <span class="comment">--    / .. /    |.|   |.____/     |.|__|.| / .. ..|  __\ .. \</span> </pre></li>
+<li id="l4"><pre> <span class="comment">--  _/ .. /___  |.|   |.|    ===  | .. __ .. ||. = .| | = .. |</span> </pre></li>
+<li id="l5"><pre> <span class="comment">-- /_______/  |_|  /__|        /__|  |_| \__\_|  \__\_|</span> </pre></li>
+<li id="l6"><pre> </pre></li>
+<li id="l7"><pre> <span class="comment">-- Zip library</span> </pre></li>
+<li id="l8"><pre> <span class="comment">--------------</span> </pre></li>
+<li id="l9"><pre> <span class="comment">-- Library for manipulating archive files in the Zip format</span> </pre></li>
+<li id="l10"><pre> <span class="comment">--</span> </pre></li>
+<li id="l11"><pre> <span class="comment">-- Pure Ada 95 + code, 100% portable : OS - , CPU - and compiler - independent.</span> </pre></li>
+<li id="l12"><pre> <span class="comment">--</span> </pre></li>
+<li id="l13"><pre> <span class="comment">-- Version / date / download info : see the version, reference, web strings</span> </pre></li>
+<li id="l14"><pre> <span class="comment">--   defined at the end of the public part of this package.</span> </pre></li>
+<li id="l15"><pre> </pre></li>
+<li id="l16"><pre> <span class="comment">-- Legal licensing note:</span> </pre></li>
+<li id="l17"><pre> </pre></li>
+<li id="l18"><pre> <span class="comment">--  Copyright (c) 1999 .. 2012 Gautier de Montmollin</span> </pre></li>
+<li id="l19"><pre> </pre></li>
+<li id="l20"><pre> <span class="comment">--  Permission is hereby granted, free of charge, to any person obtaining a copy</span> </pre></li>
+<li id="l21"><pre> <span class="comment">--  of this software and associated documentation files (the &quot;Software&quot;), to deal</span> </pre></li>
+<li id="l22"><pre> <span class="comment">--  in the Software without restriction, including without limitation the rights</span> </pre></li>
+<li id="l23"><pre> <span class="comment">--  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span> </pre></li>
+<li id="l24"><pre> <span class="comment">--  copies of the Software, and to permit persons to whom the Software is</span> </pre></li>
+<li id="l25"><pre> <span class="comment">--  furnished to do so, subject to the following conditions:</span> </pre></li>
+<li id="l26"><pre> </pre></li>
+<li id="l27"><pre> <span class="comment">--  The above copyright notice and this permission notice shall be included in</span> </pre></li>
+<li id="l28"><pre> <span class="comment">--  all copies or substantial portions of the Software.</span> </pre></li>
+<li id="l29"><pre> </pre></li>
+<li id="l30"><pre> <span class="comment">--  THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span> </pre></li>
+<li id="l31"><pre> <span class="comment">--  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span> </pre></li>
+<li id="l32"><pre> <span class="comment">--  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span> </pre></li>
+<li id="l33"><pre> <span class="comment">--  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span> </pre></li>
+<li id="l34"><pre> <span class="comment">--  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span> </pre></li>
+<li id="l35"><pre> <span class="comment">--  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN</span> </pre></li>
+<li id="l36"><pre> <span class="comment">--  THE SOFTWARE.</span> </pre></li>
+<li id="l37"><pre> </pre></li>
+<li id="l38"><pre> <span class="comment">-- NB : this is the MIT License, as found 12 - Sep - 2007 on the site</span> </pre></li>
+<li id="l39"><pre> <span class="comment">-- http://www.opensource.org/licenses/mit - license.php</span> </pre></li>
+<li id="l40"><pre> </pre></li>
+<li id="l41"><pre><span class="keyword">with</span> <span class="droplink">Zip_Streams<ul><li><a href="zip_streams.ads.html#zip_streams.ads:31:9" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l31" title="To spec">To spec</a></li><li><a href="src_zip_streams.adb.html#l10" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l42"><pre><span class="keyword">with</span> Ada.Calendar, Ada.Streams.Stream_IO, Ada.Text_IO, Ada.Strings.Unbounded; </pre></li>
+<li id="l43"><pre><span class="keyword">with</span> Interfaces; </pre></li>
+<li id="l44"><pre> </pre></li>
+<li id="l45"><pre><span class="keyword">package</span> <span class="droplink">Zip<ul><li><a href="zip.ads.html#zip.ads:45:9" title="To API doc">To API doc</a></li><li><a href="src_zip.adb.html#l9" title="To body">To body</a></li></ul></span> <span class="keyword">is</span> </pre></li>
+<li id="l46"><pre> </pre></li>
+<li id="l47"><pre>  <span class="comment">--------------</span> </pre></li>
+<li id="l48"><pre>  <span class="comment">-- Zip_info --</span> </pre></li>
+<li id="l49"><pre>  <span class="comment">--------------</span> </pre></li>
+<li id="l50"><pre> </pre></li>
+<li id="l51"><pre>  <span class="comment">-- Zip_info contains the Zip file name or input stream,</span> </pre></li>
+<li id="l52"><pre>  <span class="comment">-- and the archive&apos;s sorted directory</span> </pre></li>
+<li id="l53"><pre>  <span class="keyword">type</span> <span class="droplink">Zip_info<ul><li><a href="zip.ads.html#zip.ads:53:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l308" title="To body">To body</a></li></ul></span> <span class="keyword">is</span> <span class="keyword">private</span>; </pre></li>
+<li id="l54"><pre> </pre></li>
+<li id="l55"><pre>  <span class="comment">-----------------------------------------------------------------------</span> </pre></li>
+<li id="l56"><pre>  <span class="comment">-- Load the whole .zip directory in archive (from) into a tree, for  --</span> </pre></li>
+<li id="l57"><pre>  <span class="comment">-- fast searching                                                    --</span> </pre></li>
+<li id="l58"><pre>  <span class="comment">-----------------------------------------------------------------------</span> </pre></li>
+<li id="l59"><pre> </pre></li>
+<li id="l60"><pre>  <span class="comment">-- Load from a file</span> </pre></li>
+<li id="l61"><pre> </pre></li>
+<li id="l62"><pre>   <span class="keyword">procedure</span> <span class="droplink">Load<ul><li><a href="zip.ads.html#zip.ads:62:14" title="To API doc">To API doc</a></li><li><a href="src_zip.adb.html#l264" title="To body">To body</a></li></ul></span> (<span class="droplink">info<ul><li><a href="zip.ads.html#zip.ads:62:20" title="To API doc">To API doc</a></li><li><a href="src_zip.adb.html#l264" title="To body">To body</a></li></ul></span>            : <span class="keyword">out</span> <span class="droplink">Zip_info<ul><li><a href="zip.ads.html#zip.ads:53:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l53" title="To spec">To spec</a></li><li><a href="src_zip.ads.html#l308" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l63"><pre>                   <a href="zip.ads.html#zip.ads:63:20" title="defined at zip.ads:63:20">from</a>            :     String; <span class="comment">-- Zip file name</span> </pre></li>
+<li id="l64"><pre>                   <a href="zip.ads.html#zip.ads:64:20" title="defined at zip.ads:64:20">case_sensitive</a>  :     Boolean := False); </pre></li>
+<li id="l65"><pre> </pre></li>
+<li id="l66"><pre>  <span class="comment">-- Load from a stream</span> </pre></li>
+<li id="l67"><pre> </pre></li>
+<li id="l68"><pre>   <span class="keyword">procedure</span> <span class="droplink">Load<ul><li><a href="zip.ads.html#zip.ads:68:14" title="To API doc">To API doc</a></li><li><a href="src_zip.adb.html#l146" title="To body">To body</a></li></ul></span> (<span class="droplink">info<ul><li><a href="zip.ads.html#zip.ads:68:20" title="To API doc">To API doc</a></li><li><a href="src_zip.adb.html#l146" title="To body">To body</a></li></ul></span>            : <span class="keyword">out</span> <span class="droplink">Zip_info<ul><li><a href="zip.ads.html#zip.ads:53:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l53" title="To spec">To spec</a></li><li><a href="src_zip.ads.html#l308" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l69"><pre>                   <a href="zip.ads.html#zip.ads:69:20" title="defined at zip.ads:69:20">from</a>            :     <span class="droplink">Zip_Streams.Zipstream_Class<ul><li><a href="zip_streams.ads.html#zip_streams.ads:43:9" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l43" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l70"><pre>                   <a href="zip.ads.html#zip.ads:70:20" title="defined at zip.ads:70:20">case_sensitive</a>  :     Boolean := False); </pre></li>
+<li id="l71"><pre> </pre></li>
+<li id="l72"><pre>  <a href="zip.ads.html#zip.ads:72:3" title="defined at zip.ads:72:3">Zip_file_Error</a>, </pre></li>
+<li id="l73"><pre>  <a href="zip.ads.html#zip.ads:73:3" title="defined at zip.ads:73:3">Zip_file_open_Error</a>, </pre></li>
+<li id="l74"><pre>  <a href="zip.ads.html#zip.ads:74:3" title="defined at zip.ads:74:3">Duplicate_name</a> : <span class="keyword">exception</span>; </pre></li>
+<li id="l75"><pre> </pre></li>
+<li id="l76"><pre>  <span class="comment">-- Parameter Form added to *_IO.[Open|Create]</span> </pre></li>
+<li id="l77"><pre>  <a href="zip.ads.html#zip.ads:77:3" title="defined at zip.ads:77:3">Form_For_IO_Open_N_Create</a>  : Ada.Strings.Unbounded.Unbounded_String </pre></li>
+<li id="l78"><pre>    := Ada.Strings.Unbounded.Null_Unbounded_String; </pre></li>
+<li id="l79"><pre>  <span class="comment">-- See RM A.8.2 : File Management</span> </pre></li>
+<li id="l80"><pre>  <span class="comment">-- Example : &quot;encoding=8bits&quot;</span> </pre></li>
+<li id="l81"><pre> </pre></li>
+<li id="l82"><pre>  <span class="keyword">function</span> <span class="droplink">Is_loaded<ul><li><a href="zip.ads.html#zip.ads:82:12" title="To API doc">To API doc</a></li><li><a href="src_zip.adb.html#l294" title="To body">To body</a></li></ul></span> (<a href="zip.ads.html#zip.ads:82:23" title="defined at zip.ads:82:23">info</a> : <span class="droplink">Zip_info<ul><li><a href="zip.ads.html#zip.ads:53:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l53" title="To spec">To spec</a></li><li><a href="src_zip.ads.html#l308" title="To body">To body</a></li></ul></span>) <span class="keyword">return</span> Boolean; </pre></li>
+<li id="l83"><pre> </pre></li>
+<li id="l84"><pre>  <span class="keyword">function</span> <span class="droplink">Zip_name<ul><li><a href="zip.ads.html#zip.ads:84:12" title="To API doc">To API doc</a></li><li><a href="src_zip.adb.html#l296" title="To body">To body</a></li></ul></span> (<span class="droplink">info<ul><li><a href="zip.ads.html#zip.ads:84:22" title="To API doc">To API doc</a></li><li><a href="src_zip.adb.html#l296" title="To body">To body</a></li></ul></span> : <span class="droplink">Zip_info<ul><li><a href="zip.ads.html#zip.ads:53:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l53" title="To spec">To spec</a></li><li><a href="src_zip.ads.html#l308" title="To body">To body</a></li></ul></span>) <span class="keyword">return</span> String; </pre></li>
+<li id="l85"><pre> </pre></li>
+<li id="l86"><pre>  <span class="keyword">function</span> <span class="droplink">Zip_comment<ul><li><a href="zip.ads.html#zip.ads:86:12" title="To API doc">To API doc</a></li><li><a href="src_zip.adb.html#l305" title="To body">To body</a></li></ul></span> (<span class="droplink">info<ul><li><a href="zip.ads.html#zip.ads:86:25" title="To API doc">To API doc</a></li><li><a href="src_zip.adb.html#l305" title="To body">To body</a></li></ul></span> : <span class="droplink">Zip_info<ul><li><a href="zip.ads.html#zip.ads:53:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l53" title="To spec">To spec</a></li><li><a href="src_zip.ads.html#l308" title="To body">To body</a></li></ul></span>) <span class="keyword">return</span> String; </pre></li>
+<li id="l87"><pre> </pre></li>
+<li id="l88"><pre>  <span class="keyword">function</span> <span class="droplink">Zip_Stream<ul><li><a href="zip.ads.html#zip.ads:88:12" title="To API doc">To API doc</a></li><li><a href="src_zip.adb.html#l314" title="To body">To body</a></li></ul></span> (<span class="droplink">info<ul><li><a href="zip.ads.html#zip.ads:88:24" title="To API doc">To API doc</a></li><li><a href="src_zip.adb.html#l314" title="To body">To body</a></li></ul></span> : <span class="droplink">Zip_info<ul><li><a href="zip.ads.html#zip.ads:53:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l53" title="To spec">To spec</a></li><li><a href="src_zip.ads.html#l308" title="To body">To body</a></li></ul></span>) <span class="keyword">return</span> <span class="droplink">Zip_Streams.Zipstream_Class<ul><li><a href="zip_streams.ads.html#zip_streams.ads:43:9" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l43" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l89"><pre> </pre></li>
+<li id="l90"><pre>  <span class="keyword">function</span> <span class="droplink">Entries<ul><li><a href="zip.ads.html#zip.ads:90:12" title="To API doc">To API doc</a></li><li><a href="src_zip.adb.html#l323" title="To body">To body</a></li></ul></span> (<a href="zip.ads.html#zip.ads:90:21" title="defined at zip.ads:90:21">info</a> : <span class="droplink">Zip_info<ul><li><a href="zip.ads.html#zip.ads:53:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l53" title="To spec">To spec</a></li><li><a href="src_zip.ads.html#l308" title="To body">To body</a></li></ul></span>) <span class="keyword">return</span> Natural; </pre></li>
+<li id="l91"><pre> </pre></li>
+<li id="l92"><pre>  <span class="keyword">procedure</span> <span class="droplink">Delete<ul><li><a href="zip.ads.html#zip.ads:92:13" title="To API doc">To API doc</a></li><li><a href="src_zip.adb.html#l329" title="To body">To body</a></li></ul></span> (<span class="droplink">info<ul><li><a href="zip.ads.html#zip.ads:92:21" title="To API doc">To API doc</a></li><li><a href="src_zip.adb.html#l329" title="To body">To body</a></li></ul></span>  : <span class="keyword">in</span> <span class="keyword">out</span> <span class="droplink">Zip_info<ul><li><a href="zip.ads.html#zip.ads:53:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l53" title="To spec">To spec</a></li><li><a href="src_zip.ads.html#l308" title="To body">To body</a></li></ul></span>); </pre></li>
+<li id="l93"><pre> </pre></li>
+<li id="l94"><pre>  <a href="zip.ads.html#zip.ads:94:3" title="defined at zip.ads:94:3">Forgot_to_load_zip_info</a> : <span class="keyword">exception</span>; </pre></li>
+<li id="l95"><pre> </pre></li>
+<li id="l96"><pre>  <span class="comment">-- Data sizes in archive</span> </pre></li>
+<li id="l97"><pre>  <span class="keyword">subtype</span> <a href="zip.ads.html#zip.ads:97:11" title="defined at zip.ads:97:11">File_size_type</a> <span class="keyword">is</span> Interfaces.Unsigned_32; </pre></li>
+<li id="l98"><pre> </pre></li>
+<li id="l99"><pre>  <span class="comment">---------</span> </pre></li>
+<li id="l100"><pre> </pre></li>
+<li id="l101"><pre>  <span class="comment">-- Compression methods or formats in the &quot;official&quot; PKWARE Zip format.</span> </pre></li>
+<li id="l102"><pre>  <span class="comment">-- Details in appnote.txt, part V.J</span> </pre></li>
+<li id="l103"><pre>  <span class="comment">--   C : supported for compressing</span> </pre></li>
+<li id="l104"><pre>  <span class="comment">--   D : supported for decompressing</span> </pre></li>
+<li id="l105"><pre> </pre></li>
+<li id="l106"><pre>  <span class="keyword">type</span> <a href="zip.ads.html#zip.ads:106:8" title="defined at zip.ads:106:8">PKZip_method</a> <span class="keyword">is</span> </pre></li>
+<li id="l107"><pre>   (store,     <span class="comment">-- C, D</span> </pre></li>
+<li id="l108"><pre>     shrink,    <span class="comment">-- C, D</span> </pre></li>
+<li id="l109"><pre>     reduce_1,  <span class="comment">-- C, D</span> </pre></li>
+<li id="l110"><pre>     reduce_2,  <span class="comment">-- C, D</span> </pre></li>
+<li id="l111"><pre>     reduce_3,  <span class="comment">-- C, D</span> </pre></li>
+<li id="l112"><pre>     reduce_4,  <span class="comment">-- C, D</span> </pre></li>
+<li id="l113"><pre>     implode,   <span class="comment">--   D</span> </pre></li>
+<li id="l114"><pre>     tokenize, </pre></li>
+<li id="l115"><pre>     deflate,   <span class="comment">--   D</span> </pre></li>
+<li id="l116"><pre>     deflate_e, <span class="comment">--   D - Enhanced deflate</span> </pre></li>
+<li id="l117"><pre>     bzip2,     <span class="comment">--   D</span> </pre></li>
+<li id="l118"><pre>     lzma, </pre></li>
+<li id="l119"><pre>     ppmd, </pre></li>
+<li id="l120"><pre>     unknown </pre></li>
+<li id="l121"><pre>); </pre></li>
+<li id="l122"><pre> </pre></li>
+<li id="l123"><pre>  <span class="comment">-- Technical : translates the method code as set in zip archives</span> </pre></li>
+<li id="l124"><pre>  <span class="keyword">function</span> <span class="droplink">Method_from_code<ul><li><a href="zip.ads.html#zip.ads:124:12" title="To API doc">To API doc</a></li><li><a href="src_zip.adb.html#l694" title="To body">To body</a></li></ul></span> (<a href="zip.ads.html#zip.ads:124:30" title="defined at zip.ads:124:30">x</a> : Interfaces.Unsigned_16) <span class="keyword">return</span> <span class="droplink">PKZip_method<ul><li><a href="zip.ads.html#zip.ads:106:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l106" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l125"><pre>  <span class="keyword">function</span> <span class="droplink">Method_from_code<ul><li><a href="zip.ads.html#zip.ads:125:12" title="To API doc">To API doc</a></li><li><a href="src_zip.adb.html#l671" title="To body">To body</a></li></ul></span> (<a href="zip.ads.html#zip.ads:125:30" title="defined at zip.ads:125:30">x</a> : Natural)                <span class="keyword">return</span> <span class="droplink">PKZip_method<ul><li><a href="zip.ads.html#zip.ads:106:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l106" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l126"><pre> </pre></li>
+<li id="l127"><pre>  <span class="comment">-- Internal time definition</span> </pre></li>
+<li id="l128"><pre>   <span class="keyword">subtype</span> <a href="zip.ads.html#zip.ads:128:12" title="defined at zip.ads:128:12">Time</a> <span class="keyword">is</span> <span class="droplink">Zip_Streams.Time<ul><li><a href="zip_streams.ads.html#zip_streams.ads:33:9" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l33" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l129"><pre> </pre></li>
+<li id="l130"><pre>  <span class="keyword">function</span> <a href="zip.ads.html#zip.ads:130:12" title="defined at zip.ads:130:12">Convert</a> (<a href="zip.ads.html#zip.ads:130:21" title="defined at zip.ads:130:21">date</a> : Ada.Calendar.Time) <span class="keyword">return</span> <span class="droplink">Time<ul><li><a href="zip.ads.html#zip.ads:128:12" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l128" title="To spec">To spec</a></li></ul></span>              <span class="keyword">renames</span> <span class="droplink">Zip_Streams.Calendar.Convert<ul><li><a href="zip_streams.ads-2.html#zip_streams.ads:146:16" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l146" title="To spec">To spec</a></li><li><a href="src_zip_streams.adb.html#l266" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l131"><pre>  <span class="keyword">function</span> <a href="zip.ads.html#zip.ads:131:12" title="defined at zip.ads:131:12">Convert</a> (<a href="zip.ads.html#zip.ads:131:21" title="defined at zip.ads:131:21">date</a> : <span class="droplink">Time<ul><li><a href="zip.ads.html#zip.ads:128:12" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l128" title="To spec">To spec</a></li></ul></span>)              <span class="keyword">return</span> Ada.Calendar.Time <span class="keyword">renames</span> <span class="droplink">Zip_Streams.Calendar.Convert<ul><li><a href="zip_streams.ads-2.html#zip_streams.ads:147:16" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l147" title="To spec">To spec</a></li><li><a href="src_zip_streams.adb.html#l278" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l132"><pre> </pre></li>
+<li id="l133"><pre>  <span class="comment">-- Traverse a whole Zip_info directory in sorted order, giving the</span> </pre></li>
+<li id="l134"><pre>  <span class="comment">-- name for each entry to an user - defined &quot;Action&quot; procedure.</span> </pre></li>
+<li id="l135"><pre>  <span class="comment">-- Concretely, you can process a whole Zip file that way, by extracting data</span> </pre></li>
+<li id="l136"><pre>  <span class="comment">-- with Extract, or open a reader stream with UnZip.Streams.</span> </pre></li>
+<li id="l137"><pre>  <span class="comment">-- See the Comp_Zip or Find_Zip tools as application examples.</span> </pre></li>
+<li id="l138"><pre>  <span class="keyword">generic</span> </pre></li>
+<li id="l139"><pre>    <span class="keyword">with</span> <span class="keyword">procedure</span> <a href="zip.ads.html#zip.ads:139:20" title="defined at zip.ads:139:20">Action</a> (<a href="zip.ads.html#zip.ads:139:28" title="defined at zip.ads:139:28">name</a> : String); <span class="comment">-- &apos;name&apos; is compressed entry&apos;s name</span> </pre></li>
+<li id="l140"><pre>  <span class="keyword">procedure</span> <span class="droplink">Traverse<ul><li><a href="zip.ads.html#zip.ads:140:13" title="To API doc">To API doc</a></li><li><a href="src_zip.adb.html#l353" title="To body">To body</a></li></ul></span> (<span class="droplink">z<ul><li><a href="zip.ads.html#zip.ads:140:23" title="To API doc">To API doc</a></li><li><a href="src_zip.adb.html#l353" title="To body">To body</a></li></ul></span> : <span class="droplink">Zip_info<ul><li><a href="zip.ads.html#zip.ads:53:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l53" title="To spec">To spec</a></li><li><a href="src_zip.ads.html#l308" title="To body">To body</a></li></ul></span>); </pre></li>
+<li id="l141"><pre> </pre></li>
+<li id="l142"><pre>  <span class="comment">-- Same as Traverse, but Action gives also technical informations about the</span> </pre></li>
+<li id="l143"><pre>  <span class="comment">-- compressed entry.</span> </pre></li>
+<li id="l144"><pre>  <span class="keyword">generic</span> </pre></li>
+<li id="l145"><pre>    <span class="keyword">with</span> <span class="keyword">procedure</span> <a href="zip.ads.html#zip.ads:145:20" title="defined at zip.ads:145:20">Action</a> ( </pre></li>
+<li id="l146"><pre>      <a href="zip.ads.html#zip.ads:146:7" title="defined at zip.ads:146:7">name</a>              : String; <span class="comment">-- &apos;name&apos; is compressed entry&apos;s name</span> </pre></li>
+<li id="l147"><pre>      <a href="zip.ads.html#zip.ads:147:7" title="defined at zip.ads:147:7">file_index</a>        : Positive; </pre></li>
+<li id="l148"><pre>      <a href="zip.ads.html#zip.ads:148:7" title="defined at zip.ads:148:7">comp_size</a>         : <span class="droplink">File_size_type<ul><li><a href="zip.ads.html#zip.ads:97:11" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l97" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l149"><pre>      <a href="zip.ads.html#zip.ads:149:7" title="defined at zip.ads:149:7">uncomp_size</a>       : <span class="droplink">File_size_type<ul><li><a href="zip.ads.html#zip.ads:97:11" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l97" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l150"><pre>      <a href="zip.ads.html#zip.ads:150:7" title="defined at zip.ads:150:7">crc_32</a>            : Interfaces.Unsigned_32; </pre></li>
+<li id="l151"><pre>      <a href="zip.ads.html#zip.ads:151:7" title="defined at zip.ads:151:7">date_time</a>         : <span class="droplink">Time<ul><li><a href="zip.ads.html#zip.ads:128:12" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l128" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l152"><pre>      <a href="zip.ads.html#zip.ads:152:7" title="defined at zip.ads:152:7">method</a>            : <span class="droplink">PKZip_method<ul><li><a href="zip.ads.html#zip.ads:106:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l106" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l153"><pre>      <a href="zip.ads.html#zip.ads:153:7" title="defined at zip.ads:153:7">unicode_file_name</a> : Boolean </pre></li>
+<li id="l154"><pre>); </pre></li>
+<li id="l155"><pre>  <span class="keyword">procedure</span> <span class="droplink">Traverse_verbose<ul><li><a href="zip.ads.html#zip.ads:155:13" title="To API doc">To API doc</a></li><li><a href="src_zip.adb.html#l369" title="To body">To body</a></li></ul></span> (<span class="droplink">z<ul><li><a href="zip.ads.html#zip.ads:155:31" title="To API doc">To API doc</a></li><li><a href="src_zip.adb.html#l369" title="To body">To body</a></li></ul></span> : <span class="droplink">Zip_info<ul><li><a href="zip.ads.html#zip.ads:53:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l53" title="To spec">To spec</a></li><li><a href="src_zip.ads.html#l308" title="To body">To body</a></li></ul></span>); </pre></li>
+<li id="l156"><pre> </pre></li>
+<li id="l157"><pre>   <span class="comment">-- Academic : see how well the name tree is balanced</span> </pre></li>
+<li id="l158"><pre>   <span class="keyword">procedure</span> <span class="droplink">Tree_stat<ul><li><a href="zip.ads.html#zip.ads:158:14" title="To API doc">To API doc</a></li><li><a href="src_zip.adb.html#l392" title="To body">To body</a></li></ul></span> (<span class="droplink">z<ul><li><a href="zip.ads.html#zip.ads:158:25" title="To API doc">To API doc</a></li><li><a href="src_zip.adb.html#l392" title="To body">To body</a></li></ul></span>         :     <span class="droplink">Zip_info<ul><li><a href="zip.ads.html#zip.ads:53:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l53" title="To spec">To spec</a></li><li><a href="src_zip.ads.html#l308" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l159"><pre>                        <a href="zip.ads.html#zip.ads:159:25" title="defined at zip.ads:159:25">total</a>     : <span class="keyword">out</span> Natural; </pre></li>
+<li id="l160"><pre>                        <a href="zip.ads.html#zip.ads:160:25" title="defined at zip.ads:160:25">max_depth</a> : <span class="keyword">out</span> Natural; </pre></li>
+<li id="l161"><pre>                        <a href="zip.ads.html#zip.ads:161:25" title="defined at zip.ads:161:25">avg_depth</a> : <span class="keyword">out</span> Float); </pre></li>
+<li id="l162"><pre> </pre></li>
+<li id="l163"><pre>  <span class="comment">--------------------------------------------------------------------------</span> </pre></li>
+<li id="l164"><pre>  <span class="comment">-- Offsets - various procedures giving 1 - based indexes to local headers --</span> </pre></li>
+<li id="l165"><pre>  <span class="comment">--------------------------------------------------------------------------</span> </pre></li>
+<li id="l166"><pre> </pre></li>
+<li id="l167"><pre>  <span class="comment">-- Find 1st offset in a Zip stream</span> </pre></li>
+<li id="l168"><pre> </pre></li>
+<li id="l169"><pre>   <span class="keyword">procedure</span> <span class="droplink">Find_first_offset<ul><li><a href="zip.ads.html#zip.ads:169:14" title="To API doc">To API doc</a></li><li><a href="src_zip.adb.html#l435" title="To body">To body</a></li></ul></span> (<a href="zip.ads.html#zip.ads:169:33" title="defined at zip.ads:169:33">file</a>            :     <span class="droplink">Zip_Streams.Zipstream_Class<ul><li><a href="zip_streams.ads.html#zip_streams.ads:43:9" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l43" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l170"><pre>                                <a href="zip.ads.html#zip.ads:170:33" title="defined at zip.ads:170:33">file_index</a>      : <span class="keyword">out</span> Positive); </pre></li>
+<li id="l171"><pre> </pre></li>
+<li id="l172"><pre>  <span class="comment">-- Find offset of a certain compressed file</span> </pre></li>
+<li id="l173"><pre>  <span class="comment">-- in a Zip file (file opened and kept open)</span> </pre></li>
+<li id="l174"><pre> </pre></li>
+<li id="l175"><pre>   <span class="keyword">procedure</span> <span class="droplink">Find_offset<ul><li><a href="zip.ads.html#zip.ads:175:14" title="To API doc">To API doc</a></li><li><a href="src_zip.adb.html#l478" title="To body">To body</a></li></ul></span> (<a href="zip.ads.html#zip.ads:175:27" title="defined at zip.ads:175:27">file</a>            :     <span class="droplink">Zip_Streams.Zipstream_Class<ul><li><a href="zip_streams.ads.html#zip_streams.ads:43:9" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l43" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l176"><pre>                          <a href="zip.ads.html#zip.ads:176:27" title="defined at zip.ads:176:27">name</a>            :     String; </pre></li>
+<li id="l177"><pre>                          <a href="zip.ads.html#zip.ads:177:27" title="defined at zip.ads:177:27">case_sensitive</a>  :     Boolean; </pre></li>
+<li id="l178"><pre>                          <a href="zip.ads.html#zip.ads:178:27" title="defined at zip.ads:178:27">file_index</a>      : <span class="keyword">out</span> Positive; </pre></li>
+<li id="l179"><pre>                          <a href="zip.ads.html#zip.ads:179:27" title="defined at zip.ads:179:27">comp_size</a>       : <span class="keyword">out</span> <span class="droplink">File_size_type<ul><li><a href="zip.ads.html#zip.ads:97:11" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l97" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l180"><pre>                          <a href="zip.ads.html#zip.ads:180:27" title="defined at zip.ads:180:27">uncomp_size</a>     : <span class="keyword">out</span> <span class="droplink">File_size_type<ul><li><a href="zip.ads.html#zip.ads:97:11" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l97" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l181"><pre> </pre></li>
+<li id="l182"><pre>   <span class="comment">-- Find offset of a certain compressed file in a Zip_info data</span> </pre></li>
+<li id="l183"><pre> </pre></li>
+<li id="l184"><pre>   <span class="keyword">procedure</span> <span class="droplink">Find_offset<ul><li><a href="zip.ads.html#zip.ads:184:14" title="To API doc">To API doc</a></li><li><a href="src_zip.adb.html#l525" title="To body">To body</a></li></ul></span> (<span class="droplink">info<ul><li><a href="zip.ads.html#zip.ads:184:27" title="To API doc">To API doc</a></li><li><a href="src_zip.adb.html#l525" title="To body">To body</a></li></ul></span>            :     <span class="droplink">Zip_info<ul><li><a href="zip.ads.html#zip.ads:53:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l53" title="To spec">To spec</a></li><li><a href="src_zip.ads.html#l308" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l185"><pre>                          <a href="zip.ads.html#zip.ads:185:27" title="defined at zip.ads:185:27">name</a>            :     String; </pre></li>
+<li id="l186"><pre>                          <a href="zip.ads.html#zip.ads:186:27" title="defined at zip.ads:186:27">case_sensitive</a>  :     Boolean; </pre></li>
+<li id="l187"><pre>                          <a href="zip.ads.html#zip.ads:187:27" title="defined at zip.ads:187:27">file_index</a>      : <span class="keyword">out</span> Ada.Streams.Stream_IO.Positive_Count; </pre></li>
+<li id="l188"><pre>                          <a href="zip.ads.html#zip.ads:188:27" title="defined at zip.ads:188:27">comp_size</a>       : <span class="keyword">out</span> <span class="droplink">File_size_type<ul><li><a href="zip.ads.html#zip.ads:97:11" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l97" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l189"><pre>                          <a href="zip.ads.html#zip.ads:189:27" title="defined at zip.ads:189:27">uncomp_size</a>     : <span class="keyword">out</span> <span class="droplink">File_size_type<ul><li><a href="zip.ads.html#zip.ads:97:11" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l97" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l190"><pre> </pre></li>
+<li id="l191"><pre>  <a href="zip.ads.html#zip.ads:191:3" title="defined at zip.ads:191:3">File_name_not_found</a> : <span class="keyword">exception</span>; </pre></li>
+<li id="l192"><pre> </pre></li>
+<li id="l193"><pre>   <span class="keyword">procedure</span> <span class="droplink">Get_sizes<ul><li><a href="zip.ads.html#zip.ads:193:14" title="To API doc">To API doc</a></li><li><a href="src_zip.adb.html#l557" title="To body">To body</a></li></ul></span> (<span class="droplink">info<ul><li><a href="zip.ads.html#zip.ads:193:25" title="To API doc">To API doc</a></li><li><a href="src_zip.adb.html#l557" title="To body">To body</a></li></ul></span>            :     <span class="droplink">Zip_info<ul><li><a href="zip.ads.html#zip.ads:53:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l53" title="To spec">To spec</a></li><li><a href="src_zip.ads.html#l308" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l194"><pre>                        <a href="zip.ads.html#zip.ads:194:25" title="defined at zip.ads:194:25">name</a>            :     String; </pre></li>
+<li id="l195"><pre>                        <a href="zip.ads.html#zip.ads:195:25" title="defined at zip.ads:195:25">case_sensitive</a>  :     Boolean; </pre></li>
+<li id="l196"><pre>                        <a href="zip.ads.html#zip.ads:196:25" title="defined at zip.ads:196:25">comp_size</a>       : <span class="keyword">out</span> <span class="droplink">File_size_type<ul><li><a href="zip.ads.html#zip.ads:97:11" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l97" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l197"><pre>                        <a href="zip.ads.html#zip.ads:197:25" title="defined at zip.ads:197:25">uncomp_size</a>     : <span class="keyword">out</span> <span class="droplink">File_size_type<ul><li><a href="zip.ads.html#zip.ads:97:11" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l97" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l198"><pre> </pre></li>
+<li id="l199"><pre>  <span class="comment">-- User - defined procedure for feedback occuring during</span> </pre></li>
+<li id="l200"><pre>  <span class="comment">-- compression or decompression (entry_skipped meaningful</span> </pre></li>
+<li id="l201"><pre>  <span class="comment">-- only for the latter)</span> </pre></li>
+<li id="l202"><pre> </pre></li>
+<li id="l203"><pre>  <span class="keyword">type</span> <a href="zip.ads.html#zip.ads:203:8" title="defined at zip.ads:203:8">Feedback_proc</a> <span class="keyword">is</span> <span class="keyword">access</span> </pre></li>
+<li id="l204"><pre>     <span class="keyword">procedure</span> (percents_done :     Natural;  <span class="comment">-- %&apos;s completed</span> </pre></li>
+<li id="l205"><pre>                entry_skipped :     Boolean;  <span class="comment">-- indicates one can show &quot;skipped&quot;, no %&apos;s</span> </pre></li>
+<li id="l206"><pre>                user_abort    : <span class="keyword">out</span> Boolean);   <span class="comment">-- e.g. transmit a &quot;click on Cancel&quot; here</span> </pre></li>
+<li id="l207"><pre> </pre></li>
+<li id="l208"><pre>  <span class="comment">-------------------------------------------------------------------------</span> </pre></li>
+<li id="l209"><pre>  <span class="comment">-- Goodies - things used internally but that might be generally useful --</span> </pre></li>
+<li id="l210"><pre>  <span class="comment">-------------------------------------------------------------------------</span> </pre></li>
+<li id="l211"><pre> </pre></li>
+<li id="l212"><pre>  <span class="comment">-- BlockRead : general - purpose procedure (nothing really specific to Zip /</span> </pre></li>
+<li id="l213"><pre>  <span class="comment">-- UnZip) : reads either the whole buffer from a file, or if the end of</span> </pre></li>
+<li id="l214"><pre>  <span class="comment">-- the file lays inbetween, a part of the buffer.</span> </pre></li>
+<li id="l215"><pre>  <span class="comment">--</span> </pre></li>
+<li id="l216"><pre>  <span class="comment">-- The procedure&apos;s names and parameters match Borland Pascal / Delphi</span> </pre></li>
+<li id="l217"><pre> </pre></li>
+<li id="l218"><pre>  <span class="keyword">subtype</span> <a href="zip.ads.html#zip.ads:218:11" title="defined at zip.ads:218:11">Byte</a> <span class="keyword">is</span> Interfaces.Unsigned_8; </pre></li>
+<li id="l219"><pre>  <span class="keyword">type</span> <a href="zip.ads.html#zip.ads:219:8" title="defined at zip.ads:219:8">Byte_Buffer</a> <span class="keyword">is</span> <span class="keyword">array</span> (Integer <span class="keyword">range</span> &lt;&gt;) <span class="keyword">of</span> <span class="keyword">aliased</span> <span class="droplink">Byte<ul><li><a href="zip.ads.html#zip.ads:218:11" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l218" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l220"><pre>  <span class="keyword">type</span> <a href="zip.ads.html#zip.ads:220:8" title="defined at zip.ads:220:8">p_Byte_Buffer</a> <span class="keyword">is</span> <span class="keyword">access</span> <span class="droplink">Byte_Buffer<ul><li><a href="zip.ads.html#zip.ads:219:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l219" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l221"><pre> </pre></li>
+<li id="l222"><pre>   <span class="keyword">procedure</span> <span class="droplink">BlockRead<ul><li><a href="zip.ads.html#zip.ads:222:14" title="To API doc">To API doc</a></li><li><a href="src_zip.adb.html#l585" title="To body">To body</a></li></ul></span> (<a href="zip.ads.html#zip.ads:222:25" title="defined at zip.ads:222:25">file</a>          :     Ada.Streams.Stream_IO.File_Type; </pre></li>
+<li id="l223"><pre>                        <a href="zip.ads.html#zip.ads:223:25" title="defined at zip.ads:223:25">buffer</a>        : <span class="keyword">out</span> <span class="droplink">Byte_Buffer<ul><li><a href="zip.ads.html#zip.ads:219:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l219" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l224"><pre>                        <a href="zip.ads.html#zip.ads:224:25" title="defined at zip.ads:224:25">actually_read</a> : <span class="keyword">out</span> Natural); </pre></li>
+<li id="l225"><pre>                        <span class="comment">-- = buffer&apos;Length if no end of file before last buffer element</span> </pre></li>
+<li id="l226"><pre> </pre></li>
+<li id="l227"><pre>   <span class="comment">-- Same for general streams</span> </pre></li>
+<li id="l228"><pre>   <span class="comment">--</span> </pre></li>
+<li id="l229"><pre>   <span class="keyword">procedure</span> <span class="droplink">BlockRead<ul><li><a href="zip.ads.html#zip.ads:229:14" title="To API doc">To API doc</a></li><li><a href="src_zip.adb.html#l615" title="To body">To body</a></li></ul></span> (<a href="zip.ads.html#zip.ads:229:25" title="defined at zip.ads:229:25">stream</a>        :     <span class="droplink">Zip_Streams.Zipstream_Class<ul><li><a href="zip_streams.ads.html#zip_streams.ads:43:9" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l43" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l230"><pre>                        <a href="zip.ads.html#zip.ads:230:25" title="defined at zip.ads:230:25">buffer</a>        : <span class="keyword">out</span> <span class="droplink">Byte_Buffer<ul><li><a href="zip.ads.html#zip.ads:219:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l219" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l231"><pre>                        <a href="zip.ads.html#zip.ads:231:25" title="defined at zip.ads:231:25">actually_read</a> : <span class="keyword">out</span> Natural); </pre></li>
+<li id="l232"><pre>   <span class="comment">-- = buffer&apos;Length if no end of stream before last buffer element</span> </pre></li>
+<li id="l233"><pre> </pre></li>
+<li id="l234"><pre>  <span class="comment">-- Same, but instead of giving actually_read, raises End_Error if</span> </pre></li>
+<li id="l235"><pre>  <span class="comment">-- the buffer cannot be fully read.</span> </pre></li>
+<li id="l236"><pre>  <span class="comment">-- This mimics the &apos;Read stream attribute; can be a lot faster, depending</span> </pre></li>
+<li id="l237"><pre>  <span class="comment">-- on the compiler&apos;s run - time library.</span> </pre></li>
+<li id="l238"><pre>   <span class="keyword">procedure</span> <span class="droplink">BlockRead<ul><li><a href="zip.ads.html#zip.ads:238:14" title="To API doc">To API doc</a></li><li><a href="src_zip.adb.html#l641" title="To body">To body</a></li></ul></span> (<a href="zip.ads.html#zip.ads:238:25" title="defined at zip.ads:238:25">stream</a>  :     <span class="droplink">Zip_Streams.Zipstream_Class<ul><li><a href="zip_streams.ads.html#zip_streams.ads:43:9" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l43" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l239"><pre>                        <a href="zip.ads.html#zip.ads:239:25" title="defined at zip.ads:239:25">buffer</a>  : <span class="keyword">out</span> <span class="droplink">Byte_Buffer<ul><li><a href="zip.ads.html#zip.ads:219:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l219" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l240"><pre> </pre></li>
+<li id="l241"><pre>  <span class="comment">-- This mimics the &apos;Write stream attribute; can be a lot faster, depending</span> </pre></li>
+<li id="l242"><pre>  <span class="comment">-- on the compiler&apos;s run - time library.</span> </pre></li>
+<li id="l243"><pre>  <span class="comment">-- NB : here we can use the root stream type : no question of size, index, .. .</span> </pre></li>
+<li id="l244"><pre>   <span class="keyword">procedure</span> <span class="droplink">BlockWrite<ul><li><a href="zip.ads.html#zip.ads:244:14" title="To API doc">To API doc</a></li><li><a href="src_zip.adb.html#l653" title="To body">To body</a></li></ul></span> (<a href="zip.ads.html#zip.ads:244:26" title="defined at zip.ads:244:26">stream</a>  : <span class="keyword">in</span> <span class="keyword">out</span> Ada.Streams.Root_Stream_Type&apos;Class; </pre></li>
+<li id="l245"><pre>                         <a href="zip.ads.html#zip.ads:245:26" title="defined at zip.ads:245:26">buffer</a>  :        <span class="droplink">Byte_Buffer<ul><li><a href="zip.ads.html#zip.ads:219:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l219" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l246"><pre> </pre></li>
+<li id="l247"><pre>   <span class="comment">-- This does the same as Ada 2005&apos;s Ada.Directories.Exists</span> </pre></li>
+<li id="l248"><pre>   <span class="comment">-- Just there as helper for Ada 95 only systems</span> </pre></li>
+<li id="l249"><pre>   <span class="comment">--</span> </pre></li>
+<li id="l250"><pre>  <span class="keyword">function</span> <span class="droplink">Exists<ul><li><a href="zip.ads.html#zip.ads:250:12" title="To API doc">To API doc</a></li><li><a href="src_zip.adb.html#l700" title="To body">To body</a></li></ul></span> (<a href="zip.ads.html#zip.ads:250:20" title="defined at zip.ads:250:20">name</a> : String) <span class="keyword">return</span> Boolean; </pre></li>
+<li id="l251"><pre> </pre></li>
+<li id="l252"><pre>  <span class="comment">-- Write a string containing line endings (possible from another system)</span> </pre></li>
+<li id="l253"><pre>  <span class="comment">--   into a text file, with the correct native line endings.</span> </pre></li>
+<li id="l254"><pre>  <span class="comment">--   Works for displaying/saving correctly</span> </pre></li>
+<li id="l255"><pre>  <span class="comment">--   CR&amp;LF (DOS/Win), LF (UNIX), CR (Mac OS &lt; 9)</span> </pre></li>
+<li id="l256"><pre>  <span class="comment">--</span> </pre></li>
+<li id="l257"><pre>  <span class="keyword">procedure</span> <span class="droplink">Put_Multi_Line<ul><li><a href="zip.ads.html#zip.ads:257:13" title="To API doc">To API doc</a></li><li><a href="src_zip.adb.html#l721" title="To body">To body</a></li></ul></span> ( </pre></li>
+<li id="l258"><pre>    <a href="zip.ads.html#zip.ads:258:5" title="defined at zip.ads:258:5">out_file</a>  :        Ada.Text_IO.File_Type; </pre></li>
+<li id="l259"><pre>    <a href="zip.ads.html#zip.ads:259:5" title="defined at zip.ads:259:5">text</a>      :        String </pre></li>
+<li id="l260"><pre>); </pre></li>
+<li id="l261"><pre> </pre></li>
+<li id="l262"><pre>  <span class="keyword">procedure</span> <span class="droplink">Write_as_text<ul><li><a href="zip.ads.html#zip.ads:262:13" title="To API doc">To API doc</a></li><li><a href="src_zip.adb.html#l745" title="To body">To body</a></li></ul></span> ( </pre></li>
+<li id="l263"><pre>    <a href="zip.ads.html#zip.ads:263:5" title="defined at zip.ads:263:5">out_file</a>  :        Ada.Text_IO.File_Type; </pre></li>
+<li id="l264"><pre>    <a href="zip.ads.html#zip.ads:264:5" title="defined at zip.ads:264:5">buffer</a>    :        <span class="droplink">Byte_Buffer<ul><li><a href="zip.ads.html#zip.ads:219:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l219" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l265"><pre>    <span class="droplink">last_char<ul><li><a href="zip.ads.html#zip.ads:265:5" title="To API doc">To API doc</a></li><li><a href="src_zip.adb.html#l747" title="To body">To body</a></li></ul></span> : <span class="keyword">in</span> <span class="keyword">out</span> Character <span class="comment">-- track line - ending characters between writes</span> </pre></li>
+<li id="l266"><pre>); </pre></li>
+<li id="l267"><pre> </pre></li>
+<li id="l268"><pre>  <span class="comment">--------------------------------------------------------------</span> </pre></li>
+<li id="l269"><pre>  <span class="comment">-- Information about this package - e.g. for an &quot;about&quot; box --</span> </pre></li>
+<li id="l270"><pre>  <span class="comment">--------------------------------------------------------------</span> </pre></li>
+<li id="l271"><pre> </pre></li>
+<li id="l272"><pre>  <a href="zip.ads.html#zip.ads:272:3" title="defined at zip.ads:272:3">version</a>    : <span class="keyword">constant</span> String := <span class="string">&quot;43 - pre&quot;</span>; </pre></li>
+<li id="l273"><pre>  <a href="zip.ads.html#zip.ads:273:3" title="defined at zip.ads:273:3">reference</a>  : <span class="keyword">constant</span> String := <span class="string">&quot;14 - Jul - 2012&quot;</span>; </pre></li>
+<li id="l274"><pre>  <a href="zip.ads.html#zip.ads:274:3" title="defined at zip.ads:274:3">web</a>        : <span class="keyword">constant</span> String := <span class="string">&quot;http://unzip - ada.sf.net/&quot;</span>; </pre></li>
+<li id="l275"><pre>  <span class="comment">-- hopefully the latest version is at that URL .. .  --- ^</span> </pre></li>
+<li id="l276"><pre> </pre></li>
+<li id="l277"><pre>  <span class="comment">-------------------</span> </pre></li>
+<li id="l278"><pre>  <span class="comment">-- Private items --</span> </pre></li>
+<li id="l279"><pre>  <span class="comment">-------------------</span> </pre></li>
+<li id="l280"><pre> </pre></li>
+<li id="l281"><pre><span class="keyword">private</span> </pre></li>
+<li id="l282"><pre>  <span class="comment">-- Zip_info, 23.VI.1999.</span> </pre></li>
+<li id="l283"><pre> </pre></li>
+<li id="l284"><pre>  <span class="comment">-- The PKZIP central directory is coded here as a binary tree</span> </pre></li>
+<li id="l285"><pre>  <span class="comment">-- to allow a fast retrieval of the searched offset in zip file.</span> </pre></li>
+<li id="l286"><pre>  <span class="comment">-- E.g. for a 1000 - file archive, the offset will be found in less</span> </pre></li>
+<li id="l287"><pre>  <span class="comment">-- than 11 moves : 2**10=1024 (balanced case), without any read</span> </pre></li>
+<li id="l288"><pre>  <span class="comment">-- in the archive.</span> </pre></li>
+<li id="l289"><pre> </pre></li>
+<li id="l290"><pre>  <span class="keyword">type</span> <span class="droplink">Dir_node<ul><li><a href="zip.ads.html#zip.ads:290:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l293" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l291"><pre>  <span class="keyword">type</span> <a href="zip.ads.html#zip.ads:291:8" title="defined at zip.ads:291:8">p_Dir_node</a> <span class="keyword">is</span> <span class="keyword">access</span> <span class="droplink">Dir_node<ul><li><a href="zip.ads.html#zip.ads:290:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l290" title="To spec">To spec</a></li><li><a href="src_zip.ads.html#l293" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l292"><pre> </pre></li>
+<li id="l293"><pre>  <span class="keyword">type</span> <span class="droplink">Dir_node<ul><li><a href="zip.ads.html#zip.ads:290:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l290" title="To spec">To spec</a></li></ul></span> (name_len : Natural) <span class="keyword">is</span> <span class="keyword">record</span> </pre></li>
+<li id="l294"><pre>    left, right       : <span class="droplink">p_Dir_node<ul><li><a href="zip.ads.html#zip.ads:291:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l291" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l295"><pre>    dico_name         : String (1 .. name_len); <span class="comment">-- UPPER if case - insensitive search</span> </pre></li>
+<li id="l296"><pre>    file_name         : String (1 .. name_len); </pre></li>
+<li id="l297"><pre>    file_index        : Ada.Streams.Stream_IO.Positive_Count; </pre></li>
+<li id="l298"><pre>    comp_size         : <span class="droplink">File_size_type<ul><li><a href="zip.ads.html#zip.ads:97:11" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l97" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l299"><pre>    uncomp_size       : <span class="droplink">File_size_type<ul><li><a href="zip.ads.html#zip.ads:97:11" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l97" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l300"><pre>    crc_32            : Interfaces.Unsigned_32; </pre></li>
+<li id="l301"><pre>    date_time         : <span class="droplink">Time<ul><li><a href="zip.ads.html#zip.ads:128:12" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l128" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l302"><pre>    method            : <span class="droplink">PKZip_method<ul><li><a href="zip.ads.html#zip.ads:106:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l106" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l303"><pre>    unicode_file_name : Boolean; </pre></li>
+<li id="l304"><pre>  <span class="keyword">end</span> <span class="keyword">record</span>; </pre></li>
+<li id="l305"><pre> </pre></li>
+<li id="l306"><pre>  <span class="keyword">type</span> <a href="zip.ads.html#zip.ads:306:8" title="defined at zip.ads:306:8">p_String</a> <span class="keyword">is</span> <span class="keyword">access</span> String; </pre></li>
+<li id="l307"><pre> </pre></li>
+<li id="l308"><pre>  <span class="keyword">type</span> <span class="droplink">Zip_info<ul><li><a href="zip.ads.html#zip.ads:53:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l53" title="To spec">To spec</a></li></ul></span> <span class="keyword">is</span> <span class="keyword">record</span> </pre></li>
+<li id="l309"><pre>    loaded           : Boolean := False; </pre></li>
+<li id="l310"><pre>    zip_file_name    : <span class="droplink">p_String<ul><li><a href="zip.ads.html#zip.ads:306:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l306" title="To spec">To spec</a></li></ul></span>;        <span class="comment">-- a file name .. .</span> </pre></li>
+<li id="l311"><pre>    zip_input_stream : <span class="droplink">Zip_Streams.Zipstream_Class<ul><li><a href="zip_streams.ads.html#zip_streams.ads:43:9" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l43" title="To spec">To spec</a></li></ul></span>; <span class="comment">-- . .. or an input stream</span> </pre></li>
+<li id="l312"><pre>    <span class="comment">-- ^ when not null, we use this and not zip_file_name</span> </pre></li>
+<li id="l313"><pre>    dir_binary_tree  : <span class="droplink">p_Dir_node<ul><li><a href="zip.ads.html#zip.ads:291:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l291" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l314"><pre>    total_entries    : Natural; </pre></li>
+<li id="l315"><pre>    zip_file_comment : <span class="droplink">p_String<ul><li><a href="zip.ads.html#zip.ads:306:8" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l306" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l316"><pre>  <span class="keyword">end</span> <span class="keyword">record</span>; </pre></li>
+<li id="l317"><pre> </pre></li>
+<li id="l318"><pre><span class="keyword">end</span> <span class="droplink">Zip<ul><li><a href="zip.ads.html#zip.ads:45:9" title="To API doc">To API doc</a></li><li><a href="src_zip.ads.html#l45" title="To spec">To spec</a></li><li><a href="src_zip.adb.html#l9" title="To body">To body</a></li></ul></span>; </pre></li>
+</ol></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,408 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    Package: Textures
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+
+  <div id='navigation'>
+    <h2 class="button">Navigation</h2>
+    <a href='#Description'><div class="button2">Description</div></a>
+    <a href='#Constants'><div class="button2">Constants &amp; Global variables</div></a>
+    <a href='#Methods'><div class="button2">Subprograms &amp; Entries</div></a>
+  </div><!-- navigation -->
+  </div>
+</div> <!-- leftSide -->
+
+<div class='default' id='rightSide'>
+ <div id='rightSideInside'>
+ <div id='Index'>
+  <h2>Index</h2>
+  <script type="text/javascript">
+    var names = new Array (
+new Array ('Texture_<wbr/>name_<wbr/>not_<wbr/>found', 'globe_3d-textures.ads:72:3', 'var-spec'),
+new Array ('Undefined_<wbr/>texture_<wbr/>ID', 'globe_3d-textures.ads:93:3', 'var-spec'),
+new Array ('Undefined_<wbr/>texture_<wbr/>name', 'globe_3d-textures.ads:94:3', 'var-spec'),
+new Array ('Add_<wbr/>texture_<wbr/>name', 'globe_3d-textures.ads:34:13', 'subp-spec'),
+new Array ('Register_<wbr/>textures_<wbr/>from_<wbr/>resources', 'globe_3d-textures.ads:52:13', 'subp-spec'),
+new Array ('Associate_<wbr/>textures (generic)', 'globe_3d-textures.ads:64:13', 'subp-spec'),
+new Array ('Texture_<wbr/>ID', 'globe_3d-textures.ads:71:12', 'subp-spec'),
+new Array ('Texture_<wbr/>name', 'globe_3d-textures.ads:75:12', 'subp-spec'),
+new Array ('Check_<wbr/>2D_<wbr/>texture', 'globe_3d-textures.ads:80:13', 'subp-spec'),
+new Array ('Check_<wbr/>2D_<wbr/>texture', 'globe_3d-textures.ads:82:13', 'subp-spec'),
+new Array ('Check_<wbr/>all_<wbr/>textures', 'globe_3d-textures.ads:84:13', 'subp-spec'),
+new Array ('Valid_<wbr/>texture_<wbr/>ID', 'globe_3d-textures.ads:86:12', 'subp-spec'),
+new Array ('Reset_<wbr/>textures', 'globe_3d-textures.ads:98:13', 'subp-spec'),
+      new Array ('dummy', '', ''));
+    printIndexList (names);
+  </script>
+  <noscript>
+    <ul>
+      <li class='var-spec'><a href="#globe_3d-textures.ads:72:3">Texture_<wbr/>name_<wbr/>not_<wbr/>found</a></li>
+      <li class='var-spec'><a href="#globe_3d-textures.ads:93:3">Undefined_<wbr/>texture_<wbr/>ID</a></li>
+      <li class='var-spec'><a href="#globe_3d-textures.ads:94:3">Undefined_<wbr/>texture_<wbr/>name</a></li>
+      <li class='subp-spec'><a href="#globe_3d-textures.ads:34:13">Add_<wbr/>texture_<wbr/>name</a></li>
+      <li class='subp-spec'><a href="#globe_3d-textures.ads:52:13">Register_<wbr/>textures_<wbr/>from_<wbr/>resources</a></li>
+      <li class='subp-spec'><a href="#globe_3d-textures.ads:64:13">Associate_<wbr/>textures (generic)</a></li>
+      <li class='subp-spec'><a href="#globe_3d-textures.ads:71:12">Texture_<wbr/>ID</a></li>
+      <li class='subp-spec'><a href="#globe_3d-textures.ads:75:12">Texture_<wbr/>name</a></li>
+      <li class='subp-spec'><a href="#globe_3d-textures.ads:80:13">Check_<wbr/>2D_<wbr/>texture</a></li>
+      <li class='subp-spec'><a href="#globe_3d-textures.ads:82:13">Check_<wbr/>2D_<wbr/>texture</a></li>
+      <li class='subp-spec'><a href="#globe_3d-textures.ads:84:13">Check_<wbr/>all_<wbr/>textures</a></li>
+      <li class='subp-spec'><a href="#globe_3d-textures.ads:86:12">Valid_<wbr/>texture_<wbr/>ID</a></li>
+      <li class='subp-spec'><a href="#globe_3d-textures.ads:98:13">Reset_<wbr/>textures</a></li>
+    </ul>
+  </noscript>
+ </div>
+ </div>
+</div>
+
+<div class='default' id='documentation'>
+  <div class='title'>
+    Package:
+<span class="droplink"><i>Textures</i><ul>
+  <li><a href="src_globe_3d-textures.ads.html">Goto spec source</a></li>
+  <li><a href="src_globe_3d-textures.adb.html">Goto body source</a></li>
+</ul></span>
+  </div>
+  <div class='subprograms'>
+    <h1><a name='Description' id='Description'></a>Description</h1>
+    <div class="class">
+    <div class='details'><pre><span class="keyword">package</span> <span class="name_emphasis">GLOBE_3D.Textures</span> <span class="keyword">is</span></pre></div>
+    </div>
+  </div>
+
+
+
+
+
+  <div class='subprograms'>
+    <h1><a name='Constants' id='Constants'></a>Constants &amp; Global variables</h1>
+    <div class="class">
+      <h3><a name='globe_3d-textures.ads:72:3' id='globe_3d-textures.ads:72:3'></a>
+<span class="droplink">Texture_name_not_found<ul>
+  <li><a href="src_globe_3d-textures.ads.html#l72">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Texture_name_not_found</span> : <span class="keyword">exception</span>;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_globe_3d-textures.ads.html#l72" title="globe_3d-textures.ads:72:3">globe_3d-textures.ads:72:3</a> (declaration)</i></div>
+          <div><i><a href="src_globe_3d.adb.html#l975" title="globe_3d.adb:975:30">globe_3d.adb:975:30</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='globe_3d-textures.ads:93:3' id='globe_3d-textures.ads:93:3'></a>
+<span class="droplink">Undefined_texture_ID<ul>
+  <li><a href="src_globe_3d-textures.ads.html#l93">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Undefined_texture_ID</span>   : <span class="keyword">exception</span>;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_globe_3d-textures.ads.html#l93" title="globe_3d-textures.ads:93:3">globe_3d-textures.ads:93:3</a> (declaration)</i></div>
+          <div><i><a href="src_globe_3d-textures.adb.html#l105" title="globe_3d-textures.adb:105:13">globe_3d-textures.adb:105:13</a> (reference)</i></div>
+          <div><i><a href="src_globe_3d-textures.adb.html#l216" title="globe_3d-textures.adb:216:13">globe_3d-textures.adb:216:13</a> (reference)</i></div>
+          <div><i><a href="src_globe_3d.adb.html#l341" title="globe_3d.adb:341:39">globe_3d.adb:341:39</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='globe_3d-textures.ads:94:3' id='globe_3d-textures.ads:94:3'></a>
+<span class="droplink">Undefined_texture_name<ul>
+  <li><a href="src_globe_3d-textures.ads.html#l94">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Undefined_texture_name</span> : <span class="keyword">exception</span>;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_globe_3d-textures.ads.html#l94" title="globe_3d-textures.ads:94:3">globe_3d-textures.ads:94:3</a> (declaration)</i></div>
+          <div><i><a href="src_globe_3d-textures.adb.html#l235" title="globe_3d-textures.adb:235:13">globe_3d-textures.adb:235:13</a> (reference)</i></div>
+      </div>
+    </div>
+  </div>
+
+    <div class='subprograms'>
+      <h1><a name='Methods' id='Methods'></a>Subprograms &amp; Entries</h1>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-textures.ads:34:13' id='globe_3d-textures.ads:34:13'></a>
+<span class="droplink">Add_texture_name<ul>
+  <li><a href="src_globe_3d-textures.ads.html#l34">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-textures.adb.html#l137">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Add_texture_name</span> <table><tr><td>(</td><td><span class="name"><a name="globe_3d-textures.ads:34:31"></a>name</span></td><td>: String;</td></tr><tr><td></td><td><span class="name"><a name="globe_3d-textures.ads:34:46"></a>id</span></td><td>: <span class="keyword">out</span> <a href="globe_3d.ads.html#globe_3d.ads:99:9" title="defined at globe_3d.ads:99:9">Image_ID</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-textures.ads.html#l34" title="globe_3d-textures.ads:34:13">globe_3d-textures.ads:34:13</a> (declaration)</i></div>
+            <div><i><a href="src_globe_3d-textures.adb.html#l137" title="globe_3d-textures.adb:137:13">globe_3d-textures.adb:137:13</a> (body)</i></div>
+            <div><i><a href="src_globe_3d-textures.adb.html#l173" title="globe_3d-textures.adb:173:7">globe_3d-textures.adb:173:7</a> (label)</i></div>
+            <div><i><a href="src_globe_3d-textures.adb.html#l184" title="globe_3d-textures.adb:184:11">globe_3d-textures.adb:184:11</a> (call)</i></div>
+            <div><i><a href="src_globe_3d-textures.adb.html#l208" title="globe_3d-textures.adb:208:7">globe_3d-textures.adb:208:7</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="globe_3d-textures.ads.html#globe_3d-textures.ads:64:13" title="defined at globe_3d-textures.ads:64:13">Associate_textures</a> defined at <a href="src_globe_3d-textures.ads.html#l64" title="globe_3d-textures.ads:64:13">globe_3d-textures.ads:64:13</a></i></div>
+            <div><i><a href="globe_3d-textures.adb.html#globe_3d-textures.adb:179:17" title="defined at globe_3d-textures.adb:179:17">Textures.Register_textures_from_resources.Register.Action</a> defined at <a href="src_globe_3d-textures.adb.html#l179" title="globe_3d-textures.adb:179:17">globe_3d-textures.adb:179:17</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>Insert defined at a-cohama.ads:176:14</i></div>
+            <div><i><a href="globe_3d-textures.adb.html#globe_3d-textures.adb:25:13" title="defined at globe_3d-textures.adb:25:13">Textures.Dispose</a> defined at <a href="src_globe_3d-textures.adb.html#l25" title="globe_3d-textures.adb:25:13">globe_3d-textures.adb:25:13</a></i></div>
+            <div><i>To_Unbounded_String defined at a-strunb.ads:94:13</i></div>
+            <div><i>To_Upper defined at a-chahan.ads:67:13</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-textures.ads:52:13' id='globe_3d-textures.ads:52:13'></a>
+<span class="droplink">Register_textures_from_resources<ul>
+  <li><a href="src_globe_3d-textures.ads.html#l52">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-textures.adb.html#l175">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Register_textures_from_resources</span>;</pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-textures.ads.html#l52" title="globe_3d-textures.ads:52:13">globe_3d-textures.ads:52:13</a> (declaration)</i></div>
+            <div><i><a href="src_globe_3d-textures.adb.html#l175" title="globe_3d-textures.adb:175:13">globe_3d-textures.adb:175:13</a> (body)</i></div>
+            <div><i><a href="src_globe_3d-textures.adb.html#l201" title="globe_3d-textures.adb:201:7">globe_3d-textures.adb:201:7</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="globe_3d-textures.adb.html#globe_3d-textures.adb:177:15" title="defined at globe_3d-textures.adb:177:15">Textures.Register_textures_from_resources.Register</a> defined at <a href="src_globe_3d-textures.adb.html#l177" title="globe_3d-textures.adb:177:15">globe_3d-textures.adb:177:15</a></i></div>
+            <div><i>To_String defined at a-strunb.ads:100:13</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-textures.ads:64:13' id='globe_3d-textures.ads:64:13'></a>
+<span class="droplink">Associate_textures (generic)<ul>
+  <li><a href="src_globe_3d-textures.ads.html#l64">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-textures.adb.html#l203">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">generic</span> <span class="keyword">type</span> <span class="name"><a name="globe_3d-textures.ads:63:10"></a>Texture_enum</span> <span class="keyword">is</span> <table><tr><td>(</td><td><>);</td></tr><tr><td></td><td><span class="keyword">procedure</span> <span class="name_emphasis">Associate_textures</span>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-textures.ads.html#l64" title="globe_3d-textures.ads:64:13">globe_3d-textures.ads:64:13</a> (declaration)</i></div>
+            <div><i><a href="src_globe_3d-textures.adb.html#l203" title="globe_3d-textures.adb:203:13">globe_3d-textures.adb:203:13</a> (body)</i></div>
+            <div><i><a href="src_globe_3d-textures.adb.html#l210" title="globe_3d-textures.adb:210:7">globe_3d-textures.adb:210:7</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="globe_3d-textures.ads.html#globe_3d-textures.ads:34:13" title="defined at globe_3d-textures.ads:34:13">Add_texture_name</a> defined at <a href="src_globe_3d-textures.ads.html#l34" title="globe_3d-textures.ads:34:13">globe_3d-textures.ads:34:13</a></i></div>
+            <div><i><a href="globe_3d-textures.ads.html#globe_3d-textures.ads:98:13" title="defined at globe_3d-textures.ads:98:13">Reset_textures</a> defined at <a href="src_globe_3d-textures.ads.html#l98" title="globe_3d-textures.ads:98:13">globe_3d-textures.ads:98:13</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-textures.ads:71:12' id='globe_3d-textures.ads:71:12'></a>
+<span class="droplink">Texture_ID<ul>
+  <li><a href="src_globe_3d-textures.ads.html#l71">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-textures.adb.html#l226">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Texture_ID</span> <table><tr><td>(</td><td><span class="name"><a name="globe_3d-textures.ads:71:24"></a>name</span></td><td>: String) <span class="keyword">return</span> <a href="globe_3d.ads.html#globe_3d.ads:99:9" title="defined at globe_3d.ads:99:9">Image_ID</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-textures.ads.html#l71" title="globe_3d-textures.ads:71:12">globe_3d-textures.ads:71:12</a> (declaration)</i></div>
+            <div><i><a href="src_globe_3d-textures.adb.html#l226" title="globe_3d-textures.adb:226:12">globe_3d-textures.adb:226:12</a> (body)</i></div>
+            <div><i><a href="src_globe_3d-textures.adb.html#l245" title="globe_3d-textures.adb:245:7">globe_3d-textures.adb:245:7</a> (label)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l973" title="globe_3d.adb:973:27">globe_3d.adb:973:27</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="globe_3d.ads.html#globe_3d.ads:410:14" title="defined at globe_3d.ads:410:14">GLOBE_3D.Rebuild_links</a> defined at <a href="src_globe_3d.ads.html#l410" title="globe_3d.ads:410:14">globe_3d.ads:410:14</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>Element defined at a-cohama.ads:282:13</i></div>
+            <div><i>To_String defined at a-strunb.ads:100:13</i></div>
+            <div><i>To_Unbounded_String defined at a-strunb.ads:94:13</i></div>
+            <div><i>To_Upper defined at a-chahan.ads:67:13</i></div>
+            <div><i>Trim defined at a-strfix.ads:195:13</i></div>
+        </div>
+        <div class='comment'>- Recall a texture&apos;s ID - you need it to define objects&apos; faces.
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-textures.ads:75:12' id='globe_3d-textures.ads:75:12'></a>
+<span class="droplink">Texture_name<ul>
+  <li><a href="src_globe_3d-textures.ads.html#l75">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-textures.adb.html#l212">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Texture_name</span> <table><tr><td>(</td><td><span class="name"><a name="globe_3d-textures.ads:75:26"></a>id</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:99:9" title="defined at globe_3d.ads:99:9">Image_ID</a>;</td></tr><tr><td></td><td><span class="name"><a name="globe_3d-textures.ads:75:41"></a>Trim_Flag</span></td><td>: Boolean) <span class="keyword">return</span> <a href="globe_3d.ads.html#globe_3d.ads:79:12" title="defined at globe_3d.ads:79:12">Ident</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-textures.ads.html#l75" title="globe_3d-textures.ads:75:12">globe_3d-textures.ads:75:12</a> (declaration)</i></div>
+            <div><i><a href="src_globe_3d-textures.adb.html#l212" title="globe_3d-textures.adb:212:12">globe_3d-textures.adb:212:12</a> (body)</i></div>
+            <div><i><a href="src_globe_3d-textures.adb.html#l224" title="globe_3d-textures.adb:224:7">globe_3d-textures.adb:224:7</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>Trim defined at a-strfix.ads:195:13</i></div>
+            <div><i><a href="globe_3d-textures.ads.html#globe_3d-textures.ads:86:12" title="defined at globe_3d-textures.ads:86:12">Valid_texture_ID</a> defined at <a href="src_globe_3d-textures.ads.html#l86" title="globe_3d-textures.ads:86:12">globe_3d-textures.ads:86:12</a></i></div>
+        </div>
+        <div class='comment'>- Recall a texture&apos;s name
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-textures.ads:80:13' id='globe_3d-textures.ads:80:13'></a>
+<span class="droplink">Check_2D_texture<ul>
+  <li><a href="src_globe_3d-textures.ads.html#l80">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-textures.adb.html#l102">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Check_2D_texture</span> <table><tr><td>(</td><td><span class="name"><a name="globe_3d-textures.ads:80:31"></a>id</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:99:9" title="defined at globe_3d.ads:99:9">Image_ID</a>;</td></tr><tr><td></td><td><span class="name"><a name="globe_3d-textures.ads:80:46"></a>blending_hint</span></td><td>: <span class="keyword">out</span> Boolean);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-textures.ads.html#l80" title="globe_3d-textures.ads:80:13">globe_3d-textures.ads:80:13</a> (declaration)</i></div>
+            <div><i><a href="src_globe_3d-textures.adb.html#l102" title="globe_3d-textures.adb:102:13">globe_3d-textures.adb:102:13</a> (body)</i></div>
+            <div><i><a href="src_globe_3d-textures.adb.html#l114" title="globe_3d-textures.adb:114:7">globe_3d-textures.adb:114:7</a> (label)</i></div>
+            <div><i><a href="src_globe_3d-textures.adb.html#l119" title="globe_3d-textures.adb:119:5">globe_3d-textures.adb:119:5</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l491" title="globe_3d.adb:491:21">globe_3d.adb:491:21</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="globe_3d-textures.ads.html#globe_3d-textures.ads:82:13" title="defined at globe_3d-textures.ads:82:13">Check_2D_texture</a> defined at <a href="src_globe_3d-textures.ads.html#l82" title="globe_3d-textures.ads:82:13">globe_3d-textures.ads:82:13</a></i></div>
+            <div><i><a href="globe_3d.adb-2.html#globe_3d.adb:415:20" title="defined at globe_3d.adb:415:20">GLOBE_3D.Display_one.Display_face_optimized.Display_face</a> defined at <a href="src_globe_3d.adb.html#l415" title="globe_3d.adb:415:20">globe_3d.adb:415:20</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="globe_3d-textures.adb.html#globe_3d-textures.adb:55:13" title="defined at globe_3d-textures.adb:55:13">Textures.Load_texture_2D</a> defined at <a href="src_globe_3d-textures.adb.html#l55" title="globe_3d-textures.adb:55:13">globe_3d-textures.adb:55:13</a></i></div>
+            <div><i><a href="globe_3d-textures.ads.html#globe_3d-textures.ads:86:12" title="defined at globe_3d-textures.ads:86:12">Valid_texture_ID</a> defined at <a href="src_globe_3d-textures.ads.html#l86" title="globe_3d-textures.ads:86:12">globe_3d-textures.ads:86:12</a></i></div>
+        </div>
+        <div class='comment'>Check if the texture image has been loaded and load it if needed.
+This is done automatically, but you may want to force the loading
+of the images before beginning to display.
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-textures.ads:82:13' id='globe_3d-textures.ads:82:13'></a>
+<span class="droplink">Check_2D_texture<ul>
+  <li><a href="src_globe_3d-textures.ads.html#l82">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-textures.adb.html#l116">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Check_2D_texture</span> <table><tr><td>(</td><td><span class="name"><a name="globe_3d-textures.ads:82:31"></a>id</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:99:9" title="defined at globe_3d.ads:99:9">Image_ID</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-textures.ads.html#l82" title="globe_3d-textures.ads:82:13">globe_3d-textures.ads:82:13</a> (declaration)</i></div>
+            <div><i><a href="src_globe_3d-textures.adb.html#l116" title="globe_3d-textures.adb:116:13">globe_3d-textures.adb:116:13</a> (body)</i></div>
+            <div><i><a href="src_globe_3d-textures.adb.html#l120" title="globe_3d-textures.adb:120:7">globe_3d-textures.adb:120:7</a> (label)</i></div>
+            <div><i><a href="src_globe_3d-textures.adb.html#l125" title="globe_3d-textures.adb:125:7">globe_3d-textures.adb:125:7</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="globe_3d-textures.ads.html#globe_3d-textures.ads:84:13" title="defined at globe_3d-textures.ads:84:13">Check_all_textures</a> defined at <a href="src_globe_3d-textures.ads.html#l84" title="globe_3d-textures.ads:84:13">globe_3d-textures.ads:84:13</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="globe_3d-textures.ads.html#globe_3d-textures.ads:80:13" title="defined at globe_3d-textures.ads:80:13">Check_2D_texture</a> defined at <a href="src_globe_3d-textures.ads.html#l80" title="globe_3d-textures.ads:80:13">globe_3d-textures.ads:80:13</a></i></div>
+        </div>
+        <div class='comment'>variant for situations where the blending information doesn&apos;t matter:
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-textures.ads:84:13' id='globe_3d-textures.ads:84:13'></a>
+<span class="droplink">Check_all_textures<ul>
+  <li><a href="src_globe_3d-textures.ads.html#l84">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-textures.adb.html#l122">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Check_all_textures</span>;</pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-textures.ads.html#l84" title="globe_3d-textures.ads:84:13">globe_3d-textures.ads:84:13</a> (declaration)</i></div>
+            <div><i><a href="src_globe_3d-textures.adb.html#l122" title="globe_3d-textures.adb:122:13">globe_3d-textures.adb:122:13</a> (body)</i></div>
+            <div><i><a href="src_globe_3d-textures.adb.html#l127" title="globe_3d-textures.adb:127:7">globe_3d-textures.adb:127:7</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="globe_3d-textures.ads.html#globe_3d-textures.ads:82:13" title="defined at globe_3d-textures.ads:82:13">Check_2D_texture</a> defined at <a href="src_globe_3d-textures.ads.html#l82" title="globe_3d-textures.ads:82:13">globe_3d-textures.ads:82:13</a></i></div>
+        </div>
+        <div class='comment'>same, but for all textures.
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-textures.ads:86:12' id='globe_3d-textures.ads:86:12'></a>
+<span class="droplink">Valid_texture_ID<ul>
+  <li><a href="src_globe_3d-textures.ads.html#l86">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-textures.adb.html#l97">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Valid_texture_ID</span> <table><tr><td>(</td><td><span class="name"><a name="globe_3d-textures.ads:86:30"></a>id</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:99:9" title="defined at globe_3d.ads:99:9">Image_ID</a>) <span class="keyword">return</span> Boolean;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-textures.ads.html#l86" title="globe_3d-textures.ads:86:12">globe_3d-textures.ads:86:12</a> (declaration)</i></div>
+            <div><i><a href="src_globe_3d-textures.adb.html#l97" title="globe_3d-textures.adb:97:12">globe_3d-textures.adb:97:12</a> (body)</i></div>
+            <div><i><a href="src_globe_3d-textures.adb.html#l100" title="globe_3d-textures.adb:100:7">globe_3d-textures.adb:100:7</a> (label)</i></div>
+            <div><i><a href="src_globe_3d-textures.adb.html#l104" title="globe_3d-textures.adb:104:12">globe_3d-textures.adb:104:12</a> (call)</i></div>
+            <div><i><a href="src_globe_3d-textures.adb.html#l215" title="globe_3d-textures.adb:215:12">globe_3d-textures.adb:215:12</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l339" title="globe_3d.adb:339:25">globe_3d.adb:339:25</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="globe_3d-textures.ads.html#globe_3d-textures.ads:80:13" title="defined at globe_3d-textures.ads:80:13">Check_2D_texture</a> defined at <a href="src_globe_3d-textures.ads.html#l80" title="globe_3d-textures.ads:80:13">globe_3d-textures.ads:80:13</a></i></div>
+            <div><i><a href="globe_3d.ads.html#globe_3d.ads:424:25" title="defined at globe_3d.ads:424:25">GLOBE_3D.Pre_calculate</a> defined at <a href="src_globe_3d.ads.html#l424" title="globe_3d.ads:424:25">globe_3d.ads:424:25</a></i></div>
+            <div><i><a href="globe_3d-textures.ads.html#globe_3d-textures.ads:75:12" title="defined at globe_3d-textures.ads:75:12">Texture_name</a> defined at <a href="src_globe_3d-textures.ads.html#l75" title="globe_3d-textures.ads:75:12">globe_3d-textures.ads:75:12</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-textures.ads:98:13' id='globe_3d-textures.ads:98:13'></a>
+<span class="droplink">Reset_textures<ul>
+  <li><a href="src_globe_3d-textures.ads.html#l98">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-textures.adb.html#l129">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Reset_textures</span>;</pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-textures.ads.html#l98" title="globe_3d-textures.ads:98:13">globe_3d-textures.ads:98:13</a> (declaration)</i></div>
+            <div><i><a href="src_globe_3d-textures.adb.html#l129" title="globe_3d-textures.adb:129:13">globe_3d-textures.adb:129:13</a> (body)</i></div>
+            <div><i><a href="src_globe_3d-textures.adb.html#l135" title="globe_3d-textures.adb:135:7">globe_3d-textures.adb:135:7</a> (label)</i></div>
+            <div><i><a href="src_globe_3d-textures.adb.html#l206" title="globe_3d-textures.adb:206:5">globe_3d-textures.adb:206:5</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="globe_3d-textures.ads.html#globe_3d-textures.ads:64:13" title="defined at globe_3d-textures.ads:64:13">Associate_textures</a> defined at <a href="src_globe_3d-textures.ads.html#l64" title="globe_3d-textures.ads:64:13">globe_3d-textures.ads:64:13</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="globe_3d-textures.adb.html#globe_3d-textures.adb:25:13" title="defined at globe_3d-textures.adb:25:13">Textures.Dispose</a> defined at <a href="src_globe_3d-textures.adb.html#l25" title="globe_3d-textures.adb:25:13">globe_3d-textures.adb:25:13</a></i></div>
+        </div>
+        <div class='comment'>- Erase the present texture collection
+ (names, <a href="gl.adb.html#gl.adb:17:14" title="GL">GL</a> ID&apos;s, evenutally loaded images)
+</div>
+      </div>
+    </div>
+</div> <!-- documentation -->
+
+</body>
+</html>

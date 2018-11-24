@@ -1,0 +1,398 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    File: globe_3d-tri_mesh.adb
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+  </div>
+</div> <!-- leftSide -->
+
+<div class='subprograms'>
+  <div class='details'><ol><li id="l1"><pre><span class="keyword">pragma</span> Warnings (Off); </pre></li>
+<li id="l2"><pre><span class="keyword">pragma</span> Style_Checks (Off); </pre></li>
+<li id="l3"><pre> </pre></li>
+<li id="l4"><pre><span class="keyword">with</span> GLOBE_3D.Options, </pre></li>
+<li id="l5"><pre>     GLOBE_3D.Textures, </pre></li>
+<li id="l6"><pre>     GLOBE_3D.Math; </pre></li>
+<li id="l7"><pre> </pre></li>
+<li id="l8"><pre><span class="keyword">with</span> Ada.Exceptions; <span class="keyword">use</span> Ada.Exceptions; </pre></li>
+<li id="l9"><pre><span class="keyword">with</span> ada.text_io;    <span class="keyword">use</span> ada.text_io; </pre></li>
+<li id="l10"><pre> </pre></li>
+<li id="l11"><pre><span class="keyword">with</span> ada.unchecked_Conversion; </pre></li>
+<li id="l12"><pre> </pre></li>
+<li id="l13"><pre><span class="keyword">with</span> System; </pre></li>
+<li id="l14"><pre> </pre></li>
+<li id="l15"><pre><span class="keyword">package</span> <span class="keyword">body</span> GLOBE_3D.tri_Mesh <span class="keyword">is</span> </pre></li>
+<li id="l16"><pre> </pre></li>
+<li id="l17"><pre>  <span class="keyword">use</span> GLOBE_3D.Options; </pre></li>
+<li id="l18"><pre> </pre></li>
+<li id="l19"><pre>  <span class="keyword">package</span> G3DT <span class="keyword">renames</span> GLOBE_3D.Textures; </pre></li>
+<li id="l20"><pre>  <span class="keyword">package</span> G3DM <span class="keyword">renames</span> GLOBE_3D.Math; </pre></li>
+<li id="l21"><pre> </pre></li>
+<li id="l22"><pre>   <span class="keyword">procedure</span> dummy <span class="keyword">is</span> <span class="keyword">begin</span> <span class="keyword">null</span>; <span class="keyword">end</span>; </pre></li>
+<li id="l23"><pre> </pre></li>
+<li id="l24"><pre>   <span class="comment">-- &apos;vertex_cache_optimise&apos; is based on algorithm descibed here . .. http://home.comcast.net/~tom_forsyth/papers/fast_vert_cache_opt.html</span> </pre></li>
+<li id="l25"><pre>   <span class="comment">--</span> </pre></li>
+<li id="l26"><pre>   <span class="keyword">procedure</span> vertex_cache_optimise (Vertices  : <span class="keyword">in</span> <span class="keyword">out</span> GL.geometry.GL_Vertex_array;   Indices  : <span class="keyword">in</span> <span class="keyword">out</span> GL.geometry.vertex_Id_array) </pre></li>
+<li id="l27"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l28"><pre>      <span class="keyword">use</span> GL, GL.Geometry; </pre></li>
+<li id="l29"><pre> </pre></li>
+<li id="l30"><pre>      <span class="comment">--subtype vertex_Id   is Positive;</span> </pre></li>
+<li id="l31"><pre>      <span class="keyword">subtype</span> triangle_Id <span class="keyword">is</span> positive_uInt; </pre></li>
+<li id="l32"><pre> </pre></li>
+<li id="l33"><pre>      <span class="keyword">type</span> triangle_Indices <span class="keyword">is</span> <span class="keyword">array</span> (Positive <span class="keyword">range</span> &lt;&gt;) <span class="keyword">of</span> triangle_Id; </pre></li>
+<li id="l34"><pre> </pre></li>
+<li id="l35"><pre>      <span class="keyword">function</span> Indices_Index (the_Face  : <span class="keyword">in</span> positive_uInt;   the_Vertex  : <span class="keyword">in</span> positive_uInt) <span class="keyword">return</span> positive_uInt </pre></li>
+<li id="l36"><pre>      <span class="keyword">is</span> </pre></li>
+<li id="l37"><pre>      <span class="keyword">begin</span> </pre></li>
+<li id="l38"><pre>         <span class="keyword">return</span> 3 * (the_Face - 1)  + the_Vertex; </pre></li>
+<li id="l39"><pre>      <span class="keyword">end</span>; </pre></li>
+<li id="l40"><pre> </pre></li>
+<li id="l41"><pre>      <span class="keyword">function</span> face_vertex_Id (the_Face  : <span class="keyword">in</span> positive_uInt;   the_Vertex  : <span class="keyword">in</span> positive_uInt) <span class="keyword">return</span> GL.geometry.Vertex_id </pre></li>
+<li id="l42"><pre>      <span class="keyword">is</span> </pre></li>
+<li id="l43"><pre>      <span class="keyword">begin</span> </pre></li>
+<li id="l44"><pre>         <span class="keyword">return</span> Indices (indices_Index (the_Face, the_Vertex)); </pre></li>
+<li id="l45"><pre>      <span class="keyword">end</span>; </pre></li>
+<li id="l46"><pre> </pre></li>
+<li id="l47"><pre>      Max_triangles_per_vertex  : <span class="keyword">constant</span> := 150;  <span class="comment">-- tbd : what is a sensible size here ?</span> </pre></li>
+<li id="l48"><pre>      MaxSizeVertexCache        : <span class="keyword">constant</span> := 35; </pre></li>
+<li id="l49"><pre> </pre></li>
+<li id="l50"><pre>      <span class="keyword">type</span> vco_Vertex <span class="keyword">is</span> </pre></li>
+<li id="l51"><pre>         <span class="keyword">record</span> </pre></li>
+<li id="l52"><pre>            cache_Position  : Integer   := - 1;                                    <span class="comment">-- Its position in the modelled cache ( - 1 if it is not in the cache)</span> </pre></li>
+<li id="l53"><pre>            Score           : GL.Double;                                         <span class="comment">-- Its current score</span> </pre></li>
+<li id="l54"><pre> </pre></li>
+<li id="l55"><pre>            Triangles          : triangle_Indices (1 .. Max_triangles_per_vertex); <span class="comment">-- The list of triangle indices that use it, ordered so the triangle indices yet to be added are listed first,</span> </pre></li>
+<li id="l56"><pre>                                                                                  <span class="comment">-- followed by the triangle indices that have already been added to the draw list.</span> </pre></li>
+<li id="l57"><pre> </pre></li>
+<li id="l58"><pre>            tri_Count          : Natural := 0;                                    <span class="comment">-- tbd : should only be needed for debugging</span> </pre></li>
+<li id="l59"><pre>            tri_Count_unadded  : Natural;                                         <span class="comment">-- The number of triangles not yet added that use it</span> </pre></li>
+<li id="l60"><pre>         <span class="keyword">end</span> <span class="keyword">record</span>; </pre></li>
+<li id="l61"><pre> </pre></li>
+<li id="l62"><pre>      <span class="keyword">function</span> Score_of (the_Vertex  : <span class="keyword">in</span> vco_Vertex) <span class="keyword">return</span> GL.Double </pre></li>
+<li id="l63"><pre>      <span class="keyword">is</span> </pre></li>
+<li id="l64"><pre>      <span class="keyword">begin</span> </pre></li>
+<li id="l65"><pre> </pre></li>
+<li id="l66"><pre>         <span class="keyword">if</span> the_Vertex.tri_Count_unadded = 0 <span class="keyword">then</span>  <span class="comment">-- No tri needs this vertex!</span> </pre></li>
+<li id="l67"><pre>            <span class="keyword">return</span> - 1.0; </pre></li>
+<li id="l68"><pre>         <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l69"><pre> </pre></li>
+<li id="l70"><pre>         <span class="keyword">declare</span> </pre></li>
+<li id="l71"><pre>            <span class="keyword">use</span> globe_3d.REF; </pre></li>
+<li id="l72"><pre> </pre></li>
+<li id="l73"><pre>            CacheDecayPower    : <span class="keyword">constant</span> := 1.5; </pre></li>
+<li id="l74"><pre>            LastTriScore       : <span class="keyword">constant</span> := 0.75; </pre></li>
+<li id="l75"><pre>            ValenceBoostScale  : <span class="keyword">constant</span> := 2.0; </pre></li>
+<li id="l76"><pre>            ValenceBoostPower  : <span class="keyword">constant</span> := 0.5; </pre></li>
+<li id="l77"><pre> </pre></li>
+<li id="l78"><pre>            Score              : GL.Double      := 0.0; </pre></li>
+<li id="l79"><pre>            cache_Position     : Integer   <span class="keyword">renames</span> the_Vertex.cache_Position; </pre></li>
+<li id="l80"><pre>         <span class="keyword">begin</span> </pre></li>
+<li id="l81"><pre> </pre></li>
+<li id="l82"><pre>            <span class="keyword">if</span> cache_Position &lt; 0 <span class="keyword">then</span>   <span class="comment">-- Vertex is not in LRU cache</span> </pre></li>
+<li id="l83"><pre>               <span class="keyword">null</span>;                     <span class="comment">-- so no score.</span> </pre></li>
+<li id="l84"><pre>            <span class="keyword">else</span> </pre></li>
+<li id="l85"><pre> </pre></li>
+<li id="l86"><pre>               <span class="keyword">if</span> cache_Position &lt; 3 <span class="keyword">then</span>   <span class="comment">-- This vertex was used in the last triangle, so it has a fixed score, whichever of the three</span> </pre></li>
+<li id="l87"><pre>                  Score := LastTriScore;    <span class="comment">-- it&apos;s in. Otherwise, you can get very different answers depending on whether you add</span> </pre></li>
+<li id="l88"><pre>                                            <span class="comment">-- the triangle 1, 2, 3 or 3, 1, 2 - which is silly.</span> </pre></li>
+<li id="l89"><pre>               <span class="keyword">else</span> </pre></li>
+<li id="l90"><pre>                  <span class="keyword">pragma</span> assert (cache_Position &lt; MaxSizeVertexCache); </pre></li>
+<li id="l91"><pre> </pre></li>
+<li id="l92"><pre>                  <span class="keyword">declare</span> </pre></li>
+<li id="l93"><pre>                     Scaler  : <span class="keyword">constant</span> := 1.0 / (MaxSizeVertexCache - 3); </pre></li>
+<li id="l94"><pre>                  <span class="keyword">begin</span> </pre></li>
+<li id="l95"><pre>                     Score := 1.0  -  GL.Double (cache_Position - 3) * Scaler;   <span class="comment">-- Points for being high in the cache.</span> </pre></li>
+<li id="l96"><pre>                     Score := Score ** CacheDecayPower; </pre></li>
+<li id="l97"><pre>                  <span class="keyword">end</span>; </pre></li>
+<li id="l98"><pre>               <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l99"><pre> </pre></li>
+<li id="l100"><pre>            <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l101"><pre> </pre></li>
+<li id="l102"><pre>            <span class="keyword">declare</span> </pre></li>
+<li id="l103"><pre>               valence_Boost  : GL.Double := GL.Double (the_Vertex.tri_Count_unadded) ** ( - ValenceBoostPower); </pre></li>
+<li id="l104"><pre>            <span class="keyword">begin</span> </pre></li>
+<li id="l105"><pre>               Score := Score  +  ValenceBoostScale * valence_Boost;   <span class="comment">-- Bonus points for having a low number of tris still to</span> </pre></li>
+<li id="l106"><pre>            <span class="keyword">end</span>;                                                       <span class="comment">-- use the vert, so we get rid of lone verts quickly.</span> </pre></li>
+<li id="l107"><pre> </pre></li>
+<li id="l108"><pre>            <span class="keyword">return</span> Score; </pre></li>
+<li id="l109"><pre>         <span class="keyword">end</span>; </pre></li>
+<li id="l110"><pre>      <span class="keyword">end</span> Score_of; </pre></li>
+<li id="l111"><pre> </pre></li>
+<li id="l112"><pre>      <span class="keyword">procedure</span> rid_Triangle (in_Vertex     : <span class="keyword">in</span> <span class="keyword">out</span> vco_Vertex; </pre></li>
+<li id="l113"><pre>                              the_Triangle  : <span class="keyword">in</span>     triangle_Id) </pre></li>
+<li id="l114"><pre>      <span class="keyword">is</span> </pre></li>
+<li id="l115"><pre>         triangle_Found  : Boolean := False; </pre></li>
+<li id="l116"><pre>      <span class="keyword">begin</span> </pre></li>
+<li id="l117"><pre>         <span class="keyword">for</span> Each <span class="keyword">in</span> 1 .. in_Vertex.tri_Count_unadded <span class="keyword">loop</span> </pre></li>
+<li id="l118"><pre> </pre></li>
+<li id="l119"><pre>            <span class="keyword">if</span> triangle_Found <span class="keyword">then</span> </pre></li>
+<li id="l120"><pre>               in_Vertex.Triangles (Each - 1) := in_Vertex.Triangles (Each); </pre></li>
+<li id="l121"><pre> </pre></li>
+<li id="l122"><pre>            <span class="keyword">elsif</span> in_Vertex.Triangles (Each) = the_Triangle <span class="keyword">then</span> </pre></li>
+<li id="l123"><pre>               triangle_Found := True; </pre></li>
+<li id="l124"><pre>            <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l125"><pre> </pre></li>
+<li id="l126"><pre>         <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l127"><pre> </pre></li>
+<li id="l128"><pre>         in_Vertex.tri_Count_unadded := in_Vertex.tri_Count_unadded - 1; </pre></li>
+<li id="l129"><pre>      <span class="keyword">end</span>; </pre></li>
+<li id="l130"><pre> </pre></li>
+<li id="l131"><pre>      <span class="keyword">type</span> vco_Triangle <span class="keyword">is</span> </pre></li>
+<li id="l132"><pre>         <span class="keyword">record</span> </pre></li>
+<li id="l133"><pre>            Added       : Boolean  := False;               <span class="comment">-- Whether it has been added to the draw list or not</span> </pre></li>
+<li id="l134"><pre>            Score       : GL.Double;                       <span class="comment">-- the triangles score (the sum of the scores of its vertices)</span> </pre></li>
+<li id="l135"><pre>         <span class="keyword">end</span> <span class="keyword">record</span>; </pre></li>
+<li id="l136"><pre> </pre></li>
+<li id="l137"><pre>      <span class="keyword">type</span> vco_vertex_Array <span class="keyword">is</span> <span class="keyword">array</span> (Vertices&apos;Range) <span class="keyword">of</span> vco_Vertex; </pre></li>
+<li id="l138"><pre>      <span class="keyword">type</span> access_vco_vertex_Array <span class="keyword">is</span> <span class="keyword">access</span> <span class="keyword">all</span> vco_vertex_Array; </pre></li>
+<li id="l139"><pre> </pre></li>
+<li id="l140"><pre>      <span class="keyword">procedure</span> free <span class="keyword">is</span> <span class="keyword">new</span> ada.unchecked_deallocation (vco_vertex_Array, access_vco_vertex_Array); </pre></li>
+<li id="l141"><pre> </pre></li>
+<li id="l142"><pre>      num_Faces      : <span class="keyword">constant</span> positive_uInt := indices&apos;Length / 3; </pre></li>
+<li id="l143"><pre>      vco_Vertices   : access_vco_vertex_Array                      := <span class="keyword">new</span> vco_vertex_Array;   <span class="comment">-- can be very large, so create in the heap</span> </pre></li>
+<li id="l144"><pre>      vco_Triangles  : <span class="keyword">array</span> (1 .. num_Faces)  <span class="keyword">of</span> vco_Triangle; </pre></li>
+<li id="l145"><pre> </pre></li>
+<li id="l146"><pre>      <span class="keyword">type</span> LRU_Cache <span class="keyword">is</span> <span class="keyword">array</span> (Natural <span class="keyword">range</span> &lt;&gt;) <span class="keyword">of</span> GL.geometry.vertex_Id; </pre></li>
+<li id="l147"><pre> </pre></li>
+<li id="l148"><pre>      the_LRU_Cache   : LRU_Cache (0 .. MaxSizeVertexCache - 1); </pre></li>
+<li id="l149"><pre>      LRU_Cache_last  : Integer  := - 1; </pre></li>
+<li id="l150"><pre> </pre></li>
+<li id="l151"><pre>      <span class="keyword">procedure</span> add_recent_Vertices_to_LRU_Cache (v1, v2, v3  : <span class="keyword">in</span> GL.geometry.vertex_Id) </pre></li>
+<li id="l152"><pre>      <span class="keyword">is</span> </pre></li>
+<li id="l153"><pre>         prior_Cache  : LRU_Cache := the_LRU_Cache (0 .. LRU_Cache_last); </pre></li>
+<li id="l154"><pre>      <span class="keyword">begin</span> </pre></li>
+<li id="l155"><pre>         the_LRU_Cache (0) := v1; </pre></li>
+<li id="l156"><pre>         the_LRU_Cache (1) := v2; </pre></li>
+<li id="l157"><pre>         the_LRU_Cache (2) := v3; </pre></li>
+<li id="l158"><pre> </pre></li>
+<li id="l159"><pre>         LRU_Cache_last := 2; </pre></li>
+<li id="l160"><pre> </pre></li>
+<li id="l161"><pre>         <span class="keyword">for</span> Each <span class="keyword">in</span> prior_Cache&apos;Range <span class="keyword">loop</span> </pre></li>
+<li id="l162"><pre> </pre></li>
+<li id="l163"><pre>            <span class="keyword">if</span> <span class="keyword">not</span> (prior_Cache (Each) = v1 </pre></li>
+<li id="l164"><pre>                    <span class="keyword">or</span> <span class="keyword">else</span> prior_Cache (Each) = v2 </pre></li>
+<li id="l165"><pre>                    <span class="keyword">or</span> <span class="keyword">else</span> prior_Cache (Each) = v3) </pre></li>
+<li id="l166"><pre>            <span class="keyword">then</span> </pre></li>
+<li id="l167"><pre>               LRU_Cache_last                 := LRU_Cache_last + 1; </pre></li>
+<li id="l168"><pre>               the_LRU_Cache (LRU_Cache_last) := prior_Cache (Each); </pre></li>
+<li id="l169"><pre>            <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l170"><pre> </pre></li>
+<li id="l171"><pre>         <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l172"><pre> </pre></li>
+<li id="l173"><pre>      <span class="keyword">end</span> add_recent_Vertices_to_LRU_Cache; </pre></li>
+<li id="l174"><pre> </pre></li>
+<li id="l175"><pre>      <span class="keyword">function</span> tri_Score_of (triangle_Id  : <span class="keyword">in</span> positive_uInt) <span class="keyword">return</span> GL.Double </pre></li>
+<li id="l176"><pre>      <span class="keyword">is</span> </pre></li>
+<li id="l177"><pre>         <span class="keyword">use</span> GL; </pre></li>
+<li id="l178"><pre>         the_Triangle  : vco_Triangle <span class="keyword">renames</span> vco_Triangles (triangle_Id); </pre></li>
+<li id="l179"><pre> </pre></li>
+<li id="l180"><pre>         Base          : positive_uInt              := positive_uInt (triangle_Id - 1) * 3; </pre></li>
+<li id="l181"><pre>         v1_Id         : GL.geometry.vertex_Id <span class="keyword">renames</span> Indices (base + 1); </pre></li>
+<li id="l182"><pre>         v2_Id         : GL.geometry.vertex_Id <span class="keyword">renames</span> Indices (base + 2); </pre></li>
+<li id="l183"><pre>         v3_Id         : GL.geometry.vertex_Id <span class="keyword">renames</span> Indices (base + 3); </pre></li>
+<li id="l184"><pre> </pre></li>
+<li id="l185"><pre>         Score         : GL.Double; </pre></li>
+<li id="l186"><pre>      <span class="keyword">begin</span> </pre></li>
+<li id="l187"><pre>         Score :=         vco_Vertices (v1_Id).Score; </pre></li>
+<li id="l188"><pre>         Score := Score + vco_Vertices (v2_Id).Score; </pre></li>
+<li id="l189"><pre>         Score := Score + vco_Vertices (v3_Id).Score; </pre></li>
+<li id="l190"><pre> </pre></li>
+<li id="l191"><pre>         <span class="keyword">return</span> Score; </pre></li>
+<li id="l192"><pre>      <span class="keyword">end</span> tri_Score_of; </pre></li>
+<li id="l193"><pre> </pre></li>
+<li id="l194"><pre>      best_Triangle        : triangle_Id; </pre></li>
+<li id="l195"><pre>      best_Triangle_score  : GL.Double  := GL.Double&apos;First; </pre></li>
+<li id="l196"><pre> </pre></li>
+<li id="l197"><pre>      new_face_Indices       : GL.geometry.vertex_Id_array (Indices&apos;Range);    <span class="comment">-- the resulting optimised triangle indices.</span> </pre></li>
+<li id="l198"><pre> <span class="comment">--        new_face_Indices       : triangle_vertex_Indices (o.Face_Indices&apos;Range);    -- the resulting optimised triangle indices.</span> </pre></li>
+<li id="l199"><pre> <span class="comment">--  --      new_face_Indices_last  : Natural := new_face_Indices&apos;first - 1;</span> </pre></li>
+<li id="l200"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l201"><pre>      <span class="comment">--put_Line (&quot;start optimise !&quot;);</span> </pre></li>
+<li id="l202"><pre> </pre></li>
+<li id="l203"><pre>      <span class="comment">-- combined pass&apos;s : - increments the counter of the number of triangles that use each vertex</span> </pre></li>
+<li id="l204"><pre>      <span class="comment">--                  - adds the triangle to the vertex&apos;s triangle list, for each vertex.</span> </pre></li>
+<li id="l205"><pre>      <span class="comment">--</span> </pre></li>
+<li id="l206"><pre>      <span class="keyword">for</span> Each <span class="keyword">in</span> 1 .. num_Faces <span class="keyword">loop</span> </pre></li>
+<li id="l207"><pre>         <span class="keyword">declare</span> </pre></li>
+<li id="l208"><pre>            <span class="keyword">procedure</span> add_face_Vertex (which_vertex  : positive_uInt) </pre></li>
+<li id="l209"><pre>            <span class="keyword">is</span> </pre></li>
+<li id="l210"><pre>               the_Vertex  : vco_Vertex <span class="keyword">renames</span> vco_Vertices (Indices ((Each - 1) * 3  + which_vertex)); </pre></li>
+<li id="l211"><pre>            <span class="keyword">begin</span> </pre></li>
+<li id="l212"><pre>               the_Vertex.tri_Count                        := the_Vertex.tri_Count + 1; </pre></li>
+<li id="l213"><pre>               the_Vertex.Triangles (the_Vertex.tri_Count) := triangle_Id (Each); </pre></li>
+<li id="l214"><pre> </pre></li>
+<li id="l215"><pre>               the_Vertex.tri_Count_unadded                := the_Vertex.tri_Count; </pre></li>
+<li id="l216"><pre>            <span class="keyword">exception</span> </pre></li>
+<li id="l217"><pre>               <span class="keyword">when</span> constraint_Error =&gt; </pre></li>
+<li id="l218"><pre>                  put_Line (<span class="string">&quot;vco_Triangles max exceeded . .. increase Max_triangles_per_vertex !!&quot;</span>); </pre></li>
+<li id="l219"><pre>                  <span class="keyword">raise</span>; </pre></li>
+<li id="l220"><pre>            <span class="keyword">end</span>; </pre></li>
+<li id="l221"><pre>         <span class="keyword">begin</span> </pre></li>
+<li id="l222"><pre>            add_face_Vertex (1); </pre></li>
+<li id="l223"><pre>            add_face_Vertex (2); </pre></li>
+<li id="l224"><pre>            add_face_Vertex (3); </pre></li>
+<li id="l225"><pre>         <span class="keyword">end</span>; </pre></li>
+<li id="l226"><pre>      <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l227"><pre> </pre></li>
+<li id="l228"><pre>      <span class="comment">-- calculate initial vertex scores</span> </pre></li>
+<li id="l229"><pre>      <span class="comment">--</span> </pre></li>
+<li id="l230"><pre>      <span class="keyword">for</span> Each <span class="keyword">in</span> vco_Vertices&apos;Range <span class="keyword">loop</span> </pre></li>
+<li id="l231"><pre>         vco_Vertices (Each).Score := Score_of (vco_Vertices (Each));   <span class="comment">-- tbd : &apos;Score_of&apos; function should probably be &apos;set_Score&apos; procedure ?</span> </pre></li>
+<li id="l232"><pre>      <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l233"><pre> </pre></li>
+<li id="l234"><pre>      <span class="comment">-- calculate initial triangle scores</span> </pre></li>
+<li id="l235"><pre>      <span class="comment">--</span> </pre></li>
+<li id="l236"><pre>      <span class="keyword">for</span> Each <span class="keyword">in</span> vco_Triangles&apos;Range <span class="keyword">loop</span> </pre></li>
+<li id="l237"><pre>         vco_Triangles (Each).Score := tri_Score_of (Each);   <span class="comment">-- tbd : &apos;Score_of&apos; function should probably be &apos;set_Score&apos; procedure ?</span> </pre></li>
+<li id="l238"><pre> </pre></li>
+<li id="l239"><pre>         <span class="keyword">if</span> vco_Triangles (Each).Score &gt; best_Triangle_score <span class="keyword">then</span> </pre></li>
+<li id="l240"><pre>            best_Triangle       := Each; </pre></li>
+<li id="l241"><pre>            best_Triangle_score := vco_Triangles (Each).Score; </pre></li>
+<li id="l242"><pre>         <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l243"><pre>      <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l244"><pre> </pre></li>
+<li id="l245"><pre>      <span class="comment">-- re - order all triangle indices.</span> </pre></li>
+<li id="l246"><pre>      <span class="comment">--</span> </pre></li>
+<li id="l247"><pre>      <span class="keyword">for</span> Each <span class="keyword">in</span> new_face_Indices&apos;Range <span class="keyword">loop</span> </pre></li>
+<li id="l248"><pre>         <span class="keyword">declare</span> </pre></li>
+<li id="l249"><pre>            best_Triangle_v1  : Vertex_Id := face_vertex_Id (best_Triangle, 1); </pre></li>
+<li id="l250"><pre>            best_Triangle_v2  : Vertex_Id := face_vertex_Id (best_Triangle, 2); </pre></li>
+<li id="l251"><pre>            best_Triangle_v3  : Vertex_Id := face_vertex_Id (best_Triangle, 3); </pre></li>
+<li id="l252"><pre>         <span class="keyword">begin</span> </pre></li>
+<li id="l253"><pre>            <span class="comment">-- add best triangle to new draw list &amp; remove the best triangle from each of its vertices.</span> </pre></li>
+<li id="l254"><pre>            <span class="comment">--</span> </pre></li>
+<li id="l255"><pre>            new_face_Indices (Each)             := Indices (best_Triangle); </pre></li>
+<li id="l256"><pre>            vco_Triangles (best_Triangle).Added := True; </pre></li>
+<li id="l257"><pre> </pre></li>
+<li id="l258"><pre>            rid_Triangle (in_vertex =&gt; vco_Vertices (best_Triangle_v1),   the_triangle =&gt; best_Triangle); </pre></li>
+<li id="l259"><pre>            rid_Triangle (in_vertex =&gt; vco_Vertices (best_Triangle_v2),   the_triangle =&gt; best_Triangle); </pre></li>
+<li id="l260"><pre>            rid_Triangle (in_vertex =&gt; vco_Vertices (best_Triangle_v3),   the_triangle =&gt; best_Triangle); </pre></li>
+<li id="l261"><pre> </pre></li>
+<li id="l262"><pre>            <span class="comment">-- update LRU cache</span> </pre></li>
+<li id="l263"><pre>            <span class="comment">--</span> </pre></li>
+<li id="l264"><pre>            add_recent_Vertices_to_LRU_Cache (best_Triangle_v1, best_Triangle_v2, best_Triangle_v3); </pre></li>
+<li id="l265"><pre> </pre></li>
+<li id="l266"><pre>            <span class="comment">-- update vertex cache position and calculate new score and new scores of the triangles which use the vertex.</span> </pre></li>
+<li id="l267"><pre>            <span class="comment">-- also finds new best triangle.</span> </pre></li>
+<li id="l268"><pre>            <span class="comment">--</span> </pre></li>
+<li id="l269"><pre>            best_Triangle       := triangle_Id&apos;last; </pre></li>
+<li id="l270"><pre>            best_Triangle_score := GL.Double&apos;first; </pre></li>
+<li id="l271"><pre> </pre></li>
+<li id="l272"><pre>            <span class="keyword">for</span> Each <span class="keyword">in</span> 0 .. LRU_Cache_last <span class="keyword">loop</span> </pre></li>
+<li id="l273"><pre>               <span class="keyword">declare</span> </pre></li>
+<li id="l274"><pre>                  the_Vertex  : vco_Vertex <span class="keyword">renames</span> vco_Vertices (the_LRU_Cache (Each)); </pre></li>
+<li id="l275"><pre>               <span class="keyword">begin</span> </pre></li>
+<li id="l276"><pre>                  the_Vertex.cache_Position := Each; </pre></li>
+<li id="l277"><pre>                  the_Vertex.Score          := Score_of (the_Vertex);   <span class="comment">-- re - score the vertex</span> </pre></li>
+<li id="l278"><pre> </pre></li>
+<li id="l279"><pre>                  <span class="keyword">for</span> Each <span class="keyword">in</span> 1 .. the_Vertex.tri_Count_unadded <span class="keyword">loop</span>  <span class="comment">-- update all unadded triangle scores, which use this vertex.</span> </pre></li>
+<li id="l280"><pre>                     <span class="keyword">declare</span> </pre></li>
+<li id="l281"><pre>                        tri_Id  : triangle_Id <span class="keyword">renames</span> the_Vertex.Triangles (Each); </pre></li>
+<li id="l282"><pre>                     <span class="keyword">begin</span> </pre></li>
+<li id="l283"><pre>                        vco_Triangles (tri_Id).Score := tri_Score_of (tri_Id);   <span class="comment">-- re - score the triangle</span> </pre></li>
+<li id="l284"><pre> </pre></li>
+<li id="l285"><pre>                        <span class="keyword">if</span> vco_Triangles (tri_Id).Score &gt; best_Triangle_score <span class="keyword">then</span> </pre></li>
+<li id="l286"><pre>                           best_Triangle       := tri_Id; </pre></li>
+<li id="l287"><pre>                           best_Triangle_score := vco_Triangles (tri_Id).Score; </pre></li>
+<li id="l288"><pre>                        <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l289"><pre>                     <span class="keyword">end</span>; </pre></li>
+<li id="l290"><pre>                  <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l291"><pre> </pre></li>
+<li id="l292"><pre>               <span class="keyword">end</span>; </pre></li>
+<li id="l293"><pre>            <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l294"><pre> </pre></li>
+<li id="l295"><pre>            LRU_Cache_last := Integer&apos;min (LRU_Cache_last,  (MaxSizeVertexCache - 1) - 3);  <span class="comment">-- shrink LRU_Cache, if needed.</span> </pre></li>
+<li id="l296"><pre> </pre></li>
+<li id="l297"><pre>            <span class="keyword">if</span> best_Triangle = triangle_Id&apos;last <span class="keyword">then</span>   <span class="comment">-- no vertex in the cache has any unadded triangles</span> </pre></li>
+<li id="l298"><pre> </pre></li>
+<li id="l299"><pre>               <span class="keyword">for</span> Each <span class="keyword">in</span> vco_Triangles&apos;Range <span class="keyword">loop</span>    <span class="comment">-- find new best_Triangle from remaining unadded triangles</span> </pre></li>
+<li id="l300"><pre> </pre></li>
+<li id="l301"><pre>                  <span class="keyword">if</span>         <span class="keyword">not</span> vco_Triangles (Each).Added </pre></li>
+<li id="l302"><pre>                    <span class="keyword">and</span> <span class="keyword">then</span> vco_Triangles (Each).Score &gt; best_Triangle_score </pre></li>
+<li id="l303"><pre>                  <span class="keyword">then</span> </pre></li>
+<li id="l304"><pre>                     best_Triangle       := Each; </pre></li>
+<li id="l305"><pre>                     best_Triangle_score := vco_Triangles (Each).Score; </pre></li>
+<li id="l306"><pre>                  <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l307"><pre> </pre></li>
+<li id="l308"><pre>               <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l309"><pre> </pre></li>
+<li id="l310"><pre>            <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l311"><pre> </pre></li>
+<li id="l312"><pre>         <span class="keyword">end</span>; </pre></li>
+<li id="l313"><pre>      <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l314"><pre> </pre></li>
+<li id="l315"><pre>      <span class="keyword">pragma</span> assert (best_Triangle = triangle_Id&apos;last); </pre></li>
+<li id="l316"><pre> </pre></li>
+<li id="l317"><pre>      Indices := new_face_Indices; </pre></li>
+<li id="l318"><pre> </pre></li>
+<li id="l319"><pre>      <span class="comment">-- re - order vertices &amp; re - map triangle indices to new vertex locations.</span> </pre></li>
+<li id="l320"><pre>      <span class="comment">--</span> </pre></li>
+<li id="l321"><pre>      <span class="keyword">declare</span> </pre></li>
+<li id="l322"><pre>         new_Vertices       : GL.geometry.GL_Vertex_array (Vertices&apos;Range); </pre></li>
+<li id="l323"><pre>         new_Vertices_last  : vertex_Id                                := 0; </pre></li>
+<li id="l324"><pre> </pre></li>
+<li id="l325"><pre>         is_Added           : <span class="keyword">array</span> (Vertices&apos;Range)        <span class="keyword">of</span> Boolean  := (<span class="keyword">others</span> =&gt; False); </pre></li>
+<li id="l326"><pre>         Mapping            : <span class="keyword">array</span> (Vertices&apos;Range) <span class="keyword">of</span> Vertex_Id; </pre></li>
+<li id="l327"><pre>      <span class="keyword">begin</span> </pre></li>
+<li id="l328"><pre> </pre></li>
+<li id="l329"><pre>         <span class="keyword">for</span> Each <span class="keyword">in</span> 1 .. num_Faces <span class="keyword">loop</span> </pre></li>
+<li id="l330"><pre>            <span class="keyword">declare</span> </pre></li>
+<li id="l331"><pre> </pre></li>
+<li id="l332"><pre>               <span class="keyword">procedure</span> add_Vertex (old_vertex_Id  : <span class="keyword">in</span> Vertex_Id) </pre></li>
+<li id="l333"><pre>               <span class="keyword">is</span> </pre></li>
+<li id="l334"><pre>               <span class="keyword">begin</span> </pre></li>
+<li id="l335"><pre>                  <span class="keyword">if</span> <span class="keyword">not</span> is_Added (old_vertex_Id) <span class="keyword">then</span> </pre></li>
+<li id="l336"><pre>                     new_Vertices_last                := new_Vertices_last + 1; </pre></li>
+<li id="l337"><pre>                     new_Vertices (new_Vertices_last) := Vertices (old_vertex_Id);    <span class="comment">-- add the vertex</span> </pre></li>
+<li id="l338"><pre> </pre></li>
+<li id="l339"><pre>                     Mapping  (old_vertex_Id)         := new_Vertices_last;          <span class="comment">-- remember mapping</span> </pre></li>
+<li id="l340"><pre>                     is_Added (old_vertex_Id)         := True; </pre></li>
+<li id="l341"><pre>                  <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l342"><pre>               <span class="keyword">end</span> add_Vertex; </pre></li>
+<li id="l343"><pre> </pre></li>
+<li id="l344"><pre>            <span class="keyword">begin</span> </pre></li>
+<li id="l345"><pre>               add_Vertex (face_vertex_Id (Each, 1)); </pre></li>
+<li id="l346"><pre>               add_Vertex (face_vertex_Id (Each, 2)); </pre></li>
+<li id="l347"><pre>               add_Vertex (face_vertex_Id (Each, 3)); </pre></li>
+<li id="l348"><pre>            <span class="keyword">end</span>; </pre></li>
+<li id="l349"><pre>         <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l350"><pre> </pre></li>
+<li id="l351"><pre>         Vertices := new_Vertices;                                                 <span class="comment">-- let Object use the new re - ordered vertices.</span> </pre></li>
+<li id="l352"><pre> </pre></li>
+<li id="l353"><pre>         <span class="keyword">for</span> Each <span class="keyword">in</span> 1 .. num_Faces <span class="keyword">loop</span> </pre></li>
+<li id="l354"><pre>            Indices (indices_Index (Each, 1)) := Mapping (Indices (indices_Index (Each, 1)));       <span class="comment">-- re - map each triangles Indices.</span> </pre></li>
+<li id="l355"><pre>            Indices (indices_Index (Each, 2)) := Mapping (Indices (indices_Index (Each, 2))); </pre></li>
+<li id="l356"><pre>            Indices (indices_Index (Each, 3)) := Mapping (Indices (indices_Index (Each, 3))); </pre></li>
+<li id="l357"><pre>         <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l358"><pre> </pre></li>
+<li id="l359"><pre>      <span class="keyword">end</span>; </pre></li>
+<li id="l360"><pre> </pre></li>
+<li id="l361"><pre>      free (vco_Vertices);        <span class="comment">-- clean up</span> </pre></li>
+<li id="l362"><pre>   <span class="keyword">end</span> vertex_cache_optimise; </pre></li>
+<li id="l363"><pre> </pre></li>
+<li id="l364"><pre><span class="keyword">end</span> GLOBE_3D.tri_Mesh; </pre></li>
+<li id="l365"><pre> </pre></li>
+</ol></div>
+</div>
+
+</body>
+</html>

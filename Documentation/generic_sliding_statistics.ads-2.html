@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    Package: Averages (generic)
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+
+  <div id='navigation'>
+    <h2 class="button">Navigation</h2>
+    <a href='#Description'><div class="button2">Description</div></a>
+    <a href='#Methods'><div class="button2">Subprograms &amp; Entries</div></a>
+  </div><!-- navigation -->
+  </div>
+</div> <!-- leftSide -->
+
+<div class='default' id='rightSide'>
+ <div id='rightSideInside'>
+ <div id='Index'>
+  <h2>Index</h2>
+  <script type="text/javascript">
+    var names = new Array (
+new Array ('Average', 'generic_sliding_statistics.ads:21:16', 'subp-spec'),
+new Array ('Average', 'generic_sliding_statistics.ads:22:16', 'subp-spec'),
+      new Array ('dummy', '', ''));
+    printIndexList (names);
+  </script>
+  <noscript>
+    <ul>
+      <li class='subp-spec'><a href="#generic_sliding_statistics.ads:21:16">Average</a></li>
+      <li class='subp-spec'><a href="#generic_sliding_statistics.ads:22:16">Average</a></li>
+    </ul>
+  </noscript>
+ </div>
+ </div>
+</div>
+
+<div class='default' id='documentation'>
+  <div class='title'>
+    Package:
+<span class="droplink"><i>Averages (generic)</i><ul>
+  <li><a href="src_generic_sliding_statistics.ads.html">Goto spec source</a></li>
+  <li><a href="src_generic_sliding_statistics.adb.html">Goto body source</a></li>
+</ul></span>
+  </div>
+  <div class='subprograms'>
+    <h1><a name='Description' id='Description'></a>Description</h1>
+    <div class="class">
+    <div class='details'><pre><span class="keyword">generic</span>
+      <span class="keyword">with</span> <span class="keyword">function</span> <a href="generic_sliding_statistics.ads-2.html#generic_sliding_statistics.ads:17:22" title="defined at generic_sliding_statistics.ads:17:22">"+"</a> (Left, Right : <a href="generic_sliding_statistics.ads.html#generic_sliding_statistics.ads:9:9" title="defined at generic_sliding_statistics.ads:9:9">Element</a>)        <span class="keyword">return</span> <a href="generic_sliding_statistics.ads.html#generic_sliding_statistics.ads:9:9" title="defined at generic_sliding_statistics.ads:9:9">Element</a> <span class="keyword">is</span> <>;
+      <span class="keyword">with</span> <span class="keyword">function</span> <a href="generic_sliding_statistics.ads-2.html#generic_sliding_statistics.ads:18:22" title="defined at generic_sliding_statistics.ads:18:22">"/"</a> (Left : <a href="generic_sliding_statistics.ads.html#generic_sliding_statistics.ads:9:9" title="defined at generic_sliding_statistics.ads:9:9">Element</a>; Right : <a href="real_type.ads.html#real_type.ads:5:12" title="defined at real_type.ads:5:12">Real</a>) <span class="keyword">return</span> <a href="generic_sliding_statistics.ads.html#generic_sliding_statistics.ads:9:9" title="defined at generic_sliding_statistics.ads:9:9">Element</a> <span class="keyword">is</span> <>;
+
+   <span class="keyword">package</span> <span class="name_emphasis">Averages</span> <span class="keyword">is</span></pre></div>
+    </div>
+  </div>
+
+
+
+
+
+
+    <div class='subprograms'>
+      <h1><a name='Methods' id='Methods'></a>Subprograms &amp; Entries</h1>
+      <div class="class">
+        <h3>
+          <a name='generic_sliding_statistics.ads:21:16' id='generic_sliding_statistics.ads:21:16'></a>
+<span class="droplink">Average<ul>
+  <li><a href="src_generic_sliding_statistics.ads.html#l21">Goto spec in source</a></li>
+  <li><a href="src_generic_sliding_statistics.adb.html#l9">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Average</span> <table><tr><td>(</td><td><span class="name"><a name="generic_sliding_statistics.ads:21:25"></a>New_Reading</span></td><td>: <a href="generic_sliding_statistics.ads.html#generic_sliding_statistics.ads:9:9" title="defined at generic_sliding_statistics.ads:9:9">Element</a>) <span class="keyword">return</span> <a href="generic_sliding_statistics.ads.html#generic_sliding_statistics.ads:9:9" title="defined at generic_sliding_statistics.ads:9:9">Element</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_generic_sliding_statistics.ads.html#l21" title="generic_sliding_statistics.ads:21:16">generic_sliding_statistics.ads:21:16</a> (declaration)</i></div>
+            <div><i><a href="src_callback_procedures.adb.html#l257" title="callback_procedures.adb:257:45">callback_procedures.adb:257:45</a> (call)</i></div>
+            <div><i><a href="src_callback_procedures.adb.html#l263" title="callback_procedures.adb:263:56">callback_procedures.adb:263:56</a> (call)</i></div>
+            <div><i><a href="src_callback_procedures.adb.html#l286" title="callback_procedures.adb:286:45">callback_procedures.adb:286:45</a> (call)</i></div>
+            <div><i><a href="src_callback_procedures.adb.html#l296" title="callback_procedures.adb:296:58">callback_procedures.adb:296:58</a> (call)</i></div>
+            <div><i><a href="src_callback_procedures.adb.html#l297" title="callback_procedures.adb:297:58">callback_procedures.adb:297:58</a> (call)</i></div>
+            <div><i><a href="src_callback_procedures.adb.html#l327" title="callback_procedures.adb:327:45">callback_procedures.adb:327:45</a> (call)</i></div>
+            <div><i><a href="src_callback_procedures.adb.html#l337" title="callback_procedures.adb:337:58">callback_procedures.adb:337:58</a> (call)</i></div>
+            <div><i><a href="src_callback_procedures.adb.html#l338" title="callback_procedures.adb:338:58">callback_procedures.adb:338:58</a> (call)</i></div>
+            <div><i><a href="src_callback_procedures.adb.html#l358" title="callback_procedures.adb:358:56">callback_procedures.adb:358:56</a> (call)</i></div>
+            <div><i><a href="src_generic_sliding_statistics.adb.html#l9" title="generic_sliding_statistics.adb:9:16">generic_sliding_statistics.adb:9:16</a> (body)</i></div>
+            <div><i><a href="src_generic_sliding_statistics.adb.html#l14" title="generic_sliding_statistics.adb:14:11">generic_sliding_statistics.adb:14:11</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+            <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+            <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+            <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+            <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+            <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+            <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+            <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+            <div><i><a href="callback_procedures.ads.html#callback_procedures.ads:9:14" title="defined at callback_procedures.ads:9:14">Callback_Procedures.Main_Operations</a> defined at <a href="src_callback_procedures.ads.html#l9" title="callback_procedures.ads:9:14">callback_procedures.ads:9:14</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="generic_sliding_statistics.ads.html#generic_sliding_statistics.ads:14:14" title="defined at generic_sliding_statistics.ads:14:14">Add_Reading</a> defined at <a href="src_generic_sliding_statistics.ads.html#l14" title="generic_sliding_statistics.ads:14:14">generic_sliding_statistics.ads:14:14</a></i></div>
+            <div><i><a href="generic_sliding_statistics.ads-2.html#generic_sliding_statistics.ads:22:16" title="defined at generic_sliding_statistics.ads:22:16">Average</a> defined at <a href="src_generic_sliding_statistics.ads.html#l22" title="generic_sliding_statistics.ads:22:16">generic_sliding_statistics.ads:22:16</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='generic_sliding_statistics.ads:22:16' id='generic_sliding_statistics.ads:22:16'></a>
+<span class="droplink">Average<ul>
+  <li><a href="src_generic_sliding_statistics.ads.html#l22">Goto spec in source</a></li>
+  <li><a href="src_generic_sliding_statistics.adb.html#l18">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Average</span>                         <span class="keyword">return</span> <a href="generic_sliding_statistics.ads.html#generic_sliding_statistics.ads:9:9" title="defined at generic_sliding_statistics.ads:9:9">Element</a>;</pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_generic_sliding_statistics.ads.html#l22" title="generic_sliding_statistics.ads:22:16">generic_sliding_statistics.ads:22:16</a> (declaration)</i></div>
+            <div><i><a href="src_generic_sliding_statistics.adb.html#l13" title="generic_sliding_statistics.adb:13:17">generic_sliding_statistics.adb:13:17</a> (call)</i></div>
+            <div><i><a href="src_generic_sliding_statistics.adb.html#l18" title="generic_sliding_statistics.adb:18:16">generic_sliding_statistics.adb:18:16</a> (body)</i></div>
+            <div><i><a href="src_generic_sliding_statistics.adb.html#l34" title="generic_sliding_statistics.adb:34:11">generic_sliding_statistics.adb:34:11</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="generic_sliding_statistics.ads-2.html#generic_sliding_statistics.ads:21:16" title="defined at generic_sliding_statistics.ads:21:16">Average</a> defined at <a href="src_generic_sliding_statistics.ads.html#l21" title="generic_sliding_statistics.ads:21:16">generic_sliding_statistics.ads:21:16</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="generic_sliding_statistics.ads-2.html#generic_sliding_statistics.ads:17:22" title="defined at generic_sliding_statistics.ads:17:22">+</a> defined at <a href="src_generic_sliding_statistics.ads.html#l17" title="generic_sliding_statistics.ads:17:22">generic_sliding_statistics.ads:17:22</a></i></div>
+            <div><i><a href="generic_sliding_statistics.ads-2.html#generic_sliding_statistics.ads:18:22" title="defined at generic_sliding_statistics.ads:18:22">/</a> defined at <a href="src_generic_sliding_statistics.ads.html#l18" title="generic_sliding_statistics.ads:18:22">generic_sliding_statistics.ads:18:22</a></i></div>
+        </div>
+      </div>
+    </div>
+</div> <!-- documentation -->
+
+</body>
+</html>

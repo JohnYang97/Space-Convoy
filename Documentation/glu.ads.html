@@ -1,0 +1,2080 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    Package: GLU
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+
+  <div id='navigation'>
+    <h2 class="button">Navigation</h2>
+    <a href='#Description'><div class="button2">Description</div></a>
+    <a href='#Types'><div class="button2">Types</div></a>
+    <a href='#Constants'><div class="button2">Constants &amp; Global variables</div></a>
+    <a href='#Methods'><div class="button2">Subprograms &amp; Entries</div></a>
+  </div><!-- navigation -->
+  </div>
+</div> <!-- leftSide -->
+
+<div class='default' id='rightSide'>
+ <div id='rightSideInside'>
+ <div id='Index'>
+  <h2>Index</h2>
+  <script type="text/javascript">
+    var names = new Array (
+new Array ('Viewport_<wbr/>Rec', 'glu.ads:58:9', 'type-spec'),
+new Array ('Matrix_<wbr/>Float', 'glu.ads:63:9', 'type-spec'),
+new Array ('Matrix_<wbr/>Double', 'glu.ads:64:9', 'type-spec'),
+new Array ('Viewport_<wbr/>Ptr', 'glu.ads:66:9', 'type-spec'),
+new Array ('Matrix_<wbr/>Float_<wbr/>Ptr', 'glu.ads:67:9', 'type-spec'),
+new Array ('Matrix_<wbr/>Double_<wbr/>Ptr', 'glu.ads:68:9', 'type-spec'),
+new Array ('GLUquadricObj', 'glu.ads:70:9', 'type-spec'),
+new Array ('GLUtriangulatorObj', 'glu.ads:71:9', 'type-spec'),
+new Array ('GLUnurbsObj', 'glu.ads:72:9', 'type-spec'),
+new Array ('GLUquadricObjPtr', 'glu.ads:74:9', 'type-spec'),
+new Array ('GLUtriangulatorObjPtr', 'glu.ads:75:9', 'type-spec'),
+new Array ('GLUnurbsObjPtr', 'glu.ads:76:9', 'type-spec'),
+new Array ('ErrorEnm', 'glu.ads:81:9', 'type-spec'),
+new Array ('DrawStyleEnm', 'glu.ads:148:9', 'type-spec'),
+new Array ('OrientationEnm', 'glu.ads:164:9', 'type-spec'),
+new Array ('NormalsEnm', 'glu.ads:176:9', 'type-spec'),
+new Array ('CallbackEnm', 'glu.ads:190:9', 'type-spec'),
+new Array ('QuadricCallbackFunction', 'glu.ads:200:9', 'type-spec'),
+new Array ('NurbsPropertyEnm', 'glu.ads:250:9', 'type-spec'),
+new Array ('NurbsDisplayModeEnm', 'glu.ads:274:9', 'type-spec'),
+new Array ('NurbsErrorEnm', 'glu.ads:293:9', 'type-spec'),
+new Array ('PwlCurveTypeEnm', 'glu.ads:375:9', 'type-spec'),
+new Array ('NurbsCallbackFunction', 'glu.ads:387:9', 'type-spec'),
+new Array ('TessCallbackEnm', 'glu.ads:450:9', 'type-spec'),
+new Array ('TessBeginEnm', 'glu.ads:468:9', 'type-spec'),
+new Array ('TessBeginCallbackFunction', 'glu.ads:483:9', 'type-spec'),
+new Array ('TessVertexCallbackFunction', 'glu.ads:485:9', 'type-spec'),
+new Array ('TessEndCallbackFunction', 'glu.ads:487:9', 'type-spec'),
+new Array ('TessErrorEnm', 'glu.ads:489:9', 'type-spec'),
+new Array ('TessErrorCallbackFunction', 'glu.ads:514:9', 'type-spec'),
+new Array ('TessEdgeFlagCallbackFunction', 'glu.ads:516:9', 'type-spec'),
+new Array ('ContourTypeEnm', 'glu.ads:518:9', 'type-spec'),
+new Array ('StringEnm', 'glu.ads:569:9', 'type-spec'),
+new Array ('VERSION_<wbr/>1_<wbr/>1', 'glu.ads:50:4', 'var-spec'),
+new Array ('GL_<wbr/>FALSE', 'glu.ads:53:4', 'var-spec'),
+new Array ('GL_<wbr/>TRUE', 'glu.ads:54:4', 'var-spec'),
+new Array ('GLU_<wbr/>PATH_<wbr/>LENGTH', 'glu.ads:289:4', 'var-spec'),
+new Array ('GLU_<wbr/>PARAMETRIC_<wbr/>ERROR', 'glu.ads:290:4', 'var-spec'),
+new Array ('GLU_<wbr/>DOMAIN_<wbr/>DISTANCE', 'glu.ads:291:4', 'var-spec'),
+new Array ('ErrorString', 'glu.ads:111:13', 'subp-spec'),
+new Array ('Error_<wbr/>String', 'glu.ads:114:13', 'subp-spec'),
+new Array ('ScaleImage', 'glu.ads:118:13', 'subp-spec'),
+new Array ('Build1DMipmaps', 'glu.ads:130:13', 'subp-spec'),
+new Array ('Build2DMipmaps', 'glu.ads:138:13', 'subp-spec'),
+new Array ('NewQuadric', 'glu.ads:202:13', 'subp-spec'),
+new Array ('DeleteQuadric', 'glu.ads:205:14', 'subp-spec'),
+new Array ('QuadricDrawStyle', 'glu.ads:207:14', 'subp-spec'),
+new Array ('QuadricOrientation', 'glu.ads:210:14', 'subp-spec'),
+new Array ('QuadricNormals', 'glu.ads:213:14', 'subp-spec'),
+new Array ('QuadricTexture', 'glu.ads:216:14', 'subp-spec'),
+new Array ('QuadricCallback', 'glu.ads:219:14', 'subp-spec'),
+new Array ('Cylinder', 'glu.ads:223:14', 'subp-spec'),
+new Array ('Sphere', 'glu.ads:230:14', 'subp-spec'),
+new Array ('Disk', 'glu.ads:235:14', 'subp-spec'),
+new Array ('PartialDisk', 'glu.ads:241:14', 'subp-spec'),
+new Array ('NewNurbsRenderer', 'glu.ads:389:13', 'subp-spec'),
+new Array ('DeleteNurbsRenderer', 'glu.ads:392:14', 'subp-spec'),
+new Array ('LoadSamplingMatrices', 'glu.ads:394:14', 'subp-spec'),
+new Array ('NurbsProperty', 'glu.ads:399:14', 'subp-spec'),
+new Array ('GetNurbsProperty', 'glu.ads:403:14', 'subp-spec'),
+new Array ('BeginCurve', 'glu.ads:407:14', 'subp-spec'),
+new Array ('EndCurve', 'glu.ads:409:14', 'subp-spec'),
+new Array ('NurbsCurve', 'glu.ads:411:14', 'subp-spec'),
+new Array ('BeginSurface', 'glu.ads:419:14', 'subp-spec'),
+new Array ('EndSurface', 'glu.ads:421:14', 'subp-spec'),
+new Array ('NurbsSurface', 'glu.ads:423:14', 'subp-spec'),
+new Array ('BeginTrim', 'glu.ads:435:14', 'subp-spec'),
+new Array ('EndTrim', 'glu.ads:437:14', 'subp-spec'),
+new Array ('PwlCurve', 'glu.ads:439:14', 'subp-spec'),
+new Array ('NurbsCallback', 'glu.ads:445:14', 'subp-spec'),
+new Array ('NewTess', 'glu.ads:536:13', 'subp-spec'),
+new Array ('TessCallback', 'glu.ads:539:14', 'subp-spec'),
+new Array ('TessCallback', 'glu.ads:542:14', 'subp-spec'),
+new Array ('TessCallback', 'glu.ads:545:14', 'subp-spec'),
+new Array ('TessCallback', 'glu.ads:548:14', 'subp-spec'),
+new Array ('TessCallback', 'glu.ads:551:14', 'subp-spec'),
+new Array ('DeleteTess', 'glu.ads:555:14', 'subp-spec'),
+new Array ('BeginPolygon', 'glu.ads:557:14', 'subp-spec'),
+new Array ('EndPolygon', 'glu.ads:559:14', 'subp-spec'),
+new Array ('NextContour', 'glu.ads:561:14', 'subp-spec'),
+new Array ('TessVertex', 'glu.ads:564:14', 'subp-spec'),
+new Array ('GetString', 'glu.ads:581:13', 'subp-spec'),
+new Array ('LookAt', 'glu.ads:585:14', 'subp-spec'),
+new Array ('Ortho2D', 'glu.ads:595:14', 'subp-spec'),
+new Array ('Perspective', 'glu.ads:600:14', 'subp-spec'),
+new Array ('PickMatrix', 'glu.ads:605:14', 'subp-spec'),
+new Array ('Project', 'glu.ads:611:13', 'subp-spec'),
+new Array ('Project', 'glu.ads:625:14', 'subp-spec'),
+new Array ('UnProject', 'glu.ads:636:13', 'subp-spec'),
+new Array ('Get', 'glu.ads:649:14', 'subp-spec'),
+new Array ('Get', 'glu.ads:652:14', 'subp-spec'),
+new Array ('Get', 'glu.ads:655:14', 'subp-spec'),
+new Array ('Get', 'glu.ads:658:14', 'subp-spec'),
+new Array ('ErrorString_<wbr/>1 (private)', 'glu.ads:675:13', 'subp-spec'),
+new Array ('ErrorString_<wbr/>2 (private)', 'glu.ads:679:13', 'subp-spec'),
+new Array ('GetDoublev (private)', 'glu.ads:724:14', 'subp-spec'),
+new Array ('GetIntegerv (private)', 'glu.ads:732:14', 'subp-spec'),
+      new Array ('dummy', '', ''));
+    printIndexList (names);
+  </script>
+  <noscript>
+    <ul>
+      <li class='type-spec'><a href="#glu.ads:58:9">Viewport_<wbr/>Rec</a></li>
+      <li class='type-spec'><a href="#glu.ads:63:9">Matrix_<wbr/>Float</a></li>
+      <li class='type-spec'><a href="#glu.ads:64:9">Matrix_<wbr/>Double</a></li>
+      <li class='type-spec'><a href="#glu.ads:66:9">Viewport_<wbr/>Ptr</a></li>
+      <li class='type-spec'><a href="#glu.ads:67:9">Matrix_<wbr/>Float_<wbr/>Ptr</a></li>
+      <li class='type-spec'><a href="#glu.ads:68:9">Matrix_<wbr/>Double_<wbr/>Ptr</a></li>
+      <li class='type-spec'><a href="#glu.ads:70:9">GLUquadricObj</a></li>
+      <li class='type-spec'><a href="#glu.ads:71:9">GLUtriangulatorObj</a></li>
+      <li class='type-spec'><a href="#glu.ads:72:9">GLUnurbsObj</a></li>
+      <li class='type-spec'><a href="#glu.ads:74:9">GLUquadricObjPtr</a></li>
+      <li class='type-spec'><a href="#glu.ads:75:9">GLUtriangulatorObjPtr</a></li>
+      <li class='type-spec'><a href="#glu.ads:76:9">GLUnurbsObjPtr</a></li>
+      <li class='type-spec'><a href="#glu.ads:81:9">ErrorEnm</a></li>
+      <li class='type-spec'><a href="#glu.ads:148:9">DrawStyleEnm</a></li>
+      <li class='type-spec'><a href="#glu.ads:164:9">OrientationEnm</a></li>
+      <li class='type-spec'><a href="#glu.ads:176:9">NormalsEnm</a></li>
+      <li class='type-spec'><a href="#glu.ads:190:9">CallbackEnm</a></li>
+      <li class='type-spec'><a href="#glu.ads:200:9">QuadricCallbackFunction</a></li>
+      <li class='type-spec'><a href="#glu.ads:250:9">NurbsPropertyEnm</a></li>
+      <li class='type-spec'><a href="#glu.ads:274:9">NurbsDisplayModeEnm</a></li>
+      <li class='type-spec'><a href="#glu.ads:293:9">NurbsErrorEnm</a></li>
+      <li class='type-spec'><a href="#glu.ads:375:9">PwlCurveTypeEnm</a></li>
+      <li class='type-spec'><a href="#glu.ads:387:9">NurbsCallbackFunction</a></li>
+      <li class='type-spec'><a href="#glu.ads:450:9">TessCallbackEnm</a></li>
+      <li class='type-spec'><a href="#glu.ads:468:9">TessBeginEnm</a></li>
+      <li class='type-spec'><a href="#glu.ads:483:9">TessBeginCallbackFunction</a></li>
+      <li class='type-spec'><a href="#glu.ads:485:9">TessVertexCallbackFunction</a></li>
+      <li class='type-spec'><a href="#glu.ads:487:9">TessEndCallbackFunction</a></li>
+      <li class='type-spec'><a href="#glu.ads:489:9">TessErrorEnm</a></li>
+      <li class='type-spec'><a href="#glu.ads:514:9">TessErrorCallbackFunction</a></li>
+      <li class='type-spec'><a href="#glu.ads:516:9">TessEdgeFlagCallbackFunction</a></li>
+      <li class='type-spec'><a href="#glu.ads:518:9">ContourTypeEnm</a></li>
+      <li class='type-spec'><a href="#glu.ads:569:9">StringEnm</a></li>
+      <li class='var-spec'><a href="#glu.ads:50:4">VERSION_<wbr/>1_<wbr/>1</a></li>
+      <li class='var-spec'><a href="#glu.ads:53:4">GL_<wbr/>FALSE</a></li>
+      <li class='var-spec'><a href="#glu.ads:54:4">GL_<wbr/>TRUE</a></li>
+      <li class='var-spec'><a href="#glu.ads:289:4">GLU_<wbr/>PATH_<wbr/>LENGTH</a></li>
+      <li class='var-spec'><a href="#glu.ads:290:4">GLU_<wbr/>PARAMETRIC_<wbr/>ERROR</a></li>
+      <li class='var-spec'><a href="#glu.ads:291:4">GLU_<wbr/>DOMAIN_<wbr/>DISTANCE</a></li>
+      <li class='subp-spec'><a href="#glu.ads:111:13">ErrorString</a></li>
+      <li class='subp-spec'><a href="#glu.ads:114:13">Error_<wbr/>String</a></li>
+      <li class='subp-spec'><a href="#glu.ads:118:13">ScaleImage</a></li>
+      <li class='subp-spec'><a href="#glu.ads:130:13">Build1DMipmaps</a></li>
+      <li class='subp-spec'><a href="#glu.ads:138:13">Build2DMipmaps</a></li>
+      <li class='subp-spec'><a href="#glu.ads:202:13">NewQuadric</a></li>
+      <li class='subp-spec'><a href="#glu.ads:205:14">DeleteQuadric</a></li>
+      <li class='subp-spec'><a href="#glu.ads:207:14">QuadricDrawStyle</a></li>
+      <li class='subp-spec'><a href="#glu.ads:210:14">QuadricOrientation</a></li>
+      <li class='subp-spec'><a href="#glu.ads:213:14">QuadricNormals</a></li>
+      <li class='subp-spec'><a href="#glu.ads:216:14">QuadricTexture</a></li>
+      <li class='subp-spec'><a href="#glu.ads:219:14">QuadricCallback</a></li>
+      <li class='subp-spec'><a href="#glu.ads:223:14">Cylinder</a></li>
+      <li class='subp-spec'><a href="#glu.ads:230:14">Sphere</a></li>
+      <li class='subp-spec'><a href="#glu.ads:235:14">Disk</a></li>
+      <li class='subp-spec'><a href="#glu.ads:241:14">PartialDisk</a></li>
+      <li class='subp-spec'><a href="#glu.ads:389:13">NewNurbsRenderer</a></li>
+      <li class='subp-spec'><a href="#glu.ads:392:14">DeleteNurbsRenderer</a></li>
+      <li class='subp-spec'><a href="#glu.ads:394:14">LoadSamplingMatrices</a></li>
+      <li class='subp-spec'><a href="#glu.ads:399:14">NurbsProperty</a></li>
+      <li class='subp-spec'><a href="#glu.ads:403:14">GetNurbsProperty</a></li>
+      <li class='subp-spec'><a href="#glu.ads:407:14">BeginCurve</a></li>
+      <li class='subp-spec'><a href="#glu.ads:409:14">EndCurve</a></li>
+      <li class='subp-spec'><a href="#glu.ads:411:14">NurbsCurve</a></li>
+      <li class='subp-spec'><a href="#glu.ads:419:14">BeginSurface</a></li>
+      <li class='subp-spec'><a href="#glu.ads:421:14">EndSurface</a></li>
+      <li class='subp-spec'><a href="#glu.ads:423:14">NurbsSurface</a></li>
+      <li class='subp-spec'><a href="#glu.ads:435:14">BeginTrim</a></li>
+      <li class='subp-spec'><a href="#glu.ads:437:14">EndTrim</a></li>
+      <li class='subp-spec'><a href="#glu.ads:439:14">PwlCurve</a></li>
+      <li class='subp-spec'><a href="#glu.ads:445:14">NurbsCallback</a></li>
+      <li class='subp-spec'><a href="#glu.ads:536:13">NewTess</a></li>
+      <li class='subp-spec'><a href="#glu.ads:539:14">TessCallback</a></li>
+      <li class='subp-spec'><a href="#glu.ads:542:14">TessCallback</a></li>
+      <li class='subp-spec'><a href="#glu.ads:545:14">TessCallback</a></li>
+      <li class='subp-spec'><a href="#glu.ads:548:14">TessCallback</a></li>
+      <li class='subp-spec'><a href="#glu.ads:551:14">TessCallback</a></li>
+      <li class='subp-spec'><a href="#glu.ads:555:14">DeleteTess</a></li>
+      <li class='subp-spec'><a href="#glu.ads:557:14">BeginPolygon</a></li>
+      <li class='subp-spec'><a href="#glu.ads:559:14">EndPolygon</a></li>
+      <li class='subp-spec'><a href="#glu.ads:561:14">NextContour</a></li>
+      <li class='subp-spec'><a href="#glu.ads:564:14">TessVertex</a></li>
+      <li class='subp-spec'><a href="#glu.ads:581:13">GetString</a></li>
+      <li class='subp-spec'><a href="#glu.ads:585:14">LookAt</a></li>
+      <li class='subp-spec'><a href="#glu.ads:595:14">Ortho2D</a></li>
+      <li class='subp-spec'><a href="#glu.ads:600:14">Perspective</a></li>
+      <li class='subp-spec'><a href="#glu.ads:605:14">PickMatrix</a></li>
+      <li class='subp-spec'><a href="#glu.ads:611:13">Project</a></li>
+      <li class='subp-spec'><a href="#glu.ads:625:14">Project</a></li>
+      <li class='subp-spec'><a href="#glu.ads:636:13">UnProject</a></li>
+      <li class='subp-spec'><a href="#glu.ads:649:14">Get</a></li>
+      <li class='subp-spec'><a href="#glu.ads:652:14">Get</a></li>
+      <li class='subp-spec'><a href="#glu.ads:655:14">Get</a></li>
+      <li class='subp-spec'><a href="#glu.ads:658:14">Get</a></li>
+      <li class='subp-spec'><a href="#glu.ads:675:13">ErrorString_<wbr/>1 (private)</a></li>
+      <li class='subp-spec'><a href="#glu.ads:679:13">ErrorString_<wbr/>2 (private)</a></li>
+      <li class='subp-spec'><a href="#glu.ads:724:14">GetDoublev (private)</a></li>
+      <li class='subp-spec'><a href="#glu.ads:732:14">GetIntegerv (private)</a></li>
+    </ul>
+  </noscript>
+ </div>
+ </div>
+</div>
+
+<div class='default' id='documentation'>
+  <div class='title'>
+    Package:
+<span class="droplink"><i>GLU</i><ul>
+  <li><a href="src_glu.ads.html">Goto spec source</a></li>
+  <li><a href="src_glu.adb.html">Goto body source</a></li>
+</ul></span>
+  </div>
+  <div class='subprograms'>
+    <h1><a name='Description' id='Description'></a>Description</h1>
+    <div class="class">
+    <div class='details'><pre><span class="keyword">package</span> <span class="name_emphasis">GLU</span> <span class="keyword">is</span></pre></div>
+    <div class='comment'>Changed by MB for Windows 95, 980529
+C replaced by Stdcall
+
+OpenGL 1.1 Ada binding, package <a href="glu.adb.html#glu.adb:3:14" title="GLU">GLU</a>
+
+W. M. Richards, NiEstu, Phoenix AZ, December 1997
+
+Converted from Brian Paul&apos;s Mesa package glu.h header file, version 2, 5.
+As noted below in Brian&apos;s original comments, this code is distributed
+under the terms of the GNU Library General Public License.
+
+Version 0.1, 21 December 1997
+
+
+Here are the original glu.h comments:
+
+Mesa 3 - D graphics library
+Version :  2.4
+Copyright (C) 1995 - 1997  Brian Paul
+
+This library is free software; you can redistribute it and/or
+modify it under the terms of the GNU Library General Public
+License as published by the <a href="globe_3d.adb.html#globe_3d.adb:110:14" title="Free">Free</a> Software Foundation; either
+version 2 of the License, or (at your option) any later version.
+
+This library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Library General Public License for more details.
+
+You should have received a copy of the GNU Library General Public
+License along with this library; if not, write to the <a href="globe_3d.adb.html#globe_3d.adb:110:14" title="Free">Free</a>
+Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+</div>
+    </div>
+  </div>
+
+
+
+
+  <div class='subprograms'>
+    <h1><a name='Types' id='Types'></a>Types</h1>
+    <div class="class">
+      <h3>
+        <a name='glu.ads:58:9' id='glu.ads:58:9'></a>
+<span class="droplink">Viewport_Rec<ul>
+  <li><a href="src_glu.ads.html#l58">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Viewport_Rec</span> <span class="keyword">is</span> <span class="keyword">record</span>
+      X, Y :           <span class="keyword">aliased</span> <a href="gl.ads.html#gl.ads:121:9" title="defined at gl.ads:121:9">GL.Int</a>;
+      Width, Height :  <span class="keyword">aliased</span> <a href="gl.ads.html#gl.ads:121:9" title="defined at gl.ads:121:9">GL.Int</a>;
+   <span class="keyword">end</span> <span class="keyword">record</span>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_glu.ads.html#l58" title="glu.ads:58:9">glu.ads:58:9</a> (declaration)</i></div>
+          <div><i><a href="src_glu.adb.html#l21" title="glu.adb:21:31">glu.adb:21:31</a> (reference)</i></div>
+          <div><i><a href="src_glu.adb.html#l32" title="glu.adb:32:36">glu.adb:32:36</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l66" title="glu.ads:66:41">glu.ads:66:41</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l630" title="glu.ads:630:37">glu.ads:630:37</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l658" title="glu.ads:658:32">glu.ads:658:32</a> (reference)</i></div>
+          <div><i><a href="src_globe_3d-portals.adb.html#l24" title="globe_3d-portals.adb:24:25">globe_3d-portals.adb:24:25</a> (reference)</i></div>
+          <div><i><a href="src_globe_3d-software_anti_aliasing.adb.html#l128" title="globe_3d-software_anti_aliasing.adb:128:28">globe_3d-software_anti_aliasing.adb:128:28</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='glu.ads:63:9' id='glu.ads:63:9'></a>
+<span class="droplink">Matrix_Float<ul>
+  <li><a href="src_glu.ads.html#l63">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Matrix_Float</span>      <span class="keyword">is</span> <span class="keyword">array</span> (0 .. 3, 0 .. 3) <span class="keyword">of</span> <span class="keyword">aliased</span> <a href="gl.ads.html#gl.ads:126:9" title="defined at gl.ads:126:9">GL.C_Float</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_glu.ads.html#l63" title="glu.ads:63:9">glu.ads:63:9</a> (declaration)</i></div>
+          <div><i><a href="src_glu.ads.html#l67" title="glu.ads:67:41">glu.ads:67:41</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='glu.ads:64:9' id='glu.ads:64:9'></a>
+<span class="droplink">Matrix_Double<ul>
+  <li><a href="src_glu.ads.html#l64">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Matrix_Double</span>     <span class="keyword">is</span> <span class="keyword">array</span> (0 .. 3, 0 .. 3) <span class="keyword">of</span> <span class="keyword">aliased</span> <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_glu.ads.html#l64" title="glu.ads:64:9">glu.ads:64:9</a> (declaration)</i></div>
+          <div><i><a href="src_glu.adb.html#l13" title="glu.adb:13:31">glu.adb:13:31</a> (reference)</i></div>
+          <div><i><a href="src_glu.adb.html#l30" title="glu.adb:30:36">glu.adb:30:36</a> (reference)</i></div>
+          <div><i><a href="src_glu.adb.html#l31" title="glu.adb:31:36">glu.adb:31:36</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l68" title="glu.ads:68:41">glu.ads:68:41</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l628" title="glu.ads:628:37">glu.ads:628:37</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l629" title="glu.ads:629:37">glu.ads:629:37</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l653" title="glu.ads:653:32">glu.ads:653:32</a> (reference)</i></div>
+          <div><i><a href="src_globe_3d-portals.adb.html#l23" title="globe_3d-portals.adb:23:25">globe_3d-portals.adb:23:25</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='glu.ads:66:9' id='glu.ads:66:9'></a>
+<span class="droplink">Viewport_Ptr<ul>
+  <li><a href="src_glu.ads.html#l66">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Viewport_Ptr</span>      <span class="keyword">is</span> <span class="keyword">access</span> <span class="keyword">all</span> <a href="glu.ads.html#glu.ads:58:9" title="defined at glu.ads:58:9">Viewport_Rec</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_glu.ads.html#l66" title="glu.ads:66:9">glu.ads:66:9</a> (declaration)</i></div>
+          <div><i><a href="src_glu.adb.html#l8" title="glu.adb:8:30">glu.adb:8:30</a> (reference)</i></div>
+          <div><i><a href="src_glu.adb.html#l22" title="glu.adb:22:67">glu.adb:22:67</a> (reference)</i></div>
+          <div><i><a href="src_glu.adb.html#l38" title="glu.adb:38:67">glu.adb:38:67</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l397" title="glu.ads:397:50">glu.ads:397:50</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l609" title="glu.ads:609:37">glu.ads:609:37</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l616" title="glu.ads:616:36">glu.ads:616:36</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l641" title="glu.ads:641:38">glu.ads:641:38</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l656" title="glu.ads:656:28">glu.ads:656:28</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l733" title="glu.ads:733:36">glu.ads:733:36</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l735" title="glu.ads:735:28">glu.ads:735:28</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='glu.ads:67:9' id='glu.ads:67:9'></a>
+<span class="droplink">Matrix_Float_Ptr<ul>
+  <li><a href="src_glu.ads.html#l67">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Matrix_Float_Ptr</span>  <span class="keyword">is</span> <span class="keyword">access</span> <span class="keyword">all</span> <a href="glu.ads.html#glu.ads:63:9" title="defined at glu.ads:63:9">Matrix_Float</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_glu.ads.html#l67" title="glu.ads:67:9">glu.ads:67:9</a> (declaration)</i></div>
+          <div><i><a href="src_glu.ads.html#l395" title="glu.ads:395:50">glu.ads:395:50</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l396" title="glu.ads:396:50">glu.ads:396:50</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='glu.ads:68:9' id='glu.ads:68:9'></a>
+<span class="droplink">Matrix_Double_Ptr<ul>
+  <li><a href="src_glu.ads.html#l68">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Matrix_Double_Ptr</span> <span class="keyword">is</span> <span class="keyword">access</span> <span class="keyword">all</span> <a href="glu.ads.html#glu.ads:64:9" title="defined at glu.ads:64:9">Matrix_Double</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_glu.ads.html#l68" title="glu.ads:68:9">glu.ads:68:9</a> (declaration)</i></div>
+          <div><i><a href="src_glu.adb.html#l7" title="glu.adb:7:30">glu.adb:7:30</a> (reference)</i></div>
+          <div><i><a href="src_glu.adb.html#l14" title="glu.adb:14:67">glu.adb:14:67</a> (reference)</i></div>
+          <div><i><a href="src_glu.adb.html#l39" title="glu.adb:39:67">glu.adb:39:67</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l614" title="glu.ads:614:36">glu.ads:614:36</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l615" title="glu.ads:615:36">glu.ads:615:36</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l639" title="glu.ads:639:38">glu.ads:639:38</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l640" title="glu.ads:640:38">glu.ads:640:38</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l650" title="glu.ads:650:28">glu.ads:650:28</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l725" title="glu.ads:725:35">glu.ads:725:35</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l727" title="glu.ads:727:28">glu.ads:727:28</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='glu.ads:70:9' id='glu.ads:70:9'></a>
+<span class="droplink">GLUquadricObj<ul>
+  <li><a href="src_glu.ads.html#l70">Goto declaration in source</a></li>
+  <li><a href="src_glu.ads.html#l664">Goto full declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">GLUquadricObj</span>      <span class="keyword">is</span> <span class="keyword">private</span>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_glu.ads.html#l70" title="glu.ads:70:9">glu.ads:70:9</a> (declaration)</i></div>
+          <div><i><a href="src_glu.ads.html#l74" title="glu.ads:74:45">glu.ads:74:45</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l664" title="glu.ads:664:9">glu.ads:664:9</a> (full declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='glu.ads:71:9' id='glu.ads:71:9'></a>
+<span class="droplink">GLUtriangulatorObj<ul>
+  <li><a href="src_glu.ads.html#l71">Goto declaration in source</a></li>
+  <li><a href="src_glu.ads.html#l665">Goto full declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">GLUtriangulatorObj</span> <span class="keyword">is</span> <span class="keyword">private</span>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_glu.ads.html#l71" title="glu.ads:71:9">glu.ads:71:9</a> (declaration)</i></div>
+          <div><i><a href="src_glu.ads.html#l75" title="glu.ads:75:45">glu.ads:75:45</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l665" title="glu.ads:665:9">glu.ads:665:9</a> (full declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='glu.ads:72:9' id='glu.ads:72:9'></a>
+<span class="droplink">GLUnurbsObj<ul>
+  <li><a href="src_glu.ads.html#l72">Goto declaration in source</a></li>
+  <li><a href="src_glu.ads.html#l666">Goto full declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">GLUnurbsObj</span>        <span class="keyword">is</span> <span class="keyword">private</span>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_glu.ads.html#l72" title="glu.ads:72:9">glu.ads:72:9</a> (declaration)</i></div>
+          <div><i><a href="src_glu.ads.html#l76" title="glu.ads:76:45">glu.ads:76:45</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l666" title="glu.ads:666:9">glu.ads:666:9</a> (full declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='glu.ads:74:9' id='glu.ads:74:9'></a>
+<span class="droplink">GLUquadricObjPtr<ul>
+  <li><a href="src_glu.ads.html#l74">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">GLUquadricObjPtr</span>      <span class="keyword">is</span> <span class="keyword">access</span> <span class="keyword">all</span> <a href="glu.ads.html#glu.ads:70:9" title="defined at glu.ads:70:9">GLUquadricObj</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_glu.ads.html#l74" title="glu.ads:74:9">glu.ads:74:9</a> (declaration)</i></div>
+          <div><i><a href="src_glu.ads.html#l203" title="glu.ads:203:13">glu.ads:203:13</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l205" title="glu.ads:205:37">glu.ads:205:37</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l207" title="glu.ads:207:45">glu.ads:207:45</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l210" title="glu.ads:210:48">glu.ads:210:48</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l213" title="glu.ads:213:43">glu.ads:213:43</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l216" title="glu.ads:216:46">glu.ads:216:46</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l219" title="glu.ads:219:39">glu.ads:219:39</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l223" title="glu.ads:223:37">glu.ads:223:37</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l230" title="glu.ads:230:31">glu.ads:230:31</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l235" title="glu.ads:235:34">glu.ads:235:34</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l241" title="glu.ads:241:41">glu.ads:241:41</a> (reference)</i></div>
+          <div><i><a href="src_graphics_opengl.adb.html#l203" title="graphics_opengl.adb:203:32">graphics_opengl.adb:203:32</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='glu.ads:75:9' id='glu.ads:75:9'></a>
+<span class="droplink">GLUtriangulatorObjPtr<ul>
+  <li><a href="src_glu.ads.html#l75">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">GLUtriangulatorObjPtr</span> <span class="keyword">is</span> <span class="keyword">access</span> <span class="keyword">all</span> <a href="glu.ads.html#glu.ads:71:9" title="defined at glu.ads:71:9">GLUtriangulatorObj</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_glu.ads.html#l75" title="glu.ads:75:9">glu.ads:75:9</a> (declaration)</i></div>
+          <div><i><a href="src_glu.ads.html#l537" title="glu.ads:537:13">glu.ads:537:13</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l539" title="glu.ads:539:36">glu.ads:539:36</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l542" title="glu.ads:542:36">glu.ads:542:36</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l545" title="glu.ads:545:36">glu.ads:545:36</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l548" title="glu.ads:548:36">glu.ads:548:36</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l551" title="glu.ads:551:36">glu.ads:551:36</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l555" title="glu.ads:555:33">glu.ads:555:33</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l557" title="glu.ads:557:35">glu.ads:557:35</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l559" title="glu.ads:559:33">glu.ads:559:33</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l561" title="glu.ads:561:36">glu.ads:561:36</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l564" title="glu.ads:564:33">glu.ads:564:33</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='glu.ads:76:9' id='glu.ads:76:9'></a>
+<span class="droplink">GLUnurbsObjPtr<ul>
+  <li><a href="src_glu.ads.html#l76">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">GLUnurbsObjPtr</span>        <span class="keyword">is</span> <span class="keyword">access</span> <span class="keyword">all</span> <a href="glu.ads.html#glu.ads:72:9" title="defined at glu.ads:72:9">GLUnurbsObj</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_glu.ads.html#l76" title="glu.ads:76:9">glu.ads:76:9</a> (declaration)</i></div>
+          <div><i><a href="src_glu.ads.html#l390" title="glu.ads:390:13">glu.ads:390:13</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l392" title="glu.ads:392:42">glu.ads:392:42</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l394" title="glu.ads:394:50">glu.ads:394:50</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l399" title="glu.ads:399:40">glu.ads:399:40</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l403" title="glu.ads:403:43">glu.ads:403:43</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l407" title="glu.ads:407:33">glu.ads:407:33</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l409" title="glu.ads:409:31">glu.ads:409:31</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l411" title="glu.ads:411:37">glu.ads:411:37</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l419" title="glu.ads:419:35">glu.ads:419:35</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l421" title="glu.ads:421:33">glu.ads:421:33</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l423" title="glu.ads:423:42">glu.ads:423:42</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l435" title="glu.ads:435:32">glu.ads:435:32</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l437" title="glu.ads:437:30">glu.ads:437:30</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l439" title="glu.ads:439:34">glu.ads:439:34</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l445" title="glu.ads:445:37">glu.ads:445:37</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='glu.ads:81:9' id='glu.ads:81:9'></a>
+<span class="droplink">ErrorEnm<ul>
+  <li><a href="src_glu.ads.html#l81">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">ErrorEnm</span> <span class="keyword">is</span>
+     (
+      GL_NO_ERROR,
+      GL_INVALID_ENUM,
+      GL_INVALID_VALUE,
+      GL_INVALID_OPERATION,
+      GL_STACK_OVERFLOW,
+      GL_STACK_UNDERFLOW,
+      GL_OUT_OF_MEMORY,
+      GLU_INVALID_ENUM,
+      GLU_INVALID_VALUE,
+      GLU_OUT_OF_MEMORY,
+      GLU_INCOMPATIBLE_GL_VERSION
+     );</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_glu.ads.html#l81" title="glu.ads:81:9">glu.ads:81:9</a> (declaration)</i></div>
+          <div><i><a href="src_glu.ads.html#l95" title="glu.ads:95:8">glu.ads:95:8</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l109" title="glu.ads:109:8">glu.ads:109:8</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l111" title="glu.ads:111:38">glu.ads:111:38</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l200" title="glu.ads:200:63">glu.ads:200:63</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l675" title="glu.ads:675:40">glu.ads:675:40</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l676" title="glu.ads:676:40">glu.ads:676:40</a> (reference)</i></div>
+      </div>
+      <div class='comment'>Error string
+</div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='glu.ads:148:9' id='glu.ads:148:9'></a>
+<span class="droplink">DrawStyleEnm<ul>
+  <li><a href="src_glu.ads.html#l148">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">DrawStyleEnm</span> <span class="keyword">is</span>
+     (
+      GLU_POINT,
+      GLU_LINE,
+      GLU_FILL,
+      GLU_SILHOUETTE
+     );</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_glu.ads.html#l148" title="glu.ads:148:9">glu.ads:148:9</a> (declaration)</i></div>
+          <div><i><a href="src_glu.ads.html#l155" title="glu.ads:155:8">glu.ads:155:8</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l162" title="glu.ads:162:8">glu.ads:162:8</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l208" title="glu.ads:208:45">glu.ads:208:45</a> (reference)</i></div>
+      </div>
+      <div class='comment'>Quadric objects
+</div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='glu.ads:164:9' id='glu.ads:164:9'></a>
+<span class="droplink">OrientationEnm<ul>
+  <li><a href="src_glu.ads.html#l164">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">OrientationEnm</span> <span class="keyword">is</span>
+     (
+      GLU_OUTSIDE,
+      GLU_INSIDE
+     );</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_glu.ads.html#l164" title="glu.ads:164:9">glu.ads:164:9</a> (declaration)</i></div>
+          <div><i><a href="src_glu.ads.html#l169" title="glu.ads:169:8">glu.ads:169:8</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l174" title="glu.ads:174:8">glu.ads:174:8</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l211" title="glu.ads:211:48">glu.ads:211:48</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='glu.ads:176:9' id='glu.ads:176:9'></a>
+<span class="droplink">NormalsEnm<ul>
+  <li><a href="src_glu.ads.html#l176">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">NormalsEnm</span> <span class="keyword">is</span>
+     (
+      GLU_SMOOTH,
+      GLU_FLAT,
+      GLU_NONE
+     );</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_glu.ads.html#l176" title="glu.ads:176:9">glu.ads:176:9</a> (declaration)</i></div>
+          <div><i><a href="src_glu.ads.html#l182" title="glu.ads:182:8">glu.ads:182:8</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l188" title="glu.ads:188:8">glu.ads:188:8</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l214" title="glu.ads:214:43">glu.ads:214:43</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='glu.ads:190:9' id='glu.ads:190:9'></a>
+<span class="droplink">CallbackEnm<ul>
+  <li><a href="src_glu.ads.html#l190">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">CallbackEnm</span> <span class="keyword">is</span>
+     (
+      GLU_ERROR
+     );</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_glu.ads.html#l190" title="glu.ads:190:9">glu.ads:190:9</a> (declaration)</i></div>
+          <div><i><a href="src_glu.ads.html#l194" title="glu.ads:194:8">glu.ads:194:8</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l198" title="glu.ads:198:8">glu.ads:198:8</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l220" title="glu.ads:220:39">glu.ads:220:39</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l446" title="glu.ads:446:37">glu.ads:446:37</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='glu.ads:200:9' id='glu.ads:200:9'></a>
+<span class="droplink">QuadricCallbackFunction<ul>
+  <li><a href="src_glu.ads.html#l200">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">QuadricCallbackFunction</span> <span class="keyword">is</span> <span class="keyword">access</span> <span class="keyword">procedure</span> (Error :  <a href="glu.ads.html#glu.ads:81:9" title="defined at glu.ads:81:9">ErrorEnm</a>);</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_glu.ads.html#l200" title="glu.ads:200:9">glu.ads:200:9</a> (declaration)</i></div>
+          <div><i><a href="src_glu.ads.html#l221" title="glu.ads:221:39">glu.ads:221:39</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='glu.ads:250:9' id='glu.ads:250:9'></a>
+<span class="droplink">NurbsPropertyEnm<ul>
+  <li><a href="src_glu.ads.html#l250">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">NurbsPropertyEnm</span> <span class="keyword">is</span>
+     (
+      GLU_AUTO_LOAD_MATRIX,
+      GLU_CULLING,
+      GLU_PARAMETRIC_TOLERANCE,
+      GLU_SAMPLING_TOLERANCE,
+      GLU_DISPLAY_MODE,
+      GLU_SAMPLING_METHOD,
+      GLU_U_STEP,
+      GLU_V_STEP
+     );</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_glu.ads.html#l250" title="glu.ads:250:9">glu.ads:250:9</a> (declaration)</i></div>
+          <div><i><a href="src_glu.ads.html#l261" title="glu.ads:261:8">glu.ads:261:8</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l272" title="glu.ads:272:8">glu.ads:272:8</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l400" title="glu.ads:400:40">glu.ads:400:40</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l404" title="glu.ads:404:43">glu.ads:404:43</a> (reference)</i></div>
+      </div>
+      <div class='comment'>Non - uniform rational B - splines (NURBS)
+</div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='glu.ads:274:9' id='glu.ads:274:9'></a>
+<span class="droplink">NurbsDisplayModeEnm<ul>
+  <li><a href="src_glu.ads.html#l274">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">NurbsDisplayModeEnm</span> <span class="keyword">is</span>
+     (
+      GLU_FILL,
+      GLU_OUTLINE_POLYGON,
+      GLU_OUTLINE_PATCH
+     );</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_glu.ads.html#l274" title="glu.ads:274:9">glu.ads:274:9</a> (declaration)</i></div>
+          <div><i><a href="src_glu.ads.html#l280" title="glu.ads:280:8">glu.ads:280:8</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l286" title="glu.ads:286:8">glu.ads:286:8</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='glu.ads:293:9' id='glu.ads:293:9'></a>
+<span class="droplink">NurbsErrorEnm<ul>
+  <li><a href="src_glu.ads.html#l293">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">NurbsErrorEnm</span> <span class="keyword">is</span>
+     (
+      GLU_NURBS_ERROR1,                                       <span class="comment">-- spline order un - supported ,
+</span>      GLU_NURBS_ERROR2,                                       <span class="comment">-- too few knots ,
+</span>      GLU_NURBS_ERROR3,                                       <span class="comment">-- valid knot range is empty ,
+</span>      GLU_NURBS_ERROR4,                                       <span class="comment">-- decreasing knot sequence ,
+</span>      GLU_NURBS_ERROR5,                                       <span class="comment">-- knot multiplicity > spline order ,
+</span>      GLU_NURBS_ERROR6,                                       <span class="comment">-- endcurve () must follow bgncurve () ,
+</span>      GLU_NURBS_ERROR7,                                       <span class="comment">-- bgncurve () must precede endcurve () ,
+</span>      GLU_NURBS_ERROR8,                                       <span class="comment">-- ctrlarray or knot vector is NULL ,
+</span>      GLU_NURBS_ERROR9,                                       <span class="comment">-- can't draw pwlcurves ,
+</span>      GLU_NURBS_ERROR10,                                      <span class="comment">-- missing gluNurbsCurve () ,
+</span>      GLU_NURBS_ERROR11,                                      <span class="comment">-- missing gluNurbsSurface () ,
+</span>      GLU_NURBS_ERROR12,                                      <span class="comment">-- endtrim () must precede endsurface () ,
+</span>      GLU_NURBS_ERROR13,                                      <span class="comment">-- bgnsurface () must precede endsurface () ,
+</span>      GLU_NURBS_ERROR14,                                      <span class="comment">-- curve of improper type passed as trim curve ,
+</span>      GLU_NURBS_ERROR15,                                      <span class="comment">-- bgnsurface () must precede bgntrim () ,
+</span>      GLU_NURBS_ERROR16,                                      <span class="comment">-- endtrim () must follow bgntrim () ,
+</span>      GLU_NURBS_ERROR17,                                      <span class="comment">-- bgntrim () must precede endtrim (),
+</span>      GLU_NURBS_ERROR18,                                      <span class="comment">-- invalid or missing trim curve,
+</span>      GLU_NURBS_ERROR19,                                      <span class="comment">-- bgntrim () must precede pwlcurve () ,
+</span>      GLU_NURBS_ERROR20,                                      <span class="comment">-- pwlcurve referenced twice,
+</span>      GLU_NURBS_ERROR21,                                      <span class="comment">-- pwlcurve and nurbscurve mixed ,
+</span>      GLU_NURBS_ERROR22,                                      <span class="comment">-- improper usage of trim data type ,
+</span>      GLU_NURBS_ERROR23,                                      <span class="comment">-- nurbscurve referenced twice ,
+</span>      GLU_NURBS_ERROR24,                                      <span class="comment">-- nurbscurve and pwlcurve mixed ,
+</span>      GLU_NURBS_ERROR25,                                      <span class="comment">-- nurbssurface referenced twice ,
+</span>      GLU_NURBS_ERROR26,                                      <span class="comment">-- invalid property ,
+</span>      GLU_NURBS_ERROR27,                                      <span class="comment">-- endsurface () must follow bgnsurface () ,
+</span>      GLU_NURBS_ERROR28,                                      <span class="comment">-- intersecting or misoriented trim curves ,
+</span>      GLU_NURBS_ERROR29,                                      <span class="comment">-- intersecting trim curves ,
+</span>      GLU_NURBS_ERROR30,                                      <span class="comment">-- UNUSED ,
+</span>      GLU_NURBS_ERROR31,                                      <span class="comment">-- unconnected trim curves ,
+</span>      GLU_NURBS_ERROR32,                                      <span class="comment">-- unknown knot error ,
+</span>      GLU_NURBS_ERROR33,                                      <span class="comment">-- negative vertex count encountered ,
+</span>      GLU_NURBS_ERROR34,                                      <span class="comment">-- negative byte - stride ,
+</span>      GLU_NURBS_ERROR35,                                      <span class="comment">-- unknown type descriptor ,
+</span>      GLU_NURBS_ERROR36,                                      <span class="comment">-- null control point reference ,
+</span>      GLU_NURBS_ERROR37                                       <span class="comment">-- duplicate point on pwlcurve
+</span>     );</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_glu.ads.html#l293" title="glu.ads:293:9">glu.ads:293:9</a> (declaration)</i></div>
+          <div><i><a href="src_glu.ads.html#l333" title="glu.ads:333:8">glu.ads:333:8</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l373" title="glu.ads:373:8">glu.ads:373:8</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l387" title="glu.ads:387:61">glu.ads:387:61</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='glu.ads:375:9' id='glu.ads:375:9'></a>
+<span class="droplink">PwlCurveTypeEnm<ul>
+  <li><a href="src_glu.ads.html#l375">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">PwlCurveTypeEnm</span> <span class="keyword">is</span>
+     (
+      GLU_MAP1_TRIM_2,
+      GLU_MAP1_TRIM_3
+     );</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_glu.ads.html#l375" title="glu.ads:375:9">glu.ads:375:9</a> (declaration)</i></div>
+          <div><i><a href="src_glu.ads.html#l380" title="glu.ads:380:8">glu.ads:380:8</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l385" title="glu.ads:385:8">glu.ads:385:8</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l443" title="glu.ads:443:34">glu.ads:443:34</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='glu.ads:387:9' id='glu.ads:387:9'></a>
+<span class="droplink">NurbsCallbackFunction<ul>
+  <li><a href="src_glu.ads.html#l387">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">NurbsCallbackFunction</span> <span class="keyword">is</span> <span class="keyword">access</span> <span class="keyword">procedure</span> (Error :  <a href="glu.ads.html#glu.ads:293:9" title="defined at glu.ads:293:9">NurbsErrorEnm</a>);</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_glu.ads.html#l387" title="glu.ads:387:9">glu.ads:387:9</a> (declaration)</i></div>
+          <div><i><a href="src_glu.ads.html#l447" title="glu.ads:447:37">glu.ads:447:37</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='glu.ads:450:9' id='glu.ads:450:9'></a>
+<span class="droplink">TessCallbackEnm<ul>
+  <li><a href="src_glu.ads.html#l450">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">TessCallbackEnm</span> <span class="keyword">is</span>
+     (
+      GLU_BEGIN,
+      GLU_VERTEX,
+      GLU_END,
+      GLU_ERROR,
+      GLU_EDGE_FLAG
+     );</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_glu.ads.html#l450" title="glu.ads:450:9">glu.ads:450:9</a> (declaration)</i></div>
+          <div><i><a href="src_glu.ads.html#l458" title="glu.ads:458:8">glu.ads:458:8</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l466" title="glu.ads:466:8">glu.ads:466:8</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l540" title="glu.ads:540:36">glu.ads:540:36</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l543" title="glu.ads:543:36">glu.ads:543:36</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l546" title="glu.ads:546:36">glu.ads:546:36</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l549" title="glu.ads:549:36">glu.ads:549:36</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l552" title="glu.ads:552:36">glu.ads:552:36</a> (reference)</i></div>
+      </div>
+      <div class='comment'>Polygon tesselation
+</div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='glu.ads:468:9' id='glu.ads:468:9'></a>
+<span class="droplink">TessBeginEnm<ul>
+  <li><a href="src_glu.ads.html#l468">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">TessBeginEnm</span> <span class="keyword">is</span>
+     (
+      GL_LINE_LOOP,
+      GL_TRIANGLES,
+      GL_TRIANGLE_STRIP,
+      GL_TRIANGLE_FAN
+     );</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_glu.ads.html#l468" title="glu.ads:468:9">glu.ads:468:9</a> (declaration)</i></div>
+          <div><i><a href="src_glu.ads.html#l475" title="glu.ads:475:8">glu.ads:475:8</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l482" title="glu.ads:482:8">glu.ads:482:8</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l483" title="glu.ads:483:67">glu.ads:483:67</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='glu.ads:483:9' id='glu.ads:483:9'></a>
+<span class="droplink">TessBeginCallbackFunction<ul>
+  <li><a href="src_glu.ads.html#l483">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">TessBeginCallbackFunction</span> <span class="keyword">is</span> <span class="keyword">access</span> <span class="keyword">procedure</span> (ObjType :  <a href="glu.ads.html#glu.ads:468:9" title="defined at glu.ads:468:9">TessBeginEnm</a>);</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_glu.ads.html#l483" title="glu.ads:483:9">glu.ads:483:9</a> (declaration)</i></div>
+          <div><i><a href="src_glu.ads.html#l541" title="glu.ads:541:36">glu.ads:541:36</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='glu.ads:485:9' id='glu.ads:485:9'></a>
+<span class="droplink">TessVertexCallbackFunction<ul>
+  <li><a href="src_glu.ads.html#l485">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">TessVertexCallbackFunction</span> <span class="keyword">is</span> <span class="keyword">access</span> <span class="keyword">procedure</span> (VertexData :  <a href="gl.ads.html#gl.ads:150:9" title="defined at gl.ads:150:9">GL.pointer</a>);</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_glu.ads.html#l485" title="glu.ads:485:9">glu.ads:485:9</a> (declaration)</i></div>
+          <div><i><a href="src_glu.ads.html#l544" title="glu.ads:544:36">glu.ads:544:36</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='glu.ads:487:9' id='glu.ads:487:9'></a>
+<span class="droplink">TessEndCallbackFunction<ul>
+  <li><a href="src_glu.ads.html#l487">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">TessEndCallbackFunction</span> <span class="keyword">is</span> <span class="keyword">access</span> <span class="keyword">procedure</span>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_glu.ads.html#l487" title="glu.ads:487:9">glu.ads:487:9</a> (declaration)</i></div>
+          <div><i><a href="src_glu.ads.html#l547" title="glu.ads:547:36">glu.ads:547:36</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='glu.ads:489:9' id='glu.ads:489:9'></a>
+<span class="droplink">TessErrorEnm<ul>
+  <li><a href="src_glu.ads.html#l489">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">TessErrorEnm</span> <span class="keyword">is</span>
+     (
+      GLU_TESS_ERROR1,                                        <span class="comment">-- missing gluEndPolygon ,
+</span>      GLU_TESS_ERROR2,                                        <span class="comment">-- missing gluBeginPolygon ,
+</span>      GLU_TESS_ERROR3,                                        <span class="comment">-- misoriented contour ,
+</span>      GLU_TESS_ERROR4,                                        <span class="comment">-- vertex/edge intersection ,
+</span>      GLU_TESS_ERROR5,                                        <span class="comment">-- misoriented or self - intersecting loops ,
+</span>      GLU_TESS_ERROR6,                                        <span class="comment">-- coincident vertices ,
+</span>      GLU_TESS_ERROR7,                                        <span class="comment">-- all vertices collinear ,
+</span>      GLU_TESS_ERROR8,                                        <span class="comment">-- intersecting edges ,
+</span>      GLU_TESS_ERROR9                                         <span class="comment">-- not coplanar contours
+</span>     );</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_glu.ads.html#l489" title="glu.ads:489:9">glu.ads:489:9</a> (declaration)</i></div>
+          <div><i><a href="src_glu.ads.html#l501" title="glu.ads:501:8">glu.ads:501:8</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l513" title="glu.ads:513:8">glu.ads:513:8</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l514" title="glu.ads:514:65">glu.ads:514:65</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='glu.ads:514:9' id='glu.ads:514:9'></a>
+<span class="droplink">TessErrorCallbackFunction<ul>
+  <li><a href="src_glu.ads.html#l514">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">TessErrorCallbackFunction</span> <span class="keyword">is</span> <span class="keyword">access</span> <span class="keyword">procedure</span> (Error :  <a href="glu.ads.html#glu.ads:489:9" title="defined at glu.ads:489:9">TessErrorEnm</a>);</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_glu.ads.html#l514" title="glu.ads:514:9">glu.ads:514:9</a> (declaration)</i></div>
+          <div><i><a href="src_glu.ads.html#l550" title="glu.ads:550:36">glu.ads:550:36</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='glu.ads:516:9' id='glu.ads:516:9'></a>
+<span class="droplink">TessEdgeFlagCallbackFunction<ul>
+  <li><a href="src_glu.ads.html#l516">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">TessEdgeFlagCallbackFunction</span> <span class="keyword">is</span> <span class="keyword">access</span> <span class="keyword">procedure</span> (Flag :  <a href="gl.ads.html#gl.ads:118:9" title="defined at gl.ads:118:9">GL.GL_Boolean</a>);</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_glu.ads.html#l516" title="glu.ads:516:9">glu.ads:516:9</a> (declaration)</i></div>
+          <div><i><a href="src_glu.ads.html#l553" title="glu.ads:553:36">glu.ads:553:36</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='glu.ads:518:9' id='glu.ads:518:9'></a>
+<span class="droplink">ContourTypeEnm<ul>
+  <li><a href="src_glu.ads.html#l518">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">ContourTypeEnm</span> <span class="keyword">is</span>
+     (
+      GLU_CW,
+      GLU_CCW,
+      GLU_INTERIOR,
+      GLU_EXTERIOR,
+      GLU_UNKNOWN
+     );</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_glu.ads.html#l518" title="glu.ads:518:9">glu.ads:518:9</a> (declaration)</i></div>
+          <div><i><a href="src_glu.ads.html#l526" title="glu.ads:526:8">glu.ads:526:8</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l534" title="glu.ads:534:8">glu.ads:534:8</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l562" title="glu.ads:562:36">glu.ads:562:36</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='glu.ads:569:9' id='glu.ads:569:9'></a>
+<span class="droplink">StringEnm<ul>
+  <li><a href="src_glu.ads.html#l569">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">StringEnm</span> <span class="keyword">is</span>
+     (
+      GLU_VERSION,
+      GLU_EXTENSIONS
+     );</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_glu.ads.html#l569" title="glu.ads:569:9">glu.ads:569:9</a> (declaration)</i></div>
+          <div><i><a href="src_glu.ads.html#l574" title="glu.ads:574:8">glu.ads:574:8</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l579" title="glu.ads:579:8">glu.ads:579:8</a> (reference)</i></div>
+          <div><i><a href="src_glu.ads.html#l581" title="glu.ads:581:31">glu.ads:581:31</a> (reference)</i></div>
+      </div>
+      <div class='comment'><a href="glu.adb.html#glu.adb:3:14" title="GLU">GLU</a> strings
+</div>
+    </div>
+  </div>
+
+  <div class='subprograms'>
+    <h1><a name='Constants' id='Constants'></a>Constants &amp; Global variables</h1>
+    <div class="class">
+      <h3><a name='glu.ads:50:4' id='glu.ads:50:4'></a>
+<span class="droplink">VERSION_1_1<ul>
+  <li><a href="src_glu.ads.html#l50">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">VERSION_1_1</span>                      : <span class="keyword">constant</span> := 1;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_glu.ads.html#l50" title="glu.ads:50:4">glu.ads:50:4</a> (declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='glu.ads:53:4' id='glu.ads:53:4'></a>
+<span class="droplink">GL_FALSE<ul>
+  <li><a href="src_glu.ads.html#l53">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">GL_FALSE</span>                            : <span class="keyword">constant</span> := <a href="gl.ads.html#gl.ads:180:4" title="defined at gl.ads:180:4">GL.GL_False</a>;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_glu.ads.html#l53" title="glu.ads:53:4">glu.ads:53:4</a> (declaration)</i></div>
+      </div>
+      <div class='comment'>The <a href="glu.adb.html#glu.adb:3:14" title="GLU">GLU</a> boolean constants
+</div>
+    </div>
+    <div class="class">
+      <h3><a name='glu.ads:54:4' id='glu.ads:54:4'></a>
+<span class="droplink">GL_TRUE<ul>
+  <li><a href="src_glu.ads.html#l54">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">GL_TRUE</span>                             : <span class="keyword">constant</span> := <a href="gl.ads.html#gl.ads:181:4" title="defined at gl.ads:181:4">GL.GL_True</a>;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_glu.ads.html#l54" title="glu.ads:54:4">glu.ads:54:4</a> (declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='glu.ads:289:4' id='glu.ads:289:4'></a>
+<span class="droplink">GLU_PATH_LENGTH<ul>
+  <li><a href="src_glu.ads.html#l289">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">GLU_PATH_LENGTH</span>                      : <span class="keyword">constant</span> := 16#18777#;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_glu.ads.html#l289" title="glu.ads:289:4">glu.ads:289:4</a> (declaration)</i></div>
+      </div>
+      <div class='comment'>NURBS property values
+</div>
+    </div>
+    <div class="class">
+      <h3><a name='glu.ads:290:4' id='glu.ads:290:4'></a>
+<span class="droplink">GLU_PARAMETRIC_ERROR<ul>
+  <li><a href="src_glu.ads.html#l290">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">GLU_PARAMETRIC_ERROR</span>                 : <span class="keyword">constant</span> := 16#18778#;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_glu.ads.html#l290" title="glu.ads:290:4">glu.ads:290:4</a> (declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='glu.ads:291:4' id='glu.ads:291:4'></a>
+<span class="droplink">GLU_DOMAIN_DISTANCE<ul>
+  <li><a href="src_glu.ads.html#l291">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">GLU_DOMAIN_DISTANCE</span>                  : <span class="keyword">constant</span> := 16#18779#;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_glu.ads.html#l291" title="glu.ads:291:4">glu.ads:291:4</a> (declaration)</i></div>
+      </div>
+    </div>
+  </div>
+
+    <div class='subprograms'>
+      <h1><a name='Methods' id='Methods'></a>Subprograms &amp; Entries</h1>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:111:13' id='glu.ads:111:13'></a>
+<span class="droplink">ErrorString<ul>
+  <li><a href="src_glu.ads.html#l111">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l676">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">ErrorString</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:111:26"></a>errorCode</span></td><td>: <a href="glu.ads.html#glu.ads:81:9" title="defined at glu.ads:81:9">ErrorEnm</a>) <span class="keyword">return</span> <a href="gl.ads.html#gl.ads:140:9" title="defined at gl.ads:140:9">GL.ubytePtr</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l111" title="glu.ads:111:13">glu.ads:111:13</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l676" title="glu.ads:676:13">glu.ads:676:13</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:114:13' id='glu.ads:114:13'></a>
+<span class="droplink">Error_String<ul>
+  <li><a href="src_glu.ads.html#l114">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l680">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Error_String</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:114:27"></a>errorCode</span></td><td>: <a href="gl.ads.html#gl.ads:1220:9" title="defined at gl.ads:1220:9">GL.ErrorEnm</a>) <span class="keyword">return</span> <a href="gl.ads.html#gl.ads:140:9" title="defined at gl.ads:140:9">GL.ubytePtr</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l114" title="glu.ads:114:13">glu.ads:114:13</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l680" title="glu.ads:680:13">glu.ads:680:13</a> (body)</i></div>
+            <div><i><a href="src_gl-errors.adb.html#l23" title="gl-errors.adb:23:39">gl-errors.adb:23:39</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="gl-errors.ads.html#gl-errors.ads:15:13" title="defined at gl-errors.ads:15:13">GL.Errors.Current</a> defined at <a href="src_gl-errors.ads.html#l15" title="gl-errors.ads:15:13">gl-errors.ads:15:13</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:118:13' id='glu.ads:118:13'></a>
+<span class="droplink">ScaleImage<ul>
+  <li><a href="src_glu.ads.html#l118">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l683">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">ScaleImage</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:118:25"></a>format</span></td><td>: <a href="gl.ads.html#gl.ads:1963:9" title="defined at gl.ads:1963:9">GL.PixelFormatEnm</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:119:25"></a>widthin</span></td><td>: <a href="gl.ads.html#gl.ads:121:9" title="defined at gl.ads:121:9">GL.Int</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:120:25"></a>heightin</span></td><td>: <a href="gl.ads.html#gl.ads:121:9" title="defined at gl.ads:121:9">GL.Int</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:121:25"></a>typein</span></td><td>: <a href="gl.ads.html#gl.ads:1997:9" title="defined at gl.ads:1997:9">GL.PixelDataTypeEnm</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:122:25"></a>datain</span></td><td>: <a href="gl.ads.html#gl.ads:150:9" title="defined at gl.ads:150:9">GL.pointer</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:123:25"></a>widthout</span></td><td>: <a href="gl.ads.html#gl.ads:121:9" title="defined at gl.ads:121:9">GL.Int</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:124:25"></a>heightout</span></td><td>: <a href="gl.ads.html#gl.ads:121:9" title="defined at gl.ads:121:9">GL.Int</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:125:25"></a>typeout</span></td><td>: <a href="gl.ads.html#gl.ads:1997:9" title="defined at gl.ads:1997:9">GL.PixelDataTypeEnm</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:126:25"></a>dataout</span></td><td>: <a href="gl.ads.html#gl.ads:150:9" title="defined at gl.ads:150:9">GL.pointer</a>) <span class="keyword">return</span> <a href="gl.ads.html#gl.ads:121:9" title="defined at gl.ads:121:9">GL.Int</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l118" title="glu.ads:118:13">glu.ads:118:13</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l683" title="glu.ads:683:28">glu.ads:683:28</a> (body)</i></div>
+        </div>
+        <div class='comment'>Scale image
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:130:13' id='glu.ads:130:13'></a>
+<span class="droplink">Build1DMipmaps<ul>
+  <li><a href="src_glu.ads.html#l130">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l684">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Build1DMipmaps</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:130:29"></a>target</span></td><td>: <a href="gl.ads.html#gl.ads:2444:9" title="defined at gl.ads:2444:9">GL.TargetTex1DOnlyEnm</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:131:29"></a>components</span></td><td>: <a href="gl.ads.html#gl.ads:121:9" title="defined at gl.ads:121:9">GL.Int</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:132:29"></a>width</span></td><td>: <a href="gl.ads.html#gl.ads:121:9" title="defined at gl.ads:121:9">GL.Int</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:133:29"></a>format</span></td><td>: <a href="gl.ads.html#gl.ads:2382:9" title="defined at gl.ads:2382:9">GL.TexPixelFormatEnm</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:134:29"></a>c_type</span></td><td>: <a href="gl.ads.html#gl.ads:1997:9" title="defined at gl.ads:1997:9">GL.PixelDataTypeEnm</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:135:29"></a>data</span></td><td>: <a href="gl.ads.html#gl.ads:150:9" title="defined at gl.ads:150:9">GL.pointer</a>) <span class="keyword">return</span> <a href="gl.ads.html#gl.ads:121:9" title="defined at gl.ads:121:9">GL.Int</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l130" title="glu.ads:130:13">glu.ads:130:13</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l684" title="glu.ads:684:28">glu.ads:684:28</a> (body)</i></div>
+        </div>
+        <div class='comment'>Build mipmaps
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:138:13' id='glu.ads:138:13'></a>
+<span class="droplink">Build2DMipmaps<ul>
+  <li><a href="src_glu.ads.html#l138">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l685">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Build2DMipmaps</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:138:29"></a>target</span></td><td>: <a href="gl.ads.html#gl.ads:2454:9" title="defined at gl.ads:2454:9">GL.TargetTex2DOnlyEnm</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:139:29"></a>components</span></td><td>: <a href="gl.ads.html#gl.ads:121:9" title="defined at gl.ads:121:9">GL.Int</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:140:29"></a>width</span></td><td>: <a href="gl.ads.html#gl.ads:121:9" title="defined at gl.ads:121:9">GL.Int</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:141:29"></a>height</span></td><td>: <a href="gl.ads.html#gl.ads:121:9" title="defined at gl.ads:121:9">GL.Int</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:142:29"></a>format</span></td><td>: <a href="gl.ads.html#gl.ads:2382:9" title="defined at gl.ads:2382:9">GL.TexPixelFormatEnm</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:143:29"></a>c_type</span></td><td>: <a href="gl.ads.html#gl.ads:1997:9" title="defined at gl.ads:1997:9">GL.PixelDataTypeEnm</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:144:29"></a>data</span></td><td>: <a href="gl.ads.html#gl.ads:150:9" title="defined at gl.ads:150:9">GL.pointer</a>) <span class="keyword">return</span> <a href="gl.ads.html#gl.ads:121:9" title="defined at gl.ads:121:9">GL.Int</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l138" title="glu.ads:138:13">glu.ads:138:13</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l685" title="glu.ads:685:28">glu.ads:685:28</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:202:13' id='glu.ads:202:13'></a>
+<span class="droplink">NewQuadric<ul>
+  <li><a href="src_glu.ads.html#l202">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l686">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">NewQuadric</span> <span class="keyword">return</span> <a href="glu.ads.html#glu.ads:74:9" title="defined at glu.ads:74:9">GLUquadricObjPtr</a>;</pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l202" title="glu.ads:202:13">glu.ads:202:13</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l686" title="glu.ads:686:28">glu.ads:686:28</a> (body)</i></div>
+            <div><i><a href="src_graphics_opengl.adb.html#l203" title="graphics_opengl.adb:203:56">graphics_opengl.adb:203:56</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="graphics_opengl.ads.html#graphics_opengl.ads:23:14" title="defined at graphics_opengl.ads:23:14">Graphics_OpenGL.Draw_Line</a> defined at <a href="src_graphics_opengl.ads.html#l23" title="graphics_opengl.ads:23:14">graphics_opengl.ads:23:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:205:14' id='glu.ads:205:14'></a>
+<span class="droplink">DeleteQuadric<ul>
+  <li><a href="src_glu.ads.html#l205">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l687">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">DeleteQuadric</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:205:29"></a>state</span></td><td>: <a href="glu.ads.html#glu.ads:74:9" title="defined at glu.ads:74:9">GLUquadricObjPtr</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l205" title="glu.ads:205:14">glu.ads:205:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l687" title="glu.ads:687:28">glu.ads:687:28</a> (body)</i></div>
+            <div><i><a href="src_graphics_opengl.adb.html#l222" title="graphics_opengl.adb:222:11">graphics_opengl.adb:222:11</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="graphics_opengl.ads.html#graphics_opengl.ads:23:14" title="defined at graphics_opengl.ads:23:14">Graphics_OpenGL.Draw_Line</a> defined at <a href="src_graphics_opengl.ads.html#l23" title="graphics_opengl.ads:23:14">graphics_opengl.ads:23:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:207:14' id='glu.ads:207:14'></a>
+<span class="droplink">QuadricDrawStyle<ul>
+  <li><a href="src_glu.ads.html#l207">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l688">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">QuadricDrawStyle</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:207:32"></a>quadObject</span></td><td>: <a href="glu.ads.html#glu.ads:74:9" title="defined at glu.ads:74:9">GLUquadricObjPtr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:208:32"></a>drawStyle</span></td><td>: <a href="glu.ads.html#glu.ads:148:9" title="defined at glu.ads:148:9">DrawStyleEnm</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l207" title="glu.ads:207:14">glu.ads:207:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l688" title="glu.ads:688:28">glu.ads:688:28</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:210:14' id='glu.ads:210:14'></a>
+<span class="droplink">QuadricOrientation<ul>
+  <li><a href="src_glu.ads.html#l210">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l689">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">QuadricOrientation</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:210:34"></a>quadObject</span></td><td>: <a href="glu.ads.html#glu.ads:74:9" title="defined at glu.ads:74:9">GLUquadricObjPtr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:211:34"></a>orientation</span></td><td>: <a href="glu.ads.html#glu.ads:164:9" title="defined at glu.ads:164:9">OrientationEnm</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l210" title="glu.ads:210:14">glu.ads:210:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l689" title="glu.ads:689:28">glu.ads:689:28</a> (body)</i></div>
+            <div><i><a href="src_graphics_opengl.adb.html#l209" title="graphics_opengl.adb:209:11">graphics_opengl.adb:209:11</a> (call)</i></div>
+            <div><i><a href="src_graphics_opengl.adb.html#l216" title="graphics_opengl.adb:216:11">graphics_opengl.adb:216:11</a> (call)</i></div>
+            <div><i><a href="src_graphics_opengl.adb.html#l219" title="graphics_opengl.adb:219:11">graphics_opengl.adb:219:11</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="graphics_opengl.ads.html#graphics_opengl.ads:23:14" title="defined at graphics_opengl.ads:23:14">Graphics_OpenGL.Draw_Line</a> defined at <a href="src_graphics_opengl.ads.html#l23" title="graphics_opengl.ads:23:14">graphics_opengl.ads:23:14</a></i></div>
+            <div><i><a href="graphics_opengl.ads.html#graphics_opengl.ads:23:14" title="defined at graphics_opengl.ads:23:14">Graphics_OpenGL.Draw_Line</a> defined at <a href="src_graphics_opengl.ads.html#l23" title="graphics_opengl.ads:23:14">graphics_opengl.ads:23:14</a></i></div>
+            <div><i><a href="graphics_opengl.ads.html#graphics_opengl.ads:23:14" title="defined at graphics_opengl.ads:23:14">Graphics_OpenGL.Draw_Line</a> defined at <a href="src_graphics_opengl.ads.html#l23" title="graphics_opengl.ads:23:14">graphics_opengl.ads:23:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:213:14' id='glu.ads:213:14'></a>
+<span class="droplink">QuadricNormals<ul>
+  <li><a href="src_glu.ads.html#l213">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l690">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">QuadricNormals</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:213:30"></a>quadObject</span></td><td>: <a href="glu.ads.html#glu.ads:74:9" title="defined at glu.ads:74:9">GLUquadricObjPtr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:214:30"></a>normals</span></td><td>: <a href="glu.ads.html#glu.ads:176:9" title="defined at glu.ads:176:9">NormalsEnm</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l213" title="glu.ads:213:14">glu.ads:213:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l690" title="glu.ads:690:28">glu.ads:690:28</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:216:14' id='glu.ads:216:14'></a>
+<span class="droplink">QuadricTexture<ul>
+  <li><a href="src_glu.ads.html#l216">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l691">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">QuadricTexture</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:216:30"></a>quadObject</span></td><td>: <a href="glu.ads.html#glu.ads:74:9" title="defined at glu.ads:74:9">GLUquadricObjPtr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:217:30"></a>textureCoords</span></td><td>: <a href="gl.ads.html#gl.ads:118:9" title="defined at gl.ads:118:9">GL.GL_Boolean</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l216" title="glu.ads:216:14">glu.ads:216:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l691" title="glu.ads:691:28">glu.ads:691:28</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:219:14' id='glu.ads:219:14'></a>
+<span class="droplink">QuadricCallback<ul>
+  <li><a href="src_glu.ads.html#l219">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l692">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">QuadricCallback</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:219:31"></a>qobj</span></td><td>: <a href="glu.ads.html#glu.ads:74:9" title="defined at glu.ads:74:9">GLUquadricObjPtr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:220:31"></a>which</span></td><td>: <a href="glu.ads.html#glu.ads:190:9" title="defined at glu.ads:190:9">CallbackEnm</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:221:31"></a>fn</span></td><td>: <a href="glu.ads.html#glu.ads:200:9" title="defined at glu.ads:200:9">QuadricCallbackFunction</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l219" title="glu.ads:219:14">glu.ads:219:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l692" title="glu.ads:692:28">glu.ads:692:28</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:223:14' id='glu.ads:223:14'></a>
+<span class="droplink">Cylinder<ul>
+  <li><a href="src_glu.ads.html#l223">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l693">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Cylinder</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:223:24"></a>qobj</span></td><td>: <a href="glu.ads.html#glu.ads:74:9" title="defined at glu.ads:74:9">GLUquadricObjPtr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:224:24"></a>baseRadius</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:225:24"></a>topRadius</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:226:24"></a>height</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:227:24"></a>slices</span></td><td>: <a href="gl.ads.html#gl.ads:121:9" title="defined at gl.ads:121:9">GL.Int</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:228:24"></a>stacks</span></td><td>: <a href="gl.ads.html#gl.ads:121:9" title="defined at gl.ads:121:9">GL.Int</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l223" title="glu.ads:223:14">glu.ads:223:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l693" title="glu.ads:693:28">glu.ads:693:28</a> (body)</i></div>
+            <div><i><a href="src_graphics_opengl.adb.html#l210" title="graphics_opengl.adb:210:11">graphics_opengl.adb:210:11</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="graphics_opengl.ads.html#graphics_opengl.ads:23:14" title="defined at graphics_opengl.ads:23:14">Graphics_OpenGL.Draw_Line</a> defined at <a href="src_graphics_opengl.ads.html#l23" title="graphics_opengl.ads:23:14">graphics_opengl.ads:23:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:230:14' id='glu.ads:230:14'></a>
+<span class="droplink">Sphere<ul>
+  <li><a href="src_glu.ads.html#l230">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l694">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Sphere</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:230:22"></a>qobj</span></td><td>: <a href="glu.ads.html#glu.ads:74:9" title="defined at glu.ads:74:9">GLUquadricObjPtr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:231:22"></a>radius</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:232:22"></a>slices</span></td><td>: <a href="gl.ads.html#gl.ads:121:9" title="defined at gl.ads:121:9">GL.Int</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:233:22"></a>stacks</span></td><td>: <a href="gl.ads.html#gl.ads:121:9" title="defined at gl.ads:121:9">GL.Int</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l230" title="glu.ads:230:14">glu.ads:230:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l694" title="glu.ads:694:28">glu.ads:694:28</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:235:14' id='glu.ads:235:14'></a>
+<span class="droplink">Disk<ul>
+  <li><a href="src_glu.ads.html#l235">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l695">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Disk</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:235:20"></a>qobj</span></td><td>: <a href="glu.ads.html#glu.ads:74:9" title="defined at glu.ads:74:9">GLUquadricObjPtr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:236:20"></a>innerRadius</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:237:20"></a>outerRadius</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:238:20"></a>slices</span></td><td>: <a href="gl.ads.html#gl.ads:121:9" title="defined at gl.ads:121:9">GL.Int</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:239:20"></a>loops</span></td><td>: <a href="gl.ads.html#gl.ads:121:9" title="defined at gl.ads:121:9">GL.Int</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l235" title="glu.ads:235:14">glu.ads:235:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l695" title="glu.ads:695:28">glu.ads:695:28</a> (body)</i></div>
+            <div><i><a href="src_graphics_opengl.adb.html#l217" title="graphics_opengl.adb:217:11">graphics_opengl.adb:217:11</a> (call)</i></div>
+            <div><i><a href="src_graphics_opengl.adb.html#l220" title="graphics_opengl.adb:220:11">graphics_opengl.adb:220:11</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="graphics_opengl.ads.html#graphics_opengl.ads:23:14" title="defined at graphics_opengl.ads:23:14">Graphics_OpenGL.Draw_Line</a> defined at <a href="src_graphics_opengl.ads.html#l23" title="graphics_opengl.ads:23:14">graphics_opengl.ads:23:14</a></i></div>
+            <div><i><a href="graphics_opengl.ads.html#graphics_opengl.ads:23:14" title="defined at graphics_opengl.ads:23:14">Graphics_OpenGL.Draw_Line</a> defined at <a href="src_graphics_opengl.ads.html#l23" title="graphics_opengl.ads:23:14">graphics_opengl.ads:23:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:241:14' id='glu.ads:241:14'></a>
+<span class="droplink">PartialDisk<ul>
+  <li><a href="src_glu.ads.html#l241">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l696">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">PartialDisk</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:241:27"></a>qobj</span></td><td>: <a href="glu.ads.html#glu.ads:74:9" title="defined at glu.ads:74:9">GLUquadricObjPtr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:242:27"></a>innerRadius</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:243:27"></a>outerRadius</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:244:27"></a>slices</span></td><td>: <a href="gl.ads.html#gl.ads:121:9" title="defined at gl.ads:121:9">GL.Int</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:245:27"></a>loops</span></td><td>: <a href="gl.ads.html#gl.ads:121:9" title="defined at gl.ads:121:9">GL.Int</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:246:27"></a>startAngle</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:247:27"></a>sweepAngle</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l241" title="glu.ads:241:14">glu.ads:241:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l696" title="glu.ads:696:28">glu.ads:696:28</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:389:13' id='glu.ads:389:13'></a>
+<span class="droplink">NewNurbsRenderer<ul>
+  <li><a href="src_glu.ads.html#l389">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l697">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">NewNurbsRenderer</span> <span class="keyword">return</span> <a href="glu.ads.html#glu.ads:76:9" title="defined at glu.ads:76:9">GLUnurbsObjPtr</a>;</pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l389" title="glu.ads:389:13">glu.ads:389:13</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l697" title="glu.ads:697:28">glu.ads:697:28</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:392:14' id='glu.ads:392:14'></a>
+<span class="droplink">DeleteNurbsRenderer<ul>
+  <li><a href="src_glu.ads.html#l392">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l698">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">DeleteNurbsRenderer</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:392:35"></a>nobj</span></td><td>: <a href="glu.ads.html#glu.ads:76:9" title="defined at glu.ads:76:9">GLUnurbsObjPtr</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l392" title="glu.ads:392:14">glu.ads:392:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l698" title="glu.ads:698:28">glu.ads:698:28</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:394:14' id='glu.ads:394:14'></a>
+<span class="droplink">LoadSamplingMatrices<ul>
+  <li><a href="src_glu.ads.html#l394">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l699">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">LoadSamplingMatrices</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:394:36"></a>nobj</span></td><td>: <a href="glu.ads.html#glu.ads:76:9" title="defined at glu.ads:76:9">GLUnurbsObjPtr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:395:36"></a>modelMatrix</span></td><td>: <a href="glu.ads.html#glu.ads:67:9" title="defined at glu.ads:67:9">Matrix_Float_Ptr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:396:36"></a>projMatrix</span></td><td>: <a href="glu.ads.html#glu.ads:67:9" title="defined at glu.ads:67:9">Matrix_Float_Ptr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:397:36"></a>viewport</span></td><td>: <a href="glu.ads.html#glu.ads:66:9" title="defined at glu.ads:66:9">Viewport_Ptr</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l394" title="glu.ads:394:14">glu.ads:394:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l699" title="glu.ads:699:28">glu.ads:699:28</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:399:14' id='glu.ads:399:14'></a>
+<span class="droplink">NurbsProperty<ul>
+  <li><a href="src_glu.ads.html#l399">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l700">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">NurbsProperty</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:399:29"></a>nobj</span></td><td>: <a href="glu.ads.html#glu.ads:76:9" title="defined at glu.ads:76:9">GLUnurbsObjPtr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:400:29"></a>property</span></td><td>: <a href="glu.ads.html#glu.ads:250:9" title="defined at glu.ads:250:9">NurbsPropertyEnm</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:401:29"></a>value</span></td><td>: <a href="gl.ads.html#gl.ads:126:9" title="defined at gl.ads:126:9">GL.C_Float</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l399" title="glu.ads:399:14">glu.ads:399:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l700" title="glu.ads:700:28">glu.ads:700:28</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:403:14' id='glu.ads:403:14'></a>
+<span class="droplink">GetNurbsProperty<ul>
+  <li><a href="src_glu.ads.html#l403">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l701">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">GetNurbsProperty</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:403:32"></a>nobj</span></td><td>: <a href="glu.ads.html#glu.ads:76:9" title="defined at glu.ads:76:9">GLUnurbsObjPtr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:404:32"></a>property</span></td><td>: <a href="glu.ads.html#glu.ads:250:9" title="defined at glu.ads:250:9">NurbsPropertyEnm</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:405:32"></a>value</span></td><td>: <a href="gl.ads.html#gl.ads:143:9" title="defined at gl.ads:143:9">GL.floatPtr</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l403" title="glu.ads:403:14">glu.ads:403:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l701" title="glu.ads:701:28">glu.ads:701:28</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:407:14' id='glu.ads:407:14'></a>
+<span class="droplink">BeginCurve<ul>
+  <li><a href="src_glu.ads.html#l407">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l702">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">BeginCurve</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:407:26"></a>nobj</span></td><td>: <a href="glu.ads.html#glu.ads:76:9" title="defined at glu.ads:76:9">GLUnurbsObjPtr</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l407" title="glu.ads:407:14">glu.ads:407:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l702" title="glu.ads:702:28">glu.ads:702:28</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:409:14' id='glu.ads:409:14'></a>
+<span class="droplink">EndCurve<ul>
+  <li><a href="src_glu.ads.html#l409">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l703">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">EndCurve</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:409:24"></a>nobj</span></td><td>: <a href="glu.ads.html#glu.ads:76:9" title="defined at glu.ads:76:9">GLUnurbsObjPtr</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l409" title="glu.ads:409:14">glu.ads:409:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l703" title="glu.ads:703:28">glu.ads:703:28</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:411:14' id='glu.ads:411:14'></a>
+<span class="droplink">NurbsCurve<ul>
+  <li><a href="src_glu.ads.html#l411">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l704">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">NurbsCurve</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:411:26"></a>nobj</span></td><td>: <a href="glu.ads.html#glu.ads:76:9" title="defined at glu.ads:76:9">GLUnurbsObjPtr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:412:26"></a>nknots</span></td><td>: <a href="gl.ads.html#gl.ads:121:9" title="defined at gl.ads:121:9">GL.Int</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:413:26"></a>knot</span></td><td>: <a href="gl.ads.html#gl.ads:143:9" title="defined at gl.ads:143:9">GL.floatPtr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:414:26"></a>stride</span></td><td>: <a href="gl.ads.html#gl.ads:121:9" title="defined at gl.ads:121:9">GL.Int</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:415:26"></a>ctlarray</span></td><td>: <a href="gl.ads.html#gl.ads:143:9" title="defined at gl.ads:143:9">GL.floatPtr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:416:26"></a>order</span></td><td>: <a href="gl.ads.html#gl.ads:121:9" title="defined at gl.ads:121:9">GL.Int</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:417:26"></a>c_type</span></td><td>: <a href="gl.ads.html#gl.ads:2727:9" title="defined at gl.ads:2727:9">GL.Map1TargetEnm</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l411" title="glu.ads:411:14">glu.ads:411:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l704" title="glu.ads:704:28">glu.ads:704:28</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:419:14' id='glu.ads:419:14'></a>
+<span class="droplink">BeginSurface<ul>
+  <li><a href="src_glu.ads.html#l419">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l705">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">BeginSurface</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:419:28"></a>nobj</span></td><td>: <a href="glu.ads.html#glu.ads:76:9" title="defined at glu.ads:76:9">GLUnurbsObjPtr</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l419" title="glu.ads:419:14">glu.ads:419:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l705" title="glu.ads:705:28">glu.ads:705:28</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:421:14' id='glu.ads:421:14'></a>
+<span class="droplink">EndSurface<ul>
+  <li><a href="src_glu.ads.html#l421">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l706">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">EndSurface</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:421:26"></a>nobj</span></td><td>: <a href="glu.ads.html#glu.ads:76:9" title="defined at glu.ads:76:9">GLUnurbsObjPtr</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l421" title="glu.ads:421:14">glu.ads:421:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l706" title="glu.ads:706:28">glu.ads:706:28</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:423:14' id='glu.ads:423:14'></a>
+<span class="droplink">NurbsSurface<ul>
+  <li><a href="src_glu.ads.html#l423">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l707">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">NurbsSurface</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:423:28"></a>nobj</span></td><td>: <a href="glu.ads.html#glu.ads:76:9" title="defined at glu.ads:76:9">GLUnurbsObjPtr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:424:28"></a>sknot_count</span></td><td>: <a href="gl.ads.html#gl.ads:121:9" title="defined at gl.ads:121:9">GL.Int</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:425:28"></a>sknot</span></td><td>: <a href="gl.ads.html#gl.ads:143:9" title="defined at gl.ads:143:9">GL.floatPtr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:426:28"></a>tknot_count</span></td><td>: <a href="gl.ads.html#gl.ads:121:9" title="defined at gl.ads:121:9">GL.Int</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:427:28"></a>tknot</span></td><td>: <a href="gl.ads.html#gl.ads:143:9" title="defined at gl.ads:143:9">GL.floatPtr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:428:28"></a>s_stride</span></td><td>: <a href="gl.ads.html#gl.ads:121:9" title="defined at gl.ads:121:9">GL.Int</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:429:28"></a>t_stride</span></td><td>: <a href="gl.ads.html#gl.ads:121:9" title="defined at gl.ads:121:9">GL.Int</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:430:28"></a>ctlarray</span></td><td>: <a href="gl.ads.html#gl.ads:143:9" title="defined at gl.ads:143:9">GL.floatPtr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:431:28"></a>sorder</span></td><td>: <a href="gl.ads.html#gl.ads:121:9" title="defined at gl.ads:121:9">GL.Int</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:432:28"></a>torder</span></td><td>: <a href="gl.ads.html#gl.ads:121:9" title="defined at gl.ads:121:9">GL.Int</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:433:28"></a>c_type</span></td><td>: <a href="gl.ads.html#gl.ads:2753:9" title="defined at gl.ads:2753:9">GL.Map2TargetEnm</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l423" title="glu.ads:423:14">glu.ads:423:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l707" title="glu.ads:707:28">glu.ads:707:28</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:435:14' id='glu.ads:435:14'></a>
+<span class="droplink">BeginTrim<ul>
+  <li><a href="src_glu.ads.html#l435">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l708">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">BeginTrim</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:435:25"></a>nobj</span></td><td>: <a href="glu.ads.html#glu.ads:76:9" title="defined at glu.ads:76:9">GLUnurbsObjPtr</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l435" title="glu.ads:435:14">glu.ads:435:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l708" title="glu.ads:708:28">glu.ads:708:28</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:437:14' id='glu.ads:437:14'></a>
+<span class="droplink">EndTrim<ul>
+  <li><a href="src_glu.ads.html#l437">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l709">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">EndTrim</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:437:23"></a>nobj</span></td><td>: <a href="glu.ads.html#glu.ads:76:9" title="defined at glu.ads:76:9">GLUnurbsObjPtr</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l437" title="glu.ads:437:14">glu.ads:437:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l709" title="glu.ads:709:28">glu.ads:709:28</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:439:14' id='glu.ads:439:14'></a>
+<span class="droplink">PwlCurve<ul>
+  <li><a href="src_glu.ads.html#l439">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l710">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">PwlCurve</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:439:24"></a>nobj</span></td><td>: <a href="glu.ads.html#glu.ads:76:9" title="defined at glu.ads:76:9">GLUnurbsObjPtr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:440:24"></a>count</span></td><td>: <a href="gl.ads.html#gl.ads:121:9" title="defined at gl.ads:121:9">GL.Int</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:441:24"></a>c_array</span></td><td>: <a href="gl.ads.html#gl.ads:143:9" title="defined at gl.ads:143:9">GL.floatPtr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:442:24"></a>stride</span></td><td>: <a href="gl.ads.html#gl.ads:121:9" title="defined at gl.ads:121:9">GL.Int</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:443:24"></a>c_type</span></td><td>: <a href="glu.ads.html#glu.ads:375:9" title="defined at glu.ads:375:9">PwlCurveTypeEnm</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l439" title="glu.ads:439:14">glu.ads:439:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l710" title="glu.ads:710:28">glu.ads:710:28</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:445:14' id='glu.ads:445:14'></a>
+<span class="droplink">NurbsCallback<ul>
+  <li><a href="src_glu.ads.html#l445">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l711">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">NurbsCallback</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:445:29"></a>nobj</span></td><td>: <a href="glu.ads.html#glu.ads:76:9" title="defined at glu.ads:76:9">GLUnurbsObjPtr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:446:29"></a>which</span></td><td>: <a href="glu.ads.html#glu.ads:190:9" title="defined at glu.ads:190:9">CallbackEnm</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:447:29"></a>fn</span></td><td>: <a href="glu.ads.html#glu.ads:387:9" title="defined at glu.ads:387:9">NurbsCallbackFunction</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l445" title="glu.ads:445:14">glu.ads:445:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l711" title="glu.ads:711:28">glu.ads:711:28</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:536:13' id='glu.ads:536:13'></a>
+<span class="droplink">NewTess<ul>
+  <li><a href="src_glu.ads.html#l536">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l712">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">NewTess</span> <span class="keyword">return</span> <a href="glu.ads.html#glu.ads:75:9" title="defined at glu.ads:75:9">GLUtriangulatorObjPtr</a>;</pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l536" title="glu.ads:536:13">glu.ads:536:13</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l712" title="glu.ads:712:28">glu.ads:712:28</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:539:14' id='glu.ads:539:14'></a>
+<span class="droplink">TessCallback<ul>
+  <li><a href="src_glu.ads.html#l539">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l713">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">TessCallback</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:539:28"></a>tobj</span></td><td>: <a href="glu.ads.html#glu.ads:75:9" title="defined at glu.ads:75:9">GLUtriangulatorObjPtr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:540:28"></a>which</span></td><td>: <a href="glu.ads.html#glu.ads:450:9" title="defined at glu.ads:450:9">TessCallbackEnm</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:541:28"></a>fn</span></td><td>: <a href="glu.ads.html#glu.ads:483:9" title="defined at glu.ads:483:9">TessBeginCallbackFunction</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l539" title="glu.ads:539:14">glu.ads:539:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l713" title="glu.ads:713:28">glu.ads:713:28</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:542:14' id='glu.ads:542:14'></a>
+<span class="droplink">TessCallback<ul>
+  <li><a href="src_glu.ads.html#l542">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l713">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">TessCallback</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:542:28"></a>tobj</span></td><td>: <a href="glu.ads.html#glu.ads:75:9" title="defined at glu.ads:75:9">GLUtriangulatorObjPtr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:543:28"></a>which</span></td><td>: <a href="glu.ads.html#glu.ads:450:9" title="defined at glu.ads:450:9">TessCallbackEnm</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:544:28"></a>fn</span></td><td>: <a href="glu.ads.html#glu.ads:485:9" title="defined at glu.ads:485:9">TessVertexCallbackFunction</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l542" title="glu.ads:542:14">glu.ads:542:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l713" title="glu.ads:713:28">glu.ads:713:28</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:545:14' id='glu.ads:545:14'></a>
+<span class="droplink">TessCallback<ul>
+  <li><a href="src_glu.ads.html#l545">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l713">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">TessCallback</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:545:28"></a>tobj</span></td><td>: <a href="glu.ads.html#glu.ads:75:9" title="defined at glu.ads:75:9">GLUtriangulatorObjPtr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:546:28"></a>which</span></td><td>: <a href="glu.ads.html#glu.ads:450:9" title="defined at glu.ads:450:9">TessCallbackEnm</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:547:28"></a>fn</span></td><td>: <a href="glu.ads.html#glu.ads:487:9" title="defined at glu.ads:487:9">TessEndCallbackFunction</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l545" title="glu.ads:545:14">glu.ads:545:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l713" title="glu.ads:713:28">glu.ads:713:28</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:548:14' id='glu.ads:548:14'></a>
+<span class="droplink">TessCallback<ul>
+  <li><a href="src_glu.ads.html#l548">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l713">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">TessCallback</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:548:28"></a>tobj</span></td><td>: <a href="glu.ads.html#glu.ads:75:9" title="defined at glu.ads:75:9">GLUtriangulatorObjPtr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:549:28"></a>which</span></td><td>: <a href="glu.ads.html#glu.ads:450:9" title="defined at glu.ads:450:9">TessCallbackEnm</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:550:28"></a>fn</span></td><td>: <a href="glu.ads.html#glu.ads:514:9" title="defined at glu.ads:514:9">TessErrorCallbackFunction</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l548" title="glu.ads:548:14">glu.ads:548:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l713" title="glu.ads:713:28">glu.ads:713:28</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:551:14' id='glu.ads:551:14'></a>
+<span class="droplink">TessCallback<ul>
+  <li><a href="src_glu.ads.html#l551">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l713">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">TessCallback</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:551:28"></a>tobj</span></td><td>: <a href="glu.ads.html#glu.ads:75:9" title="defined at glu.ads:75:9">GLUtriangulatorObjPtr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:552:28"></a>which</span></td><td>: <a href="glu.ads.html#glu.ads:450:9" title="defined at glu.ads:450:9">TessCallbackEnm</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:553:28"></a>fn</span></td><td>: <a href="glu.ads.html#glu.ads:516:9" title="defined at glu.ads:516:9">TessEdgeFlagCallbackFunction</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l551" title="glu.ads:551:14">glu.ads:551:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l713" title="glu.ads:713:28">glu.ads:713:28</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:555:14' id='glu.ads:555:14'></a>
+<span class="droplink">DeleteTess<ul>
+  <li><a href="src_glu.ads.html#l555">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l714">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">DeleteTess</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:555:26"></a>tobj</span></td><td>: <a href="glu.ads.html#glu.ads:75:9" title="defined at glu.ads:75:9">GLUtriangulatorObjPtr</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l555" title="glu.ads:555:14">glu.ads:555:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l714" title="glu.ads:714:28">glu.ads:714:28</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:557:14' id='glu.ads:557:14'></a>
+<span class="droplink">BeginPolygon<ul>
+  <li><a href="src_glu.ads.html#l557">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l715">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">BeginPolygon</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:557:28"></a>tobj</span></td><td>: <a href="glu.ads.html#glu.ads:75:9" title="defined at glu.ads:75:9">GLUtriangulatorObjPtr</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l557" title="glu.ads:557:14">glu.ads:557:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l715" title="glu.ads:715:28">glu.ads:715:28</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:559:14' id='glu.ads:559:14'></a>
+<span class="droplink">EndPolygon<ul>
+  <li><a href="src_glu.ads.html#l559">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l716">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">EndPolygon</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:559:26"></a>tobj</span></td><td>: <a href="glu.ads.html#glu.ads:75:9" title="defined at glu.ads:75:9">GLUtriangulatorObjPtr</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l559" title="glu.ads:559:14">glu.ads:559:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l716" title="glu.ads:716:28">glu.ads:716:28</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:561:14' id='glu.ads:561:14'></a>
+<span class="droplink">NextContour<ul>
+  <li><a href="src_glu.ads.html#l561">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l717">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">NextContour</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:561:27"></a>tobj</span></td><td>: <a href="glu.ads.html#glu.ads:75:9" title="defined at glu.ads:75:9">GLUtriangulatorObjPtr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:562:27"></a>c_type</span></td><td>: <a href="glu.ads.html#glu.ads:518:9" title="defined at glu.ads:518:9">ContourTypeEnm</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l561" title="glu.ads:561:14">glu.ads:561:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l717" title="glu.ads:717:28">glu.ads:717:28</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:564:14' id='glu.ads:564:14'></a>
+<span class="droplink">TessVertex<ul>
+  <li><a href="src_glu.ads.html#l564">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l718">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">TessVertex</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:564:26"></a>tobj</span></td><td>: <a href="glu.ads.html#glu.ads:75:9" title="defined at glu.ads:75:9">GLUtriangulatorObjPtr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:565:26"></a>v</span></td><td>: <a href="gl.ads.html#gl.ads:145:12" title="defined at gl.ads:145:12">GL.doublePtr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:566:26"></a>data</span></td><td>: <a href="gl.ads.html#gl.ads:150:9" title="defined at gl.ads:150:9">GL.pointer</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l564" title="glu.ads:564:14">glu.ads:564:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l718" title="glu.ads:718:28">glu.ads:718:28</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:581:13' id='glu.ads:581:13'></a>
+<span class="droplink">GetString<ul>
+  <li><a href="src_glu.ads.html#l581">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l719">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">GetString</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:581:24"></a>name</span></td><td>: <a href="glu.ads.html#glu.ads:569:9" title="defined at glu.ads:569:9">StringEnm</a>) <span class="keyword">return</span> <a href="gl.ads.html#gl.ads:140:9" title="defined at gl.ads:140:9">GL.ubytePtr</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l581" title="glu.ads:581:13">glu.ads:581:13</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l719" title="glu.ads:719:28">glu.ads:719:28</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:585:14' id='glu.ads:585:14'></a>
+<span class="droplink">LookAt<ul>
+  <li><a href="src_glu.ads.html#l585">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l668">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">LookAt</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:585:22"></a>eyex</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:586:22"></a>eyey</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:587:22"></a>eyez</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:588:22"></a>centerx</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:589:22"></a>centery</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:590:22"></a>centerz</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:591:22"></a>upx</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:592:22"></a>upy</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:593:22"></a>upz</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l585" title="glu.ads:585:14">glu.ads:585:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l668" title="glu.ads:668:28">glu.ads:668:28</a> (body)</i></div>
+        </div>
+        <div class='comment'>Projections
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:595:14' id='glu.ads:595:14'></a>
+<span class="droplink">Ortho2D<ul>
+  <li><a href="src_glu.ads.html#l595">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l669">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Ortho2D</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:595:23"></a>left</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:596:23"></a>right</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:597:23"></a>bottom</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:598:23"></a>top</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l595" title="glu.ads:595:14">glu.ads:595:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l669" title="glu.ads:669:28">glu.ads:669:28</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:600:14' id='glu.ads:600:14'></a>
+<span class="droplink">Perspective<ul>
+  <li><a href="src_glu.ads.html#l600">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l670">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Perspective</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:600:27"></a>fovy</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:601:27"></a>aspect</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:602:27"></a>zNear</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:603:27"></a>zFar</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l600" title="glu.ads:600:14">glu.ads:600:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l670" title="glu.ads:670:28">glu.ads:670:28</a> (body)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l138" title="glut-windows.adb:138:11">glut-windows.adb:138:11</a> (call)</i></div>
+            <div><i><a href="src_graphics_setup.adb.html#l48" title="graphics_setup.adb:48:11">graphics_setup.adb:48:11</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="glut-windows.adb.html#glut-windows.adb:130:14" title="defined at glut-windows.adb:130:14">GLUT.Windows.enable_Viewport_and_Perspective</a> defined at <a href="src_glut-windows.adb.html#l130" title="glut-windows.adb:130:14">glut-windows.adb:130:14</a></i></div>
+            <div><i><a href="graphics_setup.adb.html#graphics_setup.adb:30:14" title="defined at graphics_setup.adb:30:14">Graphics_Setup.Reset_for_3D</a> defined at <a href="src_graphics_setup.adb.html#l30" title="graphics_setup.adb:30:14">graphics_setup.adb:30:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:605:14' id='glu.ads:605:14'></a>
+<span class="droplink">PickMatrix<ul>
+  <li><a href="src_glu.ads.html#l605">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l671">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">PickMatrix</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:605:26"></a>x</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:606:26"></a>y</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:607:26"></a>width</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:608:26"></a>height</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:609:26"></a>viewport</span></td><td>: <a href="glu.ads.html#glu.ads:66:9" title="defined at glu.ads:66:9">Viewport_Ptr</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l605" title="glu.ads:605:14">glu.ads:605:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l671" title="glu.ads:671:28">glu.ads:671:28</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:611:13' id='glu.ads:611:13'></a>
+<span class="droplink">Project<ul>
+  <li><a href="src_glu.ads.html#l611">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l621">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Project</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:611:22"></a>objx</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:612:22"></a>objy</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:613:22"></a>objz</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:614:22"></a>modelMatrix</span></td><td>: <a href="glu.ads.html#glu.ads:68:9" title="defined at glu.ads:68:9">Matrix_Double_Ptr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:615:22"></a>projMatrix</span></td><td>: <a href="glu.ads.html#glu.ads:68:9" title="defined at glu.ads:68:9">Matrix_Double_Ptr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:616:22"></a>viewport</span></td><td>: <a href="glu.ads.html#glu.ads:66:9" title="defined at glu.ads:66:9">Viewport_Ptr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:617:22"></a>winx</span></td><td>: <a href="gl.ads.html#gl.ads:145:12" title="defined at gl.ads:145:12">GL.doublePtr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:618:22"></a>winy</span></td><td>: <a href="gl.ads.html#gl.ads:145:12" title="defined at gl.ads:145:12">GL.doublePtr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:619:22"></a>winz</span></td><td>: <a href="gl.ads.html#gl.ads:145:12" title="defined at gl.ads:145:12">GL.doublePtr</a>) <span class="keyword">return</span> <a href="gl.ads.html#gl.ads:121:9" title="defined at gl.ads:121:9">GL.Int</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l611" title="glu.ads:611:13">glu.ads:611:13</a> (declaration)</i></div>
+            <div><i><a href="src_glu.adb.html#l45" title="glu.adb:45:15">glu.adb:45:15</a> (call)</i></div>
+            <div><i><a href="src_glu.ads.html#l621" title="glu.ads:621:28">glu.ads:621:28</a> (body)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="glu.ads.html#glu.ads:625:14" title="defined at glu.ads:625:14">Project</a> defined at <a href="src_glu.ads.html#l625" title="glu.ads:625:14">glu.ads:625:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:625:14' id='glu.ads:625:14'></a>
+<span class="droplink">Project<ul>
+  <li><a href="src_glu.ads.html#l625">Goto spec in source</a></li>
+  <li><a href="src_glu.adb.html#l27">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Project</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:625:23"></a>objx</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:626:23"></a>objy</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:627:23"></a>objz</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:628:23"></a>modelMatrix</span></td><td>: <a href="glu.ads.html#glu.ads:64:9" title="defined at glu.ads:64:9">Matrix_Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:629:23"></a>projMatrix</span></td><td>: <a href="glu.ads.html#glu.ads:64:9" title="defined at glu.ads:64:9">Matrix_Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:630:23"></a>viewport</span></td><td>: <a href="glu.ads.html#glu.ads:58:9" title="defined at glu.ads:58:9">Viewport_Rec</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:631:23"></a>winx</span></td><td>: <span class="keyword">out</span> <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:632:23"></a>winy</span></td><td>: <span class="keyword">out</span> <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:633:23"></a>winz</span></td><td>: <span class="keyword">out</span> <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:634:23"></a>result</span></td><td>: <span class="keyword">out</span> Boolean);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l625" title="glu.ads:625:14">glu.ads:625:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.adb.html#l27" title="glu.adb:27:13">glu.adb:27:13</a> (body)</i></div>
+            <div><i><a href="src_glu.adb.html#l59" title="glu.adb:59:7">glu.adb:59:7</a> (label)</i></div>
+            <div><i><a href="src_globe_3d-portals.adb.html#l37" title="globe_3d-portals.adb:37:11">globe_3d-portals.adb:37:11</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="globe_3d-portals.adb.html#globe_3d-portals.adb:19:14" title="defined at globe_3d-portals.adb:19:14">GLOBE_3D.Portals.Projection</a> defined at <a href="src_globe_3d-portals.adb.html#l19" title="globe_3d-portals.adb:19:14">globe_3d-portals.adb:19:14</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="glu.adb.html#glu.adb:39:14" title="defined at glu.adb:39:14">GLU.Project.CvM</a> defined at <a href="src_glu.adb.html#l39" title="glu.adb:39:14">glu.adb:39:14</a></i></div>
+            <div><i><a href="glu.adb.html#glu.adb:40:14" title="defined at glu.adb:40:14">GLU.Project.Cvt</a> defined at <a href="src_glu.adb.html#l40" title="glu.adb:40:14">glu.adb:40:14</a></i></div>
+            <div><i><a href="glu.adb.html#glu.adb:38:14" title="defined at glu.adb:38:14">GLU.Project.CvV</a> defined at <a href="src_glu.adb.html#l38" title="glu.adb:38:14">glu.adb:38:14</a></i></div>
+            <div><i><a href="glu.ads.html#glu.ads:611:13" title="defined at glu.ads:611:13">Project</a> defined at <a href="src_glu.ads.html#l611" title="glu.ads:611:13">glu.ads:611:13</a></i></div>
+            <div><i>Unchecked_Conversion defined at a-unccon.ads:20:14</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:636:13' id='glu.ads:636:13'></a>
+<span class="droplink">UnProject<ul>
+  <li><a href="src_glu.ads.html#l636">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l673">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">UnProject</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:636:24"></a>winx</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:637:24"></a>winy</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:638:24"></a>winz</span></td><td>: <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:639:24"></a>modelMatrix</span></td><td>: <a href="glu.ads.html#glu.ads:68:9" title="defined at glu.ads:68:9">Matrix_Double_Ptr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:640:24"></a>projMatrix</span></td><td>: <a href="glu.ads.html#glu.ads:68:9" title="defined at glu.ads:68:9">Matrix_Double_Ptr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:641:24"></a>viewport</span></td><td>: <a href="glu.ads.html#glu.ads:66:9" title="defined at glu.ads:66:9">Viewport_Ptr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:642:24"></a>objx</span></td><td>: <a href="gl.ads.html#gl.ads:145:12" title="defined at gl.ads:145:12">GL.doublePtr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:643:24"></a>objy</span></td><td>: <a href="gl.ads.html#gl.ads:145:12" title="defined at gl.ads:145:12">GL.doublePtr</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:644:24"></a>objz</span></td><td>: <a href="gl.ads.html#gl.ads:145:12" title="defined at gl.ads:145:12">GL.doublePtr</a>) <span class="keyword">return</span> <a href="gl.ads.html#gl.ads:121:9" title="defined at gl.ads:121:9">GL.Int</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l636" title="glu.ads:636:13">glu.ads:636:13</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l673" title="glu.ads:673:28">glu.ads:673:28</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:649:14' id='glu.ads:649:14'></a>
+<span class="droplink">Get<ul>
+  <li><a href="src_glu.ads.html#l649">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l726">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Get</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:649:19"></a>pname</span></td><td>: <a href="gl.ads.html#gl.ads:737:9" title="defined at gl.ads:737:9">GL.ParameterNameEnm</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:650:19"></a>params</span></td><td>: <a href="glu.ads.html#glu.ads:68:9" title="defined at glu.ads:68:9">Matrix_Double_Ptr</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l649" title="glu.ads:649:14">glu.ads:649:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.adb.html#l18" title="glu.adb:18:5">glu.adb:18:5</a> (call)</i></div>
+            <div><i><a href="src_glu.ads.html#l726" title="glu.ads:726:14">glu.ads:726:14</a> (body)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="glu.ads.html#glu.ads:652:14" title="defined at glu.ads:652:14">Get</a> defined at <a href="src_glu.ads.html#l652" title="glu.ads:652:14">glu.ads:652:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:652:14' id='glu.ads:652:14'></a>
+<span class="droplink">Get<ul>
+  <li><a href="src_glu.ads.html#l652">Goto spec in source</a></li>
+  <li><a href="src_glu.adb.html#l12">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Get</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:652:19"></a>pname</span></td><td>: <a href="gl.ads.html#gl.ads:737:9" title="defined at gl.ads:737:9">GL.ParameterNameEnm</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:653:19"></a>params</span></td><td>: <span class="keyword">out</span> <a href="glu.ads.html#glu.ads:64:9" title="defined at glu.ads:64:9">Matrix_Double</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l652" title="glu.ads:652:14">glu.ads:652:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.adb.html#l12" title="glu.adb:12:13">glu.adb:12:13</a> (body)</i></div>
+            <div><i><a href="src_glu.adb.html#l19" title="glu.adb:19:7">glu.adb:19:7</a> (label)</i></div>
+            <div><i><a href="src_globe_3d-portals.adb.html#l34" title="globe_3d-portals.adb:34:11">globe_3d-portals.adb:34:11</a> (call)</i></div>
+            <div><i><a href="src_globe_3d-portals.adb.html#l35" title="globe_3d-portals.adb:35:11">globe_3d-portals.adb:35:11</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="globe_3d-portals.adb.html#globe_3d-portals.adb:19:14" title="defined at globe_3d-portals.adb:19:14">GLOBE_3D.Portals.Projection</a> defined at <a href="src_globe_3d-portals.adb.html#l19" title="globe_3d-portals.adb:19:14">globe_3d-portals.adb:19:14</a></i></div>
+            <div><i><a href="globe_3d-portals.adb.html#globe_3d-portals.adb:19:14" title="defined at globe_3d-portals.adb:19:14">GLOBE_3D.Portals.Projection</a> defined at <a href="src_globe_3d-portals.adb.html#l19" title="globe_3d-portals.adb:19:14">globe_3d-portals.adb:19:14</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="glu.ads.html#glu.ads:649:14" title="defined at glu.ads:649:14">Get</a> defined at <a href="src_glu.ads.html#l649" title="glu.ads:649:14">glu.ads:649:14</a></i></div>
+            <div><i><a href="glu.adb.html#glu.adb:14:14" title="defined at glu.adb:14:14">GLU.Get.Cvt</a> defined at <a href="src_glu.adb.html#l14" title="glu.adb:14:14">glu.adb:14:14</a></i></div>
+            <div><i>Unchecked_Conversion defined at a-unccon.ads:20:14</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:655:14' id='glu.ads:655:14'></a>
+<span class="droplink">Get<ul>
+  <li><a href="src_glu.ads.html#l655">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l734">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Get</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:655:19"></a>pname</span></td><td>: <a href="gl.ads.html#gl.ads:737:9" title="defined at gl.ads:737:9">GL.ParameterNameEnm</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:656:19"></a>params</span></td><td>: <a href="glu.ads.html#glu.ads:66:9" title="defined at glu.ads:66:9">Viewport_Ptr</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l655" title="glu.ads:655:14">glu.ads:655:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.adb.html#l24" title="glu.adb:24:5">glu.adb:24:5</a> (call)</i></div>
+            <div><i><a href="src_glu.ads.html#l734" title="glu.ads:734:14">glu.ads:734:14</a> (body)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="glu.ads.html#glu.ads:658:14" title="defined at glu.ads:658:14">Get</a> defined at <a href="src_glu.ads.html#l658" title="glu.ads:658:14">glu.ads:658:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:658:14' id='glu.ads:658:14'></a>
+<span class="droplink">Get<ul>
+  <li><a href="src_glu.ads.html#l658">Goto spec in source</a></li>
+  <li><a href="src_glu.adb.html#l21">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Get</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:658:19"></a>params</span></td><td>: <span class="keyword">out</span> <a href="glu.ads.html#glu.ads:58:9" title="defined at glu.ads:58:9">Viewport_Rec</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l658" title="glu.ads:658:14">glu.ads:658:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.adb.html#l21" title="glu.adb:21:13">glu.adb:21:13</a> (body)</i></div>
+            <div><i><a href="src_glu.adb.html#l25" title="glu.adb:25:7">glu.adb:25:7</a> (label)</i></div>
+            <div><i><a href="src_globe_3d-portals.adb.html#l36" title="globe_3d-portals.adb:36:11">globe_3d-portals.adb:36:11</a> (call)</i></div>
+            <div><i><a href="src_globe_3d-software_anti_aliasing.adb.html#l132" title="globe_3d-software_anti_aliasing.adb:132:13">globe_3d-software_anti_aliasing.adb:132:13</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="globe_3d-portals.adb.html#globe_3d-portals.adb:19:14" title="defined at globe_3d-portals.adb:19:14">GLOBE_3D.Portals.Projection</a> defined at <a href="src_globe_3d-portals.adb.html#l19" title="globe_3d-portals.adb:19:14">globe_3d-portals.adb:19:14</a></i></div>
+            <div><i><a href="globe_3d-software_anti_aliasing.adb.html#globe_3d-software_anti_aliasing.adb:127:17" title="defined at globe_3d-software_anti_aliasing.adb:127:17">GLOBE_3D.Software_Anti_Aliasing.Display_with_Anti_Aliasing.Jitter.LoadDxDy</a> defined at <a href="src_globe_3d-software_anti_aliasing.adb.html#l127" title="globe_3d-software_anti_aliasing.adb:127:17">globe_3d-software_anti_aliasing.adb:127:17</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="glu.ads.html#glu.ads:655:14" title="defined at glu.ads:655:14">Get</a> defined at <a href="src_glu.ads.html#l655" title="glu.ads:655:14">glu.ads:655:14</a></i></div>
+            <div><i><a href="glu.adb.html#glu.adb:22:14" title="defined at glu.adb:22:14">GLU.Get.Cvt</a> defined at <a href="src_glu.adb.html#l22" title="glu.adb:22:14">glu.adb:22:14</a></i></div>
+            <div><i>Unchecked_Conversion defined at a-unccon.ads:20:14</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:675:13' id='glu.ads:675:13'></a>
+<span class="droplink">ErrorString_1 (private)<ul>
+  <li><a href="src_glu.ads.html#l675">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l677">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">ErrorString_1</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:675:28"></a>errorCode</span></td><td>: <a href="glu.ads.html#glu.ads:81:9" title="defined at glu.ads:81:9">ErrorEnm</a>)  <span class="keyword">return</span> <a href="gl.ads.html#gl.ads:140:9" title="defined at gl.ads:140:9">GL.ubytePtr</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l675" title="glu.ads:675:13">glu.ads:675:13</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l676" title="glu.ads:676:78">glu.ads:676:78</a> (reference)</i></div>
+            <div><i><a href="src_glu.ads.html#l677" title="glu.ads:677:28">glu.ads:677:28</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:679:13' id='glu.ads:679:13'></a>
+<span class="droplink">ErrorString_2 (private)<ul>
+  <li><a href="src_glu.ads.html#l679">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l681">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">ErrorString_2</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:679:28"></a>errorCode</span></td><td>: <a href="gl.ads.html#gl.ads:1220:9" title="defined at gl.ads:1220:9">GL.ErrorEnm</a>) <span class="keyword">return</span> <a href="gl.ads.html#gl.ads:140:9" title="defined at gl.ads:140:9">GL.ubytePtr</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l679" title="glu.ads:679:13">glu.ads:679:13</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l680" title="glu.ads:680:81">glu.ads:680:81</a> (reference)</i></div>
+            <div><i><a href="src_glu.ads.html#l681" title="glu.ads:681:28">glu.ads:681:28</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:724:14' id='glu.ads:724:14'></a>
+<span class="droplink">GetDoublev (private)<ul>
+  <li><a href="src_glu.ads.html#l724">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l728">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">GetDoublev</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:724:26"></a>pname</span></td><td>: <a href="gl.ads.html#gl.ads:737:9" title="defined at gl.ads:737:9">GL.ParameterNameEnm</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:725:26"></a>params</span></td><td>: <a href="glu.ads.html#glu.ads:68:9" title="defined at glu.ads:68:9">Matrix_Double_Ptr</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l724" title="glu.ads:724:14">glu.ads:724:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l727" title="glu.ads:727:55">glu.ads:727:55</a> (reference)</i></div>
+            <div><i><a href="src_glu.ads.html#l728" title="glu.ads:728:28">glu.ads:728:28</a> (body)</i></div>
+        </div>
+        <div class='comment'>Wrappers for <a href="gl-buffer-general.adb.html#gl-buffer-general.adb:62:13" title="Get">Get</a> (doubleMatrix)
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='glu.ads:732:14' id='glu.ads:732:14'></a>
+<span class="droplink">GetIntegerv (private)<ul>
+  <li><a href="src_glu.ads.html#l732">Goto spec in source</a></li>
+  <li><a href="src_glu.ads.html#l736">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">GetIntegerv</span> <table><tr><td>(</td><td><span class="name"><a name="glu.ads:732:27"></a>pname</span></td><td>: <a href="gl.ads.html#gl.ads:737:9" title="defined at gl.ads:737:9">GL.ParameterNameEnm</a>;</td></tr><tr><td></td><td><span class="name"><a name="glu.ads:733:27"></a>params</span></td><td>: <a href="glu.ads.html#glu.ads:66:9" title="defined at glu.ads:66:9">Viewport_Ptr</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_glu.ads.html#l732" title="glu.ads:732:14">glu.ads:732:14</a> (declaration)</i></div>
+            <div><i><a href="src_glu.ads.html#l735" title="glu.ads:735:50">glu.ads:735:50</a> (reference)</i></div>
+            <div><i><a href="src_glu.ads.html#l736" title="glu.ads:736:28">glu.ads:736:28</a> (body)</i></div>
+        </div>
+      </div>
+    </div>
+</div> <!-- documentation -->
+
+</body>
+</html>

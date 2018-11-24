@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    File: matrices.ads
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+  </div>
+</div> <!-- leftSide -->
+
+<div class='subprograms'>
+  <div class='details'><ol><li id="l1"><pre><span class="comment">--</span> </pre></li>
+<li id="l2"><pre><span class="comment">-- Jan &amp; Uwe R. Zimmer, Australia, July 2011</span> </pre></li>
+<li id="l3"><pre><span class="comment">--</span> </pre></li>
+<li id="l4"><pre> </pre></li>
+<li id="l5"><pre><span class="keyword">with</span> <span class="droplink">Real_Type<ul><li><a href="real_type.ads.html#real_type.ads:3:9" title="To API doc">To API doc</a></li><li><a href="src_real_type.ads.html#l3" title="To spec">To spec</a></li></ul></span>; <span class="keyword">use</span> <span class="droplink">Real_Type<ul><li><a href="real_type.ads.html#real_type.ads:3:9" title="To API doc">To API doc</a></li><li><a href="src_real_type.ads.html#l3" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l6"><pre> </pre></li>
+<li id="l7"><pre><span class="keyword">generic</span> </pre></li>
+<li id="l8"><pre>   <a href="matrices.ads.html#matrices.ads:8:4" title="defined at matrices.ads:8:4">Dimension</a> : Positive; </pre></li>
+<li id="l9"><pre> </pre></li>
+<li id="l10"><pre><span class="keyword">package</span> <span class="droplink">Matrices<ul><li><a href="matrices.ads.html#matrices.ads:10:9" title="To API doc">To API doc</a></li><li><a href="src_matrices.adb.html#l5" title="To body">To body</a></li></ul></span> <span class="keyword">is</span> </pre></li>
+<li id="l11"><pre> </pre></li>
+<li id="l12"><pre>   <span class="keyword">type</span> <a href="matrices.ads.html#matrices.ads:12:9" title="defined at matrices.ads:12:9">Matrix</a> <span class="keyword">is</span> <span class="keyword">array</span> (1 .. <span class="droplink">Dimension<ul><li><a href="matrices.ads.html#matrices.ads:8:4" title="To API doc">To API doc</a></li><li><a href="src_matrices.ads.html#l8" title="To spec">To spec</a></li></ul></span>, 1 .. <span class="droplink">Dimension<ul><li><a href="matrices.ads.html#matrices.ads:8:4" title="To API doc">To API doc</a></li><li><a href="src_matrices.ads.html#l8" title="To spec">To spec</a></li></ul></span>) <span class="keyword">of</span> <span class="droplink">Real<ul><li><a href="real_type.ads.html#real_type.ads:5:12" title="To API doc">To API doc</a></li><li><a href="src_real_type.ads.html#l5" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l13"><pre> </pre></li>
+<li id="l14"><pre>   <span class="comment">-- function Image (Matrix : Matrix_3D) return String;</span> </pre></li>
+<li id="l15"><pre> </pre></li>
+<li id="l16"><pre>   <span class="keyword">function</span> &quot;*&quot; (<a href="matrices.ads.html#matrices.ads:16:18" title="defined at matrices.ads:16:18">A</a>, <a href="matrices.ads.html#matrices.ads:16:21" title="defined at matrices.ads:16:21">B</a> : <span class="droplink">Matrix<ul><li><a href="matrices.ads.html#matrices.ads:12:9" title="To API doc">To API doc</a></li><li><a href="src_matrices.ads.html#l12" title="To spec">To spec</a></li></ul></span>) <span class="keyword">return</span> <span class="droplink">Matrix<ul><li><a href="matrices.ads.html#matrices.ads:12:9" title="To API doc">To API doc</a></li><li><a href="src_matrices.ads.html#l12" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l17"><pre> </pre></li>
+<li id="l18"><pre>   <span class="keyword">function</span> <span class="droplink">Transpose<ul><li><a href="matrices.ads.html#matrices.ads:18:13" title="To API doc">To API doc</a></li><li><a href="src_matrices.adb.html#l31" title="To body">To body</a></li></ul></span> (<a href="matrices.ads.html#matrices.ads:18:24" title="defined at matrices.ads:18:24">M</a> : <span class="droplink">Matrix<ul><li><a href="matrices.ads.html#matrices.ads:12:9" title="To API doc">To API doc</a></li><li><a href="src_matrices.ads.html#l12" title="To spec">To spec</a></li></ul></span>) <span class="keyword">return</span> <span class="droplink">Matrix<ul><li><a href="matrices.ads.html#matrices.ads:12:9" title="To API doc">To API doc</a></li><li><a href="src_matrices.ads.html#l12" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l19"><pre> </pre></li>
+<li id="l20"><pre><span class="keyword">end</span> <span class="droplink">Matrices<ul><li><a href="matrices.ads.html#matrices.ads:10:9" title="To API doc">To API doc</a></li><li><a href="src_matrices.ads.html#l10" title="To spec">To spec</a></li><li><a href="src_matrices.adb.html#l5" title="To body">To body</a></li></ul></span>; </pre></li>
+</ol></div>
+</div>
+
+</body>
+</html>

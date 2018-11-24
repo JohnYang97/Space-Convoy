@@ -1,0 +1,906 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    Package: Math
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+
+  <div id='navigation'>
+    <h2 class="button">Navigation</h2>
+    <a href='#Description'><div class="button2">Description</div></a>
+    <a href='#Methods'><div class="button2">Subprograms &amp; Entries</div></a>
+  </div><!-- navigation -->
+  </div>
+</div> <!-- leftSide -->
+
+<div class='default' id='rightSide'>
+ <div id='rightSideInside'>
+ <div id='Index'>
+  <h2>Index</h2>
+  <script type="text/javascript">
+    var names = new Array (
+new Array ('"*"', 'globe_3d-math.ads:7:12', 'subp-spec'),
+new Array ('"*"', 'globe_3d-math.ads:10:12', 'subp-spec'),
+new Array ('"+"', 'globe_3d-math.ads:13:12', 'subp-spec'),
+new Array ('"-"', 'globe_3d-math.ads:16:12', 'subp-spec'),
+new Array ('"-"', 'globe_3d-math.ads:19:12', 'subp-spec'),
+new Array ('"*"', 'globe_3d-math.ads:22:12', 'subp-spec'),
+new Array ('"*"', 'globe_3d-math.ads:25:12', 'subp-spec'),
+new Array ('Norm', 'globe_3d-math.ads:28:12', 'subp-spec'),
+new Array ('Norm2', 'globe_3d-math.ads:31:12', 'subp-spec'),
+new Array ('Normalized', 'globe_3d-math.ads:34:12', 'subp-spec'),
+new Array ('Angle', 'globe_3d-math.ads:39:13', 'subp-spec'),
+new Array ('to_<wbr/>Degrees', 'globe_3d-math.ads:43:13', 'subp-spec'),
+new Array ('to_<wbr/>Radians', 'globe_3d-math.ads:44:13', 'subp-spec'),
+new Array ('"*"', 'globe_3d-math.ads:50:12', 'subp-spec'),
+new Array ('"*"', 'globe_3d-math.ads:52:12', 'subp-spec'),
+new Array ('"*"', 'globe_3d-math.ads:53:12', 'subp-spec'),
+new Array ('"*"', 'globe_3d-math.ads:54:12', 'subp-spec'),
+new Array ('Transpose', 'globe_3d-math.ads:56:12', 'subp-spec'),
+new Array ('Transpose', 'globe_3d-math.ads:57:12', 'subp-spec'),
+new Array ('Det', 'globe_3d-math.ads:59:12', 'subp-spec'),
+new Array ('XYZ_<wbr/>rotation', 'globe_3d-math.ads:61:12', 'subp-spec'),
+new Array ('XYZ_<wbr/>rotation', 'globe_3d-math.ads:63:12', 'subp-spec'),
+new Array ('Look_<wbr/>at', 'globe_3d-math.ads:68:12', 'subp-spec'),
+new Array ('Look_<wbr/>at', 'globe_3d-math.ads:70:13', 'subp-spec'),
+new Array ('Re_<wbr/>Orthonormalize', 'globe_3d-math.ads:74:13', 'subp-spec'),
+new Array ('Multiply_<wbr/>GL_<wbr/>Matrix', 'globe_3d-math.ads:77:13', 'subp-spec'),
+new Array ('Set_<wbr/>GL_<wbr/>Matrix', 'globe_3d-math.ads:80:13', 'subp-spec'),
+new Array ('Almost_<wbr/>zero', 'globe_3d-math.ads:83:12', 'subp-spec'),
+new Array ('Almost_<wbr/>zero', 'globe_3d-math.ads:85:12', 'subp-spec'),
+new Array ('sub_<wbr/>Matrix', 'globe_3d-math.ads:88:13', 'subp-spec'),
+      new Array ('dummy', '', ''));
+    printIndexList (names);
+  </script>
+  <noscript>
+    <ul>
+      <li class='subp-spec'><a href="#globe_3d-math.ads:7:12">"*"</a></li>
+      <li class='subp-spec'><a href="#globe_3d-math.ads:10:12">"*"</a></li>
+      <li class='subp-spec'><a href="#globe_3d-math.ads:13:12">"+"</a></li>
+      <li class='subp-spec'><a href="#globe_3d-math.ads:16:12">"-"</a></li>
+      <li class='subp-spec'><a href="#globe_3d-math.ads:19:12">"-"</a></li>
+      <li class='subp-spec'><a href="#globe_3d-math.ads:22:12">"*"</a></li>
+      <li class='subp-spec'><a href="#globe_3d-math.ads:25:12">"*"</a></li>
+      <li class='subp-spec'><a href="#globe_3d-math.ads:28:12">Norm</a></li>
+      <li class='subp-spec'><a href="#globe_3d-math.ads:31:12">Norm2</a></li>
+      <li class='subp-spec'><a href="#globe_3d-math.ads:34:12">Normalized</a></li>
+      <li class='subp-spec'><a href="#globe_3d-math.ads:39:13">Angle</a></li>
+      <li class='subp-spec'><a href="#globe_3d-math.ads:43:13">to_<wbr/>Degrees</a></li>
+      <li class='subp-spec'><a href="#globe_3d-math.ads:44:13">to_<wbr/>Radians</a></li>
+      <li class='subp-spec'><a href="#globe_3d-math.ads:50:12">"*"</a></li>
+      <li class='subp-spec'><a href="#globe_3d-math.ads:52:12">"*"</a></li>
+      <li class='subp-spec'><a href="#globe_3d-math.ads:53:12">"*"</a></li>
+      <li class='subp-spec'><a href="#globe_3d-math.ads:54:12">"*"</a></li>
+      <li class='subp-spec'><a href="#globe_3d-math.ads:56:12">Transpose</a></li>
+      <li class='subp-spec'><a href="#globe_3d-math.ads:57:12">Transpose</a></li>
+      <li class='subp-spec'><a href="#globe_3d-math.ads:59:12">Det</a></li>
+      <li class='subp-spec'><a href="#globe_3d-math.ads:61:12">XYZ_<wbr/>rotation</a></li>
+      <li class='subp-spec'><a href="#globe_3d-math.ads:63:12">XYZ_<wbr/>rotation</a></li>
+      <li class='subp-spec'><a href="#globe_3d-math.ads:68:12">Look_<wbr/>at</a></li>
+      <li class='subp-spec'><a href="#globe_3d-math.ads:70:13">Look_<wbr/>at</a></li>
+      <li class='subp-spec'><a href="#globe_3d-math.ads:74:13">Re_<wbr/>Orthonormalize</a></li>
+      <li class='subp-spec'><a href="#globe_3d-math.ads:77:13">Multiply_<wbr/>GL_<wbr/>Matrix</a></li>
+      <li class='subp-spec'><a href="#globe_3d-math.ads:80:13">Set_<wbr/>GL_<wbr/>Matrix</a></li>
+      <li class='subp-spec'><a href="#globe_3d-math.ads:83:12">Almost_<wbr/>zero</a></li>
+      <li class='subp-spec'><a href="#globe_3d-math.ads:85:12">Almost_<wbr/>zero</a></li>
+      <li class='subp-spec'><a href="#globe_3d-math.ads:88:13">sub_<wbr/>Matrix</a></li>
+    </ul>
+  </noscript>
+ </div>
+ </div>
+</div>
+
+<div class='default' id='documentation'>
+  <div class='title'>
+    Package:
+<span class="droplink"><i>Math</i><ul>
+  <li><a href="src_globe_3d-math.ads.html">Goto spec source</a></li>
+  <li><a href="src_globe_3d-math.adb.html">Goto body source</a></li>
+</ul></span>
+  </div>
+  <div class='subprograms'>
+    <h1><a name='Description' id='Description'></a>Description</h1>
+    <div class="class">
+    <div class='details'><pre><span class="keyword">package</span> <span class="name_emphasis">GLOBE_3D.Math</span> <span class="keyword">is</span></pre></div>
+    </div>
+  </div>
+
+
+
+
+
+
+    <div class='subprograms'>
+      <h1><a name='Methods' id='Methods'></a>Subprograms &amp; Entries</h1>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-math.ads:7:12' id='globe_3d-math.ads:7:12'></a>
+<span class="droplink">"*"<ul>
+  <li><a href="src_globe_3d-math.ads.html#l7">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-math.adb.html#l10">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">"*"</span> <table><tr><td>(</td><td><span class="name"><a name="globe_3d-math.ads:7:17"></a>l</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:102:12" title="defined at globe_3d.ads:102:12">Real</a>;</td></tr><tr><td></td><td><span class="name"><a name="globe_3d-math.ads:7:27"></a>v</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:106:12" title="defined at globe_3d.ads:106:12">Vector_3D</a>) <span class="keyword">return</span> <a href="globe_3d.ads.html#globe_3d.ads:106:12" title="defined at globe_3d.ads:106:12">Vector_3D</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-math.ads.html#l7" title="globe_3d-math.ads:7:13">globe_3d-math.ads:7:13</a> (declaration)</i></div>
+            <div><i><a href="src_actors.adb.html#l40" title="actors.adb:40:25">actors.adb:40:25</a> (call)</i></div>
+            <div><i><a href="src_actors.adb.html#l50" title="actors.adb:50:35">actors.adb:50:35</a> (call)</i></div>
+            <div><i><a href="src_actors.adb.html#l141" title="actors.adb:141:36">actors.adb:141:36</a> (call)</i></div>
+            <div><i><a href="src_actors.adb.html#l142" title="actors.adb:142:38">actors.adb:142:38</a> (call)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l10" title="globe_3d-math.adb:10:14">globe_3d-math.adb:10:14</a> (body)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l267" title="globe_3d.adb:267:43">globe_3d.adb:267:43</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l362" title="globe_3d.adb:362:52">globe_3d.adb:362:52</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l385" title="globe_3d.adb:385:29">globe_3d.adb:385:29</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l386" title="globe_3d.adb:386:17">globe_3d.adb:386:17</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l387" title="globe_3d.adb:387:17">globe_3d.adb:387:17</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l575" title="globe_3d.adb:575:48">globe_3d.adb:575:48</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l584" title="globe_3d.adb:584:64">globe_3d.adb:584:64</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l585" title="globe_3d.adb:585:38">globe_3d.adb:585:38</a> (call)</i></div>
+            <div><i><a href="src_spaceship_p.adb.html#l632" title="spaceship_p.adb:632:54">spaceship_p.adb:632:54</a> (call)</i></div>
+            <div><i><a href="src_sphere_p.adb.html#l153" title="sphere_p.adb:153:54">sphere_p.adb:153:54</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="actors.ads.html#actors.ads:46:14" title="defined at actors.ads:46:14">Actors.Abstract_rotation</a> defined at <a href="src_actors.ads.html#l46" title="actors.ads:46:14">actors.ads:46:14</a></i></div>
+            <div><i><a href="actors.ads.html#actors.ads:46:14" title="defined at actors.ads:46:14">Actors.Abstract_rotation</a> defined at <a href="src_actors.ads.html#l46" title="actors.ads:46:14">actors.ads:46:14</a></i></div>
+            <div><i><a href="actors.ads.html#actors.ads:27:14" title="defined at actors.ads:27:14">Actors.Limited_Translation</a> defined at <a href="src_actors.ads.html#l27" title="actors.ads:27:14">actors.ads:27:14</a></i></div>
+            <div><i><a href="actors.ads.html#actors.ads:27:14" title="defined at actors.ads:27:14">Actors.Limited_Translation</a> defined at <a href="src_actors.ads.html#l27" title="actors.ads:27:14">actors.ads:27:14</a></i></div>
+            <div><i><a href="globe_3d.adb.html#globe_3d.adb:371:14" title="defined at globe_3d.adb:371:14">GLOBE_3D.Arrow</a> defined at <a href="src_globe_3d.adb.html#l371" title="globe_3d.adb:371:14">globe_3d.adb:371:14</a></i></div>
+            <div><i><a href="globe_3d.adb.html#globe_3d.adb:371:14" title="defined at globe_3d.adb:371:14">GLOBE_3D.Arrow</a> defined at <a href="src_globe_3d.adb.html#l371" title="globe_3d.adb:371:14">globe_3d.adb:371:14</a></i></div>
+            <div><i><a href="globe_3d.adb.html#globe_3d.adb:371:14" title="defined at globe_3d.adb:371:14">GLOBE_3D.Arrow</a> defined at <a href="src_globe_3d.adb.html#l371" title="globe_3d.adb:371:14">globe_3d.adb:371:14</a></i></div>
+            <div><i><a href="globe_3d.adb.html#globe_3d.adb:565:17" title="defined at globe_3d.adb:565:17">GLOBE_3D.Display_one.Display_normals</a> defined at <a href="src_globe_3d.adb.html#l565" title="globe_3d.adb:565:17">globe_3d.adb:565:17</a></i></div>
+            <div><i><a href="globe_3d.adb.html#globe_3d.adb:565:17" title="defined at globe_3d.adb:565:17">GLOBE_3D.Display_one.Display_normals</a> defined at <a href="src_globe_3d.adb.html#l565" title="globe_3d.adb:565:17">globe_3d.adb:565:17</a></i></div>
+            <div><i><a href="globe_3d.adb.html#globe_3d.adb:565:17" title="defined at globe_3d.adb:565:17">GLOBE_3D.Display_one.Display_normals</a> defined at <a href="src_globe_3d.adb.html#l565" title="globe_3d.adb:565:17">globe_3d.adb:565:17</a></i></div>
+            <div><i><a href="globe_3d.ads.html#globe_3d.ads:424:25" title="defined at globe_3d.ads:424:25">GLOBE_3D.Pre_calculate</a> defined at <a href="src_globe_3d.ads.html#l424" title="globe_3d.ads:424:25">globe_3d.ads:424:25</a></i></div>
+            <div><i><a href="globe_3d.adb.html#globe_3d.adb:201:17" title="defined at globe_3d.adb:201:17">GLOBE_3D.Pre_calculate.Calculate_face_invariants</a> defined at <a href="src_globe_3d.adb.html#l201" title="globe_3d.adb:201:17">globe_3d.adb:201:17</a></i></div>
+            <div><i><a href="spaceship_p.ads.html#spaceship_p.ads:9:14" title="defined at spaceship_p.ads:9:14">Spaceship_P.Create</a> defined at <a href="src_spaceship_p.ads.html#l9" title="spaceship_p.ads:9:14">spaceship_p.ads:9:14</a></i></div>
+            <div><i><a href="sphere_p.ads.html#sphere_p.ads:9:13" title="defined at sphere_p.ads:9:13">Sphere_P.Create</a> defined at <a href="src_sphere_p.ads.html#l9" title="sphere_p.ads:9:13">sphere_p.ads:9:13</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-math.ads:10:12' id='globe_3d-math.ads:10:12'></a>
+<span class="droplink">"*"<ul>
+  <li><a href="src_globe_3d-math.ads.html#l10">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-math.adb.html#l12">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">"*"</span> <table><tr><td>(</td><td><span class="name"><a name="globe_3d-math.ads:10:17"></a>v</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:106:12" title="defined at globe_3d.ads:106:12">Vector_3D</a>;</td></tr><tr><td></td><td><span class="name"><a name="globe_3d-math.ads:10:32"></a>l</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:102:12" title="defined at globe_3d.ads:102:12">Real</a>) <span class="keyword">return</span> <a href="globe_3d.ads.html#globe_3d.ads:106:12" title="defined at globe_3d.ads:106:12">Vector_3D</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-math.ads.html#l10" title="globe_3d-math.ads:10:13">globe_3d-math.ads:10:13</a> (declaration)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l12" title="globe_3d-math.adb:12:14">globe_3d-math.adb:12:14</a> (body)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l30" title="globe_3d-math.adb:30:63">globe_3d-math.adb:30:63</a> (call)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-math.ads:13:12' id='globe_3d-math.ads:13:12'></a>
+<span class="droplink">"+"<ul>
+  <li><a href="src_globe_3d-math.ads.html#l13">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-math.adb.html#l14">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">"+"</span> <table><tr><td>(</td><td><span class="name"><a name="globe_3d-math.ads:13:17"></a>a</span>, <span class="name"><a name="globe_3d-math.ads:13:20"></a>b</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:106:12" title="defined at globe_3d.ads:106:12">Vector_3D</a>) <span class="keyword">return</span> <a href="globe_3d.ads.html#globe_3d.ads:106:12" title="defined at globe_3d.ads:106:12">Vector_3D</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-math.ads.html#l13" title="globe_3d-math.ads:13:13">globe_3d-math.ads:13:13</a> (declaration)</i></div>
+            <div><i><a href="src_actors.adb.html#l48" title="actors.adb:48:64">actors.adb:48:64</a> (call)</i></div>
+            <div><i><a href="src_actors.adb.html#l79" title="actors.adb:79:40">actors.adb:79:40</a> (call)</i></div>
+            <div><i><a href="src_actors.adb.html#l141" title="actors.adb:141:24">actors.adb:141:24</a> (call)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l14" title="globe_3d-math.adb:14:14">globe_3d-math.adb:14:14</a> (body)</i></div>
+            <div><i><a href="src_globe_3d-portals.adb.html#l62" title="globe_3d-portals.adb:62:71">globe_3d-portals.adb:62:71</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l71" title="globe_3d.adb:71:17">globe_3d.adb:71:17</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l335" title="globe_3d.adb:335:57">globe_3d.adb:335:57</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l386" title="globe_3d.adb:386:21">globe_3d.adb:386:21</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l389" title="globe_3d.adb:389:17">globe_3d.adb:389:17</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l390" title="globe_3d.adb:390:17">globe_3d.adb:390:17</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l390" title="globe_3d.adb:390:36">globe_3d.adb:390:36</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l391" title="globe_3d.adb:391:17">globe_3d.adb:391:17</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l391" title="globe_3d.adb:391:36">globe_3d.adb:391:36</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l582" title="globe_3d.adb:582:23">globe_3d.adb:582:23</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l690" title="globe_3d.adb:690:66">globe_3d.adb:690:66</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="actors.ads.html#actors.ads:46:14" title="defined at actors.ads:46:14">Actors.Abstract_rotation</a> defined at <a href="src_actors.ads.html#l46" title="actors.ads:46:14">actors.ads:46:14</a></i></div>
+            <div><i><a href="actors.ads.html#actors.ads:27:14" title="defined at actors.ads:27:14">Actors.Limited_Translation</a> defined at <a href="src_actors.ads.html#l27" title="actors.ads:27:14">actors.ads:27:14</a></i></div>
+            <div><i><a href="actors.ads.html#actors.ads:38:14" title="defined at actors.ads:38:14">Actors.Rotation</a> defined at <a href="src_actors.ads.html#l38" title="actors.ads:38:14">actors.ads:38:14</a></i></div>
+            <div><i><a href="globe_3d.adb.html#globe_3d.adb:45:14" title="defined at globe_3d.adb:45:14">GLOBE_3D.Add_Normal_of_3p</a> defined at <a href="src_globe_3d.adb.html#l45" title="globe_3d.adb:45:14">globe_3d.adb:45:14</a></i></div>
+            <div><i><a href="globe_3d.adb.html#globe_3d.adb:371:14" title="defined at globe_3d.adb:371:14">GLOBE_3D.Arrow</a> defined at <a href="src_globe_3d.adb.html#l371" title="globe_3d.adb:371:14">globe_3d.adb:371:14</a></i></div>
+            <div><i><a href="globe_3d.adb.html#globe_3d.adb:371:14" title="defined at globe_3d.adb:371:14">GLOBE_3D.Arrow</a> defined at <a href="src_globe_3d.adb.html#l371" title="globe_3d.adb:371:14">globe_3d.adb:371:14</a></i></div>
+            <div><i><a href="globe_3d.adb.html#globe_3d.adb:371:14" title="defined at globe_3d.adb:371:14">GLOBE_3D.Arrow</a> defined at <a href="src_globe_3d.adb.html#l371" title="globe_3d.adb:371:14">globe_3d.adb:371:14</a></i></div>
+            <div><i><a href="globe_3d.adb.html#globe_3d.adb:371:14" title="defined at globe_3d.adb:371:14">GLOBE_3D.Arrow</a> defined at <a href="src_globe_3d.adb.html#l371" title="globe_3d.adb:371:14">globe_3d.adb:371:14</a></i></div>
+            <div><i><a href="globe_3d.adb.html#globe_3d.adb:371:14" title="defined at globe_3d.adb:371:14">GLOBE_3D.Arrow</a> defined at <a href="src_globe_3d.adb.html#l371" title="globe_3d.adb:371:14">globe_3d.adb:371:14</a></i></div>
+            <div><i><a href="globe_3d.adb.html#globe_3d.adb:371:14" title="defined at globe_3d.adb:371:14">GLOBE_3D.Arrow</a> defined at <a href="src_globe_3d.adb.html#l371" title="globe_3d.adb:371:14">globe_3d.adb:371:14</a></i></div>
+            <div><i><a href="globe_3d.adb.html#globe_3d.adb:673:20" title="defined at globe_3d.adb:673:20">GLOBE_3D.Display.Display_clipped.Try_portal</a> defined at <a href="src_globe_3d.adb.html#l673" title="globe_3d.adb:673:20">globe_3d.adb:673:20</a></i></div>
+            <div><i><a href="globe_3d.adb.html#globe_3d.adb:565:17" title="defined at globe_3d.adb:565:17">GLOBE_3D.Display_one.Display_normals</a> defined at <a href="src_globe_3d.adb.html#l565" title="globe_3d.adb:565:17">globe_3d.adb:565:17</a></i></div>
+            <div><i><a href="globe_3d-portals.ads.html#globe_3d-portals.ads:7:13" title="defined at globe_3d-portals.ads:7:13">GLOBE_3D.Portals.Find_bounding_box</a> defined at <a href="src_globe_3d-portals.ads.html#l7" title="globe_3d-portals.ads:7:13">globe_3d-portals.ads:7:13</a></i></div>
+            <div><i><a href="globe_3d.ads.html#globe_3d.ads:424:25" title="defined at globe_3d.ads:424:25">GLOBE_3D.Pre_calculate</a> defined at <a href="src_globe_3d.ads.html#l424" title="globe_3d.ads:424:25">globe_3d.ads:424:25</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-math.ads:16:12' id='globe_3d-math.ads:16:12'></a>
+<span class="droplink">"-"<ul>
+  <li><a href="src_globe_3d-math.ads.html#l16">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-math.adb.html#l16">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">"-"</span> <table><tr><td>(</td><td><span class="name"><a name="globe_3d-math.ads:16:17"></a>a</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:106:12" title="defined at globe_3d.ads:106:12">Vector_3D</a>) <span class="keyword">return</span> <a href="globe_3d.ads.html#globe_3d.ads:106:12" title="defined at globe_3d.ads:106:12">Vector_3D</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-math.ads.html#l16" title="globe_3d-math.ads:16:13">globe_3d-math.ads:16:13</a> (declaration)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l16" title="globe_3d-math.adb:16:14">globe_3d-math.adb:16:14</a> (body)</i></div>
+            <div><i><a href="src_graphics_opengl.adb.html#l112" title="graphics_opengl.adb:112:27">graphics_opengl.adb:112:27</a> (call)</i></div>
+            <div><i><a href="src_graphics_opengl.adb.html#l114" title="graphics_opengl.adb:114:27">graphics_opengl.adb:114:27</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="graphics_opengl.adb.html#graphics_opengl.adb:99:14" title="defined at graphics_opengl.adb:99:14">Graphics_OpenGL.Position_Camera</a> defined at <a href="src_graphics_opengl.adb.html#l99" title="graphics_opengl.adb:99:14">graphics_opengl.adb:99:14</a></i></div>
+            <div><i><a href="graphics_opengl.adb.html#graphics_opengl.adb:99:14" title="defined at graphics_opengl.adb:99:14">Graphics_OpenGL.Position_Camera</a> defined at <a href="src_graphics_opengl.adb.html#l99" title="graphics_opengl.adb:99:14">graphics_opengl.adb:99:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-math.ads:19:12' id='globe_3d-math.ads:19:12'></a>
+<span class="droplink">"-"<ul>
+  <li><a href="src_globe_3d-math.ads.html#l19">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-math.adb.html#l18">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">"-"</span> <table><tr><td>(</td><td><span class="name"><a name="globe_3d-math.ads:19:17"></a>a</span>, <span class="name"><a name="globe_3d-math.ads:19:20"></a>b</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:106:12" title="defined at globe_3d.ads:106:12">Vector_3D</a>) <span class="keyword">return</span> <a href="globe_3d.ads.html#globe_3d.ads:106:12" title="defined at globe_3d.ads:106:12">Vector_3D</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-math.ads.html#l19" title="globe_3d-math.ads:19:13">globe_3d-math.ads:19:13</a> (declaration)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l18" title="globe_3d-math.adb:18:14">globe_3d-math.adb:18:14</a> (body)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l37" title="globe_3d-math.adb:37:62">globe_3d-math.adb:37:62</a> (call)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l38" title="globe_3d-math.adb:38:62">globe_3d-math.adb:38:62</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l60" title="globe_3d.adb:60:38">globe_3d.adb:60:38</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l60" title="globe_3d.adb:60:72">globe_3d.adb:60:72</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l168" title="globe_3d.adb:168:50">globe_3d.adb:168:50</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l387" title="globe_3d.adb:387:21">globe_3d.adb:387:21</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l689" title="globe_3d.adb:689:36">globe_3d.adb:689:36</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l1207" title="globe_3d.adb:1207:53">globe_3d.adb:1207:53</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="globe_3d-math.ads.html#globe_3d-math.ads:39:13" title="defined at globe_3d-math.ads:39:13">Angle</a> defined at <a href="src_globe_3d-math.ads.html#l39" title="globe_3d-math.ads:39:13">globe_3d-math.ads:39:13</a></i></div>
+            <div><i><a href="globe_3d-math.ads.html#globe_3d-math.ads:39:13" title="defined at globe_3d-math.ads:39:13">Angle</a> defined at <a href="src_globe_3d-math.ads.html#l39" title="globe_3d-math.ads:39:13">globe_3d-math.ads:39:13</a></i></div>
+            <div><i><a href="globe_3d.adb.html#globe_3d.adb:45:14" title="defined at globe_3d.adb:45:14">GLOBE_3D.Add_Normal_of_3p</a> defined at <a href="src_globe_3d.adb.html#l45" title="globe_3d.adb:45:14">globe_3d.adb:45:14</a></i></div>
+            <div><i><a href="globe_3d.adb.html#globe_3d.adb:45:14" title="defined at globe_3d.adb:45:14">GLOBE_3D.Add_Normal_of_3p</a> defined at <a href="src_globe_3d.adb.html#l45" title="globe_3d.adb:45:14">globe_3d.adb:45:14</a></i></div>
+            <div><i><a href="globe_3d.adb.html#globe_3d.adb:371:14" title="defined at globe_3d.adb:371:14">GLOBE_3D.Arrow</a> defined at <a href="src_globe_3d.adb.html#l371" title="globe_3d.adb:371:14">globe_3d.adb:371:14</a></i></div>
+            <div><i><a href="globe_3d.adb.html#globe_3d.adb:153:20" title="defined at globe_3d.adb:153:20">GLOBE_3D.Check_object.Check_faces.Check_duplicate</a> defined at <a href="src_globe_3d.adb.html#l153" title="globe_3d.adb:153:20">globe_3d.adb:153:20</a></i></div>
+            <div><i><a href="globe_3d.adb.html#globe_3d.adb:673:20" title="defined at globe_3d.adb:673:20">GLOBE_3D.Display.Display_clipped.Try_portal</a> defined at <a href="src_globe_3d.adb.html#l673" title="globe_3d.adb:673:20">globe_3d.adb:673:20</a></i></div>
+            <div><i><a href="globe_3d.ads.html#globe_3d.ads:243:14" title="defined at globe_3d.ads:243:14">GLOBE_3D.render</a> defined at <a href="src_globe_3d.ads.html#l243" title="globe_3d.ads:243:14">globe_3d.ads:243:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-math.ads:22:12' id='globe_3d-math.ads:22:12'></a>
+<span class="droplink">"*"<ul>
+  <li><a href="src_globe_3d-math.ads.html#l22">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-math.adb.html#l20">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">"*"</span> <table><tr><td>(</td><td><span class="name"><a name="globe_3d-math.ads:22:17"></a>a</span>, <span class="name"><a name="globe_3d-math.ads:22:20"></a>b</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:106:12" title="defined at globe_3d.ads:106:12">Vector_3D</a>) <span class="keyword">return</span> <a href="globe_3d.ads.html#globe_3d.ads:102:12" title="defined at globe_3d.ads:102:12">Real</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-math.ads.html#l22" title="globe_3d-math.ads:22:13">globe_3d-math.ads:22:13</a> (declaration)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l20" title="globe_3d-math.adb:20:14">globe_3d-math.adb:20:14</a> (body)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l39" title="globe_3d-math.adb:39:51">globe_3d-math.adb:39:51</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l684" title="globe_3d.adb:684:47">globe_3d.adb:684:47</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l692" title="globe_3d.adb:692:35">globe_3d.adb:692:35</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="globe_3d-math.ads.html#globe_3d-math.ads:39:13" title="defined at globe_3d-math.ads:39:13">Angle</a> defined at <a href="src_globe_3d-math.ads.html#l39" title="globe_3d-math.ads:39:13">globe_3d-math.ads:39:13</a></i></div>
+            <div><i><a href="globe_3d.adb.html#globe_3d.adb:673:20" title="defined at globe_3d.adb:673:20">GLOBE_3D.Display.Display_clipped.Try_portal</a> defined at <a href="src_globe_3d.adb.html#l673" title="globe_3d.adb:673:20">globe_3d.adb:673:20</a></i></div>
+            <div><i><a href="globe_3d.adb.html#globe_3d.adb:673:20" title="defined at globe_3d.adb:673:20">GLOBE_3D.Display.Display_clipped.Try_portal</a> defined at <a href="src_globe_3d.adb.html#l673" title="globe_3d.adb:673:20">globe_3d.adb:673:20</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-math.ads:25:12' id='globe_3d-math.ads:25:12'></a>
+<span class="droplink">"*"<ul>
+  <li><a href="src_globe_3d-math.ads.html#l25">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-math.adb.html#l22">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">"*"</span> <table><tr><td>(</td><td><span class="name"><a name="globe_3d-math.ads:25:17"></a>a</span>, <span class="name"><a name="globe_3d-math.ads:25:20"></a>b</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:106:12" title="defined at globe_3d.ads:106:12">Vector_3D</a>) <span class="keyword">return</span> <a href="globe_3d.ads.html#globe_3d.ads:106:12" title="defined at globe_3d.ads:106:12">Vector_3D</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-math.ads.html#l25" title="globe_3d-math.ads:25:13">globe_3d-math.ads:25:13</a> (declaration)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l22" title="globe_3d-math.adb:22:14">globe_3d-math.adb:22:14</a> (body)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l188" title="globe_3d-math.adb:188:16">globe_3d-math.adb:188:16</a> (call)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l215" title="globe_3d-math.adb:215:60">globe_3d-math.adb:215:60</a> (call)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l216" title="globe_3d-math.adb:216:45">globe_3d-math.adb:216:45</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l60" title="globe_3d.adb:60:55">globe_3d.adb:60:55</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="globe_3d.adb.html#globe_3d.adb:45:14" title="defined at globe_3d.adb:45:14">GLOBE_3D.Add_Normal_of_3p</a> defined at <a href="src_globe_3d.adb.html#l45" title="globe_3d.adb:45:14">globe_3d.adb:45:14</a></i></div>
+            <div><i><a href="globe_3d-math.ads.html#globe_3d-math.ads:70:13" title="defined at globe_3d-math.ads:70:13">Look_at</a> defined at <a href="src_globe_3d-math.ads.html#l70" title="globe_3d-math.ads:70:13">globe_3d-math.ads:70:13</a></i></div>
+            <div><i><a href="globe_3d-math.ads.html#globe_3d-math.ads:68:12" title="defined at globe_3d-math.ads:68:12">Look_at</a> defined at <a href="src_globe_3d-math.ads.html#l68" title="globe_3d-math.ads:68:12">globe_3d-math.ads:68:12</a></i></div>
+            <div><i><a href="globe_3d-math.ads.html#globe_3d-math.ads:70:13" title="defined at globe_3d-math.ads:70:13">Look_at</a> defined at <a href="src_globe_3d-math.ads.html#l70" title="globe_3d-math.ads:70:13">globe_3d-math.ads:70:13</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-math.ads:28:12' id='globe_3d-math.ads:28:12'></a>
+<span class="droplink">Norm<ul>
+  <li><a href="src_globe_3d-math.ads.html#l28">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-math.adb.html#l26">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Norm</span> <table><tr><td>(</td><td><span class="name"><a name="globe_3d-math.ads:28:18"></a>a</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:106:12" title="defined at globe_3d.ads:106:12">Vector_3D</a>) <span class="keyword">return</span> <a href="globe_3d.ads.html#globe_3d.ads:102:12" title="defined at globe_3d.ads:102:12">Real</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-math.ads.html#l28" title="globe_3d-math.ads:28:12">globe_3d-math.ads:28:12</a> (declaration)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l26" title="globe_3d-math.adb:26:13">globe_3d-math.adb:26:13</a> (body)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l30" title="globe_3d-math.adb:30:72">globe_3d-math.adb:30:72</a> (call)</i></div>
+            <div><i><a href="src_globe_3d-math.ads.html#l29" title="globe_3d-math.ads:29:18">globe_3d-math.ads:29:18</a> (reference)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l257" title="globe_3d.adb:257:22">globe_3d.adb:257:22</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l360" title="globe_3d.adb:360:23">globe_3d.adb:360:23</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l385" title="globe_3d.adb:385:19">globe_3d.adb:385:19</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="globe_3d.adb.html#globe_3d.adb:371:14" title="defined at globe_3d.adb:371:14">GLOBE_3D.Arrow</a> defined at <a href="src_globe_3d.adb.html#l371" title="globe_3d.adb:371:14">globe_3d.adb:371:14</a></i></div>
+            <div><i><a href="globe_3d.ads.html#globe_3d.ads:424:25" title="defined at globe_3d.ads:424:25">GLOBE_3D.Pre_calculate</a> defined at <a href="src_globe_3d.ads.html#l424" title="globe_3d.ads:424:25">globe_3d.ads:424:25</a></i></div>
+            <div><i><a href="globe_3d.adb.html#globe_3d.adb:201:17" title="defined at globe_3d.adb:201:17">GLOBE_3D.Pre_calculate.Calculate_face_invariants</a> defined at <a href="src_globe_3d.adb.html#l201" title="globe_3d.adb:201:17">globe_3d.adb:201:17</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-math.ads:31:12' id='globe_3d-math.ads:31:12'></a>
+<span class="droplink">Norm2<ul>
+  <li><a href="src_globe_3d-math.ads.html#l31">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-math.adb.html#l28">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Norm2</span> <table><tr><td>(</td><td><span class="name"><a name="globe_3d-math.ads:31:19"></a>a</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:106:12" title="defined at globe_3d.ads:106:12">Vector_3D</a>) <span class="keyword">return</span> <a href="globe_3d.ads.html#globe_3d.ads:102:12" title="defined at globe_3d.ads:102:12">Real</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-math.ads.html#l31" title="globe_3d-math.ads:31:12">globe_3d-math.ads:31:12</a> (declaration)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l28" title="globe_3d-math.adb:28:13">globe_3d-math.adb:28:13</a> (body)</i></div>
+            <div><i><a href="src_globe_3d-math.ads.html#l32" title="globe_3d-math.ads:32:18">globe_3d-math.ads:32:18</a> (reference)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l61" title="globe_3d.adb:61:51">globe_3d.adb:61:51</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l168" title="globe_3d.adb:168:29">globe_3d.adb:168:29</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l313" title="globe_3d.adb:313:52">globe_3d.adb:313:52</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l378" title="globe_3d.adb:378:23">globe_3d.adb:378:23</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l382" title="globe_3d.adb:382:23">globe_3d.adb:382:23</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="globe_3d.adb.html#globe_3d.adb:45:14" title="defined at globe_3d.adb:45:14">GLOBE_3D.Add_Normal_of_3p</a> defined at <a href="src_globe_3d.adb.html#l45" title="globe_3d.adb:45:14">globe_3d.adb:45:14</a></i></div>
+            <div><i><a href="globe_3d.adb.html#globe_3d.adb:371:14" title="defined at globe_3d.adb:371:14">GLOBE_3D.Arrow</a> defined at <a href="src_globe_3d.adb.html#l371" title="globe_3d.adb:371:14">globe_3d.adb:371:14</a></i></div>
+            <div><i><a href="globe_3d.adb.html#globe_3d.adb:371:14" title="defined at globe_3d.adb:371:14">GLOBE_3D.Arrow</a> defined at <a href="src_globe_3d.adb.html#l371" title="globe_3d.adb:371:14">globe_3d.adb:371:14</a></i></div>
+            <div><i><a href="globe_3d.adb.html#globe_3d.adb:153:20" title="defined at globe_3d.adb:153:20">GLOBE_3D.Check_object.Check_faces.Check_duplicate</a> defined at <a href="src_globe_3d.adb.html#l153" title="globe_3d.adb:153:20">globe_3d.adb:153:20</a></i></div>
+            <div><i><a href="globe_3d.ads.html#globe_3d.ads:424:25" title="defined at globe_3d.ads:424:25">GLOBE_3D.Pre_calculate</a> defined at <a href="src_globe_3d.ads.html#l424" title="globe_3d.ads:424:25">globe_3d.ads:424:25</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-math.ads:34:12' id='globe_3d-math.ads:34:12'></a>
+<span class="droplink">Normalized<ul>
+  <li><a href="src_globe_3d-math.ads.html#l34">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-math.adb.html#l30">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Normalized</span> <table><tr><td>(</td><td><span class="name"><a name="globe_3d-math.ads:34:24"></a>a</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:106:12" title="defined at globe_3d.ads:106:12">Vector_3D</a>) <span class="keyword">return</span> <a href="globe_3d.ads.html#globe_3d.ads:106:12" title="defined at globe_3d.ads:106:12">Vector_3D</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-math.ads.html#l34" title="globe_3d-math.ads:34:12">globe_3d-math.ads:34:12</a> (declaration)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l30" title="globe_3d-math.adb:30:13">globe_3d-math.adb:30:13</a> (body)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l37" title="globe_3d-math.adb:37:42">globe_3d-math.adb:37:42</a> (call)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l38" title="globe_3d-math.adb:38:42">globe_3d-math.adb:38:42</a> (call)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l186" title="globe_3d-math.adb:186:13">globe_3d-math.adb:186:13</a> (call)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l187" title="globe_3d-math.adb:187:13">globe_3d-math.adb:187:13</a> (call)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l214" title="globe_3d-math.adb:214:40">globe_3d-math.adb:214:40</a> (call)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l215" title="globe_3d-math.adb:215:40">globe_3d-math.adb:215:40</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="globe_3d-math.ads.html#globe_3d-math.ads:39:13" title="defined at globe_3d-math.ads:39:13">Angle</a> defined at <a href="src_globe_3d-math.ads.html#l39" title="globe_3d-math.ads:39:13">globe_3d-math.ads:39:13</a></i></div>
+            <div><i><a href="globe_3d-math.ads.html#globe_3d-math.ads:39:13" title="defined at globe_3d-math.ads:39:13">Angle</a> defined at <a href="src_globe_3d-math.ads.html#l39" title="globe_3d-math.ads:39:13">globe_3d-math.ads:39:13</a></i></div>
+            <div><i><a href="globe_3d-math.ads.html#globe_3d-math.ads:70:13" title="defined at globe_3d-math.ads:70:13">Look_at</a> defined at <a href="src_globe_3d-math.ads.html#l70" title="globe_3d-math.ads:70:13">globe_3d-math.ads:70:13</a></i></div>
+            <div><i><a href="globe_3d-math.ads.html#globe_3d-math.ads:68:12" title="defined at globe_3d-math.ads:68:12">Look_at</a> defined at <a href="src_globe_3d-math.ads.html#l68" title="globe_3d-math.ads:68:12">globe_3d-math.ads:68:12</a></i></div>
+            <div><i><a href="globe_3d-math.ads.html#globe_3d-math.ads:70:13" title="defined at globe_3d-math.ads:70:13">Look_at</a> defined at <a href="src_globe_3d-math.ads.html#l70" title="globe_3d-math.ads:70:13">globe_3d-math.ads:70:13</a></i></div>
+            <div><i><a href="globe_3d-math.ads.html#globe_3d-math.ads:68:12" title="defined at globe_3d-math.ads:68:12">Look_at</a> defined at <a href="src_globe_3d-math.ads.html#l68" title="globe_3d-math.ads:68:12">globe_3d-math.ads:68:12</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-math.ads:39:13' id='globe_3d-math.ads:39:13'></a>
+<span class="droplink">Angle<ul>
+  <li><a href="src_globe_3d-math.ads.html#l39">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-math.adb.html#l35">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Angle</span> <table><tr><td>(</td><td><span class="name"><a name="globe_3d-math.ads:39:20"></a>Point_1</span>, <span class="name"><a name="globe_3d-math.ads:39:29"></a>Point_2</span>, <span class="name"><a name="globe_3d-math.ads:39:38"></a>Point_3</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:106:12" title="defined at globe_3d.ads:106:12">Vector_3D</a>) <span class="keyword">return</span> <a href="globe_3d.ads.html#globe_3d.ads:102:12" title="defined at globe_3d.ads:102:12">Real</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-math.ads.html#l39" title="globe_3d-math.ads:39:13">globe_3d-math.ads:39:13</a> (declaration)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l35" title="globe_3d-math.adb:35:13">globe_3d-math.adb:35:13</a> (body)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l46" title="globe_3d-math.adb:46:8">globe_3d-math.adb:46:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>* defined at <a href="src_globe_3d-math.ads.html#l22" title="globe_3d-math.ads:22:13">globe_3d-math.ads:22:13</a></i></div>
+            <div><i>- defined at <a href="src_globe_3d-math.ads.html#l19" title="globe_3d-math.ads:19:13">globe_3d-math.ads:19:13</a></i></div>
+            <div><i>Ada.Numerics.Generic_Elementary_Functions.Arccos defined at a-ngelfu.ads:108:13</i></div>
+            <div><i><a href="globe_3d-math.ads.html#globe_3d-math.ads:34:12" title="defined at globe_3d-math.ads:34:12">Normalized</a> defined at <a href="src_globe_3d-math.ads.html#l34" title="globe_3d-math.ads:34:12">globe_3d-math.ads:34:12</a></i></div>
+        </div>
+        <div class='comment'>
+returns the angle between the vector Point_1 to Point_2 and the vector Point_3 to Point_2.
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-math.ads:43:13' id='globe_3d-math.ads:43:13'></a>
+<span class="droplink">to_Degrees<ul>
+  <li><a href="src_globe_3d-math.ads.html#l43">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-math.adb.html#l48">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">to_Degrees</span> <table><tr><td>(</td><td><span class="name"><a name="globe_3d-math.ads:43:25"></a>Radians</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:102:12" title="defined at globe_3d.ads:102:12">Real</a>) <span class="keyword">return</span> <a href="globe_3d.ads.html#globe_3d.ads:102:12" title="defined at globe_3d.ads:102:12">Real</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-math.ads.html#l43" title="globe_3d-math.ads:43:13">globe_3d-math.ads:43:13</a> (declaration)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l48" title="globe_3d-math.adb:48:13">globe_3d-math.adb:48:13</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-math.ads:44:13' id='globe_3d-math.ads:44:13'></a>
+<span class="droplink">to_Radians<ul>
+  <li><a href="src_globe_3d-math.ads.html#l44">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-math.adb.html#l50">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">to_Radians</span> <table><tr><td>(</td><td><span class="name"><a name="globe_3d-math.ads:44:25"></a>Degrees</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:102:12" title="defined at globe_3d.ads:102:12">Real</a>) <span class="keyword">return</span> <a href="globe_3d.ads.html#globe_3d.ads:102:12" title="defined at globe_3d.ads:102:12">Real</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-math.ads.html#l44" title="globe_3d-math.ads:44:13">globe_3d-math.ads:44:13</a> (declaration)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l50" title="globe_3d-math.adb:50:13">globe_3d-math.adb:50:13</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-math.ads:50:12' id='globe_3d-math.ads:50:12'></a>
+<span class="droplink">"*"<ul>
+  <li><a href="src_globe_3d-math.ads.html#l50">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-math.adb.html#l56">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">"*"</span> <table><tr><td>(</td><td><span class="name"><a name="globe_3d-math.ads:50:17"></a>A</span>, <span class="name"><a name="globe_3d-math.ads:50:20"></a>B</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:114:9" title="defined at globe_3d.ads:114:9">Matrix_33</a>) <span class="keyword">return</span> <a href="globe_3d.ads.html#globe_3d.ads:114:9" title="defined at globe_3d.ads:114:9">Matrix_33</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-math.ads.html#l50" title="globe_3d-math.ads:50:13">globe_3d-math.ads:50:13</a> (declaration)</i></div>
+            <div><i><a href="src_actors.adb.html#l82" title="actors.adb:82:48">actors.adb:82:48</a> (call)</i></div>
+            <div><i><a href="src_actors.adb.html#l90" title="actors.adb:90:47">actors.adb:90:47</a> (call)</i></div>
+            <div><i><a href="src_actors.adb.html#l91" title="actors.adb:91:48">actors.adb:91:48</a> (call)</i></div>
+            <div><i><a href="src_actors.adb.html#l159" title="actors.adb:159:32">actors.adb:159:32</a> (call)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l56" title="globe_3d-math.adb:56:14">globe_3d-math.adb:56:14</a> (body)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l74" title="globe_3d-math.adb:74:9">globe_3d-math.adb:74:9</a> (label)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l174" title="globe_3d-math.adb:174:17">globe_3d-math.adb:174:17</a> (call)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l174" title="globe_3d-math.adb:174:22">globe_3d-math.adb:174:22</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="actors.ads.html#actors.ads:55:14" title="defined at actors.ads:55:14">Actors.Abstract_rotation</a> defined at <a href="src_actors.ads.html#l55" title="actors.ads:55:14">actors.ads:55:14</a></i></div>
+            <div><i><a href="actors.ads.html#actors.ads:38:14" title="defined at actors.ads:38:14">Actors.Rotation</a> defined at <a href="src_actors.ads.html#l38" title="actors.ads:38:14">actors.ads:38:14</a></i></div>
+            <div><i><a href="actors.ads.html#actors.ads:38:14" title="defined at actors.ads:38:14">Actors.Rotation</a> defined at <a href="src_actors.ads.html#l38" title="actors.ads:38:14">actors.ads:38:14</a></i></div>
+            <div><i><a href="actors.ads.html#actors.ads:38:14" title="defined at actors.ads:38:14">Actors.Rotation</a> defined at <a href="src_actors.ads.html#l38" title="actors.ads:38:14">actors.ads:38:14</a></i></div>
+            <div><i><a href="globe_3d-math.ads.html#globe_3d-math.ads:61:12" title="defined at globe_3d-math.ads:61:12">XYZ_rotation</a> defined at <a href="src_globe_3d-math.ads.html#l61" title="globe_3d-math.ads:61:12">globe_3d-math.ads:61:12</a></i></div>
+            <div><i><a href="globe_3d-math.ads.html#globe_3d-math.ads:61:12" title="defined at globe_3d-math.ads:61:12">XYZ_rotation</a> defined at <a href="src_globe_3d-math.ads.html#l61" title="globe_3d-math.ads:61:12">globe_3d-math.ads:61:12</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-math.ads:52:12' id='globe_3d-math.ads:52:12'></a>
+<span class="droplink">"*"<ul>
+  <li><a href="src_globe_3d-math.ads.html#l52">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-math.adb.html#l76">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">"*"</span> <table><tr><td>(</td><td><span class="name"><a name="globe_3d-math.ads:52:17"></a>A</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:114:9" title="defined at globe_3d.ads:114:9">Matrix_33</a>;</td></tr><tr><td></td><td><span class="name"><a name="globe_3d-math.ads:52:32"></a>x</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:106:12" title="defined at globe_3d.ads:106:12">Vector_3D</a>) <span class="keyword">return</span> <a href="globe_3d.ads.html#globe_3d.ads:106:12" title="defined at globe_3d.ads:106:12">Vector_3D</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-math.ads.html#l52" title="globe_3d-math.ads:52:13">globe_3d-math.ads:52:13</a> (declaration)</i></div>
+            <div><i><a href="src_actors.adb.html#l40" title="actors.adb:40:61">actors.adb:40:61</a> (call)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l76" title="globe_3d-math.adb:76:14">globe_3d-math.adb:76:14</a> (body)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l92" title="globe_3d-math.adb:92:9">globe_3d-math.adb:92:9</a> (label)</i></div>
+            <div><i><a href="src_globe_3d-stars_sky.adb.html#l52" title="globe_3d-stars_sky.adb:52:47">globe_3d-stars_sky.adb:52:47</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l1207" title="globe_3d.adb:1207:15">globe_3d.adb:1207:15</a> (call)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l467" title="glut-windows.adb:467:92">glut-windows.adb:467:92</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="actors.ads.html#actors.ads:27:14" title="defined at actors.ads:27:14">Actors.Limited_Translation</a> defined at <a href="src_actors.ads.html#l27" title="actors.ads:27:14">actors.ads:27:14</a></i></div>
+            <div><i><a href="globe_3d.ads.html#globe_3d.ads:243:14" title="defined at globe_3d.ads:243:14">GLOBE_3D.render</a> defined at <a href="src_globe_3d.ads.html#l243" title="globe_3d.ads:243:14">globe_3d.ads:243:14</a></i></div>
+            <div><i><a href="glut-windows.adb.html#glut-windows.adb:331:14" title="defined at glut-windows.adb:331:14">GLUT.Windows.Main_Operations</a> defined at <a href="src_glut-windows.adb.html#l331" title="glut-windows.adb:331:14">glut-windows.adb:331:14</a></i></div>
+            <div><i><a href="globe_3d-stars_sky.adb.html#globe_3d-stars_sky.adb:28:14" title="defined at globe_3d-stars_sky.adb:28:14">Stars_sky.Reset</a> defined at <a href="src_globe_3d-stars_sky.adb.html#l28" title="globe_3d-stars_sky.adb:28:14">globe_3d-stars_sky.adb:28:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-math.ads:53:12' id='globe_3d-math.ads:53:12'></a>
+<span class="droplink">"*"<ul>
+  <li><a href="src_globe_3d-math.ads.html#l53">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-math.adb.html#l94">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">"*"</span> <table><tr><td>(</td><td><span class="name"><a name="globe_3d-math.ads:53:17"></a>A</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:115:9" title="defined at globe_3d.ads:115:9">Matrix_44</a>;</td></tr><tr><td></td><td><span class="name"><a name="globe_3d-math.ads:53:32"></a>x</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:106:12" title="defined at globe_3d.ads:106:12">Vector_3D</a>) <span class="keyword">return</span> <a href="globe_3d.ads.html#globe_3d.ads:106:12" title="defined at globe_3d.ads:106:12">Vector_3D</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-math.ads.html#l53" title="globe_3d-math.ads:53:13">globe_3d-math.ads:53:13</a> (declaration)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l94" title="globe_3d-math.adb:94:14">globe_3d-math.adb:94:14</a> (body)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l113" title="globe_3d-math.adb:113:9">globe_3d-math.adb:113:9</a> (label)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-math.ads:54:12' id='globe_3d-math.ads:54:12'></a>
+<span class="droplink">"*"<ul>
+  <li><a href="src_globe_3d-math.ads.html#l54">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-math.adb.html#l115">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">"*"</span> <table><tr><td>(</td><td><span class="name"><a name="globe_3d-math.ads:54:17"></a>A</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:115:9" title="defined at globe_3d.ads:115:9">Matrix_44</a>;</td></tr><tr><td></td><td><span class="name"><a name="globe_3d-math.ads:54:32"></a>x</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:106:12" title="defined at globe_3d.ads:106:12">Vector_3D</a>) <span class="keyword">return</span> <a href="globe_3d.ads.html#globe_3d.ads:109:9" title="defined at globe_3d.ads:109:9">Vector_4D</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-math.ads.html#l54" title="globe_3d-math.ads:54:13">globe_3d-math.ads:54:13</a> (declaration)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l115" title="globe_3d-math.adb:115:14">globe_3d-math.adb:115:14</a> (body)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l132" title="globe_3d-math.adb:132:9">globe_3d-math.adb:132:9</a> (label)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-math.ads:56:12' id='globe_3d-math.ads:56:12'></a>
+<span class="droplink">Transpose<ul>
+  <li><a href="src_globe_3d-math.ads.html#l56">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-math.adb.html#l134">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Transpose</span> <table><tr><td>(</td><td><span class="name"><a name="globe_3d-math.ads:56:23"></a>A</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:114:9" title="defined at globe_3d.ads:114:9">Matrix_33</a>) <span class="keyword">return</span> <a href="globe_3d.ads.html#globe_3d.ads:114:9" title="defined at globe_3d.ads:114:9">Matrix_33</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-math.ads.html#l56" title="globe_3d-math.ads:56:12">globe_3d-math.ads:56:12</a> (declaration)</i></div>
+            <div><i><a href="src_actors.adb.html#l40" title="actors.adb:40:28">actors.adb:40:28</a> (call)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l134" title="globe_3d-math.adb:134:13">globe_3d-math.adb:134:13</a> (body)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l467" title="glut-windows.adb:467:49">glut-windows.adb:467:49</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="actors.ads.html#actors.ads:27:14" title="defined at actors.ads:27:14">Actors.Limited_Translation</a> defined at <a href="src_actors.ads.html#l27" title="actors.ads:27:14">actors.ads:27:14</a></i></div>
+            <div><i><a href="glut-windows.adb.html#glut-windows.adb:331:14" title="defined at glut-windows.adb:331:14">GLUT.Windows.Main_Operations</a> defined at <a href="src_glut-windows.adb.html#l331" title="glut-windows.adb:331:14">glut-windows.adb:331:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-math.ads:57:12' id='globe_3d-math.ads:57:12'></a>
+<span class="droplink">Transpose<ul>
+  <li><a href="src_globe_3d-math.ads.html#l57">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-math.adb.html#l138">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Transpose</span> <table><tr><td>(</td><td><span class="name"><a name="globe_3d-math.ads:57:23"></a>A</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:115:9" title="defined at globe_3d.ads:115:9">Matrix_44</a>) <span class="keyword">return</span> <a href="globe_3d.ads.html#globe_3d.ads:115:9" title="defined at globe_3d.ads:115:9">Matrix_44</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-math.ads.html#l57" title="globe_3d-math.ads:57:12">globe_3d-math.ads:57:12</a> (declaration)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l138" title="globe_3d-math.adb:138:13">globe_3d-math.adb:138:13</a> (body)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l145" title="glut-windows.adb:145:40">glut-windows.adb:145:40</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="glut-windows.adb.html#glut-windows.adb:130:14" title="defined at glut-windows.adb:130:14">GLUT.Windows.enable_Viewport_and_Perspective</a> defined at <a href="src_glut-windows.adb.html#l130" title="glut-windows.adb:130:14">glut-windows.adb:130:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-math.ads:59:12' id='globe_3d-math.ads:59:12'></a>
+<span class="droplink">Det<ul>
+  <li><a href="src_globe_3d-math.ads.html#l59">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-math.adb.html#l143">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Det</span> <table><tr><td>(</td><td><span class="name"><a name="globe_3d-math.ads:59:17"></a>A</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:114:9" title="defined at globe_3d.ads:114:9">Matrix_33</a>) <span class="keyword">return</span> <a href="globe_3d.ads.html#globe_3d.ads:102:12" title="defined at globe_3d.ads:102:12">Real</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-math.ads.html#l59" title="globe_3d-math.ads:59:12">globe_3d-math.ads:59:12</a> (declaration)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l143" title="globe_3d-math.adb:143:13">globe_3d-math.adb:143:13</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-math.ads:61:12' id='globe_3d-math.ads:61:12'></a>
+<span class="droplink">XYZ_rotation<ul>
+  <li><a href="src_globe_3d-math.ads.html#l61">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-math.adb.html#l150">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">XYZ_rotation</span> <table><tr><td>(</td><td><span class="name"><a name="globe_3d-math.ads:61:26"></a>ax</span>, <span class="name"><a name="globe_3d-math.ads:61:30"></a>ay</span>, <span class="name"><a name="globe_3d-math.ads:61:34"></a>az</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:102:12" title="defined at globe_3d.ads:102:12">Real</a>) <span class="keyword">return</span> <a href="globe_3d.ads.html#globe_3d.ads:114:9" title="defined at globe_3d.ads:114:9">Matrix_33</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-math.ads.html#l61" title="globe_3d-math.ads:61:12">globe_3d-math.ads:61:12</a> (declaration)</i></div>
+            <div><i><a href="src_actors.adb.html#l90" title="actors.adb:90:15">actors.adb:90:15</a> (call)</i></div>
+            <div><i><a href="src_actors.adb.html#l91" title="actors.adb:91:15">actors.adb:91:15</a> (call)</i></div>
+            <div><i><a href="src_actors.adb.html#l92" title="actors.adb:92:15">actors.adb:92:15</a> (call)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l150" title="globe_3d-math.adb:150:13">globe_3d-math.adb:150:13</a> (body)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l176" title="globe_3d-math.adb:176:8">globe_3d-math.adb:176:8</a> (label)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l178" title="globe_3d-math.adb:178:63">globe_3d-math.adb:178:63</a> (call)</i></div>
+            <div><i><a href="src_globe_3d-stars_sky.adb.html#l52" title="globe_3d-stars_sky.adb:52:15">globe_3d-stars_sky.adb:52:15</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="actors.ads.html#actors.ads:38:14" title="defined at actors.ads:38:14">Actors.Rotation</a> defined at <a href="src_actors.ads.html#l38" title="actors.ads:38:14">actors.ads:38:14</a></i></div>
+            <div><i><a href="actors.ads.html#actors.ads:38:14" title="defined at actors.ads:38:14">Actors.Rotation</a> defined at <a href="src_actors.ads.html#l38" title="actors.ads:38:14">actors.ads:38:14</a></i></div>
+            <div><i><a href="actors.ads.html#actors.ads:38:14" title="defined at actors.ads:38:14">Actors.Rotation</a> defined at <a href="src_actors.ads.html#l38" title="actors.ads:38:14">actors.ads:38:14</a></i></div>
+            <div><i><a href="globe_3d-stars_sky.adb.html#globe_3d-stars_sky.adb:28:14" title="defined at globe_3d-stars_sky.adb:28:14">Stars_sky.Reset</a> defined at <a href="src_globe_3d-stars_sky.adb.html#l28" title="globe_3d-stars_sky.adb:28:14">globe_3d-stars_sky.adb:28:14</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>* defined at <a href="src_globe_3d-math.ads.html#l50" title="globe_3d-math.ads:50:13">globe_3d-math.ads:50:13</a></i></div>
+            <div><i>Ada.Numerics.Generic_Elementary_Functions.Cos defined at a-ngelfu.ads:78:13</i></div>
+            <div><i>Ada.Numerics.Generic_Elementary_Functions.Sin defined at a-ngelfu.ads:68:13</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-math.ads:63:12' id='globe_3d-math.ads:63:12'></a>
+<span class="droplink">XYZ_rotation<ul>
+  <li><a href="src_globe_3d-math.ads.html#l63">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-math.adb.html#l178">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">XYZ_rotation</span> <table><tr><td>(</td><td><span class="name"><a name="globe_3d-math.ads:63:26"></a>v</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:106:12" title="defined at globe_3d.ads:106:12">Vector_3D</a>) <span class="keyword">return</span> <a href="globe_3d.ads.html#globe_3d.ads:114:9" title="defined at globe_3d.ads:114:9">Matrix_33</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-math.ads.html#l63" title="globe_3d-math.ads:63:12">globe_3d-math.ads:63:12</a> (declaration)</i></div>
+            <div><i><a href="src_actors.adb.html#l82" title="actors.adb:82:12">actors.adb:82:12</a> (call)</i></div>
+            <div><i><a href="src_actors.adb.html#l159" title="actors.adb:159:34">actors.adb:159:34</a> (call)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l178" title="globe_3d-math.adb:178:13">globe_3d-math.adb:178:13</a> (body)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="actors.ads.html#actors.ads:55:14" title="defined at actors.ads:55:14">Actors.Abstract_rotation</a> defined at <a href="src_actors.ads.html#l55" title="actors.ads:55:14">actors.ads:55:14</a></i></div>
+            <div><i><a href="actors.ads.html#actors.ads:38:14" title="defined at actors.ads:38:14">Actors.Rotation</a> defined at <a href="src_actors.ads.html#l38" title="actors.ads:38:14">actors.ads:38:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-math.ads:68:12' id='globe_3d-math.ads:68:12'></a>
+<span class="droplink">Look_at<ul>
+  <li><a href="src_globe_3d-math.ads.html#l68">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-math.adb.html#l180">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Look_at</span> <table><tr><td>(</td><td><span class="name"><a name="globe_3d-math.ads:68:21"></a>direction</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:106:12" title="defined at globe_3d.ads:106:12">Vector_3D</a>) <span class="keyword">return</span> <a href="globe_3d.ads.html#globe_3d.ads:114:9" title="defined at globe_3d.ads:114:9">Matrix_33</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-math.ads.html#l68" title="globe_3d-math.ads:68:12">globe_3d-math.ads:68:12</a> (declaration)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l180" title="globe_3d-math.adb:180:13">globe_3d-math.adb:180:13</a> (body)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l192" title="globe_3d-math.adb:192:8">globe_3d-math.adb:192:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>* defined at <a href="src_globe_3d-math.ads.html#l25" title="globe_3d-math.ads:25:13">globe_3d-math.ads:25:13</a></i></div>
+            <div><i><a href="globe_3d-math.ads.html#globe_3d-math.ads:34:12" title="defined at globe_3d-math.ads:34:12">Normalized</a> defined at <a href="src_globe_3d-math.ads.html#l34" title="globe_3d-math.ads:34:12">globe_3d-math.ads:34:12</a></i></div>
+        </div>
+        <div class='comment'>Gives a rotation matrix that corresponds to look into a certain
+direction. Camera swing rotation is arbitrary.
+Left - multiply by XYZ_Rotation (0.0, 0.0, az) to correct it.
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-math.ads:70:13' id='globe_3d-math.ads:70:13'></a>
+<span class="droplink">Look_at<ul>
+  <li><a href="src_globe_3d-math.ads.html#l70">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-math.adb.html#l212">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Look_at</span> <table><tr><td>(</td><td><span class="name"><a name="globe_3d-math.ads:70:22"></a>eye</span>, <span class="name"><a name="globe_3d-math.ads:70:27"></a>center</span>, <span class="name"><a name="globe_3d-math.ads:70:35"></a>up</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:106:12" title="defined at globe_3d.ads:106:12">Vector_3D</a>) <span class="keyword">return</span> <a href="globe_3d.ads.html#globe_3d.ads:114:9" title="defined at globe_3d.ads:114:9">Matrix_33</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-math.ads.html#l70" title="globe_3d-math.ads:70:13">globe_3d-math.ads:70:13</a> (declaration)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l212" title="globe_3d-math.adb:212:13">globe_3d-math.adb:212:13</a> (body)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l221" title="globe_3d-math.adb:221:8">globe_3d-math.adb:221:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>* defined at <a href="src_globe_3d-math.ads.html#l25" title="globe_3d-math.ads:25:13">globe_3d-math.ads:25:13</a></i></div>
+            <div><i><a href="globe_3d-math.ads.html#globe_3d-math.ads:34:12" title="defined at globe_3d-math.ads:34:12">Normalized</a> defined at <a href="src_globe_3d-math.ads.html#l34" title="globe_3d-math.ads:34:12">globe_3d-math.ads:34:12</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-math.ads:74:13' id='globe_3d-math.ads:74:13'></a>
+<span class="droplink">Re_Orthonormalize<ul>
+  <li><a href="src_globe_3d-math.ads.html#l74">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-math.adb.html#l224">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Re_Orthonormalize</span> <table><tr><td>(</td><td><span class="name"><a name="globe_3d-math.ads:74:32"></a>M</span></td><td>: <span class="keyword">in</span> <span class="keyword">out</span> <a href="globe_3d.ads.html#globe_3d.ads:114:9" title="defined at globe_3d.ads:114:9">Matrix_33</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-math.ads.html#l74" title="globe_3d-math.ads:74:13">globe_3d-math.ads:74:13</a> (declaration)</i></div>
+            <div><i><a href="src_actors.adb.html#l83" title="actors.adb:83:10">actors.adb:83:10</a> (call)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l224" title="globe_3d-math.adb:224:14">globe_3d-math.adb:224:14</a> (body)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l260" title="globe_3d-math.adb:260:8">globe_3d-math.adb:260:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="actors.ads.html#actors.ads:38:14" title="defined at actors.ads:38:14">Actors.Rotation</a> defined at <a href="src_actors.ads.html#l38" title="actors.ads:38:14">actors.ads:38:14</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>Ada.Numerics.Generic_Elementary_Functions.Sqrt defined at a-ngelfu.ads:42:13</i></div>
+        </div>
+        <div class='comment'>This is for correcting cumulation of small computational
+errors, making the rotation matrix no more orthogonal
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-math.ads:77:13' id='globe_3d-math.ads:77:13'></a>
+<span class="droplink">Multiply_GL_Matrix<ul>
+  <li><a href="src_globe_3d-math.ads.html#l77">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-math.adb.html#l268">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Multiply_GL_Matrix</span> <table><tr><td>(</td><td><span class="name"><a name="globe_3d-math.ads:77:33"></a>A</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:114:9" title="defined at globe_3d.ads:114:9">Matrix_33</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-math.ads.html#l77" title="globe_3d-math.ads:77:13">globe_3d-math.ads:77:13</a> (declaration)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l268" title="globe_3d-math.adb:268:14">globe_3d-math.adb:268:14</a> (body)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l281" title="globe_3d-math.adb:281:8">globe_3d-math.adb:281:8</a> (label)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l286" title="globe_3d-math.adb:286:7">globe_3d-math.adb:286:7</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l606" title="globe_3d.adb:606:7">globe_3d.adb:606:7</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l1173" title="globe_3d.adb:1173:16">globe_3d.adb:1173:16</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l1249" title="globe_3d.adb:1249:22">globe_3d.adb:1249:22</a> (call)</i></div>
+            <div><i><a href="src_graphics_opengl.adb.html#l113" title="graphics_opengl.adb:113:7">graphics_opengl.adb:113:7</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="globe_3d.ads.html#globe_3d.ads:448:14" title="defined at globe_3d.ads:448:14">GLOBE_3D.Display_one</a> defined at <a href="src_globe_3d.ads.html#l448" title="globe_3d.ads:448:14">globe_3d.ads:448:14</a></i></div>
+            <div><i><a href="globe_3d.ads.html#globe_3d.ads:243:14" title="defined at globe_3d.ads:243:14">GLOBE_3D.render</a> defined at <a href="src_globe_3d.ads.html#l243" title="globe_3d.ads:243:14">globe_3d.ads:243:14</a></i></div>
+            <div><i><a href="globe_3d.ads.html#globe_3d.ads:243:14" title="defined at globe_3d.ads:243:14">GLOBE_3D.render</a> defined at <a href="src_globe_3d.ads.html#l243" title="globe_3d.ads:243:14">globe_3d.ads:243:14</a></i></div>
+            <div><i><a href="graphics_opengl.adb.html#graphics_opengl.adb:99:14" title="defined at graphics_opengl.adb:99:14">Graphics_OpenGL.Position_Camera</a> defined at <a href="src_graphics_opengl.adb.html#l99" title="graphics_opengl.adb:99:14">graphics_opengl.adb:99:14</a></i></div>
+            <div><i><a href="globe_3d-math.ads.html#globe_3d-math.ads:80:13" title="defined at globe_3d-math.ads:80:13">Set_GL_Matrix</a> defined at <a href="src_globe_3d-math.ads.html#l80" title="globe_3d-math.ads:80:13">globe_3d-math.ads:80:13</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="gl.ads.html#gl.ads:3288:14" title="defined at gl.ads:3288:14">GL.MultMatrixd</a> defined at <a href="src_gl.ads.html#l3288" title="gl.ads:3288:14">gl.ads:3288:14</a></i></div>
+        </div>
+        <div class='comment'>Right - multiply current matrix by A
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-math.ads:80:13' id='globe_3d-math.ads:80:13'></a>
+<span class="droplink">Set_GL_Matrix<ul>
+  <li><a href="src_globe_3d-math.ads.html#l80">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-math.adb.html#l283">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Set_GL_Matrix</span> <table><tr><td>(</td><td><span class="name"><a name="globe_3d-math.ads:80:28"></a>A</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:114:9" title="defined at globe_3d.ads:114:9">Matrix_33</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-math.ads.html#l80" title="globe_3d-math.ads:80:13">globe_3d-math.ads:80:13</a> (declaration)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l283" title="globe_3d-math.adb:283:14">globe_3d-math.adb:283:14</a> (body)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l287" title="globe_3d-math.adb:287:8">globe_3d-math.adb:287:8</a> (label)</i></div>
+            <div><i><a href="src_globe_3d-stars_sky.adb.html#l17" title="globe_3d-stars_sky.adb:17:7">globe_3d-stars_sky.adb:17:7</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l1091" title="globe_3d.adb:1091:7">globe_3d.adb:1091:7</a> (call)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l472" title="glut-windows.adb:472:7">glut-windows.adb:472:7</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="globe_3d.ads.html#globe_3d.ads:243:14" title="defined at globe_3d.ads:243:14">GLOBE_3D.render</a> defined at <a href="src_globe_3d.ads.html#l243" title="globe_3d.ads:243:14">globe_3d.ads:243:14</a></i></div>
+            <div><i><a href="glut-windows.adb.html#glut-windows.adb:331:14" title="defined at glut-windows.adb:331:14">GLUT.Windows.Main_Operations</a> defined at <a href="src_glut-windows.adb.html#l331" title="glut-windows.adb:331:14">glut-windows.adb:331:14</a></i></div>
+            <div><i><a href="globe_3d-stars_sky.ads.html#globe_3d-stars_sky.ads:10:14" title="defined at globe_3d-stars_sky.ads:10:14">Stars_sky.Display</a> defined at <a href="src_globe_3d-stars_sky.ads.html#l10" title="globe_3d-stars_sky.ads:10:14">globe_3d-stars_sky.ads:10:14</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="gl.ads.html#gl.ads:3282:14" title="defined at gl.ads:3282:14">GL.LoadIdentity</a> defined at <a href="src_gl.ads.html#l3282" title="gl.ads:3282:14">gl.ads:3282:14</a></i></div>
+            <div><i><a href="globe_3d-math.ads.html#globe_3d-math.ads:77:13" title="defined at globe_3d-math.ads:77:13">Multiply_GL_Matrix</a> defined at <a href="src_globe_3d-math.ads.html#l77" title="globe_3d-math.ads:77:13">globe_3d-math.ads:77:13</a></i></div>
+        </div>
+        <div class='comment'>Impose A as current matrix
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-math.ads:83:12' id='globe_3d-math.ads:83:12'></a>
+<span class="droplink">Almost_zero<ul>
+  <li><a href="src_globe_3d-math.ads.html#l83">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-math.adb.html#l302">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Almost_zero</span> <table><tr><td>(</td><td><span class="name"><a name="globe_3d-math.ads:83:25"></a>x</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:102:12" title="defined at globe_3d.ads:102:12">Real</a>) <span class="keyword">return</span> Boolean;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-math.ads.html#l83" title="globe_3d-math.ads:83:12">globe_3d-math.ads:83:12</a> (declaration)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l302" title="globe_3d-math.adb:302:13">globe_3d-math.adb:302:13</a> (body)</i></div>
+            <div><i><a href="src_globe_3d-math.ads.html#l84" title="globe_3d-math.ads:84:18">globe_3d-math.ads:84:18</a> (reference)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l61" title="globe_3d.adb:61:38">globe_3d.adb:61:38</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l82" title="globe_3d.adb:82:70">globe_3d.adb:82:70</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l168" title="globe_3d.adb:168:16">globe_3d.adb:168:16</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l258" title="globe_3d.adb:258:13">globe_3d.adb:258:13</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l361" title="globe_3d.adb:361:20">globe_3d.adb:361:20</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l378" title="globe_3d.adb:378:10">globe_3d.adb:378:10</a> (call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l382" title="globe_3d.adb:382:10">globe_3d.adb:382:10</a> (call)</i></div>
+            <div><i><a href="src_spaceship_p.adb.html#l628" title="spaceship_p.adb:628:10">spaceship_p.adb:628:10</a> (call)</i></div>
+            <div><i><a href="src_sphere_p.adb.html#l149" title="sphere_p.adb:149:10">sphere_p.adb:149:10</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="globe_3d.adb.html#globe_3d.adb:45:14" title="defined at globe_3d.adb:45:14">GLOBE_3D.Add_Normal_of_3p</a> defined at <a href="src_globe_3d.adb.html#l45" title="globe_3d.adb:45:14">globe_3d.adb:45:14</a></i></div>
+            <div><i><a href="globe_3d.adb.html#globe_3d.adb:371:14" title="defined at globe_3d.adb:371:14">GLOBE_3D.Arrow</a> defined at <a href="src_globe_3d.adb.html#l371" title="globe_3d.adb:371:14">globe_3d.adb:371:14</a></i></div>
+            <div><i><a href="globe_3d.adb.html#globe_3d.adb:371:14" title="defined at globe_3d.adb:371:14">GLOBE_3D.Arrow</a> defined at <a href="src_globe_3d.adb.html#l371" title="globe_3d.adb:371:14">globe_3d.adb:371:14</a></i></div>
+            <div><i><a href="globe_3d.adb.html#globe_3d.adb:153:20" title="defined at globe_3d.adb:153:20">GLOBE_3D.Check_object.Check_faces.Check_duplicate</a> defined at <a href="src_globe_3d.adb.html#l153" title="globe_3d.adb:153:20">globe_3d.adb:153:20</a></i></div>
+            <div><i><a href="globe_3d.ads.html#globe_3d.ads:424:25" title="defined at globe_3d.ads:424:25">GLOBE_3D.Pre_calculate</a> defined at <a href="src_globe_3d.ads.html#l424" title="globe_3d.ads:424:25">globe_3d.ads:424:25</a></i></div>
+            <div><i><a href="globe_3d.adb.html#globe_3d.adb:201:17" title="defined at globe_3d.adb:201:17">GLOBE_3D.Pre_calculate.Calculate_face_invariants</a> defined at <a href="src_globe_3d.adb.html#l201" title="globe_3d.adb:201:17">globe_3d.adb:201:17</a></i></div>
+            <div><i><a href="spaceship_p.ads.html#spaceship_p.ads:9:14" title="defined at spaceship_p.ads:9:14">Spaceship_P.Create</a> defined at <a href="src_spaceship_p.ads.html#l9" title="spaceship_p.ads:9:14">spaceship_p.ads:9:14</a></i></div>
+            <div><i><a href="sphere_p.ads.html#sphere_p.ads:9:13" title="defined at sphere_p.ads:9:13">Sphere_P.Create</a> defined at <a href="src_sphere_p.ads.html#l9" title="sphere_p.ads:9:13">sphere_p.ads:9:13</a></i></div>
+        </div>
+        <div class='comment'>For replacing the &quot; = 0.0&quot; test which is a Bad Thing
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-math.ads:85:12' id='globe_3d-math.ads:85:12'></a>
+<span class="droplink">Almost_zero<ul>
+  <li><a href="src_globe_3d-math.ads.html#l85">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-math.adb.html#l304">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Almost_zero</span> <table><tr><td>(</td><td><span class="name"><a name="globe_3d-math.ads:85:25"></a>x</span></td><td>: <a href="gl.ads.html#gl.ads:126:9" title="defined at gl.ads:126:9">GL.C_Float</a>) <span class="keyword">return</span> Boolean;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-math.ads.html#l85" title="globe_3d-math.ads:85:12">globe_3d-math.ads:85:12</a> (declaration)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l304" title="globe_3d-math.adb:304:13">globe_3d-math.adb:304:13</a> (body)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l84" title="globe_3d.adb:84:70">globe_3d.adb:84:70</a> (call)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-math.ads:88:13' id='globe_3d-math.ads:88:13'></a>
+<span class="droplink">sub_Matrix<ul>
+  <li><a href="src_globe_3d-math.ads.html#l88">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-math.adb.html#l194">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">sub_Matrix</span> <table><tr><td>(</td><td><span class="name"><a name="globe_3d-math.ads:88:25"></a>Self</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:113:9" title="defined at globe_3d.ads:113:9">Matrix</a>;</td></tr><tr><td></td><td><span class="name"><a name="globe_3d-math.ads:89:25"></a>start_Row</span>, <span class="name"><a name="globe_3d-math.ads:89:36"></a>end_Row</span>, <span class="name"><a name="globe_3d-math.ads:90:25"></a>start_Col</span>, <span class="name"><a name="globe_3d-math.ads:90:36"></a>end_Col</span></td><td>: Positive) <span class="keyword">return</span> <a href="globe_3d.ads.html#globe_3d.ads:113:9" title="defined at globe_3d.ads:113:9">Matrix</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-math.ads.html#l88" title="globe_3d-math.ads:88:13">globe_3d-math.ads:88:13</a> (declaration)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l194" title="globe_3d-math.adb:194:13">globe_3d-math.adb:194:13</a> (body)</i></div>
+            <div><i><a href="src_globe_3d-math.adb.html#l210" title="globe_3d-math.adb:210:8">globe_3d-math.adb:210:8</a> (label)</i></div>
+        </div>
+      </div>
+    </div>
+</div> <!-- documentation -->
+
+</body>
+</html>

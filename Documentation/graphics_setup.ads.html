@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    Package: Graphics_Setup
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+
+  <div id='navigation'>
+    <h2 class="button">Navigation</h2>
+    <a href='#Description'><div class="button2">Description</div></a>
+    <a href='#Methods'><div class="button2">Subprograms &amp; Entries</div></a>
+  </div><!-- navigation -->
+  </div>
+</div> <!-- leftSide -->
+
+<div class='default' id='rightSide'>
+ <div id='rightSideInside'>
+ <div id='Index'>
+  <h2>Index</h2>
+  <script type="text/javascript">
+    var names = new Array (
+new Array ('Initialize_<wbr/>Graphics', 'graphics_setup.ads:7:14', 'subp-spec'),
+new Array ('Window_<wbr/>Resize', 'graphics_setup.ads:8:14', 'subp-spec'),
+      new Array ('dummy', '', ''));
+    printIndexList (names);
+  </script>
+  <noscript>
+    <ul>
+      <li class='subp-spec'><a href="#graphics_setup.ads:7:14">Initialize_<wbr/>Graphics</a></li>
+      <li class='subp-spec'><a href="#graphics_setup.ads:8:14">Window_<wbr/>Resize</a></li>
+    </ul>
+  </noscript>
+ </div>
+ </div>
+</div>
+
+<div class='default' id='documentation'>
+  <div class='title'>
+    Package:
+<span class="droplink"><i>Graphics_Setup</i><ul>
+  <li><a href="src_graphics_setup.ads.html">Goto spec source</a></li>
+  <li><a href="src_graphics_setup.adb.html">Goto body source</a></li>
+</ul></span>
+  </div>
+  <div class='subprograms'>
+    <h1><a name='Description' id='Description'></a>Description</h1>
+    <div class="class">
+    <div class='details'><pre><span class="keyword">package</span> <span class="name_emphasis">Graphics_Setup</span> <span class="keyword">is</span></pre></div>
+    <div class='comment'>
+Jan &amp; Uwe R. Zimmer, Australia, July 2011
+
+</div>
+    </div>
+  </div>
+
+
+
+
+
+
+    <div class='subprograms'>
+      <h1><a name='Methods' id='Methods'></a>Subprograms &amp; Entries</h1>
+      <div class="class">
+        <h3>
+          <a name='graphics_setup.ads:7:14' id='graphics_setup.ads:7:14'></a>
+<span class="droplink">Initialize_Graphics<ul>
+  <li><a href="src_graphics_setup.ads.html#l7">Goto spec in source</a></li>
+  <li><a href="src_graphics_setup.adb.html#l76">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Initialize_Graphics</span> <table><tr><td>(</td><td><span class="name"><a name="graphics_setup.ads:7:35"></a>Operations</span></td><td>: <span class="keyword">access</span> <span class="keyword">procedure</span>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_graphics_setup.ads.html#l7" title="graphics_setup.ads:7:14">graphics_setup.ads:7:14</a> (declaration)</i></div>
+            <div><i><a href="src_graphics_setup.adb.html#l76" title="graphics_setup.adb:76:14">graphics_setup.adb:76:14</a> (body)</i></div>
+            <div><i><a href="src_graphics_setup.adb.html#l126" title="graphics_setup.adb:126:8">graphics_setup.adb:126:8</a> (label)</i></div>
+            <div><i><a href="src_swarm.adb.html#l13" title="swarm.adb:13:4">swarm.adb:13:4</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="swarm.adb.html#swarm.adb:10:11" title="defined at swarm.adb:10:11">Swarm</a> defined at <a href="src_swarm.adb.html#l10" title="swarm.adb:10:11">swarm.adb:10:11</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="gl.ads.html#gl.ads:706:14" title="defined at gl.ads:706:14">GL.Disable</a> defined at <a href="src_gl.ads.html#l706" title="gl.ads:706:14">gl.ads:706:14</a></i></div>
+            <div><i><a href="gl.ads.html#gl.ads:704:14" title="defined at gl.ads:704:14">GL.Enable</a> defined at <a href="src_gl.ads.html#l704" title="gl.ads:704:14">gl.ads:704:14</a></i></div>
+            <div><i><a href="globe_3d.ads.html#globe_3d.ads:492:14" title="defined at globe_3d.ads:492:14">GLOBE_3D.Define</a> defined at <a href="src_globe_3d.ads.html#l492" title="globe_3d.ads:492:14">globe_3d.ads:492:14</a></i></div>
+            <div><i><a href="globe_3d.ads.html#globe_3d.ads:495:14" title="defined at globe_3d.ads:495:14">GLOBE_3D.Switch_light</a> defined at <a href="src_globe_3d.ads.html#l495" title="globe_3d.ads:495:14">globe_3d.ads:495:14</a></i></div>
+            <div><i><a href="glut.ads.html#glut.ads:349:13" title="defined at glut.ads:349:13">GLUT.CreateWindow</a> defined at <a href="src_glut.ads.html#l349" title="glut.ads:349:13">glut.ads:349:13</a></i></div>
+            <div><i><a href="glut-devices.ads.html#glut-devices.ads:13:14" title="defined at glut-devices.ads:13:14">GLUT.Devices.Initialize</a> defined at <a href="src_glut-devices.ads.html#l13" title="glut-devices.ads:13:14">glut-devices.ads:13:14</a></i></div>
+            <div><i><a href="glut.ads.html#glut.ads:544:14" title="defined at glut.ads:544:14">GLUT.DisplayFunc</a> defined at <a href="src_glut.ads.html#l544" title="glut.ads:544:14">glut.ads:544:14</a></i></div>
+            <div><i><a href="glut.ads.html#glut.ads:603:14" title="defined at glut.ads:603:14">GLUT.IdleFunc</a> defined at <a href="src_glut.ads.html#l603" title="glut.ads:603:14">glut.ads:603:14</a></i></div>
+            <div><i><a href="glut.ads.html#glut.ads:296:14" title="defined at glut.ads:296:14">GLUT.Init</a> defined at <a href="src_glut.ads.html#l296" title="glut.ads:296:14">glut.ads:296:14</a></i></div>
+            <div><i><a href="glut.ads.html#glut.ads:317:14" title="defined at glut.ads:317:14">GLUT.InitDisplayMode</a> defined at <a href="src_glut.ads.html#l317" title="glut.ads:317:14">glut.ads:317:14</a></i></div>
+            <div><i><a href="glut.ads.html#glut.ads:325:14" title="defined at glut.ads:325:14">GLUT.InitWindowPosition</a> defined at <a href="src_glut.ads.html#l325" title="glut.ads:325:14">glut.ads:325:14</a></i></div>
+            <div><i><a href="glut.ads.html#glut.ads:328:14" title="defined at glut.ads:328:14">GLUT.InitWindowSize</a> defined at <a href="src_glut.ads.html#l328" title="glut.ads:328:14">glut.ads:328:14</a></i></div>
+            <div><i>GLUT.or defined at <a href="src_glut.ads.html#l26" title="glut.ads:26:14">glut.ads:26:14</a></i></div>
+            <div><i><a href="glut.ads.html#glut.ads:550:14" title="defined at glut.ads:550:14">GLUT.ReshapeFunc</a> defined at <a href="src_glut.ads.html#l550" title="glut.ads:550:14">glut.ads:550:14</a></i></div>
+            <div><i><a href="graphics_setup.adb.html#graphics_setup.adb:30:14" title="defined at graphics_setup.adb:30:14">Graphics_Setup.Reset_for_3D</a> defined at <a href="src_graphics_setup.adb.html#l30" title="graphics_setup.adb:30:14">graphics_setup.adb:30:14</a></i></div>
+            <div><i><a href="graphics_setup.ads.html#graphics_setup.ads:8:14" title="defined at graphics_setup.ads:8:14">Window_Resize</a> defined at <a href="src_graphics_setup.ads.html#l8" title="graphics_setup.ads:8:14">graphics_setup.ads:8:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='graphics_setup.ads:8:14' id='graphics_setup.ads:8:14'></a>
+<span class="droplink">Window_Resize<ul>
+  <li><a href="src_graphics_setup.ads.html#l8">Goto spec in source</a></li>
+  <li><a href="src_graphics_setup.adb.html#l63">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Window_Resize</span> <table><tr><td>(</td><td><span class="name"><a name="graphics_setup.ads:8:29"></a>Size_x</span>, <span class="name"><a name="graphics_setup.ads:8:37"></a>Size_y</span></td><td>: Integer);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_graphics_setup.ads.html#l8" title="graphics_setup.ads:8:14">graphics_setup.ads:8:14</a> (declaration)</i></div>
+            <div><i><a href="src_graphics_opengl.adb.html#l351" title="graphics_opengl.adb:351:7">graphics_opengl.adb:351:7</a> (call)</i></div>
+            <div><i><a href="src_graphics_opengl.adb.html#l378" title="graphics_opengl.adb:378:13">graphics_opengl.adb:378:13</a> (call)</i></div>
+            <div><i><a href="src_graphics_setup.adb.html#l63" title="graphics_setup.adb:63:14">graphics_setup.adb:63:14</a> (body)</i></div>
+            <div><i><a href="src_graphics_setup.adb.html#l68" title="graphics_setup.adb:68:8">graphics_setup.adb:68:8</a> (label)</i></div>
+            <div><i><a href="src_graphics_setup.adb.html#l96" title="graphics_setup.adb:96:25">graphics_setup.adb:96:25</a> (reference)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="graphics_opengl.ads-3.html#graphics_opengl.ads:48:17" title="defined at graphics_opengl.ads:48:17">Graphics_OpenGL.Full_Screen_Mode.Change_Full_Screen</a> defined at <a href="src_graphics_opengl.ads.html#l48" title="graphics_opengl.ads:48:17">graphics_opengl.ads:48:17</a></i></div>
+            <div><i><a href="graphics_opengl.adb.html#graphics_opengl.adb:348:14" title="defined at graphics_opengl.adb:348:14">Graphics_OpenGL.Resize_Window</a> defined at <a href="src_graphics_opengl.adb.html#l348" title="graphics_opengl.adb:348:14">graphics_opengl.adb:348:14</a></i></div>
+            <div><i><a href="graphics_setup.ads.html#graphics_setup.ads:7:14" title="defined at graphics_setup.ads:7:14">Initialize_Graphics</a> defined at <a href="src_graphics_setup.ads.html#l7" title="graphics_setup.ads:7:14">graphics_setup.ads:7:14</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="graphics_setup.adb.html#graphics_setup.adb:30:14" title="defined at graphics_setup.adb:30:14">Graphics_Setup.Reset_for_3D</a> defined at <a href="src_graphics_setup.adb.html#l30" title="graphics_setup.adb:30:14">graphics_setup.adb:30:14</a></i></div>
+        </div>
+      </div>
+    </div>
+</div> <!-- documentation -->
+
+</body>
+</html>

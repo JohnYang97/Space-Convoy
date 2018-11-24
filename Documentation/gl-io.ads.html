@@ -1,0 +1,905 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    Package: IO
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+
+  <div id='navigation'>
+    <h2 class="button">Navigation</h2>
+    <a href='#Description'><div class="button2">Description</div></a>
+    <a href='#Types'><div class="button2">Types</div></a>
+    <a href='#Constants'><div class="button2">Constants &amp; Global variables</div></a>
+    <a href='#Methods'><div class="button2">Subprograms &amp; Entries</div></a>
+  </div><!-- navigation -->
+  </div>
+</div> <!-- leftSide -->
+
+<div class='default' id='rightSide'>
+ <div id='rightSideInside'>
+ <div id='Index'>
+  <h2>Index</h2>
+  <script type="text/javascript">
+    var names = new Array (
+new Array ('Supported_<wbr/>format', 'gl-io.ads:49:8', 'type-spec'),
+new Array ('Byte_<wbr/>Array', 'gl-io.ads:51:8', 'type-spec'),
+new Array ('Byte_<wbr/>Array_<wbr/>Ptr', 'gl-io.ads:52:8', 'type-spec'),
+new Array ('Byte_<wbr/>Grid', 'gl-io.ads:57:8', 'type-spec'),
+new Array ('Image', 'gl-io.ads:59:8', 'type-spec'),
+new Array ('Input_<wbr/>buffer', 'gl-io.ads:145:8', 'type-spec'),
+new Array ('File_<wbr/>Not_<wbr/>Found', 'gl-io.ads:47:3', 'var-spec'),
+new Array ('Unsupported_<wbr/>BMP_<wbr/>format', 'gl-io.ads:102:3', 'var-spec'),
+new Array ('Not_<wbr/>BMP_<wbr/>format', 'gl-io.ads:103:3', 'var-spec'),
+new Array ('BMP_<wbr/>Unsupported_<wbr/>Bits_<wbr/>per_<wbr/>Pixel', 'gl-io.ads:104:3', 'var-spec'),
+new Array ('Unsupported_<wbr/>compression', 'gl-io.ads:105:3', 'var-spec'),
+new Array ('TGA_<wbr/>Unsupported_<wbr/>Image_<wbr/>Type', 'gl-io.ads:119:3', 'var-spec'),
+new Array ('TGA_<wbr/>Unsupported_<wbr/>Bits_<wbr/>per_<wbr/>pixel', 'gl-io.ads:120:3', 'var-spec'),
+new Array ('TGA_<wbr/>Bad_<wbr/>Data', 'gl-io.ads:121:3', 'var-spec'),
+new Array ('Free', 'gl-io.ads:54:13', 'subp-spec'),
+new Array ('To_<wbr/>TGA_<wbr/>Image', 'gl-io.ads:70:12', 'subp-spec'),
+new Array ('To_<wbr/>TGA_<wbr/>Image', 'gl-io.ads:72:12', 'subp-spec'),
+new Array ('to_<wbr/>greyscale_<wbr/>Pixels', 'gl-io.ads:74:12', 'subp-spec'),
+new Array ('Load', 'gl-io.ads:78:14', 'subp-spec'),
+new Array ('Load', 'gl-io.ads:83:14', 'subp-spec'),
+new Array ('Load_<wbr/>BMP', 'gl-io.ads:94:14', 'subp-spec'),
+new Array ('Load_<wbr/>BMP', 'gl-io.ads:98:13', 'subp-spec'),
+new Array ('Load_<wbr/>TGA', 'gl-io.ads:111:14', 'subp-spec'),
+new Array ('Load_<wbr/>TGA', 'gl-io.ads:115:14', 'subp-spec'),
+new Array ('Screenshot', 'gl-io.ads:127:13', 'subp-spec'),
+new Array ('Start_<wbr/>Capture', 'gl-io.ads:133:13', 'subp-spec'),
+new Array ('Capture_<wbr/>Frame', 'gl-io.ads:135:13', 'subp-spec'),
+new Array ('Stop_<wbr/>Capture', 'gl-io.ads:137:13', 'subp-spec'),
+new Array ('Attach_<wbr/>Stream', 'gl-io.ads:147:13', 'subp-spec'),
+new Array ('Get_<wbr/>Byte', 'gl-io.ads:150:13', 'subp-spec'),
+      new Array ('dummy', '', ''));
+    printIndexList (names);
+  </script>
+  <noscript>
+    <ul>
+      <li class='type-spec'><a href="#gl-io.ads:49:8">Supported_<wbr/>format</a></li>
+      <li class='type-spec'><a href="#gl-io.ads:51:8">Byte_<wbr/>Array</a></li>
+      <li class='type-spec'><a href="#gl-io.ads:52:8">Byte_<wbr/>Array_<wbr/>Ptr</a></li>
+      <li class='type-spec'><a href="#gl-io.ads:57:8">Byte_<wbr/>Grid</a></li>
+      <li class='type-spec'><a href="#gl-io.ads:59:8">Image</a></li>
+      <li class='type-spec'><a href="#gl-io.ads:145:8">Input_<wbr/>buffer</a></li>
+      <li class='var-spec'><a href="#gl-io.ads:47:3">File_<wbr/>Not_<wbr/>Found</a></li>
+      <li class='var-spec'><a href="#gl-io.ads:102:3">Unsupported_<wbr/>BMP_<wbr/>format</a></li>
+      <li class='var-spec'><a href="#gl-io.ads:103:3">Not_<wbr/>BMP_<wbr/>format</a></li>
+      <li class='var-spec'><a href="#gl-io.ads:104:3">BMP_<wbr/>Unsupported_<wbr/>Bits_<wbr/>per_<wbr/>Pixel</a></li>
+      <li class='var-spec'><a href="#gl-io.ads:105:3">Unsupported_<wbr/>compression</a></li>
+      <li class='var-spec'><a href="#gl-io.ads:119:3">TGA_<wbr/>Unsupported_<wbr/>Image_<wbr/>Type</a></li>
+      <li class='var-spec'><a href="#gl-io.ads:120:3">TGA_<wbr/>Unsupported_<wbr/>Bits_<wbr/>per_<wbr/>pixel</a></li>
+      <li class='var-spec'><a href="#gl-io.ads:121:3">TGA_<wbr/>Bad_<wbr/>Data</a></li>
+      <li class='subp-spec'><a href="#gl-io.ads:54:13">Free</a></li>
+      <li class='subp-spec'><a href="#gl-io.ads:70:12">To_<wbr/>TGA_<wbr/>Image</a></li>
+      <li class='subp-spec'><a href="#gl-io.ads:72:12">To_<wbr/>TGA_<wbr/>Image</a></li>
+      <li class='subp-spec'><a href="#gl-io.ads:74:12">to_<wbr/>greyscale_<wbr/>Pixels</a></li>
+      <li class='subp-spec'><a href="#gl-io.ads:78:14">Load</a></li>
+      <li class='subp-spec'><a href="#gl-io.ads:83:14">Load</a></li>
+      <li class='subp-spec'><a href="#gl-io.ads:94:14">Load_<wbr/>BMP</a></li>
+      <li class='subp-spec'><a href="#gl-io.ads:98:13">Load_<wbr/>BMP</a></li>
+      <li class='subp-spec'><a href="#gl-io.ads:111:14">Load_<wbr/>TGA</a></li>
+      <li class='subp-spec'><a href="#gl-io.ads:115:14">Load_<wbr/>TGA</a></li>
+      <li class='subp-spec'><a href="#gl-io.ads:127:13">Screenshot</a></li>
+      <li class='subp-spec'><a href="#gl-io.ads:133:13">Start_<wbr/>Capture</a></li>
+      <li class='subp-spec'><a href="#gl-io.ads:135:13">Capture_<wbr/>Frame</a></li>
+      <li class='subp-spec'><a href="#gl-io.ads:137:13">Stop_<wbr/>Capture</a></li>
+      <li class='subp-spec'><a href="#gl-io.ads:147:13">Attach_<wbr/>Stream</a></li>
+      <li class='subp-spec'><a href="#gl-io.ads:150:13">Get_<wbr/>Byte</a></li>
+    </ul>
+  </noscript>
+ </div>
+ </div>
+</div>
+
+<div class='default' id='documentation'>
+  <div class='title'>
+    Package:
+<span class="droplink"><i>IO</i><ul>
+  <li><a href="src_gl-io.ads.html">Goto spec source</a></li>
+  <li><a href="src_gl-io.adb.html">Goto body source</a></li>
+</ul></span>
+  </div>
+  <div class='subprograms'>
+    <h1><a name='Description' id='Description'></a>Description</h1>
+    <div class="class">
+    <div class='details'><pre><span class="keyword">package</span> <span class="name_emphasis">GL.IO</span> <span class="keyword">is</span></pre></div>
+    <div class='comment'>----------------------------------------------------------------------------
+File :            <a href="gl.adb.html#gl.adb:17:14" title="GL">GL</a> - IO.ads
+Description :     I/O for (<a href="unzip-streams.adb.html#unzip-streams.adb:182:14" title="Open">Open</a>)<a href="gl.adb.html#gl.adb:17:14" title="GL">GL</a> graphics
+
+                 This package provides currently:
+
+                 ******************************************************
+                 * INPUT * from a file or a data stream, to a texture *
+                 ******************************************************
+
+                  - TGA image : RGA, RGBA, Grey
+                  - BMP image : B&amp;W, 16 colours indexed (palette),
+                      256 colours indexed
+
+                 ***************************************************
+                 * OUTPUT * from the <a href="gl.adb.html#gl.adb:17:14" title="GL">GL</a> active viewport, to a file *
+                 ***************************************************
+
+                  - BMP image : screenshot
+                  - AVI video : video capture
+
+----------------------------------------------------------------------------
+Change <a href="gl-errors.adb.html#gl-errors.adb:26:14" title="log">log</a>:
+
+19 - Jan - 2010 (GdM) : using workaround to the slow attribute I/O issue (GNAT, OA);
+                    buffered input; improvements on BMP
+
+26 - May - 2008 (GdM) : added support for TGA images with RLE encoding
+
+27 - Jan - 2008 (RK) :  added &apos;<a href="globe_3d.adb.html#globe_3d.adb:24:13" title="Image">Image</a>&apos; record and a function to get greyscale pixels from an <a href="globe_3d.adb.html#globe_3d.adb:24:13" title="Image">Image</a>.
+
+10 - May - 2007 (GdM) : screenshot and video capture
+
+13 - Oct - 2006 (GdM) : new blending_hint out parameter, indicates possible
+                    blending/transparency
+
+30 - Apr - 2006 (GdM) : - added multi - format loaders
+                  - dimensions not power of two allowed, but
+                    discouraged in the docs.
+                    - &gt; removed TGA_BAD_DIMENSION
+</div>
+    </div>
+  </div>
+
+
+
+
+  <div class='subprograms'>
+    <h1><a name='Types' id='Types'></a>Types</h1>
+    <div class="class">
+      <h3>
+        <a name='gl-io.ads:49:8' id='gl-io.ads:49:8'></a>
+<span class="droplink">Supported_format<ul>
+  <li><a href="src_gl-io.ads.html#l49">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Supported_format</span> <span class="keyword">is</span> (BMP, TGA);</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-io.ads.html#l49" title="gl-io.ads:49:8">gl-io.ads:49:8</a> (declaration)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l729" title="gl-io.adb:729:40">gl-io.adb:729:40</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l741" title="gl-io.adb:741:40">gl-io.adb:741:40</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.ads.html#l79" title="gl-io.ads:79:40">gl-io.ads:79:40</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.ads.html#l84" title="gl-io.ads:84:40">gl-io.ads:84:40</a> (reference)</i></div>
+          <div><i><a href="src_globe_3d-textures.adb.html#l61" title="globe_3d-textures.adb:61:67">globe_3d-textures.adb:61:67</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-io.ads:51:8' id='gl-io.ads:51:8'></a>
+<span class="droplink">Byte_Array<ul>
+  <li><a href="src_gl-io.ads.html#l51">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Byte_Array</span> <span class="keyword">is</span> <span class="keyword">array</span> (Integer <span class="keyword">range</span> <>) <span class="keyword">of</span> <span class="keyword">aliased</span> <a href="gl.ads.html#gl.ads:122:9" title="defined at gl.ads:122:9">GL.Ubyte</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-io.ads.html#l51" title="gl-io.ads:51:8">gl-io.ads:51:8</a> (declaration)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l78" title="gl-io.adb:78:27">gl-io.adb:78:27</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l93" title="gl-io.adb:93:51">gl-io.adb:93:51</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l161" title="gl-io.adb:161:17">gl-io.adb:161:17</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l164" title="gl-io.adb:164:55">gl-io.adb:164:55</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l231" title="gl-io.adb:231:39">gl-io.adb:231:39</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l259" title="gl-io.adb:259:38">gl-io.adb:259:38</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l286" title="gl-io.adb:286:39">gl-io.adb:286:39</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l307" title="gl-io.adb:307:56">gl-io.adb:307:56</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l324" title="gl-io.adb:324:18">gl-io.adb:324:18</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l325" title="gl-io.adb:325:18">gl-io.adb:325:18</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l326" title="gl-io.adb:326:18">gl-io.adb:326:18</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l332" title="gl-io.adb:332:7">gl-io.adb:332:7</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l333" title="gl-io.adb:333:7">gl-io.adb:333:7</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l334" title="gl-io.adb:334:7">gl-io.adb:334:7</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l383" title="gl-io.adb:383:29">gl-io.adb:383:29</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l619" title="gl-io.adb:619:54">gl-io.adb:619:54</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l704" title="gl-io.adb:704:24">gl-io.adb:704:24</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.ads.html#l52" title="gl-io.ads:52:37">gl-io.ads:52:37</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.ads.html#l55" title="gl-io.ads:55:37">gl-io.ads:55:37</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.ads.html#l156" title="gl-io.ads:156:19">gl-io.ads:156:19</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-io.ads:52:8' id='gl-io.ads:52:8'></a>
+<span class="droplink">Byte_Array_Ptr<ul>
+  <li><a href="src_gl-io.ads.html#l52">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Byte_Array_Ptr</span> <span class="keyword">is</span> <span class="keyword">access</span> <span class="keyword">all</span> <a href="gl-io.ads.html#gl-io.ads:51:8" title="defined at gl-io.ads:51:8">Byte_Array</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-io.ads.html#l52" title="gl-io.ads:52:8">gl-io.ads:52:8</a> (declaration)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l52" title="gl-io.adb:52:48">gl-io.adb:52:48</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l470" title="gl-io.adb:470:19">gl-io.adb:470:19</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.ads.html#l55" title="gl-io.ads:55:49">gl-io.ads:55:49</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.ads.html#l67" title="gl-io.ads:67:27">gl-io.ads:67:27</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-io.ads:57:8' id='gl-io.ads:57:8'></a>
+<span class="droplink">Byte_Grid<ul>
+  <li><a href="src_gl-io.ads.html#l57">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Byte_Grid</span> <span class="keyword">is</span> <span class="keyword">array</span> (Integer <span class="keyword">range</span> <>, Integer <span class="keyword">range</span> <>) <span class="keyword">of</span> <span class="keyword">aliased</span> <a href="gl.ads.html#gl.ads:122:9" title="defined at gl.ads:122:9">GL.Ubyte</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-io.ads.html#l57" title="gl-io.ads:57:8">gl-io.ads:57:8</a> (declaration)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l26" title="gl-io.adb:26:60">gl-io.adb:26:60</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l28" title="gl-io.adb:28:19">gl-io.adb:28:19</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.ads.html#l74" title="gl-io.ads:74:59">gl-io.ads:74:59</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-io.ads:59:8' id='gl-io.ads:59:8'></a>
+<span class="droplink">Image<ul>
+  <li><a href="src_gl-io.ads.html#l59">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Image</span> <span class="keyword">is</span>
+    <span class="keyword">record</span>
+      blending_hint     : Boolean;        <span class="comment">-- has the image blending / transparency /alpha ?
+</span>      tex_Format        : <a href="gl.ads.html#gl.ads:2294:9" title="defined at gl.ads:2294:9">GL.TexFormatEnm</a>;
+      tex_pixel_Format  : <a href="gl.ads.html#gl.ads:2382:9" title="defined at gl.ads:2382:9">GL.TexPixelFormatEnm</a>;
+      size              : Integer;
+      Width,
+      Height            : Integer;
+      Data              : <a href="gl-io.ads.html#gl-io.ads:52:8" title="defined at gl-io.ads:52:8">Byte_Array_Ptr</a>;
+    <span class="keyword">end</span> <span class="keyword">record</span>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-io.ads.html#l59" title="gl-io.ads:59:8">gl-io.ads:59:8</a> (declaration)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l26" title="gl-io.adb:26:46">gl-io.adb:26:46</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l153" title="gl-io.adb:153:77">gl-io.adb:153:77</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l155" title="gl-io.adb:155:20">gl-io.adb:155:20</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l389" title="gl-io.adb:389:53">gl-io.adb:389:53</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l392" title="gl-io.adb:392:20">gl-io.adb:392:20</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l422" title="gl-io.adb:422:20">gl-io.adb:422:20</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.ads.html#l70" title="gl-io.ads:70:52">gl-io.ads:70:52</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.ads.html#l72" title="gl-io.ads:72:74">gl-io.ads:72:74</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.ads.html#l74" title="gl-io.ads:74:45">gl-io.ads:74:45</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-io.ads:145:8' id='gl-io.ads:145:8'></a>
+<span class="droplink">Input_buffer<ul>
+  <li><a href="src_gl-io.ads.html#l145">Goto declaration in source</a></li>
+  <li><a href="src_gl-io.ads.html#l155">Goto full declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Input_buffer</span> <span class="keyword">is</span> <span class="keyword">private</span>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-io.ads.html#l145" title="gl-io.ads:145:8">gl-io.ads:145:8</a> (declaration)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l85" title="gl-io.adb:85:38">gl-io.adb:85:38</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l89" title="gl-io.adb:89:38">gl-io.adb:89:38</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l132" title="gl-io.adb:132:40">gl-io.adb:132:40</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l140" title="gl-io.adb:140:35">gl-io.adb:140:35</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l156" title="gl-io.adb:156:20">gl-io.adb:156:20</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l471" title="gl-io.adb:471:20">gl-io.adb:471:20</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.ads.html#l147" title="gl-io.ads:147:38">gl-io.ads:147:38</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.ads.html#l150" title="gl-io.ads:150:34">gl-io.ads:150:34</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.ads.html#l155" title="gl-io.ads:155:8">gl-io.ads:155:8</a> (full declaration)</i></div>
+      </div>
+      <div class='comment'>------------------------------------------------------------------------
+An object - oriented stream buffering, initially for reading images to --
+the <a href="gl.adb.html#gl.adb:17:14" title="GL">GL</a> system, but that may be useful elsewhere, hence its presence  --
+in this package&apos;s specification                                      --
+------------------------------------------------------------------------
+
+</div>
+    </div>
+  </div>
+
+  <div class='subprograms'>
+    <h1><a name='Constants' id='Constants'></a>Constants &amp; Global variables</h1>
+    <div class="class">
+      <h3><a name='gl-io.ads:47:3' id='gl-io.ads:47:3'></a>
+<span class="droplink">File_Not_Found<ul>
+  <li><a href="src_gl-io.ads.html#l47">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">File_Not_Found</span>  : <span class="keyword">exception</span>;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-io.ads.html#l47" title="gl-io.ads:47:3">gl-io.ads:47:3</a> (declaration)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l398" title="gl-io.adb:398:46">gl-io.adb:398:46</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l450" title="gl-io.adb:450:46">gl-io.adb:450:46</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-io.ads:102:3' id='gl-io.ads:102:3'></a>
+<span class="droplink">Unsupported_BMP_format<ul>
+  <li><a href="src_gl-io.ads.html#l102">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Unsupported_BMP_format</span>,
+  <span class="name"><a name="gl-io.ads:103:3"></a>Not_BMP_format</span>,
+  <span class="name"><a name="gl-io.ads:104:3"></a>BMP_Unsupported_Bits_per_Pixel</span>,
+  <span class="name"><a name="gl-io.ads:105:3"></a>Unsupported_compression</span> :      <span class="keyword">exception</span>;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-io.ads.html#l102" title="gl-io.ads:102:3">gl-io.ads:102:3</a> (declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-io.ads:103:3' id='gl-io.ads:103:3'></a>
+<span class="droplink">Not_BMP_format<ul>
+  <li><a href="src_gl-io.ads.html#l103">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Not_BMP_format</span>,
+  <span class="name"><a name="gl-io.ads:104:3"></a>BMP_Unsupported_Bits_per_Pixel</span>,
+  <span class="name"><a name="gl-io.ads:105:3"></a>Unsupported_compression</span> :      <span class="keyword">exception</span>;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-io.ads.html#l103" title="gl-io.ads:103:3">gl-io.ads:103:3</a> (declaration)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l559" title="gl-io.adb:559:19">gl-io.adb:559:19</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-io.ads:104:3' id='gl-io.ads:104:3'></a>
+<span class="droplink">BMP_Unsupported_Bits_per_Pixel<ul>
+  <li><a href="src_gl-io.ads.html#l104">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">BMP_Unsupported_Bits_per_Pixel</span>,
+  <span class="name"><a name="gl-io.ads:105:3"></a>Unsupported_compression</span> :      <span class="keyword">exception</span>;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-io.ads.html#l104" title="gl-io.ads:104:3">gl-io.ads:104:3</a> (declaration)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l583" title="gl-io.adb:583:19">gl-io.adb:583:19</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-io.ads:105:3' id='gl-io.ads:105:3'></a>
+<span class="droplink">Unsupported_compression<ul>
+  <li><a href="src_gl-io.ads.html#l105">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Unsupported_compression</span> :      <span class="keyword">exception</span>;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-io.ads.html#l105" title="gl-io.ads:105:3">gl-io.ads:105:3</a> (declaration)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l589" title="gl-io.adb:589:19">gl-io.adb:589:19</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-io.ads:119:3' id='gl-io.ads:119:3'></a>
+<span class="droplink">TGA_Unsupported_Image_Type<ul>
+  <li><a href="src_gl-io.ads.html#l119">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">TGA_Unsupported_Image_Type</span>      : <span class="keyword">exception</span>;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-io.ads.html#l119" title="gl-io.ads:119:3">gl-io.ads:119:3</a> (declaration)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l338" title="gl-io.adb:338:27">gl-io.adb:338:27</a> (reference)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l359" title="gl-io.adb:359:27">gl-io.adb:359:27</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-io.ads:120:3' id='gl-io.ads:120:3'></a>
+<span class="droplink">TGA_Unsupported_Bits_per_pixel<ul>
+  <li><a href="src_gl-io.ads.html#l120">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">TGA_Unsupported_Bits_per_pixel</span>  : <span class="keyword">exception</span>;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-io.ads.html#l120" title="gl-io.ads:120:3">gl-io.ads:120:3</a> (declaration)</i></div>
+          <div><i><a href="src_gl-io.adb.html#l379" title="gl-io.adb:379:16">gl-io.adb:379:16</a> (reference)</i></div>
+      </div>
+      <div class='comment'>color mapped or compressed image
+</div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-io.ads:121:3' id='gl-io.ads:121:3'></a>
+<span class="droplink">TGA_Bad_Data<ul>
+  <li><a href="src_gl-io.ads.html#l121">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">TGA_Bad_Data</span>                    : <span class="keyword">exception</span>;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-io.ads.html#l121" title="gl-io.ads:121:3">gl-io.ads:121:3</a> (declaration)</i></div>
+      </div>
+      <div class='comment'>image bits is not 8, 24 or 32
+</div>
+    </div>
+  </div>
+
+    <div class='subprograms'>
+      <h1><a name='Methods' id='Methods'></a>Subprograms &amp; Entries</h1>
+      <div class="class">
+        <h3>
+          <a name='gl-io.ads:54:13' id='gl-io.ads:54:13'></a>
+<span class="droplink">Free<ul>
+  <li><a href="src_gl-io.ads.html#l54">Goto spec in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Free</span> <span class="keyword">is</span> <span class="keyword">new</span> Ada.Unchecked_Deallocation <table><tr><td>(</td><td><a href="gl-io.ads.html#gl-io.ads:51:8" title="defined at gl-io.ads:51:8">Byte_Array</a>, <a href="gl-io.ads.html#gl-io.ads:52:8" title="defined at gl-io.ads:52:8">Byte_Array_Ptr</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-io.ads.html#l54" title="gl-io.ads:54:13">gl-io.ads:54:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l434" title="gl-io.adb:434:7">gl-io.adb:434:7</a> (call)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l720" title="gl-io.adb:720:7">gl-io.adb:720:7</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="gl-io.ads.html#gl-io.ads:98:13" title="defined at gl-io.ads:98:13">Load_BMP</a> defined at <a href="src_gl-io.ads.html#l98" title="gl-io.ads:98:13">gl-io.ads:98:13</a></i></div>
+            <div><i><a href="gl-io.ads.html#gl-io.ads:115:14" title="defined at gl-io.ads:115:14">Load_TGA</a> defined at <a href="src_gl-io.ads.html#l115" title="gl-io.ads:115:14">gl-io.ads:115:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-io.ads:70:12' id='gl-io.ads:70:12'></a>
+<span class="droplink">To_TGA_Image<ul>
+  <li><a href="src_gl-io.ads.html#l70">Goto spec in source</a></li>
+  <li><a href="src_gl-io.adb.html#l389">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">To_TGA_Image</span> <table><tr><td>(</td><td><span class="name"><a name="gl-io.ads:70:26"></a>Filename</span></td><td>: String) <span class="keyword">return</span> <a href="gl-io.ads.html#gl-io.ads:59:8" title="defined at gl-io.ads:59:8">Image</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-io.ads.html#l70" title="gl-io.ads:70:12">gl-io.ads:70:12</a> (declaration)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l389" title="gl-io.adb:389:13">gl-io.adb:389:13</a> (body)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l408" title="gl-io.adb:408:8">gl-io.adb:408:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>Ada.Exceptions.Exception_Identity defined at a-except.ads:105:13</i></div>
+            <div><i>Ada.Exceptions.Raise_Exception defined at a-except.ads:93:14</i></div>
+            <div><i>Close defined at a-ststio.ads:79:14</i></div>
+            <div><i>Open defined at a-ststio.ads:73:14</i></div>
+            <div><i>Stream defined at a-ststio.ads:91:13</i></div>
+            <div><i><a href="gl-io.ads.html#gl-io.ads:72:12" title="defined at gl-io.ads:72:12">To_TGA_Image</a> defined at <a href="src_gl-io.ads.html#l72" title="gl-io.ads:72:12">gl-io.ads:72:12</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-io.ads:72:12' id='gl-io.ads:72:12'></a>
+<span class="droplink">To_TGA_Image<ul>
+  <li><a href="src_gl-io.ads.html#l72">Goto spec in source</a></li>
+  <li><a href="src_gl-io.adb.html#l153">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">To_TGA_Image</span> <table><tr><td>(</td><td><span class="name"><a name="gl-io.ads:72:26"></a>S</span></td><td>: Ada.Streams.Stream_IO.Stream_Access) <span class="keyword">return</span> <a href="gl-io.ads.html#gl-io.ads:59:8" title="defined at gl-io.ads:59:8">Image</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-io.ads.html#l72" title="gl-io.ads:72:12">gl-io.ads:72:12</a> (declaration)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l153" title="gl-io.adb:153:13">gl-io.adb:153:13</a> (body)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l387" title="gl-io.adb:387:8">gl-io.adb:387:8</a> (label)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l400" title="gl-io.adb:400:20">gl-io.adb:400:20</a> (call)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l422" title="gl-io.adb:422:29">gl-io.adb:422:29</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="gl-io.ads.html#gl-io.ads:115:14" title="defined at gl-io.ads:115:14">Load_TGA</a> defined at <a href="src_gl-io.ads.html#l115" title="gl-io.ads:115:14">gl-io.ads:115:14</a></i></div>
+            <div><i><a href="gl-io.ads.html#gl-io.ads:70:12" title="defined at gl-io.ads:70:12">To_TGA_Image</a> defined at <a href="src_gl-io.ads.html#l70" title="gl-io.ads:70:12">gl-io.ads:70:12</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>Ada.Exceptions.Raise_Exception defined at a-except.ads:93:14</i></div>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:307:17" title="defined at gl-io.adb:307:17">GL.IO.To_TGA_Image.getData</a> defined at <a href="src_gl-io.adb.html#l307" title="gl-io.adb:307:17">gl-io.adb:307:17</a></i></div>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:286:17" title="defined at gl-io.adb:286:17">GL.IO.To_TGA_Image.getGray</a> defined at <a href="src_gl-io.adb.html#l286" title="gl-io.adb:286:17">gl-io.adb:286:17</a></i></div>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:259:17" title="defined at gl-io.adb:259:17">GL.IO.To_TGA_Image.getRGB</a> defined at <a href="src_gl-io.adb.html#l259" title="gl-io.adb:259:17">gl-io.adb:259:17</a></i></div>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:231:17" title="defined at gl-io.adb:231:17">GL.IO.To_TGA_Image.getRGBA</a> defined at <a href="src_gl-io.adb.html#l231" title="gl-io.adb:231:17">gl-io.adb:231:17</a></i></div>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:164:17" title="defined at gl-io.adb:164:17">GL.IO.To_TGA_Image.RLE_Pixel</a> defined at <a href="src_gl-io.adb.html#l164" title="gl-io.adb:164:17">gl-io.adb:164:17</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-io.ads:74:12' id='gl-io.ads:74:12'></a>
+<span class="droplink">to_greyscale_Pixels<ul>
+  <li><a href="src_gl-io.ads.html#l74">Goto spec in source</a></li>
+  <li><a href="src_gl-io.adb.html#l26">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">to_greyscale_Pixels</span> <table><tr><td>(</td><td><span class="name"><a name="gl-io.ads:74:33"></a>the_Image</span></td><td>: <a href="gl-io.ads.html#gl-io.ads:59:8" title="defined at gl-io.ads:59:8">Image</a>) <span class="keyword">return</span> <a href="gl-io.ads.html#gl-io.ads:57:8" title="defined at gl-io.ads:57:8">Byte_Grid</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-io.ads.html#l74" title="gl-io.ads:74:12">gl-io.ads:74:12</a> (declaration)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l26" title="gl-io.adb:26:13">gl-io.adb:26:13</a> (body)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l44" title="gl-io.adb:44:8">gl-io.adb:44:8</a> (label)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-io.ads:78:14' id='gl-io.ads:78:14'></a>
+<span class="droplink">Load<ul>
+  <li><a href="src_gl-io.ads.html#l78">Goto spec in source</a></li>
+  <li><a href="src_gl-io.adb.html#l728">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Load</span> <table><tr><td>(</td><td><span class="name"><a name="gl-io.ads:78:20"></a>name</span></td><td>:     String;</td></tr><tr><td></td><td><span class="comment">-- file name </span>                   <span class="name"><a name="gl-io.ads:79:20"></a>format</span></td><td>:     <a href="gl-io.ads.html#gl-io.ads:49:8" title="defined at gl-io.ads:49:8">Supported_format</a>;</td></tr><tr><td></td><td><span class="comment">-- expected file format </span>                   <span class="name"><a name="gl-io.ads:80:20"></a>ID</span></td><td>:     Integer;</td></tr><tr><td></td><td><span class="comment">-- ID is the texture identifier to bind to </span>                   <span class="name"><a name="gl-io.ads:81:20"></a>blending_hint</span></td><td>: <span class="keyword">out</span> Boolean);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-io.ads.html#l78" title="gl-io.ads:78:14">gl-io.ads:78:14</a> (declaration)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l728" title="gl-io.adb:728:14">gl-io.adb:728:14</a> (body)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l738" title="gl-io.adb:738:8">gl-io.adb:738:8</a> (label)</i></div>
+            <div><i><a href="src_gl-textures.adb.html#l103" title="gl-textures.adb:103:16">gl-textures.adb:103:16</a> (call)</i></div>
+            <div><i><a href="src_gl-textures.adb.html#l106" title="gl-textures.adb:106:16">gl-textures.adb:106:16</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="gl-textures.ads.html#gl-textures.ads:92:13" title="defined at gl-textures.ads:92:13">GL.Textures.New_Texture</a> defined at <a href="src_gl-textures.ads.html#l92" title="gl-textures.ads:92:13">gl-textures.ads:92:13</a></i></div>
+            <div><i><a href="gl-textures.ads.html#gl-textures.ads:92:13" title="defined at gl-textures.ads:92:13">GL.Textures.New_Texture</a> defined at <a href="src_gl-textures.ads.html#l92" title="gl-textures.ads:92:13">gl-textures.ads:92:13</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="gl-io.ads.html#gl-io.ads:94:14" title="defined at gl-io.ads:94:14">Load_BMP</a> defined at <a href="src_gl-io.ads.html#l94" title="gl-io.ads:94:14">gl-io.ads:94:14</a></i></div>
+            <div><i><a href="gl-io.ads.html#gl-io.ads:111:14" title="defined at gl-io.ads:111:14">Load_TGA</a> defined at <a href="src_gl-io.ads.html#l111" title="gl-io.ads:111:14">gl-io.ads:111:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-io.ads:83:14' id='gl-io.ads:83:14'></a>
+<span class="droplink">Load<ul>
+  <li><a href="src_gl-io.ads.html#l83">Goto spec in source</a></li>
+  <li><a href="src_gl-io.adb.html#l740">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Load</span> <table><tr><td>(</td><td><span class="name"><a name="gl-io.ads:83:20"></a>s</span></td><td>:     Ada.Streams.Stream_IO.Stream_Access;</td></tr><tr><td></td><td><span class="comment">-- input data stream (e.g. UnZip.Streams) </span>                   <span class="name"><a name="gl-io.ads:84:20"></a>format</span></td><td>:     <a href="gl-io.ads.html#gl-io.ads:49:8" title="defined at gl-io.ads:49:8">Supported_format</a>;</td></tr><tr><td></td><td><span class="comment">-- expected file format </span>                   <span class="name"><a name="gl-io.ads:85:20"></a>ID</span></td><td>:     Integer;</td></tr><tr><td></td><td><span class="comment">-- ID is the texture identifier to bind to </span>                   <span class="name"><a name="gl-io.ads:86:20"></a>blending_hint</span></td><td>: <span class="keyword">out</span> Boolean);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-io.ads.html#l83" title="gl-io.ads:83:14">gl-io.ads:83:14</a> (declaration)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l740" title="gl-io.adb:740:14">gl-io.adb:740:14</a> (body)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l750" title="gl-io.adb:750:8">gl-io.adb:750:8</a> (label)</i></div>
+            <div><i><a href="src_globe_3d-textures.adb.html#l64" title="globe_3d-textures.adb:64:15">globe_3d-textures.adb:64:15</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="globe_3d-textures.adb.html#globe_3d-textures.adb:61:17" title="defined at globe_3d-textures.adb:61:17">Textures.Load_texture_2D.Try.Try_a_type</a> defined at <a href="src_globe_3d-textures.adb.html#l61" title="globe_3d-textures.adb:61:17">globe_3d-textures.adb:61:17</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="gl-io.ads.html#gl-io.ads:98:13" title="defined at gl-io.ads:98:13">Load_BMP</a> defined at <a href="src_gl-io.ads.html#l98" title="gl-io.ads:98:13">gl-io.ads:98:13</a></i></div>
+            <div><i><a href="gl-io.ads.html#gl-io.ads:115:14" title="defined at gl-io.ads:115:14">Load_TGA</a> defined at <a href="src_gl-io.ads.html#l115" title="gl-io.ads:115:14">gl-io.ads:115:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-io.ads:94:14' id='gl-io.ads:94:14'></a>
+<span class="droplink">Load_BMP<ul>
+  <li><a href="src_gl-io.ads.html#l94">Goto spec in source</a></li>
+  <li><a href="src_gl-io.adb.html#l726">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Load_BMP</span> <table><tr><td>(</td><td><span class="name"><a name="gl-io.ads:94:24"></a>Name</span></td><td>:     String;</td></tr><tr><td></td><td><span class="comment">-- File name </span>                       <span class="name"><a name="gl-io.ads:95:24"></a>Id</span></td><td>:     Integer;</td></tr><tr><td></td><td><span class="comment">-- Id is the texture identifier to bind to </span>                       <span class="name"><a name="gl-io.ads:96:24"></a>blending_hint</span></td><td>: <span class="keyword">out</span> Boolean);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-io.ads.html#l94" title="gl-io.ads:94:14">gl-io.ads:94:14</a> (declaration)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l726" title="gl-io.adb:726:14">gl-io.adb:726:14</a> (body)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l735" title="gl-io.adb:735:19">gl-io.adb:735:19</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="gl-io.ads.html#gl-io.ads:78:14" title="defined at gl-io.ads:78:14">Load</a> defined at <a href="src_gl-io.ads.html#l78" title="gl-io.ads:78:14">gl-io.ads:78:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-io.ads:98:13' id='gl-io.ads:98:13'></a>
+<span class="droplink">Load_BMP<ul>
+  <li><a href="src_gl-io.ads.html#l98">Goto spec in source</a></li>
+  <li><a href="src_gl-io.adb.html#l466">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Load_BMP</span> <table><tr><td>(</td><td><span class="name"><a name="gl-io.ads:98:23"></a>S</span></td><td>:     Ada.Streams.Stream_IO.Stream_Access;</td></tr><tr><td></td><td><span class="comment">-- Input data stream </span>                      <span class="name"><a name="gl-io.ads:99:23"></a>Id</span></td><td>:     Integer;</td></tr><tr><td></td><td><span class="comment">-- Id is the texture identifier to bind to </span>                      <span class="name"><a name="gl-io.ads:100:23"></a>blending_hint</span></td><td>: <span class="keyword">out</span> Boolean);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-io.ads.html#l98" title="gl-io.ads:98:13">gl-io.ads:98:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l466" title="gl-io.adb:466:14">gl-io.adb:466:14</a> (body)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l722" title="gl-io.adb:722:8">gl-io.adb:722:8</a> (label)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l724" title="gl-io.adb:724:59">gl-io.adb:724:59</a> (reference)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l747" title="gl-io.adb:747:19">gl-io.adb:747:19</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="gl-io.ads.html#gl-io.ads:83:14" title="defined at gl-io.ads:83:14">Load</a> defined at <a href="src_gl-io.ads.html#l83" title="gl-io.ads:83:14">gl-io.ads:83:14</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="gl-io.ads.html#gl-io.ads:54:13" title="defined at gl-io.ads:54:13">Free</a> defined at <a href="src_gl-io.ads.html#l54" title="gl-io.ads:54:13">gl-io.ads:54:13</a></i></div>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:46:14" title="defined at gl-io.adb:46:14">GL.IO.Insert_into_GL</a> defined at <a href="src_gl-io.adb.html#l46" title="gl-io.adb:46:14">gl-io.adb:46:14</a></i></div>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:616:17" title="defined at gl-io.adb:616:17">GL.IO.Load_BMP.Load_BMP_Image</a> defined at <a href="src_gl-io.adb.html#l616" title="gl-io.adb:616:17">gl-io.adb:616:17</a></i></div>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:598:17" title="defined at gl-io.adb:598:17">GL.IO.Load_BMP.Load_BMP_Palette</a> defined at <a href="src_gl-io.adb.html#l598" title="gl-io.adb:598:17">gl-io.adb:598:17</a></i></div>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:518:17" title="defined at gl-io.adb:518:17">GL.IO.Load_BMP.Read_BMP_Header</a> defined at <a href="src_gl-io.adb.html#l518" title="gl-io.adb:518:17">gl-io.adb:518:17</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-io.ads:111:14' id='gl-io.ads:111:14'></a>
+<span class="droplink">Load_TGA<ul>
+  <li><a href="src_gl-io.ads.html#l111">Goto spec in source</a></li>
+  <li><a href="src_gl-io.adb.html#l462">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Load_TGA</span> <table><tr><td>(</td><td><span class="name"><a name="gl-io.ads:111:24"></a>Name</span></td><td>:     String;</td></tr><tr><td></td><td><span class="comment">-- File name </span>                       <span class="name"><a name="gl-io.ads:112:24"></a>Id</span></td><td>:     Integer;</td></tr><tr><td></td><td><span class="comment">-- Id is the texture identifier to bind to </span>                       <span class="name"><a name="gl-io.ads:113:24"></a>blending_hint</span></td><td>: <span class="keyword">out</span> Boolean);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-io.ads.html#l111" title="gl-io.ads:111:14">gl-io.ads:111:14</a> (declaration)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l462" title="gl-io.adb:462:14">gl-io.adb:462:14</a> (body)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l736" title="gl-io.adb:736:19">gl-io.adb:736:19</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="gl-io.ads.html#gl-io.ads:78:14" title="defined at gl-io.ads:78:14">Load</a> defined at <a href="src_gl-io.ads.html#l78" title="gl-io.ads:78:14">gl-io.ads:78:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-io.ads:115:14' id='gl-io.ads:115:14'></a>
+<span class="droplink">Load_TGA<ul>
+  <li><a href="src_gl-io.ads.html#l115">Goto spec in source</a></li>
+  <li><a href="src_gl-io.adb.html#l418">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Load_TGA</span> <table><tr><td>(</td><td><span class="name"><a name="gl-io.ads:115:24"></a>S</span></td><td>:     Ada.Streams.Stream_IO.Stream_Access;</td></tr><tr><td></td><td><span class="comment">-- Input data stream </span>                       <span class="name"><a name="gl-io.ads:116:24"></a>Id</span></td><td>:     Integer;</td></tr><tr><td></td><td><span class="comment">-- Id is the texture identifier to bind to </span>                       <span class="name"><a name="gl-io.ads:117:24"></a>blending_hint</span></td><td>: <span class="keyword">out</span> Boolean);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-io.ads.html#l115" title="gl-io.ads:115:14">gl-io.ads:115:14</a> (declaration)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l418" title="gl-io.adb:418:14">gl-io.adb:418:14</a> (body)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l437" title="gl-io.adb:437:8">gl-io.adb:437:8</a> (label)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l460" title="gl-io.adb:460:59">gl-io.adb:460:59</a> (reference)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l748" title="gl-io.adb:748:19">gl-io.adb:748:19</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="gl-io.ads.html#gl-io.ads:83:14" title="defined at gl-io.ads:83:14">Load</a> defined at <a href="src_gl-io.ads.html#l83" title="gl-io.ads:83:14">gl-io.ads:83:14</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="gl-io.ads.html#gl-io.ads:54:13" title="defined at gl-io.ads:54:13">Free</a> defined at <a href="src_gl-io.ads.html#l54" title="gl-io.ads:54:13">gl-io.ads:54:13</a></i></div>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:46:14" title="defined at gl-io.adb:46:14">GL.IO.Insert_into_GL</a> defined at <a href="src_gl-io.adb.html#l46" title="gl-io.adb:46:14">gl-io.adb:46:14</a></i></div>
+            <div><i><a href="gl-io.ads.html#gl-io.ads:72:12" title="defined at gl-io.ads:72:12">To_TGA_Image</a> defined at <a href="src_gl-io.ads.html#l72" title="gl-io.ads:72:12">gl-io.ads:72:12</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-io.ads:127:13' id='gl-io.ads:127:13'></a>
+<span class="droplink">Screenshot<ul>
+  <li><a href="src_gl-io.ads.html#l127">Goto spec in source</a></li>
+  <li><a href="src_gl-io.adb.html#l819">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Screenshot</span> <table><tr><td>(</td><td><span class="name"><a name="gl-io.ads:127:25"></a>Name</span></td><td>: String);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-io.ads.html#l127" title="gl-io.ads:127:13">gl-io.ads:127:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l819" title="gl-io.adb:819:14">gl-io.adb:819:14</a> (body)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l924" title="gl-io.adb:924:8">gl-io.adb:924:8</a> (label)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l498" title="glut-windows.adb:498:16">glut-windows.adb:498:16</a> (call)</i></div>
+            <div><i><a href="src_screenshots.adb.html#l18" title="screenshots.adb:18:7">screenshots.adb:18:7</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="glut-windows.adb.html#glut-windows.adb:331:14" title="defined at glut-windows.adb:331:14">GLUT.Windows.Main_Operations</a> defined at <a href="src_glut-windows.adb.html#l331" title="glut-windows.adb:331:14">glut-windows.adb:331:14</a></i></div>
+            <div><i><a href="screenshots.ads.html#screenshots.ads:7:14" title="defined at screenshots.ads:7:14">Screenshots.Take_Shot</a> defined at <a href="src_screenshots.ads.html#l7" title="screenshots.ads:7:14">screenshots.ads:7:14</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>Close defined at a-ststio.ads:79:14</i></div>
+            <div><i>Create defined at a-ststio.ads:67:14</i></div>
+            <div><i><a href="gl.ads.html#gl.ads:1198:14" title="defined at gl.ads:1198:14">GL.GetIntegerv</a> defined at <a href="src_gl.ads.html#l1198" title="gl.ads:1198:14">gl.ads:1198:14</a></i></div>
+            <div><i>GL.IO.Screenshot.Cvt defined at <a href="src_gl-io.adb.html#l891" title="gl-io.adb:891:19">gl-io.adb:891:19</a></i></div>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:855:16" title="defined at gl-io.adb:855:16">GL.IO.Screenshot.Cvt</a> defined at <a href="src_gl-io.adb.html#l855" title="gl-io.adb:855:16">gl-io.adb:855:16</a></i></div>
+            <div><i>GL.IO.Screenshot.Write_Intel defined at <a href="src_gl-io.adb.html#l890" title="gl-io.adb:890:20">gl-io.adb:890:20</a></i></div>
+            <div><i>GL.IO.Screenshot.Write_Intel defined at <a href="src_gl-io.adb.html#l889" title="gl-io.adb:889:20">gl-io.adb:889:20</a></i></div>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:759:14" title="defined at gl-io.adb:759:14">GL.IO.Write_Intel_x86_number</a> defined at <a href="src_gl-io.adb.html#l759" title="gl-io.adb:759:14">gl-io.adb:759:14</a></i></div>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:771:14" title="defined at gl-io.adb:771:14">GL.IO.Write_raw_BGR_frame</a> defined at <a href="src_gl-io.adb.html#l771" title="gl-io.adb:771:14">gl-io.adb:771:14</a></i></div>
+            <div><i>Stream defined at a-ststio.ads:91:13</i></div>
+            <div><i>Unchecked_Conversion defined at a-unccon.ads:20:14</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-io.ads:133:13' id='gl-io.ads:133:13'></a>
+<span class="droplink">Start_Capture<ul>
+  <li><a href="src_gl-io.ads.html#l133">Goto spec in source</a></li>
+  <li><a href="src_gl-io.adb.html#l1023">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Start_Capture</span> <table><tr><td>(</td><td><span class="name"><a name="gl-io.ads:133:28"></a>AVI_Name</span></td><td>: String;</td></tr><tr><td></td><td><span class="name"><a name="gl-io.ads:133:47"></a>frame_rate</span></td><td>: Positive);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-io.ads.html#l133" title="gl-io.ads:133:13">gl-io.ads:133:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l1023" title="gl-io.adb:1023:14">gl-io.adb:1023:14</a> (body)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l1042" title="gl-io.adb:1042:8">gl-io.adb:1042:8</a> (label)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l485" title="glut-windows.adb:485:19">glut-windows.adb:485:19</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="glut-windows.adb.html#glut-windows.adb:331:14" title="defined at glut-windows.adb:331:14">GLUT.Windows.Main_Operations</a> defined at <a href="src_glut-windows.adb.html#l331" title="glut-windows.adb:331:14">glut-windows.adb:331:14</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>Create defined at a-ststio.ads:67:14</i></div>
+            <div><i><a href="gl.ads.html#gl.ads:1198:14" title="defined at gl.ads:1198:14">GL.GetIntegerv</a> defined at <a href="src_gl.ads.html#l1198" title="gl.ads:1198:14">gl.ads:1198:14</a></i></div>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:1028:16" title="defined at gl-io.adb:1028:16">GL.IO.Start_Capture.Cvt</a> defined at <a href="src_gl-io.adb.html#l1028" title="gl-io.adb:1028:16">gl-io.adb:1028:16</a></i></div>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:938:14" title="defined at gl-io.adb:938:14">GL.IO.Write_RIFF_headers</a> defined at <a href="src_gl-io.adb.html#l938" title="gl-io.adb:938:14">gl-io.adb:938:14</a></i></div>
+            <div><i>Unchecked_Conversion defined at a-unccon.ads:20:14</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-io.ads:135:13' id='gl-io.ads:135:13'></a>
+<span class="droplink">Capture_Frame<ul>
+  <li><a href="src_gl-io.ads.html#l135">Goto spec in source</a></li>
+  <li><a href="src_gl-io.adb.html#l1044">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Capture_Frame</span>;</pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-io.ads.html#l135" title="gl-io.ads:135:13">gl-io.ads:135:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l1044" title="gl-io.adb:1044:14">gl-io.adb:1044:14</a> (body)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l1054" title="gl-io.adb:1054:8">gl-io.adb:1054:8</a> (label)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l492" title="glut-windows.adb:492:16">glut-windows.adb:492:16</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="glut-windows.adb.html#glut-windows.adb:331:14" title="defined at glut-windows.adb:331:14">GLUT.Windows.Main_Operations</a> defined at <a href="src_glut-windows.adb.html#l331" title="glut-windows.adb:331:14">glut-windows.adb:331:14</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:1047:17" title="defined at gl-io.adb:1047:17">GL.IO.Capture_Frame.Write_Intel</a> defined at <a href="src_gl-io.adb.html#l1047" title="gl-io.adb:1047:17">gl-io.adb:1047:17</a></i></div>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:759:14" title="defined at gl-io.adb:759:14">GL.IO.Write_Intel_x86_number</a> defined at <a href="src_gl-io.adb.html#l759" title="gl-io.adb:759:14">gl-io.adb:759:14</a></i></div>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:771:14" title="defined at gl-io.adb:771:14">GL.IO.Write_raw_BGR_frame</a> defined at <a href="src_gl-io.adb.html#l771" title="gl-io.adb:771:14">gl-io.adb:771:14</a></i></div>
+            <div><i>Stream defined at a-ststio.ads:91:13</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-io.ads:137:13' id='gl-io.ads:137:13'></a>
+<span class="droplink">Stop_Capture<ul>
+  <li><a href="src_gl-io.ads.html#l137">Goto spec in source</a></li>
+  <li><a href="src_gl-io.adb.html#l1056">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Stop_Capture</span>;</pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-io.ads.html#l137" title="gl-io.ads:137:13">gl-io.ads:137:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l1056" title="gl-io.adb:1056:14">gl-io.adb:1056:14</a> (body)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l1079" title="gl-io.adb:1079:8">gl-io.adb:1079:8</a> (label)</i></div>
+            <div><i><a href="src_glut-windows.adb.html#l482" title="glut-windows.adb:482:19">glut-windows.adb:482:19</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="glut-windows.adb.html#glut-windows.adb:331:14" title="defined at glut-windows.adb:331:14">GLUT.Windows.Main_Operations</a> defined at <a href="src_glut-windows.adb.html#l331" title="glut-windows.adb:331:14">glut-windows.adb:331:14</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>Close defined at a-ststio.ads:79:14</i></div>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:1060:17" title="defined at gl-io.adb:1060:17">GL.IO.Stop_Capture.Write_Intel</a> defined at <a href="src_gl-io.adb.html#l1060" title="gl-io.adb:1060:17">gl-io.adb:1060:17</a></i></div>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:759:14" title="defined at gl-io.adb:759:14">GL.IO.Write_Intel_x86_number</a> defined at <a href="src_gl-io.adb.html#l759" title="gl-io.adb:759:14">gl-io.adb:759:14</a></i></div>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:938:14" title="defined at gl-io.adb:938:14">GL.IO.Write_RIFF_headers</a> defined at <a href="src_gl-io.adb.html#l938" title="gl-io.adb:938:14">gl-io.adb:938:14</a></i></div>
+            <div><i>Set_Index defined at a-ststio.ads:121:14</i></div>
+            <div><i>Stream defined at a-ststio.ads:91:13</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-io.ads:147:13' id='gl-io.ads:147:13'></a>
+<span class="droplink">Attach_Stream<ul>
+  <li><a href="src_gl-io.ads.html#l147">Goto spec in source</a></li>
+  <li><a href="src_gl-io.adb.html#l132">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Attach_Stream</span> <table><tr><td>(</td><td><span class="name"><a name="gl-io.ads:147:28"></a>b</span></td><td>: <span class="keyword">out</span> <a href="gl-io.ads.html#gl-io.ads:145:8" title="defined at gl-io.ads:145:8">Input_buffer</a>;</td></tr><tr><td></td><td><span class="name"><a name="gl-io.ads:148:28"></a>stm</span></td><td>:     Ada.Streams.Stream_IO.Stream_Access);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-io.ads.html#l147" title="gl-io.ads:147:13">gl-io.ads:147:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l132" title="gl-io.adb:132:14">gl-io.adb:132:14</a> (body)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l138" title="gl-io.adb:138:8">gl-io.adb:138:8</a> (label)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l309" title="gl-io.adb:309:10">gl-io.adb:309:10</a> (call)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l640" title="gl-io.adb:640:10">gl-io.adb:640:10</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:616:17" title="defined at gl-io.adb:616:17">GL.IO.Load_BMP.Load_BMP_Image</a> defined at <a href="src_gl-io.adb.html#l616" title="gl-io.adb:616:17">gl-io.adb:616:17</a></i></div>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:307:17" title="defined at gl-io.adb:307:17">GL.IO.To_TGA_Image.getData</a> defined at <a href="src_gl-io.adb.html#l307" title="gl-io.adb:307:17">gl-io.adb:307:17</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:85:14" title="defined at gl-io.adb:85:14">GL.IO.Fill_Buffer</a> defined at <a href="src_gl-io.adb.html#l85" title="gl-io.adb:85:14">gl-io.adb:85:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-io.ads:150:13' id='gl-io.ads:150:13'></a>
+<span class="droplink">Get_Byte<ul>
+  <li><a href="src_gl-io.ads.html#l150">Goto spec in source</a></li>
+  <li><a href="src_gl-io.adb.html#l140">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Get_Byte</span> <table><tr><td>(</td><td><span class="name"><a name="gl-io.ads:150:23"></a>b</span></td><td>: <span class="keyword">in</span> <span class="keyword">out</span> <a href="gl-io.ads.html#gl-io.ads:145:8" title="defined at gl-io.ads:145:8">Input_buffer</a>;</td></tr><tr><td></td><td><span class="name"><a name="gl-io.ads:150:48"></a>Return_Byte</span></td><td>: <span class="keyword">out</span> <a href="gl.ads.html#gl.ads:122:9" title="defined at gl.ads:122:9">Ubyte</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-io.ads.html#l150" title="gl-io.ads:150:13">gl-io.ads:150:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l140" title="gl-io.adb:140:14">gl-io.adb:140:14</a> (body)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l151" title="gl-io.adb:151:8">gl-io.adb:151:8</a> (label)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l171" title="gl-io.adb:171:16">gl-io.adb:171:16</a> (call)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l172" title="gl-io.adb:172:16">gl-io.adb:172:16</a> (call)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l173" title="gl-io.adb:173:16">gl-io.adb:173:16</a> (call)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l174" title="gl-io.adb:174:16">gl-io.adb:174:16</a> (call)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l176" title="gl-io.adb:176:16">gl-io.adb:176:16</a> (call)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l177" title="gl-io.adb:177:16">gl-io.adb:177:16</a> (call)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l178" title="gl-io.adb:178:16">gl-io.adb:178:16</a> (call)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l180" title="gl-io.adb:180:16">gl-io.adb:180:16</a> (call)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l190" title="gl-io.adb:190:13">gl-io.adb:190:13</a> (call)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l242" title="gl-io.adb:242:16">gl-io.adb:242:16</a> (call)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l243" title="gl-io.adb:243:16">gl-io.adb:243:16</a> (call)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l244" title="gl-io.adb:244:16">gl-io.adb:244:16</a> (call)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l245" title="gl-io.adb:245:16">gl-io.adb:245:16</a> (call)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l270" title="gl-io.adb:270:16">gl-io.adb:270:16</a> (call)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l271" title="gl-io.adb:271:16">gl-io.adb:271:16</a> (call)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l272" title="gl-io.adb:272:16">gl-io.adb:272:16</a> (call)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l294" title="gl-io.adb:294:16">gl-io.adb:294:16</a> (call)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l649" title="gl-io.adb:649:22">gl-io.adb:649:22</a> (call)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l664" title="gl-io.adb:664:22">gl-io.adb:664:22</a> (call)</i></div>
+            <div><i><a href="src_gl-io.adb.html#l675" title="gl-io.adb:675:19">gl-io.adb:675:19</a> (call)</i></div>
+            <div><i><a href="src_gl-io.ads.html#l151" title="gl-io.ads:151:18">gl-io.ads:151:18</a> (reference)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:616:17" title="defined at gl-io.adb:616:17">GL.IO.Load_BMP.Load_BMP_Image</a> defined at <a href="src_gl-io.adb.html#l616" title="gl-io.adb:616:17">gl-io.adb:616:17</a></i></div>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:616:17" title="defined at gl-io.adb:616:17">GL.IO.Load_BMP.Load_BMP_Image</a> defined at <a href="src_gl-io.adb.html#l616" title="gl-io.adb:616:17">gl-io.adb:616:17</a></i></div>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:616:17" title="defined at gl-io.adb:616:17">GL.IO.Load_BMP.Load_BMP_Image</a> defined at <a href="src_gl-io.adb.html#l616" title="gl-io.adb:616:17">gl-io.adb:616:17</a></i></div>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:286:17" title="defined at gl-io.adb:286:17">GL.IO.To_TGA_Image.getGray</a> defined at <a href="src_gl-io.adb.html#l286" title="gl-io.adb:286:17">gl-io.adb:286:17</a></i></div>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:259:17" title="defined at gl-io.adb:259:17">GL.IO.To_TGA_Image.getRGB</a> defined at <a href="src_gl-io.adb.html#l259" title="gl-io.adb:259:17">gl-io.adb:259:17</a></i></div>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:259:17" title="defined at gl-io.adb:259:17">GL.IO.To_TGA_Image.getRGB</a> defined at <a href="src_gl-io.adb.html#l259" title="gl-io.adb:259:17">gl-io.adb:259:17</a></i></div>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:259:17" title="defined at gl-io.adb:259:17">GL.IO.To_TGA_Image.getRGB</a> defined at <a href="src_gl-io.adb.html#l259" title="gl-io.adb:259:17">gl-io.adb:259:17</a></i></div>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:231:17" title="defined at gl-io.adb:231:17">GL.IO.To_TGA_Image.getRGBA</a> defined at <a href="src_gl-io.adb.html#l231" title="gl-io.adb:231:17">gl-io.adb:231:17</a></i></div>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:231:17" title="defined at gl-io.adb:231:17">GL.IO.To_TGA_Image.getRGBA</a> defined at <a href="src_gl-io.adb.html#l231" title="gl-io.adb:231:17">gl-io.adb:231:17</a></i></div>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:231:17" title="defined at gl-io.adb:231:17">GL.IO.To_TGA_Image.getRGBA</a> defined at <a href="src_gl-io.adb.html#l231" title="gl-io.adb:231:17">gl-io.adb:231:17</a></i></div>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:231:17" title="defined at gl-io.adb:231:17">GL.IO.To_TGA_Image.getRGBA</a> defined at <a href="src_gl-io.adb.html#l231" title="gl-io.adb:231:17">gl-io.adb:231:17</a></i></div>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:164:17" title="defined at gl-io.adb:164:17">GL.IO.To_TGA_Image.RLE_Pixel</a> defined at <a href="src_gl-io.adb.html#l164" title="gl-io.adb:164:17">gl-io.adb:164:17</a></i></div>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:166:20" title="defined at gl-io.adb:166:20">GL.IO.To_TGA_Image.RLE_Pixel.Get_pixel</a> defined at <a href="src_gl-io.adb.html#l166" title="gl-io.adb:166:20">gl-io.adb:166:20</a></i></div>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:166:20" title="defined at gl-io.adb:166:20">GL.IO.To_TGA_Image.RLE_Pixel.Get_pixel</a> defined at <a href="src_gl-io.adb.html#l166" title="gl-io.adb:166:20">gl-io.adb:166:20</a></i></div>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:166:20" title="defined at gl-io.adb:166:20">GL.IO.To_TGA_Image.RLE_Pixel.Get_pixel</a> defined at <a href="src_gl-io.adb.html#l166" title="gl-io.adb:166:20">gl-io.adb:166:20</a></i></div>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:166:20" title="defined at gl-io.adb:166:20">GL.IO.To_TGA_Image.RLE_Pixel.Get_pixel</a> defined at <a href="src_gl-io.adb.html#l166" title="gl-io.adb:166:20">gl-io.adb:166:20</a></i></div>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:166:20" title="defined at gl-io.adb:166:20">GL.IO.To_TGA_Image.RLE_Pixel.Get_pixel</a> defined at <a href="src_gl-io.adb.html#l166" title="gl-io.adb:166:20">gl-io.adb:166:20</a></i></div>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:166:20" title="defined at gl-io.adb:166:20">GL.IO.To_TGA_Image.RLE_Pixel.Get_pixel</a> defined at <a href="src_gl-io.adb.html#l166" title="gl-io.adb:166:20">gl-io.adb:166:20</a></i></div>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:166:20" title="defined at gl-io.adb:166:20">GL.IO.To_TGA_Image.RLE_Pixel.Get_pixel</a> defined at <a href="src_gl-io.adb.html#l166" title="gl-io.adb:166:20">gl-io.adb:166:20</a></i></div>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:166:20" title="defined at gl-io.adb:166:20">GL.IO.To_TGA_Image.RLE_Pixel.Get_pixel</a> defined at <a href="src_gl-io.adb.html#l166" title="gl-io.adb:166:20">gl-io.adb:166:20</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="gl-io.adb.html#gl-io.adb:85:14" title="defined at gl-io.adb:85:14">GL.IO.Fill_Buffer</a> defined at <a href="src_gl-io.adb.html#l85" title="gl-io.adb:85:14">gl-io.adb:85:14</a></i></div>
+        </div>
+      </div>
+    </div>
+</div> <!-- documentation -->
+
+</body>
+</html>

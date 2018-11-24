@@ -1,0 +1,700 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    File: globe_3d-io.adb
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+  </div>
+</div> <!-- leftSide -->
+
+<div class='subprograms'>
+  <div class='details'><ol><li id="l1"><pre><span class="keyword">pragma</span> Warnings (Off); </pre></li>
+<li id="l2"><pre><span class="keyword">pragma</span> Style_Checks (Off); </pre></li>
+<li id="l3"><pre> </pre></li>
+<li id="l4"><pre><span class="keyword">with</span> Ada.Exceptions;                    <span class="keyword">use</span> Ada.Exceptions; </pre></li>
+<li id="l5"><pre><span class="keyword">with</span> Ada.Strings.Fixed;                 <span class="keyword">use</span> Ada.Strings, Ada.Strings.Fixed; </pre></li>
+<li id="l6"><pre><span class="keyword">with</span> Ada.Strings.Unbounded;             <span class="keyword">use</span> Ada.Strings.Unbounded; </pre></li>
+<li id="l7"><pre> <span class="comment">-- with Ada.Characters.Handling;           use Ada.Characters.Handling;</span> </pre></li>
+<li id="l8"><pre><span class="keyword">with</span> Ada.Unchecked_Conversion; </pre></li>
+<li id="l9"><pre> </pre></li>
+<li id="l10"><pre><span class="keyword">with</span> UnZip.Streams; </pre></li>
+<li id="l11"><pre><span class="keyword">with</span> Float_portable_binary_transfer; </pre></li>
+<li id="l12"><pre><span class="keyword">pragma</span> Elaborate_All (Float_portable_binary_transfer); </pre></li>
+<li id="l13"><pre> </pre></li>
+<li id="l14"><pre><span class="keyword">with</span> GLOBE_3D.Textures; </pre></li>
+<li id="l15"><pre><span class="keyword">with</span> GL.IO; </pre></li>
+<li id="l16"><pre> </pre></li>
+<li id="l17"><pre><span class="keyword">package</span> <span class="keyword">body</span> GLOBE_3D.IO <span class="keyword">is</span> </pre></li>
+<li id="l18"><pre> </pre></li>
+<li id="l19"><pre>  <span class="comment">------------------------------------------------</span> </pre></li>
+<li id="l20"><pre>  <span class="comment">-- Common, internal definitions, routines, .. . --</span> </pre></li>
+<li id="l21"><pre>  <span class="comment">------------------------------------------------</span> </pre></li>
+<li id="l22"><pre> </pre></li>
+<li id="l23"><pre>  stop_type : <span class="keyword">constant</span> Character := </pre></li>
+<li id="l24"><pre>    Character&apos;Val (26); <span class="comment">-- Ctrl - Z to stop typing a binary file</span> </pre></li>
+<li id="l25"><pre> </pre></li>
+<li id="l26"><pre>  signature_obj : <span class="keyword">constant</span> String := </pre></li>
+<li id="l27"><pre>    <span class="string">&quot;GLOBE_3D 3D Binary Object File (&quot;</span> &amp; object_extension &amp; <span class="string">&quot;). &quot;</span> &amp; </pre></li>
+<li id="l28"><pre>    <span class="string">&quot;Format version : 2 - Apr - 2008.&quot;</span> &amp; stop_type; </pre></li>
+<li id="l29"><pre> </pre></li>
+<li id="l30"><pre>  signature_bsp : <span class="keyword">constant</span> String := </pre></li>
+<li id="l31"><pre>    <span class="string">&quot;GLOBE_3D Binary Space Partition File (&quot;</span> &amp; BSP_extension &amp; <span class="string">&quot;). &quot;</span> &amp; </pre></li>
+<li id="l32"><pre>    <span class="string">&quot;Format version : 2 - Apr - 2008.&quot;</span> &amp; stop_type; </pre></li>
+<li id="l33"><pre> </pre></li>
+<li id="l34"><pre>  <span class="keyword">subtype</span> U8 <span class="keyword">is</span> GL.Ubyte; </pre></li>
+<li id="l35"><pre>  <span class="keyword">type</span> U16 <span class="keyword">is</span> <span class="keyword">mod</span> 2 ** 16;  <span class="keyword">for</span> U16&apos;Size <span class="keyword">use</span> 16; </pre></li>
+<li id="l36"><pre>  <span class="keyword">type</span> U32 <span class="keyword">is</span> <span class="keyword">mod</span> 2 ** 32;  <span class="keyword">for</span> U32&apos;Size <span class="keyword">use</span> 32; </pre></li>
+<li id="l37"><pre> </pre></li>
+<li id="l38"><pre>  <span class="keyword">type</span> I16 <span class="keyword">is</span> <span class="keyword">range</span> -2 ** 15 .. 2 ** 15 - 1; <span class="keyword">for</span> I16&apos;Size <span class="keyword">use</span> 16; </pre></li>
+<li id="l39"><pre>  <span class="keyword">type</span> I32 <span class="keyword">is</span> <span class="keyword">range</span> -2 ** 31 .. 2 ** 31 - 1; <span class="keyword">for</span> I32&apos;Size <span class="keyword">use</span> 32; </pre></li>
+<li id="l40"><pre> </pre></li>
+<li id="l41"><pre>  f_scaling : <span class="keyword">constant</span> := 2.0**24; </pre></li>
+<li id="l42"><pre>  <span class="keyword">package</span> FFBT <span class="keyword">is</span> </pre></li>
+<li id="l43"><pre>    <span class="keyword">new</span> Float_portable_binary_transfer (GL.C_Float, I32, I16, True, f_scaling); </pre></li>
+<li id="l44"><pre>  <span class="keyword">use</span> FFBT; </pre></li>
+<li id="l45"><pre>  d_scaling : <span class="keyword">constant</span> := 2.0**27; <span class="comment">-- 53/2=26.5</span> </pre></li>
+<li id="l46"><pre>  <span class="keyword">package</span> DFBT <span class="keyword">is</span> </pre></li>
+<li id="l47"><pre>    <span class="keyword">new</span> Float_portable_binary_transfer (GL.Double, I32, I16, True, d_scaling); </pre></li>
+<li id="l48"><pre>  <span class="keyword">use</span> DFBT; </pre></li>
+<li id="l49"><pre> </pre></li>
+<li id="l50"><pre>  <span class="keyword">function</span> Cvt <span class="keyword">is</span> <span class="keyword">new</span> Ada.Unchecked_Conversion (I16, U16); </pre></li>
+<li id="l51"><pre>  <span class="keyword">function</span> Cvt <span class="keyword">is</span> <span class="keyword">new</span> Ada.Unchecked_Conversion (I32, U32); </pre></li>
+<li id="l52"><pre>  <span class="keyword">function</span> Cvt <span class="keyword">is</span> <span class="keyword">new</span> Ada.Unchecked_Conversion (U16, I16); </pre></li>
+<li id="l53"><pre>  <span class="keyword">function</span> Cvt <span class="keyword">is</span> <span class="keyword">new</span> Ada.Unchecked_Conversion (U32, I32); </pre></li>
+<li id="l54"><pre> </pre></li>
+<li id="l55"><pre>  <span class="keyword">generic</span> </pre></li>
+<li id="l56"><pre>    <span class="keyword">type</span> Number <span class="keyword">is</span> <span class="keyword">mod</span> &lt;&gt;; </pre></li>
+<li id="l57"><pre>  <span class="keyword">procedure</span> Read_Intel_x86_number (sb : <span class="keyword">in</span> <span class="keyword">out</span> GL.IO.Input_buffer; n : <span class="keyword">out</span> Number); </pre></li>
+<li id="l58"><pre> </pre></li>
+<li id="l59"><pre>  <span class="keyword">procedure</span> Read_Intel_x86_number (sb : <span class="keyword">in</span> <span class="keyword">out</span> GL.IO.Input_buffer; n : <span class="keyword">out</span> Number) <span class="keyword">is</span> </pre></li>
+<li id="l60"><pre>    b : U8; </pre></li>
+<li id="l61"><pre>    m : Number := 1; </pre></li>
+<li id="l62"><pre>    bytes : <span class="keyword">constant</span> Integer := Number&apos;Size / 8; </pre></li>
+<li id="l63"><pre>  <span class="keyword">begin</span> </pre></li>
+<li id="l64"><pre>    n := 0; </pre></li>
+<li id="l65"><pre>    <span class="keyword">for</span> i <span class="keyword">in</span> 1 .. bytes <span class="keyword">loop</span> </pre></li>
+<li id="l66"><pre>      GL.IO.Get_Byte (sb, b); </pre></li>
+<li id="l67"><pre>      n := n + m * Number (b); </pre></li>
+<li id="l68"><pre>      m := m * 256; </pre></li>
+<li id="l69"><pre>    <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l70"><pre>  <span class="keyword">end</span> Read_Intel_x86_number; </pre></li>
+<li id="l71"><pre> </pre></li>
+<li id="l72"><pre>  <span class="keyword">procedure</span> Read_Double ( </pre></li>
+<li id="l73"><pre>    sb : <span class="keyword">in</span> <span class="keyword">out</span> GL.IO.Input_buffer; </pre></li>
+<li id="l74"><pre>    n : <span class="keyword">out</span> GL.Double </pre></li>
+<li id="l75"><pre>) <span class="keyword">is</span> </pre></li>
+<li id="l76"><pre>    <span class="keyword">procedure</span> Read_Intel <span class="keyword">is</span> <span class="keyword">new</span> Read_Intel_x86_number (U16); </pre></li>
+<li id="l77"><pre>    <span class="keyword">procedure</span> Read_Intel <span class="keyword">is</span> <span class="keyword">new</span> Read_Intel_x86_number (U32); </pre></li>
+<li id="l78"><pre>    m1, m2 : U32; e : U16; </pre></li>
+<li id="l79"><pre>  <span class="keyword">begin</span> </pre></li>
+<li id="l80"><pre>    Read_Intel (sb, m1); </pre></li>
+<li id="l81"><pre>    Read_Intel (sb, m2); </pre></li>
+<li id="l82"><pre>    Read_Intel (sb, e); </pre></li>
+<li id="l83"><pre>    Merge (Cvt (m1), Cvt (m2), Cvt (e), n); </pre></li>
+<li id="l84"><pre>    <span class="comment">-- Double is stored in two parts due to the absence of</span> </pre></li>
+<li id="l85"><pre>    <span class="comment">-- 64 - bit integers on certain compilers (e.g. OA 8.2)</span> </pre></li>
+<li id="l86"><pre>  <span class="keyword">end</span> Read_Double; </pre></li>
+<li id="l87"><pre> </pre></li>
+<li id="l88"><pre>  <span class="keyword">generic</span> </pre></li>
+<li id="l89"><pre>    s : Ada.Streams.Stream_IO.Stream_Access; </pre></li>
+<li id="l90"><pre>    <span class="keyword">type</span> Number <span class="keyword">is</span> <span class="keyword">mod</span> &lt;&gt;; </pre></li>
+<li id="l91"><pre>  <span class="keyword">procedure</span> Write_Intel_x86_number (n : <span class="keyword">in</span> Number); </pre></li>
+<li id="l92"><pre> </pre></li>
+<li id="l93"><pre>  <span class="keyword">procedure</span> Write_Intel_x86_number (n : <span class="keyword">in</span> Number) <span class="keyword">is</span> </pre></li>
+<li id="l94"><pre>    m : Number := n; </pre></li>
+<li id="l95"><pre>    bytes : <span class="keyword">constant</span> Integer := Number&apos;Size/8; </pre></li>
+<li id="l96"><pre>  <span class="keyword">begin</span> </pre></li>
+<li id="l97"><pre>    <span class="keyword">for</span> i <span class="keyword">in</span> 1 .. bytes <span class="keyword">loop</span> </pre></li>
+<li id="l98"><pre>      U8&apos;Write (s, U8 (m <span class="keyword">mod</span> 256)); </pre></li>
+<li id="l99"><pre>      m := m / 256; </pre></li>
+<li id="l100"><pre>    <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l101"><pre>  <span class="keyword">end</span> Write_Intel_x86_number; </pre></li>
+<li id="l102"><pre> </pre></li>
+<li id="l103"><pre>  <span class="keyword">procedure</span> Write_Double ( </pre></li>
+<li id="l104"><pre>    s : Ada.Streams.Stream_IO.Stream_Access; </pre></li>
+<li id="l105"><pre>    n : <span class="keyword">in</span> GL.Double) </pre></li>
+<li id="l106"><pre>  <span class="keyword">is</span> </pre></li>
+<li id="l107"><pre>    <span class="keyword">procedure</span> Write_Intel <span class="keyword">is</span> <span class="keyword">new</span> Write_Intel_x86_number (s, U16); </pre></li>
+<li id="l108"><pre>    <span class="keyword">procedure</span> Write_Intel <span class="keyword">is</span> <span class="keyword">new</span> Write_Intel_x86_number (s, U32); </pre></li>
+<li id="l109"><pre>    m1, m2 : I32; e : I16; </pre></li>
+<li id="l110"><pre>  <span class="keyword">begin</span> </pre></li>
+<li id="l111"><pre>    Split (n, m1, m2, e); </pre></li>
+<li id="l112"><pre>    <span class="comment">-- Double is stored in two parts due to the absence of</span> </pre></li>
+<li id="l113"><pre>    <span class="comment">-- 64 - bit integers on certain compilers (e.g. OA 8.2)</span> </pre></li>
+<li id="l114"><pre>    Write_Intel (Cvt (m1)); </pre></li>
+<li id="l115"><pre>    Write_Intel (Cvt (m2)); </pre></li>
+<li id="l116"><pre>    Write_Intel (Cvt (e)); </pre></li>
+<li id="l117"><pre>  <span class="keyword">end</span> Write_Double; </pre></li>
+<li id="l118"><pre> </pre></li>
+<li id="l119"><pre>  <span class="keyword">procedure</span> Write_String ( </pre></li>
+<li id="l120"><pre>    s   : <span class="keyword">in</span>  Ada.Streams.Stream_IO.Stream_Access; </pre></li>
+<li id="l121"><pre>    str : <span class="keyword">in</span>  String </pre></li>
+<li id="l122"><pre>) </pre></li>
+<li id="l123"><pre>  <span class="keyword">is</span> </pre></li>
+<li id="l124"><pre>    tstr : <span class="keyword">constant</span> String := Trim (str, Right); </pre></li>
+<li id="l125"><pre>  <span class="keyword">begin</span> </pre></li>
+<li id="l126"><pre>    U8&apos;Write (s, tstr&apos;Length); </pre></li>
+<li id="l127"><pre>    String&apos;Write (s, tstr); </pre></li>
+<li id="l128"><pre>  <span class="keyword">end</span> Write_String; </pre></li>
+<li id="l129"><pre> </pre></li>
+<li id="l130"><pre>  <span class="keyword">procedure</span> Read_String ( </pre></li>
+<li id="l131"><pre>    sb : <span class="keyword">in</span> <span class="keyword">out</span> GL.IO.Input_buffer; </pre></li>
+<li id="l132"><pre>    str : <span class="keyword">out</span> String </pre></li>
+<li id="l133"><pre>) </pre></li>
+<li id="l134"><pre>  <span class="keyword">is</span> </pre></li>
+<li id="l135"><pre>    l8 : U8; </pre></li>
+<li id="l136"><pre>    l : Natural; </pre></li>
+<li id="l137"><pre>  <span class="keyword">begin</span> </pre></li>
+<li id="l138"><pre>    GL.IO.Get_Byte (sb, l8); </pre></li>
+<li id="l139"><pre>    l := Natural (l8); </pre></li>
+<li id="l140"><pre>    <span class="keyword">if</span> l &gt; str&apos;Length <span class="keyword">then</span> </pre></li>
+<li id="l141"><pre>      <span class="keyword">raise</span> Constraint_Error; </pre></li>
+<li id="l142"><pre>    <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l143"><pre>    <span class="keyword">for</span> i <span class="keyword">in</span> str&apos;First .. str&apos;First + l - 1 <span class="keyword">loop</span> </pre></li>
+<li id="l144"><pre>      GL.IO.Get_Byte (sb, l8); </pre></li>
+<li id="l145"><pre>      str (i) := Character&apos;Val (l8); </pre></li>
+<li id="l146"><pre>    <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l147"><pre>    str (str&apos;First + l .. str&apos;Last) := (<span class="keyword">others</span> =&gt; <span class="string">&apos; &apos;</span>); </pre></li>
+<li id="l148"><pre>  <span class="keyword">end</span> Read_String; </pre></li>
+<li id="l149"><pre> </pre></li>
+<li id="l150"><pre>  <span class="comment">-------------------</span> </pre></li>
+<li id="l151"><pre>  <span class="comment">-- Object_3D I/O --</span> </pre></li>
+<li id="l152"><pre>  <span class="comment">-------------------</span> </pre></li>
+<li id="l153"><pre> </pre></li>
+<li id="l154"><pre>  <span class="keyword">procedure</span> Read ( </pre></li>
+<li id="l155"><pre>    s : <span class="keyword">in</span>  Ada.Streams.Stream_IO.Stream_Access; </pre></li>
+<li id="l156"><pre>    o : <span class="keyword">out</span> p_Object_3D </pre></li>
+<li id="l157"><pre>) </pre></li>
+<li id="l158"><pre>  <span class="keyword">is</span> </pre></li>
+<li id="l159"><pre> </pre></li>
+<li id="l160"><pre>    buf : GL.IO.Input_buffer; </pre></li>
+<li id="l161"><pre> </pre></li>
+<li id="l162"><pre>    <span class="keyword">procedure</span> Read_Intel <span class="keyword">is</span> <span class="keyword">new</span> Read_Intel_x86_number (U16); </pre></li>
+<li id="l163"><pre>    <span class="keyword">procedure</span> Read_Intel <span class="keyword">is</span> <span class="keyword">new</span> Read_Intel_x86_number (U32); </pre></li>
+<li id="l164"><pre> </pre></li>
+<li id="l165"><pre>    <span class="keyword">procedure</span> Read_Float (n : <span class="keyword">out</span> GL.C_Float) <span class="keyword">is</span> </pre></li>
+<li id="l166"><pre>      m : U32; e : U16; </pre></li>
+<li id="l167"><pre>    <span class="keyword">begin</span> </pre></li>
+<li id="l168"><pre>      Read_Intel (buf, m); </pre></li>
+<li id="l169"><pre>      Read_Intel (buf, e); </pre></li>
+<li id="l170"><pre>      Merge (Cvt (m), Cvt (e), n); </pre></li>
+<li id="l171"><pre>    <span class="keyword">end</span> Read_Float; </pre></li>
+<li id="l172"><pre> </pre></li>
+<li id="l173"><pre>    <span class="keyword">procedure</span> Read_Material_Float_vector (mfv : <span class="keyword">out</span> GL.Material_Float_vector) <span class="keyword">is</span> </pre></li>
+<li id="l174"><pre>    <span class="keyword">begin</span> </pre></li>
+<li id="l175"><pre>      <span class="keyword">for</span> i <span class="keyword">in</span> mfv&apos;Range <span class="keyword">loop</span> </pre></li>
+<li id="l176"><pre>        Read_Float (mfv (i)); </pre></li>
+<li id="l177"><pre>      <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l178"><pre>    <span class="keyword">end</span> Read_Material_Float_vector; </pre></li>
+<li id="l179"><pre> </pre></li>
+<li id="l180"><pre>    <span class="keyword">procedure</span> Read_Point_3D (p : <span class="keyword">out</span> Point_3D) <span class="keyword">is</span> </pre></li>
+<li id="l181"><pre>    <span class="keyword">begin</span> </pre></li>
+<li id="l182"><pre>      <span class="keyword">for</span> i <span class="keyword">in</span> p&apos;Range <span class="keyword">loop</span> </pre></li>
+<li id="l183"><pre>        Read_Double (buf, p (i)); </pre></li>
+<li id="l184"><pre>      <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l185"><pre>    <span class="keyword">end</span> Read_Point_3D; </pre></li>
+<li id="l186"><pre> </pre></li>
+<li id="l187"><pre>    <span class="keyword">procedure</span> Read_Map_idx_pair_array (m : <span class="keyword">out</span> Map_idx_pair_array) <span class="keyword">is</span> </pre></li>
+<li id="l188"><pre>    <span class="keyword">begin</span> </pre></li>
+<li id="l189"><pre>      <span class="keyword">for</span> i <span class="keyword">in</span> m&apos;Range <span class="keyword">loop</span> </pre></li>
+<li id="l190"><pre>        Read_Double (buf, m (i).U); </pre></li>
+<li id="l191"><pre>        Read_Double (buf, m (i).V); </pre></li>
+<li id="l192"><pre>      <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l193"><pre>    <span class="keyword">end</span> Read_Map_idx_pair_array; </pre></li>
+<li id="l194"><pre> </pre></li>
+<li id="l195"><pre>    v8 : U8; </pre></li>
+<li id="l196"><pre>    v32, mp32, mf32 : U32; </pre></li>
+<li id="l197"><pre> </pre></li>
+<li id="l198"><pre>    <span class="keyword">procedure</span> Read_face (face : <span class="keyword">out</span> Face_type; face_invar : <span class="keyword">in</span> <span class="keyword">out</span> Face_invariant_type) <span class="keyword">is</span> </pre></li>
+<li id="l199"><pre>    <span class="keyword">begin</span> </pre></li>
+<li id="l200"><pre>      <span class="comment">-- 1/ Points</span> </pre></li>
+<li id="l201"><pre>      <span class="keyword">for</span> i <span class="keyword">in</span> face.p&apos;Range <span class="keyword">loop</span> </pre></li>
+<li id="l202"><pre>        Read_Intel (buf, v32); </pre></li>
+<li id="l203"><pre>        face.p (i) := Integer (v32); </pre></li>
+<li id="l204"><pre>      <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l205"><pre>      <span class="comment">-- 2/ Portal connection : object name is stored;</span> </pre></li>
+<li id="l206"><pre>      <span class="comment">--    access must be found later</span> </pre></li>
+<li id="l207"><pre>      Read_String (buf, face_invar.connect_name); </pre></li>
+<li id="l208"><pre>      <span class="comment">-- 3/ Skin</span> </pre></li>
+<li id="l209"><pre>      GL.IO.Get_Byte (buf, v8); </pre></li>
+<li id="l210"><pre>      face.skin := Skin_Type&apos;Val (v8); </pre></li>
+<li id="l211"><pre>      <span class="comment">-- 4/ Mirror</span> </pre></li>
+<li id="l212"><pre>      GL.IO.Get_Byte (buf, v8); </pre></li>
+<li id="l213"><pre>      face.mirror := Boolean&apos;Val (v8); </pre></li>
+<li id="l214"><pre>      <span class="comment">-- 5/ Alpha</span> </pre></li>
+<li id="l215"><pre>      Read_Double (buf, face.alpha); </pre></li>
+<li id="l216"><pre>      <span class="comment">-- 6/ Colour</span> </pre></li>
+<li id="l217"><pre>      <span class="keyword">case</span> face.skin <span class="keyword">is</span> </pre></li>
+<li id="l218"><pre>        <span class="keyword">when</span> colour_only | coloured_texture =&gt; </pre></li>
+<li id="l219"><pre>          Read_Double (buf, face.colour.red); </pre></li>
+<li id="l220"><pre>          Read_Double (buf, face.colour.green); </pre></li>
+<li id="l221"><pre>          Read_Double (buf, face.colour.blue); </pre></li>
+<li id="l222"><pre>        <span class="keyword">when</span> <span class="keyword">others</span> =&gt; </pre></li>
+<li id="l223"><pre>          <span class="keyword">null</span>; </pre></li>
+<li id="l224"><pre>      <span class="keyword">end</span> <span class="keyword">case</span>; </pre></li>
+<li id="l225"><pre>      <span class="comment">-- 7/ Material</span> </pre></li>
+<li id="l226"><pre>      <span class="keyword">case</span> face.skin <span class="keyword">is</span> </pre></li>
+<li id="l227"><pre>        <span class="keyword">when</span> material_only | material_texture =&gt; </pre></li>
+<li id="l228"><pre>          Read_Material_Float_vector (face.material.ambient); </pre></li>
+<li id="l229"><pre>          Read_Material_Float_vector (face.material.diffuse); </pre></li>
+<li id="l230"><pre>          Read_Material_Float_vector (face.material.specular); </pre></li>
+<li id="l231"><pre>          Read_Material_Float_vector (face.material.emission); </pre></li>
+<li id="l232"><pre>          Read_Float (face.material.shininess); </pre></li>
+<li id="l233"><pre>        <span class="keyword">when</span> <span class="keyword">others</span> =&gt; </pre></li>
+<li id="l234"><pre>          <span class="keyword">null</span>; </pre></li>
+<li id="l235"><pre>      <span class="keyword">end</span> <span class="keyword">case</span>; </pre></li>
+<li id="l236"><pre>      <span class="comment">-- 8/ Texture : texture name is stored;</span> </pre></li>
+<li id="l237"><pre>      <span class="comment">--    id must be found later</span> </pre></li>
+<li id="l238"><pre>      Read_String (buf, face_invar.texture_name); </pre></li>
+<li id="l239"><pre>      GL.IO.Get_Byte (buf, v8); </pre></li>
+<li id="l240"><pre>      face.whole_texture := Boolean&apos;Val (v8); </pre></li>
+<li id="l241"><pre>      GL.IO.Get_Byte (buf, v8); </pre></li>
+<li id="l242"><pre>      face.repeat_U := Positive&apos;Val (v8); </pre></li>
+<li id="l243"><pre>      GL.IO.Get_Byte (buf, v8); </pre></li>
+<li id="l244"><pre>      face.repeat_V := Positive&apos;Val (v8); </pre></li>
+<li id="l245"><pre>      <span class="keyword">if</span> <span class="keyword">not</span> face.whole_texture <span class="keyword">then</span> </pre></li>
+<li id="l246"><pre>        Read_Map_idx_pair_array (face.texture_edge_map); </pre></li>
+<li id="l247"><pre>      <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l248"><pre>    <span class="keyword">end</span> Read_face; </pre></li>
+<li id="l249"><pre>    test_signature : String (signature_obj&apos;Range); </pre></li>
+<li id="l250"><pre>    ID : Ident; </pre></li>
+<li id="l251"><pre>  <span class="keyword">begin</span> </pre></li>
+<li id="l252"><pre>    String&apos;Read (s, test_signature); </pre></li>
+<li id="l253"><pre>    <span class="keyword">if</span> test_signature /= signature_obj <span class="keyword">then</span> </pre></li>
+<li id="l254"><pre>      <span class="keyword">raise</span> Bad_data_format; </pre></li>
+<li id="l255"><pre>    <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l256"><pre>    GL.IO.Attach_Stream (b =&gt; buf, stm =&gt; s); </pre></li>
+<li id="l257"><pre>    Read_String (buf, ID); </pre></li>
+<li id="l258"><pre>    <span class="comment">-- Read the object&apos;s dimensions, create object, read its contents</span> </pre></li>
+<li id="l259"><pre>    Read_Intel (buf, mp32); </pre></li>
+<li id="l260"><pre>    Read_Intel (buf, mf32); </pre></li>
+<li id="l261"><pre>    o := <span class="keyword">new</span> Object_3D (Integer (mp32), Integer (mf32)); </pre></li>
+<li id="l262"><pre>    o.ID := ID; </pre></li>
+<li id="l263"><pre>    <span class="keyword">for</span> p <span class="keyword">in</span> o.Point&apos;Range <span class="keyword">loop</span> </pre></li>
+<li id="l264"><pre>      Read_Point_3D (o.Point (p)); </pre></li>
+<li id="l265"><pre>    <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l266"><pre>    <span class="keyword">for</span> f <span class="keyword">in</span> o.face&apos;Range <span class="keyword">loop</span> </pre></li>
+<li id="l267"><pre>      Read_face (o.face (f), o.face_invariant (f)); </pre></li>
+<li id="l268"><pre>    <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l269"><pre>    Read_Point_3D (o.Centre); </pre></li>
+<li id="l270"><pre>    <span class="keyword">for</span> i <span class="keyword">in</span> Matrix_33&apos;Range (1) <span class="keyword">loop</span> </pre></li>
+<li id="l271"><pre>      <span class="keyword">for</span> j <span class="keyword">in</span> Matrix_33&apos;Range (2) <span class="keyword">loop</span> </pre></li>
+<li id="l272"><pre>        Read_Double (buf, o.rotation (i, j)); </pre></li>
+<li id="l273"><pre>      <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l274"><pre>    <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l275"><pre>    <span class="comment">-- !! sub - objects : skipped !!</span> </pre></li>
+<li id="l276"><pre>    <span class="comment">-- Main operation done!</span> </pre></li>
+<li id="l277"><pre>  <span class="keyword">end</span> Read; </pre></li>
+<li id="l278"><pre> </pre></li>
+<li id="l279"><pre>  <span class="keyword">procedure</span> Write ( </pre></li>
+<li id="l280"><pre>    s : <span class="keyword">in</span>  Ada.Streams.Stream_IO.Stream_Access; </pre></li>
+<li id="l281"><pre>    o : <span class="keyword">in</span>  Object_3D </pre></li>
+<li id="l282"><pre>) </pre></li>
+<li id="l283"><pre>  <span class="keyword">is</span> </pre></li>
+<li id="l284"><pre> </pre></li>
+<li id="l285"><pre>    <span class="keyword">procedure</span> Write_Intel <span class="keyword">is</span> <span class="keyword">new</span> Write_Intel_x86_number (s, U16); </pre></li>
+<li id="l286"><pre>    <span class="keyword">procedure</span> Write_Intel <span class="keyword">is</span> <span class="keyword">new</span> Write_Intel_x86_number (s, U32); </pre></li>
+<li id="l287"><pre> </pre></li>
+<li id="l288"><pre>    <span class="keyword">procedure</span> Write_Float (n : <span class="keyword">in</span> GL.C_Float) <span class="keyword">is</span> </pre></li>
+<li id="l289"><pre>      m : I32; e : I16; </pre></li>
+<li id="l290"><pre>    <span class="keyword">begin</span> </pre></li>
+<li id="l291"><pre>      Split (n, m, e); </pre></li>
+<li id="l292"><pre>      Write_Intel (Cvt (m)); </pre></li>
+<li id="l293"><pre>      Write_Intel (Cvt (e)); </pre></li>
+<li id="l294"><pre>    <span class="keyword">end</span> Write_Float; </pre></li>
+<li id="l295"><pre> </pre></li>
+<li id="l296"><pre>    <span class="keyword">procedure</span> Write_Material_Float_vector (mfv : <span class="keyword">in</span> GL.Material_Float_vector) <span class="keyword">is</span> </pre></li>
+<li id="l297"><pre>    <span class="keyword">begin</span> </pre></li>
+<li id="l298"><pre>      <span class="keyword">for</span> i <span class="keyword">in</span> mfv&apos;Range <span class="keyword">loop</span> </pre></li>
+<li id="l299"><pre>        Write_Float (mfv (i)); </pre></li>
+<li id="l300"><pre>      <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l301"><pre>    <span class="keyword">end</span> Write_Material_Float_vector; </pre></li>
+<li id="l302"><pre> </pre></li>
+<li id="l303"><pre>    <span class="keyword">procedure</span> Write_Point_3D (p : <span class="keyword">in</span> Point_3D) <span class="keyword">is</span> </pre></li>
+<li id="l304"><pre>    <span class="keyword">begin</span> </pre></li>
+<li id="l305"><pre>      <span class="keyword">for</span> i <span class="keyword">in</span> p&apos;Range <span class="keyword">loop</span> </pre></li>
+<li id="l306"><pre>        Write_Double (s, p (i)); </pre></li>
+<li id="l307"><pre>      <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l308"><pre>    <span class="keyword">end</span> Write_Point_3D; </pre></li>
+<li id="l309"><pre> </pre></li>
+<li id="l310"><pre>    <span class="keyword">procedure</span> Write_Map_idx_pair_array (m : <span class="keyword">in</span> Map_idx_pair_array) <span class="keyword">is</span> </pre></li>
+<li id="l311"><pre>    <span class="keyword">begin</span> </pre></li>
+<li id="l312"><pre>      <span class="keyword">for</span> i <span class="keyword">in</span> m&apos;Range <span class="keyword">loop</span> </pre></li>
+<li id="l313"><pre>        Write_Double (s, m (i).U); </pre></li>
+<li id="l314"><pre>        Write_Double (s, m (i).V); </pre></li>
+<li id="l315"><pre>      <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l316"><pre>    <span class="keyword">end</span> Write_Map_idx_pair_array; </pre></li>
+<li id="l317"><pre> </pre></li>
+<li id="l318"><pre>    <span class="keyword">procedure</span> Write_face (face : Face_type; face_invar : Face_invariant_type) <span class="keyword">is</span> </pre></li>
+<li id="l319"><pre>    <span class="keyword">begin</span> </pre></li>
+<li id="l320"><pre>      <span class="comment">-- 1/ Points</span> </pre></li>
+<li id="l321"><pre>      <span class="keyword">for</span> i <span class="keyword">in</span> face.p&apos;Range <span class="keyword">loop</span> </pre></li>
+<li id="l322"><pre>        Write_Intel (U32 (face.p (i))); </pre></li>
+<li id="l323"><pre>      <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l324"><pre>      <span class="comment">-- 2/ Portal connection : object name is stored</span> </pre></li>
+<li id="l325"><pre>      <span class="keyword">if</span> face.connecting = <span class="keyword">null</span> <span class="keyword">then</span> </pre></li>
+<li id="l326"><pre>        Write_String (s, empty); </pre></li>
+<li id="l327"><pre>      <span class="keyword">else</span> </pre></li>
+<li id="l328"><pre>        Write_String (s, face.connecting.ID); </pre></li>
+<li id="l329"><pre>      <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l330"><pre>      <span class="comment">-- 3/ Skin</span> </pre></li>
+<li id="l331"><pre>      U8&apos;Write (s, Skin_Type&apos;Pos (face.skin)); </pre></li>
+<li id="l332"><pre>      <span class="comment">-- 4/ Mirror</span> </pre></li>
+<li id="l333"><pre>      U8&apos;Write (s, Boolean&apos;Pos (face.mirror)); </pre></li>
+<li id="l334"><pre>      <span class="comment">-- 5/ Alpha</span> </pre></li>
+<li id="l335"><pre>      Write_Double (s, face.alpha); </pre></li>
+<li id="l336"><pre>      <span class="comment">-- 6/ Colour</span> </pre></li>
+<li id="l337"><pre>      <span class="keyword">case</span> face.skin <span class="keyword">is</span> </pre></li>
+<li id="l338"><pre>        <span class="keyword">when</span> colour_only | coloured_texture =&gt; </pre></li>
+<li id="l339"><pre>          Write_Double (s, face.colour.red); </pre></li>
+<li id="l340"><pre>          Write_Double (s, face.colour.green); </pre></li>
+<li id="l341"><pre>          Write_Double (s, face.colour.blue); </pre></li>
+<li id="l342"><pre>        <span class="keyword">when</span> <span class="keyword">others</span> =&gt; </pre></li>
+<li id="l343"><pre>          <span class="keyword">null</span>; </pre></li>
+<li id="l344"><pre>      <span class="keyword">end</span> <span class="keyword">case</span>; </pre></li>
+<li id="l345"><pre>      <span class="comment">-- 7/ Material</span> </pre></li>
+<li id="l346"><pre>      <span class="keyword">case</span> face.skin <span class="keyword">is</span> </pre></li>
+<li id="l347"><pre>        <span class="keyword">when</span> material_only | material_texture =&gt; </pre></li>
+<li id="l348"><pre>          Write_Material_Float_vector (face.material.ambient); </pre></li>
+<li id="l349"><pre>          Write_Material_Float_vector (face.material.diffuse); </pre></li>
+<li id="l350"><pre>          Write_Material_Float_vector (face.material.specular); </pre></li>
+<li id="l351"><pre>          Write_Material_Float_vector (face.material.emission); </pre></li>
+<li id="l352"><pre>          Write_Float (face.material.shininess); </pre></li>
+<li id="l353"><pre>        <span class="keyword">when</span> <span class="keyword">others</span> =&gt; </pre></li>
+<li id="l354"><pre>          <span class="keyword">null</span>; </pre></li>
+<li id="l355"><pre>      <span class="keyword">end</span> <span class="keyword">case</span>; </pre></li>
+<li id="l356"><pre>      <span class="comment">-- 8/ Texture : texture name is stored</span> </pre></li>
+<li id="l357"><pre>      <span class="keyword">if</span> face.texture = null_image <span class="keyword">then</span> </pre></li>
+<li id="l358"><pre>        <span class="comment">-- Maybe a texture name has been given with Texture_name_hint,</span> </pre></li>
+<li id="l359"><pre>        <span class="comment">-- but was not yet attached to a GL ID number through Rebuild_Links</span> </pre></li>
+<li id="l360"><pre>        Write_String (s, face_invar.texture_name); </pre></li>
+<li id="l361"><pre>      <span class="keyword">else</span> </pre></li>
+<li id="l362"><pre>        <span class="comment">-- Usual way : We can get the texture name associated to the</span> </pre></li>
+<li id="l363"><pre>        <span class="comment">-- GL ID number; name is stored by GLOBE_3D.Textures.</span> </pre></li>
+<li id="l364"><pre>        Write_String (s, Textures.Texture_name (face.texture, False)); </pre></li>
+<li id="l365"><pre>      <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l366"><pre>      U8&apos;Write (s, Boolean&apos;Pos (face.whole_texture)); </pre></li>
+<li id="l367"><pre>      U8&apos;Write (s, Positive&apos;Pos (face.repeat_U)); </pre></li>
+<li id="l368"><pre>      U8&apos;Write (s, Positive&apos;Pos (face.repeat_V)); </pre></li>
+<li id="l369"><pre>      <span class="keyword">if</span> <span class="keyword">not</span> face.whole_texture <span class="keyword">then</span> </pre></li>
+<li id="l370"><pre>        Write_Map_idx_pair_array (face.texture_edge_map); </pre></li>
+<li id="l371"><pre>      <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l372"><pre>    <span class="keyword">end</span> Write_face; </pre></li>
+<li id="l373"><pre> </pre></li>
+<li id="l374"><pre>  <span class="keyword">begin</span> </pre></li>
+<li id="l375"><pre>    String&apos;Write (s, signature_obj); </pre></li>
+<li id="l376"><pre>    Write_String (s, o.ID); </pre></li>
+<li id="l377"><pre>    Write_Intel (U32 (o.Max_points)); </pre></li>
+<li id="l378"><pre>    Write_Intel (U32 (o.Max_faces)); </pre></li>
+<li id="l379"><pre>    <span class="keyword">for</span> p <span class="keyword">in</span> o.Point&apos;Range <span class="keyword">loop</span> </pre></li>
+<li id="l380"><pre>      Write_Point_3D (o.Point (p)); </pre></li>
+<li id="l381"><pre>    <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l382"><pre>    <span class="keyword">for</span> f <span class="keyword">in</span> o.face&apos;Range <span class="keyword">loop</span> </pre></li>
+<li id="l383"><pre>      Write_face (o.face (f), o.face_invariant (f)); </pre></li>
+<li id="l384"><pre>    <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l385"><pre>    Write_Point_3D (o.Centre); </pre></li>
+<li id="l386"><pre>    <span class="keyword">for</span> i <span class="keyword">in</span> Matrix_33&apos;Range (1) <span class="keyword">loop</span> </pre></li>
+<li id="l387"><pre>      <span class="keyword">for</span> j <span class="keyword">in</span> Matrix_33&apos;Range (2) <span class="keyword">loop</span> </pre></li>
+<li id="l388"><pre>        Write_Double (s, o.rotation (i, j)); </pre></li>
+<li id="l389"><pre>      <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l390"><pre>    <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l391"><pre>    <span class="comment">-- !! sub - objects : skipped !!</span> </pre></li>
+<li id="l392"><pre>    <span class="comment">-- Main operation done!</span> </pre></li>
+<li id="l393"><pre>  <span class="keyword">end</span> Write; </pre></li>
+<li id="l394"><pre> </pre></li>
+<li id="l395"><pre>  <span class="keyword">generic</span> </pre></li>
+<li id="l396"><pre>    <span class="keyword">type</span> Anything <span class="keyword">is</span> <span class="keyword">private</span>; </pre></li>
+<li id="l397"><pre>    extension : String; </pre></li>
+<li id="l398"><pre>    animal : String; </pre></li>
+<li id="l399"><pre>    <span class="keyword">with</span> <span class="keyword">procedure</span> Read ( </pre></li>
+<li id="l400"><pre>      s : <span class="keyword">in</span>  Ada.Streams.Stream_IO.Stream_Access; </pre></li>
+<li id="l401"><pre>      a : <span class="keyword">out</span> Anything </pre></li>
+<li id="l402"><pre>); </pre></li>
+<li id="l403"><pre>  <span class="keyword">procedure</span> Load_generic (name_in_resource : String; a : <span class="keyword">out</span> Anything); </pre></li>
+<li id="l404"><pre> </pre></li>
+<li id="l405"><pre>  <span class="keyword">procedure</span> Load_generic (name_in_resource : String; a : <span class="keyword">out</span> Anything) <span class="keyword">is</span> </pre></li>
+<li id="l406"><pre>    name_ext : <span class="keyword">constant</span> String := name_in_resource &amp; extension; </pre></li>
+<li id="l407"><pre> </pre></li>
+<li id="l408"><pre>    <span class="keyword">procedure</span> Try (zif : <span class="keyword">in</span> <span class="keyword">out</span> Zip.Zip_info; name : String) <span class="keyword">is</span> </pre></li>
+<li id="l409"><pre>      <span class="keyword">use</span> UnZip.Streams; </pre></li>
+<li id="l410"><pre>      fobj : Zipped_File_Type; </pre></li>
+<li id="l411"><pre>    <span class="keyword">begin</span> <span class="comment">-- Try</span> </pre></li>
+<li id="l412"><pre>      Load_if_needed (zif, name); </pre></li>
+<li id="l413"><pre>      Open (fobj, zif, name_ext); </pre></li>
+<li id="l414"><pre>      Read (Stream (fobj), a); </pre></li>
+<li id="l415"><pre>      Close (fobj); </pre></li>
+<li id="l416"><pre>    <span class="keyword">exception</span> </pre></li>
+<li id="l417"><pre>      <span class="keyword">when</span> Zip.File_name_not_found =&gt; </pre></li>
+<li id="l418"><pre>        <span class="keyword">raise</span>; </pre></li>
+<li id="l419"><pre>      <span class="keyword">when</span> e:<span class="keyword">others</span> =&gt; </pre></li>
+<li id="l420"><pre>        Raise_Exception ( </pre></li>
+<li id="l421"><pre>          Exception_Identity (e), </pre></li>
+<li id="l422"><pre>          Exception_Message (e) &amp; <span class="string">&quot; on &quot;</span> &amp; animal &amp; <span class="string">&quot; : &quot;</span> &amp; name_ext </pre></li>
+<li id="l423"><pre>); </pre></li>
+<li id="l424"><pre>    <span class="keyword">end</span> Try; </pre></li>
+<li id="l425"><pre>  <span class="keyword">begin</span> </pre></li>
+<li id="l426"><pre>    <span class="keyword">begin</span> </pre></li>
+<li id="l427"><pre>      Try (zif_level, To_String (level_data_name)); </pre></li>
+<li id="l428"><pre>    <span class="keyword">exception</span> </pre></li>
+<li id="l429"><pre>      <span class="keyword">when</span> Zip.File_name_not_found | </pre></li>
+<li id="l430"><pre>           Zip.Zip_file_open_Error =&gt; </pre></li>
+<li id="l431"><pre>        <span class="comment">-- Not found in level - specific pack</span> </pre></li>
+<li id="l432"><pre>        Try (zif_global, To_String (global_data_name)); </pre></li>
+<li id="l433"><pre>    <span class="keyword">end</span>; </pre></li>
+<li id="l434"><pre>  <span class="keyword">exception</span> </pre></li>
+<li id="l435"><pre>    <span class="keyword">when</span> Zip.File_name_not_found | </pre></li>
+<li id="l436"><pre>         Zip.Zip_file_open_Error =&gt; </pre></li>
+<li id="l437"><pre>      <span class="comment">-- Never found - neither in level, nor in global pack</span> </pre></li>
+<li id="l438"><pre>      Raise_Exception ( </pre></li>
+<li id="l439"><pre>        Missing_object&apos;Identity, </pre></li>
+<li id="l440"><pre>        animal &amp; <span class="string">&quot; not found in any data resource pack : &quot;</span> &amp; name_in_resource </pre></li>
+<li id="l441"><pre>); </pre></li>
+<li id="l442"><pre>  <span class="keyword">end</span> Load_generic; </pre></li>
+<li id="l443"><pre> </pre></li>
+<li id="l444"><pre>  <span class="keyword">procedure</span> Load_Internal <span class="keyword">is</span> </pre></li>
+<li id="l445"><pre>    <span class="keyword">new</span> Load_generic ( </pre></li>
+<li id="l446"><pre>      Anything  =&gt; p_Object_3D, </pre></li>
+<li id="l447"><pre>      extension =&gt; object_extension, </pre></li>
+<li id="l448"><pre>      animal    =&gt; <span class="string">&quot;object&quot;</span>, </pre></li>
+<li id="l449"><pre>      Read      =&gt; Read </pre></li>
+<li id="l450"><pre>); </pre></li>
+<li id="l451"><pre> </pre></li>
+<li id="l452"><pre>  <span class="keyword">procedure</span> Load (name_in_resource : String; o : <span class="keyword">out</span> p_Object_3D) </pre></li>
+<li id="l453"><pre>  <span class="keyword">renames</span> Load_Internal; </pre></li>
+<li id="l454"><pre> </pre></li>
+<li id="l455"><pre>  <span class="keyword">procedure</span> Load_file (file_name : String; o : <span class="keyword">out</span> p_Object_3D) <span class="keyword">is</span> </pre></li>
+<li id="l456"><pre>    <span class="keyword">use</span> Ada.Streams.Stream_IO; </pre></li>
+<li id="l457"><pre>    f : File_Type; </pre></li>
+<li id="l458"><pre>  <span class="keyword">begin</span> </pre></li>
+<li id="l459"><pre>    Open (f, in_file, file_name); </pre></li>
+<li id="l460"><pre>    Read (Stream (f), o); </pre></li>
+<li id="l461"><pre>    Close (f); </pre></li>
+<li id="l462"><pre>  <span class="keyword">end</span> Load_file; </pre></li>
+<li id="l463"><pre> </pre></li>
+<li id="l464"><pre>  <span class="keyword">procedure</span> Save_file (file_name : String; o : <span class="keyword">in</span> Object_3D&apos;Class) <span class="keyword">is</span> </pre></li>
+<li id="l465"><pre>    <span class="keyword">use</span> Ada.Streams.Stream_IO; </pre></li>
+<li id="l466"><pre>    f : File_Type; </pre></li>
+<li id="l467"><pre>  <span class="keyword">begin</span> </pre></li>
+<li id="l468"><pre>    Create (f, out_file, file_name); </pre></li>
+<li id="l469"><pre>    Write (Stream (f), Object_3D (o)); </pre></li>
+<li id="l470"><pre>    <span class="comment">-- ^ endian - proof and floating - point hardware neutral;</span> </pre></li>
+<li id="l471"><pre>    <span class="comment">--   using stream attribute would be machine - specific.</span> </pre></li>
+<li id="l472"><pre>    Close (f); </pre></li>
+<li id="l473"><pre>  <span class="keyword">end</span> Save_file; </pre></li>
+<li id="l474"><pre> </pre></li>
+<li id="l475"><pre>  <span class="keyword">procedure</span> Save_file (o : <span class="keyword">in</span> Object_3D&apos;Class) <span class="keyword">is</span> </pre></li>
+<li id="l476"><pre>  <span class="keyword">begin</span> </pre></li>
+<li id="l477"><pre>    Save_file (Trim (o.ID, Right) &amp; object_extension, o); </pre></li>
+<li id="l478"><pre>  <span class="keyword">end</span> Save_file; </pre></li>
+<li id="l479"><pre> </pre></li>
+<li id="l480"><pre>  <span class="comment">-------------</span> </pre></li>
+<li id="l481"><pre>  <span class="comment">-- BSP I/O --</span> </pre></li>
+<li id="l482"><pre>  <span class="comment">-------------</span> </pre></li>
+<li id="l483"><pre> </pre></li>
+<li id="l484"><pre>  <span class="comment">-- Write a BSP tree to a stream</span> </pre></li>
+<li id="l485"><pre> </pre></li>
+<li id="l486"><pre>  <span class="keyword">procedure</span> Write ( </pre></li>
+<li id="l487"><pre>    s : <span class="keyword">in</span>  Ada.Streams.Stream_IO.Stream_Access; </pre></li>
+<li id="l488"><pre>    tree : <span class="keyword">in</span> BSP.p_BSP_node </pre></li>
+<li id="l489"><pre>) </pre></li>
+<li id="l490"><pre>  <span class="keyword">is</span> </pre></li>
+<li id="l491"><pre>    <span class="keyword">procedure</span> Write_Intel <span class="keyword">is</span> <span class="keyword">new</span> Write_Intel_x86_number (s, U32); </pre></li>
+<li id="l492"><pre>    <span class="keyword">use</span> BSP; </pre></li>
+<li id="l493"><pre> </pre></li>
+<li id="l494"><pre>    n : Natural := 0; </pre></li>
+<li id="l495"><pre> </pre></li>
+<li id="l496"><pre>    <span class="keyword">procedure</span> Numbering (node : p_BSP_node) <span class="keyword">is</span> </pre></li>
+<li id="l497"><pre>    <span class="keyword">begin</span> </pre></li>
+<li id="l498"><pre>      <span class="keyword">if</span> node /= <span class="keyword">null</span> <span class="keyword">then</span> </pre></li>
+<li id="l499"><pre>        n := n + 1; </pre></li>
+<li id="l500"><pre>        node.node_id := n; </pre></li>
+<li id="l501"><pre>        Numbering (node.front_child); </pre></li>
+<li id="l502"><pre>        Numbering (node.back_child); </pre></li>
+<li id="l503"><pre>      <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l504"><pre>    <span class="keyword">end</span> Numbering; </pre></li>
+<li id="l505"><pre> </pre></li>
+<li id="l506"><pre>    <span class="keyword">procedure</span> Save_node (node : p_BSP_node) <span class="keyword">is</span> </pre></li>
+<li id="l507"><pre>    <span class="keyword">begin</span> </pre></li>
+<li id="l508"><pre>      <span class="keyword">if</span> node /= <span class="keyword">null</span> <span class="keyword">then</span> </pre></li>
+<li id="l509"><pre>        Write_Intel (U32 (node.node_id)); </pre></li>
+<li id="l510"><pre>        <span class="keyword">if</span> node.front_child = <span class="keyword">null</span> <span class="keyword">then</span> </pre></li>
+<li id="l511"><pre>          Write_Intel (U32&apos; (0)); </pre></li>
+<li id="l512"><pre>          <span class="keyword">if</span> node.front_leaf = <span class="keyword">null</span> <span class="keyword">then</span> </pre></li>
+<li id="l513"><pre>            Write_String (s, empty); </pre></li>
+<li id="l514"><pre>          <span class="keyword">else</span> </pre></li>
+<li id="l515"><pre>            Write_String (s, node.front_leaf.ID); </pre></li>
+<li id="l516"><pre>          <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l517"><pre>        <span class="keyword">else</span> </pre></li>
+<li id="l518"><pre>          Write_Intel (U32 (node.front_child.node_id)); </pre></li>
+<li id="l519"><pre>        <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l520"><pre>        <span class="keyword">if</span> node.back_child = <span class="keyword">null</span> <span class="keyword">then</span> </pre></li>
+<li id="l521"><pre>          Write_Intel (U32&apos; (0)); </pre></li>
+<li id="l522"><pre>          <span class="keyword">if</span> node.back_leaf = <span class="keyword">null</span> <span class="keyword">then</span> </pre></li>
+<li id="l523"><pre>            Write_String (s, empty); </pre></li>
+<li id="l524"><pre>          <span class="keyword">else</span> </pre></li>
+<li id="l525"><pre>            Write_String (s, node.back_leaf.ID); </pre></li>
+<li id="l526"><pre>          <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l527"><pre>        <span class="keyword">else</span> </pre></li>
+<li id="l528"><pre>          Write_Intel (U32 (node.back_child.node_id)); </pre></li>
+<li id="l529"><pre>        <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l530"><pre>        <span class="keyword">for</span> i <span class="keyword">in</span> node.normal&apos;Range <span class="keyword">loop</span> </pre></li>
+<li id="l531"><pre>          Write_Double (s, node.normal (i)); </pre></li>
+<li id="l532"><pre>        <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l533"><pre>        Write_Double (s, node.distance); </pre></li>
+<li id="l534"><pre>        <span class="comment">--</span> </pre></li>
+<li id="l535"><pre>        Save_node (node.front_child); </pre></li>
+<li id="l536"><pre>        Save_node (node.back_child); </pre></li>
+<li id="l537"><pre>      <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l538"><pre>    <span class="keyword">end</span> Save_node; </pre></li>
+<li id="l539"><pre> </pre></li>
+<li id="l540"><pre>  <span class="keyword">begin</span> </pre></li>
+<li id="l541"><pre>    Numbering (tree);                <span class="comment">-- fill the node_id&apos;s</span> </pre></li>
+<li id="l542"><pre>    String&apos;Write (s, signature_bsp); <span class="comment">-- header</span> </pre></li>
+<li id="l543"><pre>    Write_Intel (U32 (n));           <span class="comment">-- give the number of nodes first</span> </pre></li>
+<li id="l544"><pre>    Save_node (tree); </pre></li>
+<li id="l545"><pre>  <span class="keyword">end</span> Write; </pre></li>
+<li id="l546"><pre> </pre></li>
+<li id="l547"><pre>  <span class="comment">-- Write a BSP tree to a file</span> </pre></li>
+<li id="l548"><pre> </pre></li>
+<li id="l549"><pre>  <span class="keyword">procedure</span> Save_file (file_name : String; tree : <span class="keyword">in</span> BSP.p_BSP_node) <span class="keyword">is</span> </pre></li>
+<li id="l550"><pre>    <span class="keyword">use</span> Ada.Streams.Stream_IO; </pre></li>
+<li id="l551"><pre>    f : File_Type; </pre></li>
+<li id="l552"><pre>  <span class="keyword">begin</span> </pre></li>
+<li id="l553"><pre>    <span class="keyword">if</span> Index (file_name, <span class="string">&quot;.&quot;</span>)=0 <span class="keyword">then</span> </pre></li>
+<li id="l554"><pre>      Create (f, out_file, file_name &amp; BSP_extension); </pre></li>
+<li id="l555"><pre>    <span class="keyword">else</span> </pre></li>
+<li id="l556"><pre>      Create (f, out_file, file_name); </pre></li>
+<li id="l557"><pre>    <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l558"><pre>    Write (Stream (f), tree); </pre></li>
+<li id="l559"><pre>    Close (f); </pre></li>
+<li id="l560"><pre>  <span class="keyword">end</span> Save_file; </pre></li>
+<li id="l561"><pre> </pre></li>
+<li id="l562"><pre>  <span class="keyword">procedure</span> Load ( </pre></li>
+<li id="l563"><pre>    name_in_resource : <span class="keyword">in</span>  String; </pre></li>
+<li id="l564"><pre>    referred         : <span class="keyword">in</span>  Map_of_Visuals; </pre></li>
+<li id="l565"><pre>    tree             : <span class="keyword">out</span> BSP.p_BSP_node </pre></li>
+<li id="l566"><pre>) </pre></li>
+<li id="l567"><pre>  <span class="keyword">is</span> </pre></li>
+<li id="l568"><pre> </pre></li>
+<li id="l569"><pre>    <span class="keyword">function</span> Find_object (ID : Ident; tolerant : Boolean) <span class="keyword">return</span> p_Object_3D <span class="keyword">is</span> </pre></li>
+<li id="l570"><pre>    <span class="keyword">begin</span> </pre></li>
+<li id="l571"><pre>      <span class="keyword">if</span> ID = empty <span class="keyword">then</span> </pre></li>
+<li id="l572"><pre>        <span class="keyword">return</span> <span class="keyword">null</span>; </pre></li>
+<li id="l573"><pre>      <span class="keyword">else</span> </pre></li>
+<li id="l574"><pre>        <span class="keyword">return</span> p_Object_3D ( </pre></li>
+<li id="l575"><pre>          Visuals_Mapping.Element ( </pre></li>
+<li id="l576"><pre>            Container =&gt; Visuals_Mapping.Map (referred), </pre></li>
+<li id="l577"><pre>            Key       =&gt; Ada.Strings.Unbounded.To_Unbounded_String (ID) </pre></li>
+<li id="l578"><pre>) </pre></li>
+<li id="l579"><pre>); </pre></li>
+<li id="l580"><pre>      <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l581"><pre>    <span class="keyword">exception</span> </pre></li>
+<li id="l582"><pre>      <span class="keyword">when</span> Constraint_Error =&gt; </pre></li>
+<li id="l583"><pre>        <span class="comment">-- GNAT gives also the message:</span> </pre></li>
+<li id="l584"><pre>        <span class="comment">-- no element available because key not in map</span> </pre></li>
+<li id="l585"><pre>        <span class="keyword">if</span> tolerant <span class="keyword">then</span> </pre></li>
+<li id="l586"><pre>          <span class="keyword">return</span> <span class="keyword">null</span>; </pre></li>
+<li id="l587"><pre>        <span class="keyword">else</span> </pre></li>
+<li id="l588"><pre>          Raise_Exception ( </pre></li>
+<li id="l589"><pre>            Missing_object_in_BSP&apos;Identity, </pre></li>
+<li id="l590"><pre>            <span class="string">&quot;Object not found : [&quot;</span> &amp; Trim (ID, Right) &amp; <span class="string">&apos;]&apos;</span> </pre></li>
+<li id="l591"><pre>); </pre></li>
+<li id="l592"><pre>        <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l593"><pre>    <span class="keyword">end</span> Find_object; </pre></li>
+<li id="l594"><pre> </pre></li>
+<li id="l595"><pre>    <span class="keyword">procedure</span> Read ( </pre></li>
+<li id="l596"><pre>      s            : <span class="keyword">in</span>  Ada.Streams.Stream_IO.Stream_Access; </pre></li>
+<li id="l597"><pre>      tree         : <span class="keyword">out</span> BSP.p_BSP_node </pre></li>
+<li id="l598"><pre>) </pre></li>
+<li id="l599"><pre>    <span class="keyword">is</span> </pre></li>
+<li id="l600"><pre>      <span class="keyword">use</span> BSP; </pre></li>
+<li id="l601"><pre>      buf : GL.IO.Input_buffer; </pre></li>
+<li id="l602"><pre>      <span class="keyword">procedure</span> Read_Intel <span class="keyword">is</span> <span class="keyword">new</span> Read_Intel_x86_number (U32); </pre></li>
+<li id="l603"><pre> </pre></li>
+<li id="l604"><pre>      test_signature : String (signature_bsp&apos;Range); </pre></li>
+<li id="l605"><pre>      n, j, k : U32; </pre></li>
+<li id="l606"><pre>      ID : Ident; </pre></li>
+<li id="l607"><pre>      tol : <span class="keyword">constant</span> Boolean := False; </pre></li>
+<li id="l608"><pre>    <span class="keyword">begin</span> </pre></li>
+<li id="l609"><pre>      String&apos;Read (s, test_signature); </pre></li>
+<li id="l610"><pre>      <span class="keyword">if</span> test_signature /= signature_bsp <span class="keyword">then</span> </pre></li>
+<li id="l611"><pre>        <span class="keyword">raise</span> Bad_data_format; </pre></li>
+<li id="l612"><pre>      <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l613"><pre>      GL.IO.Attach_Stream (b =&gt; buf, stm =&gt; s); </pre></li>
+<li id="l614"><pre>      Read_Intel (buf, n); </pre></li>
+<li id="l615"><pre>      <span class="keyword">if</span> n &lt; 1 <span class="keyword">then</span> </pre></li>
+<li id="l616"><pre>        tree := <span class="keyword">null</span>; </pre></li>
+<li id="l617"><pre>        <span class="keyword">return</span>; </pre></li>
+<li id="l618"><pre>      <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l619"><pre>      <span class="keyword">declare</span> </pre></li>
+<li id="l620"><pre>        <span class="comment">-- We put all the new - born nodes into a farm with numbered boxes,</span> </pre></li>
+<li id="l621"><pre>        <span class="comment">-- because only the numbers are stored in the BSP file.</span> </pre></li>
+<li id="l622"><pre>        <span class="comment">-- Once the nodes are linked together through accesses (pointers),</span> </pre></li>
+<li id="l623"><pre>        <span class="comment">-- we can forget the farm and let the tree float .. .</span> </pre></li>
+<li id="l624"><pre>        farm : <span class="keyword">array</span> (0 .. n) <span class="keyword">of</span> p_BSP_Node; </pre></li>
+<li id="l625"><pre>      <span class="keyword">begin</span> </pre></li>
+<li id="l626"><pre>        farm (0) := <span class="keyword">null</span>; </pre></li>
+<li id="l627"><pre>        <span class="keyword">for</span> i <span class="keyword">in</span> 1 .. n <span class="keyword">loop</span> </pre></li>
+<li id="l628"><pre>          farm (i) := <span class="keyword">new</span> BSP_Node; </pre></li>
+<li id="l629"><pre>        <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l630"><pre>        <span class="keyword">for</span> i <span class="keyword">in</span> 1 .. n <span class="keyword">loop</span> </pre></li>
+<li id="l631"><pre>          Read_Intel (buf, j); <span class="comment">-- node_id</span> </pre></li>
+<li id="l632"><pre>          farm (j).node_id := Integer (j); </pre></li>
+<li id="l633"><pre>          Read_Intel (buf, k); </pre></li>
+<li id="l634"><pre>          farm (j).front_child := farm (k); </pre></li>
+<li id="l635"><pre>          <span class="keyword">if</span> k = 0 <span class="keyword">then</span> <span class="comment">-- it is a front leaf - &gt; associate object</span> </pre></li>
+<li id="l636"><pre>            Read_String (buf, ID); </pre></li>
+<li id="l637"><pre>            farm (j).front_leaf := Find_object (ID, tol); </pre></li>
+<li id="l638"><pre>          <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l639"><pre>          Read_Intel (buf, k); </pre></li>
+<li id="l640"><pre>          farm (j).back_child := farm (k); </pre></li>
+<li id="l641"><pre>          <span class="keyword">if</span> k = 0 <span class="keyword">then</span> <span class="comment">-- it is a back leaf - &gt; associate object</span> </pre></li>
+<li id="l642"><pre>            Read_String (buf, ID); </pre></li>
+<li id="l643"><pre>            farm (j).back_leaf := Find_object (ID, tol); </pre></li>
+<li id="l644"><pre>          <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l645"><pre>          <span class="comment">-- The node&apos;s geometric information (a plane):</span> </pre></li>
+<li id="l646"><pre>          <span class="keyword">for</span> ii <span class="keyword">in</span> farm (j).normal&apos;Range <span class="keyword">loop</span> </pre></li>
+<li id="l647"><pre>            Read_Double (buf, farm (j).normal (ii)); </pre></li>
+<li id="l648"><pre>          <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l649"><pre>          Read_Double (buf, farm (j).distance); </pre></li>
+<li id="l650"><pre>        <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l651"><pre>        tree := farm (1); </pre></li>
+<li id="l652"><pre>      <span class="keyword">end</span>; </pre></li>
+<li id="l653"><pre>    <span class="keyword">end</span> Read; </pre></li>
+<li id="l654"><pre> </pre></li>
+<li id="l655"><pre>    <span class="keyword">procedure</span> Load_Internal <span class="keyword">is</span> </pre></li>
+<li id="l656"><pre>      <span class="keyword">new</span> Load_generic ( </pre></li>
+<li id="l657"><pre>        Anything  =&gt; BSP.p_BSP_node, </pre></li>
+<li id="l658"><pre>        extension =&gt; BSP_extension, </pre></li>
+<li id="l659"><pre>        animal    =&gt; <span class="string">&quot;BSP tree&quot;</span>, </pre></li>
+<li id="l660"><pre>        Read      =&gt; Read </pre></li>
+<li id="l661"><pre>); </pre></li>
+<li id="l662"><pre> </pre></li>
+<li id="l663"><pre>  <span class="keyword">begin</span> </pre></li>
+<li id="l664"><pre>    Load_Internal (name_in_resource, tree); </pre></li>
+<li id="l665"><pre>  <span class="keyword">end</span> Load; </pre></li>
+<li id="l666"><pre> </pre></li>
+<li id="l667"><pre><span class="keyword">end</span> GLOBE_3D.IO; </pre></li>
+</ol></div>
+</div>
+
+</body>
+</html>

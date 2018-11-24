@@ -1,0 +1,1340 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    Package: Zip_Streams
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+
+  <div id='navigation'>
+    <h2 class="button">Navigation</h2>
+    <a href='#Description'><div class="button2">Description</div></a>
+    <a href='#Packages'><div class="button2">Packages</div></a>
+    <a href='#Classes'><div class="button2">Classes</div></a>
+    <a href='#Types'><div class="button2">Types</div></a>
+    <a href='#Constants'><div class="button2">Constants &amp; Global variables</div></a>
+    <a href='#Methods'><div class="button2">Subprograms &amp; Entries</div></a>
+  </div><!-- navigation -->
+  </div>
+</div> <!-- leftSide -->
+
+<div class='default' id='rightSide'>
+ <div id='rightSideInside'>
+ <div id='Index'>
+  <h2>Index</h2>
+  <script type="text/javascript">
+    var names = new Array (
+new Array ('Calendar', 'zip_streams.ads:144:12', 'package-spec'),
+new Array ('Root_<wbr/>Zipstream_<wbr/>Type (abstract)', 'zip_streams.ads:42:9', 'class-spec'),
+new Array ('Memory_<wbr/>Zipstream', 'zip_streams.ads:111:9', 'class-spec'),
+new Array ('File_<wbr/>Zipstream', 'zip_streams.ads:125:9', 'class-spec'),
+new Array ('Time', 'zip_streams.ads:33:9', 'type-spec'),
+new Array ('Zipstream_<wbr/>Class', 'zip_streams.ads:43:9', 'type-spec'),
+new Array ('Unbounded_<wbr/>Stream', 'zip_streams.ads:112:12', 'type-spec'),
+new Array ('ZipFile_<wbr/>Stream', 'zip_streams.ads:126:12', 'type-spec'),
+new Array ('some_<wbr/>time (private)', 'zip_streams.ads:174:4', 'var-spec'),
+new Array ('Set_<wbr/>Index (abstract)', 'zip_streams.ads:46:14', 'subp-spec'),
+new Array ('Index (abstract)', 'zip_streams.ads:50:13', 'subp-spec'),
+new Array ('Size (abstract)', 'zip_streams.ads:53:13', 'subp-spec'),
+new Array ('Set_<wbr/>Name', 'zip_streams.ads:56:14', 'subp-spec'),
+new Array ('SetName', 'zip_streams.ads:58:14', 'subp-spec'),
+new Array ('Get_<wbr/>Name', 'zip_streams.ads:62:13', 'subp-spec'),
+new Array ('GetName', 'zip_streams.ads:64:13', 'subp-spec'),
+new Array ('Set_<wbr/>Unicode_<wbr/>Name_<wbr/>Flag', 'zip_streams.ads:67:14', 'subp-spec'),
+new Array ('Is_<wbr/>Unicode_<wbr/>Name', 'zip_streams.ads:69:13', 'subp-spec'),
+new Array ('Set_<wbr/>Time', 'zip_streams.ads:73:14', 'subp-spec'),
+new Array ('SetTime', 'zip_streams.ads:76:14', 'subp-spec'),
+new Array ('Set_<wbr/>Time', 'zip_streams.ads:81:14', 'subp-spec'),
+new Array ('SetTime', 'zip_streams.ads:84:14', 'subp-spec'),
+new Array ('Get_<wbr/>Time', 'zip_streams.ads:89:13', 'subp-spec'),
+new Array ('GetTime', 'zip_streams.ads:92:13', 'subp-spec'),
+new Array ('Get_<wbr/>Time', 'zip_streams.ads:97:13', 'subp-spec'),
+new Array ('GetTime', 'zip_streams.ads:100:13', 'subp-spec'),
+new Array ('End_<wbr/>Of_<wbr/>Stream (abstract)', 'zip_streams.ads:105:13', 'subp-spec'),
+new Array ('Get', 'zip_streams.ads:116:14', 'subp-spec'),
+new Array ('Set', 'zip_streams.ads:120:14', 'subp-spec'),
+new Array ('Open', 'zip_streams.ads:131:14', 'subp-spec'),
+new Array ('Create', 'zip_streams.ads:135:14', 'subp-spec'),
+new Array ('Close', 'zip_streams.ads:138:14', 'subp-spec'),
+new Array ('Read (private)', 'zip_streams.ads:190:25', 'subp-spec'),
+new Array ('Write (private)', 'zip_streams.ads:196:25', 'subp-spec'),
+new Array ('Set_<wbr/>Index (private)', 'zip_streams.ads:200:25', 'subp-spec'),
+new Array ('Index (private)', 'zip_streams.ads:203:24', 'subp-spec'),
+new Array ('Size (private)', 'zip_streams.ads:206:24', 'subp-spec'),
+new Array ('End_<wbr/>Of_<wbr/>Stream (private)', 'zip_streams.ads:209:24', 'subp-spec'),
+new Array ('Read (private)', 'zip_streams.ads:217:25', 'subp-spec'),
+new Array ('Write (private)', 'zip_streams.ads:224:25', 'subp-spec'),
+new Array ('Set_<wbr/>Index (private)', 'zip_streams.ads:229:25', 'subp-spec'),
+new Array ('Index (private)', 'zip_streams.ads:232:24', 'subp-spec'),
+new Array ('Size (private)', 'zip_streams.ads:235:24', 'subp-spec'),
+new Array ('End_<wbr/>Of_<wbr/>Stream (private)', 'zip_streams.ads:238:24', 'subp-spec'),
+      new Array ('dummy', '', ''));
+    printIndexList (names);
+  </script>
+  <noscript>
+    <ul>
+      <li class='package-spec'><a href="#zip_streams.ads:144:12">Calendar</a></li>
+      <li class='class-spec'><a href="#zip_streams.ads:42:9">Root_<wbr/>Zipstream_<wbr/>Type (abstract)</a></li>
+      <li class='class-spec'><a href="#zip_streams.ads:111:9">Memory_<wbr/>Zipstream</a></li>
+      <li class='class-spec'><a href="#zip_streams.ads:125:9">File_<wbr/>Zipstream</a></li>
+      <li class='type-spec'><a href="#zip_streams.ads:33:9">Time</a></li>
+      <li class='type-spec'><a href="#zip_streams.ads:43:9">Zipstream_<wbr/>Class</a></li>
+      <li class='type-spec'><a href="#zip_streams.ads:112:12">Unbounded_<wbr/>Stream</a></li>
+      <li class='type-spec'><a href="#zip_streams.ads:126:12">ZipFile_<wbr/>Stream</a></li>
+      <li class='var-spec'><a href="#zip_streams.ads:174:4">some_<wbr/>time (private)</a></li>
+      <li class='subp-spec'><a href="#zip_streams.ads:46:14">Set_<wbr/>Index (abstract)</a></li>
+      <li class='subp-spec'><a href="#zip_streams.ads:50:13">Index (abstract)</a></li>
+      <li class='subp-spec'><a href="#zip_streams.ads:53:13">Size (abstract)</a></li>
+      <li class='subp-spec'><a href="#zip_streams.ads:56:14">Set_<wbr/>Name</a></li>
+      <li class='subp-spec'><a href="#zip_streams.ads:58:14">SetName</a></li>
+      <li class='subp-spec'><a href="#zip_streams.ads:62:13">Get_<wbr/>Name</a></li>
+      <li class='subp-spec'><a href="#zip_streams.ads:64:13">GetName</a></li>
+      <li class='subp-spec'><a href="#zip_streams.ads:67:14">Set_<wbr/>Unicode_<wbr/>Name_<wbr/>Flag</a></li>
+      <li class='subp-spec'><a href="#zip_streams.ads:69:13">Is_<wbr/>Unicode_<wbr/>Name</a></li>
+      <li class='subp-spec'><a href="#zip_streams.ads:73:14">Set_<wbr/>Time</a></li>
+      <li class='subp-spec'><a href="#zip_streams.ads:76:14">SetTime</a></li>
+      <li class='subp-spec'><a href="#zip_streams.ads:81:14">Set_<wbr/>Time</a></li>
+      <li class='subp-spec'><a href="#zip_streams.ads:84:14">SetTime</a></li>
+      <li class='subp-spec'><a href="#zip_streams.ads:89:13">Get_<wbr/>Time</a></li>
+      <li class='subp-spec'><a href="#zip_streams.ads:92:13">GetTime</a></li>
+      <li class='subp-spec'><a href="#zip_streams.ads:97:13">Get_<wbr/>Time</a></li>
+      <li class='subp-spec'><a href="#zip_streams.ads:100:13">GetTime</a></li>
+      <li class='subp-spec'><a href="#zip_streams.ads:105:13">End_<wbr/>Of_<wbr/>Stream (abstract)</a></li>
+      <li class='subp-spec'><a href="#zip_streams.ads:116:14">Get</a></li>
+      <li class='subp-spec'><a href="#zip_streams.ads:120:14">Set</a></li>
+      <li class='subp-spec'><a href="#zip_streams.ads:131:14">Open</a></li>
+      <li class='subp-spec'><a href="#zip_streams.ads:135:14">Create</a></li>
+      <li class='subp-spec'><a href="#zip_streams.ads:138:14">Close</a></li>
+      <li class='subp-spec'><a href="#zip_streams.ads:190:25">Read (private)</a></li>
+      <li class='subp-spec'><a href="#zip_streams.ads:196:25">Write (private)</a></li>
+      <li class='subp-spec'><a href="#zip_streams.ads:200:25">Set_<wbr/>Index (private)</a></li>
+      <li class='subp-spec'><a href="#zip_streams.ads:203:24">Index (private)</a></li>
+      <li class='subp-spec'><a href="#zip_streams.ads:206:24">Size (private)</a></li>
+      <li class='subp-spec'><a href="#zip_streams.ads:209:24">End_<wbr/>Of_<wbr/>Stream (private)</a></li>
+      <li class='subp-spec'><a href="#zip_streams.ads:217:25">Read (private)</a></li>
+      <li class='subp-spec'><a href="#zip_streams.ads:224:25">Write (private)</a></li>
+      <li class='subp-spec'><a href="#zip_streams.ads:229:25">Set_<wbr/>Index (private)</a></li>
+      <li class='subp-spec'><a href="#zip_streams.ads:232:24">Index (private)</a></li>
+      <li class='subp-spec'><a href="#zip_streams.ads:235:24">Size (private)</a></li>
+      <li class='subp-spec'><a href="#zip_streams.ads:238:24">End_<wbr/>Of_<wbr/>Stream (private)</a></li>
+    </ul>
+  </noscript>
+ </div>
+ </div>
+</div>
+
+<div class='default' id='documentation'>
+  <div class='title'>
+    Package:
+<span class="droplink"><i>Zip_Streams</i><ul>
+  <li><a href="src_zip_streams.ads.html">Goto spec source</a></li>
+  <li><a href="src_zip_streams.adb.html">Goto body source</a></li>
+</ul></span>
+  </div>
+  <div class='subprograms'>
+    <h1><a name='Description' id='Description'></a>Description</h1>
+    <div class="class">
+    <div class='details'><pre><span class="keyword">package</span> <span class="name_emphasis">Zip_Streams</span> <span class="keyword">is</span></pre></div>
+    <div class='comment'>Contributed by ITEC - NXP Semiconductors
+June 2008
+
+The <a href="zip_streams.adb.html#zip_streams.adb:10:14" title="Zip_Streams">Zip_Streams</a> package defines an abstract stream
+type, <a href="zip_streams.ads.html#zip_streams.ads:42:9" title="Root_Zipstream_Type">Root_Zipstream_Type</a>, with name, time and an index for random access.
+In addition, this package provides two ready - to - use derivations:
+
+ - <a href="zip_streams.ads.html#zip_streams.ads:111:9" title="Memory_Zipstream">Memory_Zipstream</a>, for using in - memory streaming
+
+ - <a href="zip_streams.ads.html#zip_streams.ads:125:9" title="File_Zipstream">File_Zipstream</a>, for accessing files
+
+Change <a href="gl-errors.adb.html#gl-errors.adb:26:14" title="log">log</a>:
+==========
+
+20 - Jul - 2011 : GdM/JH : - Underscore in <a href="zip_streams.adb.html#zip_streams.adb:18:13" title="Get_Name">Get_Name</a>, <a href="gl-textures.adb.html#gl-textures.adb:124:14" title="Set_Name">Set_Name</a>, <a href="zip_streams.adb.html#zip_streams.adb:26:13" title="Get_Time">Get_Time</a>, <a href="zip_streams.adb.html#zip_streams.adb:20:14" title="Set_Time">Set_Time</a>
+                    - The 4 methods above are not anymore abstract
+                    - <a href="glut-windows.adb.html#glut-windows.adb:56:13" title="Name">Name</a> and Modification_Time fields moved to <a href="zip_streams.ads.html#zip_streams.ads:42:9" title="Root_Zipstream_Type">Root_Zipstream_Type</a>
+                    - <a href="zip_streams.ads.html#zip_streams.ads:112:12" title="Unbounded_Stream">Unbounded_Stream</a> becomes <a href="zip_streams.ads.html#zip_streams.ads:111:9" title="Memory_Zipstream">Memory_Zipstream</a>
+                    - <a href="zip_streams.ads.html#zip_streams.ads:126:12" title="ZipFile_Stream">ZipFile_Stream</a> becomes <a href="zip_streams.ads.html#zip_streams.ads:125:9" title="File_Zipstream">File_Zipstream</a>
+17 - Jul - 2011 : JH  : Added <a href="zip_streams.adb.html#zip_streams.adb:37:14" title="Set_Unicode_Name_Flag">Set_Unicode_Name_Flag</a>, <a href="zip_streams.adb.html#zip_streams.adb:44:13" title="Is_Unicode_Name">Is_Unicode_Name</a>
+25 - Nov - 2009 : GdM : Added an own time type - &gt; it is possible to bypass Ada.Calendar
+18 - Jan - 2009 : GdM : Fixed <a href="zip_streams.ads.html#zip_streams.ads:190:25" title="Zip_Streams.Read">Zip_Streams.Read</a> which did read
+                   only Item&apos;s first element
+</div>
+    </div>
+  </div>
+
+  <div class='subprograms'>
+    <h1><a name='Packages' id='Packages'></a>Packages</h1>
+    <div class="class">
+      <h3>
+        <a name='zip_streams.ads:144:12' id='zip_streams.ads:144:12'></a>
+        Calendar
+      </h3>
+        <div class='details'><a href="zip_streams.ads-2.html#zip_streams.ads:144:12" title="defined at zip_streams.ads:144:12">Full description</a></div>
+    </div>
+  </div>
+
+  <div class='subprograms'>
+    <h1><a name='Classes' id='Classes'></a>Classes</h1>
+    <div class="class">
+      <h3><a name='zip_streams.ads:42:9' id='zip_streams.ads:42:9'></a>
+<span class="droplink">Root_Zipstream_Type (abstract)<ul>
+  <li><a href="src_zip_streams.ads.html#l42">Goto declaration in source</a></li>
+  <li><a href="src_zip_streams.ads.html#l176">Goto full declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Root_Zipstream_Type</span> <span class="keyword">is</span> <span class="keyword">abstract</span> <span class="keyword">new</span> Ada.Streams.Root_Stream_Type <span class="keyword">with</span> <span class="keyword">private</span>;</pre></div>
+      <div class='profile'>
+        <div>
+          <h4>Ancestors:</h4>
+            <div>Ada.Streams.Root_Stream_Type</div>
+        </div>
+        <div>
+          <h4>Immediate Children:</h4>
+            <div><a href="zip_streams.ads.html#zip_streams.ads:125:9" title="defined at zip_streams.ads:125:9">Zip_Streams.File_Zipstream</a></div>
+            <div><a href="zip_streams.ads.html#zip_streams.ads:111:9" title="defined at zip_streams.ads:111:9">Zip_Streams.Memory_Zipstream</a></div>
+        </div>
+        <div>
+          <h4>Primitive operations:</h4>
+              <div><i>Ada.Streams.Read (Inherited)</i></div>
+              <div><i>Ada.Streams.Write (Inherited)</i></div>
+              <div><span class="droplink">End_Of_Stream<ul><li><a href="zip_streams.ads.html#zip_streams.ads:105:13" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l105" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">Get_Name<ul><li><a href="zip_streams.ads.html#zip_streams.ads:62:13" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l62" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">Get_Time<ul><li><a href="zip_streams.ads.html#zip_streams.ads:89:13" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l89" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">Index<ul><li><a href="zip_streams.ads.html#zip_streams.ads:50:13" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l50" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">Is_Unicode_Name<ul><li><a href="zip_streams.ads.html#zip_streams.ads:69:13" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l69" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">Set_Index<ul><li><a href="zip_streams.ads.html#zip_streams.ads:46:14" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l46" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">Set_Name<ul><li><a href="zip_streams.ads.html#zip_streams.ads:56:14" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l56" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">Set_Time<ul><li><a href="zip_streams.ads.html#zip_streams.ads:73:14" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l73" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">Set_Unicode_Name_Flag<ul><li><a href="zip_streams.ads.html#zip_streams.ads:67:14" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l67" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">Size<ul><li><a href="zip_streams.ads.html#zip_streams.ads:53:13" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l53" title="To spec">To spec</a></li></ul></span></div>
+        </div>
+      </div>
+      <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip_streams.ads.html#l42" title="zip_streams.ads:42:9">zip_streams.ads:42:9</a> (declaration)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l12" title="zip_streams.adb:12:35">zip_streams.adb:12:35</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l18" title="zip_streams.adb:18:34">zip_streams.adb:18:34</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l20" title="zip_streams.adb:20:35">zip_streams.adb:20:35</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l26" title="zip_streams.adb:26:34">zip_streams.adb:26:34</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l37" title="zip_streams.adb:37:52">zip_streams.adb:37:52</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l44" title="zip_streams.adb:44:41">zip_streams.adb:44:41</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l43" title="zip_streams.ads:43:39">zip_streams.ads:43:39</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l46" title="zip_streams.ads:46:37">zip_streams.ads:46:37</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l50" title="zip_streams.ads:50:32">zip_streams.ads:50:32</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l53" title="zip_streams.ads:53:31">zip_streams.ads:53:31</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l56" title="zip_streams.ads:56:35">zip_streams.ads:56:35</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l58" title="zip_streams.ads:58:34">zip_streams.ads:58:34</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l62" title="zip_streams.ads:62:34">zip_streams.ads:62:34</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l64" title="zip_streams.ads:64:33">zip_streams.ads:64:33</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l67" title="zip_streams.ads:67:53">zip_streams.ads:67:53</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l69" title="zip_streams.ads:69:42">zip_streams.ads:69:42</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l73" title="zip_streams.ads:73:36">zip_streams.ads:73:36</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l76" title="zip_streams.ads:76:35">zip_streams.ads:76:35</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l89" title="zip_streams.ads:89:35">zip_streams.ads:89:35</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l92" title="zip_streams.ads:92:34">zip_streams.ads:92:34</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l105" title="zip_streams.ads:105:40">zip_streams.ads:105:40</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l111" title="zip_streams.ads:111:33">zip_streams.ads:111:33</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l125" title="zip_streams.ads:125:31">zip_streams.ads:125:31</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l176" title="zip_streams.ads:176:9">zip_streams.ads:176:9</a> (full declaration)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l184" title="zip_streams.ads:184:33">zip_streams.ads:184:33</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l212" title="zip_streams.ads:212:31">zip_streams.ads:212:31</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='zip_streams.ads:111:9' id='zip_streams.ads:111:9'></a>
+<span class="droplink">Memory_Zipstream<ul>
+  <li><a href="src_zip_streams.ads.html#l111">Goto declaration in source</a></li>
+  <li><a href="src_zip_streams.ads.html#l184">Goto full declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Memory_Zipstream</span> <span class="keyword">is</span> <span class="keyword">new</span> <a href="zip_streams.ads.html#zip_streams.ads:42:9" title="defined at zip_streams.ads:42:9">Root_Zipstream_Type</a> <span class="keyword">with</span> <span class="keyword">private</span>;</pre></div>
+      <div class='profile'>
+        <div>
+          <h4>Ancestors:</h4>
+            <div><a href="zip_streams.ads.html#zip_streams.ads:42:9" title="defined at zip_streams.ads:42:9">Zip_Streams.Root_Zipstream_Type</a></div>
+            <div>Ada.Streams.Root_Stream_Type</div>
+        </div>
+        <div>
+          <h4>Immediate Children:</h4>
+            <div><a href="zip_streams.ads.html#zip_streams.ads:112:12" title="defined at zip_streams.ads:112:12">Zip_Streams.Unbounded_Stream</a></div>
+        </div>
+        <div>
+          <h4>Primitive operations:</h4>
+              <div><span class="droplink">End_Of_Stream<ul><li><a href="zip_streams.ads.html#zip_streams.ads:209:24" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l209" title="To spec">To spec</a></li></ul></span> <i>(overriding <a href="zip_streams.ads.html#zip_streams.ads:105:13" title="defined at zip_streams.ads:105:13">End_Of_Stream</a>)</i></div>
+              <div><span class="droplink">Get<ul><li><a href="zip_streams.ads.html#zip_streams.ads:116:14" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l116" title="To spec">To spec</a></li></ul></span></div>
+              <div><i><span class="droplink">Get_Name<ul><li><a href="zip_streams.ads.html#zip_streams.ads:62:13" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l62" title="To spec">To spec</a></li></ul></span> (Inherited)</i></div>
+              <div><i><span class="droplink">Get_Time<ul><li><a href="zip_streams.ads.html#zip_streams.ads:89:13" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l89" title="To spec">To spec</a></li></ul></span> (Inherited)</i></div>
+              <div><span class="droplink">Index<ul><li><a href="zip_streams.ads.html#zip_streams.ads:203:24" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l203" title="To spec">To spec</a></li></ul></span> <i>(overriding <a href="zip_streams.ads.html#zip_streams.ads:50:13" title="defined at zip_streams.ads:50:13">Index</a>)</i></div>
+              <div><i><span class="droplink">Is_Unicode_Name<ul><li><a href="zip_streams.ads.html#zip_streams.ads:69:13" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l69" title="To spec">To spec</a></li></ul></span> (Inherited)</i></div>
+              <div><span class="droplink">Read<ul><li><a href="zip_streams.ads.html#zip_streams.ads:190:25" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l190" title="To spec">To spec</a></li></ul></span> <i>(overriding Ada.Streams.Read)</i></div>
+              <div><span class="droplink">Set<ul><li><a href="zip_streams.ads.html#zip_streams.ads:120:14" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l120" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">Set_Index<ul><li><a href="zip_streams.ads.html#zip_streams.ads:200:25" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l200" title="To spec">To spec</a></li></ul></span> <i>(overriding <a href="zip_streams.ads.html#zip_streams.ads:46:14" title="defined at zip_streams.ads:46:14">Set_Index</a>)</i></div>
+              <div><i><span class="droplink">Set_Name<ul><li><a href="zip_streams.ads.html#zip_streams.ads:56:14" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l56" title="To spec">To spec</a></li></ul></span> (Inherited)</i></div>
+              <div><i><span class="droplink">Set_Time<ul><li><a href="zip_streams.ads.html#zip_streams.ads:73:14" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l73" title="To spec">To spec</a></li></ul></span> (Inherited)</i></div>
+              <div><i><span class="droplink">Set_Unicode_Name_Flag<ul><li><a href="zip_streams.ads.html#zip_streams.ads:67:14" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l67" title="To spec">To spec</a></li></ul></span> (Inherited)</i></div>
+              <div><span class="droplink">Size<ul><li><a href="zip_streams.ads.html#zip_streams.ads:206:24" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l206" title="To spec">To spec</a></li></ul></span> <i>(overriding <a href="zip_streams.ads.html#zip_streams.ads:53:13" title="defined at zip_streams.ads:53:13">Size</a>)</i></div>
+              <div><span class="droplink">Write<ul><li><a href="zip_streams.ads.html#zip_streams.ads:196:25" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l196" title="To spec">To spec</a></li></ul></span> <i>(overriding Ada.Streams.Write)</i></div>
+        </div>
+      </div>
+      <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip_streams.ads.html#l111" title="zip_streams.ads:111:9">zip_streams.ads:111:9</a> (declaration)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l50" title="zip_streams.adb:50:26">zip_streams.adb:50:26</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l56" title="zip_streams.adb:56:33">zip_streams.adb:56:33</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l64" title="zip_streams.adb:64:51">zip_streams.adb:64:51</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l91" title="zip_streams.adb:91:52">zip_streams.adb:91:52</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l127" title="zip_streams.adb:127:48">zip_streams.adb:127:48</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l144" title="zip_streams.adb:144:41">zip_streams.adb:144:41</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l146" title="zip_streams.adb:146:42">zip_streams.adb:146:42</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l148" title="zip_streams.adb:148:50">zip_streams.adb:148:50</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l112" title="zip_streams.ads:112:32">zip_streams.ads:112:32</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l116" title="zip_streams.ads:116:26">zip_streams.ads:116:26</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l120" title="zip_streams.ads:120:33">zip_streams.ads:120:33</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l184" title="zip_streams.ads:184:9">zip_streams.ads:184:9</a> (full declaration)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l190" title="zip_streams.ads:190:51">zip_streams.ads:190:51</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l196" title="zip_streams.ads:196:52">zip_streams.ads:196:52</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l200" title="zip_streams.ads:200:48">zip_streams.ads:200:48</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l203" title="zip_streams.ads:203:43">zip_streams.ads:203:43</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l206" title="zip_streams.ads:206:42">zip_streams.ads:206:42</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l209" title="zip_streams.ads:209:51">zip_streams.ads:209:51</a> (reference)</i></div>
+      </div>
+      <div class='comment'>-------------------------------------------------------------------
+<a href="zip_streams.ads.html#zip_streams.ads:112:12" title="Unbounded_Stream">Unbounded_Stream</a> : stream based on an in - memory Unbounded_String --
+-------------------------------------------------------------------
+</div>
+    </div>
+    <div class="class">
+      <h3><a name='zip_streams.ads:125:9' id='zip_streams.ads:125:9'></a>
+<span class="droplink">File_Zipstream<ul>
+  <li><a href="src_zip_streams.ads.html#l125">Goto declaration in source</a></li>
+  <li><a href="src_zip_streams.ads.html#l212">Goto full declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">File_Zipstream</span> <span class="keyword">is</span> <span class="keyword">new</span> <a href="zip_streams.ads.html#zip_streams.ads:42:9" title="defined at zip_streams.ads:42:9">Root_Zipstream_Type</a> <span class="keyword">with</span> <span class="keyword">private</span>;</pre></div>
+      <div class='profile'>
+        <div>
+          <h4>Ancestors:</h4>
+            <div><a href="zip_streams.ads.html#zip_streams.ads:42:9" title="defined at zip_streams.ads:42:9">Zip_Streams.Root_Zipstream_Type</a></div>
+            <div>Ada.Streams.Root_Stream_Type</div>
+        </div>
+        <div>
+          <h4>Immediate Children:</h4>
+            <div><a href="zip_streams.ads.html#zip_streams.ads:126:12" title="defined at zip_streams.ads:126:12">Zip_Streams.ZipFile_Stream</a></div>
+        </div>
+        <div>
+          <h4>Primitive operations:</h4>
+              <div><span class="droplink">Close<ul><li><a href="zip_streams.ads.html#zip_streams.ads:138:14" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l138" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">Create<ul><li><a href="zip_streams.ads.html#zip_streams.ads:135:14" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l135" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">End_Of_Stream<ul><li><a href="zip_streams.ads.html#zip_streams.ads:238:24" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l238" title="To spec">To spec</a></li></ul></span> <i>(overriding <a href="zip_streams.ads.html#zip_streams.ads:105:13" title="defined at zip_streams.ads:105:13">End_Of_Stream</a>)</i></div>
+              <div><i><span class="droplink">Get_Name<ul><li><a href="zip_streams.ads.html#zip_streams.ads:62:13" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l62" title="To spec">To spec</a></li></ul></span> (Inherited)</i></div>
+              <div><i><span class="droplink">Get_Time<ul><li><a href="zip_streams.ads.html#zip_streams.ads:89:13" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l89" title="To spec">To spec</a></li></ul></span> (Inherited)</i></div>
+              <div><span class="droplink">Index<ul><li><a href="zip_streams.ads.html#zip_streams.ads:232:24" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l232" title="To spec">To spec</a></li></ul></span> <i>(overriding <a href="zip_streams.ads.html#zip_streams.ads:50:13" title="defined at zip_streams.ads:50:13">Index</a>)</i></div>
+              <div><i><span class="droplink">Is_Unicode_Name<ul><li><a href="zip_streams.ads.html#zip_streams.ads:69:13" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l69" title="To spec">To spec</a></li></ul></span> (Inherited)</i></div>
+              <div><span class="droplink">Open<ul><li><a href="zip_streams.ads.html#zip_streams.ads:131:14" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l131" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">Read<ul><li><a href="zip_streams.ads.html#zip_streams.ads:217:25" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l217" title="To spec">To spec</a></li></ul></span> <i>(overriding Ada.Streams.Read)</i></div>
+              <div><span class="droplink">Set_Index<ul><li><a href="zip_streams.ads.html#zip_streams.ads:229:25" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l229" title="To spec">To spec</a></li></ul></span> <i>(overriding <a href="zip_streams.ads.html#zip_streams.ads:46:14" title="defined at zip_streams.ads:46:14">Set_Index</a>)</i></div>
+              <div><i><span class="droplink">Set_Name<ul><li><a href="zip_streams.ads.html#zip_streams.ads:56:14" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l56" title="To spec">To spec</a></li></ul></span> (Inherited)</i></div>
+              <div><i><span class="droplink">Set_Time<ul><li><a href="zip_streams.ads.html#zip_streams.ads:73:14" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l73" title="To spec">To spec</a></li></ul></span> (Inherited)</i></div>
+              <div><i><span class="droplink">Set_Unicode_Name_Flag<ul><li><a href="zip_streams.ads.html#zip_streams.ads:67:14" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l67" title="To spec">To spec</a></li></ul></span> (Inherited)</i></div>
+              <div><span class="droplink">Size<ul><li><a href="zip_streams.ads.html#zip_streams.ads:235:24" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l235" title="To spec">To spec</a></li></ul></span> <i>(overriding <a href="zip_streams.ads.html#zip_streams.ads:53:13" title="defined at zip_streams.ads:53:13">Size</a>)</i></div>
+              <div><span class="droplink">Write<ul><li><a href="zip_streams.ads.html#zip_streams.ads:224:25" title="To API doc">To API doc</a></li><li><a href="src_zip_streams.ads.html#l224" title="To spec">To spec</a></li></ul></span> <i>(overriding Ada.Streams.Write)</i></div>
+        </div>
+      </div>
+      <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip_streams.ads.html#l125" title="zip_streams.ads:125:9">zip_streams.ads:125:9</a> (declaration)</i></div>
+            <div><i><a href="src_unzip-streams.adb.html#l190" title="unzip-streams.adb:190:31">unzip-streams.adb:190:31</a> (reference)</i></div>
+            <div><i><a href="src_unzip.adb.html#l456" title="unzip.adb:456:31">unzip.adb:456:31</a> (reference)</i></div>
+            <div><i><a href="src_unzip.adb.html#l505" title="unzip.adb:505:31">unzip.adb:505:31</a> (reference)</i></div>
+            <div><i><a href="src_unzip.adb.html#l551" title="unzip.adb:551:31">unzip.adb:551:31</a> (reference)</i></div>
+            <div><i><a href="src_unzip.adb.html#l639" title="unzip.adb:639:31">unzip.adb:639:31</a> (reference)</i></div>
+            <div><i><a href="src_unzip.adb.html#l694" title="unzip.adb:694:31">unzip.adb:694:31</a> (reference)</i></div>
+            <div><i><a href="src_zip.adb.html#l270" title="zip.adb:270:29">zip.adb:270:29</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l162" title="zip_streams.adb:162:34">zip_streams.adb:162:34</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l169" title="zip_streams.adb:169:36">zip_streams.adb:169:36</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l176" title="zip_streams.adb:176:35">zip_streams.adb:176:35</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l182" title="zip_streams.adb:182:51">zip_streams.adb:182:51</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l190" title="zip_streams.adb:190:52">zip_streams.adb:190:52</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l197" title="zip_streams.adb:197:47">zip_streams.adb:197:47</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l203" title="zip_streams.adb:203:41">zip_streams.adb:203:41</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l205" title="zip_streams.adb:205:42">zip_streams.adb:205:42</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l207" title="zip_streams.adb:207:51">zip_streams.adb:207:51</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l126" title="zip_streams.ads:126:30">zip_streams.ads:126:30</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l131" title="zip_streams.ads:131:34">zip_streams.ads:131:34</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l135" title="zip_streams.ads:135:36">zip_streams.ads:135:36</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l138" title="zip_streams.ads:138:35">zip_streams.ads:138:35</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l212" title="zip_streams.ads:212:9">zip_streams.ads:212:9</a> (full declaration)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l218" title="zip_streams.ads:218:28">zip_streams.ads:218:28</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l225" title="zip_streams.ads:225:28">zip_streams.ads:225:28</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l229" title="zip_streams.ads:229:48">zip_streams.ads:229:48</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l232" title="zip_streams.ads:232:43">zip_streams.ads:232:43</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l235" title="zip_streams.ads:235:42">zip_streams.ads:235:42</a> (reference)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l238" title="zip_streams.ads:238:51">zip_streams.ads:238:51</a> (reference)</i></div>
+      </div>
+      <div class='comment'>------------------------------------------
+<a href="zip_streams.ads.html#zip_streams.ads:125:9" title="File_Zipstream">File_Zipstream</a> : stream based on a file --
+------------------------------------------
+</div>
+    </div>
+  </div>
+
+
+  <div class='subprograms'>
+    <h1><a name='Types' id='Types'></a>Types</h1>
+    <div class="class">
+      <h3>
+        <a name='zip_streams.ads:33:9' id='zip_streams.ads:33:9'></a>
+<span class="droplink">Time<ul>
+  <li><a href="src_zip_streams.ads.html#l33">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Time</span> <span class="keyword">is</span> <span class="keyword">private</span>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_zip_streams.ads.html#l33" title="zip_streams.ads:33:9">zip_streams.ads:33:9</a> (declaration)</i></div>
+          <div><i><a href="src_zip.ads.html#l128" title="zip.ads:128:32">zip.ads:128:32</a> (reference)</i></div>
+          <div><i><a href="src_zip_streams.adb.html#l20" title="zip_streams.adb:20:76">zip_streams.adb:20:76</a> (reference)</i></div>
+          <div><i><a href="src_zip_streams.adb.html#l26" title="zip_streams.adb:26:62">zip_streams.adb:26:62</a> (reference)</i></div>
+          <div><i><a href="src_zip_streams.adb.html#l215" title="zip_streams.adb:215:40">zip_streams.adb:215:40</a> (reference)</i></div>
+          <div><i><a href="src_zip_streams.adb.html#l240" title="zip_streams.adb:240:69">zip_streams.adb:240:69</a> (reference)</i></div>
+          <div><i><a href="src_zip_streams.adb.html#l263" title="zip_streams.adb:263:17">zip_streams.adb:263:17</a> (reference)</i></div>
+          <div><i><a href="src_zip_streams.adb.html#l266" title="zip_streams.adb:266:58">zip_streams.adb:266:58</a> (reference)</i></div>
+          <div><i><a href="src_zip_streams.adb.html#l278" title="zip_streams.adb:278:32">zip_streams.adb:278:32</a> (reference)</i></div>
+          <div><i><a href="src_zip_streams.adb.html#l290" title="zip_streams.adb:290:49">zip_streams.adb:290:49</a> (reference)</i></div>
+          <div><i><a href="src_zip_streams.adb.html#l290" title="zip_streams.adb:290:58">zip_streams.adb:290:58</a> (reference)</i></div>
+          <div><i><a href="src_zip_streams.adb.html#l292" title="zip_streams.adb:292:32">zip_streams.adb:292:32</a> (reference)</i></div>
+          <div><i><a href="src_zip_streams.ads.html#l74" title="zip_streams.ads:74:44">zip_streams.ads:74:44</a> (reference)</i></div>
+          <div><i><a href="src_zip_streams.ads.html#l77" title="zip_streams.ads:77:44">zip_streams.ads:77:44</a> (reference)</i></div>
+          <div><i><a href="src_zip_streams.ads.html#l90" title="zip_streams.ads:90:29">zip_streams.ads:90:29</a> (reference)</i></div>
+          <div><i><a href="src_zip_streams.ads.html#l93" title="zip_streams.ads:93:28">zip_streams.ads:93:28</a> (reference)</i></div>
+          <div><i><a href="src_zip_streams.ads.html#l146" title="zip_streams.ads:146:58">zip_streams.ads:146:58</a> (reference)</i></div>
+          <div><i><a href="src_zip_streams.ads.html#l147" title="zip_streams.ads:147:32">zip_streams.ads:147:32</a> (reference)</i></div>
+          <div><i><a href="src_zip_streams.ads.html#l150" title="zip_streams.ads:150:49">zip_streams.ads:150:49</a> (reference)</i></div>
+          <div><i><a href="src_zip_streams.ads.html#l151" title="zip_streams.ads:151:32">zip_streams.ads:151:32</a> (reference)</i></div>
+          <div><i><a href="src_zip_streams.ads.html#l155" title="zip_streams.ads:155:40">zip_streams.ads:155:40</a> (reference)</i></div>
+          <div><i><a href="src_zip_streams.ads.html#l164" title="zip_streams.ads:164:69">zip_streams.ads:164:69</a> (reference)</i></div>
+          <div><i><a href="src_zip_streams.ads.html#l170" title="zip_streams.ads:170:9">zip_streams.ads:170:9</a> (full declaration)</i></div>
+          <div><i><a href="src_zip_streams.ads.html#l174" title="zip_streams.ads:174:25">zip_streams.ads:174:25</a> (reference)</i></div>
+          <div><i><a href="src_zip_streams.ads.html#l179" title="zip_streams.ads:179:31">zip_streams.ads:179:31</a> (reference)</i></div>
+      </div>
+      <div class='comment'>^ we define an own <a href="zip_streams.ads.html#zip_streams.ads:33:9" title="Time">Time</a> (Ada.Calendar&apos;s body can be very time - consuming!)
+See subpackage <a href="zip_streams.adb-2.html#zip_streams.adb:209:17" title="Calendar">Calendar</a> below for own <a href="zip_streams.adb-2.html#zip_streams.adb:215:17" title="Split">Split</a>, <a href="zip_streams.adb-2.html#zip_streams.adb:237:16" title="Time_Of">Time_Of</a> and <a href="zip_streams.adb-2.html#zip_streams.adb:266:16" title="Convert">Convert</a> from/to
+Ada.Calendar.Time.
+</div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='zip_streams.ads:43:9' id='zip_streams.ads:43:9'></a>
+<span class="droplink">Zipstream_Class<ul>
+  <li><a href="src_zip_streams.ads.html#l43">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Zipstream_Class</span> <span class="keyword">is</span> <span class="keyword">access</span> <span class="keyword">all</span> <a href="zip_streams.ads.html#zip_streams.ads:42:9" title="defined at zip_streams.ads:42:9">Root_Zipstream_Type</a>'Class;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_zip_streams.ads.html#l43" title="zip_streams.ads:43:9">zip_streams.ads:43:9</a> (declaration)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l8" title="unzip-decompress.adb:8:66">unzip-decompress.adb:8:66</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.ads.html#l21" title="unzip-decompress.ads:21:40">unzip-decompress.ads:21:40</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.adb.html#l25" title="unzip-streams.adb:25:63">unzip-streams.adb:25:63</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.adb.html#l42" title="unzip-streams.adb:42:36">unzip-streams.adb:42:36</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.adb.html#l126" title="unzip-streams.adb:126:58">unzip-streams.adb:126:58</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.adb.html#l191" title="unzip-streams.adb:191:23">unzip-streams.adb:191:23</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.adb.html#l255" title="unzip-streams.adb:255:57">unzip-streams.adb:255:57</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.ads.html#l39" title="unzip-streams.ads:39:44">unzip-streams.ads:39:44</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l16" title="unzip.adb:16:65">unzip.adb:16:65</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l194" title="unzip.adb:194:36">unzip.adb:194:36</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l458" title="unzip.adb:458:32">unzip.adb:458:32</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l507" title="unzip.adb:507:32">unzip.adb:507:32</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l553" title="unzip.adb:553:32">unzip.adb:553:32</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l640" title="unzip.adb:640:23">unzip.adb:640:23</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l695" title="unzip.adb:695:23">unzip.adb:695:23</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.adb.html#l69" title="zip-headers.adb:69:44">zip-headers.adb:69:44</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.adb.html#l101" title="zip-headers.adb:101:31">zip-headers.adb:101:31</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.adb.html#l132" title="zip-headers.adb:132:43">zip-headers.adb:132:43</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.adb.html#l158" title="zip-headers.adb:158:30">zip-headers.adb:158:30</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.adb.html#l203" title="zip-headers.adb:203:44">zip-headers.adb:203:44</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.adb.html#l222" title="zip-headers.adb:222:34">zip-headers.adb:222:34</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.adb.html#l284" title="zip-headers.adb:284:31">zip-headers.adb:284:31</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.adb.html#l321" title="zip-headers.adb:321:50">zip-headers.adb:321:50</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.adb.html#l331" title="zip-headers.adb:331:37">zip-headers.adb:331:37</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.ads.html#l44" title="zip-headers.ads:44:50">zip-headers.ads:44:50</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.ads.html#l49" title="zip-headers.ads:49:36">zip-headers.ads:49:36</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.ads.html#l71" title="zip-headers.ads:71:42">zip-headers.ads:71:42</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.ads.html#l76" title="zip-headers.ads:76:29">zip-headers.ads:76:29</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.ads.html#l106" title="zip-headers.ads:106:42">zip-headers.ads:106:42</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.ads.html#l111" title="zip-headers.ads:111:29">zip-headers.ads:111:29</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.ads.html#l145" title="zip-headers.ads:145:43">zip-headers.ads:145:43</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.ads.html#l152" title="zip-headers.ads:152:33">zip-headers.ads:152:33</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.ads.html#l155" title="zip-headers.ads:155:31">zip-headers.ads:155:31</a> (reference)</i></div>
+          <div><i><a href="src_zip.adb.html#l147" title="zip.adb:147:54">zip.adb:147:54</a> (reference)</i></div>
+          <div><i><a href="src_zip.adb.html#l271" title="zip.adb:271:30">zip.adb:271:30</a> (reference)</i></div>
+          <div><i><a href="src_zip.adb.html#l314" title="zip.adb:314:61">zip.adb:314:61</a> (reference)</i></div>
+          <div><i><a href="src_zip.adb.html#l435" title="zip.adb:435:67">zip.adb:435:67</a> (reference)</i></div>
+          <div><i><a href="src_zip.adb.html#l454" title="zip.adb:454:48">zip.adb:454:48</a> (reference)</i></div>
+          <div><i><a href="src_zip.adb.html#l478" title="zip.adb:478:61">zip.adb:478:61</a> (reference)</i></div>
+          <div><i><a href="src_zip.adb.html#l496" title="zip.adb:496:36">zip.adb:496:36</a> (reference)</i></div>
+          <div><i><a href="src_zip.adb.html#l615" title="zip.adb:615:57">zip.adb:615:57</a> (reference)</i></div>
+          <div><i><a href="src_zip.adb.html#l641" title="zip.adb:641:51">zip.adb:641:51</a> (reference)</i></div>
+          <div><i><a href="src_zip.ads.html#l69" title="zip.ads:69:54">zip.ads:69:54</a> (reference)</i></div>
+          <div><i><a href="src_zip.ads.html#l88" title="zip.ads:88:60">zip.ads:88:60</a> (reference)</i></div>
+          <div><i><a href="src_zip.ads.html#l169" title="zip.ads:169:67">zip.ads:169:67</a> (reference)</i></div>
+          <div><i><a href="src_zip.ads.html#l175" title="zip.ads:175:61">zip.ads:175:61</a> (reference)</i></div>
+          <div><i><a href="src_zip.ads.html#l229" title="zip.ads:229:57">zip.ads:229:57</a> (reference)</i></div>
+          <div><i><a href="src_zip.ads.html#l238" title="zip.ads:238:51">zip.ads:238:51</a> (reference)</i></div>
+          <div><i><a href="src_zip.ads.html#l311" title="zip.ads:311:36">zip.ads:311:36</a> (reference)</i></div>
+          <div><i><a href="src_zip_streams.adb.html#l28" title="zip_streams.adb:28:44">zip_streams.adb:28:44</a> (reference)</i></div>
+          <div><i><a href="src_zip_streams.adb.html#l35" title="zip_streams.adb:35:27">zip_streams.adb:35:27</a> (reference)</i></div>
+          <div><i><a href="src_zip_streams.ads.html#l81" title="zip_streams.ads:81:29">zip_streams.ads:81:29</a> (reference)</i></div>
+          <div><i><a href="src_zip_streams.ads.html#l84" title="zip_streams.ads:84:28">zip_streams.ads:84:28</a> (reference)</i></div>
+          <div><i><a href="src_zip_streams.ads.html#l97" title="zip_streams.ads:97:28">zip_streams.ads:97:28</a> (reference)</i></div>
+          <div><i><a href="src_zip_streams.ads.html#l100" title="zip_streams.ads:100:27">zip_streams.ads:100:27</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='zip_streams.ads:112:12' id='zip_streams.ads:112:12'></a>
+<span class="droplink">Unbounded_Stream<ul>
+  <li><a href="src_zip_streams.ads.html#l112">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">subtype</span> <span class="name_emphasis">Unbounded_Stream</span> <span class="keyword">is</span> <a href="zip_streams.ads.html#zip_streams.ads:111:9" title="defined at zip_streams.ads:111:9">Memory_Zipstream</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_zip_streams.ads.html#l112" title="zip_streams.ads:112:12">zip_streams.ads:112:12</a> (declaration)</i></div>
+          <div><i><a href="src_zip_streams.ads.html#l113" title="zip_streams.ads:113:24">zip_streams.ads:113:24</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='zip_streams.ads:126:12' id='zip_streams.ads:126:12'></a>
+<span class="droplink">ZipFile_Stream<ul>
+  <li><a href="src_zip_streams.ads.html#l126">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">subtype</span> <span class="name_emphasis">ZipFile_Stream</span> <span class="keyword">is</span> <a href="zip_streams.ads.html#zip_streams.ads:125:9" title="defined at zip_streams.ads:125:9">File_Zipstream</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_zip_streams.ads.html#l126" title="zip_streams.ads:126:12">zip_streams.ads:126:12</a> (declaration)</i></div>
+          <div><i><a href="src_zip_streams.ads.html#l127" title="zip_streams.ads:127:24">zip_streams.ads:127:24</a> (reference)</i></div>
+      </div>
+    </div>
+  </div>
+
+  <div class='subprograms'>
+    <h1><a name='Constants' id='Constants'></a>Constants &amp; Global variables</h1>
+    <div class="class">
+      <h3><a name='zip_streams.ads:174:4' id='zip_streams.ads:174:4'></a>
+<span class="droplink">some_time (private)<ul>
+  <li><a href="src_zip_streams.ads.html#l174">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="zip_streams.ads.html#zip_streams.ads:33:9" title="defined at zip_streams.ads:33:9">Time</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">some_time</span> : <span class="keyword">constant</span> <a href="zip_streams.ads.html#zip_streams.ads:33:9" title="defined at zip_streams.ads:33:9">Time</a> := 16789 * 65536;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_zip_streams.ads.html#l174" title="zip_streams.ads:174:4">zip_streams.ads:174:4</a> (declaration)</i></div>
+          <div><i><a href="src_zip_streams.ads.html#l179" title="zip_streams.ads:179:39">zip_streams.ads:179:39</a> (reference)</i></div>
+      </div>
+    </div>
+  </div>
+
+    <div class='subprograms'>
+      <h1><a name='Methods' id='Methods'></a>Subprograms &amp; Entries</h1>
+      <div class="class">
+        <h3>
+          <a name='zip_streams.ads:46:14' id='zip_streams.ads:46:14'></a>
+<span class="droplink">Set_Index (abstract)<ul>
+  <li><a href="src_zip_streams.ads.html#l46">Goto spec in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Set_Index</span> <table><tr><td>(</td><td><span class="name"><a name="zip_streams.ads:46:25"></a>S</span></td><td>: <span class="keyword">access</span> <a href="zip_streams.ads.html#zip_streams.ads:42:9" title="defined at zip_streams.ads:42:9">Root_Zipstream_Type</a>;</td></tr><tr><td></td><td><span class="name"><a name="zip_streams.ads:47:25"></a>To</span></td><td>: Positive) <span class="keyword">is</span> <span class="keyword">abstract</span>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip_streams.ads.html#l46" title="zip_streams.ads:46:14">zip_streams.ads:46:14</a> (declaration)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1973" title="unzip-decompress.adb:1973:28">unzip-decompress.adb:1973:28</a> (dispatching call)</i></div>
+            <div><i><a href="src_unzip-streams.adb.html#l40" title="unzip-streams.adb:40:22">unzip-streams.adb:40:22</a> (dispatching call)</i></div>
+            <div><i><a href="src_unzip-streams.adb.html#l84" title="unzip-streams.adb:84:22">unzip-streams.adb:84:22</a> (dispatching call)</i></div>
+            <div><i><a href="src_unzip.adb.html#l192" title="unzip.adb:192:10">unzip.adb:192:10</a> (dispatching call)</i></div>
+            <div><i><a href="src_unzip.adb.html#l298" title="unzip.adb:298:13">unzip.adb:298:13</a> (dispatching call)</i></div>
+            <div><i><a href="src_zip-headers.adb.html#l246" title="zip-headers.adb:246:22">zip-headers.adb:246:22</a> (dispatching call)</i></div>
+            <div><i><a href="src_zip.adb.html#l203" title="zip.adb:203:19">zip.adb:203:19</a> (dispatching call)</i></div>
+            <div><i><a href="src_zip.adb.html#l218" title="zip.adb:218:25">zip.adb:218:25</a> (dispatching call)</i></div>
+            <div><i><a href="src_zip.adb.html#l446" title="zip.adb:446:7">zip.adb:446:7</a> (dispatching call)</i></div>
+            <div><i><a href="src_zip.adb.html#l459" title="zip.adb:459:10">zip.adb:459:10</a> (dispatching call)</i></div>
+            <div><i><a href="src_zip.adb.html#l493" title="zip.adb:493:7">zip.adb:493:7</a> (dispatching call)</i></div>
+            <div><i><a href="src_zip.adb.html#l504" title="zip.adb:504:13">zip.adb:504:13</a> (dispatching call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="unzip-decompress.ads.html#unzip-decompress.ads:20:14" title="defined at unzip-decompress.ads:20:14">Decompress.Decompress_data</a> defined at <a href="src_unzip-decompress.ads.html#l20" title="unzip-decompress.ads:20:14">unzip-decompress.ads:20:14</a></i></div>
+            <div><i><a href="zip-headers.ads.html#zip-headers.ads:152:13" title="defined at zip-headers.ads:152:13">Headers.Load</a> defined at <a href="src_zip-headers.ads.html#l152" title="zip-headers.ads:152:13">zip-headers.ads:152:13</a></i></div>
+            <div><i><a href="unzip-streams.adb.html#unzip-streams.adb:25:14" title="defined at unzip-streams.adb:25:14">Streams.UnZipFile</a> defined at <a href="src_unzip-streams.adb.html#l25" title="unzip-streams.adb:25:14">unzip-streams.adb:25:14</a></i></div>
+            <div><i><a href="unzip-streams.adb.html#unzip-streams.adb:25:14" title="defined at unzip-streams.adb:25:14">Streams.UnZipFile</a> defined at <a href="src_unzip-streams.adb.html#l25" title="unzip-streams.adb:25:14">unzip-streams.adb:25:14</a></i></div>
+            <div><i><a href="unzip.adb.html#unzip.adb:15:14" title="defined at unzip.adb:15:14">UnZip.UnZipFile</a> defined at <a href="src_unzip.adb.html#l15" title="unzip.adb:15:14">unzip.adb:15:14</a></i></div>
+            <div><i><a href="unzip.adb.html#unzip.adb:15:14" title="defined at unzip.adb:15:14">UnZip.UnZipFile</a> defined at <a href="src_unzip.adb.html#l15" title="unzip.adb:15:14">unzip.adb:15:14</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:169:14" title="defined at zip.ads:169:14">Zip.Find_first_offset</a> defined at <a href="src_zip.ads.html#l169" title="zip.ads:169:14">zip.ads:169:14</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:169:14" title="defined at zip.ads:169:14">Zip.Find_first_offset</a> defined at <a href="src_zip.ads.html#l169" title="zip.ads:169:14">zip.ads:169:14</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:175:14" title="defined at zip.ads:175:14">Zip.Find_offset</a> defined at <a href="src_zip.ads.html#l175" title="zip.ads:175:14">zip.ads:175:14</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:175:14" title="defined at zip.ads:175:14">Zip.Find_offset</a> defined at <a href="src_zip.ads.html#l175" title="zip.ads:175:14">zip.ads:175:14</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:68:14" title="defined at zip.ads:68:14">Zip.Load</a> defined at <a href="src_zip.ads.html#l68" title="zip.ads:68:14">zip.ads:68:14</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:68:14" title="defined at zip.ads:68:14">Zip.Load</a> defined at <a href="src_zip.ads.html#l68" title="zip.ads:68:14">zip.ads:68:14</a></i></div>
+        </div>
+        <div class='comment'><a href="gl-buffer-general.adb.html#gl-buffer-general.adb:45:14" title="Set">Set</a> the index on the stream
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip_streams.ads:50:13' id='zip_streams.ads:50:13'></a>
+<span class="droplink">Index (abstract)<ul>
+  <li><a href="src_zip_streams.ads.html#l50">Goto spec in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Index</span> <table><tr><td>(</td><td><span class="name"><a name="zip_streams.ads:50:20"></a>S</span></td><td>: <span class="keyword">access</span> <a href="zip_streams.ads.html#zip_streams.ads:42:9" title="defined at zip_streams.ads:42:9">Root_Zipstream_Type</a>) <span class="keyword">return</span> Integer <span class="keyword">is</span> <span class="keyword">abstract</span>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip_streams.ads.html#l50" title="zip_streams.ads:50:13">zip_streams.ads:50:13</a> (declaration)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1957" title="unzip-decompress.adb:1957:74">unzip-decompress.adb:1957:74</a> (dispatching call)</i></div>
+            <div><i><a href="src_zip-headers.adb.html#l262" title="zip-headers.adb:262:40">zip-headers.adb:262:40</a> (dispatching call)</i></div>
+            <div><i><a href="src_zip.adb.html#l220" title="zip.adb:220:79">zip.adb:220:79</a> (dispatching call)</i></div>
+            <div><i><a href="src_zip.adb.html#l459" title="zip.adb:459:27">zip.adb:459:27</a> (dispatching call)</i></div>
+            <div><i><a href="src_zip.adb.html#l504" title="zip.adb:504:30">zip.adb:504:30</a> (dispatching call)</i></div>
+            <div><i><a href="src_zip.adb.html#l635" title="zip.adb:635:83">zip.adb:635:83</a> (dispatching call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="unzip-decompress.ads.html#unzip-decompress.ads:20:14" title="defined at unzip-decompress.ads:20:14">Decompress.Decompress_data</a> defined at <a href="src_unzip-decompress.ads.html#l20" title="unzip-decompress.ads:20:14">unzip-decompress.ads:20:14</a></i></div>
+            <div><i><a href="zip-headers.ads.html#zip-headers.ads:152:13" title="defined at zip-headers.ads:152:13">Headers.Load</a> defined at <a href="src_zip-headers.ads.html#l152" title="zip-headers.ads:152:13">zip-headers.ads:152:13</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:229:14" title="defined at zip.ads:229:14">Zip.BlockRead</a> defined at <a href="src_zip.ads.html#l229" title="zip.ads:229:14">zip.ads:229:14</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:169:14" title="defined at zip.ads:169:14">Zip.Find_first_offset</a> defined at <a href="src_zip.ads.html#l169" title="zip.ads:169:14">zip.ads:169:14</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:175:14" title="defined at zip.ads:175:14">Zip.Find_offset</a> defined at <a href="src_zip.ads.html#l175" title="zip.ads:175:14">zip.ads:175:14</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:68:14" title="defined at zip.ads:68:14">Zip.Load</a> defined at <a href="src_zip.ads.html#l68" title="zip.ads:68:14">zip.ads:68:14</a></i></div>
+        </div>
+        <div class='comment'>returns the index of the stream
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip_streams.ads:53:13' id='zip_streams.ads:53:13'></a>
+<span class="droplink">Size (abstract)<ul>
+  <li><a href="src_zip_streams.ads.html#l53">Goto spec in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Size</span> <table><tr><td>(</td><td><span class="name"><a name="zip_streams.ads:53:19"></a>S</span></td><td>: <span class="keyword">access</span> <a href="zip_streams.ads.html#zip_streams.ads:42:9" title="defined at zip_streams.ads:42:9">Root_Zipstream_Type</a>) <span class="keyword">return</span> Integer <span class="keyword">is</span> <span class="keyword">abstract</span>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip_streams.ads.html#l53" title="zip_streams.ads:53:13">zip_streams.ads:53:13</a> (declaration)</i></div>
+            <div><i><a href="src_zip-headers.adb.html#l236" title="zip-headers.adb:236:10">zip-headers.adb:236:10</a> (dispatching call)</i></div>
+            <div><i><a href="src_zip-headers.adb.html#l239" title="zip-headers.adb:239:56">zip-headers.adb:239:56</a> (dispatching call)</i></div>
+            <div><i><a href="src_zip-headers.adb.html#l245" title="zip-headers.adb:245:70">zip-headers.adb:245:70</a> (dispatching call)</i></div>
+            <div><i><a href="src_zip.adb.html#l635" title="zip.adb:635:67">zip.adb:635:67</a> (dispatching call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="zip-headers.ads.html#zip-headers.ads:152:13" title="defined at zip-headers.ads:152:13">Headers.Load</a> defined at <a href="src_zip-headers.ads.html#l152" title="zip-headers.ads:152:13">zip-headers.ads:152:13</a></i></div>
+            <div><i><a href="zip-headers.ads.html#zip-headers.ads:152:13" title="defined at zip-headers.ads:152:13">Headers.Load</a> defined at <a href="src_zip-headers.ads.html#l152" title="zip-headers.ads:152:13">zip-headers.ads:152:13</a></i></div>
+            <div><i><a href="zip-headers.ads.html#zip-headers.ads:152:13" title="defined at zip-headers.ads:152:13">Headers.Load</a> defined at <a href="src_zip-headers.ads.html#l152" title="zip-headers.ads:152:13">zip-headers.ads:152:13</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:229:14" title="defined at zip.ads:229:14">Zip.BlockRead</a> defined at <a href="src_zip.ads.html#l229" title="zip.ads:229:14">zip.ads:229:14</a></i></div>
+        </div>
+        <div class='comment'>returns the <a href="zip_streams.adb.html#zip_streams.adb:144:24" title="Size">Size</a> of the stream
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip_streams.ads:56:14' id='zip_streams.ads:56:14'></a>
+<span class="droplink">Set_Name<ul>
+  <li><a href="src_zip_streams.ads.html#l56">Goto spec in source</a></li>
+  <li><a href="src_zip_streams.adb.html#l12">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Set_Name</span> <table><tr><td>(</td><td><span class="name"><a name="zip_streams.ads:56:24"></a>S</span></td><td>: <span class="keyword">access</span> <a href="zip_streams.ads.html#zip_streams.ads:42:9" title="defined at zip_streams.ads:42:9">Root_Zipstream_Type</a>;</td></tr><tr><td></td><td><span class="name"><a name="zip_streams.ads:56:56"></a>Stream_Name</span></td><td>: String);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip_streams.ads.html#l56" title="zip_streams.ads:56:14">zip_streams.ads:56:14</a> (declaration)</i></div>
+            <div><i><a href="src_unzip-streams.adb.html#l202" title="unzip-streams.adb:202:10">unzip-streams.adb:202:10</a> (dispatching call)</i></div>
+            <div><i><a href="src_unzip.adb.html#l468" title="unzip.adb:468:7">unzip.adb:468:7</a> (dispatching call)</i></div>
+            <div><i><a href="src_unzip.adb.html#l516" title="unzip.adb:516:7">unzip.adb:516:7</a> (dispatching call)</i></div>
+            <div><i><a href="src_unzip.adb.html#l560" title="unzip.adb:560:7">unzip.adb:560:7</a> (dispatching call)</i></div>
+            <div><i><a href="src_unzip.adb.html#l645" title="unzip.adb:645:10">unzip.adb:645:10</a> (dispatching call)</i></div>
+            <div><i><a href="src_unzip.adb.html#l700" title="unzip.adb:700:10">unzip.adb:700:10</a> (dispatching call)</i></div>
+            <div><i><a href="src_zip.adb.html#l274" title="zip.adb:274:7">zip.adb:274:7</a> (dispatching call)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l12" title="zip_streams.adb:12:14">zip_streams.adb:12:14</a> (body)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l16" title="zip_streams.adb:16:8">zip_streams.adb:16:8</a> (label)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l58" title="zip_streams.ads:58:85">zip_streams.ads:58:85</a> (reference)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="unzip-streams.ads.html#unzip-streams.ads:51:14" title="defined at unzip-streams.ads:51:14">Streams.Open</a> defined at <a href="src_unzip-streams.ads.html#l51" title="unzip-streams.ads:51:14">unzip-streams.ads:51:14</a></i></div>
+            <div><i><a href="unzip.ads.html#unzip.ads:272:13" title="defined at unzip.ads:272:13">UnZip.Extract</a> defined at <a href="src_unzip.ads.html#l272" title="unzip.ads:272:13">unzip.ads:272:13</a></i></div>
+            <div><i><a href="unzip.ads.html#unzip.ads:257:13" title="defined at unzip.ads:257:13">UnZip.Extract</a> defined at <a href="src_unzip.ads.html#l257" title="unzip.ads:257:13">unzip.ads:257:13</a></i></div>
+            <div><i><a href="unzip.ads.html#unzip.ads:228:13" title="defined at unzip.ads:228:13">UnZip.Extract</a> defined at <a href="src_unzip.ads.html#l228" title="unzip.ads:228:13">unzip.ads:228:13</a></i></div>
+            <div><i><a href="unzip.ads.html#unzip.ads:214:13" title="defined at unzip.ads:214:13">UnZip.Extract</a> defined at <a href="src_unzip.ads.html#l214" title="unzip.ads:214:13">unzip.ads:214:13</a></i></div>
+            <div><i><a href="unzip.ads.html#unzip.ads:202:13" title="defined at unzip.ads:202:13">UnZip.Extract</a> defined at <a href="src_unzip.ads.html#l202" title="unzip.ads:202:13">unzip.ads:202:13</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:62:14" title="defined at zip.ads:62:14">Zip.Load</a> defined at <a href="src_zip.ads.html#l62" title="zip.ads:62:14">zip.ads:62:14</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>To_Unbounded_String defined at a-strunb.ads:94:13</i></div>
+        </div>
+        <div class='comment'>this procedure sets the name of the stream
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip_streams.ads:58:14' id='zip_streams.ads:58:14'></a>
+<span class="droplink">SetName<ul>
+  <li><a href="src_zip_streams.ads.html#l58">Goto spec in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">SetName</span> <table><tr><td>(</td><td><span class="name"><a name="zip_streams.ads:58:23"></a>S</span></td><td>: <span class="keyword">access</span> <a href="zip_streams.ads.html#zip_streams.ads:42:9" title="defined at zip_streams.ads:42:9">Root_Zipstream_Type</a>;</td></tr><tr><td></td><td><span class="name"><a name="zip_streams.ads:58:55"></a>Stream_Name</span></td><td>: String) <span class="keyword">renames</span> <a href="zip_streams.ads.html#zip_streams.ads:56:14" title="defined at zip_streams.ads:56:14">Set_Name</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip_streams.ads.html#l58" title="zip_streams.ads:58:14">zip_streams.ads:58:14</a> (declaration)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l59" title="zip_streams.ads:59:24">zip_streams.ads:59:24</a> (reference)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip_streams.ads:62:13' id='zip_streams.ads:62:13'></a>
+<span class="droplink">Get_Name<ul>
+  <li><a href="src_zip_streams.ads.html#l62">Goto spec in source</a></li>
+  <li><a href="src_zip_streams.adb.html#l18">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Get_Name</span> <table><tr><td>(</td><td><span class="name"><a name="zip_streams.ads:62:23"></a>S</span></td><td>: <span class="keyword">access</span> <a href="zip_streams.ads.html#zip_streams.ads:42:9" title="defined at zip_streams.ads:42:9">Root_Zipstream_Type</a>) <span class="keyword">return</span> String;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip_streams.ads.html#l62" title="zip_streams.ads:62:13">zip_streams.ads:62:13</a> (declaration)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l18" title="zip_streams.adb:18:13">zip_streams.adb:18:13</a> (body)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l64" title="zip_streams.ads:64:76">zip_streams.ads:64:76</a> (reference)</i></div>
+        </div>
+        <div class='comment'>this procedure returns the name of the stream
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip_streams.ads:64:13' id='zip_streams.ads:64:13'></a>
+<span class="droplink">GetName<ul>
+  <li><a href="src_zip_streams.ads.html#l64">Goto spec in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">GetName</span> <table><tr><td>(</td><td><span class="name"><a name="zip_streams.ads:64:22"></a>S</span></td><td>: <span class="keyword">access</span> <a href="zip_streams.ads.html#zip_streams.ads:42:9" title="defined at zip_streams.ads:42:9">Root_Zipstream_Type</a>) <span class="keyword">return</span> String <span class="keyword">renames</span> <a href="zip_streams.ads.html#zip_streams.ads:62:13" title="defined at zip_streams.ads:62:13">Get_Name</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip_streams.ads.html#l64" title="zip_streams.ads:64:13">zip_streams.ads:64:13</a> (declaration)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l65" title="zip_streams.ads:65:24">zip_streams.ads:65:24</a> (reference)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip_streams.ads:67:14' id='zip_streams.ads:67:14'></a>
+<span class="droplink">Set_Unicode_Name_Flag<ul>
+  <li><a href="src_zip_streams.ads.html#l67">Goto spec in source</a></li>
+  <li><a href="src_zip_streams.adb.html#l37">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Set_Unicode_Name_Flag</span> <table><tr><td>(</td><td><span class="name"><a name="zip_streams.ads:67:37"></a>S</span></td><td>: <span class="keyword">access</span> <a href="zip_streams.ads.html#zip_streams.ads:42:9" title="defined at zip_streams.ads:42:9">Root_Zipstream_Type</a>;</td></tr><tr><td></td><td><span class="name"><a name="zip_streams.ads:68:37"></a>Value</span></td><td>:        Boolean);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip_streams.ads.html#l67" title="zip_streams.ads:67:14">zip_streams.ads:67:14</a> (declaration)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l37" title="zip_streams.adb:37:14">zip_streams.adb:37:14</a> (body)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l42" title="zip_streams.adb:42:8">zip_streams.adb:42:8</a> (label)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip_streams.ads:69:13' id='zip_streams.ads:69:13'></a>
+<span class="droplink">Is_Unicode_Name<ul>
+  <li><a href="src_zip_streams.ads.html#l69">Goto spec in source</a></li>
+  <li><a href="src_zip_streams.adb.html#l44">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Is_Unicode_Name</span> <table><tr><td>(</td><td><span class="name"><a name="zip_streams.ads:69:30"></a>S</span></td><td>: <span class="keyword">access</span> <a href="zip_streams.ads.html#zip_streams.ads:42:9" title="defined at zip_streams.ads:42:9">Root_Zipstream_Type</a>) <span class="keyword">return</span> Boolean;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip_streams.ads.html#l69" title="zip_streams.ads:69:13">zip_streams.ads:69:13</a> (declaration)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l44" title="zip_streams.adb:44:13">zip_streams.adb:44:13</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip_streams.ads:73:14' id='zip_streams.ads:73:14'></a>
+<span class="droplink">Set_Time<ul>
+  <li><a href="src_zip_streams.ads.html#l73">Goto spec in source</a></li>
+  <li><a href="src_zip_streams.adb.html#l20">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Set_Time</span> <table><tr><td>(</td><td><span class="name"><a name="zip_streams.ads:73:24"></a>S</span></td><td>: <span class="keyword">access</span> <a href="zip_streams.ads.html#zip_streams.ads:42:9" title="defined at zip_streams.ads:42:9">Root_Zipstream_Type</a>;</td></tr><tr><td></td><td><span class="name"><a name="zip_streams.ads:74:23"></a>Modification_Time</span></td><td>: <a href="zip_streams.ads.html#zip_streams.ads:33:9" title="defined at zip_streams.ads:33:9">Time</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip_streams.ads.html#l73" title="zip_streams.ads:73:14">zip_streams.ads:73:14</a> (declaration)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l20" title="zip_streams.adb:20:14">zip_streams.adb:20:14</a> (body)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l24" title="zip_streams.adb:24:8">zip_streams.adb:24:8</a> (label)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l32" title="zip_streams.adb:32:6">zip_streams.adb:32:6</a> (dispatching call)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l77" title="zip_streams.ads:77:58">zip_streams.ads:77:58</a> (reference)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="zip_streams.ads.html#zip_streams.ads:81:14" title="defined at zip_streams.ads:81:14">Set_Time</a> defined at <a href="src_zip_streams.ads.html#l81" title="zip_streams.ads:81:14">zip_streams.ads:81:14</a></i></div>
+        </div>
+        <div class='comment'>this procedure sets the Modification_Time of the stream
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip_streams.ads:76:14' id='zip_streams.ads:76:14'></a>
+<span class="droplink">SetTime<ul>
+  <li><a href="src_zip_streams.ads.html#l76">Goto spec in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">SetTime</span> <table><tr><td>(</td><td><span class="name"><a name="zip_streams.ads:76:23"></a>S</span></td><td>: <span class="keyword">access</span> <a href="zip_streams.ads.html#zip_streams.ads:42:9" title="defined at zip_streams.ads:42:9">Root_Zipstream_Type</a>;</td></tr><tr><td></td><td><span class="name"><a name="zip_streams.ads:77:23"></a>Modification_Time</span></td><td>: <a href="zip_streams.ads.html#zip_streams.ads:33:9" title="defined at zip_streams.ads:33:9">Time</a>) <span class="keyword">renames</span> <a href="zip_streams.ads.html#zip_streams.ads:73:14" title="defined at zip_streams.ads:73:14">Set_Time</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip_streams.ads.html#l76" title="zip_streams.ads:76:14">zip_streams.ads:76:14</a> (declaration)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l78" title="zip_streams.ads:78:24">zip_streams.ads:78:24</a> (reference)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip_streams.ads:81:14' id='zip_streams.ads:81:14'></a>
+<span class="droplink">Set_Time<ul>
+  <li><a href="src_zip_streams.ads.html#l81">Goto spec in source</a></li>
+  <li><a href="src_zip_streams.adb.html#l28">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Set_Time</span> <table><tr><td>(</td><td><span class="name"><a name="zip_streams.ads:81:24"></a>S</span></td><td>: <a href="zip_streams.ads.html#zip_streams.ads:43:9" title="defined at zip_streams.ads:43:9">Zipstream_Class</a>;</td></tr><tr><td></td><td><span class="name"><a name="zip_streams.ads:82:23"></a>Modification_Time</span></td><td>: Ada.Calendar.Time);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip_streams.ads.html#l81" title="zip_streams.ads:81:14">zip_streams.ads:81:14</a> (declaration)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l28" title="zip_streams.adb:28:14">zip_streams.adb:28:14</a> (body)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l33" title="zip_streams.adb:33:8">zip_streams.adb:33:8</a> (label)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l85" title="zip_streams.ads:85:71">zip_streams.ads:85:71</a> (reference)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="zip_streams.ads-2.html#zip_streams.ads:146:16" title="defined at zip_streams.ads:146:16">Convert</a> defined at <a href="src_zip_streams.ads.html#l146" title="zip_streams.ads:146:16">zip_streams.ads:146:16</a></i></div>
+            <div><i><a href="zip_streams.ads.html#zip_streams.ads:73:14" title="defined at zip_streams.ads:73:14">Set_Time</a> defined at <a href="src_zip_streams.ads.html#l73" title="zip_streams.ads:73:14">zip_streams.ads:73:14</a></i></div>
+        </div>
+        <div class='comment'>same, with the standard <a href="zip_streams.ads.html#zip_streams.ads:33:9" title="Time">Time</a> type
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip_streams.ads:84:14' id='zip_streams.ads:84:14'></a>
+<span class="droplink">SetTime<ul>
+  <li><a href="src_zip_streams.ads.html#l84">Goto spec in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">SetTime</span> <table><tr><td>(</td><td><span class="name"><a name="zip_streams.ads:84:23"></a>S</span></td><td>: <a href="zip_streams.ads.html#zip_streams.ads:43:9" title="defined at zip_streams.ads:43:9">Zipstream_Class</a>;</td></tr><tr><td></td><td><span class="name"><a name="zip_streams.ads:85:23"></a>Modification_Time</span></td><td>: Ada.Calendar.Time) <span class="keyword">renames</span> <a href="zip_streams.ads.html#zip_streams.ads:81:14" title="defined at zip_streams.ads:81:14">Set_Time</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip_streams.ads.html#l84" title="zip_streams.ads:84:14">zip_streams.ads:84:14</a> (declaration)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l86" title="zip_streams.ads:86:24">zip_streams.ads:86:24</a> (reference)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip_streams.ads:89:13' id='zip_streams.ads:89:13'></a>
+<span class="droplink">Get_Time<ul>
+  <li><a href="src_zip_streams.ads.html#l89">Goto spec in source</a></li>
+  <li><a href="src_zip_streams.adb.html#l26">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Get_Time</span> <table><tr><td>(</td><td><span class="name"><a name="zip_streams.ads:89:23"></a>S</span></td><td>: <span class="keyword">access</span> <a href="zip_streams.ads.html#zip_streams.ads:42:9" title="defined at zip_streams.ads:42:9">Root_Zipstream_Type</a>) <span class="keyword">return</span> <a href="zip_streams.ads.html#zip_streams.ads:33:9" title="defined at zip_streams.ads:33:9">Time</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip_streams.ads.html#l89" title="zip_streams.ads:89:13">zip_streams.ads:89:13</a> (declaration)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l26" title="zip_streams.adb:26:13">zip_streams.adb:26:13</a> (body)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l35" title="zip_streams.adb:35:91">zip_streams.adb:35:91</a> (dispatching call)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l93" title="zip_streams.ads:93:41">zip_streams.ads:93:41</a> (reference)</i></div>
+        </div>
+        <div class='comment'>this procedure returns the ModificationTime of the stream
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip_streams.ads:92:13' id='zip_streams.ads:92:13'></a>
+<span class="droplink">GetTime<ul>
+  <li><a href="src_zip_streams.ads.html#l92">Goto spec in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">GetTime</span> <table><tr><td>(</td><td><span class="name"><a name="zip_streams.ads:92:22"></a>S</span></td><td>: <span class="keyword">access</span> <a href="zip_streams.ads.html#zip_streams.ads:42:9" title="defined at zip_streams.ads:42:9">Root_Zipstream_Type</a>) <span class="keyword">return</span> <a href="zip_streams.ads.html#zip_streams.ads:33:9" title="defined at zip_streams.ads:33:9">Time</a> <span class="keyword">renames</span> <a href="zip_streams.ads.html#zip_streams.ads:89:13" title="defined at zip_streams.ads:89:13">Get_Time</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip_streams.ads.html#l92" title="zip_streams.ads:92:13">zip_streams.ads:92:13</a> (declaration)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l94" title="zip_streams.ads:94:24">zip_streams.ads:94:24</a> (reference)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip_streams.ads:97:13' id='zip_streams.ads:97:13'></a>
+<span class="droplink">Get_Time<ul>
+  <li><a href="src_zip_streams.ads.html#l97">Goto spec in source</a></li>
+  <li><a href="src_zip_streams.adb.html#l35">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Get_Time</span> <table><tr><td>(</td><td><span class="name"><a name="zip_streams.ads:97:23"></a>S</span></td><td>: <a href="zip_streams.ads.html#zip_streams.ads:43:9" title="defined at zip_streams.ads:43:9">Zipstream_Class</a>) <span class="keyword">return</span> Ada.Calendar.Time;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip_streams.ads.html#l97" title="zip_streams.ads:97:13">zip_streams.ads:97:13</a> (declaration)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l35" title="zip_streams.adb:35:13">zip_streams.adb:35:13</a> (body)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l101" title="zip_streams.ads:101:54">zip_streams.ads:101:54</a> (reference)</i></div>
+        </div>
+        <div class='comment'>same, with the standard <a href="zip_streams.ads.html#zip_streams.ads:33:9" title="Time">Time</a> type
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip_streams.ads:100:13' id='zip_streams.ads:100:13'></a>
+<span class="droplink">GetTime<ul>
+  <li><a href="src_zip_streams.ads.html#l100">Goto spec in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">GetTime</span> <table><tr><td>(</td><td><span class="name"><a name="zip_streams.ads:100:22"></a>S</span></td><td>: <a href="zip_streams.ads.html#zip_streams.ads:43:9" title="defined at zip_streams.ads:43:9">Zipstream_Class</a>) <span class="keyword">return</span> Ada.Calendar.Time <span class="keyword">renames</span> <a href="zip_streams.ads.html#zip_streams.ads:97:13" title="defined at zip_streams.ads:97:13">Get_Time</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip_streams.ads.html#l100" title="zip_streams.ads:100:13">zip_streams.ads:100:13</a> (declaration)</i></div>
+            <div><i><a href="src_zip_streams.ads.html#l102" title="zip_streams.ads:102:24">zip_streams.ads:102:24</a> (reference)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip_streams.ads:105:13' id='zip_streams.ads:105:13'></a>
+<span class="droplink">End_Of_Stream (abstract)<ul>
+  <li><a href="src_zip_streams.ads.html#l105">Goto spec in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">End_Of_Stream</span> <table><tr><td>(</td><td><span class="name"><a name="zip_streams.ads:105:28"></a>S</span></td><td>: <span class="keyword">access</span> <a href="zip_streams.ads.html#zip_streams.ads:42:9" title="defined at zip_streams.ads:42:9">Root_Zipstream_Type</a>) <span class="keyword">return</span> Boolean <span class="keyword">is</span> <span class="keyword">abstract</span>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip_streams.ads.html#l105" title="zip_streams.ads:105:13">zip_streams.ads:105:13</a> (declaration)</i></div>
+            <div><i><a href="src_zip.adb.html#l632" title="zip.adb:632:13">zip.adb:632:13</a> (dispatching call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="zip.ads.html#zip.ads:229:14" title="defined at zip.ads:229:14">Zip.BlockRead</a> defined at <a href="src_zip.ads.html#l229" title="zip.ads:229:14">zip.ads:229:14</a></i></div>
+        </div>
+        <div class='comment'>returns true if the index is at the end of the stream, else false
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip_streams.ads:116:14' id='zip_streams.ads:116:14'></a>
+<span class="droplink">Get<ul>
+  <li><a href="src_zip_streams.ads.html#l116">Goto spec in source</a></li>
+  <li><a href="src_zip_streams.adb.html#l50">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Get</span> <table><tr><td>(</td><td><span class="name"><a name="zip_streams.ads:116:19"></a>Str</span></td><td>: <a href="zip_streams.ads.html#zip_streams.ads:111:9" title="defined at zip_streams.ads:111:9">Memory_Zipstream</a>;</td></tr><tr><td></td><td><span class="name"><a name="zip_streams.ads:116:44"></a>Unb</span></td><td>: <span class="keyword">out</span> Unbounded_String);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip_streams.ads.html#l116" title="zip_streams.ads:116:14">zip_streams.ads:116:14</a> (declaration)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l50" title="zip_streams.adb:50:14">zip_streams.adb:50:14</a> (body)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l54" title="zip_streams.adb:54:8">zip_streams.adb:54:8</a> (label)</i></div>
+        </div>
+        <div class='comment'><a href="gl-buffer-general.adb.html#gl-buffer-general.adb:62:13" title="Get">Get</a> the complete value of the stream
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip_streams.ads:120:14' id='zip_streams.ads:120:14'></a>
+<span class="droplink">Set<ul>
+  <li><a href="src_zip_streams.ads.html#l120">Goto spec in source</a></li>
+  <li><a href="src_zip_streams.adb.html#l56">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Set</span> <table><tr><td>(</td><td><span class="name"><a name="zip_streams.ads:120:19"></a>Str</span></td><td>: <span class="keyword">in</span> <span class="keyword">out</span> <a href="zip_streams.ads.html#zip_streams.ads:111:9" title="defined at zip_streams.ads:111:9">Memory_Zipstream</a>;</td></tr><tr><td></td><td><span class="name"><a name="zip_streams.ads:120:51"></a>Unb</span></td><td>: Unbounded_String);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip_streams.ads.html#l120" title="zip_streams.ads:120:14">zip_streams.ads:120:14</a> (declaration)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l56" title="zip_streams.adb:56:14">zip_streams.adb:56:14</a> (body)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l62" title="zip_streams.adb:62:8">zip_streams.adb:62:8</a> (label)</i></div>
+        </div>
+        <div class='comment'><a href="gl-buffer-general.adb.html#gl-buffer-general.adb:45:14" title="Set">Set</a> a value in the stream, the index will be set
+to null and old data in the stream will be lost.
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip_streams.ads:131:14' id='zip_streams.ads:131:14'></a>
+<span class="droplink">Open<ul>
+  <li><a href="src_zip_streams.ads.html#l131">Goto spec in source</a></li>
+  <li><a href="src_zip_streams.adb.html#l162">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Open</span> <table><tr><td>(</td><td><span class="name"><a name="zip_streams.ads:131:20"></a>Str</span></td><td>: <span class="keyword">in</span> <span class="keyword">out</span> <a href="zip_streams.ads.html#zip_streams.ads:125:9" title="defined at zip_streams.ads:125:9">File_Zipstream</a>;</td></tr><tr><td></td><td><span class="name"><a name="zip_streams.ads:131:50"></a>Zipfile_Mode</span></td><td>: File_Mode);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip_streams.ads.html#l131" title="zip_streams.ads:131:14">zip_streams.ads:131:14</a> (declaration)</i></div>
+            <div><i><a href="src_unzip-streams.adb.html#l203" title="unzip-streams.adb:203:10">unzip-streams.adb:203:10</a> (call)</i></div>
+            <div><i><a href="src_unzip.adb.html#l469" title="unzip.adb:469:7">unzip.adb:469:7</a> (call)</i></div>
+            <div><i><a href="src_unzip.adb.html#l517" title="unzip.adb:517:7">unzip.adb:517:7</a> (call)</i></div>
+            <div><i><a href="src_unzip.adb.html#l561" title="unzip.adb:561:7">unzip.adb:561:7</a> (call)</i></div>
+            <div><i><a href="src_unzip.adb.html#l646" title="unzip.adb:646:10">unzip.adb:646:10</a> (call)</i></div>
+            <div><i><a href="src_unzip.adb.html#l701" title="unzip.adb:701:10">unzip.adb:701:10</a> (call)</i></div>
+            <div><i><a href="src_zip.adb.html#l276" title="zip.adb:276:10">zip.adb:276:10</a> (call)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l162" title="zip_streams.adb:162:14">zip_streams.adb:162:14</a> (body)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l167" title="zip_streams.adb:167:8">zip_streams.adb:167:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="unzip-streams.ads.html#unzip-streams.ads:51:14" title="defined at unzip-streams.ads:51:14">Streams.Open</a> defined at <a href="src_unzip-streams.ads.html#l51" title="unzip-streams.ads:51:14">unzip-streams.ads:51:14</a></i></div>
+            <div><i><a href="unzip.ads.html#unzip.ads:272:13" title="defined at unzip.ads:272:13">UnZip.Extract</a> defined at <a href="src_unzip.ads.html#l272" title="unzip.ads:272:13">unzip.ads:272:13</a></i></div>
+            <div><i><a href="unzip.ads.html#unzip.ads:257:13" title="defined at unzip.ads:257:13">UnZip.Extract</a> defined at <a href="src_unzip.ads.html#l257" title="unzip.ads:257:13">unzip.ads:257:13</a></i></div>
+            <div><i><a href="unzip.ads.html#unzip.ads:228:13" title="defined at unzip.ads:228:13">UnZip.Extract</a> defined at <a href="src_unzip.ads.html#l228" title="unzip.ads:228:13">unzip.ads:228:13</a></i></div>
+            <div><i><a href="unzip.ads.html#unzip.ads:214:13" title="defined at unzip.ads:214:13">UnZip.Extract</a> defined at <a href="src_unzip.ads.html#l214" title="unzip.ads:214:13">unzip.ads:214:13</a></i></div>
+            <div><i><a href="unzip.ads.html#unzip.ads:202:13" title="defined at unzip.ads:202:13">UnZip.Extract</a> defined at <a href="src_unzip.ads.html#l202" title="unzip.ads:202:13">unzip.ads:202:13</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:62:14" title="defined at zip.ads:62:14">Zip.Load</a> defined at <a href="src_zip.ads.html#l62" title="zip.ads:62:14">zip.ads:62:14</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>Open defined at a-ststio.ads:73:14</i></div>
+            <div><i>To_String defined at a-strunb.ads:100:13</i></div>
+        </div>
+        <div class='comment'><a href="unzip-streams.adb.html#unzip-streams.adb:182:14" title="Open">Open</a> the <a href="zip_streams.ads.html#zip_streams.ads:125:9" title="File_Zipstream">File_Zipstream</a>
+PRE : Str.Name must be set
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip_streams.ads:135:14' id='zip_streams.ads:135:14'></a>
+<span class="droplink">Create<ul>
+  <li><a href="src_zip_streams.ads.html#l135">Goto spec in source</a></li>
+  <li><a href="src_zip_streams.adb.html#l169">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Create</span> <table><tr><td>(</td><td><span class="name"><a name="zip_streams.ads:135:22"></a>Str</span></td><td>: <span class="keyword">in</span> <span class="keyword">out</span> <a href="zip_streams.ads.html#zip_streams.ads:125:9" title="defined at zip_streams.ads:125:9">File_Zipstream</a>;</td></tr><tr><td></td><td><span class="name"><a name="zip_streams.ads:135:52"></a>Zipfile_Mode</span></td><td>: File_Mode);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip_streams.ads.html#l135" title="zip_streams.ads:135:14">zip_streams.ads:135:14</a> (declaration)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l169" title="zip_streams.adb:169:14">zip_streams.adb:169:14</a> (body)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l174" title="zip_streams.adb:174:8">zip_streams.adb:174:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>Create defined at a-ststio.ads:67:14</i></div>
+            <div><i>To_String defined at a-strunb.ads:100:13</i></div>
+        </div>
+        <div class='comment'>Creates a file on the disk
+PRE : Str.Name must be set
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip_streams.ads:138:14' id='zip_streams.ads:138:14'></a>
+<span class="droplink">Close<ul>
+  <li><a href="src_zip_streams.ads.html#l138">Goto spec in source</a></li>
+  <li><a href="src_zip_streams.adb.html#l176">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Close</span> <table><tr><td>(</td><td><span class="name"><a name="zip_streams.ads:138:21"></a>Str</span></td><td>: <span class="keyword">in</span> <span class="keyword">out</span> <a href="zip_streams.ads.html#zip_streams.ads:125:9" title="defined at zip_streams.ads:125:9">File_Zipstream</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip_streams.ads.html#l138" title="zip_streams.ads:138:14">zip_streams.ads:138:14</a> (declaration)</i></div>
+            <div><i><a href="src_unzip-streams.adb.html#l220" title="unzip-streams.adb:220:13">unzip-streams.adb:220:13</a> (call)</i></div>
+            <div><i><a href="src_unzip-streams.adb.html#l225" title="unzip-streams.adb:225:16">unzip-streams.adb:225:16</a> (call)</i></div>
+            <div><i><a href="src_unzip.adb.html#l487" title="unzip.adb:487:7">unzip.adb:487:7</a> (call)</i></div>
+            <div><i><a href="src_unzip.adb.html#l535" title="unzip.adb:535:7">unzip.adb:535:7</a> (call)</i></div>
+            <div><i><a href="src_unzip.adb.html#l579" title="unzip.adb:579:10">unzip.adb:579:10</a> (call)</i></div>
+            <div><i><a href="src_unzip.adb.html#l583" title="unzip.adb:583:10">unzip.adb:583:10</a> (call)</i></div>
+            <div><i><a href="src_unzip.adb.html#l670" title="unzip.adb:670:10">unzip.adb:670:10</a> (call)</i></div>
+            <div><i><a href="src_unzip.adb.html#l726" title="unzip.adb:726:10">unzip.adb:726:10</a> (call)</i></div>
+            <div><i><a href="src_zip.adb.html#l288" title="zip.adb:288:7">zip.adb:288:7</a> (call)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l176" title="zip_streams.adb:176:14">zip_streams.adb:176:14</a> (body)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l180" title="zip_streams.adb:180:8">zip_streams.adb:180:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="unzip-streams.ads.html#unzip-streams.ads:51:14" title="defined at unzip-streams.ads:51:14">Streams.Open</a> defined at <a href="src_unzip-streams.ads.html#l51" title="unzip-streams.ads:51:14">unzip-streams.ads:51:14</a></i></div>
+            <div><i><a href="unzip-streams.ads.html#unzip-streams.ads:51:14" title="defined at unzip-streams.ads:51:14">Streams.Open</a> defined at <a href="src_unzip-streams.ads.html#l51" title="unzip-streams.ads:51:14">unzip-streams.ads:51:14</a></i></div>
+            <div><i><a href="unzip.ads.html#unzip.ads:202:13" title="defined at unzip.ads:202:13">UnZip.Extract</a> defined at <a href="src_unzip.ads.html#l202" title="unzip.ads:202:13">unzip.ads:202:13</a></i></div>
+            <div><i><a href="unzip.ads.html#unzip.ads:214:13" title="defined at unzip.ads:214:13">UnZip.Extract</a> defined at <a href="src_unzip.ads.html#l214" title="unzip.ads:214:13">unzip.ads:214:13</a></i></div>
+            <div><i><a href="unzip.ads.html#unzip.ads:257:13" title="defined at unzip.ads:257:13">UnZip.Extract</a> defined at <a href="src_unzip.ads.html#l257" title="unzip.ads:257:13">unzip.ads:257:13</a></i></div>
+            <div><i><a href="unzip.ads.html#unzip.ads:202:13" title="defined at unzip.ads:202:13">UnZip.Extract</a> defined at <a href="src_unzip.ads.html#l202" title="unzip.ads:202:13">unzip.ads:202:13</a></i></div>
+            <div><i><a href="unzip.ads.html#unzip.ads:228:13" title="defined at unzip.ads:228:13">UnZip.Extract</a> defined at <a href="src_unzip.ads.html#l228" title="unzip.ads:228:13">unzip.ads:228:13</a></i></div>
+            <div><i><a href="unzip.ads.html#unzip.ads:272:13" title="defined at unzip.ads:272:13">UnZip.Extract</a> defined at <a href="src_unzip.ads.html#l272" title="unzip.ads:272:13">unzip.ads:272:13</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:62:14" title="defined at zip.ads:62:14">Zip.Load</a> defined at <a href="src_zip.ads.html#l62" title="zip.ads:62:14">zip.ads:62:14</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>Close defined at a-ststio.ads:79:14</i></div>
+        </div>
+        <div class='comment'><a href="unzip-streams.adb.html#unzip-streams.adb:156:14" title="Close">Close</a> the <a href="zip_streams.ads.html#zip_streams.ads:125:9" title="File_Zipstream">File_Zipstream</a>
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip_streams.ads:190:25' id='zip_streams.ads:190:25'></a>
+<span class="droplink">Read (private)<ul>
+  <li><a href="src_zip_streams.ads.html#l190">Goto spec in source</a></li>
+  <li><a href="src_zip_streams.adb.html#l64">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">overriding</span> <span class="keyword">procedure</span> <span class="name_emphasis">Read</span> <table><tr><td>(</td><td><span class="name"><a name="zip_streams.ads:190:31"></a>Zip_Stream</span></td><td>: <span class="keyword">in</span> <span class="keyword">out</span> <a href="zip_streams.ads.html#zip_streams.ads:111:9" title="defined at zip_streams.ads:111:9">Memory_Zipstream</a>;</td></tr><tr><td></td><td><span class="name"><a name="zip_streams.ads:191:31"></a>Item</span></td><td>:    <span class="keyword">out</span> Stream_Element_Array;</td></tr><tr><td></td><td><span class="name"><a name="zip_streams.ads:192:31"></a>Last</span></td><td>:    <span class="keyword">out</span> Stream_Element_Offset);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip_streams.ads.html#l190" title="zip_streams.ads:190:25">zip_streams.ads:190:25</a> (declaration)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l64" title="zip_streams.adb:64:25">zip_streams.adb:64:25</a> (body)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l87" title="zip_streams.adb:87:8">zip_streams.adb:87:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>Element defined at a-strunb.ads:139:13</i></div>
+        </div>
+        <div class='comment'><a href="bzip2.ads.html#bzip2.ads:78:18" title="Read">Read</a> data from the stream.
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip_streams.ads:196:25' id='zip_streams.ads:196:25'></a>
+<span class="droplink">Write (private)<ul>
+  <li><a href="src_zip_streams.ads.html#l196">Goto spec in source</a></li>
+  <li><a href="src_zip_streams.adb.html#l91">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">overriding</span> <span class="keyword">procedure</span> <span class="name_emphasis">Write</span> <table><tr><td>(</td><td><span class="name"><a name="zip_streams.ads:196:32"></a>Zip_Stream</span></td><td>: <span class="keyword">in</span> <span class="keyword">out</span> <a href="zip_streams.ads.html#zip_streams.ads:111:9" title="defined at zip_streams.ads:111:9">Memory_Zipstream</a>;</td></tr><tr><td></td><td><span class="name"><a name="zip_streams.ads:197:32"></a>Item</span></td><td>:        Stream_Element_Array);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip_streams.ads.html#l196" title="zip_streams.ads:196:25">zip_streams.ads:196:25</a> (declaration)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l91" title="zip_streams.adb:91:25">zip_streams.adb:91:25</a> (body)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l125" title="zip_streams.adb:125:8">zip_streams.adb:125:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>Append defined at a-strunb.ads:111:14</i></div>
+            <div><i>Length defined at a-strunb.ads:84:13</i></div>
+            <div><i>Replace_Element defined at a-strunb.ads:143:14</i></div>
+        </div>
+        <div class='comment'>write data to the stream, starting from the current index.
+Data will be overwritten from index is already available.
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip_streams.ads:200:25' id='zip_streams.ads:200:25'></a>
+<span class="droplink">Set_Index (private)<ul>
+  <li><a href="src_zip_streams.ads.html#l200">Goto spec in source</a></li>
+  <li><a href="src_zip_streams.adb.html#l127">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">overriding</span> <span class="keyword">procedure</span> <span class="name_emphasis">Set_Index</span> <table><tr><td>(</td><td><span class="name"><a name="zip_streams.ads:200:36"></a>S</span></td><td>: <span class="keyword">access</span> <a href="zip_streams.ads.html#zip_streams.ads:111:9" title="defined at zip_streams.ads:111:9">Memory_Zipstream</a>;</td></tr><tr><td></td><td><span class="name"><a name="zip_streams.ads:200:66"></a>To</span></td><td>: Positive);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip_streams.ads.html#l200" title="zip_streams.ads:200:25">zip_streams.ads:200:25</a> (declaration)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l127" title="zip_streams.adb:127:25">zip_streams.adb:127:25</a> (body)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l142" title="zip_streams.adb:142:8">zip_streams.adb:142:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>Append defined at a-strunb.ads:111:14</i></div>
+            <div><i>Length defined at a-strunb.ads:84:13</i></div>
+        </div>
+        <div class='comment'><a href="gl-buffer-general.adb.html#gl-buffer-general.adb:45:14" title="Set">Set</a> the index on the stream
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip_streams.ads:203:24' id='zip_streams.ads:203:24'></a>
+<span class="droplink">Index (private)<ul>
+  <li><a href="src_zip_streams.ads.html#l203">Goto spec in source</a></li>
+  <li><a href="src_zip_streams.adb.html#l146">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">overriding</span> <span class="keyword">function</span> <span class="name_emphasis">Index</span> <table><tr><td>(</td><td><span class="name"><a name="zip_streams.ads:203:31"></a>S</span></td><td>: <span class="keyword">access</span> <a href="zip_streams.ads.html#zip_streams.ads:111:9" title="defined at zip_streams.ads:111:9">Memory_Zipstream</a>) <span class="keyword">return</span> Integer;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip_streams.ads.html#l203" title="zip_streams.ads:203:24">zip_streams.ads:203:24</a> (declaration)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l146" title="zip_streams.adb:146:24">zip_streams.adb:146:24</a> (body)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l151" title="zip_streams.adb:151:21">zip_streams.adb:151:21</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="zip_streams.ads.html#zip_streams.ads:209:24" title="defined at zip_streams.ads:209:24">End_Of_Stream</a> defined at <a href="src_zip_streams.ads.html#l209" title="zip_streams.ads:209:24">zip_streams.ads:209:24</a></i></div>
+        </div>
+        <div class='comment'>returns the index of the stream
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip_streams.ads:206:24' id='zip_streams.ads:206:24'></a>
+<span class="droplink">Size (private)<ul>
+  <li><a href="src_zip_streams.ads.html#l206">Goto spec in source</a></li>
+  <li><a href="src_zip_streams.adb.html#l144">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">overriding</span> <span class="keyword">function</span> <span class="name_emphasis">Size</span> <table><tr><td>(</td><td><span class="name"><a name="zip_streams.ads:206:30"></a>S</span></td><td>: <span class="keyword">access</span> <a href="zip_streams.ads.html#zip_streams.ads:111:9" title="defined at zip_streams.ads:111:9">Memory_Zipstream</a>) <span class="keyword">return</span> Integer;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip_streams.ads.html#l206" title="zip_streams.ads:206:24">zip_streams.ads:206:24</a> (declaration)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l144" title="zip_streams.adb:144:24">zip_streams.adb:144:24</a> (body)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l151" title="zip_streams.adb:151:10">zip_streams.adb:151:10</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="zip_streams.ads.html#zip_streams.ads:209:24" title="defined at zip_streams.ads:209:24">End_Of_Stream</a> defined at <a href="src_zip_streams.ads.html#l209" title="zip_streams.ads:209:24">zip_streams.ads:209:24</a></i></div>
+        </div>
+        <div class='comment'>returns the <a href="zip_streams.adb.html#zip_streams.adb:144:24" title="Size">Size</a> of the stream
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip_streams.ads:209:24' id='zip_streams.ads:209:24'></a>
+<span class="droplink">End_Of_Stream (private)<ul>
+  <li><a href="src_zip_streams.ads.html#l209">Goto spec in source</a></li>
+  <li><a href="src_zip_streams.adb.html#l148">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">overriding</span> <span class="keyword">function</span> <span class="name_emphasis">End_Of_Stream</span> <table><tr><td>(</td><td><span class="name"><a name="zip_streams.ads:209:39"></a>S</span></td><td>: <span class="keyword">access</span> <a href="zip_streams.ads.html#zip_streams.ads:111:9" title="defined at zip_streams.ads:111:9">Memory_Zipstream</a>) <span class="keyword">return</span> Boolean;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip_streams.ads.html#l209" title="zip_streams.ads:209:24">zip_streams.ads:209:24</a> (declaration)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l148" title="zip_streams.adb:148:24">zip_streams.adb:148:24</a> (body)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l156" title="zip_streams.adb:156:8">zip_streams.adb:156:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="zip_streams.ads.html#zip_streams.ads:203:24" title="defined at zip_streams.ads:203:24">Index</a> defined at <a href="src_zip_streams.ads.html#l203" title="zip_streams.ads:203:24">zip_streams.ads:203:24</a></i></div>
+            <div><i><a href="zip_streams.ads.html#zip_streams.ads:206:24" title="defined at zip_streams.ads:206:24">Size</a> defined at <a href="src_zip_streams.ads.html#l206" title="zip_streams.ads:206:24">zip_streams.ads:206:24</a></i></div>
+        </div>
+        <div class='comment'>returns true if the index is at the end of the stream
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip_streams.ads:217:25' id='zip_streams.ads:217:25'></a>
+<span class="droplink">Read (private)<ul>
+  <li><a href="src_zip_streams.ads.html#l217">Goto spec in source</a></li>
+  <li><a href="src_zip_streams.adb.html#l182">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">overriding</span> <span class="keyword">procedure</span> <span class="name_emphasis">Read</span> <table><tr><td>(</td><td><span class="name"><a name="zip_streams.ads:218:7"></a>Zip_Stream</span></td><td>: <span class="keyword">in</span> <span class="keyword">out</span> <a href="zip_streams.ads.html#zip_streams.ads:125:9" title="defined at zip_streams.ads:125:9">File_Zipstream</a>;</td></tr><tr><td></td><td><span class="name"><a name="zip_streams.ads:219:7"></a>Item</span></td><td>: <span class="keyword">out</span> Stream_Element_Array;</td></tr><tr><td></td><td><span class="name"><a name="zip_streams.ads:220:7"></a>Last</span></td><td>: <span class="keyword">out</span> Stream_Element_Offset);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip_streams.ads.html#l217" title="zip_streams.ads:217:25">zip_streams.ads:217:25</a> (declaration)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l182" title="zip_streams.adb:182:25">zip_streams.adb:182:25</a> (body)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l188" title="zip_streams.adb:188:8">zip_streams.adb:188:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>Read defined at a-ststio.ads:103:14</i></div>
+        </div>
+        <div class='comment'><a href="bzip2.ads.html#bzip2.ads:78:18" title="Read">Read</a> data from the stream.
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip_streams.ads:224:25' id='zip_streams.ads:224:25'></a>
+<span class="droplink">Write (private)<ul>
+  <li><a href="src_zip_streams.ads.html#l224">Goto spec in source</a></li>
+  <li><a href="src_zip_streams.adb.html#l190">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">overriding</span> <span class="keyword">procedure</span> <span class="name_emphasis">Write</span> <table><tr><td>(</td><td><span class="name"><a name="zip_streams.ads:225:7"></a>Zip_Stream</span></td><td>: <span class="keyword">in</span> <span class="keyword">out</span> <a href="zip_streams.ads.html#zip_streams.ads:125:9" title="defined at zip_streams.ads:125:9">File_Zipstream</a>;</td></tr><tr><td></td><td><span class="name"><a name="zip_streams.ads:226:7"></a>Item</span></td><td>: Stream_Element_Array);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip_streams.ads.html#l224" title="zip_streams.ads:224:25">zip_streams.ads:224:25</a> (declaration)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l190" title="zip_streams.adb:190:25">zip_streams.adb:190:25</a> (body)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l195" title="zip_streams.adb:195:8">zip_streams.adb:195:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>Write defined at a-ststio.ads:113:14</i></div>
+        </div>
+        <div class='comment'>write data to the stream, starting from the current index.
+Data will be overwritten from index is already available.
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip_streams.ads:229:25' id='zip_streams.ads:229:25'></a>
+<span class="droplink">Set_Index (private)<ul>
+  <li><a href="src_zip_streams.ads.html#l229">Goto spec in source</a></li>
+  <li><a href="src_zip_streams.adb.html#l197">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">overriding</span> <span class="keyword">procedure</span> <span class="name_emphasis">Set_Index</span> <table><tr><td>(</td><td><span class="name"><a name="zip_streams.ads:229:36"></a>S</span></td><td>: <span class="keyword">access</span> <a href="zip_streams.ads.html#zip_streams.ads:125:9" title="defined at zip_streams.ads:125:9">File_Zipstream</a>;</td></tr><tr><td></td><td><span class="name"><a name="zip_streams.ads:229:64"></a>To</span></td><td>: Positive);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip_streams.ads.html#l229" title="zip_streams.ads:229:25">zip_streams.ads:229:25</a> (declaration)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l197" title="zip_streams.adb:197:25">zip_streams.adb:197:25</a> (body)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l201" title="zip_streams.adb:201:8">zip_streams.adb:201:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>Set_Index defined at a-ststio.ads:121:14</i></div>
+        </div>
+        <div class='comment'><a href="gl-buffer-general.adb.html#gl-buffer-general.adb:45:14" title="Set">Set</a> the index on the stream
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip_streams.ads:232:24' id='zip_streams.ads:232:24'></a>
+<span class="droplink">Index (private)<ul>
+  <li><a href="src_zip_streams.ads.html#l232">Goto spec in source</a></li>
+  <li><a href="src_zip_streams.adb.html#l205">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">overriding</span> <span class="keyword">function</span> <span class="name_emphasis">Index</span> <table><tr><td>(</td><td><span class="name"><a name="zip_streams.ads:232:31"></a>S</span></td><td>: <span class="keyword">access</span> <a href="zip_streams.ads.html#zip_streams.ads:125:9" title="defined at zip_streams.ads:125:9">File_Zipstream</a>) <span class="keyword">return</span> Integer;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip_streams.ads.html#l232" title="zip_streams.ads:232:24">zip_streams.ads:232:24</a> (declaration)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l205" title="zip_streams.adb:205:24">zip_streams.adb:205:24</a> (body)</i></div>
+        </div>
+        <div class='comment'>returns the index of the stream
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip_streams.ads:235:24' id='zip_streams.ads:235:24'></a>
+<span class="droplink">Size (private)<ul>
+  <li><a href="src_zip_streams.ads.html#l235">Goto spec in source</a></li>
+  <li><a href="src_zip_streams.adb.html#l203">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">overriding</span> <span class="keyword">function</span> <span class="name_emphasis">Size</span> <table><tr><td>(</td><td><span class="name"><a name="zip_streams.ads:235:30"></a>S</span></td><td>: <span class="keyword">access</span> <a href="zip_streams.ads.html#zip_streams.ads:125:9" title="defined at zip_streams.ads:125:9">File_Zipstream</a>) <span class="keyword">return</span> Integer;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip_streams.ads.html#l235" title="zip_streams.ads:235:24">zip_streams.ads:235:24</a> (declaration)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l203" title="zip_streams.adb:203:24">zip_streams.adb:203:24</a> (body)</i></div>
+        </div>
+        <div class='comment'>returns the <a href="zip_streams.adb.html#zip_streams.adb:144:24" title="Size">Size</a> of the stream
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip_streams.ads:238:24' id='zip_streams.ads:238:24'></a>
+<span class="droplink">End_Of_Stream (private)<ul>
+  <li><a href="src_zip_streams.ads.html#l238">Goto spec in source</a></li>
+  <li><a href="src_zip_streams.adb.html#l207">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">overriding</span> <span class="keyword">function</span> <span class="name_emphasis">End_Of_Stream</span> <table><tr><td>(</td><td><span class="name"><a name="zip_streams.ads:238:39"></a>S</span></td><td>: <span class="keyword">access</span> <a href="zip_streams.ads.html#zip_streams.ads:125:9" title="defined at zip_streams.ads:125:9">File_Zipstream</a>) <span class="keyword">return</span> Boolean;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip_streams.ads.html#l238" title="zip_streams.ads:238:24">zip_streams.ads:238:24</a> (declaration)</i></div>
+            <div><i><a href="src_zip_streams.adb.html#l207" title="zip_streams.adb:207:24">zip_streams.adb:207:24</a> (body)</i></div>
+        </div>
+        <div class='comment'>returns true if the index is at the end of the stream
+</div>
+      </div>
+    </div>
+</div> <!-- documentation -->
+
+</body>
+</html>

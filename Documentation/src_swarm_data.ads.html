@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    File: swarm_data.ads
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+  </div>
+</div> <!-- leftSide -->
+
+<div class='subprograms'>
+  <div class='details'><ol><li id="l1"><pre><span class="comment">--</span> </pre></li>
+<li id="l2"><pre><span class="comment">-- Jan &amp; Uwe R. Zimmer, Australia, July 2011</span> </pre></li>
+<li id="l3"><pre><span class="comment">--</span> </pre></li>
+<li id="l4"><pre> </pre></li>
+<li id="l5"><pre><span class="keyword">with</span> <span class="droplink">Swarm_Configuration<ul><li><a href="swarm_configuration.ads.html#swarm_configuration.ads:16:9" title="To API doc">To API doc</a></li><li><a href="src_swarm_configuration.ads.html#l16" title="To spec">To spec</a></li><li><a href="src_swarm_configuration.adb.html#l1" title="To body">To body</a></li></ul></span>;   <span class="keyword">use</span> <span class="droplink">Swarm_Configuration<ul><li><a href="swarm_configuration.ads.html#swarm_configuration.ads:16:9" title="To API doc">To API doc</a></li><li><a href="src_swarm_configuration.ads.html#l16" title="To spec">To spec</a></li><li><a href="src_swarm_configuration.adb.html#l1" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l6"><pre><span class="keyword">with</span> <span class="droplink">Swarm_Configurations<ul><li><a href="swarm_configurations.ads.html#swarm_configurations.ads:6:9" title="To API doc">To API doc</a></li><li><a href="src_swarm_configurations.ads.html#l6" title="To spec">To spec</a></li><li><a href="src_swarm_configurations.adb.html#l7" title="To body">To body</a></li></ul></span>;  <span class="keyword">use</span> <span class="droplink">Swarm_Configurations<ul><li><a href="swarm_configurations.ads.html#swarm_configurations.ads:6:9" title="To API doc">To API doc</a></li><li><a href="src_swarm_configurations.ads.html#l6" title="To spec">To spec</a></li><li><a href="src_swarm_configurations.adb.html#l7" title="To body">To body</a></li></ul></span>; <span class="keyword">pragma</span> Elaborate_All (<span class="droplink">Swarm_Configurations<ul><li><a href="swarm_configurations.ads.html#swarm_configurations.ads:6:9" title="To API doc">To API doc</a></li><li><a href="src_swarm_configurations.ads.html#l6" title="To spec">To spec</a></li><li><a href="src_swarm_configurations.adb.html#l7" title="To body">To body</a></li></ul></span>); </pre></li>
+<li id="l7"><pre><span class="keyword">with</span> <span class="droplink">Swarm_Structures<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:19:9" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l19" title="To spec">To spec</a></li><li><a href="src_swarm_structures.adb.html#l5" title="To body">To body</a></li></ul></span>;      <span class="keyword">use</span> <span class="droplink">Swarm_Structures<ul><li><a href="swarm_structures.ads.html#swarm_structures.ads:19:9" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures.ads.html#l19" title="To spec">To spec</a></li><li><a href="src_swarm_structures.adb.html#l5" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l8"><pre><span class="keyword">with</span> <span class="droplink">Swarm_Structures_Base<ul><li><a href="swarm_structures_base.ads.html#swarm_structures_base.ads:10:9" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures_base.ads.html#l10" title="To spec">To spec</a></li></ul></span>; <span class="keyword">use</span> <span class="droplink">Swarm_Structures_Base<ul><li><a href="swarm_structures_base.ads.html#swarm_structures_base.ads:10:9" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures_base.ads.html#l10" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l9"><pre> </pre></li>
+<li id="l10"><pre><span class="keyword">package</span> <a href="swarm_data.ads.html#swarm_data.ads:10:9" title="defined at swarm_data.ads:10:9">Swarm_Data</a> <span class="keyword">is</span> </pre></li>
+<li id="l11"><pre> </pre></li>
+<li id="l12"><pre>   <span class="comment">-- The Swarm_State is an unprotected, dynamic vector for maximal concurrency.</span> </pre></li>
+<li id="l13"><pre>   <span class="comment">-- Different tasks can update different parts of this vector concurrently.</span> </pre></li>
+<li id="l14"><pre>   <span class="comment">-- Critical operations (like deletions or insertions)</span> </pre></li>
+<li id="l15"><pre>   <span class="comment">-- are handled via the Swarm_Monitor in Swarm_Control.</span> </pre></li>
+<li id="l16"><pre>   <span class="comment">--</span> </pre></li>
+<li id="l17"><pre>   <a href="swarm_data.ads.html#swarm_data.ads:17:4" title="defined at swarm_data.ads:17:4">Swarm_State</a> :          Swarm_Vectors.Vector    := Swarm_Vectors.Empty_Vector; </pre></li>
+<li id="l18"><pre> </pre></li>
+<li id="l19"><pre>   <a href="swarm_data.ads.html#swarm_data.ads:19:4" title="defined at swarm_data.ads:19:4">Globes</a>      : <span class="keyword">constant</span> <span class="droplink">Energy_Globes_Protected<ul><li><a href="swarm_structures_base.ads.html#swarm_structures_base.ads:46:9" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures_base.ads.html#l46" title="To spec">To spec</a></li></ul></span> := <span class="droplink">Default_Protected_Globes<ul><li><a href="swarm_configurations.ads.html#swarm_configurations.ads:46:13" title="To API doc">To API doc</a></li><li><a href="src_swarm_configurations.ads.html#l46" title="To spec">To spec</a></li><li><a href="src_swarm_configurations.adb.html#l88" title="To body">To body</a></li></ul></span> (<span class="droplink">Configuration<ul><li><a href="swarm_configuration.ads.html#swarm_configuration.ads:19:4" title="To API doc">To API doc</a></li><li><a href="src_swarm_configuration.ads.html#l19" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l20"><pre> </pre></li>
+<li id="l21"><pre><span class="keyword">end</span> <span class="droplink">Swarm_Data<ul><li><a href="swarm_data.ads.html#swarm_data.ads:10:9" title="To API doc">To API doc</a></li><li><a href="src_swarm_data.ads.html#l10" title="To spec">To spec</a></li></ul></span>; </pre></li>
+</ol></div>
+</div>
+
+</body>
+</html>

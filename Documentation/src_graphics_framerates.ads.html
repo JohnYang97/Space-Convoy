@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    File: graphics_framerates.ads
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+  </div>
+</div> <!-- leftSide -->
+
+<div class='subprograms'>
+  <div class='details'><ol><li id="l1"><pre><span class="comment">--</span> </pre></li>
+<li id="l2"><pre><span class="comment">-- Jan &amp; Uwe R. Zimmer, Australia, July 2011</span> </pre></li>
+<li id="l3"><pre><span class="comment">--</span> </pre></li>
+<li id="l4"><pre> </pre></li>
+<li id="l5"><pre><span class="keyword">with</span> Ada.Real_Time; <span class="keyword">use</span> Ada.Real_Time; </pre></li>
+<li id="l6"><pre><span class="keyword">with</span> <span class="droplink">Real_Type<ul><li><a href="real_type.ads.html#real_type.ads:3:9" title="To API doc">To API doc</a></li><li><a href="src_real_type.ads.html#l3" title="To spec">To spec</a></li></ul></span>;    <span class="keyword">use</span> <span class="droplink">Real_Type<ul><li><a href="real_type.ads.html#real_type.ads:3:9" title="To API doc">To API doc</a></li><li><a href="src_real_type.ads.html#l3" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l7"><pre> </pre></li>
+<li id="l8"><pre><span class="keyword">package</span> <span class="droplink">Graphics_FrameRates<ul><li><a href="graphics_framerates.ads.html#graphics_framerates.ads:8:9" title="To API doc">To API doc</a></li><li><a href="src_graphics_framerates.adb.html#l5" title="To body">To body</a></li></ul></span> <span class="keyword">is</span> </pre></li>
+<li id="l9"><pre> </pre></li>
+<li id="l10"><pre>   <a href="graphics_framerates.ads.html#graphics_framerates.ads:10:4" title="defined at graphics_framerates.ads:10:4">Smoothing_Buffer_Size</a> : <span class="keyword">constant</span> Positive := 24; </pre></li>
+<li id="l11"><pre> </pre></li>
+<li id="l12"><pre>   <span class="keyword">subtype</span> <a href="graphics_framerates.ads.html#graphics_framerates.ads:12:12" title="defined at graphics_framerates.ads:12:12">Hz</a> <span class="keyword">is</span> <span class="droplink">Real<ul><li><a href="real_type.ads.html#real_type.ads:5:12" title="To API doc">To API doc</a></li><li><a href="src_real_type.ads.html#l5" title="To spec">To spec</a></li></ul></span> <span class="keyword">range</span> 0.0 .. <span class="droplink">Real<ul><li><a href="real_type.ads.html#real_type.ads:5:12" title="To API doc">To API doc</a></li><li><a href="src_real_type.ads.html#l5" title="To spec">To spec</a></li></ul></span>&apos;Last; </pre></li>
+<li id="l13"><pre> </pre></li>
+<li id="l14"><pre>   <span class="keyword">function</span> <span class="droplink">Measure_Interval<ul><li><a href="graphics_framerates.ads.html#graphics_framerates.ads:14:13" title="To API doc">To API doc</a></li><li><a href="src_graphics_framerates.adb.html#l20" title="To body">To body</a></li></ul></span> <span class="keyword">return</span> Time_Span; </pre></li>
+<li id="l15"><pre> </pre></li>
+<li id="l16"><pre>   <span class="keyword">function</span> <span class="droplink">Average_Framerate<ul><li><a href="graphics_framerates.ads.html#graphics_framerates.ads:16:13" title="To API doc">To API doc</a></li><li><a href="src_graphics_framerates.adb.html#l33" title="To body">To body</a></li></ul></span> (<a href="graphics_framerates.ads.html#graphics_framerates.ads:16:32" title="defined at graphics_framerates.ads:16:32">Interval</a> : Time_Span) <span class="keyword">return</span> <span class="droplink">Hz<ul><li><a href="graphics_framerates.ads.html#graphics_framerates.ads:12:12" title="To API doc">To API doc</a></li><li><a href="src_graphics_framerates.ads.html#l12" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l17"><pre> </pre></li>
+<li id="l18"><pre>   <span class="keyword">procedure</span> <span class="droplink">Framerate_Limiter<ul><li><a href="graphics_framerates.ads.html#graphics_framerates.ads:18:14" title="To API doc">To API doc</a></li><li><a href="src_graphics_framerates.adb.html#l56" title="To body">To body</a></li></ul></span> (<a href="graphics_framerates.ads.html#graphics_framerates.ads:18:33" title="defined at graphics_framerates.ads:18:33">Max_Framerate</a> : <span class="droplink">Hz<ul><li><a href="graphics_framerates.ads.html#graphics_framerates.ads:12:12" title="To API doc">To API doc</a></li><li><a href="src_graphics_framerates.ads.html#l12" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l19"><pre> </pre></li>
+<li id="l20"><pre><span class="keyword">end</span> <span class="droplink">Graphics_FrameRates<ul><li><a href="graphics_framerates.ads.html#graphics_framerates.ads:8:9" title="To API doc">To API doc</a></li><li><a href="src_graphics_framerates.ads.html#l8" title="To spec">To spec</a></li><li><a href="src_graphics_framerates.adb.html#l5" title="To body">To body</a></li></ul></span>; </pre></li>
+</ol></div>
+</div>
+
+</body>
+</html>

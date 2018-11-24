@@ -1,0 +1,4 @@
+zip.adb:442:07: warning: use clause for package "Stream_IO" has no effect
+zip.adb:489:07: warning: use clause for package "Stream_IO" has no effect
+zip.adb:489:07: warning: use clause for package "Streams" has no effect
+zip.adb:619:07: warning: use clause for package "Stream_IO" has no effect

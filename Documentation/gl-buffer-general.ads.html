@@ -1,0 +1,858 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    Package: general (generic)
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+
+  <div id='navigation'>
+    <h2 class="button">Navigation</h2>
+    <a href='#Description'><div class="button2">Description</div></a>
+    <a href='#Packages'><div class="button2">Packages</div></a>
+    <a href='#Classes'><div class="button2">Classes</div></a>
+    <a href='#Types'><div class="button2">Types</div></a>
+    <a href='#Constants'><div class="button2">Constants &amp; Global variables</div></a>
+    <a href='#Methods'><div class="button2">Subprograms &amp; Entries</div></a>
+  </div><!-- navigation -->
+  </div>
+</div> <!-- leftSide -->
+
+<div class='default' id='rightSide'>
+ <div id='rightSideInside'>
+ <div id='Index'>
+  <h2>Index</h2>
+  <script type="text/javascript">
+    var names = new Array (
+new Array ('Element_<wbr/>Pointers (private)', 'gl-buffer-general.ads:80:12', 'package-spec'),
+new Array ('General_<wbr/>Object', 'gl-buffer-general.ads:24:9', 'class-spec'),
+new Array ('memory_<wbr/>Map (abstract)', 'gl-buffer-general.ads:36:9', 'class-spec'),
+new Array ('read_<wbr/>only_<wbr/>Map', 'gl-buffer-general.ads:49:9', 'class-spec'),
+new Array ('write_<wbr/>only_<wbr/>Map', 'gl-buffer-general.ads:56:9', 'class-spec'),
+new Array ('read_<wbr/>write_<wbr/>Map', 'gl-buffer-general.ads:63:9', 'class-spec'),
+new Array ('base_<wbr/>Object', 'gl-buffer-general.ads:14:9', 'type-spec'),
+new Array ('Index', 'gl-buffer-general.ads:16:9', 'type-spec'),
+new Array ('Element', 'gl-buffer-general.ads:17:9', 'type-spec'),
+new Array ('Element_<wbr/>Array', 'gl-buffer-general.ads:18:9', 'type-spec'),
+new Array ('Corrupt_<wbr/>Buffer', 'gl-buffer-general.ads:47:4', 'var-spec'),
+new Array ('default_<wbr/>Terminator (private)', 'gl-buffer-general.ads:77:4', 'var-spec'),
+new Array ('To_<wbr/>Buffer', 'gl-buffer-general.ads:26:14', 'subp-spec'),
+new Array ('Set', 'gl-buffer-general.ads:28:14', 'subp-spec'),
+new Array ('Get', 'gl-buffer-general.ads:31:14', 'subp-spec'),
+new Array ('Release', 'gl-buffer-general.ads:38:14', 'subp-spec'),
+new Array ('Map', 'gl-buffer-general.ads:51:14', 'subp-spec'),
+new Array ('Get', 'gl-buffer-general.ads:53:14', 'subp-spec'),
+new Array ('Get', 'gl-buffer-general.ads:54:14', 'subp-spec'),
+new Array ('Map', 'gl-buffer-general.ads:58:14', 'subp-spec'),
+new Array ('Set', 'gl-buffer-general.ads:60:14', 'subp-spec'),
+new Array ('Set', 'gl-buffer-general.ads:61:14', 'subp-spec'),
+new Array ('Map', 'gl-buffer-general.ads:65:14', 'subp-spec'),
+new Array ('Get', 'gl-buffer-general.ads:67:14', 'subp-spec'),
+new Array ('Get', 'gl-buffer-general.ads:68:14', 'subp-spec'),
+new Array ('Set', 'gl-buffer-general.ads:70:14', 'subp-spec'),
+new Array ('Set', 'gl-buffer-general.ads:71:14', 'subp-spec'),
+      new Array ('dummy', '', ''));
+    printIndexList (names);
+  </script>
+  <noscript>
+    <ul>
+      <li class='package-spec'><a href="#gl-buffer-general.ads:80:12">Element_<wbr/>Pointers (private)</a></li>
+      <li class='class-spec'><a href="#gl-buffer-general.ads:24:9">General_<wbr/>Object</a></li>
+      <li class='class-spec'><a href="#gl-buffer-general.ads:36:9">memory_<wbr/>Map (abstract)</a></li>
+      <li class='class-spec'><a href="#gl-buffer-general.ads:49:9">read_<wbr/>only_<wbr/>Map</a></li>
+      <li class='class-spec'><a href="#gl-buffer-general.ads:56:9">write_<wbr/>only_<wbr/>Map</a></li>
+      <li class='class-spec'><a href="#gl-buffer-general.ads:63:9">read_<wbr/>write_<wbr/>Map</a></li>
+      <li class='type-spec'><a href="#gl-buffer-general.ads:14:9">base_<wbr/>Object</a></li>
+      <li class='type-spec'><a href="#gl-buffer-general.ads:16:9">Index</a></li>
+      <li class='type-spec'><a href="#gl-buffer-general.ads:17:9">Element</a></li>
+      <li class='type-spec'><a href="#gl-buffer-general.ads:18:9">Element_<wbr/>Array</a></li>
+      <li class='var-spec'><a href="#gl-buffer-general.ads:47:4">Corrupt_<wbr/>Buffer</a></li>
+      <li class='var-spec'><a href="#gl-buffer-general.ads:77:4">default_<wbr/>Terminator (private)</a></li>
+      <li class='subp-spec'><a href="#gl-buffer-general.ads:26:14">To_<wbr/>Buffer</a></li>
+      <li class='subp-spec'><a href="#gl-buffer-general.ads:28:14">Set</a></li>
+      <li class='subp-spec'><a href="#gl-buffer-general.ads:31:14">Get</a></li>
+      <li class='subp-spec'><a href="#gl-buffer-general.ads:38:14">Release</a></li>
+      <li class='subp-spec'><a href="#gl-buffer-general.ads:51:14">Map</a></li>
+      <li class='subp-spec'><a href="#gl-buffer-general.ads:53:14">Get</a></li>
+      <li class='subp-spec'><a href="#gl-buffer-general.ads:54:14">Get</a></li>
+      <li class='subp-spec'><a href="#gl-buffer-general.ads:58:14">Map</a></li>
+      <li class='subp-spec'><a href="#gl-buffer-general.ads:60:14">Set</a></li>
+      <li class='subp-spec'><a href="#gl-buffer-general.ads:61:14">Set</a></li>
+      <li class='subp-spec'><a href="#gl-buffer-general.ads:65:14">Map</a></li>
+      <li class='subp-spec'><a href="#gl-buffer-general.ads:67:14">Get</a></li>
+      <li class='subp-spec'><a href="#gl-buffer-general.ads:68:14">Get</a></li>
+      <li class='subp-spec'><a href="#gl-buffer-general.ads:70:14">Set</a></li>
+      <li class='subp-spec'><a href="#gl-buffer-general.ads:71:14">Set</a></li>
+    </ul>
+  </noscript>
+ </div>
+ </div>
+</div>
+
+<div class='default' id='documentation'>
+  <div class='title'>
+    Package:
+<span class="droplink"><i>general (generic)</i><ul>
+  <li><a href="src_gl-buffer-general.ads.html">Goto spec source</a></li>
+  <li><a href="src_gl-buffer-general.adb.html">Goto body source</a></li>
+</ul></span>
+  </div>
+  <div class='subprograms'>
+    <h1><a name='Description' id='Description'></a>Description</h1>
+    <div class="class">
+    <div class='details'><pre><span class="keyword">generic</span>
+   <span class="keyword">type</span> <span class="name"><a name="gl-buffer-general.ads:14:9"></a>base_Object</span> <span class="keyword">is</span> <span class="keyword">new</span> <a href="gl-buffer.ads.html#gl-buffer.ads:20:9" title="defined at gl-buffer.ads:20:9">GL.Buffer.Object</a> <span class="keyword">with</span> <span class="keyword">private</span>;
+
+   <span class="keyword">type</span> <span class="name"><a name="gl-buffer-general.ads:16:9"></a>Index</span>         <span class="keyword">is</span> <span class="keyword">mod</span> <>;
+   <span class="keyword">type</span> <span class="name"><a name="gl-buffer-general.ads:17:9"></a>Element</span>       <span class="keyword">is</span> <span class="keyword">private</span>;
+   <span class="keyword">type</span> <span class="name"><a name="gl-buffer-general.ads:18:9"></a>Element_Array</span> <span class="keyword">is</span> <span class="keyword">array</span> (<a href="gl-buffer-general.ads.html#gl-buffer-general.ads:16:9" title="defined at gl-buffer-general.ads:16:9">Index</a> <span class="keyword">range</span> <>) <span class="keyword">of</span> <span class="keyword">aliased</span> <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:17:9" title="defined at gl-buffer-general.ads:17:9">Element</a>;
+
+<span class="keyword">package</span> <span class="name_emphasis">GL.Buffer.general</span> <span class="keyword">is</span></pre></div>
+    <div class='comment'>-----------------------------------------------------------------------
+<a href="gl-buffer-general.adb.html#gl-buffer-general.adb:18:14" title="GL.Buffer.general">GL.Buffer.general</a> - a generic for producing the various types of openGL vertex buffer objects.
+
+Copyright (c) Rod Kay 2007
+AUSTRALIA
+Permission granted to use this software, without any warranty,
+for any purpose, provided this copyright note remains attached
+and unmodified if sources are distributed further.
+-----------------------------------------------------------------------
+</div>
+    </div>
+  </div>
+
+  <div class='subprograms'>
+    <h1><a name='Packages' id='Packages'></a>Packages</h1>
+    <div class="class">
+      <h3>
+        <a name='gl-buffer-general.ads:80:12' id='gl-buffer-general.ads:80:12'></a>
+        Element_Pointers (private)
+        <span class='type'>(new Pointers)</span>
+      </h3>
+        <div class='details'><pre><span class="keyword">package</span> <span class="name_emphasis">Element_Pointers</span> <span class="keyword">is</span> <span class="keyword">new</span> interfaces.C.Pointers (<a href="gl-buffer-general.ads.html#gl-buffer-general.ads:16:9" title="defined at gl-buffer-general.ads:16:9">Index</a>, <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:17:9" title="defined at gl-buffer-general.ads:17:9">Element</a>, <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:18:9" title="defined at gl-buffer-general.ads:18:9">Element_Array</a>, <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:77:4" title="defined at gl-buffer-general.ads:77:4">default_Terminator</a>);</pre></div>
+    </div>
+  </div>
+
+  <div class='subprograms'>
+    <h1><a name='Classes' id='Classes'></a>Classes</h1>
+    <div class="class">
+      <h3><a name='gl-buffer-general.ads:24:9' id='gl-buffer-general.ads:24:9'></a>
+<span class="droplink">General_Object<ul>
+  <li><a href="src_gl-buffer-general.ads.html#l24">Goto declaration in source</a></li>
+  <li><a href="src_gl-buffer-general.ads.html#l75">Goto full declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">General_Object</span> <span class="keyword">is</span> <span class="keyword">new</span> <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:14:9" title="defined at gl-buffer-general.ads:14:9">base_Object</a> <span class="keyword">with</span> <span class="keyword">private</span>;</pre></div>
+      <div class='profile'>
+        <div>
+          <h4>Ancestors:</h4>
+            <div><a href="gl-buffer-general.ads.html#gl-buffer-general.ads:14:9" title="defined at gl-buffer-general.ads:14:9">base_Object</a></div>
+            <div><a href="gl-buffer.ads.html#gl-buffer.ads:20:9" title="defined at gl-buffer.ads:20:9">GL.Buffer.Object</a></div>
+        </div>
+        <div>
+          <h4>Primitive operations:</h4>
+              <div><span class="droplink">Get<ul><li><a href="gl-buffer-general.ads.html#gl-buffer-general.ads:31:14" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer-general.ads.html#l31" title="To spec">To spec</a></li></ul></span></div>
+              <div><i><span class="droplink">GL.Buffer.Extract_VBO_Target<ul><li><a href="gl-buffer.ads.html#gl-buffer.ads:25:13" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer.ads.html#l25" title="To spec">To spec</a></li></ul></span> (Inherited)</i></div>
+              <div><span class="droplink">Map<ul><li><a href="gl-buffer-general.ads.html#gl-buffer-general.ads:65:14" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer-general.ads.html#l65" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">Map<ul><li><a href="gl-buffer-general.ads.html#gl-buffer-general.ads:58:14" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer-general.ads.html#l58" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">Map<ul><li><a href="gl-buffer-general.ads.html#gl-buffer-general.ads:51:14" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer-general.ads.html#l51" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">Set<ul><li><a href="gl-buffer-general.ads.html#gl-buffer-general.ads:28:14" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer-general.ads.html#l28" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">To_Buffer<ul><li><a href="gl-buffer-general.ads.html#gl-buffer-general.ads:26:14" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer-general.ads.html#l26" title="To spec">To spec</a></li></ul></span></div>
+        </div>
+      </div>
+      <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-buffer-general.ads.html#l24" title="gl-buffer-general.ads:24:9">gl-buffer-general.ads:24:9</a> (declaration)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l28" title="gl-buffer-general.adb:28:83">gl-buffer-general.adb:28:83</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l32" title="gl-buffer-general.adb:32:21">gl-buffer-general.adb:32:21</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l45" title="gl-buffer-general.adb:45:42">gl-buffer-general.adb:45:42</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l62" title="gl-buffer-general.adb:62:32">gl-buffer-general.adb:62:32</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l133" title="gl-buffer-general.adb:133:32">gl-buffer-general.adb:133:32</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l161" title="gl-buffer-general.adb:161:32">gl-buffer-general.adb:161:32</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l199" title="gl-buffer-general.adb:199:33">gl-buffer-general.adb:199:33</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.ads.html#l26" title="gl-buffer-general.ads:26:81">gl-buffer-general.ads:26:81</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.ads.html#l28" title="gl-buffer-general.ads:28:41">gl-buffer-general.ads:28:41</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.ads.html#l31" title="gl-buffer-general.ads:31:33">gl-buffer-general.ads:31:33</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.ads.html#l51" title="gl-buffer-general.ads:51:34">gl-buffer-general.ads:51:34</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.ads.html#l58" title="gl-buffer-general.ads:58:33">gl-buffer-general.ads:58:33</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.ads.html#l65" title="gl-buffer-general.ads:65:34">gl-buffer-general.ads:65:34</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.ads.html#l75" title="gl-buffer-general.ads:75:9">gl-buffer-general.ads:75:9</a> (full declaration)</i></div>
+            <div><i><a href="src_gl-skins.ads.html#l111" title="gl-skins.ads:111:58">gl-skins.ads:111:58</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-buffer-general.ads:36:9' id='gl-buffer-general.ads:36:9'></a>
+<span class="droplink">memory_Map (abstract)<ul>
+  <li><a href="src_gl-buffer-general.ads.html#l36">Goto declaration in source</a></li>
+  <li><a href="src_gl-buffer-general.ads.html#l83">Goto full declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">memory_Map</span> <span class="keyword">is</span> <span class="keyword">abstract</span> <span class="keyword">tagged</span> <span class="keyword">private</span>;</pre></div>
+      <div class='profile'>
+        <div>
+          <h4>Immediate Children:</h4>
+            <div><a href="gl-buffer-general.ads.html#gl-buffer-general.ads:49:9" title="defined at gl-buffer-general.ads:49:9">general.read_only_Map</a></div>
+            <div><a href="gl-buffer-general.ads.html#gl-buffer-general.ads:63:9" title="defined at gl-buffer-general.ads:63:9">general.read_write_Map</a></div>
+            <div><a href="gl-buffer-general.ads.html#gl-buffer-general.ads:56:9" title="defined at gl-buffer-general.ads:56:9">general.write_only_Map</a></div>
+        </div>
+        <div>
+          <h4>Primitive operations:</h4>
+              <div><span class="droplink">Release<ul><li><a href="gl-buffer-general.ads.html#gl-buffer-general.ads:38:14" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer-general.ads.html#l38" title="To spec">To spec</a></li></ul></span></div>
+        </div>
+      </div>
+      <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-buffer-general.ads.html#l36" title="gl-buffer-general.ads:36:9">gl-buffer-general.ads:36:9</a> (declaration)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l78" title="gl-buffer-general.adb:78:30">gl-buffer-general.adb:78:30</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l88" title="gl-buffer-general.adb:88:25">gl-buffer-general.adb:88:25</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l98" title="gl-buffer-general.adb:98:33">gl-buffer-general.adb:98:33</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l110" title="gl-buffer-general.adb:110:41">gl-buffer-general.adb:110:41</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l121" title="gl-buffer-general.adb:121:34">gl-buffer-general.adb:121:34</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l153" title="gl-buffer-general.adb:153:86">gl-buffer-general.adb:153:86</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l157" title="gl-buffer-general.adb:157:73">gl-buffer-general.adb:157:73</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l186" title="gl-buffer-general.adb:186:12">gl-buffer-general.adb:186:12</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l194" title="gl-buffer-general.adb:194:12">gl-buffer-general.adb:194:12</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l219" title="gl-buffer-general.adb:219:87">gl-buffer-general.adb:219:87</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l223" title="gl-buffer-general.adb:223:74">gl-buffer-general.adb:223:74</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l230" title="gl-buffer-general.adb:230:12">gl-buffer-general.adb:230:12</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l238" title="gl-buffer-general.adb:238:12">gl-buffer-general.adb:238:12</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.ads.html#l38" title="gl-buffer-general.ads:38:30">gl-buffer-general.ads:38:30</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.ads.html#l49" title="gl-buffer-general.ads:49:31">gl-buffer-general.ads:49:31</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.ads.html#l56" title="gl-buffer-general.ads:56:31">gl-buffer-general.ads:56:31</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.ads.html#l63" title="gl-buffer-general.ads:63:31">gl-buffer-general.ads:63:31</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.ads.html#l83" title="gl-buffer-general.ads:83:9">gl-buffer-general.ads:83:9</a> (full declaration)</i></div>
+            <div><i><a href="src_gl-buffer-general.ads.html#l91" title="gl-buffer-general.ads:91:31">gl-buffer-general.ads:91:31</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.ads.html#l92" title="gl-buffer-general.ads:92:31">gl-buffer-general.ads:92:31</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.ads.html#l93" title="gl-buffer-general.ads:93:31">gl-buffer-general.ads:93:31</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-buffer-general.ads:49:9' id='gl-buffer-general.ads:49:9'></a>
+<span class="droplink">read_only_Map<ul>
+  <li><a href="src_gl-buffer-general.ads.html#l49">Goto declaration in source</a></li>
+  <li><a href="src_gl-buffer-general.ads.html#l91">Goto full declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">read_only_Map</span>  <span class="keyword">is</span> <span class="keyword">new</span> <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:36:9" title="defined at gl-buffer-general.ads:36:9">memory_Map</a> <span class="keyword">with</span> <span class="keyword">private</span>;</pre></div>
+      <div class='profile'>
+        <div>
+          <h4>Ancestors:</h4>
+            <div><a href="gl-buffer-general.ads.html#gl-buffer-general.ads:36:9" title="defined at gl-buffer-general.ads:36:9">general.memory_Map</a></div>
+        </div>
+        <div>
+          <h4>Immediate Children:</h4>
+            <div><a href="gl-buffer-general.ads.html#gl-buffer-general.ads:51:14" title="defined at gl-buffer-general.ads:51:14">general.Map</a></div>
+        </div>
+        <div>
+          <h4>Primitive operations:</h4>
+              <div><span class="droplink">Get<ul><li><a href="gl-buffer-general.ads.html#gl-buffer-general.ads:53:14" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer-general.ads.html#l53" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">Get<ul><li><a href="gl-buffer-general.ads.html#gl-buffer-general.ads:54:14" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer-general.ads.html#l54" title="To spec">To spec</a></li></ul></span></div>
+              <div><i><span class="droplink">Release<ul><li><a href="gl-buffer-general.ads.html#gl-buffer-general.ads:38:14" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer-general.ads.html#l38" title="To spec">To spec</a></li></ul></span> (Inherited)</i></div>
+        </div>
+      </div>
+      <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-buffer-general.ads.html#l49" title="gl-buffer-general.ads:49:9">gl-buffer-general.ads:49:9</a> (declaration)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l67" title="gl-buffer-general.adb:67:22">gl-buffer-general.adb:67:22</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l133" title="gl-buffer-general.adb:133:55">gl-buffer-general.adb:133:55</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l137" title="gl-buffer-general.adb:137:18">gl-buffer-general.adb:137:18</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l153" title="gl-buffer-general.adb:153:25">gl-buffer-general.adb:153:25</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l155" title="gl-buffer-general.adb:155:33">gl-buffer-general.adb:155:33</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.ads.html#l51" title="gl-buffer-general.ads:51:57">gl-buffer-general.ads:51:57</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.ads.html#l53" title="gl-buffer-general.ads:53:26">gl-buffer-general.ads:53:26</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.ads.html#l54" title="gl-buffer-general.ads:54:26">gl-buffer-general.ads:54:26</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.ads.html#l91" title="gl-buffer-general.ads:91:9">gl-buffer-general.ads:91:9</a> (full declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-buffer-general.ads:56:9' id='gl-buffer-general.ads:56:9'></a>
+<span class="droplink">write_only_Map<ul>
+  <li><a href="src_gl-buffer-general.ads.html#l56">Goto declaration in source</a></li>
+  <li><a href="src_gl-buffer-general.ads.html#l92">Goto full declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">write_only_Map</span> <span class="keyword">is</span> <span class="keyword">new</span> <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:36:9" title="defined at gl-buffer-general.ads:36:9">memory_Map</a> <span class="keyword">with</span> <span class="keyword">private</span>;</pre></div>
+      <div class='profile'>
+        <div>
+          <h4>Ancestors:</h4>
+            <div><a href="gl-buffer-general.ads.html#gl-buffer-general.ads:36:9" title="defined at gl-buffer-general.ads:36:9">general.memory_Map</a></div>
+        </div>
+        <div>
+          <h4>Immediate Children:</h4>
+            <div><a href="gl-buffer-general.ads.html#gl-buffer-general.ads:58:14" title="defined at gl-buffer-general.ads:58:14">general.Map</a></div>
+        </div>
+        <div>
+          <h4>Primitive operations:</h4>
+              <div><i><span class="droplink">Release<ul><li><a href="gl-buffer-general.ads.html#gl-buffer-general.ads:38:14" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer-general.ads.html#l38" title="To spec">To spec</a></li></ul></span> (Inherited)</i></div>
+              <div><span class="droplink">Set<ul><li><a href="gl-buffer-general.ads.html#gl-buffer-general.ads:60:14" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer-general.ads.html#l60" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">Set<ul><li><a href="gl-buffer-general.ads.html#gl-buffer-general.ads:61:14" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer-general.ads.html#l61" title="To spec">To spec</a></li></ul></span></div>
+        </div>
+      </div>
+      <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-buffer-general.ads.html#l56" title="gl-buffer-general.ads:56:9">gl-buffer-general.ads:56:9</a> (declaration)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l161" title="gl-buffer-general.adb:161:55">gl-buffer-general.adb:161:55</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l165" title="gl-buffer-general.adb:165:18">gl-buffer-general.adb:165:18</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l181" title="gl-buffer-general.adb:181:41">gl-buffer-general.adb:181:41</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l189" title="gl-buffer-general.adb:189:34">gl-buffer-general.adb:189:34</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.ads.html#l58" title="gl-buffer-general.ads:58:56">gl-buffer-general.ads:58:56</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.ads.html#l60" title="gl-buffer-general.ads:60:26">gl-buffer-general.ads:60:26</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.ads.html#l61" title="gl-buffer-general.ads:61:26">gl-buffer-general.ads:61:26</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.ads.html#l92" title="gl-buffer-general.ads:92:9">gl-buffer-general.ads:92:9</a> (full declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-buffer-general.ads:63:9' id='gl-buffer-general.ads:63:9'></a>
+<span class="droplink">read_write_Map<ul>
+  <li><a href="src_gl-buffer-general.ads.html#l63">Goto declaration in source</a></li>
+  <li><a href="src_gl-buffer-general.ads.html#l93">Goto full declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">read_write_Map</span> <span class="keyword">is</span> <span class="keyword">new</span> <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:36:9" title="defined at gl-buffer-general.ads:36:9">memory_Map</a> <span class="keyword">with</span> <span class="keyword">private</span>;</pre></div>
+      <div class='profile'>
+        <div>
+          <h4>Ancestors:</h4>
+            <div><a href="gl-buffer-general.ads.html#gl-buffer-general.ads:36:9" title="defined at gl-buffer-general.ads:36:9">general.memory_Map</a></div>
+        </div>
+        <div>
+          <h4>Immediate Children:</h4>
+            <div><a href="gl-buffer-general.ads.html#gl-buffer-general.ads:65:14" title="defined at gl-buffer-general.ads:65:14">general.Map</a></div>
+        </div>
+        <div>
+          <h4>Primitive operations:</h4>
+              <div><span class="droplink">Get<ul><li><a href="gl-buffer-general.ads.html#gl-buffer-general.ads:67:14" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer-general.ads.html#l67" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">Get<ul><li><a href="gl-buffer-general.ads.html#gl-buffer-general.ads:68:14" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer-general.ads.html#l68" title="To spec">To spec</a></li></ul></span></div>
+              <div><i><span class="droplink">Release<ul><li><a href="gl-buffer-general.ads.html#gl-buffer-general.ads:38:14" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer-general.ads.html#l38" title="To spec">To spec</a></li></ul></span> (Inherited)</i></div>
+              <div><span class="droplink">Set<ul><li><a href="gl-buffer-general.ads.html#gl-buffer-general.ads:70:14" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer-general.ads.html#l70" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">Set<ul><li><a href="gl-buffer-general.ads.html#gl-buffer-general.ads:71:14" title="To API doc">To API doc</a></li><li><a href="src_gl-buffer-general.ads.html#l71" title="To spec">To spec</a></li></ul></span></div>
+        </div>
+      </div>
+      <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-buffer-general.ads.html#l63" title="gl-buffer-general.ads:63:9">gl-buffer-general.ads:63:9</a> (declaration)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l199" title="gl-buffer-general.adb:199:56">gl-buffer-general.adb:199:56</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l203" title="gl-buffer-general.adb:203:18">gl-buffer-general.adb:203:18</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l219" title="gl-buffer-general.adb:219:25">gl-buffer-general.adb:219:25</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l221" title="gl-buffer-general.adb:221:34">gl-buffer-general.adb:221:34</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l225" title="gl-buffer-general.adb:225:41">gl-buffer-general.adb:225:41</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l233" title="gl-buffer-general.adb:233:34">gl-buffer-general.adb:233:34</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.ads.html#l65" title="gl-buffer-general.ads:65:57">gl-buffer-general.ads:65:57</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.ads.html#l67" title="gl-buffer-general.ads:67:26">gl-buffer-general.ads:67:26</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.ads.html#l68" title="gl-buffer-general.ads:68:26">gl-buffer-general.ads:68:26</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.ads.html#l70" title="gl-buffer-general.ads:70:26">gl-buffer-general.ads:70:26</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.ads.html#l71" title="gl-buffer-general.ads:71:26">gl-buffer-general.ads:71:26</a> (reference)</i></div>
+            <div><i><a href="src_gl-buffer-general.ads.html#l93" title="gl-buffer-general.ads:93:9">gl-buffer-general.ads:93:9</a> (full declaration)</i></div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class='subprograms'>
+    <h1><a name='Types' id='Types'></a>Types</h1>
+    <div class="class">
+      <h3>
+        <a name='gl-buffer-general.ads:14:9' id='gl-buffer-general.ads:14:9'></a>
+<span class="droplink">base_Object<ul>
+  <li><a href="src_gl-buffer-general.ads.html#l14">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">base_Object</span> <span class="keyword">is</span> <span class="keyword">new</span> <a href="gl-buffer.ads.html#gl-buffer.ads:20:9" title="defined at gl-buffer.ads:20:9">GL.Buffer.Object</a> <span class="keyword">with</span> <span class="keyword">private</span>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-buffer-general.ads.html#l14" title="gl-buffer-general.ads:14:9">gl-buffer-general.ads:14:9</a> (declaration)</i></div>
+          <div><i><a href="src_gl-buffer-general.ads.html#l24" title="gl-buffer-general.ads:24:31">gl-buffer-general.ads:24:31</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.ads.html#l75" title="gl-buffer-general.ads:75:31">gl-buffer-general.ads:75:31</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-texture_coords.ads.html#l6" title="gl-buffer-texture_coords.ads:6:60">gl-buffer-texture_coords.ads:6:60</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-buffer-general.ads:16:9' id='gl-buffer-general.ads:16:9'></a>
+<span class="droplink">Index<ul>
+  <li><a href="src_gl-buffer-general.ads.html#l16">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Index</span>         <span class="keyword">is</span> <span class="keyword">mod</span> <>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-buffer-general.ads.html#l16" title="gl-buffer-general.ads:16:9">gl-buffer-general.ads:16:9</a> (declaration)</i></div>
+          <div><i><a href="src_gl-buffer-general.adb.html#l68" title="gl-buffer-general.adb:68:62">gl-buffer-general.adb:68:62</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.adb.html#l88" title="gl-buffer-general.adb:88:52">gl-buffer-general.adb:88:52</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.adb.html#l99" title="gl-buffer-general.adb:99:33">gl-buffer-general.adb:99:33</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.adb.html#l111" title="gl-buffer-general.adb:111:41">gl-buffer-general.adb:111:41</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.adb.html#l122" title="gl-buffer-general.adb:122:34">gl-buffer-general.adb:122:34</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.adb.html#l147" title="gl-buffer-general.adb:147:29">gl-buffer-general.adb:147:29</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.adb.html#l153" title="gl-buffer-general.adb:153:55">gl-buffer-general.adb:153:55</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.adb.html#l156" title="gl-buffer-general.adb:156:33">gl-buffer-general.adb:156:33</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.adb.html#l175" title="gl-buffer-general.adb:175:29">gl-buffer-general.adb:175:29</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.adb.html#l182" title="gl-buffer-general.adb:182:41">gl-buffer-general.adb:182:41</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.adb.html#l190" title="gl-buffer-general.adb:190:34">gl-buffer-general.adb:190:34</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.adb.html#l213" title="gl-buffer-general.adb:213:29">gl-buffer-general.adb:213:29</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.adb.html#l219" title="gl-buffer-general.adb:219:56">gl-buffer-general.adb:219:56</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.adb.html#l222" title="gl-buffer-general.adb:222:34">gl-buffer-general.adb:222:34</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.adb.html#l226" title="gl-buffer-general.adb:226:41">gl-buffer-general.adb:226:41</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.adb.html#l234" title="gl-buffer-general.adb:234:34">gl-buffer-general.adb:234:34</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.ads.html#l18" title="gl-buffer-general.ads:18:33">gl-buffer-general.ads:18:33</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.ads.html#l53" title="gl-buffer-general.ads:53:56">gl-buffer-general.ads:53:56</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.ads.html#l54" title="gl-buffer-general.ads:54:56">gl-buffer-general.ads:54:56</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.ads.html#l60" title="gl-buffer-general.ads:60:57">gl-buffer-general.ads:60:57</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.ads.html#l61" title="gl-buffer-general.ads:61:57">gl-buffer-general.ads:61:57</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.ads.html#l67" title="gl-buffer-general.ads:67:57">gl-buffer-general.ads:67:57</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.ads.html#l68" title="gl-buffer-general.ads:68:57">gl-buffer-general.ads:68:57</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.ads.html#l70" title="gl-buffer-general.ads:70:57">gl-buffer-general.ads:70:57</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.ads.html#l71" title="gl-buffer-general.ads:71:57">gl-buffer-general.ads:71:57</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.ads.html#l80" title="gl-buffer-general.ads:80:59">gl-buffer-general.ads:80:59</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.ads.html#l88" title="gl-buffer-general.ads:88:18">gl-buffer-general.ads:88:18</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-texture_coords.ads.html#l7" title="gl-buffer-texture_coords.ads:7:60">gl-buffer-texture_coords.ads:7:60</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-buffer-general.ads:17:9' id='gl-buffer-general.ads:17:9'></a>
+<span class="droplink">Element<ul>
+  <li><a href="src_gl-buffer-general.ads.html#l17">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Element</span>       <span class="keyword">is</span> <span class="keyword">private</span>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-buffer-general.ads.html#l17" title="gl-buffer-general.ads:17:9">gl-buffer-general.ads:17:9</a> (declaration)</i></div>
+          <div><i><a href="src_gl-buffer-general.adb.html#l88" title="gl-buffer-general.adb:88:66">gl-buffer-general.adb:88:66</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.adb.html#l112" title="gl-buffer-general.adb:112:41">gl-buffer-general.adb:112:41</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.adb.html#l123" title="gl-buffer-general.adb:123:34">gl-buffer-general.adb:123:34</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.adb.html#l125" title="gl-buffer-general.adb:125:28">gl-buffer-general.adb:125:28</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.adb.html#l153" title="gl-buffer-general.adb:153:69">gl-buffer-general.adb:153:69</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.adb.html#l183" title="gl-buffer-general.adb:183:41">gl-buffer-general.adb:183:41</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.adb.html#l191" title="gl-buffer-general.adb:191:34">gl-buffer-general.adb:191:34</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.adb.html#l219" title="gl-buffer-general.adb:219:70">gl-buffer-general.adb:219:70</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.adb.html#l227" title="gl-buffer-general.adb:227:41">gl-buffer-general.adb:227:41</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.adb.html#l235" title="gl-buffer-general.adb:235:34">gl-buffer-general.adb:235:34</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.ads.html#l18" title="gl-buffer-general.ads:18:60">gl-buffer-general.ads:18:60</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.ads.html#l53" title="gl-buffer-general.ads:53:70">gl-buffer-general.ads:53:70</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.ads.html#l60" title="gl-buffer-general.ads:60:76">gl-buffer-general.ads:60:76</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.ads.html#l61" title="gl-buffer-general.ads:61:76">gl-buffer-general.ads:61:76</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.ads.html#l67" title="gl-buffer-general.ads:67:71">gl-buffer-general.ads:67:71</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.ads.html#l70" title="gl-buffer-general.ads:70:76">gl-buffer-general.ads:70:76</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.ads.html#l71" title="gl-buffer-general.ads:71:76">gl-buffer-general.ads:71:76</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.ads.html#l77" title="gl-buffer-general.ads:77:25">gl-buffer-general.ads:77:25</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.ads.html#l80" title="gl-buffer-general.ads:80:66">gl-buffer-general.ads:80:66</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-texture_coords.ads.html#l8" title="gl-buffer-texture_coords.ads:8:60">gl-buffer-texture_coords.ads:8:60</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-buffer-general.ads:18:9' id='gl-buffer-general.ads:18:9'></a>
+<span class="droplink">Element_Array<ul>
+  <li><a href="src_gl-buffer-general.ads.html#l18">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Element_Array</span> <span class="keyword">is</span> <span class="keyword">array</span> (<a href="gl-buffer-general.ads.html#gl-buffer-general.ads:16:9" title="defined at gl-buffer-general.ads:16:9">Index</a> <span class="keyword">range</span> <>) <span class="keyword">of</span> <span class="keyword">aliased</span> <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:17:9" title="defined at gl-buffer-general.ads:17:9">Element</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-buffer-general.ads.html#l18" title="gl-buffer-general.ads:18:9">gl-buffer-general.ads:18:9</a> (declaration)</i></div>
+          <div><i><a href="src_gl-buffer-general.adb.html#l28" title="gl-buffer-general.adb:28:39">gl-buffer-general.adb:28:39</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.adb.html#l47" title="gl-buffer-general.adb:47:42">gl-buffer-general.adb:47:42</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.adb.html#l51" title="gl-buffer-general.adb:51:38">gl-buffer-general.adb:51:38</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.adb.html#l62" title="gl-buffer-general.adb:62:55">gl-buffer-general.adb:62:55</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.adb.html#l68" title="gl-buffer-general.adb:68:31">gl-buffer-general.adb:68:31</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.adb.html#l100" title="gl-buffer-general.adb:100:50">gl-buffer-general.adb:100:50</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.adb.html#l157" title="gl-buffer-general.adb:157:50">gl-buffer-general.adb:157:50</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.adb.html#l223" title="gl-buffer-general.adb:223:51">gl-buffer-general.adb:223:51</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.ads.html#l26" title="gl-buffer-general.ads:26:39">gl-buffer-general.ads:26:39</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.ads.html#l30" title="gl-buffer-general.ads:30:41">gl-buffer-general.ads:30:41</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.ads.html#l31" title="gl-buffer-general.ads:31:56">gl-buffer-general.ads:31:56</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.ads.html#l54" title="gl-buffer-general.ads:54:88">gl-buffer-general.ads:54:88</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.ads.html#l68" title="gl-buffer-general.ads:68:89">gl-buffer-general.ads:68:89</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-general.ads.html#l80" title="gl-buffer-general.ads:80:75">gl-buffer-general.ads:80:75</a> (reference)</i></div>
+          <div><i><a href="src_gl-buffer-texture_coords.ads.html#l9" title="gl-buffer-texture_coords.ads:9:60">gl-buffer-texture_coords.ads:9:60</a> (reference)</i></div>
+      </div>
+    </div>
+  </div>
+
+  <div class='subprograms'>
+    <h1><a name='Constants' id='Constants'></a>Constants &amp; Global variables</h1>
+    <div class="class">
+      <h3><a name='gl-buffer-general.ads:47:4' id='gl-buffer-general.ads:47:4'></a>
+<span class="droplink">Corrupt_Buffer<ul>
+  <li><a href="src_gl-buffer-general.ads.html#l47">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Corrupt_Buffer</span>  : <span class="keyword">exception</span>;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-buffer-general.ads.html#l47" title="gl-buffer-general.ads:47:4">gl-buffer-general.ads:47:4</a> (declaration)</i></div>
+          <div><i><a href="src_gl-buffer-general.adb.html#l84" title="gl-buffer-general.adb:84:16">gl-buffer-general.adb:84:16</a> (reference)</i></div>
+      </div>
+      <div class='comment'>
+&apos;release&apos; must be called to release the buffers data back to the <a href="gl.adb.html#gl.adb:17:14" title="GL">GL</a> server.
+
+May raise <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:47:4" title="Corrupt_Buffer">Corrupt_Buffer</a> if the <a href="bzip2.ads.html#bzip2.ads:72:8" title="Buffer">Buffer</a> has become corrupt since the data
+was initially mapped. This can occur for system - specific reasons that affect the availability of graphics memory,
+such as screen mode changes. In such situations, the data store contents are undefined, and an application
+reinitialize the data store.
+
+</div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-buffer-general.ads:77:4' id='gl-buffer-general.ads:77:4'></a>
+<span class="droplink">default_Terminator (private)<ul>
+  <li><a href="src_gl-buffer-general.ads.html#l77">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="gl-buffer-general.ads.html#gl-buffer-general.ads:17:9" title="defined at gl-buffer-general.ads:17:9">Element</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">default_Terminator</span> : <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:17:9" title="defined at gl-buffer-general.ads:17:9">Element</a>;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-buffer-general.ads.html#l77" title="gl-buffer-general.ads:77:4">gl-buffer-general.ads:77:4</a> (declaration)</i></div>
+          <div><i><a href="src_gl-buffer-general.ads.html#l80" title="gl-buffer-general.ads:80:90">gl-buffer-general.ads:80:90</a> (reference)</i></div>
+      </div>
+    </div>
+  </div>
+
+    <div class='subprograms'>
+      <h1><a name='Methods' id='Methods'></a>Subprograms &amp; Entries</h1>
+      <div class="class">
+        <h3>
+          <a name='gl-buffer-general.ads:26:14' id='gl-buffer-general.ads:26:14'></a>
+<span class="droplink">To_Buffer<ul>
+  <li><a href="src_gl-buffer-general.ads.html#l26">Goto spec in source</a></li>
+  <li><a href="src_gl-buffer-general.adb.html#l28">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span>  <span class="name_emphasis">To_Buffer</span> <table><tr><td>(</td><td><span class="name"><a name="gl-buffer-general.ads:26:25"></a>From</span></td><td>: <span class="keyword">access</span> <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:18:9" title="defined at gl-buffer-general.ads:18:9">Element_Array</a>;</td></tr><tr><td></td><td><span class="name"><a name="gl-buffer-general.ads:26:54"></a>Usage</span></td><td>: <a href="gl.ads.html#gl.ads:3801:9" title="defined at gl.ads:3801:9">VBO_Usage</a>) <span class="keyword">return</span> <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:24:9" title="defined at gl-buffer-general.ads:24:9">General_Object</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-buffer-general.ads.html#l26" title="gl-buffer-general.ads:26:14">gl-buffer-general.ads:26:14</a> (declaration)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l28" title="gl-buffer-general.adb:28:13">gl-buffer-general.adb:28:13</a> (body)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l43" title="gl-buffer-general.adb:43:8">gl-buffer-general.adb:43:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="gl-buffer-general.adb.html#gl-buffer-general.adb:22:13" title="defined at gl-buffer-general.adb:22:13">general.to_gl_Pointer</a> defined at <a href="src_gl-buffer-general.adb.html#l22" title="gl-buffer-general.adb:22:13">gl-buffer-general.adb:22:13</a></i></div>
+            <div><i><a href="gl-buffer.ads.html#gl-buffer.ads:22:14" title="defined at gl-buffer.ads:22:14">GL.Buffer.Enable</a> defined at <a href="src_gl-buffer.ads.html#l22" title="gl-buffer.ads:22:14">gl-buffer.ads:22:14</a></i></div>
+            <div><i><a href="gl-buffer.ads.html#gl-buffer.ads:25:13" title="defined at gl-buffer.ads:25:13">GL.Buffer.Extract_VBO_Target</a> defined at <a href="src_gl-buffer.ads.html#l25" title="gl-buffer.ads:25:13">gl-buffer.ads:25:13</a></i></div>
+            <div><i><a href="gl-buffer.ads.html#gl-buffer.ads:64:14" title="defined at gl-buffer.ads:64:14">GL.Buffer.Verify_Name</a> defined at <a href="src_gl-buffer.ads.html#l64" title="gl-buffer.ads:64:14">gl-buffer.ads:64:14</a></i></div>
+            <div><i><a href="gl.ads.html#gl.ads:3826:14" title="defined at gl.ads:3826:14">GL.Buffer_Data</a> defined at <a href="src_gl.ads.html#l3826" title="gl.ads:3826:14">gl.ads:3826:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-buffer-general.ads:28:14' id='gl-buffer-general.ads:28:14'></a>
+<span class="droplink">Set<ul>
+  <li><a href="src_gl-buffer-general.ads.html#l28">Goto spec in source</a></li>
+  <li><a href="src_gl-buffer-general.adb.html#l45">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Set</span> <table><tr><td>(</td><td><span class="name"><a name="gl-buffer-general.ads:28:19"></a>Self</span></td><td>: <span class="keyword">in</span> <span class="keyword">out</span> <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:24:9" title="defined at gl-buffer-general.ads:24:9">General_Object</a>;</td></tr><tr><td></td><td><span class="name"><a name="gl-buffer-general.ads:29:19"></a>Set_Position</span></td><td>:        Positive := 1;</td></tr><tr><td></td><td><span class="comment">-- tbd : make this raise 'constraint_Error' instead of openGL_Error, when bounds are violated. </span>                  <span class="name"><a name="gl-buffer-general.ads:30:19"></a>To</span></td><td>:        <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:18:9" title="defined at gl-buffer-general.ads:18:9">Element_Array</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-buffer-general.ads.html#l28" title="gl-buffer-general.ads:28:14">gl-buffer-general.ads:28:14</a> (declaration)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l45" title="gl-buffer-general.adb:45:14">gl-buffer-general.adb:45:14</a> (body)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l60" title="gl-buffer-general.adb:60:8">gl-buffer-general.adb:60:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="gl-buffer-general.adb.html#gl-buffer-general.adb:22:13" title="defined at gl-buffer-general.adb:22:13">general.to_gl_Pointer</a> defined at <a href="src_gl-buffer-general.adb.html#l22" title="gl-buffer-general.adb:22:13">gl-buffer-general.adb:22:13</a></i></div>
+            <div><i><a href="gl-buffer.ads.html#gl-buffer.ads:22:14" title="defined at gl-buffer.ads:22:14">GL.Buffer.Enable</a> defined at <a href="src_gl-buffer.ads.html#l22" title="gl-buffer.ads:22:14">gl-buffer.ads:22:14</a></i></div>
+            <div><i><a href="gl-buffer.ads.html#gl-buffer.ads:25:13" title="defined at gl-buffer.ads:25:13">GL.Buffer.Extract_VBO_Target</a> defined at <a href="src_gl-buffer.ads.html#l25" title="gl-buffer.ads:25:13">gl-buffer.ads:25:13</a></i></div>
+            <div><i><a href="gl.ads.html#gl.ads:3831:14" title="defined at gl.ads:3831:14">GL.BufferSubData</a> defined at <a href="src_gl.ads.html#l3831" title="gl.ads:3831:14">gl.ads:3831:14</a></i></div>
+            <div><i><a href="gl-errors.ads.html#gl-errors.ads:21:14" title="defined at gl-errors.ads:21:14">GL.Errors.log</a> defined at <a href="src_gl-errors.ads.html#l21" title="gl-errors.ads:21:14">gl-errors.ads:21:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-buffer-general.ads:31:14' id='gl-buffer-general.ads:31:14'></a>
+<span class="droplink">Get<ul>
+  <li><a href="src_gl-buffer-general.ads.html#l31">Goto spec in source</a></li>
+  <li><a href="src_gl-buffer-general.adb.html#l62">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span>  <span class="name_emphasis">Get</span> <table><tr><td>(</td><td><span class="name"><a name="gl-buffer-general.ads:31:19"></a>Self</span></td><td>: <span class="keyword">access</span> <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:24:9" title="defined at gl-buffer-general.ads:24:9">General_Object</a>) <span class="keyword">return</span> <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:18:9" title="defined at gl-buffer-general.ads:18:9">Element_Array</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-buffer-general.ads.html#l31" title="gl-buffer-general.ads:31:14">gl-buffer-general.ads:31:14</a> (declaration)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l62" title="gl-buffer-general.adb:62:13">gl-buffer-general.adb:62:13</a> (body)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l73" title="gl-buffer-general.adb:73:8">gl-buffer-general.adb:73:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="gl-buffer-general.ads.html#gl-buffer-general.ads:54:14" title="defined at gl-buffer-general.ads:54:14">Get</a> defined at <a href="src_gl-buffer-general.ads.html#l54" title="gl-buffer-general.ads:54:14">gl-buffer-general.ads:54:14</a></i></div>
+            <div><i><a href="gl-buffer-general.ads.html#gl-buffer-general.ads:51:14" title="defined at gl-buffer-general.ads:51:14">Map</a> defined at <a href="src_gl-buffer-general.ads.html#l51" title="gl-buffer-general.ads:51:14">gl-buffer-general.ads:51:14</a></i></div>
+            <div><i><a href="gl-buffer-general.ads.html#gl-buffer-general.ads:38:14" title="defined at gl-buffer-general.ads:38:14">Release</a> defined at <a href="src_gl-buffer-general.ads.html#l38" title="gl-buffer-general.ads:38:14">gl-buffer-general.ads:38:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-buffer-general.ads:38:14' id='gl-buffer-general.ads:38:14'></a>
+<span class="droplink">Release<ul>
+  <li><a href="src_gl-buffer-general.ads.html#l38">Goto spec in source</a></li>
+  <li><a href="src_gl-buffer-general.adb.html#l78">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Release</span> <table><tr><td>(</td><td><span class="name"><a name="gl-buffer-general.ads:38:23"></a>Self</span></td><td>: <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:36:9" title="defined at gl-buffer-general.ads:36:9">memory_Map</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-buffer-general.ads.html#l38" title="gl-buffer-general.ads:38:14">gl-buffer-general.ads:38:14</a> (declaration)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l71" title="gl-buffer-general.adb:71:7">gl-buffer-general.adb:71:7</a> (dispatching call)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l78" title="gl-buffer-general.adb:78:14">gl-buffer-general.adb:78:14</a> (body)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l86" title="gl-buffer-general.adb:86:8">gl-buffer-general.adb:86:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="gl-buffer-general.ads.html#gl-buffer-general.ads:31:14" title="defined at gl-buffer-general.ads:31:14">Get</a> defined at <a href="src_gl-buffer-general.ads.html#l31" title="gl-buffer-general.ads:31:14">gl-buffer-general.ads:31:14</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="gl.ads.html#gl.ads:3852:13" title="defined at gl.ads:3852:13">GL.UnmapBuffer</a> defined at <a href="src_gl.ads.html#l3852" title="gl.ads:3852:13">gl.ads:3852:13</a></i></div>
+        </div>
+        <div class='comment'>
+&apos;release&apos; must be called to release the buffers data back to the <a href="gl.adb.html#gl.adb:17:14" title="GL">GL</a> server.
+
+May raise <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:47:4" title="Corrupt_Buffer">Corrupt_Buffer</a> if the <a href="bzip2.ads.html#bzip2.ads:72:8" title="Buffer">Buffer</a> has become corrupt since the data
+was initially mapped. This can occur for system - specific reasons that affect the availability of graphics memory,
+such as screen mode changes. In such situations, the data store contents are undefined, and an application
+reinitialize the data store.
+
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-buffer-general.ads:51:14' id='gl-buffer-general.ads:51:14'></a>
+<span class="droplink">Map<ul>
+  <li><a href="src_gl-buffer-general.ads.html#l51">Goto spec in source</a></li>
+  <li><a href="src_gl-buffer-general.adb.html#l133">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span>  <span class="name_emphasis">Map</span> <table><tr><td>(</td><td><span class="name"><a name="gl-buffer-general.ads:51:19"></a>Self</span></td><td>: <span class="keyword">access</span> <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:24:9" title="defined at gl-buffer-general.ads:24:9">General_Object</a>) <span class="keyword">return</span> <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:49:9" title="defined at gl-buffer-general.ads:49:9">read_only_Map</a>'Class;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-buffer-general.ads.html#l51" title="gl-buffer-general.ads:51:14">gl-buffer-general.ads:51:14</a> (declaration)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l67" title="gl-buffer-general.adb:67:50">gl-buffer-general.adb:67:50</a> (call)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l133" title="gl-buffer-general.adb:133:13">gl-buffer-general.adb:133:13</a> (body)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l151" title="gl-buffer-general.adb:151:8">gl-buffer-general.adb:151:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="gl-buffer-general.ads.html#gl-buffer-general.ads:31:14" title="defined at gl-buffer-general.ads:31:14">Get</a> defined at <a href="src_gl-buffer-general.ads.html#l31" title="gl-buffer-general.ads:31:14">gl-buffer-general.ads:31:14</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="gl-buffer-general.adb.html#gl-buffer-general.adb:23:13" title="defined at gl-buffer-general.adb:23:13">general.to_element_Pointer</a> defined at <a href="src_gl-buffer-general.adb.html#l23" title="gl-buffer-general.adb:23:13">gl-buffer-general.adb:23:13</a></i></div>
+            <div><i><a href="gl-buffer.ads.html#gl-buffer.ads:22:14" title="defined at gl-buffer.ads:22:14">GL.Buffer.Enable</a> defined at <a href="src_gl-buffer.ads.html#l22" title="gl-buffer.ads:22:14">gl-buffer.ads:22:14</a></i></div>
+            <div><i><a href="gl-buffer.ads.html#gl-buffer.ads:25:13" title="defined at gl-buffer.ads:25:13">GL.Buffer.Extract_VBO_Target</a> defined at <a href="src_gl-buffer.ads.html#l25" title="gl-buffer.ads:25:13">gl-buffer.ads:25:13</a></i></div>
+            <div><i><a href="gl.ads.html#gl.ads:3849:13" title="defined at gl.ads:3849:13">GL.MapBuffer</a> defined at <a href="src_gl.ads.html#l3849" title="gl.ads:3849:13">gl.ads:3849:13</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-buffer-general.ads:53:14' id='gl-buffer-general.ads:53:14'></a>
+<span class="droplink">Get<ul>
+  <li><a href="src_gl-buffer-general.ads.html#l53">Goto spec in source</a></li>
+  <li><a href="src_gl-buffer-general.adb.html#l153">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span>  <span class="name_emphasis">Get</span> <table><tr><td>(</td><td><span class="name"><a name="gl-buffer-general.ads:53:19"></a>Self</span></td><td>: <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:49:9" title="defined at gl-buffer-general.ads:49:9">read_only_Map</a>;</td></tr><tr><td></td><td><span class="name"><a name="gl-buffer-general.ads:53:41"></a>Get_Position</span></td><td>: <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:16:9" title="defined at gl-buffer-general.ads:16:9">Index</a>) <span class="keyword">return</span> <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:17:9" title="defined at gl-buffer-general.ads:17:9">Element</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-buffer-general.ads.html#l53" title="gl-buffer-general.ads:53:14">gl-buffer-general.ads:53:14</a> (declaration)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l153" title="gl-buffer-general.adb:153:13">gl-buffer-general.adb:153:13</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-buffer-general.ads:54:14' id='gl-buffer-general.ads:54:14'></a>
+<span class="droplink">Get<ul>
+  <li><a href="src_gl-buffer-general.ads.html#l54">Goto spec in source</a></li>
+  <li><a href="src_gl-buffer-general.adb.html#l155">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span>  <span class="name_emphasis">Get</span> <table><tr><td>(</td><td><span class="name"><a name="gl-buffer-general.ads:54:19"></a>Self</span></td><td>: <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:49:9" title="defined at gl-buffer-general.ads:49:9">read_only_Map</a>;</td></tr><tr><td></td><td><span class="name"><a name="gl-buffer-general.ads:54:41"></a>Get_Position</span></td><td>: <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:16:9" title="defined at gl-buffer-general.ads:16:9">Index</a>;</td></tr><tr><td></td><td><span class="name"><a name="gl-buffer-general.ads:54:63"></a>Count</span></td><td>: Positive) <span class="keyword">return</span> <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:18:9" title="defined at gl-buffer-general.ads:18:9">Element_Array</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-buffer-general.ads.html#l54" title="gl-buffer-general.ads:54:14">gl-buffer-general.ads:54:14</a> (declaration)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l68" title="gl-buffer-general.adb:68:48">gl-buffer-general.adb:68:48</a> (dispatching call)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l155" title="gl-buffer-general.adb:155:13">gl-buffer-general.adb:155:13</a> (body)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="gl-buffer-general.ads.html#gl-buffer-general.ads:31:14" title="defined at gl-buffer-general.ads:31:14">Get</a> defined at <a href="src_gl-buffer-general.ads.html#l31" title="gl-buffer-general.ads:31:14">gl-buffer-general.ads:31:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-buffer-general.ads:58:14' id='gl-buffer-general.ads:58:14'></a>
+<span class="droplink">Map<ul>
+  <li><a href="src_gl-buffer-general.ads.html#l58">Goto spec in source</a></li>
+  <li><a href="src_gl-buffer-general.adb.html#l161">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span>  <span class="name_emphasis">Map</span> <table><tr><td>(</td><td><span class="name"><a name="gl-buffer-general.ads:58:19"></a>Self</span></td><td>: <span class="keyword">access</span> <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:24:9" title="defined at gl-buffer-general.ads:24:9">General_Object</a>) <span class="keyword">return</span> <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:56:9" title="defined at gl-buffer-general.ads:56:9">write_only_Map</a>'Class;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-buffer-general.ads.html#l58" title="gl-buffer-general.ads:58:14">gl-buffer-general.ads:58:14</a> (declaration)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l161" title="gl-buffer-general.adb:161:13">gl-buffer-general.adb:161:13</a> (body)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l179" title="gl-buffer-general.adb:179:8">gl-buffer-general.adb:179:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="gl-buffer-general.adb.html#gl-buffer-general.adb:23:13" title="defined at gl-buffer-general.adb:23:13">general.to_element_Pointer</a> defined at <a href="src_gl-buffer-general.adb.html#l23" title="gl-buffer-general.adb:23:13">gl-buffer-general.adb:23:13</a></i></div>
+            <div><i><a href="gl-buffer.ads.html#gl-buffer.ads:22:14" title="defined at gl-buffer.ads:22:14">GL.Buffer.Enable</a> defined at <a href="src_gl-buffer.ads.html#l22" title="gl-buffer.ads:22:14">gl-buffer.ads:22:14</a></i></div>
+            <div><i><a href="gl-buffer.ads.html#gl-buffer.ads:25:13" title="defined at gl-buffer.ads:25:13">GL.Buffer.Extract_VBO_Target</a> defined at <a href="src_gl-buffer.ads.html#l25" title="gl-buffer.ads:25:13">gl-buffer.ads:25:13</a></i></div>
+            <div><i><a href="gl.ads.html#gl.ads:3849:13" title="defined at gl.ads:3849:13">GL.MapBuffer</a> defined at <a href="src_gl.ads.html#l3849" title="gl.ads:3849:13">gl.ads:3849:13</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-buffer-general.ads:60:14' id='gl-buffer-general.ads:60:14'></a>
+<span class="droplink">Set<ul>
+  <li><a href="src_gl-buffer-general.ads.html#l60">Goto spec in source</a></li>
+  <li><a href="src_gl-buffer-general.adb.html#l181">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Set</span> <table><tr><td>(</td><td><span class="name"><a name="gl-buffer-general.ads:60:19"></a>Self</span></td><td>: <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:56:9" title="defined at gl-buffer-general.ads:56:9">write_only_Map</a>;</td></tr><tr><td></td><td><span class="name"><a name="gl-buffer-general.ads:60:42"></a>Set_Position</span></td><td>: <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:16:9" title="defined at gl-buffer-general.ads:16:9">Index</a>;</td></tr><tr><td></td><td><span class="name"><a name="gl-buffer-general.ads:60:64"></a>To</span></td><td>: <span class="keyword">access</span> <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:17:9" title="defined at gl-buffer-general.ads:17:9">Element</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-buffer-general.ads.html#l60" title="gl-buffer-general.ads:60:14">gl-buffer-general.ads:60:14</a> (declaration)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l181" title="gl-buffer-general.adb:181:14">gl-buffer-general.adb:181:14</a> (body)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l187" title="gl-buffer-general.adb:187:8">gl-buffer-general.adb:187:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="gl-buffer-general.adb.html#gl-buffer-general.adb:110:14" title="defined at gl-buffer-general.adb:110:14">general.Set</a> defined at <a href="src_gl-buffer-general.adb.html#l110" title="gl-buffer-general.adb:110:14">gl-buffer-general.adb:110:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-buffer-general.ads:61:14' id='gl-buffer-general.ads:61:14'></a>
+<span class="droplink">Set<ul>
+  <li><a href="src_gl-buffer-general.ads.html#l61">Goto spec in source</a></li>
+  <li><a href="src_gl-buffer-general.adb.html#l189">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Set</span> <table><tr><td>(</td><td><span class="name"><a name="gl-buffer-general.ads:61:19"></a>Self</span></td><td>: <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:56:9" title="defined at gl-buffer-general.ads:56:9">write_only_Map</a>;</td></tr><tr><td></td><td><span class="name"><a name="gl-buffer-general.ads:61:42"></a>Set_Position</span></td><td>: <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:16:9" title="defined at gl-buffer-general.ads:16:9">Index</a>;</td></tr><tr><td></td><td><span class="name"><a name="gl-buffer-general.ads:61:64"></a>To</span></td><td>:        <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:17:9" title="defined at gl-buffer-general.ads:17:9">Element</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-buffer-general.ads.html#l61" title="gl-buffer-general.ads:61:14">gl-buffer-general.ads:61:14</a> (declaration)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l189" title="gl-buffer-general.adb:189:14">gl-buffer-general.adb:189:14</a> (body)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l195" title="gl-buffer-general.adb:195:8">gl-buffer-general.adb:195:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="gl-buffer-general.adb.html#gl-buffer-general.adb:121:14" title="defined at gl-buffer-general.adb:121:14">general.Set</a> defined at <a href="src_gl-buffer-general.adb.html#l121" title="gl-buffer-general.adb:121:14">gl-buffer-general.adb:121:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-buffer-general.ads:65:14' id='gl-buffer-general.ads:65:14'></a>
+<span class="droplink">Map<ul>
+  <li><a href="src_gl-buffer-general.ads.html#l65">Goto spec in source</a></li>
+  <li><a href="src_gl-buffer-general.adb.html#l199">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span>  <span class="name_emphasis">Map</span> <table><tr><td>(</td><td><span class="name"><a name="gl-buffer-general.ads:65:19"></a>Self</span></td><td>: <span class="keyword">access</span> <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:24:9" title="defined at gl-buffer-general.ads:24:9">General_Object</a>) <span class="keyword">return</span> <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:63:9" title="defined at gl-buffer-general.ads:63:9">read_write_Map</a>'Class;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-buffer-general.ads.html#l65" title="gl-buffer-general.ads:65:14">gl-buffer-general.ads:65:14</a> (declaration)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l199" title="gl-buffer-general.adb:199:13">gl-buffer-general.adb:199:13</a> (body)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l217" title="gl-buffer-general.adb:217:8">gl-buffer-general.adb:217:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="gl-buffer-general.adb.html#gl-buffer-general.adb:23:13" title="defined at gl-buffer-general.adb:23:13">general.to_element_Pointer</a> defined at <a href="src_gl-buffer-general.adb.html#l23" title="gl-buffer-general.adb:23:13">gl-buffer-general.adb:23:13</a></i></div>
+            <div><i><a href="gl-buffer.ads.html#gl-buffer.ads:22:14" title="defined at gl-buffer.ads:22:14">GL.Buffer.Enable</a> defined at <a href="src_gl-buffer.ads.html#l22" title="gl-buffer.ads:22:14">gl-buffer.ads:22:14</a></i></div>
+            <div><i><a href="gl-buffer.ads.html#gl-buffer.ads:25:13" title="defined at gl-buffer.ads:25:13">GL.Buffer.Extract_VBO_Target</a> defined at <a href="src_gl-buffer.ads.html#l25" title="gl-buffer.ads:25:13">gl-buffer.ads:25:13</a></i></div>
+            <div><i><a href="gl.ads.html#gl.ads:3849:13" title="defined at gl.ads:3849:13">GL.MapBuffer</a> defined at <a href="src_gl.ads.html#l3849" title="gl.ads:3849:13">gl.ads:3849:13</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-buffer-general.ads:67:14' id='gl-buffer-general.ads:67:14'></a>
+<span class="droplink">Get<ul>
+  <li><a href="src_gl-buffer-general.ads.html#l67">Goto spec in source</a></li>
+  <li><a href="src_gl-buffer-general.adb.html#l219">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span>  <span class="name_emphasis">Get</span> <table><tr><td>(</td><td><span class="name"><a name="gl-buffer-general.ads:67:19"></a>Self</span></td><td>: <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:63:9" title="defined at gl-buffer-general.ads:63:9">read_write_Map</a>;</td></tr><tr><td></td><td><span class="name"><a name="gl-buffer-general.ads:67:42"></a>Get_Position</span></td><td>: <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:16:9" title="defined at gl-buffer-general.ads:16:9">Index</a>) <span class="keyword">return</span> <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:17:9" title="defined at gl-buffer-general.ads:17:9">Element</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-buffer-general.ads.html#l67" title="gl-buffer-general.ads:67:14">gl-buffer-general.ads:67:14</a> (declaration)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l219" title="gl-buffer-general.adb:219:13">gl-buffer-general.adb:219:13</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-buffer-general.ads:68:14' id='gl-buffer-general.ads:68:14'></a>
+<span class="droplink">Get<ul>
+  <li><a href="src_gl-buffer-general.ads.html#l68">Goto spec in source</a></li>
+  <li><a href="src_gl-buffer-general.adb.html#l221">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span>  <span class="name_emphasis">Get</span> <table><tr><td>(</td><td><span class="name"><a name="gl-buffer-general.ads:68:19"></a>Self</span></td><td>: <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:63:9" title="defined at gl-buffer-general.ads:63:9">read_write_Map</a>;</td></tr><tr><td></td><td><span class="name"><a name="gl-buffer-general.ads:68:42"></a>Get_Position</span></td><td>: <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:16:9" title="defined at gl-buffer-general.ads:16:9">Index</a>;</td></tr><tr><td></td><td><span class="name"><a name="gl-buffer-general.ads:68:64"></a>Count</span></td><td>: Positive) <span class="keyword">return</span> <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:18:9" title="defined at gl-buffer-general.ads:18:9">Element_Array</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-buffer-general.ads.html#l68" title="gl-buffer-general.ads:68:14">gl-buffer-general.ads:68:14</a> (declaration)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l221" title="gl-buffer-general.adb:221:13">gl-buffer-general.adb:221:13</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-buffer-general.ads:70:14' id='gl-buffer-general.ads:70:14'></a>
+<span class="droplink">Set<ul>
+  <li><a href="src_gl-buffer-general.ads.html#l70">Goto spec in source</a></li>
+  <li><a href="src_gl-buffer-general.adb.html#l225">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Set</span> <table><tr><td>(</td><td><span class="name"><a name="gl-buffer-general.ads:70:19"></a>Self</span></td><td>: <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:63:9" title="defined at gl-buffer-general.ads:63:9">read_write_Map</a>;</td></tr><tr><td></td><td><span class="name"><a name="gl-buffer-general.ads:70:42"></a>Set_Position</span></td><td>: <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:16:9" title="defined at gl-buffer-general.ads:16:9">Index</a>;</td></tr><tr><td></td><td><span class="name"><a name="gl-buffer-general.ads:70:64"></a>To</span></td><td>: <span class="keyword">access</span> <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:17:9" title="defined at gl-buffer-general.ads:17:9">Element</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-buffer-general.ads.html#l70" title="gl-buffer-general.ads:70:14">gl-buffer-general.ads:70:14</a> (declaration)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l225" title="gl-buffer-general.adb:225:14">gl-buffer-general.adb:225:14</a> (body)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l231" title="gl-buffer-general.adb:231:8">gl-buffer-general.adb:231:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="gl-buffer-general.adb.html#gl-buffer-general.adb:110:14" title="defined at gl-buffer-general.adb:110:14">general.Set</a> defined at <a href="src_gl-buffer-general.adb.html#l110" title="gl-buffer-general.adb:110:14">gl-buffer-general.adb:110:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-buffer-general.ads:71:14' id='gl-buffer-general.ads:71:14'></a>
+<span class="droplink">Set<ul>
+  <li><a href="src_gl-buffer-general.ads.html#l71">Goto spec in source</a></li>
+  <li><a href="src_gl-buffer-general.adb.html#l233">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Set</span> <table><tr><td>(</td><td><span class="name"><a name="gl-buffer-general.ads:71:19"></a>Self</span></td><td>: <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:63:9" title="defined at gl-buffer-general.ads:63:9">read_write_Map</a>;</td></tr><tr><td></td><td><span class="name"><a name="gl-buffer-general.ads:71:42"></a>Set_Position</span></td><td>: <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:16:9" title="defined at gl-buffer-general.ads:16:9">Index</a>;</td></tr><tr><td></td><td><span class="name"><a name="gl-buffer-general.ads:71:64"></a>To</span></td><td>:        <a href="gl-buffer-general.ads.html#gl-buffer-general.ads:17:9" title="defined at gl-buffer-general.ads:17:9">Element</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-buffer-general.ads.html#l71" title="gl-buffer-general.ads:71:14">gl-buffer-general.ads:71:14</a> (declaration)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l233" title="gl-buffer-general.adb:233:14">gl-buffer-general.adb:233:14</a> (body)</i></div>
+            <div><i><a href="src_gl-buffer-general.adb.html#l239" title="gl-buffer-general.adb:239:8">gl-buffer-general.adb:239:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="gl-buffer-general.adb.html#gl-buffer-general.adb:121:14" title="defined at gl-buffer-general.adb:121:14">general.Set</a> defined at <a href="src_gl-buffer-general.adb.html#l121" title="gl-buffer-general.adb:121:14">gl-buffer-general.adb:121:14</a></i></div>
+        </div>
+      </div>
+    </div>
+</div> <!-- documentation -->
+
+</body>
+</html>

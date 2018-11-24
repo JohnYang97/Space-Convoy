@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    File: swarm_structures_base.ads
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+  </div>
+</div> <!-- leftSide -->
+
+<div class='subprograms'>
+  <div class='details'><ol><li id="l1"><pre><span class="comment">--</span> </pre></li>
+<li id="l2"><pre><span class="comment">-- Jan &amp; Uwe R. Zimmer, Australia, 2013</span> </pre></li>
+<li id="l3"><pre><span class="comment">--</span> </pre></li>
+<li id="l4"><pre> </pre></li>
+<li id="l5"><pre><span class="keyword">with</span> <span class="droplink">Real_Type<ul><li><a href="real_type.ads.html#real_type.ads:3:9" title="To API doc">To API doc</a></li><li><a href="src_real_type.ads.html#l3" title="To spec">To spec</a></li></ul></span>;          <span class="keyword">use</span> <span class="droplink">Real_Type<ul><li><a href="real_type.ads.html#real_type.ads:3:9" title="To API doc">To API doc</a></li><li><a href="src_real_type.ads.html#l3" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l6"><pre><span class="keyword">with</span> <span class="droplink">Generic_Protected<ul><li><a href="generic_protected.ads.html#generic_protected.ads:12:9" title="To API doc">To API doc</a></li><li><a href="src_generic_protected.ads.html#l12" title="To spec">To spec</a></li><li><a href="src_generic_protected.adb.html#l5" title="To body">To body</a></li></ul></span>;                            <span class="keyword">pragma</span> Elaborate_All (<span class="droplink">Generic_Protected<ul><li><a href="generic_protected.ads.html#generic_protected.ads:12:9" title="To API doc">To API doc</a></li><li><a href="src_generic_protected.ads.html#l12" title="To spec">To spec</a></li><li><a href="src_generic_protected.adb.html#l5" title="To body">To body</a></li></ul></span>); </pre></li>
+<li id="l7"><pre><span class="keyword">with</span> <span class="droplink">Graphics_Structures<ul><li><a href="graphics_structures.ads.html#graphics_structures.ads:12:9" title="To API doc">To API doc</a></li><li><a href="src_graphics_structures.ads.html#l12" title="To spec">To spec</a></li></ul></span>; <span class="keyword">use</span> <span class="droplink">Graphics_Structures<ul><li><a href="graphics_structures.ads.html#graphics_structures.ads:12:9" title="To API doc">To API doc</a></li><li><a href="src_graphics_structures.ads.html#l12" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l8"><pre><span class="keyword">with</span> <span class="droplink">Vectors_3D<ul><li><a href="vectors_3d.ads.html#vectors_3d.ads:8:9" title="To API doc">To API doc</a></li><li><a href="src_vectors_3d.ads.html#l8" title="To spec">To spec</a></li><li><a href="src_vectors_3d.adb.html#l5" title="To body">To body</a></li></ul></span>;          <span class="keyword">use</span> <span class="droplink">Vectors_3D<ul><li><a href="vectors_3d.ads.html#vectors_3d.ads:8:9" title="To API doc">To API doc</a></li><li><a href="src_vectors_3d.ads.html#l8" title="To spec">To spec</a></li><li><a href="src_vectors_3d.adb.html#l5" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l9"><pre> </pre></li>
+<li id="l10"><pre><span class="keyword">package</span> <a href="swarm_structures_base.ads.html#swarm_structures_base.ads:10:9" title="defined at swarm_structures_base.ads:10:9">Swarm_Structures_Base</a> <span class="keyword">is</span> </pre></li>
+<li id="l11"><pre> </pre></li>
+<li id="l12"><pre>   <span class="keyword">subtype</span> <a href="swarm_structures_base.ads.html#swarm_structures_base.ads:12:12" title="defined at swarm_structures_base.ads:12:12">Distances</a>  <span class="keyword">is</span> <span class="droplink">Real<ul><li><a href="real_type.ads.html#real_type.ads:5:12" title="To API doc">To API doc</a></li><li><a href="src_real_type.ads.html#l5" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l13"><pre>   <span class="keyword">subtype</span> <a href="swarm_structures_base.ads.html#swarm_structures_base.ads:13:12" title="defined at swarm_structures_base.ads:13:12">Acc_Scalar</a> <span class="keyword">is</span> <span class="droplink">Real<ul><li><a href="real_type.ads.html#real_type.ads:5:12" title="To API doc">To API doc</a></li><li><a href="src_real_type.ads.html#l5" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l14"><pre> </pre></li>
+<li id="l15"><pre>   <span class="keyword">subtype</span> <a href="swarm_structures_base.ads.html#swarm_structures_base.ads:15:12" title="defined at swarm_structures_base.ads:15:12">Positions</a>     <span class="keyword">is</span> <span class="droplink">Point_3D<ul><li><a href="graphics_structures.ads.html#graphics_structures.ads:32:12" title="To API doc">To API doc</a></li><li><a href="src_graphics_structures.ads.html#l32" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l16"><pre>   <span class="keyword">subtype</span> <a href="swarm_structures_base.ads.html#swarm_structures_base.ads:16:12" title="defined at swarm_structures_base.ads:16:12">Velocities</a>    <span class="keyword">is</span> <span class="droplink">Vector_3D<ul><li><a href="vectors_3d.ads.html#vectors_3d.ads:14:12" title="To API doc">To API doc</a></li><li><a href="src_vectors_3d.ads.html#l14" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l17"><pre>   <span class="keyword">subtype</span> <a href="swarm_structures_base.ads.html#swarm_structures_base.ads:17:12" title="defined at swarm_structures_base.ads:17:12">Accelerations</a> <span class="keyword">is</span> <span class="droplink">Vector_3D<ul><li><a href="vectors_3d.ads.html#vectors_3d.ads:14:12" title="To API doc">To API doc</a></li><li><a href="src_vectors_3d.ads.html#l14" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l18"><pre> </pre></li>
+<li id="l19"><pre>   <span class="keyword">subtype</span> <a href="swarm_structures_base.ads.html#swarm_structures_base.ads:19:12" title="defined at swarm_structures_base.ads:19:12">Swarm_Element_Index</a> <span class="keyword">is</span> Positive; </pre></li>
+<li id="l20"><pre>   <span class="keyword">subtype</span> <a href="swarm_structures_base.ads.html#swarm_structures_base.ads:20:12" title="defined at swarm_structures_base.ads:20:12">Throttle_T</a>          <span class="keyword">is</span> <span class="droplink">Real<ul><li><a href="real_type.ads.html#real_type.ads:5:12" title="To API doc">To API doc</a></li><li><a href="src_real_type.ads.html#l5" title="To spec">To spec</a></li></ul></span> <span class="keyword">range</span> 0.0 .. 1.0; </pre></li>
+<li id="l21"><pre> </pre></li>
+<li id="l22"><pre>   <a href="swarm_structures_base.ads.html#swarm_structures_base.ads:22:4" title="defined at swarm_structures_base.ads:22:4">Idle_Throttle</a> : <span class="keyword">constant</span> <span class="droplink">Throttle_T<ul><li><a href="swarm_structures_base.ads.html#swarm_structures_base.ads:20:12" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures_base.ads.html#l20" title="To spec">To spec</a></li></ul></span> := 0.0; </pre></li>
+<li id="l23"><pre>   <a href="swarm_structures_base.ads.html#swarm_structures_base.ads:23:4" title="defined at swarm_structures_base.ads:23:4">Full_Throttle</a> : <span class="keyword">constant</span> <span class="droplink">Throttle_T<ul><li><a href="swarm_structures_base.ads.html#swarm_structures_base.ads:20:12" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures_base.ads.html#l20" title="To spec">To spec</a></li></ul></span> := 1.0; </pre></li>
+<li id="l24"><pre> </pre></li>
+<li id="l25"><pre>   <span class="keyword">type</span> <a href="swarm_structures_base.ads.html#swarm_structures_base.ads:25:9" title="defined at swarm_structures_base.ads:25:9">Vehicle_Charges</a> <span class="keyword">is</span> <span class="keyword">new</span> <span class="droplink">Real<ul><li><a href="real_type.ads.html#real_type.ads:5:12" title="To API doc">To API doc</a></li><li><a href="src_real_type.ads.html#l5" title="To spec">To spec</a></li></ul></span> <span class="keyword">range</span> 0.0 .. 1.0; </pre></li>
+<li id="l26"><pre> </pre></li>
+<li id="l27"><pre>   <a href="swarm_structures_base.ads.html#swarm_structures_base.ads:27:4" title="defined at swarm_structures_base.ads:27:4">Empty_Charge</a> : <span class="keyword">constant</span> <span class="droplink">Vehicle_Charges<ul><li><a href="swarm_structures_base.ads.html#swarm_structures_base.ads:25:9" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures_base.ads.html#l25" title="To spec">To spec</a></li></ul></span> := 0.0; </pre></li>
+<li id="l28"><pre>   <a href="swarm_structures_base.ads.html#swarm_structures_base.ads:28:4" title="defined at swarm_structures_base.ads:28:4">Half_Charge</a>  : <span class="keyword">constant</span> <span class="droplink">Vehicle_Charges<ul><li><a href="swarm_structures_base.ads.html#swarm_structures_base.ads:25:9" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures_base.ads.html#l25" title="To spec">To spec</a></li></ul></span> := 0.5; </pre></li>
+<li id="l29"><pre>   <a href="swarm_structures_base.ads.html#swarm_structures_base.ads:29:4" title="defined at swarm_structures_base.ads:29:4">Full_Charge</a>  : <span class="keyword">constant</span> <span class="droplink">Vehicle_Charges<ul><li><a href="swarm_structures_base.ads.html#swarm_structures_base.ads:25:9" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures_base.ads.html#l25" title="To spec">To spec</a></li></ul></span> := 1.0; </pre></li>
+<li id="l30"><pre> </pre></li>
+<li id="l31"><pre>   <span class="keyword">type</span> <a href="swarm_structures_base.ads.html#swarm_structures_base.ads:31:9" title="defined at swarm_structures_base.ads:31:9">Energy_Globe</a> <span class="keyword">is</span> <span class="keyword">record</span> </pre></li>
+<li id="l32"><pre>      Position : <span class="droplink">Positions<ul><li><a href="swarm_structures_base.ads.html#swarm_structures_base.ads:15:12" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures_base.ads.html#l15" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l33"><pre>      Velocity : <span class="droplink">Velocities<ul><li><a href="swarm_structures_base.ads.html#swarm_structures_base.ads:16:12" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures_base.ads.html#l16" title="To spec">To spec</a></li></ul></span>; <span class="comment">-- in delta-position per second</span> </pre></li>
+<li id="l34"><pre>   <span class="keyword">end</span> <span class="keyword">record</span>; </pre></li>
+<li id="l35"><pre> </pre></li>
+<li id="l36"><pre>   <span class="keyword">type</span> <a href="swarm_structures_base.ads.html#swarm_structures_base.ads:36:9" title="defined at swarm_structures_base.ads:36:9">Energy_Globes</a> <span class="keyword">is</span> <span class="keyword">array</span> (Positive <span class="keyword">range</span> &lt;&gt;) <span class="keyword">of</span> <span class="droplink">Energy_Globe<ul><li><a href="swarm_structures_base.ads.html#swarm_structures_base.ads:31:9" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures_base.ads.html#l31" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l37"><pre> </pre></li>
+<li id="l38"><pre>   <span class="keyword">package</span> <a href="swarm_structures_base.ads.html#swarm_structures_base.ads:38:12" title="defined at swarm_structures_base.ads:38:12">Protected_Point_3D</a>  <span class="keyword">is</span> <span class="keyword">new</span> <span class="droplink">Generic_Protected<ul><li><a href="generic_protected.ads.html#generic_protected.ads:12:9" title="To API doc">To API doc</a></li><li><a href="src_generic_protected.ads.html#l12" title="To spec">To spec</a></li><li><a href="src_generic_protected.adb.html#l5" title="To body">To body</a></li></ul></span> (<span class="droplink">Point_3D<ul><li><a href="graphics_structures.ads.html#graphics_structures.ads:32:12" title="To API doc">To API doc</a></li><li><a href="src_graphics_structures.ads.html#l32" title="To spec">To spec</a></li></ul></span>,  <span class="droplink">Zero_Vector_3D<ul><li><a href="vectors_3d.ads.html#vectors_3d.ads:16:4" title="To API doc">To API doc</a></li><li><a href="src_vectors_3d.ads.html#l16" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l39"><pre>   <span class="keyword">package</span> <a href="swarm_structures_base.ads.html#swarm_structures_base.ads:39:12" title="defined at swarm_structures_base.ads:39:12">Protected_Vector_3D</a> <span class="keyword">is</span> <span class="keyword">new</span> <span class="droplink">Generic_Protected<ul><li><a href="generic_protected.ads.html#generic_protected.ads:12:9" title="To API doc">To API doc</a></li><li><a href="src_generic_protected.ads.html#l12" title="To spec">To spec</a></li><li><a href="src_generic_protected.adb.html#l5" title="To body">To body</a></li></ul></span> (<span class="droplink">Vector_3D<ul><li><a href="vectors_3d.ads.html#vectors_3d.ads:14:12" title="To API doc">To API doc</a></li><li><a href="src_vectors_3d.ads.html#l14" title="To spec">To spec</a></li></ul></span>, <span class="droplink">Zero_Vector_3D<ul><li><a href="vectors_3d.ads.html#vectors_3d.ads:16:4" title="To API doc">To API doc</a></li><li><a href="src_vectors_3d.ads.html#l16" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l40"><pre> </pre></li>
+<li id="l41"><pre>   <span class="keyword">type</span> <a href="swarm_structures_base.ads.html#swarm_structures_base.ads:41:9" title="defined at swarm_structures_base.ads:41:9">Energy_Globe_Protected</a> <span class="keyword">is</span> <span class="keyword">record</span> </pre></li>
+<li id="l42"><pre>      Position : <span class="droplink">Protected_Point_3D.Monitor_Ptr<ul><li><a href="generic_protected.ads.html#generic_protected.ads:28:9" title="To API doc">To API doc</a></li><li><a href="src_generic_protected.ads.html#l28" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l43"><pre>      Velocity : <span class="droplink">Protected_Vector_3D.Monitor_Ptr<ul><li><a href="generic_protected.ads.html#generic_protected.ads:28:9" title="To API doc">To API doc</a></li><li><a href="src_generic_protected.ads.html#l28" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l44"><pre>   <span class="keyword">end</span> <span class="keyword">record</span>; </pre></li>
+<li id="l45"><pre> </pre></li>
+<li id="l46"><pre>   <span class="keyword">type</span> <a href="swarm_structures_base.ads.html#swarm_structures_base.ads:46:9" title="defined at swarm_structures_base.ads:46:9">Energy_Globes_Protected</a> <span class="keyword">is</span> <span class="keyword">array</span> (Positive <span class="keyword">range</span> &lt;&gt;) <span class="keyword">of</span> <span class="droplink">Energy_Globe_Protected<ul><li><a href="swarm_structures_base.ads.html#swarm_structures_base.ads:41:9" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures_base.ads.html#l41" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l47"><pre> </pre></li>
+<li id="l48"><pre><span class="keyword">end</span> <span class="droplink">Swarm_Structures_Base<ul><li><a href="swarm_structures_base.ads.html#swarm_structures_base.ads:10:9" title="To API doc">To API doc</a></li><li><a href="src_swarm_structures_base.ads.html#l10" title="To spec">To spec</a></li></ul></span>; </pre></li>
+</ol></div>
+</div>
+
+</body>
+</html>

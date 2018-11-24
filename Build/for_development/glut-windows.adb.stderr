@@ -1,0 +1,2 @@
+glut-windows.adb:218:07: warning: use clause for package "REF" has no effect
+glut-windows.adb:521:11: warning: "GLUT" is already use-visible through previous use_clause at line 9

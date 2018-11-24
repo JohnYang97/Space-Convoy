@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    File: gl-geometry-vbo.adb
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+  </div>
+</div> <!-- leftSide -->
+
+<div class='subprograms'>
+  <div class='details'><ol><li id="l1"><pre><span class="keyword">pragma</span> Warnings (Off); </pre></li>
+<li id="l2"><pre><span class="keyword">pragma</span> Style_Checks (Off); </pre></li>
+<li id="l3"><pre> </pre></li>
+<li id="l4"><pre><span class="comment">-------------------------------------------------------------------------</span> </pre></li>
+<li id="l5"><pre> <span class="comment">--  GL.Geometry - GL geometry primitives</span> </pre></li>
+<li id="l6"><pre> <span class="comment">--</span> </pre></li>
+<li id="l7"><pre> <span class="comment">--  Copyright (c) Rod Kay 2007</span> </pre></li>
+<li id="l8"><pre> <span class="comment">--  AUSTRALIA</span> </pre></li>
+<li id="l9"><pre> <span class="comment">--  Permission granted to use this software, without any warranty,</span> </pre></li>
+<li id="l10"><pre> <span class="comment">--  for any purpose, provided this copyright note remains attached</span> </pre></li>
+<li id="l11"><pre> <span class="comment">--  and unmodified if sources are distributed further.</span> </pre></li>
+<li id="l12"><pre> <span class="comment">-------------------------------------------------------------------------</span> </pre></li>
+<li id="l13"><pre> </pre></li>
+<li id="l14"><pre> <span class="comment">-- with Ada.Numerics.Generic_Elementary_functions;</span> </pre></li>
+<li id="l15"><pre> <span class="comment">-- with Ada.Text_IO; use Ada.Text_IO;</span> </pre></li>
+<li id="l16"><pre> </pre></li>
+<li id="l17"><pre><span class="keyword">package</span> <span class="keyword">body</span> GL.Geometry.VBO <span class="keyword">is</span> </pre></li>
+<li id="l18"><pre> </pre></li>
+<li id="l19"><pre>   <span class="keyword">use</span> GL.Buffer; </pre></li>
+<li id="l20"><pre> </pre></li>
+<li id="l21"><pre>   <span class="keyword">function</span>  primitive_Id (Self  : <span class="keyword">in</span>     vbo_Geometry) <span class="keyword">return</span> GL.ObjectTypeEnm </pre></li>
+<li id="l22"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l23"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l24"><pre>      <span class="keyword">return</span> self.primitive_Id; </pre></li>
+<li id="l25"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l26"><pre> </pre></li>
+<li id="l27"><pre>   <span class="keyword">function</span>  vertex_Count  (Self  : <span class="keyword">in</span>     vbo_Geometry) <span class="keyword">return</span> GL.geometry.vertex_Id </pre></li>
+<li id="l28"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l29"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l30"><pre>      <span class="keyword">return</span> vertex_Id (self.vertex_Count); </pre></li>
+<li id="l31"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l32"><pre> </pre></li>
+<li id="l33"><pre>   <span class="keyword">function</span>  indices_Count (Self  : <span class="keyword">in</span>     vbo_Geometry) <span class="keyword">return</span> GL.positive_uInt </pre></li>
+<li id="l34"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l35"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l36"><pre>      <span class="keyword">return</span> GL.positive_uInt (self.indices_Count); </pre></li>
+<li id="l37"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l38"><pre> </pre></li>
+<li id="l39"><pre>   <span class="keyword">function</span>  Bounds (Self  : <span class="keyword">in</span>     vbo_Geometry) <span class="keyword">return</span> GL.geometry.Bounds_record </pre></li>
+<li id="l40"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l41"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l42"><pre>      <span class="keyword">return</span> self.Bounds; </pre></li>
+<li id="l43"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l44"><pre> </pre></li>
+<li id="l45"><pre>   <span class="keyword">procedure</span> draw (Self  : <span class="keyword">in</span>     vbo_Geometry) </pre></li>
+<li id="l46"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l47"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l48"><pre>      self.Vertices.enable; </pre></li>
+<li id="l49"><pre>      GL.vertexPointer (3, GL_DOUBLE, 0, <span class="keyword">null</span>); </pre></li>
+<li id="l50"><pre> </pre></li>
+<li id="l51"><pre>      self.Indices.enable; </pre></li>
+<li id="l52"><pre> </pre></li>
+<li id="l53"><pre>      GL.Enable_Client_State  (gl.VERTEX_ARRAY); </pre></li>
+<li id="l54"><pre> </pre></li>
+<li id="l55"><pre>      GL.drawElements       (self.primitive_Id,  self.indices_Count, GL.UNSIGNED_INT, <span class="keyword">null</span>); </pre></li>
+<li id="l56"><pre>      GL.Disable_Client_State (gl.VERTEX_ARRAY); </pre></li>
+<li id="l57"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l58"><pre> </pre></li>
+<li id="l59"><pre>   <span class="comment">--  Modified by zheng, 2011.1.20</span> </pre></li>
+<li id="l60"><pre>   <span class="keyword">function</span> Vertices (Self  : <span class="keyword">in</span>     vbo_Geometry) <span class="keyword">return</span> GL.geometry.GL_Vertex_array </pre></li>
+<li id="l61"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l62"><pre>      self_buf : <span class="keyword">aliased</span> vbo_Geometry :=self; </pre></li>
+<li id="l63"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l64"><pre>      <span class="keyword">return</span> self_buf.Vertices.get; </pre></li>
+<li id="l65"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l66"><pre> </pre></li>
+<li id="l67"><pre>   <span class="comment">--  Modified by zheng, 2011.1.20</span> </pre></li>
+<li id="l68"><pre>   <span class="keyword">function</span> Indices (Self  : <span class="keyword">in</span>     vbo_Geometry) <span class="keyword">return</span> GL.geometry.vertex_Id_array </pre></li>
+<li id="l69"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l70"><pre>      self_buf : <span class="keyword">aliased</span> vbo_Geometry :=self; </pre></li>
+<li id="l71"><pre>      gl_Indices  : vertex_Id_array := self_buf.Indices.get; </pre></li>
+<li id="l72"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l73"><pre>      increment (gl_Indices); </pre></li>
+<li id="l74"><pre>      <span class="keyword">return</span> gl_Indices; </pre></li>
+<li id="l75"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l76"><pre> </pre></li>
+<li id="l77"><pre>   <span class="keyword">procedure</span> destroy (Self  : <span class="keyword">in</span> <span class="keyword">out</span> vbo_Geometry) </pre></li>
+<li id="l78"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l79"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l80"><pre>      destroy (self.Vertices); </pre></li>
+<li id="l81"><pre>      destroy (self.Indices); </pre></li>
+<li id="l82"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l83"><pre> </pre></li>
+<li id="l84"><pre><span class="keyword">end</span> GL.Geometry.VBO; </pre></li>
+</ol></div>
+</div>
+
+</body>
+</html>

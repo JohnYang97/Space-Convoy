@@ -1,0 +1,1164 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    Package: UnZip
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+
+  <div id='navigation'>
+    <h2 class="button">Navigation</h2>
+    <a href='#Description'><div class="button2">Description</div></a>
+    <a href='#Types'><div class="button2">Types</div></a>
+    <a href='#Constants'><div class="button2">Constants &amp; Global variables</div></a>
+    <a href='#Methods'><div class="button2">Subprograms &amp; Entries</div></a>
+  </div><!-- navigation -->
+  </div>
+</div> <!-- leftSide -->
+
+<div class='default' id='rightSide'>
+ <div id='rightSideInside'>
+ <div id='Index'>
+  <h2>Index</h2>
+  <script type="text/javascript">
+    var names = new Array (
+new Array ('option', 'unzip.ads:55:8', 'type-spec'),
+new Array ('Option_<wbr/>set', 'unzip.ads:62:8', 'type-spec'),
+new Array ('Create_<wbr/>Path_<wbr/>proc', 'unzip.ads:68:8', 'type-spec'),
+new Array ('Set_<wbr/>Time_<wbr/>Stamp_<wbr/>proc', 'unzip.ads:73:8', 'type-spec'),
+new Array ('Set_<wbr/>ZTime_<wbr/>Stamp_<wbr/>proc', 'unzip.ads:77:8', 'type-spec'),
+new Array ('Compose_<wbr/>func', 'unzip.ads:84:8', 'type-spec'),
+new Array ('FS_<wbr/>routines_<wbr/>type', 'unzip.ads:87:8', 'type-spec'),
+new Array ('PKZip_<wbr/>method', 'unzip.ads:163:11', 'type-spec'),
+new Array ('Name_<wbr/>conflict_<wbr/>intervention', 'unzip.ads:174:8', 'type-spec'),
+new Array ('Resolve_<wbr/>conflict_<wbr/>proc', 'unzip.ads:180:9', 'type-spec'),
+new Array ('Get_<wbr/>password_<wbr/>proc', 'unzip.ads:186:8', 'type-spec'),
+new Array ('File_<wbr/>size_<wbr/>type', 'unzip.ads:190:11', 'type-spec'),
+new Array ('Tell_<wbr/>data_<wbr/>proc', 'unzip.ads:194:8', 'type-spec'),
+new Array ('Write_<wbr/>mode (private)', 'unzip.ads:298:8', 'type-spec'),
+new Array ('Write_<wbr/>to_<wbr/>file (private)', 'unzip.ads:305:11', 'type-spec'),
+new Array ('p_<wbr/>Stream_<wbr/>Element_<wbr/>Array (private)', 'unzip.ads:308:8', 'type-spec'),
+new Array ('no_<wbr/>option', 'unzip.ads:64:3', 'var-spec'),
+new Array ('null_<wbr/>routines', 'unzip.ads:94:3', 'var-spec'),
+new Array ('current_<wbr/>user_<wbr/>attitude', 'unzip.ads:177:3', 'var-spec'),
+new Array ('CRC_<wbr/>Error', 'unzip.ads:285:3', 'var-spec'),
+new Array ('Uncompressed_<wbr/>size_<wbr/>Error', 'unzip.ads:286:3', 'var-spec'),
+new Array ('Write_<wbr/>Error', 'unzip.ads:287:3', 'var-spec'),
+new Array ('Read_<wbr/>Error', 'unzip.ads:288:3', 'var-spec'),
+new Array ('Wrong_<wbr/>password', 'unzip.ads:289:3', 'var-spec'),
+new Array ('User_<wbr/>abort', 'unzip.ads:290:3', 'var-spec'),
+new Array ('Not_<wbr/>supported', 'unzip.ads:291:3', 'var-spec'),
+new Array ('Unsupported_<wbr/>method', 'unzip.ads:292:3', 'var-spec'),
+new Array ('Wrong_<wbr/>or_<wbr/>no_<wbr/>password', 'unzip.ads:293:3', 'var-spec'),
+new Array ('Internal_<wbr/>Error', 'unzip.ads:294:3', 'var-spec'),
+new Array ('Extract', 'unzip.ads:102:13', 'subp-spec'),
+new Array ('Extract', 'unzip.ads:110:13', 'subp-spec'),
+new Array ('Extract', 'unzip.ads:120:13', 'subp-spec'),
+new Array ('Extract', 'unzip.ads:135:13', 'subp-spec'),
+new Array ('Extract', 'unzip.ads:144:13', 'subp-spec'),
+new Array ('Extract', 'unzip.ads:155:13', 'subp-spec'),
+new Array ('Extract', 'unzip.ads:202:13', 'subp-spec'),
+new Array ('Extract', 'unzip.ads:214:13', 'subp-spec'),
+new Array ('Extract', 'unzip.ads:228:13', 'subp-spec'),
+new Array ('Extract', 'unzip.ads:244:13', 'subp-spec'),
+new Array ('Extract', 'unzip.ads:257:13', 'subp-spec'),
+new Array ('Extract', 'unzip.ads:272:13', 'subp-spec'),
+      new Array ('dummy', '', ''));
+    printIndexList (names);
+  </script>
+  <noscript>
+    <ul>
+      <li class='type-spec'><a href="#unzip.ads:55:8">option</a></li>
+      <li class='type-spec'><a href="#unzip.ads:62:8">Option_<wbr/>set</a></li>
+      <li class='type-spec'><a href="#unzip.ads:68:8">Create_<wbr/>Path_<wbr/>proc</a></li>
+      <li class='type-spec'><a href="#unzip.ads:73:8">Set_<wbr/>Time_<wbr/>Stamp_<wbr/>proc</a></li>
+      <li class='type-spec'><a href="#unzip.ads:77:8">Set_<wbr/>ZTime_<wbr/>Stamp_<wbr/>proc</a></li>
+      <li class='type-spec'><a href="#unzip.ads:84:8">Compose_<wbr/>func</a></li>
+      <li class='type-spec'><a href="#unzip.ads:87:8">FS_<wbr/>routines_<wbr/>type</a></li>
+      <li class='type-spec'><a href="#unzip.ads:163:11">PKZip_<wbr/>method</a></li>
+      <li class='type-spec'><a href="#unzip.ads:174:8">Name_<wbr/>conflict_<wbr/>intervention</a></li>
+      <li class='type-spec'><a href="#unzip.ads:180:9">Resolve_<wbr/>conflict_<wbr/>proc</a></li>
+      <li class='type-spec'><a href="#unzip.ads:186:8">Get_<wbr/>password_<wbr/>proc</a></li>
+      <li class='type-spec'><a href="#unzip.ads:190:11">File_<wbr/>size_<wbr/>type</a></li>
+      <li class='type-spec'><a href="#unzip.ads:194:8">Tell_<wbr/>data_<wbr/>proc</a></li>
+      <li class='type-spec'><a href="#unzip.ads:298:8">Write_<wbr/>mode (private)</a></li>
+      <li class='type-spec'><a href="#unzip.ads:305:11">Write_<wbr/>to_<wbr/>file (private)</a></li>
+      <li class='type-spec'><a href="#unzip.ads:308:8">p_<wbr/>Stream_<wbr/>Element_<wbr/>Array (private)</a></li>
+      <li class='var-spec'><a href="#unzip.ads:64:3">no_<wbr/>option</a></li>
+      <li class='var-spec'><a href="#unzip.ads:94:3">null_<wbr/>routines</a></li>
+      <li class='var-spec'><a href="#unzip.ads:177:3">current_<wbr/>user_<wbr/>attitude</a></li>
+      <li class='var-spec'><a href="#unzip.ads:285:3">CRC_<wbr/>Error</a></li>
+      <li class='var-spec'><a href="#unzip.ads:286:3">Uncompressed_<wbr/>size_<wbr/>Error</a></li>
+      <li class='var-spec'><a href="#unzip.ads:287:3">Write_<wbr/>Error</a></li>
+      <li class='var-spec'><a href="#unzip.ads:288:3">Read_<wbr/>Error</a></li>
+      <li class='var-spec'><a href="#unzip.ads:289:3">Wrong_<wbr/>password</a></li>
+      <li class='var-spec'><a href="#unzip.ads:290:3">User_<wbr/>abort</a></li>
+      <li class='var-spec'><a href="#unzip.ads:291:3">Not_<wbr/>supported</a></li>
+      <li class='var-spec'><a href="#unzip.ads:292:3">Unsupported_<wbr/>method</a></li>
+      <li class='var-spec'><a href="#unzip.ads:293:3">Wrong_<wbr/>or_<wbr/>no_<wbr/>password</a></li>
+      <li class='var-spec'><a href="#unzip.ads:294:3">Internal_<wbr/>Error</a></li>
+      <li class='subp-spec'><a href="#unzip.ads:102:13">Extract</a></li>
+      <li class='subp-spec'><a href="#unzip.ads:110:13">Extract</a></li>
+      <li class='subp-spec'><a href="#unzip.ads:120:13">Extract</a></li>
+      <li class='subp-spec'><a href="#unzip.ads:135:13">Extract</a></li>
+      <li class='subp-spec'><a href="#unzip.ads:144:13">Extract</a></li>
+      <li class='subp-spec'><a href="#unzip.ads:155:13">Extract</a></li>
+      <li class='subp-spec'><a href="#unzip.ads:202:13">Extract</a></li>
+      <li class='subp-spec'><a href="#unzip.ads:214:13">Extract</a></li>
+      <li class='subp-spec'><a href="#unzip.ads:228:13">Extract</a></li>
+      <li class='subp-spec'><a href="#unzip.ads:244:13">Extract</a></li>
+      <li class='subp-spec'><a href="#unzip.ads:257:13">Extract</a></li>
+      <li class='subp-spec'><a href="#unzip.ads:272:13">Extract</a></li>
+    </ul>
+  </noscript>
+ </div>
+ </div>
+</div>
+
+<div class='default' id='documentation'>
+  <div class='title'>
+    Package:
+<span class="droplink"><i>UnZip</i><ul>
+  <li><a href="src_unzip.ads.html">Goto spec source</a></li>
+  <li><a href="src_unzip.adb.html">Goto body source</a></li>
+</ul></span>
+  </div>
+  <div class='subprograms'>
+    <h1><a name='Description' id='Description'></a>Description</h1>
+    <div class="class">
+    <div class='details'><pre><span class="keyword">package</span> <span class="name_emphasis">UnZip</span> <span class="keyword">is</span></pre></div>
+    <div class='comment'>NB : this is the MIT License, as found 12 - Sep - 2007 on the site
+http://www.opensource.org/licenses/mit - license.php
+</div>
+    </div>
+  </div>
+
+
+
+
+  <div class='subprograms'>
+    <h1><a name='Types' id='Types'></a>Types</h1>
+    <div class="class">
+      <h3>
+        <a name='unzip.ads:55:8' id='unzip.ads:55:8'></a>
+<span class="droplink">option<ul>
+  <li><a href="src_unzip.ads.html#l55">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">option</span> <span class="keyword">is</span> (
+    test_only,            <span class="comment">-- test .zip file integrity, no write
+</span>    junk_directories,     <span class="comment">-- ignore directory info - > extract to current one
+</span>    case_sensitive_match, <span class="comment">-- case sensitive name matching
+</span>    extract_as_text       <span class="comment">-- files will be written with native line endings
+</span>);</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_unzip.ads.html#l55" title="unzip.ads:55:8">unzip.ads:55:8</a> (declaration)</i></div>
+          <div><i><a href="src_unzip.ads.html#l62" title="unzip.ads:62:29">unzip.ads:62:29</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='unzip.ads:62:8' id='unzip.ads:62:8'></a>
+<span class="droplink">Option_set<ul>
+  <li><a href="src_unzip.ads.html#l62">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Option_set</span> <span class="keyword">is</span> <span class="keyword">array</span> (<a href="unzip.ads.html#unzip.ads:55:8" title="defined at unzip.ads:55:8">option</a>) <span class="keyword">of</span> Boolean;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_unzip.ads.html#l62" title="unzip.ads:62:8">unzip.ads:62:8</a> (declaration)</i></div>
+          <div><i><a href="src_unzip.adb.html#l25" title="unzip.adb:25:53">unzip.adb:25:53</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l369" title="unzip.adb:369:47">unzip.adb:369:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l380" title="unzip.adb:380:47">unzip.adb:380:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l392" title="unzip.adb:392:47">unzip.adb:392:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l402" title="unzip.adb:402:47">unzip.adb:402:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l413" title="unzip.adb:413:47">unzip.adb:413:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l425" title="unzip.adb:425:47">unzip.adb:425:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l450" title="unzip.adb:450:47">unzip.adb:450:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l499" title="unzip.adb:499:47">unzip.adb:499:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l545" title="unzip.adb:545:47">unzip.adb:545:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l595" title="unzip.adb:595:47">unzip.adb:595:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l629" title="unzip.adb:629:47">unzip.adb:629:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l684" title="unzip.adb:684:47">unzip.adb:684:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l64" title="unzip.ads:64:24">unzip.ads:64:24</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l103" title="unzip.ads:103:46">unzip.ads:103:46</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l112" title="unzip.ads:112:46">unzip.ads:112:46</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l123" title="unzip.ads:123:46">unzip.ads:123:46</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l136" title="unzip.ads:136:46">unzip.ads:136:46</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l146" title="unzip.ads:146:46">unzip.ads:146:46</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l158" title="unzip.ads:158:46">unzip.ads:158:46</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l207" title="unzip.ads:207:46">unzip.ads:207:46</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l220" title="unzip.ads:220:46">unzip.ads:220:46</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l234" title="unzip.ads:234:37">unzip.ads:234:37</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l249" title="unzip.ads:249:46">unzip.ads:249:46</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l263" title="unzip.ads:263:46">unzip.ads:263:46</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l278" title="unzip.ads:278:46">unzip.ads:278:46</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='unzip.ads:68:8' id='unzip.ads:68:8'></a>
+<span class="droplink">Create_Path_proc<ul>
+  <li><a href="src_unzip.ads.html#l68">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Create_Path_proc</span> <span class="keyword">is</span> <span class="keyword">access</span>
+    <span class="keyword">procedure</span> (New_Directory : String;
+               Form          : String := <span class="string">""</span>);</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_unzip.ads.html#l68" title="unzip.ads:68:8">unzip.ads:68:8</a> (declaration)</i></div>
+          <div><i><a href="src_unzip.ads.html#l88" title="unzip.ads:88:31">unzip.ads:88:31</a> (reference)</i></div>
+      </div>
+      <div class='comment'>Ada 2005&apos;s Ada.Directories.Create_Path.
+For Ada 95 compatibility we pass it as an optional procedure access.
+</div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='unzip.ads:73:8' id='unzip.ads:73:8'></a>
+<span class="droplink">Set_Time_Stamp_proc<ul>
+  <li><a href="src_unzip.ads.html#l73">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Set_Time_Stamp_proc</span> <span class="keyword">is</span> <span class="keyword">access</span>
+    <span class="keyword">procedure</span> (file_name : String; stamp : Ada.Calendar.Time);</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_unzip.ads.html#l73" title="unzip.ads:73:8">unzip.ads:73:8</a> (declaration)</i></div>
+          <div><i><a href="src_unzip.ads.html#l89" title="unzip.ads:89:31">unzip.ads:89:31</a> (reference)</i></div>
+      </div>
+      <div class='comment'>This is system - dependent (or in a future Ada)
+</div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='unzip.ads:77:8' id='unzip.ads:77:8'></a>
+<span class="droplink">Set_ZTime_Stamp_proc<ul>
+  <li><a href="src_unzip.ads.html#l77">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Set_ZTime_Stamp_proc</span> <span class="keyword">is</span> <span class="keyword">access</span>
+    <span class="keyword">procedure</span> (file_name : String; stamp : <a href="zip.ads.html#zip.ads:128:12" title="defined at zip.ads:128:12">Zip.Time</a>);</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_unzip.ads.html#l77" title="unzip.ads:77:8">unzip.ads:77:8</a> (declaration)</i></div>
+          <div><i><a href="src_unzip.ads.html#l91" title="unzip.ads:91:31">unzip.ads:91:31</a> (reference)</i></div>
+      </div>
+      <div class='comment'>Alternatively, you can use <a href="zip.ads.html#zip.ads:128:12" title="Zip.Time">Zip.Time</a> to set file time stamps
+</div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='unzip.ads:84:8' id='unzip.ads:84:8'></a>
+<span class="droplink">Compose_func<ul>
+  <li><a href="src_unzip.ads.html#l84">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Compose_func</span> <span class="keyword">is</span> <span class="keyword">access</span> <span class="keyword">function</span> (File_Name  : String) <span class="keyword">return</span> String;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_unzip.ads.html#l84" title="unzip.ads:84:8">unzip.ads:84:8</a> (declaration)</i></div>
+          <div><i><a href="src_unzip.ads.html#l90" title="unzip.ads:90:31">unzip.ads:90:31</a> (reference)</i></div>
+      </div>
+      <div class='comment'>This is for modifying output file names (e.g. adding a
+work directory, modifying the archived path, etc.)
+</div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='unzip.ads:87:8' id='unzip.ads:87:8'></a>
+<span class="droplink">FS_routines_type<ul>
+  <li><a href="src_unzip.ads.html#l87">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">FS_routines_type</span> <span class="keyword">is</span> <span class="keyword">record</span>
+    Create_Path             : <a href="unzip.ads.html#unzip.ads:68:8" title="defined at unzip.ads:68:8">Create_Path_proc</a>;
+    Set_Time_Stamp          : <a href="unzip.ads.html#unzip.ads:73:8" title="defined at unzip.ads:73:8">Set_Time_Stamp_proc</a>;
+    Compose_File_Name       : <a href="unzip.ads.html#unzip.ads:84:8" title="defined at unzip.ads:84:8">Compose_func</a>;
+    Set_ZTime_Stamp         : <a href="unzip.ads.html#unzip.ads:77:8" title="defined at unzip.ads:77:8">Set_ZTime_Stamp_proc</a>; <span class="comment">-- alt. to Set_Time_Stamp
+</span>  <span class="keyword">end</span> <span class="keyword">record</span>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_unzip.ads.html#l87" title="unzip.ads:87:8">unzip.ads:87:8</a> (declaration)</i></div>
+          <div><i><a href="src_unzip.adb.html#l27" title="unzip.adb:27:53">unzip.adb:27:53</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l371" title="unzip.adb:371:47">unzip.adb:371:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l382" title="unzip.adb:382:47">unzip.adb:382:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l394" title="unzip.adb:394:47">unzip.adb:394:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l404" title="unzip.adb:404:47">unzip.adb:404:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l415" title="unzip.adb:415:47">unzip.adb:415:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l427" title="unzip.adb:427:47">unzip.adb:427:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l452" title="unzip.adb:452:47">unzip.adb:452:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l501" title="unzip.adb:501:47">unzip.adb:501:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l547" title="unzip.adb:547:47">unzip.adb:547:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l597" title="unzip.adb:597:47">unzip.adb:597:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l631" title="unzip.adb:631:47">unzip.adb:631:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l686" title="unzip.adb:686:47">unzip.adb:686:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l94" title="unzip.ads:94:28">unzip.ads:94:28</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l105" title="unzip.ads:105:46">unzip.ads:105:46</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l114" title="unzip.ads:114:46">unzip.ads:114:46</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l125" title="unzip.ads:125:46">unzip.ads:125:46</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l138" title="unzip.ads:138:46">unzip.ads:138:46</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l148" title="unzip.ads:148:46">unzip.ads:148:46</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l160" title="unzip.ads:160:46">unzip.ads:160:46</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l209" title="unzip.ads:209:46">unzip.ads:209:46</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l222" title="unzip.ads:222:46">unzip.ads:222:46</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l236" title="unzip.ads:236:46">unzip.ads:236:46</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l251" title="unzip.ads:251:46">unzip.ads:251:46</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l265" title="unzip.ads:265:46">unzip.ads:265:46</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l280" title="unzip.ads:280:46">unzip.ads:280:46</a> (reference)</i></div>
+      </div>
+      <div class='comment'>File System dependent settings
+</div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='unzip.ads:163:11' id='unzip.ads:163:11'></a>
+<span class="droplink">PKZip_method<ul>
+  <li><a href="src_unzip.ads.html#l163">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">subtype</span> <span class="name_emphasis">PKZip_method</span> <span class="keyword">is</span> <a href="zip.ads.html#zip.ads:106:8" title="defined at zip.ads:106:8">Zip.PKZip_method</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_unzip.ads.html#l163" title="unzip.ads:163:11">unzip.ads:163:11</a> (declaration)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l9" title="unzip-decompress.adb:9:54">unzip-decompress.adb:9:54</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.ads.html#l24" title="unzip-decompress.ads:24:28">unzip-decompress.ads:24:28</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.adb.html#l36" title="unzip-streams.adb:36:16">unzip-streams.adb:36:16</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l33" title="unzip.adb:33:16">unzip.adb:33:16</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l198" title="unzip.ads:198:39">unzip.ads:198:39</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='unzip.ads:174:8' id='unzip.ads:174:8'></a>
+<span class="droplink">Name_conflict_intervention<ul>
+  <li><a href="src_unzip.ads.html#l174">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Name_conflict_intervention</span> <span class="keyword">is</span>
+    (yes, no, yes_to_all, none, rename_it, abort_now);</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_unzip.ads.html#l174" title="unzip.ads:174:8">unzip.ads:174:8</a> (declaration)</i></div>
+          <div><i><a href="src_unzip.ads.html#l177" title="unzip.ads:177:28">unzip.ads:177:28</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l182" title="unzip.ads:182:40">unzip.ads:182:40</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='unzip.ads:180:9' id='unzip.ads:180:9'></a>
+<span class="droplink">Resolve_conflict_proc<ul>
+  <li><a href="src_unzip.ads.html#l180">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Resolve_conflict_proc</span> <span class="keyword">is</span> <span class="keyword">access</span>
+     <span class="keyword">procedure</span> (name             :     String;
+                action           : <span class="keyword">out</span> <a href="unzip.ads.html#unzip.ads:174:8" title="defined at unzip.ads:174:8">Name_conflict_intervention</a>;
+                new_name         : <span class="keyword">out</span> String;
+                new_name_length  : <span class="keyword">out</span> Natural);</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_unzip.ads.html#l180" title="unzip.ads:180:9">unzip.ads:180:9</a> (declaration)</i></div>
+          <div><i><a href="src_unzip.adb.html#l22" title="unzip.adb:22:53">unzip.adb:22:53</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l447" title="unzip.adb:447:47">unzip.adb:447:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l542" title="unzip.adb:542:47">unzip.adb:542:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l592" title="unzip.adb:592:47">unzip.adb:592:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l626" title="unzip.adb:626:47">unzip.adb:626:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l204" title="unzip.ads:204:46">unzip.ads:204:46</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l217" title="unzip.ads:217:46">unzip.ads:217:46</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l246" title="unzip.ads:246:46">unzip.ads:246:46</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l260" title="unzip.ads:260:46">unzip.ads:260:46</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='unzip.ads:186:8' id='unzip.ads:186:8'></a>
+<span class="droplink">Get_password_proc<ul>
+  <li><a href="src_unzip.ads.html#l186">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Get_password_proc</span> <span class="keyword">is</span> <span class="keyword">access</span>
+    <span class="keyword">procedure</span> (password : <span class="keyword">out</span> Ada.Strings.Unbounded.Unbounded_String);</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_unzip.ads.html#l186" title="unzip.ads:186:8">unzip.ads:186:8</a> (declaration)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l19" title="unzip-decompress.adb:19:54">unzip-decompress.adb:19:54</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.ads.html#l34" title="unzip-decompress.ads:34:28">unzip-decompress.ads:34:28</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l24" title="unzip.adb:24:53">unzip.adb:24:53</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l449" title="unzip.adb:449:47">unzip.adb:449:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l498" title="unzip.adb:498:47">unzip.adb:498:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l544" title="unzip.adb:544:47">unzip.adb:544:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l594" title="unzip.adb:594:47">unzip.adb:594:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l628" title="unzip.adb:628:47">unzip.adb:628:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l683" title="unzip.adb:683:47">unzip.adb:683:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l206" title="unzip.ads:206:46">unzip.ads:206:46</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l219" title="unzip.ads:219:46">unzip.ads:219:46</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l233" title="unzip.ads:233:37">unzip.ads:233:37</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l248" title="unzip.ads:248:46">unzip.ads:248:46</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l262" title="unzip.ads:262:46">unzip.ads:262:46</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l277" title="unzip.ads:277:46">unzip.ads:277:46</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='unzip.ads:190:11' id='unzip.ads:190:11'></a>
+<span class="droplink">File_size_type<ul>
+  <li><a href="src_unzip.ads.html#l190">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">subtype</span> <span class="name_emphasis">File_size_type</span> <span class="keyword">is</span> <a href="zip.ads.html#zip.ads:97:11" title="defined at zip.ads:97:11">Zip.File_size_type</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_unzip.ads.html#l190" title="unzip.ads:190:11">unzip.ads:190:11</a> (declaration)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l50" title="unzip-decompress.adb:50:16">unzip-decompress.adb:50:16</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l177" title="unzip-decompress.adb:177:47">unzip-decompress.adb:177:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l385" title="unzip-decompress.adb:385:46">unzip-decompress.adb:385:46</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l614" title="unzip-decompress.adb:614:46">unzip-decompress.adb:614:46</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l691" title="unzip-decompress.adb:691:23">unzip-decompress.adb:691:23</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l782" title="unzip-decompress.adb:782:37">unzip-decompress.adb:782:37</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l867" title="unzip-decompress.adb:867:23">unzip-decompress.adb:867:23</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l937" title="unzip-decompress.adb:937:34">unzip-decompress.adb:937:34</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1428" title="unzip-decompress.adb:1428:35">unzip-decompress.adb:1428:35</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1429" title="unzip-decompress.adb:1429:40">unzip-decompress.adb:1429:40</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1950" title="unzip-decompress.adb:1950:30">unzip-decompress.adb:1950:30</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1951" title="unzip-decompress.adb:1951:31">unzip-decompress.adb:1951:31</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.adb.html#l29" title="unzip-streams.adb:29:51">unzip-streams.adb:29:51</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.adb.html#l30" title="unzip-streams.adb:30:51">unzip-streams.adb:30:51</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.adb.html#l109" title="unzip-streams.adb:109:16">unzip-streams.adb:109:16</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.adb.html#l133" title="unzip-streams.adb:133:23">unzip-streams.adb:133:23</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.adb.html#l134" title="unzip-streams.adb:134:23">unzip-streams.adb:134:23</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l20" title="unzip.adb:20:53">unzip.adb:20:53</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l42" title="unzip.adb:42:26">unzip.adb:42:26</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l172" title="unzip.adb:172:45">unzip.adb:172:45</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l226" title="unzip.adb:226:47">unzip.adb:226:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l236" title="unzip.adb:236:27">unzip.adb:236:27</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l248" title="unzip.adb:248:26">unzip.adb:248:26</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l267" title="unzip.adb:267:26">unzip.adb:267:26</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l346" title="unzip.adb:346:50">unzip.adb:346:50</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l460" title="unzip.adb:460:23">unzip.adb:460:23</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l461" title="unzip.adb:461:23">unzip.adb:461:23</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l509" title="unzip.adb:509:23">unzip.adb:509:23</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l510" title="unzip.adb:510:23">unzip.adb:510:23</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l569" title="unzip.adb:569:21">unzip.adb:569:21</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l635" title="unzip.adb:635:23">unzip.adb:635:23</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l636" title="unzip.adb:636:23">unzip.adb:636:23</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l690" title="unzip.adb:690:23">unzip.adb:690:23</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l691" title="unzip.adb:691:23">unzip.adb:691:23</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l196" title="unzip.ads:196:39">unzip.ads:196:39</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l197" title="unzip.ads:197:39">unzip.ads:197:39</a> (reference)</i></div>
+      </div>
+      <div class='comment'>Data sizes in archive
+</div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='unzip.ads:194:8' id='unzip.ads:194:8'></a>
+<span class="droplink">Tell_data_proc<ul>
+  <li><a href="src_unzip.ads.html#l194">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Tell_data_proc</span> <span class="keyword">is</span> <span class="keyword">access</span>
+    <span class="keyword">procedure</span> (name                : String;
+                compressed_bytes    : <a href="unzip.ads.html#unzip.ads:190:11" title="defined at unzip.ads:190:11">File_size_type</a>;
+                uncompressed_bytes  : <a href="unzip.ads.html#unzip.ads:190:11" title="defined at unzip.ads:190:11">File_size_type</a>;
+                method              : <a href="unzip.ads.html#unzip.ads:163:11" title="defined at unzip.ads:163:11">PKZip_method</a>);</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_unzip.ads.html#l194" title="unzip.ads:194:8">unzip.ads:194:8</a> (declaration)</i></div>
+          <div><i><a href="src_unzip.adb.html#l23" title="unzip.adb:23:53">unzip.adb:23:53</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l448" title="unzip.adb:448:47">unzip.adb:448:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l497" title="unzip.adb:497:47">unzip.adb:497:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l543" title="unzip.adb:543:47">unzip.adb:543:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l593" title="unzip.adb:593:47">unzip.adb:593:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l627" title="unzip.adb:627:47">unzip.adb:627:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l682" title="unzip.adb:682:47">unzip.adb:682:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l205" title="unzip.ads:205:46">unzip.ads:205:46</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l218" title="unzip.ads:218:46">unzip.ads:218:46</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l232" title="unzip.ads:232:37">unzip.ads:232:37</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l247" title="unzip.ads:247:46">unzip.ads:247:46</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l261" title="unzip.ads:261:46">unzip.ads:261:46</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l276" title="unzip.ads:276:46">unzip.ads:276:46</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='unzip.ads:298:8' id='unzip.ads:298:8'></a>
+<span class="droplink">Write_mode (private)<ul>
+  <li><a href="src_unzip.ads.html#l298">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Write_mode</span> <span class="keyword">is</span>
+    (write_to_binary_file,
+      write_to_text_file,
+      write_to_memory,
+      just_test
+);</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_unzip.ads.html#l298" title="unzip.ads:298:8">unzip.ads:298:8</a> (declaration)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l10" title="unzip-decompress.adb:10:54">unzip-decompress.adb:10:54</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.ads.html#l25" title="unzip-decompress.ads:25:28">unzip-decompress.ads:25:28</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l36" title="unzip.adb:36:51">unzip.adb:36:51</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l38" title="unzip.adb:38:42">unzip.adb:38:42</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l40" title="unzip.adb:40:21">unzip.adb:40:21</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l305" title="unzip.ads:305:28">unzip.ads:305:28</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='unzip.ads:305:11' id='unzip.ads:305:11'></a>
+<span class="droplink">Write_to_file (private)<ul>
+  <li><a href="src_unzip.ads.html#l305">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">subtype</span> <span class="name_emphasis">Write_to_file</span> <span class="keyword">is</span> <a href="unzip.ads.html#unzip.ads:298:8" title="defined at unzip.ads:298:8">Write_mode</a>
+    <span class="keyword">range</span> write_to_binary_file .. write_to_text_file;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_unzip.ads.html#l305" title="unzip.ads:305:11">unzip.ads:305:11</a> (declaration)</i></div>
+          <div><i><a href="src_unzip.adb.html#l76" title="unzip.adb:76:27">unzip.adb:76:27</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l257" title="unzip.adb:257:31">unzip.adb:257:31</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l276" title="unzip.adb:276:31">unzip.adb:276:31</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='unzip.ads:308:8' id='unzip.ads:308:8'></a>
+<span class="droplink">p_Stream_Element_Array (private)<ul>
+  <li><a href="src_unzip.ads.html#l308">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">p_Stream_Element_Array</span> <span class="keyword">is</span> <span class="keyword">access</span> <span class="keyword">all</span> Ada.Streams.Stream_Element_Array;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_unzip.ads.html#l308" title="unzip.ads:308:8">unzip.ads:308:8</a> (declaration)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l12" title="unzip-decompress.adb:12:58">unzip-decompress.adb:12:58</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.ads.html#l27" title="unzip-decompress.ads:27:32">unzip-decompress.ads:27:32</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.adb.html#l14" title="unzip-streams.adb:14:34">unzip-streams.adb:14:34</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.adb.html#l27" title="unzip-streams.adb:27:51">unzip-streams.adb:27:51</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.adb.html#l128" title="unzip-streams.adb:128:46">unzip-streams.adb:128:46</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.ads.html#l86" title="unzip-streams.ads:86:23">unzip-streams.ads:86:23</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l187" title="unzip.adb:187:15">unzip.adb:187:15</a> (reference)</i></div>
+      </div>
+    </div>
+  </div>
+
+  <div class='subprograms'>
+    <h1><a name='Constants' id='Constants'></a>Constants &amp; Global variables</h1>
+    <div class="class">
+      <h3><a name='unzip.ads:64:3' id='unzip.ads:64:3'></a>
+<span class="droplink">no_option<ul>
+  <li><a href="src_unzip.ads.html#l64">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="unzip.ads.html#unzip.ads:62:8" title="defined at unzip.ads:62:8">Option_set</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">no_option</span> : <span class="keyword">constant</span> <a href="unzip.ads.html#unzip.ads:62:8" title="defined at unzip.ads:62:8">Option_set</a> := (<span class="keyword">others</span> => False);</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_unzip.ads.html#l64" title="unzip.ads:64:3">unzip.ads:64:3</a> (declaration)</i></div>
+          <div><i><a href="src_unzip.adb.html#l369" title="unzip.adb:369:61">unzip.adb:369:61</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l380" title="unzip.adb:380:61">unzip.adb:380:61</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l392" title="unzip.adb:392:61">unzip.adb:392:61</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l402" title="unzip.adb:402:61">unzip.adb:402:61</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l413" title="unzip.adb:413:61">unzip.adb:413:61</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l425" title="unzip.adb:425:61">unzip.adb:425:61</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l450" title="unzip.adb:450:61">unzip.adb:450:61</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l499" title="unzip.adb:499:61">unzip.adb:499:61</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l545" title="unzip.adb:545:61">unzip.adb:545:61</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l595" title="unzip.adb:595:61">unzip.adb:595:61</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l629" title="unzip.adb:629:61">unzip.adb:629:61</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l684" title="unzip.adb:684:61">unzip.adb:684:61</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l103" title="unzip.ads:103:60">unzip.ads:103:60</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l112" title="unzip.ads:112:60">unzip.ads:112:60</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l123" title="unzip.ads:123:60">unzip.ads:123:60</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l136" title="unzip.ads:136:60">unzip.ads:136:60</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l146" title="unzip.ads:146:60">unzip.ads:146:60</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l158" title="unzip.ads:158:60">unzip.ads:158:60</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l207" title="unzip.ads:207:60">unzip.ads:207:60</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l220" title="unzip.ads:220:60">unzip.ads:220:60</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l234" title="unzip.ads:234:51">unzip.ads:234:51</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l249" title="unzip.ads:249:60">unzip.ads:249:60</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l263" title="unzip.ads:263:60">unzip.ads:263:60</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l278" title="unzip.ads:278:60">unzip.ads:278:60</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='unzip.ads:94:3' id='unzip.ads:94:3'></a>
+<span class="droplink">null_routines<ul>
+  <li><a href="src_unzip.ads.html#l94">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="unzip.ads.html#unzip.ads:87:8" title="defined at unzip.ads:87:8">FS_routines_type</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">null_routines</span> : <span class="keyword">constant</span> <a href="unzip.ads.html#unzip.ads:87:8" title="defined at unzip.ads:87:8">FS_routines_type</a> := (<span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_unzip.ads.html#l94" title="unzip.ads:94:3">unzip.ads:94:3</a> (declaration)</i></div>
+          <div><i><a href="src_unzip.adb.html#l371" title="unzip.adb:371:67">unzip.adb:371:67</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l382" title="unzip.adb:382:67">unzip.adb:382:67</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l394" title="unzip.adb:394:67">unzip.adb:394:67</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l404" title="unzip.adb:404:67">unzip.adb:404:67</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l415" title="unzip.adb:415:67">unzip.adb:415:67</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l427" title="unzip.adb:427:67">unzip.adb:427:67</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l452" title="unzip.adb:452:67">unzip.adb:452:67</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l501" title="unzip.adb:501:67">unzip.adb:501:67</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l547" title="unzip.adb:547:67">unzip.adb:547:67</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l597" title="unzip.adb:597:67">unzip.adb:597:67</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l631" title="unzip.adb:631:67">unzip.adb:631:67</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l686" title="unzip.adb:686:67">unzip.adb:686:67</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l105" title="unzip.ads:105:66">unzip.ads:105:66</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l114" title="unzip.ads:114:66">unzip.ads:114:66</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l125" title="unzip.ads:125:66">unzip.ads:125:66</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l138" title="unzip.ads:138:66">unzip.ads:138:66</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l148" title="unzip.ads:148:66">unzip.ads:148:66</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l160" title="unzip.ads:160:66">unzip.ads:160:66</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l209" title="unzip.ads:209:66">unzip.ads:209:66</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l222" title="unzip.ads:222:66">unzip.ads:222:66</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l236" title="unzip.ads:236:66">unzip.ads:236:66</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l251" title="unzip.ads:251:66">unzip.ads:251:66</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l265" title="unzip.ads:265:66">unzip.ads:265:66</a> (reference)</i></div>
+          <div><i><a href="src_unzip.ads.html#l280" title="unzip.ads:280:66">unzip.ads:280:66</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='unzip.ads:177:3' id='unzip.ads:177:3'></a>
+<span class="droplink">current_user_attitude<ul>
+  <li><a href="src_unzip.ads.html#l177">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="unzip.ads.html#unzip.ads:174:8" title="defined at unzip.ads:174:8">Name_conflict_intervention</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">current_user_attitude</span>  : <a href="unzip.ads.html#unzip.ads:174:8" title="defined at unzip.ads:174:8">Name_conflict_intervention</a> := yes;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_unzip.ads.html#l177" title="unzip.ads:177:3">unzip.ads:177:3</a> (declaration)</i></div>
+          <div><i><a href="src_unzip.adb.html#l133" title="unzip.adb:133:21">unzip.adb:133:21</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l137" title="unzip.adb:137:41">unzip.adb:137:41</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l144" title="unzip.adb:144:31">unzip.adb:144:31</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l150" title="unzip.adb:150:18">unzip.adb:150:18</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l466" title="unzip.adb:466:10">unzip.adb:466:10</a> (write reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l514" title="unzip.adb:514:10">unzip.adb:514:10</a> (write reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l558" title="unzip.adb:558:10">unzip.adb:558:10</a> (write reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l651" title="unzip.adb:651:10">unzip.adb:651:10</a> (write reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l706" title="unzip.adb:706:10">unzip.adb:706:10</a> (write reference)</i></div>
+      </div>
+      <div class='comment'>reset to &quot;yes&quot; for a new session (in case of yes_to_all / none state!)
+</div>
+    </div>
+    <div class="class">
+      <h3><a name='unzip.ads:285:3' id='unzip.ads:285:3'></a>
+<span class="droplink">CRC_Error<ul>
+  <li><a href="src_unzip.ads.html#l285">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">CRC_Error</span>,
+  <span class="name"><a name="unzip.ads:286:3"></a>Uncompressed_size_Error</span>,
+  <span class="name"><a name="unzip.ads:287:3"></a>Write_Error</span>,
+  <span class="name"><a name="unzip.ads:288:3"></a>Read_Error</span>,
+  <span class="name"><a name="unzip.ads:289:3"></a>Wrong_password</span>,
+  <span class="name"><a name="unzip.ads:290:3"></a>User_abort</span>,
+  <span class="name"><a name="unzip.ads:291:3"></a>Not_supported</span>,
+  <span class="name"><a name="unzip.ads:292:3"></a>Unsupported_method</span>,
+  <span class="name"><a name="unzip.ads:293:3"></a>Wrong_or_no_password</span>,
+  <span class="name"><a name="unzip.ads:294:3"></a>Internal_Error</span>  : <span class="keyword">exception</span>;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_unzip.ads.html#l285" title="unzip.ads:285:3">unzip.ads:285:3</a> (declaration)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l2025" title="unzip-decompress.adb:2025:16">unzip-decompress.adb:2025:16</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='unzip.ads:286:3' id='unzip.ads:286:3'></a>
+<span class="droplink">Uncompressed_size_Error<ul>
+  <li><a href="src_unzip.ads.html#l286">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Uncompressed_size_Error</span>,
+  <span class="name"><a name="unzip.ads:287:3"></a>Write_Error</span>,
+  <span class="name"><a name="unzip.ads:288:3"></a>Read_Error</span>,
+  <span class="name"><a name="unzip.ads:289:3"></a>Wrong_password</span>,
+  <span class="name"><a name="unzip.ads:290:3"></a>User_abort</span>,
+  <span class="name"><a name="unzip.ads:291:3"></a>Not_supported</span>,
+  <span class="name"><a name="unzip.ads:292:3"></a>Unsupported_method</span>,
+  <span class="name"><a name="unzip.ads:293:3"></a>Wrong_or_no_password</span>,
+  <span class="name"><a name="unzip.ads:294:3"></a>Internal_Error</span>  : <span class="keyword">exception</span>;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_unzip.ads.html#l286" title="unzip.ads:286:3">unzip.ads:286:3</a> (declaration)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l2018" title="unzip-decompress.adb:2018:22">unzip-decompress.adb:2018:22</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.adb.html#l77" title="unzip-streams.adb:77:19">unzip-streams.adb:77:19</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='unzip.ads:287:3' id='unzip.ads:287:3'></a>
+<span class="droplink">Write_Error<ul>
+  <li><a href="src_unzip.ads.html#l287">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Write_Error</span>,
+  <span class="name"><a name="unzip.ads:288:3"></a>Read_Error</span>,
+  <span class="name"><a name="unzip.ads:289:3"></a>Wrong_password</span>,
+  <span class="name"><a name="unzip.ads:290:3"></a>User_abort</span>,
+  <span class="name"><a name="unzip.ads:291:3"></a>Not_supported</span>,
+  <span class="name"><a name="unzip.ads:292:3"></a>Unsupported_method</span>,
+  <span class="name"><a name="unzip.ads:293:3"></a>Wrong_or_no_password</span>,
+  <span class="name"><a name="unzip.ads:294:3"></a>Internal_Error</span>  : <span class="keyword">exception</span>;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_unzip.ads.html#l287" title="unzip.ads:287:3">unzip.ads:287:3</a> (declaration)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l380" title="unzip-decompress.adb:380:31">unzip-decompress.adb:380:31</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l609" title="unzip-decompress.adb:609:31">unzip-decompress.adb:609:31</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1452" title="unzip-decompress.adb:1452:34">unzip-decompress.adb:1452:34</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='unzip.ads:288:3' id='unzip.ads:288:3'></a>
+<span class="droplink">Read_Error<ul>
+  <li><a href="src_unzip.ads.html#l288">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Read_Error</span>,
+  <span class="name"><a name="unzip.ads:289:3"></a>Wrong_password</span>,
+  <span class="name"><a name="unzip.ads:290:3"></a>User_abort</span>,
+  <span class="name"><a name="unzip.ads:291:3"></a>Not_supported</span>,
+  <span class="name"><a name="unzip.ads:292:3"></a>Unsupported_method</span>,
+  <span class="name"><a name="unzip.ads:293:3"></a>Wrong_or_no_password</span>,
+  <span class="name"><a name="unzip.ads:294:3"></a>Internal_Error</span>  : <span class="keyword">exception</span>;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_unzip.ads.html#l288" title="unzip.ads:288:3">unzip.ads:288:3</a> (declaration)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1119" title="unzip-decompress.adb:1119:28">unzip-decompress.adb:1119:28</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1217" title="unzip-decompress.adb:1217:28">unzip-decompress.adb:1217:28</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1446" title="unzip-decompress.adb:1446:34">unzip-decompress.adb:1446:34</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1976" title="unzip-decompress.adb:1976:25">unzip-decompress.adb:1976:25</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.adb.html#l50" title="unzip-streams.adb:50:19">unzip-streams.adb:50:19</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.adb.html#l86" title="unzip-streams.adb:86:31">unzip-streams.adb:86:31</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l202" title="unzip.adb:202:19">unzip.adb:202:19</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l300" title="unzip.adb:300:34">unzip.adb:300:34</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='unzip.ads:289:3' id='unzip.ads:289:3'></a>
+<span class="droplink">Wrong_password<ul>
+  <li><a href="src_unzip.ads.html#l289">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Wrong_password</span>,
+  <span class="name"><a name="unzip.ads:290:3"></a>User_abort</span>,
+  <span class="name"><a name="unzip.ads:291:3"></a>Not_supported</span>,
+  <span class="name"><a name="unzip.ads:292:3"></a>Unsupported_method</span>,
+  <span class="name"><a name="unzip.ads:293:3"></a>Wrong_or_no_password</span>,
+  <span class="name"><a name="unzip.ads:294:3"></a>Internal_Error</span>  : <span class="keyword">exception</span>;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_unzip.ads.html#l289" title="unzip.ads:289:3">unzip.ads:289:3</a> (declaration)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l264" title="unzip-decompress.adb:264:31">unzip-decompress.adb:264:31</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1963" title="unzip-decompress.adb:1963:21">unzip-decompress.adb:1963:21</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='unzip.ads:290:3' id='unzip.ads:290:3'></a>
+<span class="droplink">User_abort<ul>
+  <li><a href="src_unzip.ads.html#l290">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">User_abort</span>,
+  <span class="name"><a name="unzip.ads:291:3"></a>Not_supported</span>,
+  <span class="name"><a name="unzip.ads:292:3"></a>Unsupported_method</span>,
+  <span class="name"><a name="unzip.ads:293:3"></a>Wrong_or_no_password</span>,
+  <span class="name"><a name="unzip.ads:294:3"></a>Internal_Error</span>  : <span class="keyword">exception</span>;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_unzip.ads.html#l290" title="unzip.ads:290:3">unzip.ads:290:3</a> (declaration)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l394" title="unzip-decompress.adb:394:28">unzip-decompress.adb:394:28</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l623" title="unzip-decompress.adb:623:25">unzip-decompress.adb:623:25</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l160" title="unzip.adb:160:22">unzip.adb:160:22</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='unzip.ads:291:3' id='unzip.ads:291:3'></a>
+<span class="droplink">Not_supported<ul>
+  <li><a href="src_unzip.ads.html#l291">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Not_supported</span>,
+  <span class="name"><a name="unzip.ads:292:3"></a>Unsupported_method</span>,
+  <span class="name"><a name="unzip.ads:293:3"></a>Wrong_or_no_password</span>,
+  <span class="name"><a name="unzip.ads:294:3"></a>Internal_Error</span>  : <span class="keyword">exception</span>;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_unzip.ads.html#l291" title="unzip.ads:291:3">unzip.ads:291:3</a> (declaration)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l708" title="unzip-decompress.adb:708:28">unzip-decompress.adb:708:28</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='unzip.ads:292:3' id='unzip.ads:292:3'></a>
+<span class="droplink">Unsupported_method<ul>
+  <li><a href="src_unzip.ads.html#l292">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Unsupported_method</span>,
+  <span class="name"><a name="unzip.ads:293:3"></a>Wrong_or_no_password</span>,
+  <span class="name"><a name="unzip.ads:294:3"></a>Internal_Error</span>  : <span class="keyword">exception</span>;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_unzip.ads.html#l292" title="unzip.ads:292:3">unzip.ads:292:3</a> (declaration)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1998" title="unzip-decompress.adb:1998:19">unzip-decompress.adb:1998:19</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.adb.html#l55" title="unzip-streams.adb:55:16">unzip-streams.adb:55:16</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l207" title="unzip.adb:207:16">unzip.adb:207:16</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='unzip.ads:293:3' id='unzip.ads:293:3'></a>
+<span class="droplink">Wrong_or_no_password<ul>
+  <li><a href="src_unzip.ads.html#l293">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Wrong_or_no_password</span>,
+  <span class="name"><a name="unzip.ads:294:3"></a>Internal_Error</span>  : <span class="keyword">exception</span>;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_unzip.ads.html#l293" title="unzip.ads:293:3">unzip.ads:293:3</a> (declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='unzip.ads:294:3' id='unzip.ads:294:3'></a>
+<span class="droplink">Internal_Error<ul>
+  <li><a href="src_unzip.ads.html#l294">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Internal_Error</span>  : <span class="keyword">exception</span>;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_unzip.ads.html#l294" title="unzip.ads:294:3">unzip.ads:294:3</a> (declaration)</i></div>
+      </div>
+    </div>
+  </div>
+
+    <div class='subprograms'>
+      <h1><a name='Methods' id='Methods'></a>Subprograms &amp; Entries</h1>
+      <div class="class">
+        <h3>
+          <a name='unzip.ads:102:13' id='unzip.ads:102:13'></a>
+<span class="droplink">Extract<ul>
+  <li><a href="src_unzip.ads.html#l102">Goto spec in source</a></li>
+  <li><a href="src_unzip.adb.html#l368">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Extract</span> <table><tr><td>(</td><td><span class="name"><a name="unzip.ads:102:22"></a>from</span></td><td>: String;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:103:22"></a>options</span></td><td>: <a href="unzip.ads.html#unzip.ads:62:8" title="defined at unzip.ads:62:8">Option_set</a> := <a href="unzip.ads.html#unzip.ads:64:3" title="defined at unzip.ads:64:3">no_option</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:104:22"></a>password</span></td><td>: String := <span class="string">""</span>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:105:22"></a>file_system_routines</span></td><td>: <a href="unzip.ads.html#unzip.ads:87:8" title="defined at unzip.ads:87:8">FS_routines_type</a> := <a href="unzip.ads.html#unzip.ads:94:3" title="defined at unzip.ads:94:3">null_routines</a> );</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_unzip.ads.html#l102" title="unzip.ads:102:13">unzip.ads:102:13</a> (declaration)</i></div>
+            <div><i><a href="src_unzip.adb.html#l368" title="unzip.adb:368:14">unzip.adb:368:14</a> (body)</i></div>
+            <div><i><a href="src_unzip.adb.html#l376" title="unzip.adb:376:8">unzip.adb:376:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="unzip.ads.html#unzip.ads:202:13" title="defined at unzip.ads:202:13">Extract</a> defined at <a href="src_unzip.ads.html#l202" title="unzip.ads:202:13">unzip.ads:202:13</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='unzip.ads:110:13' id='unzip.ads:110:13'></a>
+<span class="droplink">Extract<ul>
+  <li><a href="src_unzip.ads.html#l110">Goto spec in source</a></li>
+  <li><a href="src_unzip.adb.html#l378">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Extract</span> <table><tr><td>(</td><td><span class="name"><a name="unzip.ads:110:22"></a>from</span></td><td>: String;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:111:22"></a>what</span></td><td>: String;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:112:22"></a>options</span></td><td>: <a href="unzip.ads.html#unzip.ads:62:8" title="defined at unzip.ads:62:8">Option_set</a> := <a href="unzip.ads.html#unzip.ads:64:3" title="defined at unzip.ads:64:3">no_option</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:113:22"></a>password</span></td><td>: String := <span class="string">""</span>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:114:22"></a>file_system_routines</span></td><td>: <a href="unzip.ads.html#unzip.ads:87:8" title="defined at unzip.ads:87:8">FS_routines_type</a> := <a href="unzip.ads.html#unzip.ads:94:3" title="defined at unzip.ads:94:3">null_routines</a> );</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_unzip.ads.html#l110" title="unzip.ads:110:13">unzip.ads:110:13</a> (declaration)</i></div>
+            <div><i><a href="src_unzip.adb.html#l378" title="unzip.adb:378:14">unzip.adb:378:14</a> (body)</i></div>
+            <div><i><a href="src_unzip.adb.html#l387" title="unzip.adb:387:8">unzip.adb:387:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="unzip.ads.html#unzip.ads:214:13" title="defined at unzip.ads:214:13">Extract</a> defined at <a href="src_unzip.ads.html#l214" title="unzip.ads:214:13">unzip.ads:214:13</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='unzip.ads:120:13' id='unzip.ads:120:13'></a>
+<span class="droplink">Extract<ul>
+  <li><a href="src_unzip.ads.html#l120">Goto spec in source</a></li>
+  <li><a href="src_unzip.adb.html#l389">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Extract</span> <table><tr><td>(</td><td><span class="name"><a name="unzip.ads:120:22"></a>from</span></td><td>: String;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:121:22"></a>what</span></td><td>: String;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:122:22"></a>rename</span></td><td>: String;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:123:22"></a>options</span></td><td>: <a href="unzip.ads.html#unzip.ads:62:8" title="defined at unzip.ads:62:8">Option_set</a> := <a href="unzip.ads.html#unzip.ads:64:3" title="defined at unzip.ads:64:3">no_option</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:124:22"></a>password</span></td><td>: String := <span class="string">""</span>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:125:22"></a>file_system_routines</span></td><td>: <a href="unzip.ads.html#unzip.ads:87:8" title="defined at unzip.ads:87:8">FS_routines_type</a> := <a href="unzip.ads.html#unzip.ads:94:3" title="defined at unzip.ads:94:3">null_routines</a> );</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_unzip.ads.html#l120" title="unzip.ads:120:13">unzip.ads:120:13</a> (declaration)</i></div>
+            <div><i><a href="src_unzip.adb.html#l389" title="unzip.adb:389:14">unzip.adb:389:14</a> (body)</i></div>
+            <div><i><a href="src_unzip.adb.html#l399" title="unzip.adb:399:8">unzip.adb:399:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="unzip.ads.html#unzip.ads:228:13" title="defined at unzip.ads:228:13">Extract</a> defined at <a href="src_unzip.ads.html#l228" title="unzip.ads:228:13">unzip.ads:228:13</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='unzip.ads:135:13' id='unzip.ads:135:13'></a>
+<span class="droplink">Extract<ul>
+  <li><a href="src_unzip.ads.html#l135">Goto spec in source</a></li>
+  <li><a href="src_unzip.adb.html#l401">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Extract</span> <table><tr><td>(</td><td><span class="name"><a name="unzip.ads:135:22"></a>from</span></td><td>: <a href="zip.ads.html#zip.ads:53:8" title="defined at zip.ads:53:8">Zip.Zip_info</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:136:22"></a>options</span></td><td>: <a href="unzip.ads.html#unzip.ads:62:8" title="defined at unzip.ads:62:8">Option_set</a> := <a href="unzip.ads.html#unzip.ads:64:3" title="defined at unzip.ads:64:3">no_option</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:137:22"></a>password</span></td><td>: String := <span class="string">""</span>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:138:22"></a>file_system_routines</span></td><td>: <a href="unzip.ads.html#unzip.ads:87:8" title="defined at unzip.ads:87:8">FS_routines_type</a> := <a href="unzip.ads.html#unzip.ads:94:3" title="defined at unzip.ads:94:3">null_routines</a> );</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_unzip.ads.html#l135" title="unzip.ads:135:13">unzip.ads:135:13</a> (declaration)</i></div>
+            <div><i><a href="src_unzip.adb.html#l401" title="unzip.adb:401:14">unzip.adb:401:14</a> (body)</i></div>
+            <div><i><a href="src_unzip.adb.html#l409" title="unzip.adb:409:8">unzip.adb:409:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="unzip.ads.html#unzip.ads:244:13" title="defined at unzip.ads:244:13">Extract</a> defined at <a href="src_unzip.ads.html#l244" title="unzip.ads:244:13">unzip.ads:244:13</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='unzip.ads:144:13' id='unzip.ads:144:13'></a>
+<span class="droplink">Extract<ul>
+  <li><a href="src_unzip.ads.html#l144">Goto spec in source</a></li>
+  <li><a href="src_unzip.adb.html#l411">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Extract</span> <table><tr><td>(</td><td><span class="name"><a name="unzip.ads:144:22"></a>from</span></td><td>: <a href="zip.ads.html#zip.ads:53:8" title="defined at zip.ads:53:8">Zip.Zip_info</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:145:22"></a>what</span></td><td>: String;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:146:22"></a>options</span></td><td>: <a href="unzip.ads.html#unzip.ads:62:8" title="defined at unzip.ads:62:8">Option_set</a> := <a href="unzip.ads.html#unzip.ads:64:3" title="defined at unzip.ads:64:3">no_option</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:147:22"></a>password</span></td><td>: String := <span class="string">""</span>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:148:22"></a>file_system_routines</span></td><td>: <a href="unzip.ads.html#unzip.ads:87:8" title="defined at unzip.ads:87:8">FS_routines_type</a> := <a href="unzip.ads.html#unzip.ads:94:3" title="defined at unzip.ads:94:3">null_routines</a> );</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_unzip.ads.html#l144" title="unzip.ads:144:13">unzip.ads:144:13</a> (declaration)</i></div>
+            <div><i><a href="src_unzip.adb.html#l411" title="unzip.adb:411:14">unzip.adb:411:14</a> (body)</i></div>
+            <div><i><a href="src_unzip.adb.html#l420" title="unzip.adb:420:8">unzip.adb:420:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="unzip.ads.html#unzip.ads:257:13" title="defined at unzip.ads:257:13">Extract</a> defined at <a href="src_unzip.ads.html#l257" title="unzip.ads:257:13">unzip.ads:257:13</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='unzip.ads:155:13' id='unzip.ads:155:13'></a>
+<span class="droplink">Extract<ul>
+  <li><a href="src_unzip.ads.html#l155">Goto spec in source</a></li>
+  <li><a href="src_unzip.adb.html#l422">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Extract</span> <table><tr><td>(</td><td><span class="name"><a name="unzip.ads:155:22"></a>from</span></td><td>: <a href="zip.ads.html#zip.ads:53:8" title="defined at zip.ads:53:8">Zip.Zip_info</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:156:22"></a>what</span></td><td>: String;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:157:22"></a>rename</span></td><td>: String;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:158:22"></a>options</span></td><td>: <a href="unzip.ads.html#unzip.ads:62:8" title="defined at unzip.ads:62:8">Option_set</a> := <a href="unzip.ads.html#unzip.ads:64:3" title="defined at unzip.ads:64:3">no_option</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:159:22"></a>password</span></td><td>: String := <span class="string">""</span>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:160:22"></a>file_system_routines</span></td><td>: <a href="unzip.ads.html#unzip.ads:87:8" title="defined at unzip.ads:87:8">FS_routines_type</a> := <a href="unzip.ads.html#unzip.ads:94:3" title="defined at unzip.ads:94:3">null_routines</a> );</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_unzip.ads.html#l155" title="unzip.ads:155:13">unzip.ads:155:13</a> (declaration)</i></div>
+            <div><i><a href="src_unzip.adb.html#l422" title="unzip.adb:422:14">unzip.adb:422:14</a> (body)</i></div>
+            <div><i><a href="src_unzip.adb.html#l432" title="unzip.adb:432:8">unzip.adb:432:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="unzip.ads.html#unzip.ads:272:13" title="defined at unzip.ads:272:13">Extract</a> defined at <a href="src_unzip.ads.html#l272" title="unzip.ads:272:13">unzip.ads:272:13</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='unzip.ads:202:13' id='unzip.ads:202:13'></a>
+<span class="droplink">Extract<ul>
+  <li><a href="src_unzip.ads.html#l202">Goto spec in source</a></li>
+  <li><a href="src_unzip.adb.html#l540">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Extract</span> <table><tr><td>(</td><td><span class="name"><a name="unzip.ads:202:22"></a>from</span></td><td>: String;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:203:22"></a>feedback</span></td><td>: <a href="zip.ads.html#zip.ads:203:8" title="defined at zip.ads:203:8">Zip.Feedback_proc</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:204:22"></a>help_the_file_exists</span></td><td>: <a href="unzip.ads.html#unzip.ads:180:9" title="defined at unzip.ads:180:9">Resolve_conflict_proc</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:205:22"></a>tell_data</span></td><td>: <a href="unzip.ads.html#unzip.ads:194:8" title="defined at unzip.ads:194:8">Tell_data_proc</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:206:22"></a>get_pwd</span></td><td>: <a href="unzip.ads.html#unzip.ads:186:8" title="defined at unzip.ads:186:8">Get_password_proc</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:207:22"></a>options</span></td><td>: <a href="unzip.ads.html#unzip.ads:62:8" title="defined at unzip.ads:62:8">Option_set</a> := <a href="unzip.ads.html#unzip.ads:64:3" title="defined at unzip.ads:64:3">no_option</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:208:22"></a>password</span></td><td>: String := <span class="string">""</span>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:209:22"></a>file_system_routines</span></td><td>: <a href="unzip.ads.html#unzip.ads:87:8" title="defined at unzip.ads:87:8">FS_routines_type</a> := <a href="unzip.ads.html#unzip.ads:94:3" title="defined at unzip.ads:94:3">null_routines</a> );</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_unzip.ads.html#l202" title="unzip.ads:202:13">unzip.ads:202:13</a> (declaration)</i></div>
+            <div><i><a href="src_unzip.adb.html#l374" title="unzip.adb:374:7">unzip.adb:374:7</a> (call)</i></div>
+            <div><i><a href="src_unzip.adb.html#l540" title="unzip.adb:540:14">unzip.adb:540:14</a> (body)</i></div>
+            <div><i><a href="src_unzip.adb.html#l585" title="unzip.adb:585:8">unzip.adb:585:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="unzip.ads.html#unzip.ads:102:13" title="defined at unzip.ads:102:13">Extract</a> defined at <a href="src_unzip.ads.html#l102" title="unzip.ads:102:13">unzip.ads:102:13</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>To_Unbounded_String defined at a-strunb.ads:94:13</i></div>
+            <div><i><a href="unzip.adb.html#unzip.adb:15:14" title="defined at unzip.adb:15:14">UnZip.UnZipFile</a> defined at <a href="src_unzip.adb.html#l15" title="unzip.adb:15:14">unzip.adb:15:14</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:169:14" title="defined at zip.ads:169:14">Zip.Find_first_offset</a> defined at <a href="src_zip.ads.html#l169" title="zip.ads:169:14">zip.ads:169:14</a></i></div>
+            <div><i><a href="zip_streams.ads.html#zip_streams.ads:138:14" title="defined at zip_streams.ads:138:14">Zip_Streams.Close</a> defined at <a href="src_zip_streams.ads.html#l138" title="zip_streams.ads:138:14">zip_streams.ads:138:14</a></i></div>
+            <div><i><a href="zip_streams.ads.html#zip_streams.ads:131:14" title="defined at zip_streams.ads:131:14">Zip_Streams.Open</a> defined at <a href="src_zip_streams.ads.html#l131" title="zip_streams.ads:131:14">zip_streams.ads:131:14</a></i></div>
+            <div><i><a href="zip_streams.ads.html#zip_streams.ads:56:14" title="defined at zip_streams.ads:56:14">Zip_Streams.Set_Name</a> defined at <a href="src_zip_streams.ads.html#l56" title="zip_streams.ads:56:14">zip_streams.ads:56:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='unzip.ads:214:13' id='unzip.ads:214:13'></a>
+<span class="droplink">Extract<ul>
+  <li><a href="src_unzip.ads.html#l214">Goto spec in source</a></li>
+  <li><a href="src_unzip.adb.html#l444">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Extract</span> <table><tr><td>(</td><td><span class="name"><a name="unzip.ads:214:22"></a>from</span></td><td>: String;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:215:22"></a>what</span></td><td>: String;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:216:22"></a>feedback</span></td><td>: <a href="zip.ads.html#zip.ads:203:8" title="defined at zip.ads:203:8">Zip.Feedback_proc</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:217:22"></a>help_the_file_exists</span></td><td>: <a href="unzip.ads.html#unzip.ads:180:9" title="defined at unzip.ads:180:9">Resolve_conflict_proc</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:218:22"></a>tell_data</span></td><td>: <a href="unzip.ads.html#unzip.ads:194:8" title="defined at unzip.ads:194:8">Tell_data_proc</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:219:22"></a>get_pwd</span></td><td>: <a href="unzip.ads.html#unzip.ads:186:8" title="defined at unzip.ads:186:8">Get_password_proc</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:220:22"></a>options</span></td><td>: <a href="unzip.ads.html#unzip.ads:62:8" title="defined at unzip.ads:62:8">Option_set</a> := <a href="unzip.ads.html#unzip.ads:64:3" title="defined at unzip.ads:64:3">no_option</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:221:22"></a>password</span></td><td>: String := <span class="string">""</span>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:222:22"></a>file_system_routines</span></td><td>: <a href="unzip.ads.html#unzip.ads:87:8" title="defined at unzip.ads:87:8">FS_routines_type</a> := <a href="unzip.ads.html#unzip.ads:94:3" title="defined at unzip.ads:94:3">null_routines</a> );</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_unzip.ads.html#l214" title="unzip.ads:214:13">unzip.ads:214:13</a> (declaration)</i></div>
+            <div><i><a href="src_unzip.adb.html#l385" title="unzip.adb:385:7">unzip.adb:385:7</a> (call)</i></div>
+            <div><i><a href="src_unzip.adb.html#l444" title="unzip.adb:444:14">unzip.adb:444:14</a> (body)</i></div>
+            <div><i><a href="src_unzip.adb.html#l488" title="unzip.adb:488:8">unzip.adb:488:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="unzip.ads.html#unzip.ads:110:13" title="defined at unzip.ads:110:13">Extract</a> defined at <a href="src_unzip.ads.html#l110" title="unzip.ads:110:13">unzip.ads:110:13</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>To_Unbounded_String defined at a-strunb.ads:94:13</i></div>
+            <div><i><a href="unzip.adb.html#unzip.adb:15:14" title="defined at unzip.adb:15:14">UnZip.UnZipFile</a> defined at <a href="src_unzip.adb.html#l15" title="unzip.adb:15:14">unzip.adb:15:14</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:175:14" title="defined at zip.ads:175:14">Zip.Find_offset</a> defined at <a href="src_zip.ads.html#l175" title="zip.ads:175:14">zip.ads:175:14</a></i></div>
+            <div><i><a href="zip_streams.ads.html#zip_streams.ads:138:14" title="defined at zip_streams.ads:138:14">Zip_Streams.Close</a> defined at <a href="src_zip_streams.ads.html#l138" title="zip_streams.ads:138:14">zip_streams.ads:138:14</a></i></div>
+            <div><i><a href="zip_streams.ads.html#zip_streams.ads:131:14" title="defined at zip_streams.ads:131:14">Zip_Streams.Open</a> defined at <a href="src_zip_streams.ads.html#l131" title="zip_streams.ads:131:14">zip_streams.ads:131:14</a></i></div>
+            <div><i><a href="zip_streams.ads.html#zip_streams.ads:56:14" title="defined at zip_streams.ads:56:14">Zip_Streams.Set_Name</a> defined at <a href="src_zip_streams.ads.html#l56" title="zip_streams.ads:56:14">zip_streams.ads:56:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='unzip.ads:228:13' id='unzip.ads:228:13'></a>
+<span class="droplink">Extract<ul>
+  <li><a href="src_unzip.ads.html#l228">Goto spec in source</a></li>
+  <li><a href="src_unzip.adb.html#l493">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Extract</span> <table><tr><td>(</td><td><span class="name"><a name="unzip.ads:228:22"></a>from</span></td><td>: String;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:229:22"></a>what</span></td><td>: String;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:230:22"></a>rename</span></td><td>: String;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:231:22"></a>feedback</span></td><td>: <a href="zip.ads.html#zip.ads:203:8" title="defined at zip.ads:203:8">Zip.Feedback_proc</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:232:22"></a>tell_data</span></td><td>: <a href="unzip.ads.html#unzip.ads:194:8" title="defined at unzip.ads:194:8">Tell_data_proc</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:233:22"></a>get_pwd</span></td><td>: <a href="unzip.ads.html#unzip.ads:186:8" title="defined at unzip.ads:186:8">Get_password_proc</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:234:22"></a>options</span></td><td>: <a href="unzip.ads.html#unzip.ads:62:8" title="defined at unzip.ads:62:8">Option_set</a> := <a href="unzip.ads.html#unzip.ads:64:3" title="defined at unzip.ads:64:3">no_option</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:235:22"></a>password</span></td><td>: String := <span class="string">""</span>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:236:22"></a>file_system_routines</span></td><td>: <a href="unzip.ads.html#unzip.ads:87:8" title="defined at unzip.ads:87:8">FS_routines_type</a> := <a href="unzip.ads.html#unzip.ads:94:3" title="defined at unzip.ads:94:3">null_routines</a> );</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_unzip.ads.html#l228" title="unzip.ads:228:13">unzip.ads:228:13</a> (declaration)</i></div>
+            <div><i><a href="src_unzip.adb.html#l397" title="unzip.adb:397:7">unzip.adb:397:7</a> (call)</i></div>
+            <div><i><a href="src_unzip.adb.html#l493" title="unzip.adb:493:14">unzip.adb:493:14</a> (body)</i></div>
+            <div><i><a href="src_unzip.adb.html#l536" title="unzip.adb:536:8">unzip.adb:536:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="unzip.ads.html#unzip.ads:120:13" title="defined at unzip.ads:120:13">Extract</a> defined at <a href="src_unzip.ads.html#l120" title="unzip.ads:120:13">unzip.ads:120:13</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>To_Unbounded_String defined at a-strunb.ads:94:13</i></div>
+            <div><i><a href="unzip.adb.html#unzip.adb:15:14" title="defined at unzip.adb:15:14">UnZip.UnZipFile</a> defined at <a href="src_unzip.adb.html#l15" title="unzip.adb:15:14">unzip.adb:15:14</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:175:14" title="defined at zip.ads:175:14">Zip.Find_offset</a> defined at <a href="src_zip.ads.html#l175" title="zip.ads:175:14">zip.ads:175:14</a></i></div>
+            <div><i><a href="zip_streams.ads.html#zip_streams.ads:138:14" title="defined at zip_streams.ads:138:14">Zip_Streams.Close</a> defined at <a href="src_zip_streams.ads.html#l138" title="zip_streams.ads:138:14">zip_streams.ads:138:14</a></i></div>
+            <div><i><a href="zip_streams.ads.html#zip_streams.ads:131:14" title="defined at zip_streams.ads:131:14">Zip_Streams.Open</a> defined at <a href="src_zip_streams.ads.html#l131" title="zip_streams.ads:131:14">zip_streams.ads:131:14</a></i></div>
+            <div><i><a href="zip_streams.ads.html#zip_streams.ads:56:14" title="defined at zip_streams.ads:56:14">Zip_Streams.Set_Name</a> defined at <a href="src_zip_streams.ads.html#l56" title="zip_streams.ads:56:14">zip_streams.ads:56:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='unzip.ads:244:13' id='unzip.ads:244:13'></a>
+<span class="droplink">Extract<ul>
+  <li><a href="src_unzip.ads.html#l244">Goto spec in source</a></li>
+  <li><a href="src_unzip.adb.html#l590">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Extract</span> <table><tr><td>(</td><td><span class="name"><a name="unzip.ads:244:22"></a>from</span></td><td>: <a href="zip.ads.html#zip.ads:53:8" title="defined at zip.ads:53:8">Zip.Zip_info</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:245:22"></a>feedback</span></td><td>: <a href="zip.ads.html#zip.ads:203:8" title="defined at zip.ads:203:8">Zip.Feedback_proc</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:246:22"></a>help_the_file_exists</span></td><td>: <a href="unzip.ads.html#unzip.ads:180:9" title="defined at unzip.ads:180:9">Resolve_conflict_proc</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:247:22"></a>tell_data</span></td><td>: <a href="unzip.ads.html#unzip.ads:194:8" title="defined at unzip.ads:194:8">Tell_data_proc</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:248:22"></a>get_pwd</span></td><td>: <a href="unzip.ads.html#unzip.ads:186:8" title="defined at unzip.ads:186:8">Get_password_proc</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:249:22"></a>options</span></td><td>: <a href="unzip.ads.html#unzip.ads:62:8" title="defined at unzip.ads:62:8">Option_set</a> := <a href="unzip.ads.html#unzip.ads:64:3" title="defined at unzip.ads:64:3">no_option</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:250:22"></a>password</span></td><td>: String := <span class="string">""</span>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:251:22"></a>file_system_routines</span></td><td>: <a href="unzip.ads.html#unzip.ads:87:8" title="defined at unzip.ads:87:8">FS_routines_type</a> := <a href="unzip.ads.html#unzip.ads:94:3" title="defined at unzip.ads:94:3">null_routines</a> );</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_unzip.ads.html#l244" title="unzip.ads:244:13">unzip.ads:244:13</a> (declaration)</i></div>
+            <div><i><a href="src_unzip.adb.html#l407" title="unzip.adb:407:7">unzip.adb:407:7</a> (call)</i></div>
+            <div><i><a href="src_unzip.adb.html#l590" title="unzip.adb:590:14">unzip.adb:590:14</a> (body)</i></div>
+            <div><i><a href="src_unzip.adb.html#l618" title="unzip.adb:618:8">unzip.adb:618:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="unzip.ads.html#unzip.ads:135:13" title="defined at unzip.ads:135:13">Extract</a> defined at <a href="src_unzip.ads.html#l135" title="unzip.ads:135:13">unzip.ads:135:13</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="unzip.adb.html#unzip.adb:600:17" title="defined at unzip.adb:600:17">UnZip.Extract.Extract_1_file</a> defined at <a href="src_unzip.adb.html#l600" title="unzip.adb:600:17">unzip.adb:600:17</a></i></div>
+            <div><i><a href="unzip.adb.html#unzip.adb:614:17" title="defined at unzip.adb:614:17">UnZip.Extract.Extract_all_files</a> defined at <a href="src_unzip.adb.html#l614" title="unzip.adb:614:17">unzip.adb:614:17</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:140:13" title="defined at zip.ads:140:13">Zip.Traverse</a> defined at <a href="src_zip.ads.html#l140" title="zip.ads:140:13">zip.ads:140:13</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='unzip.ads:257:13' id='unzip.ads:257:13'></a>
+<span class="droplink">Extract<ul>
+  <li><a href="src_unzip.ads.html#l257">Goto spec in source</a></li>
+  <li><a href="src_unzip.adb.html#l623">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Extract</span> <table><tr><td>(</td><td><span class="name"><a name="unzip.ads:257:22"></a>from</span></td><td>: <a href="zip.ads.html#zip.ads:53:8" title="defined at zip.ads:53:8">Zip.Zip_info</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:258:22"></a>what</span></td><td>: String;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:259:22"></a>feedback</span></td><td>: <a href="zip.ads.html#zip.ads:203:8" title="defined at zip.ads:203:8">Zip.Feedback_proc</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:260:22"></a>help_the_file_exists</span></td><td>: <a href="unzip.ads.html#unzip.ads:180:9" title="defined at unzip.ads:180:9">Resolve_conflict_proc</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:261:22"></a>tell_data</span></td><td>: <a href="unzip.ads.html#unzip.ads:194:8" title="defined at unzip.ads:194:8">Tell_data_proc</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:262:22"></a>get_pwd</span></td><td>: <a href="unzip.ads.html#unzip.ads:186:8" title="defined at unzip.ads:186:8">Get_password_proc</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:263:22"></a>options</span></td><td>: <a href="unzip.ads.html#unzip.ads:62:8" title="defined at unzip.ads:62:8">Option_set</a> := <a href="unzip.ads.html#unzip.ads:64:3" title="defined at unzip.ads:64:3">no_option</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:264:22"></a>password</span></td><td>: String := <span class="string">""</span>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:265:22"></a>file_system_routines</span></td><td>: <a href="unzip.ads.html#unzip.ads:87:8" title="defined at unzip.ads:87:8">FS_routines_type</a> := <a href="unzip.ads.html#unzip.ads:94:3" title="defined at unzip.ads:94:3">null_routines</a> );</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_unzip.ads.html#l257" title="unzip.ads:257:13">unzip.ads:257:13</a> (declaration)</i></div>
+            <div><i><a href="src_unzip.adb.html#l418" title="unzip.adb:418:7">unzip.adb:418:7</a> (call)</i></div>
+            <div><i><a href="src_unzip.adb.html#l602" title="unzip.adb:602:10">unzip.adb:602:10</a> (call)</i></div>
+            <div><i><a href="src_unzip.adb.html#l623" title="unzip.adb:623:14">unzip.adb:623:14</a> (body)</i></div>
+            <div><i><a href="src_unzip.adb.html#l672" title="unzip.adb:672:8">unzip.adb:672:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="unzip.ads.html#unzip.ads:144:13" title="defined at unzip.ads:144:13">Extract</a> defined at <a href="src_unzip.ads.html#l144" title="unzip.ads:144:13">unzip.ads:144:13</a></i></div>
+            <div><i><a href="unzip.adb.html#unzip.adb:600:17" title="defined at unzip.adb:600:17">UnZip.Extract.Extract_1_file</a> defined at <a href="src_unzip.adb.html#l600" title="unzip.adb:600:17">unzip.adb:600:17</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>To_Unbounded_String defined at a-strunb.ads:94:13</i></div>
+            <div><i><a href="unzip.adb.html#unzip.adb:15:14" title="defined at unzip.adb:15:14">UnZip.UnZipFile</a> defined at <a href="src_unzip.adb.html#l15" title="unzip.adb:15:14">unzip.adb:15:14</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:184:14" title="defined at zip.ads:184:14">Zip.Find_offset</a> defined at <a href="src_zip.ads.html#l184" title="zip.ads:184:14">zip.ads:184:14</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:84:12" title="defined at zip.ads:84:12">Zip.Zip_name</a> defined at <a href="src_zip.ads.html#l84" title="zip.ads:84:12">zip.ads:84:12</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:88:12" title="defined at zip.ads:88:12">Zip.Zip_Stream</a> defined at <a href="src_zip.ads.html#l88" title="zip.ads:88:12">zip.ads:88:12</a></i></div>
+            <div><i><a href="zip_streams.ads.html#zip_streams.ads:138:14" title="defined at zip_streams.ads:138:14">Zip_Streams.Close</a> defined at <a href="src_zip_streams.ads.html#l138" title="zip_streams.ads:138:14">zip_streams.ads:138:14</a></i></div>
+            <div><i><a href="zip_streams.ads.html#zip_streams.ads:131:14" title="defined at zip_streams.ads:131:14">Zip_Streams.Open</a> defined at <a href="src_zip_streams.ads.html#l131" title="zip_streams.ads:131:14">zip_streams.ads:131:14</a></i></div>
+            <div><i><a href="zip_streams.ads.html#zip_streams.ads:56:14" title="defined at zip_streams.ads:56:14">Zip_Streams.Set_Name</a> defined at <a href="src_zip_streams.ads.html#l56" title="zip_streams.ads:56:14">zip_streams.ads:56:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='unzip.ads:272:13' id='unzip.ads:272:13'></a>
+<span class="droplink">Extract<ul>
+  <li><a href="src_unzip.ads.html#l272">Goto spec in source</a></li>
+  <li><a href="src_unzip.adb.html#l678">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Extract</span> <table><tr><td>(</td><td><span class="name"><a name="unzip.ads:272:22"></a>from</span></td><td>: <a href="zip.ads.html#zip.ads:53:8" title="defined at zip.ads:53:8">Zip.Zip_info</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:273:22"></a>what</span></td><td>: String;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:274:22"></a>rename</span></td><td>: String;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:275:22"></a>feedback</span></td><td>: <a href="zip.ads.html#zip.ads:203:8" title="defined at zip.ads:203:8">Zip.Feedback_proc</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:276:22"></a>tell_data</span></td><td>: <a href="unzip.ads.html#unzip.ads:194:8" title="defined at unzip.ads:194:8">Tell_data_proc</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:277:22"></a>get_pwd</span></td><td>: <a href="unzip.ads.html#unzip.ads:186:8" title="defined at unzip.ads:186:8">Get_password_proc</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:278:22"></a>options</span></td><td>: <a href="unzip.ads.html#unzip.ads:62:8" title="defined at unzip.ads:62:8">Option_set</a> := <a href="unzip.ads.html#unzip.ads:64:3" title="defined at unzip.ads:64:3">no_option</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:279:22"></a>password</span></td><td>: String := <span class="string">""</span>;</td></tr><tr><td></td><td><span class="name"><a name="unzip.ads:280:22"></a>file_system_routines</span></td><td>: <a href="unzip.ads.html#unzip.ads:87:8" title="defined at unzip.ads:87:8">FS_routines_type</a> := <a href="unzip.ads.html#unzip.ads:94:3" title="defined at unzip.ads:94:3">null_routines</a> );</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_unzip.ads.html#l272" title="unzip.ads:272:13">unzip.ads:272:13</a> (declaration)</i></div>
+            <div><i><a href="src_unzip.adb.html#l430" title="unzip.adb:430:7">unzip.adb:430:7</a> (call)</i></div>
+            <div><i><a href="src_unzip.adb.html#l678" title="unzip.adb:678:14">unzip.adb:678:14</a> (body)</i></div>
+            <div><i><a href="src_unzip.adb.html#l728" title="unzip.adb:728:8">unzip.adb:728:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="unzip.ads.html#unzip.ads:155:13" title="defined at unzip.ads:155:13">Extract</a> defined at <a href="src_unzip.ads.html#l155" title="unzip.ads:155:13">unzip.ads:155:13</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>To_Unbounded_String defined at a-strunb.ads:94:13</i></div>
+            <div><i><a href="unzip.adb.html#unzip.adb:15:14" title="defined at unzip.adb:15:14">UnZip.UnZipFile</a> defined at <a href="src_unzip.adb.html#l15" title="unzip.adb:15:14">unzip.adb:15:14</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:184:14" title="defined at zip.ads:184:14">Zip.Find_offset</a> defined at <a href="src_zip.ads.html#l184" title="zip.ads:184:14">zip.ads:184:14</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:84:12" title="defined at zip.ads:84:12">Zip.Zip_name</a> defined at <a href="src_zip.ads.html#l84" title="zip.ads:84:12">zip.ads:84:12</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:88:12" title="defined at zip.ads:88:12">Zip.Zip_Stream</a> defined at <a href="src_zip.ads.html#l88" title="zip.ads:88:12">zip.ads:88:12</a></i></div>
+            <div><i><a href="zip_streams.ads.html#zip_streams.ads:138:14" title="defined at zip_streams.ads:138:14">Zip_Streams.Close</a> defined at <a href="src_zip_streams.ads.html#l138" title="zip_streams.ads:138:14">zip_streams.ads:138:14</a></i></div>
+            <div><i><a href="zip_streams.ads.html#zip_streams.ads:131:14" title="defined at zip_streams.ads:131:14">Zip_Streams.Open</a> defined at <a href="src_zip_streams.ads.html#l131" title="zip_streams.ads:131:14">zip_streams.ads:131:14</a></i></div>
+            <div><i><a href="zip_streams.ads.html#zip_streams.ads:56:14" title="defined at zip_streams.ads:56:14">Zip_Streams.Set_Name</a> defined at <a href="src_zip_streams.ads.html#l56" title="zip_streams.ads:56:14">zip_streams.ads:56:14</a></i></div>
+        </div>
+      </div>
+    </div>
+</div> <!-- documentation -->
+
+</body>
+</html>

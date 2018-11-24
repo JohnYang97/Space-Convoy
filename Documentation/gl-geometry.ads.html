@@ -1,0 +1,1135 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    Package: Geometry
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+
+  <div id='navigation'>
+    <h2 class="button">Navigation</h2>
+    <a href='#Description'><div class="button2">Description</div></a>
+    <a href='#Packages'><div class="button2">Packages</div></a>
+    <a href='#Classes'><div class="button2">Classes</div></a>
+    <a href='#Types'><div class="button2">Types</div></a>
+    <a href='#Constants'><div class="button2">Constants &amp; Global variables</div></a>
+    <a href='#Methods'><div class="button2">Subprograms &amp; Entries</div></a>
+  </div><!-- navigation -->
+  </div>
+</div> <!-- leftSide -->
+
+<div class='default' id='rightSide'>
+ <div id='rightSideInside'>
+ <div id='Index'>
+  <h2>Index</h2>
+  <script type="text/javascript">
+    var names = new Array (
+new Array ('vertex_<wbr/>pointers', 'gl-geometry.ads:88:12', 'package-spec'),
+new Array ('Geometry_<wbr/>t (abstract)', 'gl-geometry.ads:113:9', 'class-spec'),
+new Array ('Plane', 'gl-geometry.ads:20:9', 'type-spec'),
+new Array ('Extent', 'gl-geometry.ads:27:9', 'type-spec'),
+new Array ('Axis_<wbr/>Aligned_<wbr/>Bounding_<wbr/>Box', 'gl-geometry.ads:34:9', 'type-spec'),
+new Array ('Bounds_<wbr/>record', 'gl-geometry.ads:43:9', 'type-spec'),
+new Array ('vertex_<wbr/>Id', 'gl-geometry.ads:65:11', 'type-spec'),
+new Array ('p_<wbr/>vertex_<wbr/>Id', 'gl-geometry.ads:66:9', 'type-spec'),
+new Array ('vertex_<wbr/>Id_<wbr/>array', 'gl-geometry.ads:68:11', 'type-spec'),
+new Array ('p_<wbr/>vertex_<wbr/>Id_<wbr/>array', 'gl-geometry.ads:69:9', 'type-spec'),
+new Array ('Positive_<wbr/>Vertex_<wbr/>Id', 'gl-geometry.ads:79:12', 'type-spec'),
+new Array ('GL_<wbr/>Vertex', 'gl-geometry.ads:84:12', 'type-spec'),
+new Array ('GL_<wbr/>Vertex_<wbr/>array', 'gl-geometry.ads:85:12', 'type-spec'),
+new Array ('p_<wbr/>Vertex_<wbr/>array', 'gl-geometry.ads:86:10', 'type-spec'),
+new Array ('p_<wbr/>Vertex', 'gl-geometry.ads:89:12', 'type-spec'),
+new Array ('GL_<wbr/>Normal', 'gl-geometry.ads:106:12', 'type-spec'),
+new Array ('GL_<wbr/>Normals', 'gl-geometry.ads:107:12', 'type-spec'),
+new Array ('GL_<wbr/>Normals_<wbr/>Vertex_<wbr/>Id', 'gl-geometry.ads:108:12', 'type-spec'),
+new Array ('p_<wbr/>Geometry', 'gl-geometry.ads:118:9', 'type-spec'),
+new Array ('null_<wbr/>Bounds', 'gl-geometry.ads:49:4', 'var-spec'),
+new Array ('null_<wbr/>Vertex', 'gl-geometry.ads:94:4', 'var-spec'),
+new Array ('Normalise', 'gl-geometry.ads:22:14', 'subp-spec'),
+new Array ('Max', 'gl-geometry.ads:32:13', 'subp-spec'),
+new Array ('Max', 'gl-geometry.ads:41:13', 'subp-spec'),
+new Array ('Max', 'gl-geometry.ads:57:13', 'subp-spec'),
+new Array ('to_<wbr/>gl_<wbr/>Pointer', 'gl-geometry.ads:71:13', 'subp-spec'),
+new Array ('Increment', 'gl-geometry.ads:73:14', 'subp-spec'),
+new Array ('Decrement', 'gl-geometry.ads:74:14', 'subp-spec'),
+new Array ('to_<wbr/>void_<wbr/>Pointer', 'gl-geometry.ads:76:14', 'subp-spec'),
+new Array ('free', 'gl-geometry.ads:77:14', 'subp-spec'),
+new Array ('to_<wbr/>p_<wbr/>Vertex', 'gl-geometry.ads:91:13', 'subp-spec'),
+new Array ('Image', 'gl-geometry.ads:92:13', 'subp-spec'),
+new Array ('free', 'gl-geometry.ads:96:14', 'subp-spec'),
+new Array ('Bounds', 'gl-geometry.ads:98:13', 'subp-spec'),
+new Array ('Image', 'gl-geometry.ads:99:13', 'subp-spec'),
+new Array ('Bounds', 'gl-geometry.ads:101:13', 'subp-spec'),
+new Array ('primitive_<wbr/>Id (abstract)', 'gl-geometry.ads:120:14', 'subp-spec'),
+new Array ('vertex_<wbr/>Count (abstract)', 'gl-geometry.ads:122:14', 'subp-spec'),
+new Array ('Vertices (abstract)', 'gl-geometry.ads:123:14', 'subp-spec'),
+new Array ('indices_<wbr/>Count (abstract)', 'gl-geometry.ads:125:14', 'subp-spec'),
+new Array ('Indices (abstract)', 'gl-geometry.ads:126:14', 'subp-spec'),
+new Array ('Bounds (abstract)', 'gl-geometry.ads:128:14', 'subp-spec'),
+new Array ('Face_<wbr/>Count', 'gl-geometry.ads:130:14', 'subp-spec'),
+new Array ('Draw (abstract)', 'gl-geometry.ads:135:14', 'subp-spec'),
+new Array ('Vertex_<wbr/>Normals', 'gl-geometry.ads:137:14', 'subp-spec'),
+new Array ('destroy (abstract)', 'gl-geometry.ads:139:14', 'subp-spec'),
+new Array ('Free', 'gl-geometry.ads:140:14', 'subp-spec'),
+      new Array ('dummy', '', ''));
+    printIndexList (names);
+  </script>
+  <noscript>
+    <ul>
+      <li class='package-spec'><a href="#gl-geometry.ads:88:12">vertex_<wbr/>pointers</a></li>
+      <li class='class-spec'><a href="#gl-geometry.ads:113:9">Geometry_<wbr/>t (abstract)</a></li>
+      <li class='type-spec'><a href="#gl-geometry.ads:20:9">Plane</a></li>
+      <li class='type-spec'><a href="#gl-geometry.ads:27:9">Extent</a></li>
+      <li class='type-spec'><a href="#gl-geometry.ads:34:9">Axis_<wbr/>Aligned_<wbr/>Bounding_<wbr/>Box</a></li>
+      <li class='type-spec'><a href="#gl-geometry.ads:43:9">Bounds_<wbr/>record</a></li>
+      <li class='type-spec'><a href="#gl-geometry.ads:65:11">vertex_<wbr/>Id</a></li>
+      <li class='type-spec'><a href="#gl-geometry.ads:66:9">p_<wbr/>vertex_<wbr/>Id</a></li>
+      <li class='type-spec'><a href="#gl-geometry.ads:68:11">vertex_<wbr/>Id_<wbr/>array</a></li>
+      <li class='type-spec'><a href="#gl-geometry.ads:69:9">p_<wbr/>vertex_<wbr/>Id_<wbr/>array</a></li>
+      <li class='type-spec'><a href="#gl-geometry.ads:79:12">Positive_<wbr/>Vertex_<wbr/>Id</a></li>
+      <li class='type-spec'><a href="#gl-geometry.ads:84:12">GL_<wbr/>Vertex</a></li>
+      <li class='type-spec'><a href="#gl-geometry.ads:85:12">GL_<wbr/>Vertex_<wbr/>array</a></li>
+      <li class='type-spec'><a href="#gl-geometry.ads:86:10">p_<wbr/>Vertex_<wbr/>array</a></li>
+      <li class='type-spec'><a href="#gl-geometry.ads:89:12">p_<wbr/>Vertex</a></li>
+      <li class='type-spec'><a href="#gl-geometry.ads:106:12">GL_<wbr/>Normal</a></li>
+      <li class='type-spec'><a href="#gl-geometry.ads:107:12">GL_<wbr/>Normals</a></li>
+      <li class='type-spec'><a href="#gl-geometry.ads:108:12">GL_<wbr/>Normals_<wbr/>Vertex_<wbr/>Id</a></li>
+      <li class='type-spec'><a href="#gl-geometry.ads:118:9">p_<wbr/>Geometry</a></li>
+      <li class='var-spec'><a href="#gl-geometry.ads:49:4">null_<wbr/>Bounds</a></li>
+      <li class='var-spec'><a href="#gl-geometry.ads:94:4">null_<wbr/>Vertex</a></li>
+      <li class='subp-spec'><a href="#gl-geometry.ads:22:14">Normalise</a></li>
+      <li class='subp-spec'><a href="#gl-geometry.ads:32:13">Max</a></li>
+      <li class='subp-spec'><a href="#gl-geometry.ads:41:13">Max</a></li>
+      <li class='subp-spec'><a href="#gl-geometry.ads:57:13">Max</a></li>
+      <li class='subp-spec'><a href="#gl-geometry.ads:71:13">to_<wbr/>gl_<wbr/>Pointer</a></li>
+      <li class='subp-spec'><a href="#gl-geometry.ads:73:14">Increment</a></li>
+      <li class='subp-spec'><a href="#gl-geometry.ads:74:14">Decrement</a></li>
+      <li class='subp-spec'><a href="#gl-geometry.ads:76:14">to_<wbr/>void_<wbr/>Pointer</a></li>
+      <li class='subp-spec'><a href="#gl-geometry.ads:77:14">free</a></li>
+      <li class='subp-spec'><a href="#gl-geometry.ads:91:13">to_<wbr/>p_<wbr/>Vertex</a></li>
+      <li class='subp-spec'><a href="#gl-geometry.ads:92:13">Image</a></li>
+      <li class='subp-spec'><a href="#gl-geometry.ads:96:14">free</a></li>
+      <li class='subp-spec'><a href="#gl-geometry.ads:98:13">Bounds</a></li>
+      <li class='subp-spec'><a href="#gl-geometry.ads:99:13">Image</a></li>
+      <li class='subp-spec'><a href="#gl-geometry.ads:101:13">Bounds</a></li>
+      <li class='subp-spec'><a href="#gl-geometry.ads:120:14">primitive_<wbr/>Id (abstract)</a></li>
+      <li class='subp-spec'><a href="#gl-geometry.ads:122:14">vertex_<wbr/>Count (abstract)</a></li>
+      <li class='subp-spec'><a href="#gl-geometry.ads:123:14">Vertices (abstract)</a></li>
+      <li class='subp-spec'><a href="#gl-geometry.ads:125:14">indices_<wbr/>Count (abstract)</a></li>
+      <li class='subp-spec'><a href="#gl-geometry.ads:126:14">Indices (abstract)</a></li>
+      <li class='subp-spec'><a href="#gl-geometry.ads:128:14">Bounds (abstract)</a></li>
+      <li class='subp-spec'><a href="#gl-geometry.ads:130:14">Face_<wbr/>Count</a></li>
+      <li class='subp-spec'><a href="#gl-geometry.ads:135:14">Draw (abstract)</a></li>
+      <li class='subp-spec'><a href="#gl-geometry.ads:137:14">Vertex_<wbr/>Normals</a></li>
+      <li class='subp-spec'><a href="#gl-geometry.ads:139:14">destroy (abstract)</a></li>
+      <li class='subp-spec'><a href="#gl-geometry.ads:140:14">Free</a></li>
+    </ul>
+  </noscript>
+ </div>
+ </div>
+</div>
+
+<div class='default' id='documentation'>
+  <div class='title'>
+    Package:
+<span class="droplink"><i>Geometry</i><ul>
+  <li><a href="src_gl-geometry.ads.html">Goto spec source</a></li>
+  <li><a href="src_gl-geometry.adb.html">Goto body source</a></li>
+</ul></span>
+  </div>
+  <div class='subprograms'>
+    <h1><a name='Description' id='Description'></a>Description</h1>
+    <div class="class">
+    <div class='details'><pre><span class="keyword">package</span> <span class="name_emphasis">GL.Geometry</span> <span class="keyword">is</span></pre></div>
+    <div class='comment'>-----------------------------------------------------------------------
+<a href="gl-geometry.adb.html#gl-geometry.adb:18:14" title="GL.Geometry">GL.Geometry</a> - <a href="gl.adb.html#gl.adb:17:14" title="GL">GL</a> geometry primitives
+
+Copyright (c) Rod Kay 2007
+AUSTRALIA
+Permission granted to use this software, without any warranty,
+for any purpose, provided this copyright note remains attached
+and unmodified if sources are distributed further.
+-----------------------------------------------------------------------
+</div>
+    </div>
+  </div>
+
+  <div class='subprograms'>
+    <h1><a name='Packages' id='Packages'></a>Packages</h1>
+    <div class="class">
+      <h3>
+        <a name='gl-geometry.ads:88:12' id='gl-geometry.ads:88:12'></a>
+        vertex_pointers
+        <span class='type'>(new Pointers)</span>
+      </h3>
+        <div class='details'><pre><span class="keyword">package</span> <span class="name_emphasis">vertex_pointers</span> <span class="keyword">is</span> <span class="keyword">new</span> interfaces.C.Pointers (<a href="gl-geometry.ads.html#gl-geometry.ads:79:12" title="defined at gl-geometry.ads:79:12">Positive_Vertex_Id</a>, <a href="gl-geometry.ads.html#gl-geometry.ads:84:12" title="defined at gl-geometry.ads:84:12">GL_Vertex</a>, <a href="gl-geometry.ads.html#gl-geometry.ads:85:12" title="defined at gl-geometry.ads:85:12">GL_Vertex_array</a>, (<span class="keyword">others</span> => <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>'Last));</pre></div>
+    </div>
+  </div>
+
+  <div class='subprograms'>
+    <h1><a name='Classes' id='Classes'></a>Classes</h1>
+    <div class="class">
+      <h3><a name='gl-geometry.ads:113:9' id='gl-geometry.ads:113:9'></a>
+<span class="droplink">Geometry_t (abstract)<ul>
+  <li><a href="src_gl-geometry.ads.html#l113">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Geometry_t</span> <span class="keyword">is</span> <span class="keyword">abstract</span> <span class="keyword">tagged</span>
+      <span class="keyword">record</span>
+         Bounds  : <a href="gl-geometry.ads.html#gl-geometry.ads:43:9" title="defined at gl-geometry.ads:43:9">Bounds_record</a>;
+      <span class="keyword">end</span> <span class="keyword">record</span>;</pre></div>
+      <div class='profile'>
+        <div>
+          <h4>Primitive operations:</h4>
+              <div><span class="droplink">Bounds<ul><li><a href="gl-geometry.ads.html#gl-geometry.ads:128:14" title="To API doc">To API doc</a></li><li><a href="src_gl-geometry.ads.html#l128" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">destroy<ul><li><a href="gl-geometry.ads.html#gl-geometry.ads:139:14" title="To API doc">To API doc</a></li><li><a href="src_gl-geometry.ads.html#l139" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">Draw<ul><li><a href="gl-geometry.ads.html#gl-geometry.ads:135:14" title="To API doc">To API doc</a></li><li><a href="src_gl-geometry.ads.html#l135" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">Indices<ul><li><a href="gl-geometry.ads.html#gl-geometry.ads:126:14" title="To API doc">To API doc</a></li><li><a href="src_gl-geometry.ads.html#l126" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">indices_Count<ul><li><a href="gl-geometry.ads.html#gl-geometry.ads:125:14" title="To API doc">To API doc</a></li><li><a href="src_gl-geometry.ads.html#l125" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">primitive_Id<ul><li><a href="gl-geometry.ads.html#gl-geometry.ads:120:14" title="To API doc">To API doc</a></li><li><a href="src_gl-geometry.ads.html#l120" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">vertex_Count<ul><li><a href="gl-geometry.ads.html#gl-geometry.ads:122:14" title="To API doc">To API doc</a></li><li><a href="src_gl-geometry.ads.html#l122" title="To spec">To spec</a></li></ul></span></div>
+              <div><span class="droplink">Vertices<ul><li><a href="gl-geometry.ads.html#gl-geometry.ads:123:14" title="To API doc">To API doc</a></li><li><a href="src_gl-geometry.ads.html#l123" title="To spec">To spec</a></li></ul></span></div>
+        </div>
+      </div>
+      <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-geometry.ads.html#l113" title="gl-geometry.ads:113:9">gl-geometry.ads:113:9</a> (declaration)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l135" title="gl-geometry.adb:135:32">gl-geometry.adb:135:32</a> (reference)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l195" title="gl-geometry.adb:195:63">gl-geometry.adb:195:63</a> (reference)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l202" title="gl-geometry.adb:202:36">gl-geometry.adb:202:36</a> (reference)</i></div>
+            <div><i><a href="src_gl-geometry.ads.html#l118" title="gl-geometry.ads:118:34">gl-geometry.ads:118:34</a> (reference)</i></div>
+            <div><i><a href="src_gl-geometry.ads.html#l120" title="gl-geometry.ads:120:37">gl-geometry.ads:120:37</a> (reference)</i></div>
+            <div><i><a href="src_gl-geometry.ads.html#l122" title="gl-geometry.ads:122:37">gl-geometry.ads:122:37</a> (reference)</i></div>
+            <div><i><a href="src_gl-geometry.ads.html#l123" title="gl-geometry.ads:123:37">gl-geometry.ads:123:37</a> (reference)</i></div>
+            <div><i><a href="src_gl-geometry.ads.html#l125" title="gl-geometry.ads:125:37">gl-geometry.ads:125:37</a> (reference)</i></div>
+            <div><i><a href="src_gl-geometry.ads.html#l126" title="gl-geometry.ads:126:37">gl-geometry.ads:126:37</a> (reference)</i></div>
+            <div><i><a href="src_gl-geometry.ads.html#l128" title="gl-geometry.ads:128:37">gl-geometry.ads:128:37</a> (reference)</i></div>
+            <div><i><a href="src_gl-geometry.ads.html#l130" title="gl-geometry.ads:130:37">gl-geometry.ads:130:37</a> (reference)</i></div>
+            <div><i><a href="src_gl-geometry.ads.html#l135" title="gl-geometry.ads:135:37">gl-geometry.ads:135:37</a> (reference)</i></div>
+            <div><i><a href="src_gl-geometry.ads.html#l137" title="gl-geometry.ads:137:37">gl-geometry.ads:137:37</a> (reference)</i></div>
+            <div><i><a href="src_gl-geometry.ads.html#l139" title="gl-geometry.ads:139:37">gl-geometry.ads:139:37</a> (reference)</i></div>
+            <div><i><a href="src_gl-skins.adb.html#l73" title="gl-skins.adb:73:64">gl-skins.adb:73:64</a> (reference)</i></div>
+            <div><i><a href="src_gl-skins.adb.html#l105" title="gl-skins.adb:105:63">gl-skins.adb:105:63</a> (reference)</i></div>
+            <div><i><a href="src_gl-skins.adb.html#l141" title="gl-skins.adb:141:63">gl-skins.adb:141:63</a> (reference)</i></div>
+            <div><i><a href="src_gl-skins.adb.html#l191" title="gl-skins.adb:191:64">gl-skins.adb:191:64</a> (reference)</i></div>
+            <div><i><a href="src_gl-skins.ads.html#l40" title="gl-skins.ads:40:53">gl-skins.ads:40:53</a> (reference)</i></div>
+            <div><i><a href="src_gl-skins.ads.html#l55" title="gl-skins.ads:55:112">gl-skins.ads:55:112</a> (reference)</i></div>
+            <div><i><a href="src_gl-skins.ads.html#l74" title="gl-skins.ads:74:106">gl-skins.ads:74:106</a> (reference)</i></div>
+            <div><i><a href="src_gl-skins.ads.html#l101" title="gl-skins.ads:101:116">gl-skins.ads:101:116</a> (reference)</i></div>
+            <div><i><a href="src_gl-skins.ads.html#l129" title="gl-skins.ads:129:103">gl-skins.ads:129:103</a> (reference)</i></div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class='subprograms'>
+    <h1><a name='Types' id='Types'></a>Types</h1>
+    <div class="class">
+      <h3>
+        <a name='gl-geometry.ads:20:9' id='gl-geometry.ads:20:9'></a>
+<span class="droplink">Plane<ul>
+  <li><a href="src_gl-geometry.ads.html#l20">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Plane</span> <span class="keyword">is</span> <span class="keyword">array</span> (0 .. 3) <span class="keyword">of</span> <span class="keyword">aliased</span> <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-geometry.ads.html#l20" title="gl-geometry.ads:20:9">gl-geometry.ads:20:9</a> (declaration)</i></div>
+          <div><i><a href="src_gl-frustums.ads.html#l23" title="gl-frustums.ads:23:56">gl-frustums.ads:23:56</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.adb.html#l25" title="gl-geometry.adb:25:44">gl-geometry.adb:25:44</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l22" title="gl-geometry.ads:22:45">gl-geometry.ads:22:45</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-geometry.ads:27:9' id='gl-geometry.ads:27:9'></a>
+<span class="droplink">Extent<ul>
+  <li><a href="src_gl-geometry.ads.html#l27">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Extent</span> <span class="keyword">is</span>
+      <span class="keyword">record</span>
+         Min, Max  : <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;
+      <span class="keyword">end</span> <span class="keyword">record</span>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-geometry.ads.html#l27" title="gl-geometry.ads:27:9">gl-geometry.ads:27:9</a> (declaration)</i></div>
+          <div><i><a href="src_gl-geometry.adb.html#l41" title="gl-geometry.adb:41:25">gl-geometry.adb:41:25</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.adb.html#l41" title="gl-geometry.adb:41:40">gl-geometry.adb:41:40</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l32" title="gl-geometry.ads:32:25">gl-geometry.ads:32:25</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l32" title="gl-geometry.ads:32:40">gl-geometry.ads:32:40</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l36" title="gl-geometry.ads:36:22">gl-geometry.ads:36:22</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l37" title="gl-geometry.ads:37:22">gl-geometry.ads:37:22</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l38" title="gl-geometry.ads:38:22">gl-geometry.ads:38:22</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-geometry.ads:34:9' id='gl-geometry.ads:34:9'></a>
+<span class="droplink">Axis_Aligned_Bounding_Box<ul>
+  <li><a href="src_gl-geometry.ads.html#l34">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Axis_Aligned_Bounding_Box</span> <span class="keyword">is</span>
+      <span class="keyword">record</span>
+         X_Extent  : <a href="gl-geometry.ads.html#gl-geometry.ads:27:9" title="defined at gl-geometry.ads:27:9">Extent</a>;    <span class="comment">-- extents in object space
+</span>         Y_Extent  : <a href="gl-geometry.ads.html#gl-geometry.ads:27:9" title="defined at gl-geometry.ads:27:9">Extent</a>;
+         Z_Extent  : <a href="gl-geometry.ads.html#gl-geometry.ads:27:9" title="defined at gl-geometry.ads:27:9">Extent</a>;
+      <span class="keyword">end</span> <span class="keyword">record</span>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-geometry.ads.html#l34" title="gl-geometry.ads:34:9">gl-geometry.ads:34:9</a> (declaration)</i></div>
+          <div><i><a href="src_gl-geometry.adb.html#l45" title="gl-geometry.adb:45:25">gl-geometry.adb:45:25</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.adb.html#l45" title="gl-geometry.adb:45:59">gl-geometry.adb:45:59</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l41" title="gl-geometry.ads:41:25">gl-geometry.ads:41:25</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l41" title="gl-geometry.ads:41:59">gl-geometry.ads:41:59</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l46" title="gl-geometry.ads:46:27">gl-geometry.ads:46:27</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-geometry.ads:43:9' id='gl-geometry.ads:43:9'></a>
+<span class="droplink">Bounds_record<ul>
+  <li><a href="src_gl-geometry.ads.html#l43">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Bounds_record</span> <span class="keyword">is</span>   <span class="comment">-- tbd : better name . .. 'type Bounds' conflicts with 'Bounds' trait function. . .. sphere_box_Bounds ?
+</span>      <span class="keyword">record</span>
+         Sphere_Radius  : <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>;
+         Box            : <a href="gl-geometry.ads.html#gl-geometry.ads:34:9" title="defined at gl-geometry.ads:34:9">Axis_Aligned_Bounding_Box</a>;
+      <span class="keyword">end</span> <span class="keyword">record</span>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-geometry.ads.html#l43" title="gl-geometry.ads:43:9">gl-geometry.ads:43:9</a> (declaration)</i></div>
+          <div><i><a href="src_gl-geometry.adb.html#l50" title="gl-geometry.adb:50:25">gl-geometry.adb:50:25</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.adb.html#l50" title="gl-geometry.adb:50:47">gl-geometry.adb:50:47</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.adb.html#l79" title="gl-geometry.adb:79:64">gl-geometry.adb:79:64</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.adb.html#l82" title="gl-geometry.adb:82:25">gl-geometry.adb:82:25</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.adb.html#l105" title="gl-geometry.adb:105:107">gl-geometry.adb:105:107</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.adb.html#l108" title="gl-geometry.adb:108:25">gl-geometry.adb:108:25</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l49" title="gl-geometry.ads:49:28">gl-geometry.ads:49:28</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l57" title="gl-geometry.ads:57:25">gl-geometry.ads:57:25</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l57" title="gl-geometry.ads:57:47">gl-geometry.ads:57:47</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l98" title="gl-geometry.ads:98:64">gl-geometry.ads:98:64</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l101" title="gl-geometry.ads:101:107">gl-geometry.ads:101:107</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l115" title="gl-geometry.ads:115:20">gl-geometry.ads:115:20</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l128" title="gl-geometry.ads:128:68">gl-geometry.ads:128:68</a> (reference)</i></div>
+          <div><i><a href="src_globe_3d.adb.html#l821" title="globe_3d.adb:821:66">globe_3d.adb:821:66</a> (reference)</i></div>
+          <div><i><a href="src_globe_3d.ads.html#l225" title="globe_3d.ads:225:57">globe_3d.ads:225:57</a> (reference)</i></div>
+          <div><i><a href="src_globe_3d.ads.html#l383" title="globe_3d.ads:383:37">globe_3d.ads:383:37</a> (reference)</i></div>
+          <div><i><a href="src_globe_3d.ads.html#l391" title="globe_3d.ads:391:83">globe_3d.ads:391:83</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-geometry.ads:65:11' id='gl-geometry.ads:65:11'></a>
+<span class="droplink">vertex_Id<ul>
+  <li><a href="src_gl-geometry.ads.html#l65">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span>   <span class="name_emphasis">vertex_Id</span>       <span class="keyword">is</span> <span class="keyword">new</span> <a href="gl.ads.html#gl.ads:124:9" title="defined at gl.ads:124:9">GL.Uint</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-geometry.ads.html#l65" title="gl-geometry.ads:65:11">gl-geometry.ads:65:11</a> (declaration)</i></div>
+          <div><i><a href="src_gl-geometry.adb.html#l183" title="gl-geometry.adb:183:35">gl-geometry.adb:183:35</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.adb.html#l218" title="gl-geometry.adb:218:85">gl-geometry.adb:218:85</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.adb.html#l239" title="gl-geometry.adb:239:50">gl-geometry.adb:239:50</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l66" title="gl-geometry.ads:66:41">gl-geometry.ads:66:41</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l68" title="gl-geometry.ads:68:75">gl-geometry.ads:68:75</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l79" title="gl-geometry.ads:79:34">gl-geometry.ads:79:34</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l79" title="gl-geometry.ads:79:55">gl-geometry.ads:79:55</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l122" title="gl-geometry.ads:122:68">gl-geometry.ads:122:68</a> (reference)</i></div>
+          <div><i><a href="src_gl-skins.ads.html#l62" title="gl-skins.ads:62:66">gl-skins.ads:62:66</a> (reference)</i></div>
+          <div><i><a href="src_gl-skins.ads.html#l82" title="gl-skins.ads:82:75">gl-skins.ads:82:75</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-geometry.ads:66:9' id='gl-geometry.ads:66:9'></a>
+<span class="droplink">p_vertex_Id<ul>
+  <li><a href="src_gl-geometry.ads.html#l66">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">p_vertex_Id</span>       <span class="keyword">is</span> <span class="keyword">access</span> <span class="keyword">all</span> <a href="gl-geometry.ads.html#gl-geometry.ads:65:11" title="defined at gl-geometry.ads:65:11">vertex_Id</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-geometry.ads.html#l66" title="gl-geometry.ads:66:9">gl-geometry.ads:66:9</a> (declaration)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l71" title="gl-geometry.ads:71:60">gl-geometry.ads:71:60</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l76" title="gl-geometry.ads:76:65">gl-geometry.ads:76:65</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-geometry.ads:68:11' id='gl-geometry.ads:68:11'></a>
+<span class="droplink">vertex_Id_array<ul>
+  <li><a href="src_gl-geometry.ads.html#l68">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span>   <span class="name_emphasis">vertex_Id_array</span> <span class="keyword">is</span> <span class="keyword">array</span> (<a href="gl.ads.html#gl.ads:131:9" title="defined at gl.ads:131:9">GL.positive_uInt</a> <span class="keyword">range</span> <>) <span class="keyword">of</span> <span class="keyword">aliased</span> <a href="gl-geometry.ads.html#gl-geometry.ads:65:11" title="defined at gl-geometry.ads:65:11">vertex_Id</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-geometry.ads.html#l68" title="gl-geometry.ads:68:11">gl-geometry.ads:68:11</a> (declaration)</i></div>
+          <div><i><a href="src_gl-geometry.adb.html#l57" title="gl-geometry.adb:57:40">gl-geometry.adb:57:40</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.adb.html#l65" title="gl-geometry.adb:65:40">gl-geometry.adb:65:40</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.adb.html#l105" title="gl-geometry.adb:105:71">gl-geometry.adb:105:71</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.adb.html#l209" title="gl-geometry.adb:209:47">gl-geometry.adb:209:47</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l69" title="gl-geometry.ads:69:41">gl-geometry.ads:69:41</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l73" title="gl-geometry.ads:73:40">gl-geometry.ads:73:40</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l74" title="gl-geometry.ads:74:40">gl-geometry.ads:74:40</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l77" title="gl-geometry.ads:77:65">gl-geometry.ads:77:65</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l101" title="gl-geometry.ads:101:71">gl-geometry.ads:101:71</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l126" title="gl-geometry.ads:126:68">gl-geometry.ads:126:68</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-geometry.ads:69:9' id='gl-geometry.ads:69:9'></a>
+<span class="droplink">p_vertex_Id_array<ul>
+  <li><a href="src_gl-geometry.ads.html#l69">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">p_vertex_Id_array</span> <span class="keyword">is</span> <span class="keyword">access</span> <span class="keyword">all</span> <a href="gl-geometry.ads.html#gl-geometry.ads:68:11" title="defined at gl-geometry.ads:68:11">vertex_Id_array</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-geometry.ads.html#l69" title="gl-geometry.ads:69:9">gl-geometry.ads:69:9</a> (declaration)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l77" title="gl-geometry.ads:77:82">gl-geometry.ads:77:82</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-geometry.ads:79:12' id='gl-geometry.ads:79:12'></a>
+<span class="droplink">Positive_Vertex_Id<ul>
+  <li><a href="src_gl-geometry.ads.html#l79">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">subtype</span> <span class="name_emphasis">Positive_Vertex_Id</span> <span class="keyword">is</span> <a href="gl-geometry.ads.html#gl-geometry.ads:65:11" title="defined at gl-geometry.ads:65:11">vertex_Id</a> <span class="keyword">range</span> 1 .. <a href="gl-geometry.ads.html#gl-geometry.ads:65:11" title="defined at gl-geometry.ads:65:11">vertex_Id</a>'Last;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-geometry.ads.html#l79" title="gl-geometry.ads:79:12">gl-geometry.ads:79:12</a> (declaration)</i></div>
+          <div><i><a href="src_gl-buffer-texture_coords.ads.html#l7" title="gl-buffer-texture_coords.ads:7:89">gl-buffer-texture_coords.ads:7:89</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l85" title="gl-geometry.ads:85:38">gl-geometry.ads:85:38</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l88" title="gl-geometry.ads:88:58">gl-geometry.ads:88:58</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l108" title="gl-geometry.ads:108:43">gl-geometry.ads:108:43</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l43" title="gl-textures.ads:43:53">gl-textures.ads:43:53</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-geometry.ads:84:12' id='gl-geometry.ads:84:12'></a>
+<span class="droplink">GL_Vertex<ul>
+  <li><a href="src_gl-geometry.ads.html#l84">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">subtype</span> <span class="name_emphasis">GL_Vertex</span>       <span class="keyword">is</span> <a href="gl.ads.html#gl.ads:155:9" title="defined at gl.ads:155:9">GL.Double_Vector_3D</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-geometry.ads.html#l84" title="gl-geometry.ads:84:12">gl-geometry.ads:84:12</a> (declaration)</i></div>
+          <div><i><a href="src_gl-geometry.adb.html#l76" title="gl-geometry.adb:76:27">gl-geometry.adb:76:27</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.adb.html#l114" title="gl-geometry.adb:114:26">gl-geometry.adb:114:26</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l85" title="gl-geometry.ads:85:78">gl-geometry.ads:85:78</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l88" title="gl-geometry.ads:88:78">gl-geometry.ads:88:78</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l92" title="gl-geometry.ads:92:27">gl-geometry.ads:92:27</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l94" title="gl-geometry.ads:94:28">gl-geometry.ads:94:28</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l52" title="gl-textures.adb:52:39">gl-textures.adb:52:39</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l72" title="gl-textures.adb:72:39">gl-textures.adb:72:39</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-geometry.ads:85:12' id='gl-geometry.ads:85:12'></a>
+<span class="droplink">GL_Vertex_array<ul>
+  <li><a href="src_gl-geometry.ads.html#l85">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span>    <span class="name_emphasis">GL_Vertex_array</span> <span class="keyword">is</span> <span class="keyword">array</span> (<a href="gl-geometry.ads.html#gl-geometry.ads:79:12" title="defined at gl-geometry.ads:79:12">Positive_Vertex_Id</a> <span class="keyword">range</span> <>) <span class="keyword">of</span> <span class="keyword">aliased</span> <a href="gl-geometry.ads.html#gl-geometry.ads:84:12" title="defined at gl-geometry.ads:84:12">GL_Vertex</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-geometry.ads.html#l85" title="gl-geometry.ads:85:12">gl-geometry.ads:85:12</a> (declaration)</i></div>
+          <div><i><a href="src_gl-geometry.adb.html#l79" title="gl-geometry.adb:79:28">gl-geometry.adb:79:28</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.adb.html#l105" title="gl-geometry.adb:105:38">gl-geometry.adb:105:38</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.adb.html#l175" title="gl-geometry.adb:175:27">gl-geometry.adb:175:27</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.adb.html#l208" title="gl-geometry.adb:208:47">gl-geometry.adb:208:47</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l86" title="gl-geometry.ads:86:39">gl-geometry.ads:86:39</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l88" title="gl-geometry.ads:88:89">gl-geometry.ads:88:89</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l96" title="gl-geometry.ads:96:54">gl-geometry.ads:96:54</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l98" title="gl-geometry.ads:98:28">gl-geometry.ads:98:28</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l99" title="gl-geometry.ads:99:28">gl-geometry.ads:99:28</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l101" title="gl-geometry.ads:101:38">gl-geometry.ads:101:38</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l123" title="gl-geometry.ads:123:68">gl-geometry.ads:123:68</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l42" title="gl-textures.adb:42:66">gl-textures.adb:42:66</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l62" title="gl-textures.adb:62:66">gl-textures.adb:62:66</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l84" title="gl-textures.adb:84:88">gl-textures.adb:84:88</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.adb.html#l87" title="gl-textures.adb:87:88">gl-textures.adb:87:88</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l48" title="gl-textures.ads:48:66">gl-textures.ads:48:66</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l56" title="gl-textures.ads:56:85">gl-textures.ads:56:85</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l57" title="gl-textures.ads:57:85">gl-textures.ads:57:85</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l65" title="gl-textures.ads:65:88">gl-textures.ads:65:88</a> (reference)</i></div>
+          <div><i><a href="src_gl-textures.ads.html#l66" title="gl-textures.ads:66:88">gl-textures.ads:66:88</a> (reference)</i></div>
+      </div>
+      <div class='comment'>tbd : can GL.Double_vector_3D use &apos;1&apos;- based indexing ?
+</div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-geometry.ads:86:10' id='gl-geometry.ads:86:10'></a>
+<span class="droplink">p_Vertex_array<ul>
+  <li><a href="src_gl-geometry.ads.html#l86">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span>  <span class="name_emphasis">p_Vertex_array</span> <span class="keyword">is</span> <span class="keyword">access</span> <span class="keyword">all</span> <a href="gl-geometry.ads.html#gl-geometry.ads:85:12" title="defined at gl-geometry.ads:85:12">GL_Vertex_array</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-geometry.ads.html#l86" title="gl-geometry.ads:86:10">gl-geometry.ads:86:10</a> (declaration)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l96" title="gl-geometry.ads:96:71">gl-geometry.ads:96:71</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-geometry.ads:89:12' id='gl-geometry.ads:89:12'></a>
+<span class="droplink">p_Vertex<ul>
+  <li><a href="src_gl-geometry.ads.html#l89">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">subtype</span> <span class="name_emphasis">p_Vertex</span> <span class="keyword">is</span> vertex_pointers.Pointer;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-geometry.ads.html#l89" title="gl-geometry.ads:89:12">gl-geometry.ads:89:12</a> (declaration)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l91" title="gl-geometry.ads:91:70">gl-geometry.ads:91:70</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-geometry.ads:106:12' id='gl-geometry.ads:106:12'></a>
+<span class="droplink">GL_Normal<ul>
+  <li><a href="src_gl-geometry.ads.html#l106">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">subtype</span> <span class="name_emphasis">GL_Normal</span>            <span class="keyword">is</span> <a href="gl.ads.html#gl.ads:155:9" title="defined at gl.ads:155:9">GL.Double_Vector_3D</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-geometry.ads.html#l106" title="gl-geometry.ads:106:12">gl-geometry.ads:106:12</a> (declaration)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l107" title="gl-geometry.ads:107:83">gl-geometry.ads:107:83</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l108" title="gl-geometry.ads:108:83">gl-geometry.ads:108:83</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-geometry.ads:107:12' id='gl-geometry.ads:107:12'></a>
+<span class="droplink">GL_Normals<ul>
+  <li><a href="src_gl-geometry.ads.html#l107">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span>    <span class="name_emphasis">GL_Normals</span>           <span class="keyword">is</span> <span class="keyword">array</span> (Positive           <span class="keyword">range</span> <>) <span class="keyword">of</span> <span class="keyword">aliased</span> <a href="gl-geometry.ads.html#gl-geometry.ads:106:12" title="defined at gl-geometry.ads:106:12">GL_Normal</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-geometry.ads.html#l107" title="gl-geometry.ads:107:12">gl-geometry.ads:107:12</a> (declaration)</i></div>
+          <div><i><a href="src_gl-geometry.adb.html#l213" title="gl-geometry.adb:213:47">gl-geometry.adb:213:47</a> (reference)</i></div>
+      </div>
+      <div class='comment'>tbd : rename vertex_Normal_array
+</div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-geometry.ads:108:12' id='gl-geometry.ads:108:12'></a>
+<span class="droplink">GL_Normals_Vertex_Id<ul>
+  <li><a href="src_gl-geometry.ads.html#l108">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span>    <span class="name_emphasis">GL_Normals_Vertex_Id</span> <span class="keyword">is</span> <span class="keyword">array</span> (<a href="gl-geometry.ads.html#gl-geometry.ads:79:12" title="defined at gl-geometry.ads:79:12">Positive_Vertex_Id</a> <span class="keyword">range</span> <>) <span class="keyword">of</span> <span class="keyword">aliased</span> <a href="gl-geometry.ads.html#gl-geometry.ads:106:12" title="defined at gl-geometry.ads:106:12">GL_Normal</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-geometry.ads.html#l108" title="gl-geometry.ads:108:12">gl-geometry.ads:108:12</a> (declaration)</i></div>
+          <div><i><a href="src_gl-geometry.adb.html#l202" title="gl-geometry.adb:202:61">gl-geometry.adb:202:61</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.adb.html#l210" title="gl-geometry.adb:210:47">gl-geometry.adb:210:47</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l137" title="gl-geometry.ads:137:62">gl-geometry.ads:137:62</a> (reference)</i></div>
+          <div><i><a href="src_gl-skins.ads.html#l64" title="gl-skins.ads:64:33">gl-skins.ads:64:33</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='gl-geometry.ads:118:9' id='gl-geometry.ads:118:9'></a>
+<span class="droplink">p_Geometry<ul>
+  <li><a href="src_gl-geometry.ads.html#l118">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">p_Geometry</span> <span class="keyword">is</span> <span class="keyword">access</span> <span class="keyword">all</span> <a href="gl-geometry.ads.html#gl-geometry.ads:113:9" title="defined at gl-geometry.ads:113:9">Geometry_t</a>'Class;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_gl-geometry.ads.html#l118" title="gl-geometry.ads:118:9">gl-geometry.ads:118:9</a> (declaration)</i></div>
+          <div><i><a href="src_gl-geometry.adb.html#l193" title="gl-geometry.adb:193:35">gl-geometry.adb:193:35</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.adb.html#l195" title="gl-geometry.adb:195:81">gl-geometry.adb:195:81</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.ads.html#l140" title="gl-geometry.ads:140:37">gl-geometry.ads:140:37</a> (reference)</i></div>
+          <div><i><a href="src_gl-skinned_geometry.ads.html#l18" title="gl-skinned_geometry.ads:18:34">gl-skinned_geometry.ads:18:34</a> (reference)</i></div>
+      </div>
+    </div>
+  </div>
+
+  <div class='subprograms'>
+    <h1><a name='Constants' id='Constants'></a>Constants &amp; Global variables</h1>
+    <div class="class">
+      <h3><a name='gl-geometry.ads:49:4' id='gl-geometry.ads:49:4'></a>
+<span class="droplink">null_Bounds<ul>
+  <li><a href="src_gl-geometry.ads.html#l49">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="gl-geometry.ads.html#gl-geometry.ads:43:9" title="defined at gl-geometry.ads:43:9">Bounds_record</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">null_Bounds</span>  : <span class="keyword">constant</span> <a href="gl-geometry.ads.html#gl-geometry.ads:43:9" title="defined at gl-geometry.ads:43:9">Bounds_record</a> := (Sphere_Radius => 0.0,
+                                             Box           => (X_Extent => (Min => <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>'Last,
+                                                                            Max => <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>'First),
+                                                               Y_Extent => (Min => <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>'Last,
+                                                                            Max => <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>'First),
+                                                               Z_Extent => (Min => <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>'Last,
+                                                                            Max => <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>'First)));</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-geometry.ads.html#l49" title="gl-geometry.ads:49:4">gl-geometry.ads:49:4</a> (declaration)</i></div>
+          <div><i><a href="src_gl-geometry.adb.html#l82" title="gl-geometry.adb:82:42">gl-geometry.adb:82:42</a> (reference)</i></div>
+          <div><i><a href="src_gl-geometry.adb.html#l108" title="gl-geometry.adb:108:42">gl-geometry.adb:108:42</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='gl-geometry.ads:94:4' id='gl-geometry.ads:94:4'></a>
+<span class="droplink">null_Vertex<ul>
+  <li><a href="src_gl-geometry.ads.html#l94">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="gl-geometry.ads.html#gl-geometry.ads:84:12" title="defined at gl-geometry.ads:84:12">GL_Vertex</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">null_Vertex</span>  : <span class="keyword">constant</span> <a href="gl-geometry.ads.html#gl-geometry.ads:84:12" title="defined at gl-geometry.ads:84:12">GL_Vertex</a> := (<a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>'Last, <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>'Last, <a href="gl.ads.html#gl.ads:128:9" title="defined at gl.ads:128:9">GL.Double</a>'Last);</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_gl-geometry.ads.html#l94" title="gl-geometry.ads:94:4">gl-geometry.ads:94:4</a> (declaration)</i></div>
+      </div>
+    </div>
+  </div>
+
+    <div class='subprograms'>
+      <h1><a name='Methods' id='Methods'></a>Subprograms &amp; Entries</h1>
+      <div class="class">
+        <h3>
+          <a name='gl-geometry.ads:22:14' id='gl-geometry.ads:22:14'></a>
+<span class="droplink">Normalise<ul>
+  <li><a href="src_gl-geometry.ads.html#l22">Goto spec in source</a></li>
+  <li><a href="src_gl-geometry.adb.html#l25">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Normalise</span> <table><tr><td>(</td><td><span class="name"><a name="gl-geometry.ads:22:25"></a>the_Plane</span></td><td>: <span class="keyword">in</span> <span class="keyword">out</span> <a href="gl-geometry.ads.html#gl-geometry.ads:20:9" title="defined at gl-geometry.ads:20:9">Plane</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-geometry.ads.html#l22" title="gl-geometry.ads:22:14">gl-geometry.ads:22:14</a> (declaration)</i></div>
+            <div><i><a href="src_gl-frustums.adb.html#l9" title="gl-frustums.adb:9:10">gl-frustums.adb:9:10</a> (call)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l25" title="gl-geometry.adb:25:14">gl-geometry.adb:25:14</a> (body)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l36" title="gl-geometry.adb:36:8">gl-geometry.adb:36:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="gl-frustums.ads.html#gl-frustums.ads:25:14" title="defined at gl-frustums.ads:25:14">GL.Frustums.Normalise</a> defined at <a href="src_gl-frustums.ads.html#l25" title="gl-frustums.ads:25:14">gl-frustums.ads:25:14</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>Ada.Numerics.Generic_Elementary_Functions.Sqrt defined at a-ngelfu.ads:42:13</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-geometry.ads:32:13' id='gl-geometry.ads:32:13'></a>
+<span class="droplink">Max<ul>
+  <li><a href="src_gl-geometry.ads.html#l32">Goto spec in source</a></li>
+  <li><a href="src_gl-geometry.adb.html#l41">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Max</span> <table><tr><td>(</td><td><span class="name"><a name="gl-geometry.ads:32:18"></a>L</span>, <span class="name"><a name="gl-geometry.ads:32:21"></a>R</span></td><td>: <a href="gl-geometry.ads.html#gl-geometry.ads:27:9" title="defined at gl-geometry.ads:27:9">Extent</a>) <span class="keyword">return</span> <a href="gl-geometry.ads.html#gl-geometry.ads:27:9" title="defined at gl-geometry.ads:27:9">Extent</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-geometry.ads.html#l32" title="gl-geometry.ads:32:13">gl-geometry.ads:32:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l41" title="gl-geometry.adb:41:13">gl-geometry.adb:41:13</a> (body)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l46" title="gl-geometry.adb:46:19">gl-geometry.adb:46:19</a> (call)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l47" title="gl-geometry.adb:47:19">gl-geometry.adb:47:19</a> (call)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l48" title="gl-geometry.adb:48:19">gl-geometry.adb:48:19</a> (call)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-geometry.ads:41:13' id='gl-geometry.ads:41:13'></a>
+<span class="droplink">Max<ul>
+  <li><a href="src_gl-geometry.ads.html#l41">Goto spec in source</a></li>
+  <li><a href="src_gl-geometry.adb.html#l45">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Max</span> <table><tr><td>(</td><td><span class="name"><a name="gl-geometry.ads:41:18"></a>L</span>, <span class="name"><a name="gl-geometry.ads:41:21"></a>R</span></td><td>: <a href="gl-geometry.ads.html#gl-geometry.ads:34:9" title="defined at gl-geometry.ads:34:9">Axis_Aligned_Bounding_Box</a>) <span class="keyword">return</span> <a href="gl-geometry.ads.html#gl-geometry.ads:34:9" title="defined at gl-geometry.ads:34:9">Axis_Aligned_Bounding_Box</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-geometry.ads.html#l41" title="gl-geometry.ads:41:13">gl-geometry.ads:41:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l45" title="gl-geometry.adb:45:13">gl-geometry.adb:45:13</a> (body)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l52" title="gl-geometry.adb:52:24">gl-geometry.adb:52:24</a> (call)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-geometry.ads:57:13' id='gl-geometry.ads:57:13'></a>
+<span class="droplink">Max<ul>
+  <li><a href="src_gl-geometry.ads.html#l57">Goto spec in source</a></li>
+  <li><a href="src_gl-geometry.adb.html#l50">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Max</span> <table><tr><td>(</td><td><span class="name"><a name="gl-geometry.ads:57:18"></a>L</span>, <span class="name"><a name="gl-geometry.ads:57:21"></a>R</span></td><td>: <a href="gl-geometry.ads.html#gl-geometry.ads:43:9" title="defined at gl-geometry.ads:43:9">Bounds_record</a>) <span class="keyword">return</span> <a href="gl-geometry.ads.html#gl-geometry.ads:43:9" title="defined at gl-geometry.ads:43:9">Bounds_record</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-geometry.ads.html#l57" title="gl-geometry.ads:57:13">gl-geometry.ads:57:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l50" title="gl-geometry.adb:50:13">gl-geometry.adb:50:13</a> (body)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-geometry.ads:71:13' id='gl-geometry.ads:71:13'></a>
+<span class="droplink">to_gl_Pointer<ul>
+  <li><a href="src_gl-geometry.ads.html#l71">Goto spec in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">to_gl_Pointer</span> <span class="keyword">is</span> <span class="keyword">new</span> Ada.Unchecked_Conversion <table><tr><td>(</td><td><a href="gl-geometry.ads.html#gl-geometry.ads:66:9" title="defined at gl-geometry.ads:66:9">p_vertex_Id</a>, <a href="gl.ads.html#gl.ads:150:9" title="defined at gl.ads:150:9">GL.pointer</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-geometry.ads.html#l71" title="gl-geometry.ads:71:13">gl-geometry.ads:71:13</a> (declaration)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-geometry.ads:73:14' id='gl-geometry.ads:73:14'></a>
+<span class="droplink">Increment<ul>
+  <li><a href="src_gl-geometry.ads.html#l73">Goto spec in source</a></li>
+  <li><a href="src_gl-geometry.adb.html#l57">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Increment</span> <table><tr><td>(</td><td><span class="name"><a name="gl-geometry.ads:73:25"></a>Self</span></td><td>: <span class="keyword">in</span> <span class="keyword">out</span> <a href="gl-geometry.ads.html#gl-geometry.ads:68:11" title="defined at gl-geometry.ads:68:11">vertex_Id_array</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-geometry.ads.html#l73" title="gl-geometry.ads:73:14">gl-geometry.ads:73:14</a> (declaration)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l57" title="gl-geometry.adb:57:14">gl-geometry.adb:57:14</a> (body)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l63" title="gl-geometry.adb:63:8">gl-geometry.adb:63:8</a> (label)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-geometry.ads:74:14' id='gl-geometry.ads:74:14'></a>
+<span class="droplink">Decrement<ul>
+  <li><a href="src_gl-geometry.ads.html#l74">Goto spec in source</a></li>
+  <li><a href="src_gl-geometry.adb.html#l65">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Decrement</span> <table><tr><td>(</td><td><span class="name"><a name="gl-geometry.ads:74:25"></a>Self</span></td><td>: <span class="keyword">in</span> <span class="keyword">out</span> <a href="gl-geometry.ads.html#gl-geometry.ads:68:11" title="defined at gl-geometry.ads:68:11">vertex_Id_array</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-geometry.ads.html#l74" title="gl-geometry.ads:74:14">gl-geometry.ads:74:14</a> (declaration)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l65" title="gl-geometry.adb:65:14">gl-geometry.adb:65:14</a> (body)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l71" title="gl-geometry.adb:71:8">gl-geometry.adb:71:8</a> (label)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-geometry.ads:76:14' id='gl-geometry.ads:76:14'></a>
+<span class="droplink">to_void_Pointer<ul>
+  <li><a href="src_gl-geometry.ads.html#l76">Goto spec in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span>  <span class="name_emphasis">to_void_Pointer</span> <span class="keyword">is</span> <span class="keyword">new</span> Ada.Unchecked_Conversion   <table><tr><td>(</td><td><a href="gl-geometry.ads.html#gl-geometry.ads:66:9" title="defined at gl-geometry.ads:66:9">p_vertex_Id</a>,     <a href="gl.ads.html#gl.ads:150:9" title="defined at gl.ads:150:9">GL.pointer</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-geometry.ads.html#l76" title="gl-geometry.ads:76:14">gl-geometry.ads:76:14</a> (declaration)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-geometry.ads:77:14' id='gl-geometry.ads:77:14'></a>
+<span class="droplink">free<ul>
+  <li><a href="src_gl-geometry.ads.html#l77">Goto spec in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">free</span>            <span class="keyword">is</span> <span class="keyword">new</span> Ada.Unchecked_Deallocation <table><tr><td>(</td><td><a href="gl-geometry.ads.html#gl-geometry.ads:68:11" title="defined at gl-geometry.ads:68:11">vertex_Id_array</a>, <a href="gl-geometry.ads.html#gl-geometry.ads:69:9" title="defined at gl-geometry.ads:69:9">p_vertex_Id_array</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-geometry.ads.html#l77" title="gl-geometry.ads:77:14">gl-geometry.ads:77:14</a> (declaration)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-geometry.ads:91:13' id='gl-geometry.ads:91:13'></a>
+<span class="droplink">to_p_Vertex<ul>
+  <li><a href="src_gl-geometry.ads.html#l91">Goto spec in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">to_p_Vertex</span> <span class="keyword">is</span> <span class="keyword">new</span> Ada.Unchecked_Conversion <table><tr><td>(</td><td><a href="gl.ads.html#gl.ads:150:9" title="defined at gl.ads:150:9">GL.pointer</a>, <a href="gl-geometry.ads.html#gl-geometry.ads:89:12" title="defined at gl-geometry.ads:89:12">p_Vertex</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-geometry.ads.html#l91" title="gl-geometry.ads:91:13">gl-geometry.ads:91:13</a> (declaration)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-geometry.ads:92:13' id='gl-geometry.ads:92:13'></a>
+<span class="droplink">Image<ul>
+  <li><a href="src_gl-geometry.ads.html#l92">Goto spec in source</a></li>
+  <li><a href="src_gl-geometry.adb.html#l76">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Image</span> <table><tr><td>(</td><td><span class="name"><a name="gl-geometry.ads:92:20"></a>Self</span></td><td>: <a href="gl-geometry.ads.html#gl-geometry.ads:84:12" title="defined at gl-geometry.ads:84:12">GL_Vertex</a>) <span class="keyword">return</span> String;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-geometry.ads.html#l92" title="gl-geometry.ads:92:13">gl-geometry.ads:92:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l76" title="gl-geometry.adb:76:13">gl-geometry.adb:76:13</a> (body)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l183" title="gl-geometry.adb:183:69">gl-geometry.adb:183:69</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="gl-geometry.ads.html#gl-geometry.ads:99:13" title="defined at gl-geometry.ads:99:13">Image</a> defined at <a href="src_gl-geometry.ads.html#l99" title="gl-geometry.ads:99:13">gl-geometry.ads:99:13</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-geometry.ads:96:14' id='gl-geometry.ads:96:14'></a>
+<span class="droplink">free<ul>
+  <li><a href="src_gl-geometry.ads.html#l96">Goto spec in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">free</span> <span class="keyword">is</span> <span class="keyword">new</span> Ada.Unchecked_Deallocation <table><tr><td>(</td><td><a href="gl-geometry.ads.html#gl-geometry.ads:85:12" title="defined at gl-geometry.ads:85:12">GL_Vertex_array</a>, <a href="gl-geometry.ads.html#gl-geometry.ads:86:10" title="defined at gl-geometry.ads:86:10">p_Vertex_array</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-geometry.ads.html#l96" title="gl-geometry.ads:96:14">gl-geometry.ads:96:14</a> (declaration)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-geometry.ads:98:13' id='gl-geometry.ads:98:13'></a>
+<span class="droplink">Bounds<ul>
+  <li><a href="src_gl-geometry.ads.html#l98">Goto spec in source</a></li>
+  <li><a href="src_gl-geometry.adb.html#l79">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Bounds</span> <table><tr><td>(</td><td><span class="name"><a name="gl-geometry.ads:98:21"></a>Self</span></td><td>: <a href="gl-geometry.ads.html#gl-geometry.ads:85:12" title="defined at gl-geometry.ads:85:12">GL_Vertex_array</a>) <span class="keyword">return</span> <a href="gl-geometry.ads.html#gl-geometry.ads:43:9" title="defined at gl-geometry.ads:43:9">GL.Geometry.Bounds_record</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-geometry.ads.html#l98" title="gl-geometry.ads:98:13">gl-geometry.ads:98:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l79" title="gl-geometry.adb:79:13">gl-geometry.adb:79:13</a> (body)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l103" title="gl-geometry.adb:103:8">gl-geometry.adb:103:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>Ada.Numerics.Generic_Elementary_Functions.Sqrt defined at a-ngelfu.ads:42:13</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-geometry.ads:99:13' id='gl-geometry.ads:99:13'></a>
+<span class="droplink">Image<ul>
+  <li><a href="src_gl-geometry.ads.html#l99">Goto spec in source</a></li>
+  <li><a href="src_gl-geometry.adb.html#l175">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Image</span>  <table><tr><td>(</td><td><span class="name"><a name="gl-geometry.ads:99:21"></a>Self</span></td><td>: <a href="gl-geometry.ads.html#gl-geometry.ads:85:12" title="defined at gl-geometry.ads:85:12">GL_Vertex_array</a>) <span class="keyword">return</span> String;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-geometry.ads.html#l99" title="gl-geometry.ads:99:13">gl-geometry.ads:99:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l175" title="gl-geometry.adb:175:13">gl-geometry.adb:175:13</a> (body)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l188" title="gl-geometry.adb:188:8">gl-geometry.adb:188:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>Append defined at a-strunb.ads:111:14</i></div>
+            <div><i><a href="gl-geometry.ads.html#gl-geometry.ads:92:13" title="defined at gl-geometry.ads:92:13">Image</a> defined at <a href="src_gl-geometry.ads.html#l92" title="gl-geometry.ads:92:13">gl-geometry.ads:92:13</a></i></div>
+            <div><i>To_String defined at a-strunb.ads:100:13</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-geometry.ads:101:13' id='gl-geometry.ads:101:13'></a>
+<span class="droplink">Bounds<ul>
+  <li><a href="src_gl-geometry.ads.html#l101">Goto spec in source</a></li>
+  <li><a href="src_gl-geometry.adb.html#l105">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span> <span class="name_emphasis">Bounds</span> <table><tr><td>(</td><td><span class="name"><a name="gl-geometry.ads:101:21"></a>Given_Vertices</span></td><td>: <a href="gl-geometry.ads.html#gl-geometry.ads:85:12" title="defined at gl-geometry.ads:85:12">GL_Vertex_array</a>;</td></tr><tr><td></td><td><span class="name"><a name="gl-geometry.ads:101:55"></a>Given_Indices</span></td><td>: <a href="gl-geometry.ads.html#gl-geometry.ads:68:11" title="defined at gl-geometry.ads:68:11">vertex_Id_array</a>) <span class="keyword">return</span> <a href="gl-geometry.ads.html#gl-geometry.ads:43:9" title="defined at gl-geometry.ads:43:9">GL.Geometry.Bounds_record</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-geometry.ads.html#l101" title="gl-geometry.ads:101:13">gl-geometry.ads:101:13</a> (declaration)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l105" title="gl-geometry.adb:105:13">gl-geometry.adb:105:13</a> (body)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l133" title="gl-geometry.adb:133:8">gl-geometry.adb:133:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>Ada.Numerics.Generic_Elementary_Functions.Sqrt defined at a-ngelfu.ads:42:13</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-geometry.ads:120:14' id='gl-geometry.ads:120:14'></a>
+<span class="droplink">primitive_Id (abstract)<ul>
+  <li><a href="src_gl-geometry.ads.html#l120">Goto spec in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span>  <span class="name_emphasis">primitive_Id</span>   <table><tr><td>(</td><td><span class="name"><a name="gl-geometry.ads:120:30"></a>Self</span></td><td>: <a href="gl-geometry.ads.html#gl-geometry.ads:113:9" title="defined at gl-geometry.ads:113:9">Geometry_t</a>) <span class="keyword">return</span> <a href="gl.ads.html#gl.ads:1402:9" title="defined at gl.ads:1402:9">GL.ObjectTypeEnm</a>             <span class="keyword">is</span> <span class="keyword">abstract</span>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-geometry.ads.html#l120" title="gl-geometry.ads:120:14">gl-geometry.ads:120:14</a> (declaration)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l140" title="gl-geometry.adb:140:12">gl-geometry.adb:140:12</a> (dispatching call)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l205" title="gl-geometry.adb:205:12">gl-geometry.adb:205:12</a> (dispatching call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l1131" title="globe_3d.adb:1131:16">globe_3d.adb:1131:16</a> (dispatching call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l1131" title="globe_3d.adb:1131:59">globe_3d.adb:1131:59</a> (dispatching call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l1135" title="globe_3d.adb:1135:23">globe_3d.adb:1135:23</a> (dispatching call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l1135" title="globe_3d.adb:1135:64">globe_3d.adb:1135:64</a> (dispatching call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="gl-geometry.ads.html#gl-geometry.ads:130:14" title="defined at gl-geometry.ads:130:14">Face_Count</a> defined at <a href="src_gl-geometry.ads.html#l130" title="gl-geometry.ads:130:14">gl-geometry.ads:130:14</a></i></div>
+            <div><i>GLOBE_3D.render.< defined at <a href="src_globe_3d.adb.html#l1125" title="globe_3d.adb:1125:20">globe_3d.adb:1125:20</a></i></div>
+            <div><i>GLOBE_3D.render.< defined at <a href="src_globe_3d.adb.html#l1125" title="globe_3d.adb:1125:20">globe_3d.adb:1125:20</a></i></div>
+            <div><i>GLOBE_3D.render.< defined at <a href="src_globe_3d.adb.html#l1125" title="globe_3d.adb:1125:20">globe_3d.adb:1125:20</a></i></div>
+            <div><i>GLOBE_3D.render.< defined at <a href="src_globe_3d.adb.html#l1125" title="globe_3d.adb:1125:20">globe_3d.adb:1125:20</a></i></div>
+            <div><i><a href="gl-geometry.ads.html#gl-geometry.ads:137:14" title="defined at gl-geometry.ads:137:14">Vertex_Normals</a> defined at <a href="src_gl-geometry.ads.html#l137" title="gl-geometry.ads:137:14">gl-geometry.ads:137:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-geometry.ads:122:14' id='gl-geometry.ads:122:14'></a>
+<span class="droplink">vertex_Count (abstract)<ul>
+  <li><a href="src_gl-geometry.ads.html#l122">Goto spec in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span>  <span class="name_emphasis">vertex_Count</span>   <table><tr><td>(</td><td><span class="name"><a name="gl-geometry.ads:122:30"></a>Self</span></td><td>: <a href="gl-geometry.ads.html#gl-geometry.ads:113:9" title="defined at gl-geometry.ads:113:9">Geometry_t</a>) <span class="keyword">return</span> <a href="gl-geometry.ads.html#gl-geometry.ads:65:11" title="defined at gl-geometry.ads:65:11">GL.Geometry.vertex_Id</a>        <span class="keyword">is</span> <span class="keyword">abstract</span>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-geometry.ads.html#l122" title="gl-geometry.ads:122:14">gl-geometry.ads:122:14</a> (declaration)</i></div>
+            <div><i><a href="src_gl-skins.adb.html#l106" title="gl-skins.adb:106:56">gl-skins.adb:106:56</a> (dispatching call)</i></div>
+            <div><i><a href="src_gl-skins.adb.html#l144" title="gl-skins.adb:144:71">gl-skins.adb:144:71</a> (dispatching call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="gl-skins.ads.html#gl-skins.ads:101:25" title="defined at gl-skins.ads:101:25">GL.Skins.New_Veneer</a> defined at <a href="src_gl-skins.ads.html#l101" title="gl-skins.ads:101:25">gl-skins.ads:101:25</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-geometry.ads:123:14' id='gl-geometry.ads:123:14'></a>
+<span class="droplink">Vertices (abstract)<ul>
+  <li><a href="src_gl-geometry.ads.html#l123">Goto spec in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span>  <span class="name_emphasis">Vertices</span>       <table><tr><td>(</td><td><span class="name"><a name="gl-geometry.ads:123:30"></a>Self</span></td><td>: <a href="gl-geometry.ads.html#gl-geometry.ads:113:9" title="defined at gl-geometry.ads:113:9">Geometry_t</a>) <span class="keyword">return</span> <a href="gl-geometry.ads.html#gl-geometry.ads:85:12" title="defined at gl-geometry.ads:85:12">GL.Geometry.GL_Vertex_array</a>  <span class="keyword">is</span> <span class="keyword">abstract</span>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-geometry.ads.html#l123" title="gl-geometry.ads:123:14">gl-geometry.ads:123:14</a> (declaration)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l208" title="gl-geometry.adb:208:74">gl-geometry.adb:208:74</a> (dispatching call)</i></div>
+            <div><i><a href="src_gl-skins.adb.html#l148" title="gl-skins.adb:148:95">gl-skins.adb:148:95</a> (dispatching call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="gl-skins.ads.html#gl-skins.ads:101:25" title="defined at gl-skins.ads:101:25">GL.Skins.New_Veneer</a> defined at <a href="src_gl-skins.ads.html#l101" title="gl-skins.ads:101:25">gl-skins.ads:101:25</a></i></div>
+            <div><i><a href="gl-geometry.ads.html#gl-geometry.ads:137:14" title="defined at gl-geometry.ads:137:14">Vertex_Normals</a> defined at <a href="src_gl-geometry.ads.html#l137" title="gl-geometry.ads:137:14">gl-geometry.ads:137:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-geometry.ads:125:14' id='gl-geometry.ads:125:14'></a>
+<span class="droplink">indices_Count (abstract)<ul>
+  <li><a href="src_gl-geometry.ads.html#l125">Goto spec in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span>  <span class="name_emphasis">indices_Count</span>  <table><tr><td>(</td><td><span class="name"><a name="gl-geometry.ads:125:30"></a>Self</span></td><td>: <a href="gl-geometry.ads.html#gl-geometry.ads:113:9" title="defined at gl-geometry.ads:113:9">Geometry_t</a>) <span class="keyword">return</span> <a href="gl.ads.html#gl.ads:131:9" title="defined at gl.ads:131:9">GL.positive_uInt</a>             <span class="keyword">is</span> <span class="keyword">abstract</span>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-geometry.ads.html#l125" title="gl-geometry.ads:125:14">gl-geometry.ads:125:14</a> (declaration)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l142" title="gl-geometry.adb:142:35">gl-geometry.adb:142:35</a> (dispatching call)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l145" title="gl-geometry.adb:145:35">gl-geometry.adb:145:35</a> (dispatching call)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l148" title="gl-geometry.adb:148:35">gl-geometry.adb:148:35</a> (dispatching call)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l151" title="gl-geometry.adb:151:48">gl-geometry.adb:151:48</a> (dispatching call)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l154" title="gl-geometry.adb:154:35">gl-geometry.adb:154:35</a> (dispatching call)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l157" title="gl-geometry.adb:157:48">gl-geometry.adb:157:48</a> (dispatching call)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l160" title="gl-geometry.adb:160:48">gl-geometry.adb:160:48</a> (dispatching call)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l163" title="gl-geometry.adb:163:35">gl-geometry.adb:163:35</a> (dispatching call)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l166" title="gl-geometry.adb:166:35">gl-geometry.adb:166:35</a> (dispatching call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="gl-geometry.ads.html#gl-geometry.ads:130:14" title="defined at gl-geometry.ads:130:14">Face_Count</a> defined at <a href="src_gl-geometry.ads.html#l130" title="gl-geometry.ads:130:14">gl-geometry.ads:130:14</a></i></div>
+            <div><i><a href="gl-geometry.ads.html#gl-geometry.ads:130:14" title="defined at gl-geometry.ads:130:14">Face_Count</a> defined at <a href="src_gl-geometry.ads.html#l130" title="gl-geometry.ads:130:14">gl-geometry.ads:130:14</a></i></div>
+            <div><i><a href="gl-geometry.ads.html#gl-geometry.ads:130:14" title="defined at gl-geometry.ads:130:14">Face_Count</a> defined at <a href="src_gl-geometry.ads.html#l130" title="gl-geometry.ads:130:14">gl-geometry.ads:130:14</a></i></div>
+            <div><i><a href="gl-geometry.ads.html#gl-geometry.ads:130:14" title="defined at gl-geometry.ads:130:14">Face_Count</a> defined at <a href="src_gl-geometry.ads.html#l130" title="gl-geometry.ads:130:14">gl-geometry.ads:130:14</a></i></div>
+            <div><i><a href="gl-geometry.ads.html#gl-geometry.ads:130:14" title="defined at gl-geometry.ads:130:14">Face_Count</a> defined at <a href="src_gl-geometry.ads.html#l130" title="gl-geometry.ads:130:14">gl-geometry.ads:130:14</a></i></div>
+            <div><i><a href="gl-geometry.ads.html#gl-geometry.ads:130:14" title="defined at gl-geometry.ads:130:14">Face_Count</a> defined at <a href="src_gl-geometry.ads.html#l130" title="gl-geometry.ads:130:14">gl-geometry.ads:130:14</a></i></div>
+            <div><i><a href="gl-geometry.ads.html#gl-geometry.ads:130:14" title="defined at gl-geometry.ads:130:14">Face_Count</a> defined at <a href="src_gl-geometry.ads.html#l130" title="gl-geometry.ads:130:14">gl-geometry.ads:130:14</a></i></div>
+            <div><i><a href="gl-geometry.ads.html#gl-geometry.ads:130:14" title="defined at gl-geometry.ads:130:14">Face_Count</a> defined at <a href="src_gl-geometry.ads.html#l130" title="gl-geometry.ads:130:14">gl-geometry.ads:130:14</a></i></div>
+            <div><i><a href="gl-geometry.ads.html#gl-geometry.ads:130:14" title="defined at gl-geometry.ads:130:14">Face_Count</a> defined at <a href="src_gl-geometry.ads.html#l130" title="gl-geometry.ads:130:14">gl-geometry.ads:130:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-geometry.ads:126:14' id='gl-geometry.ads:126:14'></a>
+<span class="droplink">Indices (abstract)<ul>
+  <li><a href="src_gl-geometry.ads.html#l126">Goto spec in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span>  <span class="name_emphasis">Indices</span>        <table><tr><td>(</td><td><span class="name"><a name="gl-geometry.ads:126:30"></a>Self</span></td><td>: <a href="gl-geometry.ads.html#gl-geometry.ads:113:9" title="defined at gl-geometry.ads:113:9">Geometry_t</a>) <span class="keyword">return</span> <a href="gl-geometry.ads.html#gl-geometry.ads:68:11" title="defined at gl-geometry.ads:68:11">GL.Geometry.vertex_Id_array</a>  <span class="keyword">is</span> <span class="keyword">abstract</span>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-geometry.ads.html#l126" title="gl-geometry.ads:126:14">gl-geometry.ads:126:14</a> (declaration)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l209" title="gl-geometry.adb:209:71">gl-geometry.adb:209:71</a> (dispatching call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="gl-geometry.ads.html#gl-geometry.ads:137:14" title="defined at gl-geometry.ads:137:14">Vertex_Normals</a> defined at <a href="src_gl-geometry.ads.html#l137" title="gl-geometry.ads:137:14">gl-geometry.ads:137:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-geometry.ads:128:14' id='gl-geometry.ads:128:14'></a>
+<span class="droplink">Bounds (abstract)<ul>
+  <li><a href="src_gl-geometry.ads.html#l128">Goto spec in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span>  <span class="name_emphasis">Bounds</span>         <table><tr><td>(</td><td><span class="name"><a name="gl-geometry.ads:128:30"></a>Self</span></td><td>: <a href="gl-geometry.ads.html#gl-geometry.ads:113:9" title="defined at gl-geometry.ads:113:9">Geometry_t</a>) <span class="keyword">return</span> <a href="gl-geometry.ads.html#gl-geometry.ads:43:9" title="defined at gl-geometry.ads:43:9">GL.Geometry.Bounds_record</a>    <span class="keyword">is</span> <span class="keyword">abstract</span>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-geometry.ads.html#l128" title="gl-geometry.ads:128:14">gl-geometry.ads:128:14</a> (declaration)</i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-geometry.ads:130:14' id='gl-geometry.ads:130:14'></a>
+<span class="droplink">Face_Count<ul>
+  <li><a href="src_gl-geometry.ads.html#l130">Goto spec in source</a></li>
+  <li><a href="src_gl-geometry.adb.html#l135">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span>  <span class="name_emphasis">Face_Count</span>     <table><tr><td>(</td><td><span class="name"><a name="gl-geometry.ads:130:30"></a>Self</span></td><td>: <a href="gl-geometry.ads.html#gl-geometry.ads:113:9" title="defined at gl-geometry.ads:113:9">Geometry_t</a>'Class) <span class="keyword">return</span> Natural;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-geometry.ads.html#l130" title="gl-geometry.ads:130:14">gl-geometry.ads:130:14</a> (declaration)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l135" title="gl-geometry.adb:135:13">gl-geometry.adb:135:13</a> (body)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l173" title="gl-geometry.adb:173:8">gl-geometry.adb:173:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="gl-geometry.ads.html#gl-geometry.ads:125:14" title="defined at gl-geometry.ads:125:14">indices_Count</a> defined at <a href="src_gl-geometry.ads.html#l125" title="gl-geometry.ads:125:14">gl-geometry.ads:125:14</a></i></div>
+            <div><i><a href="gl-geometry.ads.html#gl-geometry.ads:120:14" title="defined at gl-geometry.ads:120:14">primitive_Id</a> defined at <a href="src_gl-geometry.ads.html#l120" title="gl-geometry.ads:120:14">gl-geometry.ads:120:14</a></i></div>
+        </div>
+        <div class='comment'>
+for point primitives, each point is considered a &apos;face&apos;.
+for line  primitives, each line  is considered a &apos;face&apos;.
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-geometry.ads:135:14' id='gl-geometry.ads:135:14'></a>
+<span class="droplink">Draw (abstract)<ul>
+  <li><a href="src_gl-geometry.ads.html#l135">Goto spec in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Draw</span>           <table><tr><td>(</td><td><span class="name"><a name="gl-geometry.ads:135:30"></a>Self</span></td><td>: <a href="gl-geometry.ads.html#gl-geometry.ads:113:9" title="defined at gl-geometry.ads:113:9">Geometry_t</a>)                                     <span class="keyword">is</span> <span class="keyword">abstract</span>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-geometry.ads.html#l135" title="gl-geometry.ads:135:14">gl-geometry.ads:135:14</a> (declaration)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l1167" title="globe_3d.adb:1167:16">globe_3d.adb:1167:16</a> (dispatching call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l1175" title="globe_3d.adb:1175:16">globe_3d.adb:1175:16</a> (dispatching call)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l1251" title="globe_3d.adb:1251:22">globe_3d.adb:1251:22</a> (dispatching call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="globe_3d.ads.html#globe_3d.ads:243:14" title="defined at globe_3d.ads:243:14">GLOBE_3D.render</a> defined at <a href="src_globe_3d.ads.html#l243" title="globe_3d.ads:243:14">globe_3d.ads:243:14</a></i></div>
+            <div><i><a href="globe_3d.ads.html#globe_3d.ads:243:14" title="defined at globe_3d.ads:243:14">GLOBE_3D.render</a> defined at <a href="src_globe_3d.ads.html#l243" title="globe_3d.ads:243:14">globe_3d.ads:243:14</a></i></div>
+            <div><i><a href="globe_3d.ads.html#globe_3d.ads:243:14" title="defined at globe_3d.ads:243:14">GLOBE_3D.render</a> defined at <a href="src_globe_3d.ads.html#l243" title="globe_3d.ads:243:14">globe_3d.ads:243:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-geometry.ads:137:14' id='gl-geometry.ads:137:14'></a>
+<span class="droplink">Vertex_Normals<ul>
+  <li><a href="src_gl-geometry.ads.html#l137">Goto spec in source</a></li>
+  <li><a href="src_gl-geometry.adb.html#l202">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">function</span>  <span class="name_emphasis">Vertex_Normals</span> <table><tr><td>(</td><td><span class="name"><a name="gl-geometry.ads:137:30"></a>Self</span></td><td>: <a href="gl-geometry.ads.html#gl-geometry.ads:113:9" title="defined at gl-geometry.ads:113:9">Geometry_t</a>'Class) <span class="keyword">return</span> <a href="gl-geometry.ads.html#gl-geometry.ads:108:12" title="defined at gl-geometry.ads:108:12">GL_Normals_Vertex_Id</a>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-geometry.ads.html#l137" title="gl-geometry.ads:137:14">gl-geometry.ads:137:14</a> (declaration)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l202" title="gl-geometry.adb:202:13">gl-geometry.adb:202:13</a> (body)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l277" title="gl-geometry.adb:277:8">gl-geometry.adb:277:8</a> (label)</i></div>
+            <div><i><a href="src_gl-skins.adb.html#l107" title="gl-skins.adb:107:56">gl-skins.adb:107:56</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i>GL.Geometry.Vertex_Normals.vertex_Id_for defined at <a href="src_gl-geometry.adb.html#l218" title="gl-geometry.adb:218:25">gl-geometry.adb:218:25</a></i></div>
+            <div><i>GL.Math.* defined at <a href="src_gl-math.ads.html#l14" title="gl-math.ads:14:13">gl-math.ads:14:13</a></i></div>
+            <div><i>GL.Math.* defined at <a href="src_gl-math.ads.html#l32" title="gl-math.ads:32:13">gl-math.ads:32:13</a></i></div>
+            <div><i>GL.Math.+ defined at <a href="src_gl-math.ads.html#l20" title="gl-math.ads:20:13">gl-math.ads:20:13</a></i></div>
+            <div><i>GL.Math.- defined at <a href="src_gl-math.ads.html#l26" title="gl-math.ads:26:13">gl-math.ads:26:13</a></i></div>
+            <div><i><a href="gl-math.ads.html#gl-math.ads:102:12" title="defined at gl-math.ads:102:12">GL.Math.Almost_zero</a> defined at <a href="src_gl-math.ads.html#l102" title="gl-math.ads:102:12">gl-math.ads:102:12</a></i></div>
+            <div><i><a href="gl-math.ads.html#gl-math.ads:35:12" title="defined at gl-math.ads:35:12">GL.Math.Norm</a> defined at <a href="src_gl-math.ads.html#l35" title="gl-math.ads:35:12">gl-math.ads:35:12</a></i></div>
+            <div><i><a href="gl-geometry.ads.html#gl-geometry.ads:126:14" title="defined at gl-geometry.ads:126:14">Indices</a> defined at <a href="src_gl-geometry.ads.html#l126" title="gl-geometry.ads:126:14">gl-geometry.ads:126:14</a></i></div>
+            <div><i><a href="gl-geometry.ads.html#gl-geometry.ads:120:14" title="defined at gl-geometry.ads:120:14">primitive_Id</a> defined at <a href="src_gl-geometry.ads.html#l120" title="gl-geometry.ads:120:14">gl-geometry.ads:120:14</a></i></div>
+            <div><i><a href="gl-geometry.ads.html#gl-geometry.ads:123:14" title="defined at gl-geometry.ads:123:14">Vertices</a> defined at <a href="src_gl-geometry.ads.html#l123" title="gl-geometry.ads:123:14">gl-geometry.ads:123:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-geometry.ads:139:14' id='gl-geometry.ads:139:14'></a>
+<span class="droplink">destroy (abstract)<ul>
+  <li><a href="src_gl-geometry.ads.html#l139">Goto spec in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">destroy</span> <table><tr><td>(</td><td><span class="name"><a name="gl-geometry.ads:139:23"></a>Self</span></td><td>: <span class="keyword">in</span> <span class="keyword">out</span> <a href="gl-geometry.ads.html#gl-geometry.ads:113:9" title="defined at gl-geometry.ads:113:9">Geometry_t</a>)                                     <span class="keyword">is</span> <span class="keyword">abstract</span>;</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-geometry.ads.html#l139" title="gl-geometry.ads:139:14">gl-geometry.ads:139:14</a> (declaration)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l198" title="gl-geometry.adb:198:7">gl-geometry.adb:198:7</a> (dispatching call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="gl-geometry.ads.html#gl-geometry.ads:140:14" title="defined at gl-geometry.ads:140:14">Free</a> defined at <a href="src_gl-geometry.ads.html#l140" title="gl-geometry.ads:140:14">gl-geometry.ads:140:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='gl-geometry.ads:140:14' id='gl-geometry.ads:140:14'></a>
+<span class="droplink">Free<ul>
+  <li><a href="src_gl-geometry.ads.html#l140">Goto spec in source</a></li>
+  <li><a href="src_gl-geometry.adb.html#l193">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Free</span>    <table><tr><td>(</td><td><span class="name"><a name="gl-geometry.ads:140:23"></a>Self</span></td><td>: <span class="keyword">in</span> <span class="keyword">out</span> <a href="gl-geometry.ads.html#gl-geometry.ads:118:9" title="defined at gl-geometry.ads:118:9">p_Geometry</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_gl-geometry.ads.html#l140" title="gl-geometry.ads:140:14">gl-geometry.ads:140:14</a> (declaration)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l193" title="gl-geometry.adb:193:14">gl-geometry.adb:193:14</a> (body)</i></div>
+            <div><i><a href="src_gl-geometry.adb.html#l200" title="gl-geometry.adb:200:8">gl-geometry.adb:200:8</a> (label)</i></div>
+            <div><i><a href="src_gl-skinned_geometry.adb.html#l25" title="gl-skinned_geometry.adb:25:7">gl-skinned_geometry.adb:25:7</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="gl-skinned_geometry.ads.html#gl-skinned_geometry.ads:31:14" title="defined at gl-skinned_geometry.ads:31:14">GL.Skinned_Geometry.Destroy</a> defined at <a href="src_gl-skinned_geometry.ads.html#l31" title="gl-skinned_geometry.ads:31:14">gl-skinned_geometry.ads:31:14</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="gl-geometry.ads.html#gl-geometry.ads:139:14" title="defined at gl-geometry.ads:139:14">destroy</a> defined at <a href="src_gl-geometry.ads.html#l139" title="gl-geometry.ads:139:14">gl-geometry.ads:139:14</a></i></div>
+            <div><i><a href="gl-geometry.adb.html#gl-geometry.adb:195:17" title="defined at gl-geometry.adb:195:17">GL.Geometry.Free.deallocate</a> defined at <a href="src_gl-geometry.adb.html#l195" title="gl-geometry.adb:195:17">gl-geometry.adb:195:17</a></i></div>
+            <div><i>Unchecked_Deallocation defined at a-uncdea.ads:20:15</i></div>
+        </div>
+      </div>
+    </div>
+</div> <!-- documentation -->
+
+</body>
+</html>

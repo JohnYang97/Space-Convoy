@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    File: screenshots.adb
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+  </div>
+</div> <!-- leftSide -->
+
+<div class='subprograms'>
+  <div class='details'><ol><li id="l1"><pre><span class="comment">--</span> </pre></li>
+<li id="l2"><pre><span class="comment">-- Jan &amp; Uwe R. Zimmer, Australia, July 2011</span> </pre></li>
+<li id="l3"><pre><span class="comment">--</span> </pre></li>
+<li id="l4"><pre> </pre></li>
+<li id="l5"><pre><span class="keyword">with</span> <span class="droplink">GL.IO<ul><li><a href="gl-io.ads.html#gl-io.ads:45:12" title="To API doc">To API doc</a></li><li><a href="src_gl-io.ads.html#l45" title="To spec">To spec</a></li><li><a href="src_gl-io.adb.html#l14" title="To body">To body</a></li></ul></span>; <span class="keyword">use</span> <span class="droplink">GL.IO<ul><li><a href="gl-io.ads.html#gl-io.ads:45:12" title="To API doc">To API doc</a></li><li><a href="src_gl-io.ads.html#l45" title="To spec">To spec</a></li><li><a href="src_gl-io.adb.html#l14" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l6"><pre> </pre></li>
+<li id="l7"><pre><span class="keyword">package</span> <span class="keyword">body</span> <span class="droplink">Screenshots<ul><li><a href="screenshots.ads.html#screenshots.ads:5:9" title="To API doc">To API doc</a></li><li><a href="src_screenshots.ads.html#l5" title="To spec">To spec</a></li></ul></span> <span class="keyword">is</span> </pre></li>
+<li id="l8"><pre> </pre></li>
+<li id="l9"><pre>   Screen_Shot_Count : Positive := 1; </pre></li>
+<li id="l10"><pre> </pre></li>
+<li id="l11"><pre>   <span class="comment">---------------</span> </pre></li>
+<li id="l12"><pre>   <span class="comment">-- Take_Shot --</span> </pre></li>
+<li id="l13"><pre>   <span class="comment">---------------</span> </pre></li>
+<li id="l14"><pre> </pre></li>
+<li id="l15"><pre>   <span class="keyword">procedure</span> <span class="droplink">Take_Shot<ul><li><a href="screenshots.ads.html#screenshots.ads:7:14" title="To API doc">To API doc</a></li><li><a href="src_screenshots.ads.html#l7" title="To spec">To spec</a></li></ul></span> <span class="keyword">is</span> </pre></li>
+<li id="l16"><pre> </pre></li>
+<li id="l17"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l18"><pre>      <span class="droplink">Screenshot<ul><li><a href="gl-io.ads.html#gl-io.ads:127:13" title="To API doc">To API doc</a></li><li><a href="src_gl-io.ads.html#l127" title="To spec">To spec</a></li><li><a href="src_gl-io.adb.html#l819" title="To body">To body</a></li></ul></span> (Integer&apos;Image (<a href="src_screenshots.adb.html#l9" title="defined at screenshots.adb:9:4">Screen_Shot_Count</a>) &amp; <span class="string">&quot;.bmp&quot;</span>); </pre></li>
+<li id="l19"><pre>      <a href="src_screenshots.adb.html#l9" title="defined at screenshots.adb:9:4">Screen_Shot_Count</a> := <a href="src_screenshots.adb.html#l9" title="defined at screenshots.adb:9:4">Screen_Shot_Count</a> + 1; </pre></li>
+<li id="l20"><pre>   <span class="keyword">end</span> <span class="droplink">Take_Shot<ul><li><a href="screenshots.ads.html#screenshots.ads:7:14" title="To API doc">To API doc</a></li><li><a href="src_screenshots.ads.html#l7" title="To spec">To spec</a></li><li><a href="src_screenshots.adb.html#l15" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l21"><pre> </pre></li>
+<li id="l22"><pre><span class="keyword">end</span> <span class="droplink">Screenshots<ul><li><a href="screenshots.ads.html#screenshots.ads:5:9" title="To API doc">To API doc</a></li><li><a href="src_screenshots.ads.html#l5" title="To spec">To spec</a></li><li><a href="src_screenshots.adb.html#l7" title="To body">To body</a></li></ul></span>; </pre></li>
+</ol></div>
+</div>
+
+</body>
+</html>

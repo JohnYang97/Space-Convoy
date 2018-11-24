@@ -1,0 +1,500 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    Package: Huffman
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+
+  <div id='navigation'>
+    <h2 class="button">Navigation</h2>
+    <a href='#Description'><div class="button2">Description</div></a>
+    <a href='#Types'><div class="button2">Types</div></a>
+    <a href='#Constants'><div class="button2">Constants &amp; Global variables</div></a>
+    <a href='#Methods'><div class="button2">Subprograms &amp; Entries</div></a>
+  </div><!-- navigation -->
+  </div>
+</div> <!-- leftSide -->
+
+<div class='default' id='rightSide'>
+ <div id='rightSideInside'>
+ <div id='Index'>
+  <h2>Index</h2>
+  <script type="text/javascript">
+    var names = new Array (
+new Array ('HufT_<wbr/>table', 'unzip-decompress-huffman.ads:8:8', 'type-spec'),
+new Array ('p_<wbr/>HufT_<wbr/>table', 'unzip-decompress-huffman.ads:9:8', 'type-spec'),
+new Array ('HufT', 'unzip-decompress-huffman.ads:11:8', 'type-spec'),
+new Array ('p_<wbr/>HufT', 'unzip-decompress-huffman.ads:22:8', 'type-spec'),
+new Array ('Table_<wbr/>list', 'unzip-decompress-huffman.ads:26:8', 'type-spec'),
+new Array ('p_<wbr/>Table_<wbr/>list', 'unzip-decompress-huffman.ads:27:8', 'type-spec'),
+new Array ('Length_<wbr/>array', 'unzip-decompress-huffman.ads:34:8', 'type-spec'),
+new Array ('invalid', 'unzip-decompress-huffman.ads:18:3', 'var-spec'),
+new Array ('empty', 'unzip-decompress-huffman.ads:36:3', 'var-spec'),
+new Array ('huft_<wbr/>error', 'unzip-decompress-huffman.ads:50:3', 'var-spec'),
+new Array ('huft_<wbr/>out_<wbr/>of_<wbr/>memory', 'unzip-decompress-huffman.ads:51:3', 'var-spec'),
+new Array ('HufT_<wbr/>free', 'unzip-decompress-huffman.ads:39:13', 'subp-spec'),
+new Array ('HufT_<wbr/>build', 'unzip-decompress-huffman.ads:42:13', 'subp-spec'),
+      new Array ('dummy', '', ''));
+    printIndexList (names);
+  </script>
+  <noscript>
+    <ul>
+      <li class='type-spec'><a href="#unzip-decompress-huffman.ads:8:8">HufT_<wbr/>table</a></li>
+      <li class='type-spec'><a href="#unzip-decompress-huffman.ads:9:8">p_<wbr/>HufT_<wbr/>table</a></li>
+      <li class='type-spec'><a href="#unzip-decompress-huffman.ads:11:8">HufT</a></li>
+      <li class='type-spec'><a href="#unzip-decompress-huffman.ads:22:8">p_<wbr/>HufT</a></li>
+      <li class='type-spec'><a href="#unzip-decompress-huffman.ads:26:8">Table_<wbr/>list</a></li>
+      <li class='type-spec'><a href="#unzip-decompress-huffman.ads:27:8">p_<wbr/>Table_<wbr/>list</a></li>
+      <li class='type-spec'><a href="#unzip-decompress-huffman.ads:34:8">Length_<wbr/>array</a></li>
+      <li class='var-spec'><a href="#unzip-decompress-huffman.ads:18:3">invalid</a></li>
+      <li class='var-spec'><a href="#unzip-decompress-huffman.ads:36:3">empty</a></li>
+      <li class='var-spec'><a href="#unzip-decompress-huffman.ads:50:3">huft_<wbr/>error</a></li>
+      <li class='var-spec'><a href="#unzip-decompress-huffman.ads:51:3">huft_<wbr/>out_<wbr/>of_<wbr/>memory</a></li>
+      <li class='subp-spec'><a href="#unzip-decompress-huffman.ads:39:13">HufT_<wbr/>free</a></li>
+      <li class='subp-spec'><a href="#unzip-decompress-huffman.ads:42:13">HufT_<wbr/>build</a></li>
+    </ul>
+  </noscript>
+ </div>
+ </div>
+</div>
+
+<div class='default' id='documentation'>
+  <div class='title'>
+    Package:
+<span class="droplink"><i>Huffman</i><ul>
+  <li><a href="src_unzip-decompress-huffman.ads.html">Goto spec source</a></li>
+  <li><a href="src_unzip-decompress-huffman.adb.html">Goto body source</a></li>
+</ul></span>
+  </div>
+  <div class='subprograms'>
+    <h1><a name='Description' id='Description'></a>Description</h1>
+    <div class="class">
+    <div class='details'><pre><span class="keyword">private</span> <span class="keyword">package</span> <span class="name_emphasis">UnZip.Decompress.Huffman</span> <span class="keyword">is</span></pre></div>
+    <div class='comment'><a href="unzip-decompress-huffman.adb.html#unzip-decompress-huffman.adb:5:14" title="UnZip.Decompress.Huffman">UnZip.Decompress.Huffman</a>
+-------------------------
+<a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:6:34" title="Huffman">Huffman</a> tree generation and deletion.
+Originally from info - zip&apos;s unzip, data structure rewritten by G. de Montmollin
+</div>
+    </div>
+  </div>
+
+
+
+
+  <div class='subprograms'>
+    <h1><a name='Types' id='Types'></a>Types</h1>
+    <div class="class">
+      <h3>
+        <a name='unzip-decompress-huffman.ads:8:8' id='unzip-decompress-huffman.ads:8:8'></a>
+<span class="droplink">HufT_table<ul>
+  <li><a href="src_unzip-decompress-huffman.ads.html#l8">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">HufT_table</span>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_unzip-decompress-huffman.ads.html#l8" title="unzip-decompress-huffman.ads:8:8">unzip-decompress-huffman.ads:8:8</a> (declaration)</i></div>
+          <div><i><a href="src_unzip-decompress-huffman.adb.html#l16" title="unzip-decompress-huffman.adb:16:37">unzip-decompress-huffman.adb:16:37</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress-huffman.adb.html#l234" title="unzip-decompress-huffman.adb:234:44">unzip-decompress-huffman.adb:234:44</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress-huffman.ads.html#l9" title="unzip-decompress-huffman.ads:9:31">unzip-decompress-huffman.ads:9:31</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress-huffman.ads.html#l20" title="unzip-decompress-huffman.ads:20:8">unzip-decompress-huffman.ads:20:8</a> (full declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='unzip-decompress-huffman.ads:9:8' id='unzip-decompress-huffman.ads:9:8'></a>
+<span class="droplink">p_HufT_table<ul>
+  <li><a href="src_unzip-decompress-huffman.ads.html#l9">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">p_HufT_table</span> <span class="keyword">is</span> <span class="keyword">access</span> <a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:8:8" title="defined at unzip-decompress-huffman.ads:8:8">HufT_table</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_unzip-decompress-huffman.ads.html#l9" title="unzip-decompress-huffman.ads:9:8">unzip-decompress-huffman.ads:9:8</a> (declaration)</i></div>
+          <div><i><a href="src_unzip-decompress-huffman.adb.html#l16" title="unzip-decompress-huffman.adb:16:49">unzip-decompress-huffman.adb:16:49</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress-huffman.adb.html#l73" title="unzip-decompress-huffman.adb:73:28">unzip-decompress-huffman.adb:73:28</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress-huffman.adb.html#l79" title="unzip-decompress-huffman.adb:79:34">unzip-decompress-huffman.adb:79:34</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress-huffman.ads.html#l15" title="unzip-decompress-huffman.ads:15:19">unzip-decompress-huffman.ads:15:19</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress-huffman.ads.html#l30" title="unzip-decompress-huffman.ads:30:13">unzip-decompress-huffman.ads:30:13</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1021" title="unzip-decompress.adb:1021:19">unzip-decompress.adb:1021:19</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1138" title="unzip-decompress.adb:1138:19">unzip-decompress.adb:1138:19</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='unzip-decompress-huffman.ads:11:8' id='unzip-decompress-huffman.ads:11:8'></a>
+<span class="droplink">HufT<ul>
+  <li><a href="src_unzip-decompress-huffman.ads.html#l11">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">HufT</span> <span class="keyword">is</span> <span class="keyword">record</span>
+    extra_bits  : Natural;
+    bits        : Natural;
+    n           : Natural;
+    next_table  : <a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:9:8" title="defined at unzip-decompress-huffman.ads:9:8">p_HufT_table</a>;
+  <span class="keyword">end</span> <span class="keyword">record</span>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_unzip-decompress-huffman.ads.html#l11" title="unzip-decompress-huffman.ads:11:8">unzip-decompress-huffman.ads:11:8</a> (declaration)</i></div>
+          <div><i><a href="src_unzip-decompress-huffman.adb.html#l77" title="unzip-decompress-huffman.adb:77:19">unzip-decompress-huffman.adb:77:19</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress-huffman.ads.html#l20" title="unzip-decompress-huffman.ads:20:58">unzip-decompress-huffman.ads:20:58</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress-huffman.ads.html#l22" title="unzip-decompress-huffman.ads:22:29">unzip-decompress-huffman.ads:22:29</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='unzip-decompress-huffman.ads:22:8' id='unzip-decompress-huffman.ads:22:8'></a>
+<span class="droplink">p_HufT<ul>
+  <li><a href="src_unzip-decompress-huffman.ads.html#l22">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">p_HufT</span> <span class="keyword">is</span> <span class="keyword">access</span> <span class="keyword">all</span> <a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:11:8" title="defined at unzip-decompress-huffman.ads:11:8">HufT</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_unzip-decompress-huffman.ads.html#l22" title="unzip-decompress-huffman.ads:22:8">unzip-decompress-huffman.ads:22:8</a> (declaration)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1461" title="unzip-decompress.adb:1461:32">unzip-decompress.adb:1461:32</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1680" title="unzip-decompress.adb:1680:20">unzip-decompress.adb:1680:20</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='unzip-decompress-huffman.ads:26:8' id='unzip-decompress-huffman.ads:26:8'></a>
+<span class="droplink">Table_list<ul>
+  <li><a href="src_unzip-decompress-huffman.ads.html#l26">Goto declaration in source</a></li>
+  <li><a href="src_unzip-decompress-huffman.ads.html#l29">Goto full declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Table_list</span>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_unzip-decompress-huffman.ads.html#l26" title="unzip-decompress-huffman.ads:26:8">unzip-decompress-huffman.ads:26:8</a> (declaration)</i></div>
+          <div><i><a href="src_unzip-decompress-huffman.adb.html#l18" title="unzip-decompress-huffman.adb:18:37">unzip-decompress-huffman.adb:18:37</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress-huffman.adb.html#l235" title="unzip-decompress-huffman.adb:235:44">unzip-decompress-huffman.adb:235:44</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress-huffman.ads.html#l27" title="unzip-decompress-huffman.ads:27:31">unzip-decompress-huffman.ads:27:31</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress-huffman.ads.html#l29" title="unzip-decompress-huffman.ads:29:8">unzip-decompress-huffman.ads:29:8</a> (full declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='unzip-decompress-huffman.ads:27:8' id='unzip-decompress-huffman.ads:27:8'></a>
+<span class="droplink">p_Table_list<ul>
+  <li><a href="src_unzip-decompress-huffman.ads.html#l27">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">p_Table_list</span> <span class="keyword">is</span> <span class="keyword">access</span> <a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:26:8" title="defined at unzip-decompress-huffman.ads:26:8">Table_list</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_unzip-decompress-huffman.ads.html#l27" title="unzip-decompress-huffman.ads:27:8">unzip-decompress-huffman.ads:27:8</a> (declaration)</i></div>
+          <div><i><a href="src_unzip-decompress-huffman.adb.html#l13" title="unzip-decompress-huffman.adb:13:37">unzip-decompress-huffman.adb:13:37</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress-huffman.adb.html#l18" title="unzip-decompress-huffman.adb:18:49">unzip-decompress-huffman.adb:18:49</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress-huffman.adb.html#l20" title="unzip-decompress-huffman.adb:20:17">unzip-decompress-huffman.adb:20:17</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress-huffman.adb.html#l53" title="unzip-decompress-huffman.adb:53:41">unzip-decompress-huffman.adb:53:41</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress-huffman.adb.html#l74" title="unzip-decompress-huffman.adb:74:28">unzip-decompress-huffman.adb:74:28</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress-huffman.adb.html#l75" title="unzip-decompress-huffman.adb:75:28">unzip-decompress-huffman.adb:75:28</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress-huffman.ads.html#l31" title="unzip-decompress-huffman.ads:31:13">unzip-decompress-huffman.ads:31:13</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress-huffman.ads.html#l39" title="unzip-decompress-huffman.ads:39:36">unzip-decompress-huffman.ads:39:36</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress-huffman.ads.html#l45" title="unzip-decompress-huffman.ads:45:41">unzip-decompress-huffman.ads:45:41</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1013" title="unzip-decompress.adb:1013:47">unzip-decompress.adb:1013:47</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1131" title="unzip-decompress.adb:1131:45">unzip-decompress.adb:1131:45</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1230" title="unzip-decompress.adb:1230:27">unzip-decompress.adb:1230:27</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1460" title="unzip-decompress.adb:1460:44">unzip-decompress.adb:1460:44</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1609" title="unzip-decompress.adb:1609:19">unzip-decompress.adb:1609:19</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1678" title="unzip-decompress.adb:1678:19">unzip-decompress.adb:1678:19</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='unzip-decompress-huffman.ads:34:8' id='unzip-decompress-huffman.ads:34:8'></a>
+<span class="droplink">Length_array<ul>
+  <li><a href="src_unzip-decompress-huffman.ads.html#l34">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Length_array</span> <span class="keyword">is</span> <span class="keyword">array</span> (Integer <span class="keyword">range</span> <>) <span class="keyword">of</span> Natural;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_unzip-decompress-huffman.ads.html#l34" title="unzip-decompress-huffman.ads:34:8">unzip-decompress-huffman.ads:34:8</a> (declaration)</i></div>
+          <div><i><a href="src_unzip-decompress-huffman.adb.html#l50" title="unzip-decompress-huffman.adb:50:34">unzip-decompress-huffman.adb:50:34</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress-huffman.adb.html#l52" title="unzip-decompress-huffman.adb:52:34">unzip-decompress-huffman.adb:52:34</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress-huffman.ads.html#l36" title="unzip-decompress-huffman.ads:36:21">unzip-decompress-huffman.ads:36:21</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress-huffman.ads.html#l42" title="unzip-decompress-huffman.ads:42:33">unzip-decompress-huffman.ads:42:33</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress-huffman.ads.html#l44" title="unzip-decompress-huffman.ads:44:34">unzip-decompress-huffman.ads:44:34</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l962" title="unzip-decompress.adb:962:38">unzip-decompress.adb:962:38</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1232" title="unzip-decompress.adb:1232:18">unzip-decompress.adb:1232:18</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1236" title="unzip-decompress.adb:1236:22">unzip-decompress.adb:1236:22</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1243" title="unzip-decompress.adb:1243:22">unzip-decompress.adb:1243:22</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1250" title="unzip-decompress.adb:1250:22">unzip-decompress.adb:1250:22</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1259" title="unzip-decompress.adb:1259:22">unzip-decompress.adb:1259:22</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1268" title="unzip-decompress.adb:1268:22">unzip-decompress.adb:1268:22</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1582" title="unzip-decompress.adb:1582:34">unzip-decompress.adb:1582:34</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1588" title="unzip-decompress.adb:1588:32">unzip-decompress.adb:1588:32</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1594" title="unzip-decompress.adb:1594:43">unzip-decompress.adb:1594:43</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1601" title="unzip-decompress.adb:1601:42">unzip-decompress.adb:1601:42</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1614" title="unzip-decompress.adb:1614:26">unzip-decompress.adb:1614:26</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1688" title="unzip-decompress.adb:1688:18">unzip-decompress.adb:1688:18</a> (reference)</i></div>
+      </div>
+    </div>
+  </div>
+
+  <div class='subprograms'>
+    <h1><a name='Constants' id='Constants'></a>Constants &amp; Global variables</h1>
+    <div class="class">
+      <h3><a name='unzip-decompress-huffman.ads:18:3' id='unzip-decompress-huffman.ads:18:3'></a>
+<span class="droplink">invalid<ul>
+  <li><a href="src_unzip-decompress-huffman.ads.html#l18">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">invalid</span> : <span class="keyword">constant</span> := 99;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_unzip-decompress-huffman.ads.html#l18" title="unzip-decompress-huffman.ads:18:3">unzip-decompress-huffman.ads:18:3</a> (declaration)</i></div>
+          <div><i><a href="src_unzip-decompress-huffman.adb.html#l281" title="unzip-decompress-huffman.adb:281:40">unzip-decompress-huffman.adb:281:40</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1045" title="unzip-decompress.adb:1045:29">unzip-decompress.adb:1045:29</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1069" title="unzip-decompress.adb:1069:29">unzip-decompress.adb:1069:29</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1089" title="unzip-decompress.adb:1089:29">unzip-decompress.adb:1089:29</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1167" title="unzip-decompress.adb:1167:29">unzip-decompress.adb:1167:29</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1187" title="unzip-decompress.adb:1187:29">unzip-decompress.adb:1187:29</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1486" title="unzip-decompress.adb:1486:26">unzip-decompress.adb:1486:26</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1522" title="unzip-decompress.adb:1522:29">unzip-decompress.adb:1522:29</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1590" title="unzip-decompress.adb:1590:52">unzip-decompress.adb:1590:52</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1590" title="unzip-decompress.adb:1590:61">unzip-decompress.adb:1590:61</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='unzip-decompress-huffman.ads:36:3' id='unzip-decompress-huffman.ads:36:3'></a>
+<span class="droplink">empty<ul>
+  <li><a href="src_unzip-decompress-huffman.ads.html#l36">Goto declaration in source</a></li>
+</ul></span>
+        <span class="type">(<a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:34:8" title="defined at unzip-decompress-huffman.ads:34:8">Length_array</a>)</span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">empty</span>  : <span class="keyword">constant</span> <a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:34:8" title="defined at unzip-decompress-huffman.ads:34:8">Length_array</a> (1 .. 0) := (<span class="keyword">others</span> => 0);</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_unzip-decompress-huffman.ads.html#l36" title="unzip-decompress-huffman.ads:36:3">unzip-decompress-huffman.ads:36:3</a> (declaration)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1282" title="unzip-decompress.adb:1282:39">unzip-decompress.adb:1282:39</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1282" title="unzip-decompress.adb:1282:46">unzip-decompress.adb:1282:46</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1729" title="unzip-decompress.adb:1729:46">unzip-decompress.adb:1729:46</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1729" title="unzip-decompress.adb:1729:53">unzip-decompress.adb:1729:53</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='unzip-decompress-huffman.ads:50:3' id='unzip-decompress-huffman.ads:50:3'></a>
+<span class="droplink">huft_error<ul>
+  <li><a href="src_unzip-decompress-huffman.ads.html#l50">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">huft_error</span>,                    <span class="comment">-- bad tree constructed
+</span>  <span class="name"><a name="unzip-decompress-huffman.ads:51:3"></a>huft_out_of_memory</span> : <span class="keyword">exception</span>;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_unzip-decompress-huffman.ads.html#l50" title="unzip-decompress-huffman.ads:50:3">unzip-decompress-huffman.ads:50:3</a> (declaration)</i></div>
+          <div><i><a href="src_unzip-decompress-huffman.adb.html#l119" title="unzip-decompress-huffman.adb:119:19">unzip-decompress-huffman.adb:119:19</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress-huffman.adb.html#l155" title="unzip-decompress-huffman.adb:155:19">unzip-decompress-huffman.adb:155:19</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress-huffman.adb.html#l163" title="unzip-decompress-huffman.adb:163:16">unzip-decompress-huffman.adb:163:16</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress-huffman.adb.html#l268" title="unzip-decompress-huffman.adb:268:28">unzip-decompress-huffman.adb:268:28</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress-huffman.adb.html#l294" title="unzip-decompress-huffman.adb:294:28">unzip-decompress-huffman.adb:294:28</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1650" title="unzip-decompress.adb:1650:42">unzip-decompress.adb:1650:42</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1816" title="unzip-decompress.adb:1816:42">unzip-decompress.adb:1816:42</a> (reference)</i></div>
+      </div>
+      <div class='comment'>Possible exceptions occuring in huft_build
+</div>
+    </div>
+    <div class="class">
+      <h3><a name='unzip-decompress-huffman.ads:51:3' id='unzip-decompress-huffman.ads:51:3'></a>
+<span class="droplink">huft_out_of_memory<ul>
+  <li><a href="src_unzip-decompress-huffman.ads.html#l51">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">huft_out_of_memory</span> : <span class="keyword">exception</span>;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_unzip-decompress-huffman.ads.html#l51" title="unzip-decompress-huffman.ads:51:3">unzip-decompress-huffman.ads:51:3</a> (declaration)</i></div>
+          <div><i><a href="src_unzip-decompress-huffman.adb.html#l238" title="unzip-decompress-huffman.adb:238:28">unzip-decompress-huffman.adb:238:28</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1650" title="unzip-decompress.adb:1650:21">unzip-decompress.adb:1650:21</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1816" title="unzip-decompress.adb:1816:21">unzip-decompress.adb:1816:21</a> (reference)</i></div>
+      </div>
+      <div class='comment'>bad tree constructed
+</div>
+    </div>
+  </div>
+
+    <div class='subprograms'>
+      <h1><a name='Methods' id='Methods'></a>Subprograms &amp; Entries</h1>
+      <div class="class">
+        <h3>
+          <a name='unzip-decompress-huffman.ads:39:13' id='unzip-decompress-huffman.ads:39:13'></a>
+<span class="droplink">HufT_free<ul>
+  <li><a href="src_unzip-decompress-huffman.ads.html#l39">Goto spec in source</a></li>
+  <li><a href="src_unzip-decompress-huffman.adb.html#l13">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">HufT_free</span> <table><tr><td>(</td><td><span class="name"><a name="unzip-decompress-huffman.ads:39:24"></a>tl</span></td><td>: <span class="keyword">in</span> <span class="keyword">out</span> <a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:27:8" title="defined at unzip-decompress-huffman.ads:27:8">p_Table_list</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_unzip-decompress-huffman.ads.html#l39" title="unzip-decompress-huffman.ads:39:13">unzip-decompress-huffman.ads:39:13</a> (declaration)</i></div>
+            <div><i><a href="src_unzip-decompress-huffman.adb.html#l13" title="unzip-decompress-huffman.adb:13:14">unzip-decompress-huffman.adb:13:14</a> (body)</i></div>
+            <div><i><a href="src_unzip-decompress-huffman.adb.html#l46" title="unzip-decompress-huffman.adb:46:8">unzip-decompress-huffman.adb:46:8</a> (label)</i></div>
+            <div><i><a href="src_unzip-decompress-huffman.adb.html#l342" title="unzip-decompress-huffman.adb:342:10">unzip-decompress-huffman.adb:342:10</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1284" title="unzip-decompress.adb:1284:22">unzip-decompress.adb:1284:22</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1296" title="unzip-decompress.adb:1296:22">unzip-decompress.adb:1296:22</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1305" title="unzip-decompress.adb:1305:22">unzip-decompress.adb:1305:22</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1306" title="unzip-decompress.adb:1306:22">unzip-decompress.adb:1306:22</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1311" title="unzip-decompress.adb:1311:22">unzip-decompress.adb:1311:22</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1319" title="unzip-decompress.adb:1319:22">unzip-decompress.adb:1319:22</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1320" title="unzip-decompress.adb:1320:22">unzip-decompress.adb:1320:22</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1330" title="unzip-decompress.adb:1330:25">unzip-decompress.adb:1330:25</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1331" title="unzip-decompress.adb:1331:25">unzip-decompress.adb:1331:25</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1332" title="unzip-decompress.adb:1332:25">unzip-decompress.adb:1332:25</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1342" title="unzip-decompress.adb:1342:25">unzip-decompress.adb:1342:25</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1343" title="unzip-decompress.adb:1343:25">unzip-decompress.adb:1343:25</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1344" title="unzip-decompress.adb:1344:25">unzip-decompress.adb:1344:25</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1352" title="unzip-decompress.adb:1352:22">unzip-decompress.adb:1352:22</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1353" title="unzip-decompress.adb:1353:22">unzip-decompress.adb:1353:22</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1356" title="unzip-decompress.adb:1356:16">unzip-decompress.adb:1356:16</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1357" title="unzip-decompress.adb:1357:16">unzip-decompress.adb:1357:16</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1358" title="unzip-decompress.adb:1358:16">unzip-decompress.adb:1358:16</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1374" title="unzip-decompress.adb:1374:22">unzip-decompress.adb:1374:22</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1386" title="unzip-decompress.adb:1386:22">unzip-decompress.adb:1386:22</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1396" title="unzip-decompress.adb:1396:25">unzip-decompress.adb:1396:25</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1397" title="unzip-decompress.adb:1397:25">unzip-decompress.adb:1397:25</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1407" title="unzip-decompress.adb:1407:25">unzip-decompress.adb:1407:25</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1408" title="unzip-decompress.adb:1408:25">unzip-decompress.adb:1408:25</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1416" title="unzip-decompress.adb:1416:22">unzip-decompress.adb:1416:22</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1419" title="unzip-decompress.adb:1419:16">unzip-decompress.adb:1419:16</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1420" title="unzip-decompress.adb:1420:16">unzip-decompress.adb:1420:16</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1651" title="unzip-decompress.adb:1651:19">unzip-decompress.adb:1651:19</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1657" title="unzip-decompress.adb:1657:13">unzip-decompress.adb:1657:13</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1658" title="unzip-decompress.adb:1658:13">unzip-decompress.adb:1658:13</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1732" title="unzip-decompress.adb:1732:19">unzip-decompress.adb:1732:19</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1780" title="unzip-decompress.adb:1780:13">unzip-decompress.adb:1780:13</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1792" title="unzip-decompress.adb:1792:19">unzip-decompress.adb:1792:19</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1817" title="unzip-decompress.adb:1817:19">unzip-decompress.adb:1817:19</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1824" title="unzip-decompress.adb:1824:13">unzip-decompress.adb:1824:13</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1825" title="unzip-decompress.adb:1825:13">unzip-decompress.adb:1825:13</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="unzip-decompress.adb-6.html#unzip-decompress.adb:120:20" title="defined at unzip-decompress.adb:120:20">Decompress.Decompress_data.UnZ_Meth.Explode</a> defined at <a href="src_unzip-decompress.adb.html#l120" title="unzip-decompress.adb:120:20">unzip-decompress.adb:120:20</a></i></div>
+            <div><i><a href="unzip-decompress.adb-6.html#unzip-decompress.adb:120:20" title="defined at unzip-decompress.adb:120:20">Decompress.Decompress_data.UnZ_Meth.Explode</a> defined at <a href="src_unzip-decompress.adb.html#l120" title="unzip-decompress.adb:120:20">unzip-decompress.adb:120:20</a></i></div>
+            <div><i><a href="unzip-decompress.adb-6.html#unzip-decompress.adb:120:20" title="defined at unzip-decompress.adb:120:20">Decompress.Decompress_data.UnZ_Meth.Explode</a> defined at <a href="src_unzip-decompress.adb.html#l120" title="unzip-decompress.adb:120:20">unzip-decompress.adb:120:20</a></i></div>
+            <div><i><a href="unzip-decompress.adb-6.html#unzip-decompress.adb:120:20" title="defined at unzip-decompress.adb:120:20">Decompress.Decompress_data.UnZ_Meth.Explode</a> defined at <a href="src_unzip-decompress.adb.html#l120" title="unzip-decompress.adb:120:20">unzip-decompress.adb:120:20</a></i></div>
+            <div><i><a href="unzip-decompress.adb-6.html#unzip-decompress.adb:120:20" title="defined at unzip-decompress.adb:120:20">Decompress.Decompress_data.UnZ_Meth.Explode</a> defined at <a href="src_unzip-decompress.adb.html#l120" title="unzip-decompress.adb:120:20">unzip-decompress.adb:120:20</a></i></div>
+            <div><i><a href="unzip-decompress.adb-6.html#unzip-decompress.adb:120:20" title="defined at unzip-decompress.adb:120:20">Decompress.Decompress_data.UnZ_Meth.Explode</a> defined at <a href="src_unzip-decompress.adb.html#l120" title="unzip-decompress.adb:120:20">unzip-decompress.adb:120:20</a></i></div>
+            <div><i><a href="unzip-decompress.adb-6.html#unzip-decompress.adb:120:20" title="defined at unzip-decompress.adb:120:20">Decompress.Decompress_data.UnZ_Meth.Explode</a> defined at <a href="src_unzip-decompress.adb.html#l120" title="unzip-decompress.adb:120:20">unzip-decompress.adb:120:20</a></i></div>
+            <div><i><a href="unzip-decompress.adb-6.html#unzip-decompress.adb:120:20" title="defined at unzip-decompress.adb:120:20">Decompress.Decompress_data.UnZ_Meth.Explode</a> defined at <a href="src_unzip-decompress.adb.html#l120" title="unzip-decompress.adb:120:20">unzip-decompress.adb:120:20</a></i></div>
+            <div><i><a href="unzip-decompress.adb-6.html#unzip-decompress.adb:120:20" title="defined at unzip-decompress.adb:120:20">Decompress.Decompress_data.UnZ_Meth.Explode</a> defined at <a href="src_unzip-decompress.adb.html#l120" title="unzip-decompress.adb:120:20">unzip-decompress.adb:120:20</a></i></div>
+            <div><i><a href="unzip-decompress.adb-6.html#unzip-decompress.adb:120:20" title="defined at unzip-decompress.adb:120:20">Decompress.Decompress_data.UnZ_Meth.Explode</a> defined at <a href="src_unzip-decompress.adb.html#l120" title="unzip-decompress.adb:120:20">unzip-decompress.adb:120:20</a></i></div>
+            <div><i><a href="unzip-decompress.adb-6.html#unzip-decompress.adb:120:20" title="defined at unzip-decompress.adb:120:20">Decompress.Decompress_data.UnZ_Meth.Explode</a> defined at <a href="src_unzip-decompress.adb.html#l120" title="unzip-decompress.adb:120:20">unzip-decompress.adb:120:20</a></i></div>
+            <div><i><a href="unzip-decompress.adb-6.html#unzip-decompress.adb:120:20" title="defined at unzip-decompress.adb:120:20">Decompress.Decompress_data.UnZ_Meth.Explode</a> defined at <a href="src_unzip-decompress.adb.html#l120" title="unzip-decompress.adb:120:20">unzip-decompress.adb:120:20</a></i></div>
+            <div><i><a href="unzip-decompress.adb-6.html#unzip-decompress.adb:120:20" title="defined at unzip-decompress.adb:120:20">Decompress.Decompress_data.UnZ_Meth.Explode</a> defined at <a href="src_unzip-decompress.adb.html#l120" title="unzip-decompress.adb:120:20">unzip-decompress.adb:120:20</a></i></div>
+            <div><i><a href="unzip-decompress.adb-6.html#unzip-decompress.adb:120:20" title="defined at unzip-decompress.adb:120:20">Decompress.Decompress_data.UnZ_Meth.Explode</a> defined at <a href="src_unzip-decompress.adb.html#l120" title="unzip-decompress.adb:120:20">unzip-decompress.adb:120:20</a></i></div>
+            <div><i><a href="unzip-decompress.adb-6.html#unzip-decompress.adb:120:20" title="defined at unzip-decompress.adb:120:20">Decompress.Decompress_data.UnZ_Meth.Explode</a> defined at <a href="src_unzip-decompress.adb.html#l120" title="unzip-decompress.adb:120:20">unzip-decompress.adb:120:20</a></i></div>
+            <div><i><a href="unzip-decompress.adb-6.html#unzip-decompress.adb:120:20" title="defined at unzip-decompress.adb:120:20">Decompress.Decompress_data.UnZ_Meth.Explode</a> defined at <a href="src_unzip-decompress.adb.html#l120" title="unzip-decompress.adb:120:20">unzip-decompress.adb:120:20</a></i></div>
+            <div><i><a href="unzip-decompress.adb-6.html#unzip-decompress.adb:120:20" title="defined at unzip-decompress.adb:120:20">Decompress.Decompress_data.UnZ_Meth.Explode</a> defined at <a href="src_unzip-decompress.adb.html#l120" title="unzip-decompress.adb:120:20">unzip-decompress.adb:120:20</a></i></div>
+            <div><i><a href="unzip-decompress.adb-6.html#unzip-decompress.adb:120:20" title="defined at unzip-decompress.adb:120:20">Decompress.Decompress_data.UnZ_Meth.Explode</a> defined at <a href="src_unzip-decompress.adb.html#l120" title="unzip-decompress.adb:120:20">unzip-decompress.adb:120:20</a></i></div>
+            <div><i><a href="unzip-decompress.adb-6.html#unzip-decompress.adb:120:20" title="defined at unzip-decompress.adb:120:20">Decompress.Decompress_data.UnZ_Meth.Explode</a> defined at <a href="src_unzip-decompress.adb.html#l120" title="unzip-decompress.adb:120:20">unzip-decompress.adb:120:20</a></i></div>
+            <div><i><a href="unzip-decompress.adb-6.html#unzip-decompress.adb:120:20" title="defined at unzip-decompress.adb:120:20">Decompress.Decompress_data.UnZ_Meth.Explode</a> defined at <a href="src_unzip-decompress.adb.html#l120" title="unzip-decompress.adb:120:20">unzip-decompress.adb:120:20</a></i></div>
+            <div><i><a href="unzip-decompress.adb-6.html#unzip-decompress.adb:120:20" title="defined at unzip-decompress.adb:120:20">Decompress.Decompress_data.UnZ_Meth.Explode</a> defined at <a href="src_unzip-decompress.adb.html#l120" title="unzip-decompress.adb:120:20">unzip-decompress.adb:120:20</a></i></div>
+            <div><i><a href="unzip-decompress.adb-6.html#unzip-decompress.adb:120:20" title="defined at unzip-decompress.adb:120:20">Decompress.Decompress_data.UnZ_Meth.Explode</a> defined at <a href="src_unzip-decompress.adb.html#l120" title="unzip-decompress.adb:120:20">unzip-decompress.adb:120:20</a></i></div>
+            <div><i><a href="unzip-decompress.adb-6.html#unzip-decompress.adb:120:20" title="defined at unzip-decompress.adb:120:20">Decompress.Decompress_data.UnZ_Meth.Explode</a> defined at <a href="src_unzip-decompress.adb.html#l120" title="unzip-decompress.adb:120:20">unzip-decompress.adb:120:20</a></i></div>
+            <div><i><a href="unzip-decompress.adb-6.html#unzip-decompress.adb:120:20" title="defined at unzip-decompress.adb:120:20">Decompress.Decompress_data.UnZ_Meth.Explode</a> defined at <a href="src_unzip-decompress.adb.html#l120" title="unzip-decompress.adb:120:20">unzip-decompress.adb:120:20</a></i></div>
+            <div><i><a href="unzip-decompress.adb-6.html#unzip-decompress.adb:120:20" title="defined at unzip-decompress.adb:120:20">Decompress.Decompress_data.UnZ_Meth.Explode</a> defined at <a href="src_unzip-decompress.adb.html#l120" title="unzip-decompress.adb:120:20">unzip-decompress.adb:120:20</a></i></div>
+            <div><i><a href="unzip-decompress.adb-6.html#unzip-decompress.adb:120:20" title="defined at unzip-decompress.adb:120:20">Decompress.Decompress_data.UnZ_Meth.Explode</a> defined at <a href="src_unzip-decompress.adb.html#l120" title="unzip-decompress.adb:120:20">unzip-decompress.adb:120:20</a></i></div>
+            <div><i><a href="unzip-decompress.adb-6.html#unzip-decompress.adb:120:20" title="defined at unzip-decompress.adb:120:20">Decompress.Decompress_data.UnZ_Meth.Explode</a> defined at <a href="src_unzip-decompress.adb.html#l120" title="unzip-decompress.adb:120:20">unzip-decompress.adb:120:20</a></i></div>
+            <div><i>Decompress.Decompress_data.UnZ_Meth.Inflate_dynamic_block defined at <a href="src_unzip-decompress.adb.html#l1667" title="unzip-decompress.adb:1667:20">unzip-decompress.adb:1667:20</a></i></div>
+            <div><i>Decompress.Decompress_data.UnZ_Meth.Inflate_dynamic_block defined at <a href="src_unzip-decompress.adb.html#l1667" title="unzip-decompress.adb:1667:20">unzip-decompress.adb:1667:20</a></i></div>
+            <div><i>Decompress.Decompress_data.UnZ_Meth.Inflate_dynamic_block defined at <a href="src_unzip-decompress.adb.html#l1667" title="unzip-decompress.adb:1667:20">unzip-decompress.adb:1667:20</a></i></div>
+            <div><i>Decompress.Decompress_data.UnZ_Meth.Inflate_dynamic_block defined at <a href="src_unzip-decompress.adb.html#l1667" title="unzip-decompress.adb:1667:20">unzip-decompress.adb:1667:20</a></i></div>
+            <div><i>Decompress.Decompress_data.UnZ_Meth.Inflate_dynamic_block defined at <a href="src_unzip-decompress.adb.html#l1667" title="unzip-decompress.adb:1667:20">unzip-decompress.adb:1667:20</a></i></div>
+            <div><i>Decompress.Decompress_data.UnZ_Meth.Inflate_dynamic_block defined at <a href="src_unzip-decompress.adb.html#l1667" title="unzip-decompress.adb:1667:20">unzip-decompress.adb:1667:20</a></i></div>
+            <div><i>Decompress.Decompress_data.UnZ_Meth.Inflate_fixed_block defined at <a href="src_unzip-decompress.adb.html#l1607" title="unzip-decompress.adb:1607:20">unzip-decompress.adb:1607:20</a></i></div>
+            <div><i>Decompress.Decompress_data.UnZ_Meth.Inflate_fixed_block defined at <a href="src_unzip-decompress.adb.html#l1607" title="unzip-decompress.adb:1607:20">unzip-decompress.adb:1607:20</a></i></div>
+            <div><i>Decompress.Decompress_data.UnZ_Meth.Inflate_fixed_block defined at <a href="src_unzip-decompress.adb.html#l1607" title="unzip-decompress.adb:1607:20">unzip-decompress.adb:1607:20</a></i></div>
+            <div><i><a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:42:13" title="defined at unzip-decompress-huffman.ads:42:13">HufT_build</a> defined at <a href="src_unzip-decompress-huffman.ads.html#l42" title="unzip-decompress-huffman.ads:42:13">unzip-decompress-huffman.ads:42:13</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="unzip-decompress-huffman.adb.html#unzip-decompress-huffman.adb:15:18" title="defined at unzip-decompress-huffman.adb:15:18">Huffman.HufT_free.Dispose</a> defined at <a href="src_unzip-decompress-huffman.adb.html#l15" title="unzip-decompress-huffman.adb:15:18">unzip-decompress-huffman.adb:15:18</a></i></div>
+            <div><i><a href="unzip-decompress-huffman.adb.html#unzip-decompress-huffman.adb:17:18" title="defined at unzip-decompress-huffman.adb:17:18">Huffman.HufT_free.Dispose</a> defined at <a href="src_unzip-decompress-huffman.adb.html#l17" title="unzip-decompress-huffman.adb:17:18">unzip-decompress-huffman.adb:17:18</a></i></div>
+            <div><i>Put defined at a-textio.ads:242:14</i></div>
+            <div><i>Put_Line defined at a-textio.ads:263:14</i></div>
+            <div><i>Unchecked_Deallocation defined at a-uncdea.ads:20:15</i></div>
+        </div>
+        <div class='comment'><a href="globe_3d.adb.html#globe_3d.adb:110:14" title="Free">Free</a> huffman tables starting with table where t points to
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='unzip-decompress-huffman.ads:42:13' id='unzip-decompress-huffman.ads:42:13'></a>
+<span class="droplink">HufT_build<ul>
+  <li><a href="src_unzip-decompress-huffman.ads.html#l42">Goto spec in source</a></li>
+  <li><a href="src_unzip-decompress-huffman.adb.html#l50">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">HufT_build</span> <table><tr><td>(</td><td><span class="name"><a name="unzip-decompress-huffman.ads:42:25"></a>b</span></td><td>: <a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:34:8" title="defined at unzip-decompress-huffman.ads:34:8">Length_array</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip-decompress-huffman.ads:43:26"></a>s</span></td><td>: Integer;</td></tr><tr><td></td><td><span class="name"><a name="unzip-decompress-huffman.ads:44:26"></a>d</span>, <span class="name"><a name="unzip-decompress-huffman.ads:44:29"></a>e</span></td><td>: <a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:34:8" title="defined at unzip-decompress-huffman.ads:34:8">Length_array</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip-decompress-huffman.ads:45:26"></a>tl</span></td><td>:    <span class="keyword">out</span> <a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:27:8" title="defined at unzip-decompress-huffman.ads:27:8">p_Table_list</a>;</td></tr><tr><td></td><td><span class="name"><a name="unzip-decompress-huffman.ads:46:26"></a>m</span></td><td>: <span class="keyword">in</span> <span class="keyword">out</span> Integer;</td></tr><tr><td></td><td><span class="name"><a name="unzip-decompress-huffman.ads:47:15"></a>huft_incomplete</span></td><td>:    <span class="keyword">out</span> Boolean);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_unzip-decompress-huffman.ads.html#l42" title="unzip-decompress-huffman.ads:42:13">unzip-decompress-huffman.ads:42:13</a> (declaration)</i></div>
+            <div><i><a href="src_unzip-decompress-huffman.adb.html#l50" title="unzip-decompress-huffman.adb:50:14">unzip-decompress-huffman.adb:50:14</a> (body)</i></div>
+            <div><i><a href="src_unzip-decompress-huffman.adb.html#l344" title="unzip-decompress-huffman.adb:344:8">unzip-decompress-huffman.adb:344:8</a> (label)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1282" title="unzip-decompress.adb:1282:19">unzip-decompress.adb:1282:19</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1301" title="unzip-decompress.adb:1301:19">unzip-decompress.adb:1301:19</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1326" title="unzip-decompress.adb:1326:22">unzip-decompress.adb:1326:22</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1338" title="unzip-decompress.adb:1338:22">unzip-decompress.adb:1338:22</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1370" title="unzip-decompress.adb:1370:19">unzip-decompress.adb:1370:19</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1392" title="unzip-decompress.adb:1392:22">unzip-decompress.adb:1392:22</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1403" title="unzip-decompress.adb:1403:22">unzip-decompress.adb:1403:22</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1626" title="unzip-decompress.adb:1626:13">unzip-decompress.adb:1626:13</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1634" title="unzip-decompress.adb:1634:16">unzip-decompress.adb:1634:16</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1728" title="unzip-decompress.adb:1728:16">unzip-decompress.adb:1728:16</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1786" title="unzip-decompress.adb:1786:16">unzip-decompress.adb:1786:16</a> (call)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1803" title="unzip-decompress.adb:1803:16">unzip-decompress.adb:1803:16</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="unzip-decompress.adb-6.html#unzip-decompress.adb:120:20" title="defined at unzip-decompress.adb:120:20">Decompress.Decompress_data.UnZ_Meth.Explode</a> defined at <a href="src_unzip-decompress.adb.html#l120" title="unzip-decompress.adb:120:20">unzip-decompress.adb:120:20</a></i></div>
+            <div><i><a href="unzip-decompress.adb-6.html#unzip-decompress.adb:120:20" title="defined at unzip-decompress.adb:120:20">Decompress.Decompress_data.UnZ_Meth.Explode</a> defined at <a href="src_unzip-decompress.adb.html#l120" title="unzip-decompress.adb:120:20">unzip-decompress.adb:120:20</a></i></div>
+            <div><i><a href="unzip-decompress.adb-6.html#unzip-decompress.adb:120:20" title="defined at unzip-decompress.adb:120:20">Decompress.Decompress_data.UnZ_Meth.Explode</a> defined at <a href="src_unzip-decompress.adb.html#l120" title="unzip-decompress.adb:120:20">unzip-decompress.adb:120:20</a></i></div>
+            <div><i><a href="unzip-decompress.adb-6.html#unzip-decompress.adb:120:20" title="defined at unzip-decompress.adb:120:20">Decompress.Decompress_data.UnZ_Meth.Explode</a> defined at <a href="src_unzip-decompress.adb.html#l120" title="unzip-decompress.adb:120:20">unzip-decompress.adb:120:20</a></i></div>
+            <div><i><a href="unzip-decompress.adb-6.html#unzip-decompress.adb:120:20" title="defined at unzip-decompress.adb:120:20">Decompress.Decompress_data.UnZ_Meth.Explode</a> defined at <a href="src_unzip-decompress.adb.html#l120" title="unzip-decompress.adb:120:20">unzip-decompress.adb:120:20</a></i></div>
+            <div><i><a href="unzip-decompress.adb-6.html#unzip-decompress.adb:120:20" title="defined at unzip-decompress.adb:120:20">Decompress.Decompress_data.UnZ_Meth.Explode</a> defined at <a href="src_unzip-decompress.adb.html#l120" title="unzip-decompress.adb:120:20">unzip-decompress.adb:120:20</a></i></div>
+            <div><i><a href="unzip-decompress.adb-6.html#unzip-decompress.adb:120:20" title="defined at unzip-decompress.adb:120:20">Decompress.Decompress_data.UnZ_Meth.Explode</a> defined at <a href="src_unzip-decompress.adb.html#l120" title="unzip-decompress.adb:120:20">unzip-decompress.adb:120:20</a></i></div>
+            <div><i>Decompress.Decompress_data.UnZ_Meth.Inflate_dynamic_block defined at <a href="src_unzip-decompress.adb.html#l1667" title="unzip-decompress.adb:1667:20">unzip-decompress.adb:1667:20</a></i></div>
+            <div><i>Decompress.Decompress_data.UnZ_Meth.Inflate_dynamic_block defined at <a href="src_unzip-decompress.adb.html#l1667" title="unzip-decompress.adb:1667:20">unzip-decompress.adb:1667:20</a></i></div>
+            <div><i>Decompress.Decompress_data.UnZ_Meth.Inflate_dynamic_block defined at <a href="src_unzip-decompress.adb.html#l1667" title="unzip-decompress.adb:1667:20">unzip-decompress.adb:1667:20</a></i></div>
+            <div><i>Decompress.Decompress_data.UnZ_Meth.Inflate_fixed_block defined at <a href="src_unzip-decompress.adb.html#l1607" title="unzip-decompress.adb:1607:20">unzip-decompress.adb:1607:20</a></i></div>
+            <div><i>Decompress.Decompress_data.UnZ_Meth.Inflate_fixed_block defined at <a href="src_unzip-decompress.adb.html#l1607" title="unzip-decompress.adb:1607:20">unzip-decompress.adb:1607:20</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="unzip-decompress-huffman.ads.html#unzip-decompress-huffman.ads:39:13" title="defined at unzip-decompress-huffman.ads:39:13">HufT_free</a> defined at <a href="src_unzip-decompress-huffman.ads.html#l39" title="unzip-decompress-huffman.ads:39:13">unzip-decompress-huffman.ads:39:13</a></i></div>
+            <div><i>Put defined at a-textio.ads:242:14</i></div>
+            <div><i>Put_Line defined at a-textio.ads:263:14</i></div>
+            <div><i>Shift_Left defined at interfac.ads:107:13</i></div>
+            <div><i>Shift_Right defined at interfac.ads:111:13</i></div>
+        </div>
+        <div class='comment'>Build huffman table from code lengths given by array b.all
+</div>
+      </div>
+    </div>
+</div> <!-- documentation -->
+
+</body>
+</html>

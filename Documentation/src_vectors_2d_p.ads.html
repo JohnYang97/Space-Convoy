@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    File: vectors_2d_p.ads
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+  </div>
+</div> <!-- leftSide -->
+
+<div class='subprograms'>
+  <div class='details'><ol><li id="l1"><pre><span class="comment">--</span> </pre></li>
+<li id="l2"><pre><span class="comment">-- Jan &amp; Uwe R. Zimmer, Australia, July 2011</span> </pre></li>
+<li id="l3"><pre><span class="comment">--</span> </pre></li>
+<li id="l4"><pre> </pre></li>
+<li id="l5"><pre><span class="keyword">with</span> <span class="droplink">Vectors_xD_I<ul><li><a href="vectors_xd_i.ads.html#vectors_xd_i.ads:6:9" title="To API doc">To API doc</a></li><li><a href="src_vectors_xd_i.ads.html#l6" title="To spec">To spec</a></li><li><a href="src_vectors_xd_i.adb.html#l8" title="To body">To body</a></li></ul></span>; <span class="keyword">pragma</span> Elaborate_All (<span class="droplink">Vectors_xD_I<ul><li><a href="vectors_xd_i.ads.html#vectors_xd_i.ads:6:9" title="To API doc">To API doc</a></li><li><a href="src_vectors_xd_i.ads.html#l6" title="To spec">To spec</a></li><li><a href="src_vectors_xd_i.adb.html#l8" title="To body">To body</a></li></ul></span>); </pre></li>
+<li id="l6"><pre> </pre></li>
+<li id="l7"><pre><span class="keyword">package</span> <a href="vectors_2d_p.ads.html#vectors_2d_p.ads:7:9" title="defined at vectors_2d_p.ads:7:9">Vectors_2D_P</a> <span class="keyword">is</span> </pre></li>
+<li id="l8"><pre> </pre></li>
+<li id="l9"><pre>   <span class="keyword">type</span> <a href="vectors_2d_p.ads.html#vectors_2d_p.ads:9:9" title="defined at vectors_2d_p.ads:9:9">xy_Coordinates</a> <span class="keyword">is</span> (x, y); </pre></li>
+<li id="l10"><pre> </pre></li>
+<li id="l11"><pre>   <span class="keyword">package</span> <a href="vectors_2d_p.ads.html#vectors_2d_p.ads:11:12" title="defined at vectors_2d_p.ads:11:12">Vectors_2Di</a> <span class="keyword">is</span> <span class="keyword">new</span> <span class="droplink">Vectors_xD_I<ul><li><a href="vectors_xd_i.ads.html#vectors_xd_i.ads:6:9" title="To API doc">To API doc</a></li><li><a href="src_vectors_xd_i.ads.html#l6" title="To spec">To spec</a></li><li><a href="src_vectors_xd_i.adb.html#l8" title="To body">To body</a></li></ul></span> (Positive, <span class="droplink">xy_Coordinates<ul><li><a href="vectors_2d_p.ads.html#vectors_2d_p.ads:9:9" title="To API doc">To API doc</a></li><li><a href="src_vectors_2d_p.ads.html#l9" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l12"><pre> </pre></li>
+<li id="l13"><pre>   <span class="keyword">subtype</span> <a href="vectors_2d_p.ads.html#vectors_2d_p.ads:13:12" title="defined at vectors_2d_p.ads:13:12">Vector_2D_P</a> <span class="keyword">is</span> <span class="droplink">Vectors_2Di.Vector_xD_I<ul><li><a href="vectors_xd_i.ads.html#vectors_xd_i.ads:10:9" title="To API doc">To API doc</a></li><li><a href="src_vectors_xd_i.ads.html#l10" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l14"><pre> </pre></li>
+<li id="l15"><pre>   <a href="vectors_2d_p.ads.html#vectors_2d_p.ads:15:4" title="defined at vectors_2d_p.ads:15:4">Zero_Vector_2D_P</a> : <span class="keyword">constant</span> <span class="droplink">Vector_2D_P<ul><li><a href="vectors_2d_p.ads.html#vectors_2d_p.ads:13:12" title="To API doc">To API doc</a></li><li><a href="src_vectors_2d_p.ads.html#l13" title="To spec">To spec</a></li></ul></span> := <span class="droplink">Vectors_2Di.Zero_Vector_xD<ul><li><a href="vectors_xd_i.ads.html#vectors_xd_i.ads:12:4" title="To API doc">To API doc</a></li><li><a href="src_vectors_xd_i.ads.html#l12" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l16"><pre> </pre></li>
+<li id="l17"><pre>   <span class="keyword">function</span> <a href="vectors_2d_p.ads.html#vectors_2d_p.ads:17:13" title="defined at vectors_2d_p.ads:17:13">Image</a> (<a href="vectors_2d_p.ads.html#vectors_2d_p.ads:17:20" title="defined at vectors_2d_p.ads:17:20">V</a> : <span class="droplink">Vector_2D_P<ul><li><a href="vectors_2d_p.ads.html#vectors_2d_p.ads:13:12" title="To API doc">To API doc</a></li><li><a href="src_vectors_2d_p.ads.html#l13" title="To spec">To spec</a></li></ul></span>) <span class="keyword">return</span> String <span class="keyword">renames</span> <span class="droplink">Vectors_2Di.Image<ul><li><a href="vectors_xd_i.ads.html#vectors_xd_i.ads:14:13" title="To API doc">To API doc</a></li><li><a href="src_vectors_xd_i.ads.html#l14" title="To spec">To spec</a></li><li><a href="src_vectors_xd_i.adb.html#l19" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l18"><pre> </pre></li>
+<li id="l19"><pre>   <span class="keyword">function</span> <a href="vectors_2d_p.ads.html#vectors_2d_p.ads:19:13" title="defined at vectors_2d_p.ads:19:13">Norm</a> (<a href="vectors_2d_p.ads.html#vectors_2d_p.ads:19:19" title="defined at vectors_2d_p.ads:19:19">V</a> : <span class="droplink">Vector_2D_P<ul><li><a href="vectors_2d_p.ads.html#vectors_2d_p.ads:13:12" title="To API doc">To API doc</a></li><li><a href="src_vectors_2d_p.ads.html#l13" title="To spec">To spec</a></li></ul></span>) <span class="keyword">return</span> <span class="droplink">Vector_2D_P<ul><li><a href="vectors_2d_p.ads.html#vectors_2d_p.ads:13:12" title="To API doc">To API doc</a></li><li><a href="src_vectors_2d_p.ads.html#l13" title="To spec">To spec</a></li></ul></span> <span class="keyword">renames</span> <span class="droplink">Vectors_2Di.Norm<ul><li><a href="vectors_xd_i.ads.html#vectors_xd_i.ads:16:13" title="To API doc">To API doc</a></li><li><a href="src_vectors_xd_i.ads.html#l16" title="To spec">To spec</a></li><li><a href="src_vectors_xd_i.adb.html#l37" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l20"><pre> </pre></li>
+<li id="l21"><pre>   <span class="keyword">function</span> &quot;*&quot; (<a href="vectors_2d_p.ads.html#vectors_2d_p.ads:21:18" title="defined at vectors_2d_p.ads:21:18">Scalar</a> : Float; <a href="vectors_2d_p.ads.html#vectors_2d_p.ads:21:34" title="defined at vectors_2d_p.ads:21:34">V</a> : <span class="droplink">Vector_2D_P<ul><li><a href="vectors_2d_p.ads.html#vectors_2d_p.ads:13:12" title="To API doc">To API doc</a></li><li><a href="src_vectors_2d_p.ads.html#l13" title="To spec">To spec</a></li></ul></span>) <span class="keyword">return</span> <span class="droplink">Vector_2D_P<ul><li><a href="vectors_2d_p.ads.html#vectors_2d_p.ads:13:12" title="To API doc">To API doc</a></li><li><a href="src_vectors_2d_p.ads.html#l13" title="To spec">To spec</a></li></ul></span> <span class="keyword">renames</span> Vectors_2Di.&quot;*&quot;; </pre></li>
+<li id="l22"><pre>   <span class="keyword">function</span> &quot;*&quot; (<a href="vectors_2d_p.ads.html#vectors_2d_p.ads:22:18" title="defined at vectors_2d_p.ads:22:18">V</a> : <span class="droplink">Vector_2D_P<ul><li><a href="vectors_2d_p.ads.html#vectors_2d_p.ads:13:12" title="To API doc">To API doc</a></li><li><a href="src_vectors_2d_p.ads.html#l13" title="To spec">To spec</a></li></ul></span>; <a href="vectors_2d_p.ads.html#vectors_2d_p.ads:22:35" title="defined at vectors_2d_p.ads:22:35">Scalar</a> : Float) <span class="keyword">return</span> <span class="droplink">Vector_2D_P<ul><li><a href="vectors_2d_p.ads.html#vectors_2d_p.ads:13:12" title="To API doc">To API doc</a></li><li><a href="src_vectors_2d_p.ads.html#l13" title="To spec">To spec</a></li></ul></span> <span class="keyword">renames</span> Vectors_2Di.&quot;*&quot;; </pre></li>
+<li id="l23"><pre>   <span class="keyword">function</span> &quot;/&quot; (<a href="vectors_2d_p.ads.html#vectors_2d_p.ads:23:18" title="defined at vectors_2d_p.ads:23:18">V</a> : <span class="droplink">Vector_2D_P<ul><li><a href="vectors_2d_p.ads.html#vectors_2d_p.ads:13:12" title="To API doc">To API doc</a></li><li><a href="src_vectors_2d_p.ads.html#l13" title="To spec">To spec</a></li></ul></span>; <a href="vectors_2d_p.ads.html#vectors_2d_p.ads:23:35" title="defined at vectors_2d_p.ads:23:35">Scalar</a> : Float) <span class="keyword">return</span> <span class="droplink">Vector_2D_P<ul><li><a href="vectors_2d_p.ads.html#vectors_2d_p.ads:13:12" title="To API doc">To API doc</a></li><li><a href="src_vectors_2d_p.ads.html#l13" title="To spec">To spec</a></li></ul></span> <span class="keyword">renames</span> Vectors_2Di.&quot;/&quot;; </pre></li>
+<li id="l24"><pre> </pre></li>
+<li id="l25"><pre>   <span class="keyword">function</span> &quot;*&quot; (<a href="vectors_2d_p.ads.html#vectors_2d_p.ads:25:18" title="defined at vectors_2d_p.ads:25:18">V_Left</a>, <a href="vectors_2d_p.ads.html#vectors_2d_p.ads:25:26" title="defined at vectors_2d_p.ads:25:26">V_Right</a> : <span class="droplink">Vector_2D_P<ul><li><a href="vectors_2d_p.ads.html#vectors_2d_p.ads:13:12" title="To API doc">To API doc</a></li><li><a href="src_vectors_2d_p.ads.html#l13" title="To spec">To spec</a></li></ul></span>) <span class="keyword">return</span> Float <span class="keyword">renames</span> Vectors_2Di.&quot;*&quot;; </pre></li>
+<li id="l26"><pre> </pre></li>
+<li id="l27"><pre>   <span class="keyword">function</span> <a href="vectors_2d_p.ads.html#vectors_2d_p.ads:27:13" title="defined at vectors_2d_p.ads:27:13">Angle_Between</a> (<a href="vectors_2d_p.ads.html#vectors_2d_p.ads:27:28" title="defined at vectors_2d_p.ads:27:28">V_Left</a>, <a href="vectors_2d_p.ads.html#vectors_2d_p.ads:27:36" title="defined at vectors_2d_p.ads:27:36">V_Right</a> : <span class="droplink">Vector_2D_P<ul><li><a href="vectors_2d_p.ads.html#vectors_2d_p.ads:13:12" title="To API doc">To API doc</a></li><li><a href="src_vectors_2d_p.ads.html#l13" title="To spec">To spec</a></li></ul></span>) <span class="keyword">return</span> Float <span class="keyword">renames</span> <span class="droplink">Vectors_2Di.Angle_Between<ul><li><a href="vectors_xd_i.ads.html#vectors_xd_i.ads:24:13" title="To API doc">To API doc</a></li><li><a href="src_vectors_xd_i.ads.html#l24" title="To spec">To spec</a></li><li><a href="src_vectors_xd_i.adb.html#l85" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l28"><pre> </pre></li>
+<li id="l29"><pre>   <span class="keyword">function</span> &quot;+&quot; (<a href="vectors_2d_p.ads.html#vectors_2d_p.ads:29:18" title="defined at vectors_2d_p.ads:29:18">V_Left</a>, <a href="vectors_2d_p.ads.html#vectors_2d_p.ads:29:26" title="defined at vectors_2d_p.ads:29:26">V_Right</a> : <span class="droplink">Vector_2D_P<ul><li><a href="vectors_2d_p.ads.html#vectors_2d_p.ads:13:12" title="To API doc">To API doc</a></li><li><a href="src_vectors_2d_p.ads.html#l13" title="To spec">To spec</a></li></ul></span>) <span class="keyword">return</span> <span class="droplink">Vector_2D_P<ul><li><a href="vectors_2d_p.ads.html#vectors_2d_p.ads:13:12" title="To API doc">To API doc</a></li><li><a href="src_vectors_2d_p.ads.html#l13" title="To spec">To spec</a></li></ul></span> <span class="keyword">renames</span> Vectors_2Di.&quot;+&quot;; </pre></li>
+<li id="l30"><pre>   <span class="keyword">function</span> &quot;-&quot; (<a href="vectors_2d_p.ads.html#vectors_2d_p.ads:30:18" title="defined at vectors_2d_p.ads:30:18">V_Left</a>, <a href="vectors_2d_p.ads.html#vectors_2d_p.ads:30:26" title="defined at vectors_2d_p.ads:30:26">V_Right</a> : <span class="droplink">Vector_2D_P<ul><li><a href="vectors_2d_p.ads.html#vectors_2d_p.ads:13:12" title="To API doc">To API doc</a></li><li><a href="src_vectors_2d_p.ads.html#l13" title="To spec">To spec</a></li></ul></span>) <span class="keyword">return</span> <span class="droplink">Vector_2D_P<ul><li><a href="vectors_2d_p.ads.html#vectors_2d_p.ads:13:12" title="To API doc">To API doc</a></li><li><a href="src_vectors_2d_p.ads.html#l13" title="To spec">To spec</a></li></ul></span> <span class="keyword">renames</span> Vectors_2Di.&quot;-&quot;; </pre></li>
+<li id="l31"><pre> </pre></li>
+<li id="l32"><pre>   <span class="keyword">function</span> &quot;abs&quot; (<a href="vectors_2d_p.ads.html#vectors_2d_p.ads:32:20" title="defined at vectors_2d_p.ads:32:20">V</a> : <span class="droplink">Vector_2D_P<ul><li><a href="vectors_2d_p.ads.html#vectors_2d_p.ads:13:12" title="To API doc">To API doc</a></li><li><a href="src_vectors_2d_p.ads.html#l13" title="To spec">To spec</a></li></ul></span>) <span class="keyword">return</span> Float <span class="keyword">renames</span> Vectors_2Di.&quot;abs&quot;; </pre></li>
+<li id="l33"><pre> </pre></li>
+<li id="l34"><pre><span class="keyword">end</span> <span class="droplink">Vectors_2D_P<ul><li><a href="vectors_2d_p.ads.html#vectors_2d_p.ads:7:9" title="To API doc">To API doc</a></li><li><a href="src_vectors_2d_p.ads.html#l7" title="To spec">To spec</a></li></ul></span>; </pre></li>
+</ol></div>
+</div>
+
+</body>
+</html>

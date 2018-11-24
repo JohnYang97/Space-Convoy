@@ -1,0 +1,687 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    Package: Headers
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+
+  <div id='navigation'>
+    <h2 class="button">Navigation</h2>
+    <a href='#Description'><div class="button2">Description</div></a>
+    <a href='#Types'><div class="button2">Types</div></a>
+    <a href='#Constants'><div class="button2">Constants &amp; Global variables</div></a>
+    <a href='#Methods'><div class="button2">Subprograms &amp; Entries</div></a>
+  </div><!-- navigation -->
+  </div>
+</div> <!-- leftSide -->
+
+<div class='default' id='rightSide'>
+ <div id='rightSideInside'>
+ <div id='Index'>
+  <h2>Index</h2>
+  <script type="text/javascript">
+    var names = new Array (
+new Array ('Data_<wbr/>descriptor', 'zip-headers.ads:30:8', 'type-spec'),
+new Array ('Local_<wbr/>File_<wbr/>Header', 'zip-headers.ads:58:8', 'type-spec'),
+new Array ('Central_<wbr/>File_<wbr/>Header', 'zip-headers.ads:84:8', 'type-spec'),
+new Array ('End_<wbr/>of_<wbr/>Central_<wbr/>Dir', 'zip-headers.ads:118:8', 'type-spec'),
+new Array ('data_<wbr/>descriptor_<wbr/>length', 'zip-headers.ads:37:3', 'var-spec'),
+new Array ('bad_<wbr/>data_<wbr/>descriptor', 'zip-headers.ads:47:3', 'var-spec'),
+new Array ('Language_<wbr/>Encoding_<wbr/>Flag_<wbr/>Bit', 'zip-headers.ads:56:3', 'var-spec'),
+new Array ('local_<wbr/>header_<wbr/>length', 'zip-headers.ads:69:3', 'var-spec'),
+new Array ('bad_<wbr/>local_<wbr/>header', 'zip-headers.ads:74:3', 'var-spec'),
+new Array ('central_<wbr/>header_<wbr/>length', 'zip-headers.ads:104:3', 'var-spec'),
+new Array ('bad_<wbr/>central_<wbr/>header', 'zip-headers.ads:109:3', 'var-spec'),
+new Array ('end_<wbr/>of_<wbr/>central_<wbr/>dir_<wbr/>length', 'zip-headers.ads:138:3', 'var-spec'),
+new Array ('bad_<wbr/>end', 'zip-headers.ads:148:3', 'var-spec'),
+new Array ('Copy_<wbr/>and_<wbr/>check', 'zip-headers.ads:41:13', 'subp-spec'),
+new Array ('Read_<wbr/>and_<wbr/>check', 'zip-headers.ads:44:14', 'subp-spec'),
+new Array ('Write', 'zip-headers.ads:49:13', 'subp-spec'),
+new Array ('Read_<wbr/>and_<wbr/>check', 'zip-headers.ads:71:13', 'subp-spec'),
+new Array ('Write', 'zip-headers.ads:76:13', 'subp-spec'),
+new Array ('Read_<wbr/>and_<wbr/>check', 'zip-headers.ads:106:13', 'subp-spec'),
+new Array ('Write', 'zip-headers.ads:111:13', 'subp-spec'),
+new Array ('Copy_<wbr/>and_<wbr/>check', 'zip-headers.ads:142:13', 'subp-spec'),
+new Array ('Read_<wbr/>and_<wbr/>check', 'zip-headers.ads:145:13', 'subp-spec'),
+new Array ('Load', 'zip-headers.ads:152:13', 'subp-spec'),
+new Array ('Write', 'zip-headers.ads:155:13', 'subp-spec'),
+      new Array ('dummy', '', ''));
+    printIndexList (names);
+  </script>
+  <noscript>
+    <ul>
+      <li class='type-spec'><a href="#zip-headers.ads:30:8">Data_<wbr/>descriptor</a></li>
+      <li class='type-spec'><a href="#zip-headers.ads:58:8">Local_<wbr/>File_<wbr/>Header</a></li>
+      <li class='type-spec'><a href="#zip-headers.ads:84:8">Central_<wbr/>File_<wbr/>Header</a></li>
+      <li class='type-spec'><a href="#zip-headers.ads:118:8">End_<wbr/>of_<wbr/>Central_<wbr/>Dir</a></li>
+      <li class='var-spec'><a href="#zip-headers.ads:37:3">data_<wbr/>descriptor_<wbr/>length</a></li>
+      <li class='var-spec'><a href="#zip-headers.ads:47:3">bad_<wbr/>data_<wbr/>descriptor</a></li>
+      <li class='var-spec'><a href="#zip-headers.ads:56:3">Language_<wbr/>Encoding_<wbr/>Flag_<wbr/>Bit</a></li>
+      <li class='var-spec'><a href="#zip-headers.ads:69:3">local_<wbr/>header_<wbr/>length</a></li>
+      <li class='var-spec'><a href="#zip-headers.ads:74:3">bad_<wbr/>local_<wbr/>header</a></li>
+      <li class='var-spec'><a href="#zip-headers.ads:104:3">central_<wbr/>header_<wbr/>length</a></li>
+      <li class='var-spec'><a href="#zip-headers.ads:109:3">bad_<wbr/>central_<wbr/>header</a></li>
+      <li class='var-spec'><a href="#zip-headers.ads:138:3">end_<wbr/>of_<wbr/>central_<wbr/>dir_<wbr/>length</a></li>
+      <li class='var-spec'><a href="#zip-headers.ads:148:3">bad_<wbr/>end</a></li>
+      <li class='subp-spec'><a href="#zip-headers.ads:41:13">Copy_<wbr/>and_<wbr/>check</a></li>
+      <li class='subp-spec'><a href="#zip-headers.ads:44:14">Read_<wbr/>and_<wbr/>check</a></li>
+      <li class='subp-spec'><a href="#zip-headers.ads:49:13">Write</a></li>
+      <li class='subp-spec'><a href="#zip-headers.ads:71:13">Read_<wbr/>and_<wbr/>check</a></li>
+      <li class='subp-spec'><a href="#zip-headers.ads:76:13">Write</a></li>
+      <li class='subp-spec'><a href="#zip-headers.ads:106:13">Read_<wbr/>and_<wbr/>check</a></li>
+      <li class='subp-spec'><a href="#zip-headers.ads:111:13">Write</a></li>
+      <li class='subp-spec'><a href="#zip-headers.ads:142:13">Copy_<wbr/>and_<wbr/>check</a></li>
+      <li class='subp-spec'><a href="#zip-headers.ads:145:13">Read_<wbr/>and_<wbr/>check</a></li>
+      <li class='subp-spec'><a href="#zip-headers.ads:152:13">Load</a></li>
+      <li class='subp-spec'><a href="#zip-headers.ads:155:13">Write</a></li>
+    </ul>
+  </noscript>
+ </div>
+ </div>
+</div>
+
+<div class='default' id='documentation'>
+  <div class='title'>
+    Package:
+<span class="droplink"><i>Headers</i><ul>
+  <li><a href="src_zip-headers.ads.html">Goto spec source</a></li>
+  <li><a href="src_zip-headers.adb.html">Goto body source</a></li>
+</ul></span>
+  </div>
+  <div class='subprograms'>
+    <h1><a name='Description' id='Description'></a>Description</h1>
+    <div class="class">
+    <div class='details'><pre><span class="keyword">package</span> <span class="name_emphasis">Zip.Headers</span> <span class="keyword">is</span></pre></div>
+    <div class='comment'>Change <a href="gl-errors.adb.html#gl-errors.adb:26:14" title="log">log</a>:
+==========
+16 - Nov - 2009 : GdM : Replaced Ada.Calendar.Time by <a href="zip.ads.html#zip.ads:128:12" title="Zip.Time">Zip.Time</a> in headers, due to
+                 perf. issues in some run - times&apos; Ada.Calendar.Time_Of
+</div>
+    </div>
+  </div>
+
+
+
+
+  <div class='subprograms'>
+    <h1><a name='Types' id='Types'></a>Types</h1>
+    <div class="class">
+      <h3>
+        <a name='zip-headers.ads:30:8' id='zip-headers.ads:30:8'></a>
+<span class="droplink">Data_descriptor<ul>
+  <li><a href="src_zip-headers.ads.html#l30">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Data_descriptor</span> <span class="keyword">is</span> <span class="keyword">record</span>
+    <span class="comment">-- PK78                            --  1 .. 4
+</span>    crc_32              : Unsigned_32; <span class="comment">--  5 .. 8
+</span>    compressed_size,
+    uncompressed_size   : Unsigned_32;
+  <span class="keyword">end</span> <span class="keyword">record</span>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_zip-headers.ads.html#l30" title="zip-headers.ads:30:8">zip-headers.ads:30:8</a> (declaration)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l20" title="unzip-decompress.adb:20:73">unzip-decompress.adb:20:73</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.adb.html#l1900" title="unzip-decompress.adb:1900:55">unzip-decompress.adb:1900:55</a> (reference)</i></div>
+          <div><i><a href="src_unzip-decompress.ads.html#l35" title="unzip-decompress.ads:35:47">unzip-decompress.ads:35:47</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.adb.html#l308" title="zip-headers.adb:308:50">zip-headers.adb:308:50</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.adb.html#l322" title="zip-headers.adb:322:50">zip-headers.adb:322:50</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.adb.html#l332" title="zip-headers.adb:332:37">zip-headers.adb:332:37</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.ads.html#l42" title="zip-headers.ads:42:49">zip-headers.ads:42:49</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.ads.html#l45" title="zip-headers.ads:45:50">zip-headers.ads:45:50</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.ads.html#l50" title="zip-headers.ads:50:36">zip-headers.ads:50:36</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.ads.html#l64" title="zip-headers.ads:64:31">zip-headers.ads:64:31</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='zip-headers.ads:58:8' id='zip-headers.ads:58:8'></a>
+<span class="droplink">Local_File_Header<ul>
+  <li><a href="src_zip-headers.ads.html#l58">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Local_File_Header</span> <span class="keyword">is</span> <span class="keyword">record</span>
+    <span class="comment">-- PK34                                 --  1 .. 4
+</span>    needed_extract_version  : Unsigned_16;  <span class="comment">--  5 .. 6
+</span>    bit_flag,
+    zip_type                : Unsigned_16;
+    file_timedate           : <a href="zip.ads.html#zip.ads:128:12" title="defined at zip.ads:128:12">Time</a>;
+    dd                      : <a href="zip-headers.ads.html#zip-headers.ads:30:8" title="defined at zip-headers.ads:30:8">Data_descriptor</a>;
+    filename_length,
+    extra_field_length      : Unsigned_16;
+  <span class="keyword">end</span> <span class="keyword">record</span>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_zip-headers.ads.html#l58" title="zip-headers.ads:58:8">zip-headers.ads:58:8</a> (declaration)</i></div>
+          <div><i><a href="src_unzip-streams.adb.html#l33" title="unzip-streams.adb:33:34">unzip-streams.adb:33:34</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l31" title="unzip.adb:31:34">unzip.adb:31:34</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.adb.html#l133" title="zip-headers.adb:133:43">zip-headers.adb:133:43</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.adb.html#l159" title="zip-headers.adb:159:30">zip-headers.adb:159:30</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.ads.html#l72" title="zip-headers.ads:72:42">zip-headers.ads:72:42</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.ads.html#l77" title="zip-headers.ads:77:29">zip-headers.ads:77:29</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.ads.html#l87" title="zip-headers.ads:87:28">zip-headers.ads:87:28</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='zip-headers.ads:84:8' id='zip-headers.ads:84:8'></a>
+<span class="droplink">Central_File_Header<ul>
+  <li><a href="src_zip-headers.ads.html#l84">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Central_File_Header</span> <span class="keyword">is</span> <span class="keyword">record</span>
+    <span class="comment">-- PK12                                   --  1 .. 4
+</span>    made_by_version      : Unsigned_16;       <span class="comment">--  5 .. 6
+</span>    short_info           : <a href="zip-headers.ads.html#zip-headers.ads:58:8" title="defined at zip-headers.ads:58:8">Local_File_Header</a>; <span class="comment">--  7 .. 32
+</span>    comment_length       : Unsigned_16;       <span class="comment">-- 33 .. 34
+</span>    disk_number_start    : Unsigned_16;
+    internal_attributes  : Unsigned_16; <span class="comment">-- internal properties of data
+</span>    external_attributes  : Unsigned_32; <span class="comment">-- 1st byte if MS - DOS : see below
+</span>    local_header_offset  : Unsigned_32;
+  <span class="keyword">end</span> <span class="keyword">record</span>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_zip-headers.ads.html#l84" title="zip-headers.ads:84:8">zip-headers.ads:84:8</a> (declaration)</i></div>
+          <div><i><a href="src_zip-headers.adb.html#l70" title="zip-headers.adb:70:44">zip-headers.adb:70:44</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.adb.html#l102" title="zip-headers.adb:102:31">zip-headers.adb:102:31</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.ads.html#l107" title="zip-headers.ads:107:42">zip-headers.ads:107:42</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.ads.html#l112" title="zip-headers.ads:112:29">zip-headers.ads:112:29</a> (reference)</i></div>
+          <div><i><a href="src_zip.adb.html#l188" title="zip.adb:188:29">zip.adb:188:29</a> (reference)</i></div>
+          <div><i><a href="src_zip.adb.html#l439" title="zip.adb:439:32">zip.adb:439:32</a> (reference)</i></div>
+          <div><i><a href="src_zip.adb.html#l487" title="zip.adb:487:29">zip.adb:487:29</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='zip-headers.ads:118:8' id='zip-headers.ads:118:8'></a>
+<span class="droplink">End_of_Central_Dir<ul>
+  <li><a href="src_zip-headers.ads.html#l118">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">End_of_Central_Dir</span> <span class="keyword">is</span> <span class="keyword">record</span>
+    <span class="comment">-- PK56                           --  1 .. 4
+</span>    disknum             : Unsigned_16; <span class="comment">--  5 .. 6
+</span>    disknum_with_start  : Unsigned_16;
+    disk_total_entries  : Unsigned_16;
+    total_entries       : Unsigned_16;
+    central_dir_size    : Unsigned_32;
+    central_dir_offset  : Unsigned_32;
+    main_comment_length : Unsigned_16;
+    <span class="comment">-- The Zip archive may be appended to another file (for instance an
+</span>    <span class="comment">-- executable for self - extracting purposes) of size N.
+</span>    <span class="comment">-- Then, all offsets need to be shifted by N.
+</span>    <span class="comment">-- N=0 if the Zip archive is on its own.
+</span>    <span class="comment">-- The real offset of the end - of - central - dir
+</span>    <span class="comment">-- will be N + central_dir_size + central_dir_offset.
+</span>    <span class="comment">-- This way, we have an unique chance to determine N when reading the
+</span>    <span class="comment">-- end - of - central - dir. N is stored in the field hereafter.
+</span>    offset_shifting     : Unsigned_32;
+  <span class="keyword">end</span> <span class="keyword">record</span>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_zip-headers.ads.html#l118" title="zip-headers.ads:118:8">zip-headers.ads:118:8</a> (declaration)</i></div>
+          <div><i><a href="src_zip-headers.adb.html#l184" title="zip-headers.adb:184:44">zip-headers.adb:184:44</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.adb.html#l204" title="zip-headers.adb:204:44">zip-headers.adb:204:44</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.adb.html#l223" title="zip-headers.adb:223:34">zip-headers.adb:223:34</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.adb.html#l285" title="zip-headers.adb:285:31">zip-headers.adb:285:31</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.ads.html#l143" title="zip-headers.ads:143:43">zip-headers.ads:143:43</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.ads.html#l146" title="zip-headers.ads:146:43">zip-headers.ads:146:43</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.ads.html#l153" title="zip-headers.ads:153:33">zip-headers.ads:153:33</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.ads.html#l156" title="zip-headers.ads:156:31">zip-headers.ads:156:31</a> (reference)</i></div>
+          <div><i><a href="src_zip.adb.html#l187" title="zip.adb:187:29">zip.adb:187:29</a> (reference)</i></div>
+          <div><i><a href="src_zip.adb.html#l438" title="zip.adb:438:32">zip.adb:438:32</a> (reference)</i></div>
+          <div><i><a href="src_zip.adb.html#l485" title="zip.adb:485:29">zip.adb:485:29</a> (reference)</i></div>
+      </div>
+    </div>
+  </div>
+
+  <div class='subprograms'>
+    <h1><a name='Constants' id='Constants'></a>Constants &amp; Global variables</h1>
+    <div class="class">
+      <h3><a name='zip-headers.ads:37:3' id='zip-headers.ads:37:3'></a>
+<span class="droplink">data_descriptor_length<ul>
+  <li><a href="src_zip-headers.ads.html#l37">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">data_descriptor_length</span>  : <span class="keyword">constant</span> := 16;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_zip-headers.ads.html#l37" title="zip-headers.ads:37:3">zip-headers.ads:37:3</a> (declaration)</i></div>
+          <div><i><a href="src_unzip-streams.adb.html#l118" title="unzip-streams.adb:118:60">unzip-streams.adb:118:60</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l357" title="unzip.adb:357:78">unzip.adb:357:78</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='zip-headers.ads:47:3' id='zip-headers.ads:47:3'></a>
+<span class="droplink">bad_data_descriptor<ul>
+  <li><a href="src_zip-headers.ads.html#l47">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">bad_data_descriptor</span> : <span class="keyword">exception</span>;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_zip-headers.ads.html#l47" title="zip-headers.ads:47:3">zip-headers.ads:47:3</a> (declaration)</i></div>
+          <div><i><a href="src_zip-headers.adb.html#l312" title="zip-headers.adb:312:16">zip-headers.adb:312:16</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='zip-headers.ads:56:3' id='zip-headers.ads:56:3'></a>
+<span class="droplink">Language_Encoding_Flag_Bit<ul>
+  <li><a href="src_zip-headers.ads.html#l56">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">Language_Encoding_Flag_Bit</span>  : <span class="keyword">constant</span> := 2**11;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_zip-headers.ads.html#l56" title="zip-headers.ads:56:3">zip-headers.ads:56:3</a> (declaration)</i></div>
+          <div><i><a href="src_zip.adb.html#l238" title="zip.adb:238:38">zip.adb:238:38</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='zip-headers.ads:69:3' id='zip-headers.ads:69:3'></a>
+<span class="droplink">local_header_length<ul>
+  <li><a href="src_zip-headers.ads.html#l69">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">local_header_length</span> : <span class="keyword">constant</span> := 30;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_zip-headers.ads.html#l69" title="zip-headers.ads:69:3">zip-headers.ads:69:3</a> (declaration)</i></div>
+          <div><i><a href="src_unzip-streams.adb.html#l64" title="unzip-streams.adb:64:67">unzip-streams.adb:64:67</a> (reference)</i></div>
+          <div><i><a href="src_unzip-streams.adb.html#l112" title="unzip-streams.adb:112:34">unzip-streams.adb:112:34</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l216" title="unzip.adb:216:48">unzip.adb:216:48</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l349" title="unzip.adb:349:68">unzip.adb:349:68</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='zip-headers.ads:74:3' id='zip-headers.ads:74:3'></a>
+<span class="droplink">bad_local_header<ul>
+  <li><a href="src_zip-headers.ads.html#l74">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">bad_local_header</span> : <span class="keyword">exception</span>;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_zip-headers.ads.html#l74" title="zip-headers.ads:74:3">zip-headers.ads:74:3</a> (declaration)</i></div>
+          <div><i><a href="src_unzip-streams.adb.html#l47" title="unzip-streams.adb:47:27">unzip-streams.adb:47:27</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l199" title="unzip.adb:199:27">unzip.adb:199:27</a> (reference)</i></div>
+          <div><i><a href="src_unzip.adb.html#l578" title="unzip.adb:578:24">unzip.adb:578:24</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.adb.html#l141" title="zip-headers.adb:141:16">zip-headers.adb:141:16</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='zip-headers.ads:104:3' id='zip-headers.ads:104:3'></a>
+<span class="droplink">central_header_length<ul>
+  <li><a href="src_zip-headers.ads.html#l104">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">central_header_length</span> : <span class="keyword">constant</span> := 46;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_zip-headers.ads.html#l104" title="zip-headers.ads:104:3">zip-headers.ads:104:3</a> (declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='zip-headers.ads:109:3' id='zip-headers.ads:109:3'></a>
+<span class="droplink">bad_central_header<ul>
+  <li><a href="src_zip-headers.ads.html#l109">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">bad_central_header</span> : <span class="keyword">exception</span>;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_zip-headers.ads.html#l109" title="zip-headers.ads:109:3">zip-headers.ads:109:3</a> (declaration)</i></div>
+          <div><i><a href="src_zip-headers.adb.html#l78" title="zip-headers.adb:78:16">zip-headers.adb:78:16</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='zip-headers.ads:138:3' id='zip-headers.ads:138:3'></a>
+<span class="droplink">end_of_central_dir_length<ul>
+  <li><a href="src_zip-headers.ads.html#l138">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">end_of_central_dir_length</span>  : <span class="keyword">constant</span> := 22;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_zip-headers.ads.html#l138" title="zip-headers.ads:138:3">zip-headers.ads:138:3</a> (declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3><a name='zip-headers.ads:148:3' id='zip-headers.ads:148:3'></a>
+<span class="droplink">bad_end<ul>
+  <li><a href="src_zip-headers.ads.html#l148">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="name_emphasis">bad_end</span> : <span class="keyword">exception</span>;</pre></div>
+      <div class='profile'>
+        <h4>References:</h4>
+          <div><i><a href="src_zip-headers.ads.html#l148" title="zip-headers.ads:148:3">zip-headers.ads:148:3</a> (declaration)</i></div>
+          <div><i><a href="src_zip-headers.adb.html#l188" title="zip-headers.adb:188:16">zip-headers.adb:188:16</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.adb.html#l254" title="zip-headers.adb:254:25">zip-headers.adb:254:25</a> (reference)</i></div>
+          <div><i><a href="src_zip-headers.adb.html#l274" title="zip-headers.adb:274:18">zip-headers.adb:274:18</a> (reference)</i></div>
+      </div>
+    </div>
+  </div>
+
+    <div class='subprograms'>
+      <h1><a name='Methods' id='Methods'></a>Subprograms &amp; Entries</h1>
+      <div class="class">
+        <h3>
+          <a name='zip-headers.ads:41:13' id='zip-headers.ads:41:13'></a>
+<span class="droplink">Copy_and_check<ul>
+  <li><a href="src_zip-headers.ads.html#l41">Goto spec in source</a></li>
+  <li><a href="src_zip-headers.adb.html#l307">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Copy_and_check</span> <table><tr><td>(</td><td><span class="name"><a name="zip-headers.ads:41:29"></a>buffer</span></td><td>:     <a href="zip.ads.html#zip.ads:219:8" title="defined at zip.ads:219:8">Byte_Buffer</a>;</td></tr><tr><td></td><td><span class="name"><a name="zip-headers.ads:42:29"></a>the_data_desc</span></td><td>: <span class="keyword">out</span> <a href="zip-headers.ads.html#zip-headers.ads:30:8" title="defined at zip-headers.ads:30:8">Data_descriptor</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip-headers.ads.html#l41" title="zip-headers.ads:41:13">zip-headers.ads:41:13</a> (declaration)</i></div>
+            <div><i><a href="src_unzip-decompress.adb.html#l1919" title="unzip-decompress.adb:1919:22">unzip-decompress.adb:1919:22</a> (call)</i></div>
+            <div><i><a href="src_zip-headers.adb.html#l307" title="zip-headers.adb:307:14">zip-headers.adb:307:14</a> (body)</i></div>
+            <div><i><a href="src_zip-headers.adb.html#l319" title="zip-headers.adb:319:8">zip-headers.adb:319:8</a> (label)</i></div>
+            <div><i><a href="src_zip-headers.adb.html#l328" title="zip-headers.adb:328:7">zip-headers.adb:328:7</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="unzip-decompress.adb.html#unzip-decompress.adb:1900:17" title="defined at unzip-decompress.adb:1900:17">Decompress.Decompress_data.Process</a> defined at <a href="src_unzip-decompress.adb.html#l1900" title="unzip-decompress.adb:1900:17">unzip-decompress.adb:1900:17</a></i></div>
+            <div><i><a href="zip-headers.ads.html#zip-headers.ads:44:14" title="defined at zip-headers.ads:44:14">Read_and_check</a> defined at <a href="src_zip-headers.ads.html#l44" title="zip-headers.ads:44:14">zip-headers.ads:44:14</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="zip-headers.adb.html#zip-headers.adb:27:13" title="defined at zip-headers.adb:27:13">Headers.Intel_nb</a> defined at <a href="src_zip-headers.adb.html#l27" title="zip-headers.adb:27:13">zip-headers.adb:27:13</a></i></div>
+            <div><i><a href="zip-headers.adb.html#zip-headers.adb:56:13" title="defined at zip-headers.adb:56:13">Headers.PK_signature</a> defined at <a href="src_zip-headers.adb.html#l56" title="zip-headers.adb:56:13">zip-headers.adb:56:13</a></i></div>
+        </div>
+        <div class='comment'>This header needs to be read in continuation of
+the compressed data - &gt; access to a buffer
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip-headers.ads:44:14' id='zip-headers.ads:44:14'></a>
+<span class="droplink">Read_and_check<ul>
+  <li><a href="src_zip-headers.ads.html#l44">Goto spec in source</a></li>
+  <li><a href="src_zip-headers.adb.html#l321">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Read_and_check</span> <table><tr><td>(</td><td><span class="name"><a name="zip-headers.ads:44:30"></a>stream</span></td><td>:     <a href="zip_streams.ads.html#zip_streams.ads:43:9" title="defined at zip_streams.ads:43:9">Zipstream_Class</a>;</td></tr><tr><td></td><td><span class="name"><a name="zip-headers.ads:45:30"></a>the_data_desc</span></td><td>: <span class="keyword">out</span> <a href="zip-headers.ads.html#zip-headers.ads:30:8" title="defined at zip-headers.ads:30:8">Data_descriptor</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip-headers.ads.html#l44" title="zip-headers.ads:44:14">zip-headers.ads:44:14</a> (declaration)</i></div>
+            <div><i><a href="src_zip-headers.adb.html#l321" title="zip-headers.adb:321:14">zip-headers.adb:321:14</a> (body)</i></div>
+            <div><i><a href="src_zip-headers.adb.html#l329" title="zip-headers.adb:329:8">zip-headers.adb:329:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="zip-headers.ads.html#zip-headers.ads:41:13" title="defined at zip-headers.ads:41:13">Copy_and_check</a> defined at <a href="src_zip-headers.ads.html#l41" title="zip-headers.ads:41:13">zip-headers.ads:41:13</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:238:14" title="defined at zip.ads:238:14">Zip.BlockRead</a> defined at <a href="src_zip.ads.html#l238" title="zip.ads:238:14">zip.ads:238:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip-headers.ads:49:13' id='zip-headers.ads:49:13'></a>
+<span class="droplink">Write<ul>
+  <li><a href="src_zip-headers.ads.html#l49">Goto spec in source</a></li>
+  <li><a href="src_zip-headers.adb.html#l331">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Write</span> <table><tr><td>(</td><td><span class="name"><a name="zip-headers.ads:49:20"></a>stream</span></td><td>: <a href="zip_streams.ads.html#zip_streams.ads:43:9" title="defined at zip_streams.ads:43:9">Zipstream_Class</a>;</td></tr><tr><td></td><td><span class="name"><a name="zip-headers.ads:50:20"></a>the_data_desc</span></td><td>: <a href="zip-headers.ads.html#zip-headers.ads:30:8" title="defined at zip-headers.ads:30:8">Data_descriptor</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip-headers.ads.html#l49" title="zip-headers.ads:49:13">zip-headers.ads:49:13</a> (declaration)</i></div>
+            <div><i><a href="src_zip-headers.adb.html#l331" title="zip-headers.adb:331:14">zip-headers.adb:331:14</a> (body)</i></div>
+            <div><i><a href="src_zip-headers.adb.html#l344" title="zip-headers.adb:344:8">zip-headers.adb:344:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="zip-headers.adb.html#zip-headers.adb:50:13" title="defined at zip-headers.adb:50:13">Headers.Intel_bf</a> defined at <a href="src_zip-headers.adb.html#l50" title="zip-headers.adb:50:13">zip-headers.adb:50:13</a></i></div>
+            <div><i><a href="zip-headers.adb.html#zip-headers.adb:59:14" title="defined at zip-headers.adb:59:14">Headers.PK_signature</a> defined at <a href="src_zip-headers.adb.html#l59" title="zip-headers.adb:59:14">zip-headers.adb:59:14</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:244:14" title="defined at zip.ads:244:14">Zip.BlockWrite</a> defined at <a href="src_zip.ads.html#l244" title="zip.ads:244:14">zip.ads:244:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip-headers.ads:71:13' id='zip-headers.ads:71:13'></a>
+<span class="droplink">Read_and_check<ul>
+  <li><a href="src_zip-headers.ads.html#l71">Goto spec in source</a></li>
+  <li><a href="src_zip-headers.adb.html#l132">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Read_and_check</span> <table><tr><td>(</td><td><span class="name"><a name="zip-headers.ads:71:29"></a>stream</span></td><td>:     <a href="zip_streams.ads.html#zip_streams.ads:43:9" title="defined at zip_streams.ads:43:9">Zipstream_Class</a>;</td></tr><tr><td></td><td><span class="name"><a name="zip-headers.ads:72:29"></a>header</span></td><td>: <span class="keyword">out</span> <a href="zip-headers.ads.html#zip-headers.ads:58:8" title="defined at zip-headers.ads:58:8">Local_File_Header</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip-headers.ads.html#l71" title="zip-headers.ads:71:13">zip-headers.ads:71:13</a> (declaration)</i></div>
+            <div><i><a href="src_unzip-streams.adb.html#l44" title="unzip-streams.adb:44:25">unzip-streams.adb:44:25</a> (call)</i></div>
+            <div><i><a href="src_unzip.adb.html#l196" title="unzip.adb:196:25">unzip.adb:196:25</a> (call)</i></div>
+            <div><i><a href="src_zip-headers.adb.html#l132" title="zip-headers.adb:132:14">zip-headers.adb:132:14</a> (body)</i></div>
+            <div><i><a href="src_zip-headers.adb.html#l156" title="zip-headers.adb:156:8">zip-headers.adb:156:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="unzip-streams.adb.html#unzip-streams.adb:25:14" title="defined at unzip-streams.adb:25:14">Streams.UnZipFile</a> defined at <a href="src_unzip-streams.adb.html#l25" title="unzip-streams.adb:25:14">unzip-streams.adb:25:14</a></i></div>
+            <div><i><a href="unzip.adb.html#unzip.adb:15:14" title="defined at unzip.adb:15:14">UnZip.UnZipFile</a> defined at <a href="src_unzip.adb.html#l15" title="unzip.adb:15:14">unzip.adb:15:14</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="zip-headers.adb.html#zip-headers.adb:27:13" title="defined at zip-headers.adb:27:13">Headers.Intel_nb</a> defined at <a href="src_zip-headers.adb.html#l27" title="zip-headers.adb:27:13">zip-headers.adb:27:13</a></i></div>
+            <div><i><a href="zip-headers.adb.html#zip-headers.adb:26:13" title="defined at zip-headers.adb:26:13">Headers.Intel_nb</a> defined at <a href="src_zip-headers.adb.html#l26" title="zip-headers.adb:26:13">zip-headers.adb:26:13</a></i></div>
+            <div><i><a href="zip-headers.adb.html#zip-headers.adb:56:13" title="defined at zip-headers.adb:56:13">Headers.PK_signature</a> defined at <a href="src_zip-headers.adb.html#l56" title="zip-headers.adb:56:13">zip-headers.adb:56:13</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:238:14" title="defined at zip.ads:238:14">Zip.BlockRead</a> defined at <a href="src_zip.ads.html#l238" title="zip.ads:238:14">zip.ads:238:14</a></i></div>
+            <div><i><a href="zip_streams.ads-2.html#zip_streams.ads:150:16" title="defined at zip_streams.ads:150:16">Zip_Streams.Calendar.Convert</a> defined at <a href="src_zip_streams.ads.html#l150" title="zip_streams.ads:150:16">zip_streams.ads:150:16</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip-headers.ads:76:13' id='zip-headers.ads:76:13'></a>
+<span class="droplink">Write<ul>
+  <li><a href="src_zip-headers.ads.html#l76">Goto spec in source</a></li>
+  <li><a href="src_zip-headers.adb.html#l158">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Write</span> <table><tr><td>(</td><td><span class="name"><a name="zip-headers.ads:76:20"></a>stream</span></td><td>: <a href="zip_streams.ads.html#zip_streams.ads:43:9" title="defined at zip_streams.ads:43:9">Zipstream_Class</a>;</td></tr><tr><td></td><td><span class="name"><a name="zip-headers.ads:77:20"></a>header</span></td><td>: <a href="zip-headers.ads.html#zip-headers.ads:58:8" title="defined at zip-headers.ads:58:8">Local_File_Header</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip-headers.ads.html#l76" title="zip-headers.ads:76:13">zip-headers.ads:76:13</a> (declaration)</i></div>
+            <div><i><a href="src_zip-headers.adb.html#l158" title="zip-headers.adb:158:14">zip-headers.adb:158:14</a> (body)</i></div>
+            <div><i><a href="src_zip-headers.adb.html#l177" title="zip-headers.adb:177:8">zip-headers.adb:177:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="zip-headers.adb.html#zip-headers.adb:50:13" title="defined at zip-headers.adb:50:13">Headers.Intel_bf</a> defined at <a href="src_zip-headers.adb.html#l50" title="zip-headers.adb:50:13">zip-headers.adb:50:13</a></i></div>
+            <div><i><a href="zip-headers.adb.html#zip-headers.adb:49:13" title="defined at zip-headers.adb:49:13">Headers.Intel_bf</a> defined at <a href="src_zip-headers.adb.html#l49" title="zip-headers.adb:49:13">zip-headers.adb:49:13</a></i></div>
+            <div><i><a href="zip-headers.adb.html#zip-headers.adb:59:14" title="defined at zip-headers.adb:59:14">Headers.PK_signature</a> defined at <a href="src_zip-headers.adb.html#l59" title="zip-headers.adb:59:14">zip-headers.adb:59:14</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:244:14" title="defined at zip.ads:244:14">Zip.BlockWrite</a> defined at <a href="src_zip.ads.html#l244" title="zip.ads:244:14">zip.ads:244:14</a></i></div>
+            <div><i><a href="zip_streams.ads-2.html#zip_streams.ads:151:16" title="defined at zip_streams.ads:151:16">Zip_Streams.Calendar.Convert</a> defined at <a href="src_zip_streams.ads.html#l151" title="zip_streams.ads:151:16">zip_streams.ads:151:16</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip-headers.ads:106:13' id='zip-headers.ads:106:13'></a>
+<span class="droplink">Read_and_check<ul>
+  <li><a href="src_zip-headers.ads.html#l106">Goto spec in source</a></li>
+  <li><a href="src_zip-headers.adb.html#l69">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Read_and_check</span> <table><tr><td>(</td><td><span class="name"><a name="zip-headers.ads:106:29"></a>stream</span></td><td>:     <a href="zip_streams.ads.html#zip_streams.ads:43:9" title="defined at zip_streams.ads:43:9">Zipstream_Class</a>;</td></tr><tr><td></td><td><span class="name"><a name="zip-headers.ads:107:29"></a>header</span></td><td>: <span class="keyword">out</span> <a href="zip-headers.ads.html#zip-headers.ads:84:8" title="defined at zip-headers.ads:84:8">Central_File_Header</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip-headers.ads.html#l106" title="zip-headers.ads:106:13">zip-headers.ads:106:13</a> (declaration)</i></div>
+            <div><i><a href="src_zip-headers.adb.html#l69" title="zip-headers.adb:69:14">zip-headers.adb:69:14</a> (body)</i></div>
+            <div><i><a href="src_zip-headers.adb.html#l99" title="zip-headers.adb:99:8">zip-headers.adb:99:8</a> (label)</i></div>
+            <div><i><a href="src_zip.adb.html#l212" title="zip.adb:212:22">zip.adb:212:22</a> (call)</i></div>
+            <div><i><a href="src_zip.adb.html#l456" title="zip.adb:456:25">zip.adb:456:25</a> (call)</i></div>
+            <div><i><a href="src_zip.adb.html#l498" title="zip.adb:498:25">zip.adb:498:25</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="zip.ads.html#zip.ads:169:14" title="defined at zip.ads:169:14">Zip.Find_first_offset</a> defined at <a href="src_zip.ads.html#l169" title="zip.ads:169:14">zip.ads:169:14</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:175:14" title="defined at zip.ads:175:14">Zip.Find_offset</a> defined at <a href="src_zip.ads.html#l175" title="zip.ads:175:14">zip.ads:175:14</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:68:14" title="defined at zip.ads:68:14">Zip.Load</a> defined at <a href="src_zip.ads.html#l68" title="zip.ads:68:14">zip.ads:68:14</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="zip-headers.adb.html#zip-headers.adb:27:13" title="defined at zip-headers.adb:27:13">Headers.Intel_nb</a> defined at <a href="src_zip-headers.adb.html#l27" title="zip-headers.adb:27:13">zip-headers.adb:27:13</a></i></div>
+            <div><i><a href="zip-headers.adb.html#zip-headers.adb:26:13" title="defined at zip-headers.adb:26:13">Headers.Intel_nb</a> defined at <a href="src_zip-headers.adb.html#l26" title="zip-headers.adb:26:13">zip-headers.adb:26:13</a></i></div>
+            <div><i><a href="zip-headers.adb.html#zip-headers.adb:56:13" title="defined at zip-headers.adb:56:13">Headers.PK_signature</a> defined at <a href="src_zip-headers.adb.html#l56" title="zip-headers.adb:56:13">zip-headers.adb:56:13</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:238:14" title="defined at zip.ads:238:14">Zip.BlockRead</a> defined at <a href="src_zip.ads.html#l238" title="zip.ads:238:14">zip.ads:238:14</a></i></div>
+            <div><i><a href="zip_streams.ads-2.html#zip_streams.ads:150:16" title="defined at zip_streams.ads:150:16">Zip_Streams.Calendar.Convert</a> defined at <a href="src_zip_streams.ads.html#l150" title="zip_streams.ads:150:16">zip_streams.ads:150:16</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip-headers.ads:111:13' id='zip-headers.ads:111:13'></a>
+<span class="droplink">Write<ul>
+  <li><a href="src_zip-headers.ads.html#l111">Goto spec in source</a></li>
+  <li><a href="src_zip-headers.adb.html#l101">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Write</span> <table><tr><td>(</td><td><span class="name"><a name="zip-headers.ads:111:20"></a>stream</span></td><td>: <a href="zip_streams.ads.html#zip_streams.ads:43:9" title="defined at zip_streams.ads:43:9">Zipstream_Class</a>;</td></tr><tr><td></td><td><span class="name"><a name="zip-headers.ads:112:20"></a>header</span></td><td>: <a href="zip-headers.ads.html#zip-headers.ads:84:8" title="defined at zip-headers.ads:84:8">Central_File_Header</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip-headers.ads.html#l111" title="zip-headers.ads:111:13">zip-headers.ads:111:13</a> (declaration)</i></div>
+            <div><i><a href="src_zip-headers.adb.html#l101" title="zip-headers.adb:101:14">zip-headers.adb:101:14</a> (body)</i></div>
+            <div><i><a href="src_zip-headers.adb.html#l126" title="zip-headers.adb:126:8">zip-headers.adb:126:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="zip-headers.adb.html#zip-headers.adb:50:13" title="defined at zip-headers.adb:50:13">Headers.Intel_bf</a> defined at <a href="src_zip-headers.adb.html#l50" title="zip-headers.adb:50:13">zip-headers.adb:50:13</a></i></div>
+            <div><i><a href="zip-headers.adb.html#zip-headers.adb:49:13" title="defined at zip-headers.adb:49:13">Headers.Intel_bf</a> defined at <a href="src_zip-headers.adb.html#l49" title="zip-headers.adb:49:13">zip-headers.adb:49:13</a></i></div>
+            <div><i><a href="zip-headers.adb.html#zip-headers.adb:59:14" title="defined at zip-headers.adb:59:14">Headers.PK_signature</a> defined at <a href="src_zip-headers.adb.html#l59" title="zip-headers.adb:59:14">zip-headers.adb:59:14</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:244:14" title="defined at zip.ads:244:14">Zip.BlockWrite</a> defined at <a href="src_zip.ads.html#l244" title="zip.ads:244:14">zip.ads:244:14</a></i></div>
+            <div><i><a href="zip_streams.ads-2.html#zip_streams.ads:151:16" title="defined at zip_streams.ads:151:16">Zip_Streams.Calendar.Convert</a> defined at <a href="src_zip_streams.ads.html#l151" title="zip_streams.ads:151:16">zip_streams.ads:151:16</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip-headers.ads:142:13' id='zip-headers.ads:142:13'></a>
+<span class="droplink">Copy_and_check<ul>
+  <li><a href="src_zip-headers.ads.html#l142">Goto spec in source</a></li>
+  <li><a href="src_zip-headers.adb.html#l183">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Copy_and_check</span> <table><tr><td>(</td><td><span class="name"><a name="zip-headers.ads:142:29"></a>buffer</span></td><td>:     <a href="zip.ads.html#zip.ads:219:8" title="defined at zip.ads:219:8">Byte_Buffer</a>;</td></tr><tr><td></td><td><span class="name"><a name="zip-headers.ads:143:29"></a>the_end</span></td><td>: <span class="keyword">out</span> <a href="zip-headers.ads.html#zip-headers.ads:118:8" title="defined at zip-headers.ads:118:8">End_of_Central_Dir</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip-headers.ads.html#l142" title="zip-headers.ads:142:13">zip-headers.ads:142:13</a> (declaration)</i></div>
+            <div><i><a href="src_zip-headers.adb.html#l183" title="zip-headers.adb:183:14">zip-headers.adb:183:14</a> (body)</i></div>
+            <div><i><a href="src_zip-headers.adb.html#l201" title="zip-headers.adb:201:8">zip-headers.adb:201:8</a> (label)</i></div>
+            <div><i><a href="src_zip-headers.adb.html#l210" title="zip-headers.adb:210:7">zip-headers.adb:210:7</a> (call)</i></div>
+            <div><i><a href="src_zip-headers.adb.html#l257" title="zip-headers.adb:257:13">zip-headers.adb:257:13</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="zip-headers.ads.html#zip-headers.ads:152:13" title="defined at zip-headers.ads:152:13">Load</a> defined at <a href="src_zip-headers.ads.html#l152" title="zip-headers.ads:152:13">zip-headers.ads:152:13</a></i></div>
+            <div><i><a href="zip-headers.ads.html#zip-headers.ads:145:13" title="defined at zip-headers.ads:145:13">Read_and_check</a> defined at <a href="src_zip-headers.ads.html#l145" title="zip-headers.ads:145:13">zip-headers.ads:145:13</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="zip-headers.adb.html#zip-headers.adb:27:13" title="defined at zip-headers.adb:27:13">Headers.Intel_nb</a> defined at <a href="src_zip-headers.adb.html#l27" title="zip-headers.adb:27:13">zip-headers.adb:27:13</a></i></div>
+            <div><i><a href="zip-headers.adb.html#zip-headers.adb:26:13" title="defined at zip-headers.adb:26:13">Headers.Intel_nb</a> defined at <a href="src_zip-headers.adb.html#l26" title="zip-headers.adb:26:13">zip-headers.adb:26:13</a></i></div>
+            <div><i><a href="zip-headers.adb.html#zip-headers.adb:56:13" title="defined at zip-headers.adb:56:13">Headers.PK_signature</a> defined at <a href="src_zip-headers.adb.html#l56" title="zip-headers.adb:56:13">zip-headers.adb:56:13</a></i></div>
+        </div>
+        <div class='comment'>This header needs to be read in special
+ways (see <a href="gl-io.adb.html#gl-io.adb:728:14" title="Load">Load</a>) - &gt; access to a buffer
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip-headers.ads:145:13' id='zip-headers.ads:145:13'></a>
+<span class="droplink">Read_and_check<ul>
+  <li><a href="src_zip-headers.ads.html#l145">Goto spec in source</a></li>
+  <li><a href="src_zip-headers.adb.html#l203">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Read_and_check</span> <table><tr><td>(</td><td><span class="name"><a name="zip-headers.ads:145:29"></a>stream</span></td><td>:     <a href="zip_streams.ads.html#zip_streams.ads:43:9" title="defined at zip_streams.ads:43:9">Zipstream_Class</a>;</td></tr><tr><td></td><td><span class="name"><a name="zip-headers.ads:146:29"></a>the_end</span></td><td>: <span class="keyword">out</span> <a href="zip-headers.ads.html#zip-headers.ads:118:8" title="defined at zip-headers.ads:118:8">End_of_Central_Dir</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip-headers.ads.html#l145" title="zip-headers.ads:145:13">zip-headers.ads:145:13</a> (declaration)</i></div>
+            <div><i><a href="src_zip-headers.adb.html#l203" title="zip-headers.adb:203:14">zip-headers.adb:203:14</a> (body)</i></div>
+            <div><i><a href="src_zip-headers.adb.html#l211" title="zip-headers.adb:211:8">zip-headers.adb:211:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="zip-headers.ads.html#zip-headers.ads:142:13" title="defined at zip-headers.ads:142:13">Copy_and_check</a> defined at <a href="src_zip-headers.ads.html#l142" title="zip-headers.ads:142:13">zip-headers.ads:142:13</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:238:14" title="defined at zip.ads:238:14">Zip.BlockRead</a> defined at <a href="src_zip.ads.html#l238" title="zip.ads:238:14">zip.ads:238:14</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip-headers.ads:152:13' id='zip-headers.ads:152:13'></a>
+<span class="droplink">Load<ul>
+  <li><a href="src_zip-headers.ads.html#l152">Goto spec in source</a></li>
+  <li><a href="src_zip-headers.adb.html#l222">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Load</span> <table><tr><td>(</td><td><span class="name"><a name="zip-headers.ads:152:19"></a>stream</span></td><td>:     <a href="zip_streams.ads.html#zip_streams.ads:43:9" title="defined at zip_streams.ads:43:9">Zipstream_Class</a>;</td></tr><tr><td></td><td><span class="name"><a name="zip-headers.ads:153:19"></a>the_end</span></td><td>: <span class="keyword">out</span> <a href="zip-headers.ads.html#zip-headers.ads:118:8" title="defined at zip-headers.ads:118:8">End_of_Central_Dir</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip-headers.ads.html#l152" title="zip-headers.ads:152:13">zip-headers.ads:152:13</a> (declaration)</i></div>
+            <div><i><a href="src_zip-headers.adb.html#l222" title="zip-headers.adb:222:14">zip-headers.adb:222:14</a> (body)</i></div>
+            <div><i><a href="src_zip-headers.adb.html#l282" title="zip-headers.adb:282:8">zip-headers.adb:282:8</a> (label)</i></div>
+            <div><i><a href="src_zip.adb.html#l197" title="zip.adb:197:19">zip.adb:197:19</a> (call)</i></div>
+            <div><i><a href="src_zip.adb.html#l445" title="zip.adb:445:19">zip.adb:445:19</a> (call)</i></div>
+            <div><i><a href="src_zip.adb.html#l492" title="zip.adb:492:19">zip.adb:492:19</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="zip.ads.html#zip.ads:169:14" title="defined at zip.ads:169:14">Zip.Find_first_offset</a> defined at <a href="src_zip.ads.html#l169" title="zip.ads:169:14">zip.ads:169:14</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:175:14" title="defined at zip.ads:175:14">Zip.Find_offset</a> defined at <a href="src_zip.ads.html#l175" title="zip.ads:175:14">zip.ads:175:14</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:68:14" title="defined at zip.ads:68:14">Zip.Load</a> defined at <a href="src_zip.ads.html#l68" title="zip.ads:68:14">zip.ads:68:14</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="zip-headers.ads.html#zip-headers.ads:142:13" title="defined at zip-headers.ads:142:13">Copy_and_check</a> defined at <a href="src_zip-headers.ads.html#l142" title="zip-headers.ads:142:13">zip-headers.ads:142:13</a></i></div>
+            <div><i><a href="zip_streams.ads.html#zip_streams.ads:50:13" title="defined at zip_streams.ads:50:13">Zip_Streams.Index</a> defined at <a href="src_zip_streams.ads.html#l50" title="zip_streams.ads:50:13">zip_streams.ads:50:13</a></i></div>
+            <div><i><a href="zip_streams.ads.html#zip_streams.ads:46:14" title="defined at zip_streams.ads:46:14">Zip_Streams.Set_Index</a> defined at <a href="src_zip_streams.ads.html#l46" title="zip_streams.ads:46:14">zip_streams.ads:46:14</a></i></div>
+            <div><i><a href="zip_streams.ads.html#zip_streams.ads:53:13" title="defined at zip_streams.ads:53:13">Zip_Streams.Size</a> defined at <a href="src_zip_streams.ads.html#l53" title="zip_streams.ads:53:13">zip_streams.ads:53:13</a></i></div>
+        </div>
+        <div class='comment'>A bit more elaborated : from an open file (not a stream),
+find the End - of - Central - dir and load it; keep the file open.
+</div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='zip-headers.ads:155:13' id='zip-headers.ads:155:13'></a>
+<span class="droplink">Write<ul>
+  <li><a href="src_zip-headers.ads.html#l155">Goto spec in source</a></li>
+  <li><a href="src_zip-headers.adb.html#l284">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Write</span> <table><tr><td>(</td><td><span class="name"><a name="zip-headers.ads:155:20"></a>stream</span></td><td>: <a href="zip_streams.ads.html#zip_streams.ads:43:9" title="defined at zip_streams.ads:43:9">Zipstream_Class</a>;</td></tr><tr><td></td><td><span class="name"><a name="zip-headers.ads:156:20"></a>the_end</span></td><td>: <a href="zip-headers.ads.html#zip-headers.ads:118:8" title="defined at zip-headers.ads:118:8">End_of_Central_Dir</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_zip-headers.ads.html#l155" title="zip-headers.ads:155:13">zip-headers.ads:155:13</a> (declaration)</i></div>
+            <div><i><a href="src_zip-headers.adb.html#l284" title="zip-headers.adb:284:14">zip-headers.adb:284:14</a> (body)</i></div>
+            <div><i><a href="src_zip-headers.adb.html#l301" title="zip-headers.adb:301:8">zip-headers.adb:301:8</a> (label)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="zip-headers.adb.html#zip-headers.adb:50:13" title="defined at zip-headers.adb:50:13">Headers.Intel_bf</a> defined at <a href="src_zip-headers.adb.html#l50" title="zip-headers.adb:50:13">zip-headers.adb:50:13</a></i></div>
+            <div><i><a href="zip-headers.adb.html#zip-headers.adb:49:13" title="defined at zip-headers.adb:49:13">Headers.Intel_bf</a> defined at <a href="src_zip-headers.adb.html#l49" title="zip-headers.adb:49:13">zip-headers.adb:49:13</a></i></div>
+            <div><i><a href="zip-headers.adb.html#zip-headers.adb:59:14" title="defined at zip-headers.adb:59:14">Headers.PK_signature</a> defined at <a href="src_zip-headers.adb.html#l59" title="zip-headers.adb:59:14">zip-headers.adb:59:14</a></i></div>
+            <div><i><a href="zip.ads.html#zip.ads:244:14" title="defined at zip.ads:244:14">Zip.BlockWrite</a> defined at <a href="src_zip.ads.html#l244" title="zip.ads:244:14">zip.ads:244:14</a></i></div>
+        </div>
+      </div>
+    </div>
+</div> <!-- documentation -->
+
+</body>
+</html>

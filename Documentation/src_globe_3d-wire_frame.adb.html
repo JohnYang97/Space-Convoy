@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    File: globe_3d-wire_frame.adb
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+  </div>
+</div> <!-- leftSide -->
+
+<div class='subprograms'>
+  <div class='details'><ol><li id="l1"><pre><span class="keyword">pragma</span> Warnings (Off); </pre></li>
+<li id="l2"><pre><span class="keyword">pragma</span> Style_Checks (Off); </pre></li>
+<li id="l3"><pre> </pre></li>
+<li id="l4"><pre><span class="keyword">with</span> GLOBE_3D.Math; </pre></li>
+<li id="l5"><pre> </pre></li>
+<li id="l6"><pre><span class="keyword">package</span> <span class="keyword">body</span> GLOBE_3D.Wire_frame <span class="keyword">is</span> </pre></li>
+<li id="l7"><pre> </pre></li>
+<li id="l8"><pre>  <span class="keyword">procedure</span> Display_one (o : <span class="keyword">in</span> <span class="keyword">out</span> Wired_3D) <span class="keyword">is</span> </pre></li>
+<li id="l9"><pre>  <span class="keyword">begin</span> </pre></li>
+<li id="l10"><pre>    <span class="comment">-- Call parent method:</span> </pre></li>
+<li id="l11"><pre>    Display_one (Object_3D (o)); </pre></li>
+<li id="l12"><pre>    <span class="comment">-- Display the wires:</span> </pre></li>
+<li id="l13"><pre>    <span class="keyword">if</span> o.wire /= <span class="keyword">null</span> <span class="keyword">then</span> </pre></li>
+<li id="l14"><pre>      GL.PushMatrix; </pre></li>
+<li id="l15"><pre>      GL.Translate (o.centre); </pre></li>
+<li id="l16"><pre>      Math.Multiply_GL_Matrix (o.rotation); </pre></li>
+<li id="l17"><pre>      <span class="keyword">for</span> i <span class="keyword">in</span> o.wire&apos;Range <span class="keyword">loop</span> </pre></li>
+<li id="l18"><pre>        GL.Color (o.wire (i).colour); </pre></li>
+<li id="l19"><pre>        GL.GL_Begin (GL.LINES); </pre></li>
+<li id="l20"><pre>        GL.Vertex (o.point (o.wire (i).P1)); </pre></li>
+<li id="l21"><pre>        GL.Vertex (o.point (o.wire (i).P2)); </pre></li>
+<li id="l22"><pre>        GL.GL_End; </pre></li>
+<li id="l23"><pre>      <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l24"><pre>      GL.PopMatrix; </pre></li>
+<li id="l25"><pre>    <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l26"><pre>  <span class="keyword">end</span> Display_one; </pre></li>
+<li id="l27"><pre> </pre></li>
+<li id="l28"><pre><span class="keyword">end</span> GLOBE_3D.Wire_frame; </pre></li>
+</ol></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,409 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    Package: Graphics_Structures
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+
+  <div id='navigation'>
+    <h2 class="button">Navigation</h2>
+    <a href='#Description'><div class="button2">Description</div></a>
+    <a href='#Classes'><div class="button2">Classes</div></a>
+    <a href='#Types'><div class="button2">Types</div></a>
+  </div><!-- navigation -->
+  </div>
+</div> <!-- leftSide -->
+
+<div class='default' id='rightSide'>
+ <div id='rightSideInside'>
+ <div id='Index'>
+  <h2>Index</h2>
+  <script type="text/javascript">
+    var names = new Array (
+new Array ('Camera', 'graphics_structures.ads:37:9', 'class-spec'),
+new Array ('RGB', 'graphics_structures.ads:14:9', 'type-spec'),
+new Array ('RGBA', 'graphics_structures.ads:15:9', 'type-spec'),
+new Array ('Colour_<wbr/>Component_<wbr/>Range', 'graphics_structures.ads:17:12', 'type-spec'),
+new Array ('RGB_<wbr/>Colour', 'graphics_structures.ads:19:9', 'type-spec'),
+new Array ('RGBA_<wbr/>Colour', 'graphics_structures.ads:20:9', 'type-spec'),
+new Array ('Shininess_<wbr/>Range', 'graphics_structures.ads:22:12', 'type-spec'),
+new Array ('Materials', 'graphics_structures.ads:24:9', 'type-spec'),
+new Array ('Point_<wbr/>3D', 'graphics_structures.ads:32:12', 'type-spec'),
+new Array ('Points_<wbr/>3D', 'graphics_structures.ads:34:9', 'type-spec'),
+new Array ('Line_<wbr/>3D', 'graphics_structures.ads:35:9', 'type-spec'),
+new Array ('Point_<wbr/>2D', 'graphics_structures.ads:45:12', 'type-spec'),
+new Array ('Size_<wbr/>2D', 'graphics_structures.ads:46:12', 'type-spec'),
+new Array ('Points_<wbr/>2D', 'graphics_structures.ads:48:9', 'type-spec'),
+new Array ('Line_<wbr/>2D', 'graphics_structures.ads:49:9', 'type-spec'),
+new Array ('Camera_<wbr/>Mode_<wbr/>T', 'graphics_structures.ads:51:9', 'type-spec'),
+new Array ('Lights_<wbr/>T', 'graphics_structures.ads:53:9', 'type-spec'),
+      new Array ('dummy', '', ''));
+    printIndexList (names);
+  </script>
+  <noscript>
+    <ul>
+      <li class='class-spec'><a href="#graphics_structures.ads:37:9">Camera</a></li>
+      <li class='type-spec'><a href="#graphics_structures.ads:14:9">RGB</a></li>
+      <li class='type-spec'><a href="#graphics_structures.ads:15:9">RGBA</a></li>
+      <li class='type-spec'><a href="#graphics_structures.ads:17:12">Colour_<wbr/>Component_<wbr/>Range</a></li>
+      <li class='type-spec'><a href="#graphics_structures.ads:19:9">RGB_<wbr/>Colour</a></li>
+      <li class='type-spec'><a href="#graphics_structures.ads:20:9">RGBA_<wbr/>Colour</a></li>
+      <li class='type-spec'><a href="#graphics_structures.ads:22:12">Shininess_<wbr/>Range</a></li>
+      <li class='type-spec'><a href="#graphics_structures.ads:24:9">Materials</a></li>
+      <li class='type-spec'><a href="#graphics_structures.ads:32:12">Point_<wbr/>3D</a></li>
+      <li class='type-spec'><a href="#graphics_structures.ads:34:9">Points_<wbr/>3D</a></li>
+      <li class='type-spec'><a href="#graphics_structures.ads:35:9">Line_<wbr/>3D</a></li>
+      <li class='type-spec'><a href="#graphics_structures.ads:45:12">Point_<wbr/>2D</a></li>
+      <li class='type-spec'><a href="#graphics_structures.ads:46:12">Size_<wbr/>2D</a></li>
+      <li class='type-spec'><a href="#graphics_structures.ads:48:9">Points_<wbr/>2D</a></li>
+      <li class='type-spec'><a href="#graphics_structures.ads:49:9">Line_<wbr/>2D</a></li>
+      <li class='type-spec'><a href="#graphics_structures.ads:51:9">Camera_<wbr/>Mode_<wbr/>T</a></li>
+      <li class='type-spec'><a href="#graphics_structures.ads:53:9">Lights_<wbr/>T</a></li>
+    </ul>
+  </noscript>
+ </div>
+ </div>
+</div>
+
+<div class='default' id='documentation'>
+  <div class='title'>
+    Package:
+<span class="droplink"><i>Graphics_Structures</i><ul>
+  <li><a href="src_graphics_structures.ads.html">Goto spec source</a></li>
+</ul></span>
+  </div>
+  <div class='subprograms'>
+    <h1><a name='Description' id='Description'></a>Description</h1>
+    <div class="class">
+    <div class='details'><pre><span class="keyword">package</span> <span class="name_emphasis">Graphics_Structures</span> <span class="keyword">is</span></pre></div>
+    <div class='comment'>
+Jan &amp; Uwe R. Zimmer, Australia, July 2011
+
+</div>
+    </div>
+  </div>
+
+
+  <div class='subprograms'>
+    <h1><a name='Classes' id='Classes'></a>Classes</h1>
+    <div class="class">
+      <h3><a name='graphics_structures.ads:37:9' id='graphics_structures.ads:37:9'></a>
+<span class="droplink">Camera<ul>
+  <li><a href="src_graphics_structures.ads.html#l37">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Camera</span> <span class="keyword">is</span> <span class="keyword">tagged</span>
+      <span class="keyword">record</span>
+         Position,
+         Scene_Offset,
+         Object_Offset : <a href="vectors_3d.ads.html#vectors_3d.ads:14:12" title="defined at vectors_3d.ads:14:12">Vector_3D</a>;
+         Rotation      : <a href="rotations.ads.html#rotations.ads:20:12" title="defined at rotations.ads:20:12">Quaternion_Rotation</a>;
+      <span class="keyword">end</span> <span class="keyword">record</span>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_graphics_structures.ads.html#l37" title="graphics_structures.ads:37:9">graphics_structures.ads:37:9</a> (declaration)</i></div>
+            <div><i><a href="src_graphics_configuration.ads.html#l18" title="graphics_configuration.ads:18:53">graphics_configuration.ads:18:53</a> (reference)</i></div>
+            <div><i><a href="src_graphics_data.ads.html#l18" title="graphics_data.ads:18:10">graphics_data.ads:18:10</a> (reference)</i></div>
+            <div><i><a href="src_graphics_opengl.adb.html#l137" title="graphics_opengl.adb:137:35">graphics_opengl.adb:137:35</a> (reference)</i></div>
+            <div><i><a href="src_graphics_opengl.ads.html#l16" title="graphics_opengl.ads:16:35">graphics_opengl.ads:16:35</a> (reference)</i></div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class='subprograms'>
+    <h1><a name='Types' id='Types'></a>Types</h1>
+    <div class="class">
+      <h3>
+        <a name='graphics_structures.ads:14:9' id='graphics_structures.ads:14:9'></a>
+<span class="droplink">RGB<ul>
+  <li><a href="src_graphics_structures.ads.html#l14">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">RGB</span>  <span class="keyword">is</span> (Red, Green, Blue);</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_graphics_structures.ads.html#l14" title="graphics_structures.ads:14:9">graphics_structures.ads:14:9</a> (declaration)</i></div>
+          <div><i><a href="src_graphics_structures.ads.html#l19" title="graphics_structures.ads:19:31">graphics_structures.ads:19:31</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='graphics_structures.ads:15:9' id='graphics_structures.ads:15:9'></a>
+<span class="droplink">RGBA<ul>
+  <li><a href="src_graphics_structures.ads.html#l15">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">RGBA</span> <span class="keyword">is</span> (Red, Green, Blue, Alpha);</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_graphics_structures.ads.html#l15" title="graphics_structures.ads:15:9">graphics_structures.ads:15:9</a> (declaration)</i></div>
+          <div><i><a href="src_graphics_structures.ads.html#l20" title="graphics_structures.ads:20:31">graphics_structures.ads:20:31</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='graphics_structures.ads:17:12' id='graphics_structures.ads:17:12'></a>
+<span class="droplink">Colour_Component_Range<ul>
+  <li><a href="src_graphics_structures.ads.html#l17">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">subtype</span> <span class="name_emphasis">Colour_Component_Range</span> <span class="keyword">is</span> <a href="real_type.ads.html#real_type.ads:5:12" title="defined at real_type.ads:5:12">Real</a> <span class="keyword">range</span> 0.0 .. 1.0;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_graphics_structures.ads.html#l17" title="graphics_structures.ads:17:12">graphics_structures.ads:17:12</a> (declaration)</i></div>
+          <div><i><a href="src_graphics_opengl.adb.html#l227" title="graphics_opengl.adb:227:57">graphics_opengl.adb:227:57</a> (reference)</i></div>
+          <div><i><a href="src_graphics_opengl.adb.html#l240" title="graphics_opengl.adb:240:34">graphics_opengl.adb:240:34</a> (reference)</i></div>
+          <div><i><a href="src_graphics_opengl.adb.html#l241" title="graphics_opengl.adb:241:34">graphics_opengl.adb:241:34</a> (reference)</i></div>
+          <div><i><a href="src_graphics_opengl.adb.html#l253" title="graphics_opengl.adb:253:20">graphics_opengl.adb:253:20</a> (reference)</i></div>
+          <div><i><a href="src_graphics_structures.ads.html#l19" title="graphics_structures.ads:19:40">graphics_structures.ads:19:40</a> (reference)</i></div>
+          <div><i><a href="src_graphics_structures.ads.html#l20" title="graphics_structures.ads:20:40">graphics_structures.ads:20:40</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='graphics_structures.ads:19:9' id='graphics_structures.ads:19:9'></a>
+<span class="droplink">RGB_Colour<ul>
+  <li><a href="src_graphics_structures.ads.html#l19">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">RGB_Colour</span>  <span class="keyword">is</span> <span class="keyword">array</span> (<a href="graphics_structures.ads.html#graphics_structures.ads:14:9" title="defined at graphics_structures.ads:14:9">RGB</a>)  <span class="keyword">of</span> <a href="graphics_structures.ads.html#graphics_structures.ads:17:12" title="defined at graphics_structures.ads:17:12">Colour_Component_Range</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_graphics_structures.ads.html#l19" title="graphics_structures.ads:19:9">graphics_structures.ads:19:9</a> (declaration)</i></div>
+          <div><i><a href="src_graphics_opengl.adb.html#l77" title="graphics_opengl.adb:77:39">graphics_opengl.adb:77:39</a> (reference)</i></div>
+          <div><i><a href="src_graphics_opengl.ads.html#l54" title="graphics_opengl.ads:54:39">graphics_opengl.ads:54:39</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='graphics_structures.ads:20:9' id='graphics_structures.ads:20:9'></a>
+<span class="droplink">RGBA_Colour<ul>
+  <li><a href="src_graphics_structures.ads.html#l20">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">RGBA_Colour</span> <span class="keyword">is</span> <span class="keyword">array</span> (<a href="graphics_structures.ads.html#graphics_structures.ads:15:9" title="defined at graphics_structures.ads:15:9">RGBA</a>) <span class="keyword">of</span> <a href="graphics_structures.ads.html#graphics_structures.ads:17:12" title="defined at graphics_structures.ads:17:12">Colour_Component_Range</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_graphics_structures.ads.html#l20" title="graphics_structures.ads:20:9">graphics_structures.ads:20:9</a> (declaration)</i></div>
+          <div><i><a href="src_callback_procedures.adb.html#l385" title="callback_procedures.adb:385:44">callback_procedures.adb:385:44</a> (reference)</i></div>
+          <div><i><a href="src_callback_procedures.adb.html#l386" title="callback_procedures.adb:386:44">callback_procedures.adb:386:44</a> (reference)</i></div>
+          <div><i><a href="src_callback_procedures.adb.html#l387" title="callback_procedures.adb:387:44">callback_procedures.adb:387:44</a> (reference)</i></div>
+          <div><i><a href="src_callback_procedures.adb.html#l388" title="callback_procedures.adb:388:44">callback_procedures.adb:388:44</a> (reference)</i></div>
+          <div><i><a href="src_callback_procedures.adb.html#l389" title="callback_procedures.adb:389:44">callback_procedures.adb:389:44</a> (reference)</i></div>
+          <div><i><a href="src_callback_procedures.adb.html#l390" title="callback_procedures.adb:390:44">callback_procedures.adb:390:44</a> (reference)</i></div>
+          <div><i><a href="src_callback_procedures.adb.html#l410" title="callback_procedures.adb:410:36">callback_procedures.adb:410:36</a> (reference)</i></div>
+          <div><i><a href="src_graphics_opengl.adb.html#l58" title="graphics_opengl.adb:58:51">graphics_opengl.adb:58:51</a> (reference)</i></div>
+          <div><i><a href="src_graphics_opengl.adb.html#l83" title="graphics_opengl.adb:83:39">graphics_opengl.adb:83:39</a> (reference)</i></div>
+          <div><i><a href="src_graphics_opengl.adb.html#l227" title="graphics_opengl.adb:227:36">graphics_opengl.adb:227:36</a> (reference)</i></div>
+          <div><i><a href="src_graphics_opengl.adb.html#l227" title="graphics_opengl.adb:227:88">graphics_opengl.adb:227:88</a> (reference)</i></div>
+          <div><i><a href="src_graphics_opengl.adb.html#l237" title="graphics_opengl.adb:237:53">graphics_opengl.adb:237:53</a> (reference)</i></div>
+          <div><i><a href="src_graphics_opengl.ads.html#l27" title="graphics_opengl.ads:27:53">graphics_opengl.ads:27:53</a> (reference)</i></div>
+          <div><i><a href="src_graphics_opengl.ads.html#l55" title="graphics_opengl.ads:55:39">graphics_opengl.ads:55:39</a> (reference)</i></div>
+          <div><i><a href="src_graphics_structures.ads.html#l28" title="graphics_structures.ads:28:19">graphics_structures.ads:28:19</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='graphics_structures.ads:22:12' id='graphics_structures.ads:22:12'></a>
+<span class="droplink">Shininess_Range<ul>
+  <li><a href="src_graphics_structures.ads.html#l22">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">subtype</span> <span class="name_emphasis">Shininess_Range</span>  <span class="keyword">is</span> <a href="real_type.ads.html#real_type.ads:5:12" title="defined at real_type.ads:5:12">Real</a> <span class="keyword">range</span> 0.0 .. 128.0;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_graphics_structures.ads.html#l22" title="graphics_structures.ads:22:12">graphics_structures.ads:22:12</a> (declaration)</i></div>
+          <div><i><a href="src_graphics_structures.ads.html#l29" title="graphics_structures.ads:29:19">graphics_structures.ads:29:19</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='graphics_structures.ads:24:9' id='graphics_structures.ads:24:9'></a>
+<span class="droplink">Materials<ul>
+  <li><a href="src_graphics_structures.ads.html#l24">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Materials</span> <span class="keyword">is</span> <span class="keyword">record</span>
+      Ambient,
+      Diffuse,
+      Specular,
+      Emission  : <a href="graphics_structures.ads.html#graphics_structures.ads:20:9" title="defined at graphics_structures.ads:20:9">RGBA_Colour</a>;
+      Shininess : <a href="graphics_structures.ads.html#graphics_structures.ads:22:12" title="defined at graphics_structures.ads:22:12">Shininess_Range</a>;
+   <span class="keyword">end</span> <span class="keyword">record</span>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_graphics_structures.ads.html#l24" title="graphics_structures.ads:24:9">graphics_structures.ads:24:9</a> (declaration)</i></div>
+          <div><i><a href="src_graphics_opengl.adb.html#l66" title="graphics_opengl.adb:66:39">graphics_opengl.adb:66:39</a> (reference)</i></div>
+          <div><i><a href="src_graphics_opengl.adb.html#l243" title="graphics_opengl.adb:243:33">graphics_opengl.adb:243:33</a> (reference)</i></div>
+          <div><i><a href="src_graphics_opengl.adb.html#l250" title="graphics_opengl.adb:250:23">graphics_opengl.adb:250:23</a> (reference)</i></div>
+          <div><i><a href="src_graphics_opengl.ads.html#l56" title="graphics_opengl.ads:56:39">graphics_opengl.ads:56:39</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='graphics_structures.ads:32:12' id='graphics_structures.ads:32:12'></a>
+<span class="droplink">Point_3D<ul>
+  <li><a href="src_graphics_structures.ads.html#l32">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">subtype</span> <span class="name_emphasis">Point_3D</span> <span class="keyword">is</span> <a href="vectors_3d.ads.html#vectors_3d.ads:14:12" title="defined at vectors_3d.ads:14:12">Vector_3D</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_graphics_structures.ads.html#l32" title="graphics_structures.ads:32:12">graphics_structures.ads:32:12</a> (declaration)</i></div>
+          <div><i><a href="src_graphics_structures.ads.html#l34" title="graphics_structures.ads:34:55">graphics_structures.ads:34:55</a> (reference)</i></div>
+          <div><i><a href="src_graphics_structures.ads.html#l35" title="graphics_structures.ads:35:55">graphics_structures.ads:35:55</a> (reference)</i></div>
+          <div><i><a href="src_swarm_structures_base.ads.html#l15" title="swarm_structures_base.ads:15:29">swarm_structures_base.ads:15:29</a> (reference)</i></div>
+          <div><i><a href="src_swarm_structures_base.ads.html#l38" title="swarm_structures_base.ads:38:58">swarm_structures_base.ads:38:58</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='graphics_structures.ads:34:9' id='graphics_structures.ads:34:9'></a>
+<span class="droplink">Points_3D<ul>
+  <li><a href="src_graphics_structures.ads.html#l34">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Points_3D</span> <span class="keyword">is</span> <span class="keyword">array</span> (Positive <span class="keyword">range</span> <>)     <span class="keyword">of</span> <a href="graphics_structures.ads.html#graphics_structures.ads:32:12" title="defined at graphics_structures.ads:32:12">Point_3D</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_graphics_structures.ads.html#l34" title="graphics_structures.ads:34:9">graphics_structures.ads:34:9</a> (declaration)</i></div>
+          <div><i><a href="src_graphics_opengl.adb.html#l182" title="graphics_opengl.adb:182:35">graphics_opengl.adb:182:35</a> (reference)</i></div>
+          <div><i><a href="src_graphics_opengl.ads.html#l22" title="graphics_opengl.ads:22:35">graphics_opengl.ads:22:35</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='graphics_structures.ads:35:9' id='graphics_structures.ads:35:9'></a>
+<span class="droplink">Line_3D<ul>
+  <li><a href="src_graphics_structures.ads.html#l35">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Line_3D</span>   <span class="keyword">is</span> <span class="keyword">array</span> (Positive <span class="keyword">range</span> 1 .. 2) <span class="keyword">of</span> <a href="graphics_structures.ads.html#graphics_structures.ads:32:12" title="defined at graphics_structures.ads:32:12">Point_3D</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_graphics_structures.ads.html#l35" title="graphics_structures.ads:35:9">graphics_structures.ads:35:9</a> (declaration)</i></div>
+          <div><i><a href="src_graphics_opengl.adb.html#l193" title="graphics_opengl.adb:193:33">graphics_opengl.adb:193:33</a> (reference)</i></div>
+          <div><i><a href="src_graphics_opengl.ads.html#l23" title="graphics_opengl.ads:23:33">graphics_opengl.ads:23:33</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='graphics_structures.ads:45:12' id='graphics_structures.ads:45:12'></a>
+<span class="droplink">Point_2D<ul>
+  <li><a href="src_graphics_structures.ads.html#l45">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">subtype</span> <span class="name_emphasis">Point_2D</span> <span class="keyword">is</span> <a href="vectors_2d_n.ads.html#vectors_2d_n.ads:13:12" title="defined at vectors_2d_n.ads:13:12">Vector_2D_N</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_graphics_structures.ads.html#l45" title="graphics_structures.ads:45:12">graphics_structures.ads:45:12</a> (declaration)</i></div>
+          <div><i><a href="src_graphics_opengl.adb.html#l278" title="graphics_opengl.adb:278:30">graphics_opengl.adb:278:30</a> (reference)</i></div>
+          <div><i><a href="src_graphics_opengl.adb.html#l314" title="graphics_opengl.adb:314:39">graphics_opengl.adb:314:39</a> (reference)</i></div>
+          <div><i><a href="src_graphics_opengl.adb.html#l358" title="graphics_opengl.adb:358:38">graphics_opengl.adb:358:38</a> (reference)</i></div>
+          <div><i><a href="src_graphics_opengl.ads.html#l30" title="graphics_opengl.ads:30:30">graphics_opengl.ads:30:30</a> (reference)</i></div>
+          <div><i><a href="src_graphics_opengl.ads.html#l38" title="graphics_opengl.ads:38:36">graphics_opengl.ads:38:36</a> (reference)</i></div>
+          <div><i><a href="src_graphics_opengl.ads.html#l39" title="graphics_opengl.ads:39:36">graphics_opengl.ads:39:36</a> (reference)</i></div>
+          <div><i><a href="src_graphics_opengl.ads.html#l42" title="graphics_opengl.ads:42:39">graphics_opengl.ads:42:39</a> (reference)</i></div>
+          <div><i><a href="src_graphics_opengl.ads.html#l51" title="graphics_opengl.ads:51:34">graphics_opengl.ads:51:34</a> (reference)</i></div>
+          <div><i><a href="src_graphics_structures.ads.html#l48" title="graphics_structures.ads:48:55">graphics_structures.ads:48:55</a> (reference)</i></div>
+          <div><i><a href="src_graphics_structures.ads.html#l49" title="graphics_structures.ads:49:55">graphics_structures.ads:49:55</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='graphics_structures.ads:46:12' id='graphics_structures.ads:46:12'></a>
+<span class="droplink">Size_2D<ul>
+  <li><a href="src_graphics_structures.ads.html#l46">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">subtype</span> <span class="name_emphasis">Size_2D</span>  <span class="keyword">is</span> <a href="vectors_2d_n.ads.html#vectors_2d_n.ads:13:12" title="defined at vectors_2d_n.ads:13:12">Vector_2D_N</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_graphics_structures.ads.html#l46" title="graphics_structures.ads:46:12">graphics_structures.ads:46:12</a> (declaration)</i></div>
+          <div><i><a href="src_graphics_configuration.ads.html#l32" title="graphics_configuration.ads:32:35">graphics_configuration.ads:32:35</a> (reference)</i></div>
+          <div><i><a href="src_graphics_data.ads.html#l25" title="graphics_data.ads:25:18">graphics_data.ads:25:18</a> (reference)</i></div>
+          <div><i><a href="src_graphics_opengl.adb.html#l348" title="graphics_opengl.adb:348:37">graphics_opengl.adb:348:37</a> (reference)</i></div>
+          <div><i><a href="src_graphics_opengl.ads.html#l50" title="graphics_opengl.ads:50:34">graphics_opengl.ads:50:34</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='graphics_structures.ads:48:9' id='graphics_structures.ads:48:9'></a>
+<span class="droplink">Points_2D<ul>
+  <li><a href="src_graphics_structures.ads.html#l48">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Points_2D</span> <span class="keyword">is</span> <span class="keyword">array</span> (Positive <span class="keyword">range</span> <>)     <span class="keyword">of</span> <a href="graphics_structures.ads.html#graphics_structures.ads:45:12" title="defined at graphics_structures.ads:45:12">Point_2D</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_graphics_structures.ads.html#l48" title="graphics_structures.ads:48:9">graphics_structures.ads:48:9</a> (declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='graphics_structures.ads:49:9' id='graphics_structures.ads:49:9'></a>
+<span class="droplink">Line_2D<ul>
+  <li><a href="src_graphics_structures.ads.html#l49">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Line_2D</span>   <span class="keyword">is</span> <span class="keyword">array</span> (Positive <span class="keyword">range</span> 1 .. 2) <span class="keyword">of</span> <a href="graphics_structures.ads.html#graphics_structures.ads:45:12" title="defined at graphics_structures.ads:45:12">Point_2D</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_graphics_structures.ads.html#l49" title="graphics_structures.ads:49:9">graphics_structures.ads:49:9</a> (declaration)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='graphics_structures.ads:51:9' id='graphics_structures.ads:51:9'></a>
+<span class="droplink">Camera_Mode_T<ul>
+  <li><a href="src_graphics_structures.ads.html#l51">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Camera_Mode_T</span> <span class="keyword">is</span> (Scene, Chase);</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_graphics_structures.ads.html#l51" title="graphics_structures.ads:51:9">graphics_structures.ads:51:9</a> (declaration)</i></div>
+          <div><i><a href="src_graphics_configuration.ads.html#l18" title="graphics_configuration.ads:18:35">graphics_configuration.ads:18:35</a> (reference)</i></div>
+          <div><i><a href="src_graphics_data.ads.html#l16" title="graphics_data.ads:16:18">graphics_data.ads:16:18</a> (reference)</i></div>
+      </div>
+    </div>
+    <div class="class">
+      <h3>
+        <a name='graphics_structures.ads:53:9' id='graphics_structures.ads:53:9'></a>
+<span class="droplink">Lights_T<ul>
+  <li><a href="src_graphics_structures.ads.html#l53">Goto declaration in source</a></li>
+</ul></span>
+      </h3>
+      <div class='details'><pre><span class="keyword">type</span> <span class="name_emphasis">Lights_T</span> <span class="keyword">is</span> <span class="keyword">array</span> (Positive <span class="keyword">range</span> <>) <span class="keyword">of</span> <a href="globe_3d.ads.html#globe_3d.ads:488:9" title="defined at globe_3d.ads:488:9">GLOBE_3D.Light_definition</a>;</pre></div>
+      <div class='profile'>
+          <h4>References:</h4>
+          <div><i><a href="src_graphics_structures.ads.html#l53" title="graphics_structures.ads:53:9">graphics_structures.ads:53:9</a> (declaration)</i></div>
+          <div><i><a href="src_graphics_configuration.ads.html#l44" title="graphics_configuration.ads:44:30">graphics_configuration.ads:44:30</a> (reference)</i></div>
+      </div>
+    </div>
+  </div>
+
+
+</div> <!-- documentation -->
+
+</body>
+</html>

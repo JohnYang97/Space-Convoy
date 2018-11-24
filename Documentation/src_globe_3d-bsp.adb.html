@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    File: globe_3d-bsp.adb
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+  </div>
+</div> <!-- leftSide -->
+
+<div class='subprograms'>
+  <div class='details'><ol><li id="l1"><pre><span class="keyword">pragma</span> Warnings (Off); </pre></li>
+<li id="l2"><pre><span class="keyword">pragma</span> Style_Checks (Off); </pre></li>
+<li id="l3"><pre> </pre></li>
+<li id="l4"><pre><span class="keyword">with</span> Ada.Unchecked_Deallocation; </pre></li>
+<li id="l5"><pre> </pre></li>
+<li id="l6"><pre><span class="keyword">with</span> GLOBE_3D.Math; </pre></li>
+<li id="l7"><pre> </pre></li>
+<li id="l8"><pre><span class="keyword">package</span> <span class="keyword">body</span> GLOBE_3D.BSP <span class="keyword">is</span> </pre></li>
+<li id="l9"><pre> </pre></li>
+<li id="l10"><pre>  <span class="keyword">use</span> Ada.Strings.Unbounded; </pre></li>
+<li id="l11"><pre> </pre></li>
+<li id="l12"><pre>  <span class="keyword">procedure</span> Locate (P : Point_3D; tree : p_BSP_node; area : <span class="keyword">out</span> p_Object_3D) <span class="keyword">is</span> </pre></li>
+<li id="l13"><pre> </pre></li>
+<li id="l14"><pre>    <span class="keyword">procedure</span> Locate_point (tree_point : p_BSP_node) <span class="keyword">is</span> </pre></li>
+<li id="l15"><pre>      <span class="comment">-- ^ internal, for skipping useless parameter passing</span> </pre></li>
+<li id="l16"><pre>      <span class="keyword">use</span> Math, GL; </pre></li>
+<li id="l17"><pre>    <span class="keyword">begin</span> </pre></li>
+<li id="l18"><pre>      info_b_str1 := info_b_str1 &amp; <span class="string">&quot; - &gt; &quot;</span> &amp; Integer&apos;Image (tree_point.node_id); </pre></li>
+<li id="l19"><pre>      info_b_ntl1 := info_b_ntl1 + 1; </pre></li>
+<li id="l20"><pre>      <span class="keyword">if</span> P * tree_point.normal + tree_point.distance &gt; 0.0 <span class="keyword">then</span> <span class="comment">-- in front</span> </pre></li>
+<li id="l21"><pre>        <span class="keyword">if</span> tree_point.front_child = <span class="keyword">null</span> <span class="keyword">then</span> </pre></li>
+<li id="l22"><pre>          area := tree_point.front_leaf; </pre></li>
+<li id="l23"><pre>        <span class="keyword">else</span> </pre></li>
+<li id="l24"><pre>          Locate_point (tree_point.front_child); </pre></li>
+<li id="l25"><pre>        <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l26"><pre>      <span class="keyword">else</span> <span class="comment">-- in back</span> </pre></li>
+<li id="l27"><pre>        <span class="keyword">if</span> tree_point.back_child = <span class="keyword">null</span> <span class="keyword">then</span> </pre></li>
+<li id="l28"><pre>          area := tree_point.back_leaf; </pre></li>
+<li id="l29"><pre>        <span class="keyword">else</span> </pre></li>
+<li id="l30"><pre>          Locate_point (tree_point.back_child); </pre></li>
+<li id="l31"><pre>        <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l32"><pre>      <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l33"><pre>    <span class="keyword">end</span> Locate_point; </pre></li>
+<li id="l34"><pre> </pre></li>
+<li id="l35"><pre>  <span class="keyword">begin</span> </pre></li>
+<li id="l36"><pre>    info_b_str1 := Null_Unbounded_String; </pre></li>
+<li id="l37"><pre>    info_b_ntl1 := 0; <span class="comment">-- depth counter</span> </pre></li>
+<li id="l38"><pre>    area := <span class="keyword">null</span>; </pre></li>
+<li id="l39"><pre>    <span class="keyword">if</span> tree /= <span class="keyword">null</span> <span class="keyword">then</span> </pre></li>
+<li id="l40"><pre>      Locate_point (tree); </pre></li>
+<li id="l41"><pre>    <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l42"><pre>    info_b_bool1 := area /= <span class="keyword">null</span>; </pre></li>
+<li id="l43"><pre>  <span class="keyword">end</span> Locate; </pre></li>
+<li id="l44"><pre> </pre></li>
+<li id="l45"><pre>  <span class="keyword">procedure</span> Delete (tree : <span class="keyword">in</span> <span class="keyword">out</span> p_BSP_node) <span class="keyword">is</span> </pre></li>
+<li id="l46"><pre>    <span class="keyword">procedure</span> Dispose <span class="keyword">is</span> <span class="keyword">new</span> Ada.Unchecked_Deallocation (BSP_node, p_BSP_node); </pre></li>
+<li id="l47"><pre>  <span class="keyword">begin</span> </pre></li>
+<li id="l48"><pre>    <span class="keyword">if</span> tree/=<span class="keyword">null</span> <span class="keyword">then</span> </pre></li>
+<li id="l49"><pre>      Delete (tree.front_child); </pre></li>
+<li id="l50"><pre>      Delete (tree.back_child); </pre></li>
+<li id="l51"><pre>      Dispose (tree); </pre></li>
+<li id="l52"><pre>      tree := <span class="keyword">null</span>; </pre></li>
+<li id="l53"><pre>    <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l54"><pre>  <span class="keyword">end</span> Delete; </pre></li>
+<li id="l55"><pre> </pre></li>
+<li id="l56"><pre><span class="keyword">end</span> GLOBE_3D.BSP; </pre></li>
+</ol></div>
+</div>
+
+</body>
+</html>

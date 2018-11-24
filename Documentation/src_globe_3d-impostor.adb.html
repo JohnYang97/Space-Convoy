@@ -1,0 +1,440 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    File: globe_3d-impostor.adb
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+  </div>
+</div> <!-- leftSide -->
+
+<div class='subprograms'>
+  <div class='details'><ol><li id="l1"><pre><span class="keyword">pragma</span> Warnings (Off); </pre></li>
+<li id="l2"><pre><span class="keyword">pragma</span> Style_Checks (Off); </pre></li>
+<li id="l3"><pre> </pre></li>
+<li id="l4"><pre><span class="keyword">with</span> GLOBE_3D.Textures, </pre></li>
+<li id="l5"><pre>     GLOBE_3D.Math; </pre></li>
+<li id="l6"><pre> </pre></li>
+<li id="l7"><pre><span class="keyword">with</span> glut.Windows; <span class="keyword">use</span> glut.Windows; </pre></li>
+<li id="l8"><pre><span class="keyword">with</span> GL.Errors; </pre></li>
+<li id="l9"><pre><span class="keyword">with</span> GLU; </pre></li>
+<li id="l10"><pre> </pre></li>
+<li id="l11"><pre><span class="keyword">with</span> ada.Text_IO;  <span class="keyword">use</span> ada.Text_IO; </pre></li>
+<li id="l12"><pre> </pre></li>
+<li id="l13"><pre><span class="keyword">package</span> <span class="keyword">body</span> GLOBE_3D.Impostor <span class="keyword">is</span> </pre></li>
+<li id="l14"><pre> </pre></li>
+<li id="l15"><pre>   <span class="keyword">package</span> G3DT <span class="keyword">renames</span> GLOBE_3D.Textures; </pre></li>
+<li id="l16"><pre>   <span class="keyword">package</span> G3DM <span class="keyword">renames</span> GLOBE_3D.Math; </pre></li>
+<li id="l17"><pre> </pre></li>
+<li id="l18"><pre>   <span class="keyword">procedure</span> destroy (o  : <span class="keyword">in</span> <span class="keyword">out</span> Impostor) </pre></li>
+<li id="l19"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l20"><pre>      <span class="keyword">use</span> GL.Geometry, GL.Skins; </pre></li>
+<li id="l21"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l22"><pre>      free (o.skinned_Geometry.Geometry); </pre></li>
+<li id="l23"><pre>      free (o.skinned_Geometry.Skin); </pre></li>
+<li id="l24"><pre>      free (o.skinned_Geometry.Veneer); </pre></li>
+<li id="l25"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l26"><pre> </pre></li>
+<li id="l27"><pre>   <span class="keyword">procedure</span> free (o  : <span class="keyword">in</span> <span class="keyword">out</span> p_Impostor) </pre></li>
+<li id="l28"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l29"><pre>      <span class="keyword">procedure</span> deallocate <span class="keyword">is</span> <span class="keyword">new</span> ada.unchecked_Deallocation (Impostor&apos;Class, p_Impostor); </pre></li>
+<li id="l30"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l31"><pre>      <span class="keyword">if</span> o /= <span class="keyword">null</span> <span class="keyword">then</span> </pre></li>
+<li id="l32"><pre>         destroy (o.<span class="keyword">all</span>); </pre></li>
+<li id="l33"><pre>      <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l34"><pre> </pre></li>
+<li id="l35"><pre>      deallocate (o); </pre></li>
+<li id="l36"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l37"><pre> </pre></li>
+<li id="l38"><pre>   <span class="keyword">function</span> get_Target (O  : <span class="keyword">in</span> Impostor) <span class="keyword">return</span> p_Visual </pre></li>
+<li id="l39"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l40"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l41"><pre>      <span class="keyword">return</span> o.Target; </pre></li>
+<li id="l42"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l43"><pre> </pre></li>
+<li id="l44"><pre>   <span class="keyword">procedure</span> set_Target (o  : <span class="keyword">in</span> <span class="keyword">out</span> Impostor;   Target  : <span class="keyword">in</span> p_Visual) </pre></li>
+<li id="l45"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l46"><pre>      <span class="keyword">use</span> GL,  GL.Skins, GL.Geometry; </pre></li>
+<li id="l47"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l48"><pre>      o.Target     := Target; </pre></li>
+<li id="l49"><pre>      o.is_Terrain := Target.is_Terrain; </pre></li>
+<li id="l50"><pre> </pre></li>
+<li id="l51"><pre>      Target.pre_Calculate; </pre></li>
+<li id="l52"><pre> </pre></li>
+<li id="l53"><pre>      <span class="comment">-- set o.skinned_Geometry.geometry.vertices &amp; indices</span> </pre></li>
+<li id="l54"><pre>      <span class="comment">--</span> </pre></li>
+<li id="l55"><pre>      <span class="keyword">declare</span> </pre></li>
+<li id="l56"><pre>         Width  : GL.Double := Target.bounds.sphere_Radius * 1.00; </pre></li>
+<li id="l57"><pre>      <span class="keyword">begin</span> </pre></li>
+<li id="l58"><pre>         o.Quads.Vertices (1) := ( - Width, - Width, 0.0); </pre></li>
+<li id="l59"><pre>         o.Quads.Vertices (2) := (Width, - Width, 0.0); </pre></li>
+<li id="l60"><pre>         o.Quads.Vertices (3) := (Width,  Width, 0.0); </pre></li>
+<li id="l61"><pre>         o.Quads.Vertices (4) := ( - Width,  Width, 0.0); </pre></li>
+<li id="l62"><pre>      <span class="keyword">end</span>; </pre></li>
+<li id="l63"><pre> </pre></li>
+<li id="l64"><pre>      o.Quads.<span class="keyword">all</span>.set_vertex_Id (1, 1,  1);      <span class="comment">-- tbd : the &apos;.all&apos; required for gnat gpl06 . .. not required in gpl07.</span> </pre></li>
+<li id="l65"><pre>      o.Quads.<span class="keyword">all</span>.set_vertex_Id (1, 2,  2); </pre></li>
+<li id="l66"><pre>      o.Quads.<span class="keyword">all</span>.set_vertex_Id (1, 3,  3); </pre></li>
+<li id="l67"><pre>      o.Quads.<span class="keyword">all</span>.set_vertex_Id (1, 4,  4); </pre></li>
+<li id="l68"><pre> </pre></li>
+<li id="l69"><pre>      <span class="comment">-- create the veneer, if necessary</span> </pre></li>
+<li id="l70"><pre>      <span class="comment">--</span> </pre></li>
+<li id="l71"><pre>      <span class="keyword">if</span> o.skinned_Geometry.Veneer = <span class="keyword">null</span> <span class="keyword">then</span> </pre></li>
+<li id="l72"><pre>         <span class="comment">--o.skinned_Geometry.Veneer := o.skinned_Geometry.Skin.new_Veneer (o.Quads.all);</span> </pre></li>
+<li id="l73"><pre>         o.skinned_Geometry.Veneer := o.skinned_Geometry.Skin.new_Veneer (o.skinned_geometry.Geometry.<span class="keyword">all</span>); </pre></li>
+<li id="l74"><pre>      <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l75"><pre> </pre></li>
+<li id="l76"><pre>      <span class="comment">--o.bounding_sphere_Radius := bounding_sphere_Radius (o.Quads.vertex_Pool.all);</span> </pre></li>
+<li id="l77"><pre>      <span class="comment">--o.Bounds := o.skinned_Geometry.Geometry.Bounds;</span> </pre></li>
+<li id="l78"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l79"><pre> </pre></li>
+<li id="l80"><pre>   <span class="comment">-- update trigger configuration</span> </pre></li>
+<li id="l81"><pre>   <span class="comment">--</span> </pre></li>
+<li id="l82"><pre> </pre></li>
+<li id="l83"><pre>   <span class="keyword">procedure</span> set_freshen_count_update_trigger_Mod (o  : <span class="keyword">in</span> <span class="keyword">out</span> Impostor;   To  : <span class="keyword">in</span> Positive) </pre></li>
+<li id="l84"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l85"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l86"><pre>      o.freshen_count_update_trigger_Mod := Counter (To); </pre></li>
+<li id="l87"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l88"><pre> </pre></li>
+<li id="l89"><pre>   <span class="keyword">function</span> get_freshen_count_update_trigger_Mod (o  : <span class="keyword">in</span>     Impostor) <span class="keyword">return</span> Positive </pre></li>
+<li id="l90"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l91"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l92"><pre>      <span class="keyword">return</span> Positive (o.freshen_count_update_trigger_Mod); </pre></li>
+<li id="l93"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l94"><pre> </pre></li>
+<li id="l95"><pre>   <span class="keyword">procedure</span> set_size_update_trigger_Delta (o  : <span class="keyword">in</span> <span class="keyword">out</span> Impostor;   To  : <span class="keyword">in</span> Positive) </pre></li>
+<li id="l96"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l97"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l98"><pre>      o.size_update_trigger_Delta := GL.SizeI (To); </pre></li>
+<li id="l99"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l100"><pre> </pre></li>
+<li id="l101"><pre>   <span class="keyword">function</span> get_size_update_trigger_Delta (o  : <span class="keyword">in</span>     Impostor) <span class="keyword">return</span> Positive </pre></li>
+<li id="l102"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l103"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l104"><pre>      <span class="keyword">return</span> Positive (o.size_update_trigger_Delta); </pre></li>
+<li id="l105"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l106"><pre> </pre></li>
+<li id="l107"><pre>   <span class="keyword">function</span> general_Update_required (o  : <span class="keyword">access</span> Impostor;   the_Camera        : <span class="keyword">in</span> p_Camera; </pre></li>
+<li id="l108"><pre>                                                            the_pixel_Region  : <span class="keyword">in</span> pixel_Region) <span class="keyword">return</span> Boolean </pre></li>
+<li id="l109"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l110"><pre>      <span class="keyword">use</span> GL, Globe_3D.Math; </pre></li>
+<li id="l111"><pre>      Camera_has_moved  : Boolean  :=  the_Camera.clipper.eye_Position /= o.prior_camera_Position; </pre></li>
+<li id="l112"><pre>      Target_has_moved  : Boolean  :=  o.Target.Centre                 /= o.prior_target_Position; </pre></li>
+<li id="l113"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l114"><pre>      o.freshen_Count := o.freshen_Count + 1; </pre></li>
+<li id="l115"><pre> </pre></li>
+<li id="l116"><pre>      <span class="keyword">if</span> o.freshen_Count &gt; o.freshen_count_update_trigger_Mod <span class="keyword">then</span> </pre></li>
+<li id="l117"><pre>         <span class="keyword">return</span> True; </pre></li>
+<li id="l118"><pre>      <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l119"><pre> </pre></li>
+<li id="l120"><pre>      <span class="keyword">if</span>         Camera_has_moved </pre></li>
+<li id="l121"><pre>        <span class="keyword">and</span> <span class="keyword">then</span> <span class="keyword">abs</span> (Angle (the_Camera.clipper.eye_Position, o.prior_target_Position, o.prior_camera_Position)) &gt; to_Radians (degrees =&gt; 15.0) </pre></li>
+<li id="l122"><pre>      <span class="keyword">then</span> </pre></li>
+<li id="l123"><pre>         <span class="keyword">return</span> True; </pre></li>
+<li id="l124"><pre>      <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l125"><pre> </pre></li>
+<li id="l126"><pre>      <span class="keyword">if</span>         Target_has_moved </pre></li>
+<li id="l127"><pre>        <span class="keyword">and</span> <span class="keyword">then</span> <span class="keyword">abs</span> (Angle (o.target.Centre, o.prior_camera_Position, o.prior_target_Position)) &gt; to_Radians (degrees =&gt; 15.0) </pre></li>
+<li id="l128"><pre>      <span class="keyword">then</span> </pre></li>
+<li id="l129"><pre>         <span class="keyword">return</span> True; </pre></li>
+<li id="l130"><pre>      <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l131"><pre> </pre></li>
+<li id="l132"><pre>      <span class="keyword">if</span>         o.prior_pixel_Region.Width  &gt;  40                <span class="comment">-- ignore target rotation triggered updates when target is small on screen</span> </pre></li>
+<li id="l133"><pre>        <span class="keyword">and</span> <span class="keyword">then</span> o.prior_pixel_Region.Height &gt;  40                <span class="comment">--</span> </pre></li>
+<li id="l134"><pre>        <span class="keyword">and</span> <span class="keyword">then</span> o.prior_target_Rotation     /= o.target.Rotation </pre></li>
+<li id="l135"><pre>      <span class="keyword">then</span> </pre></li>
+<li id="l136"><pre>         <span class="keyword">return</span> True; </pre></li>
+<li id="l137"><pre>      <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l138"><pre> </pre></li>
+<li id="l139"><pre>      <span class="keyword">return</span> False; </pre></li>
+<li id="l140"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l141"><pre> </pre></li>
+<li id="l142"><pre>   <span class="keyword">function</span> size_Update_required (o  : <span class="keyword">access</span> Impostor;   the_pixel_Region  : <span class="keyword">in</span> pixel_Region) <span class="keyword">return</span> Boolean </pre></li>
+<li id="l143"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l144"><pre>      <span class="keyword">use</span> GL; </pre></li>
+<li id="l145"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l146"><pre>      <span class="keyword">return</span>         <span class="keyword">abs</span> (the_pixel_Region.Width  - o.prior_Width_Pixels)  &gt; o.size_update_trigger_Delta </pre></li>
+<li id="l147"><pre>             <span class="keyword">or</span> <span class="keyword">else</span> <span class="keyword">abs</span> (the_pixel_Region.Height - o.prior_Height_pixels) &gt; o.size_update_trigger_Delta; </pre></li>
+<li id="l148"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l149"><pre> </pre></li>
+<li id="l150"><pre>   <span class="keyword">function</span> get_pixel_Region (o  : <span class="keyword">access</span> Impostor&apos;Class;   the_Camera  : <span class="keyword">in</span> globe_3d.p_Camera) <span class="keyword">return</span> pixel_Region </pre></li>
+<li id="l151"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l152"><pre>      <span class="keyword">use</span> GL, globe_3d.Math; </pre></li>
+<li id="l153"><pre> </pre></li>
+<li id="l154"><pre>      target_Centre             : Vector_3d    := the_Camera.world_Rotation * (o.Target.Centre - the_Camera.clipper.eye_Position); </pre></li>
+<li id="l155"><pre>      target_lower_Left         : Vector_3d    := target_Centre - (o.Target.bounds.sphere_Radius, o.Target.bounds.sphere_Radius, 0.0); </pre></li>
+<li id="l156"><pre> </pre></li>
+<li id="l157"><pre>      target_Centre_proj        : Vector_4d    := the_Camera.Projection_Matrix * target_Centre; </pre></li>
+<li id="l158"><pre>      target_Lower_Left_proj    : Vector_4d    := the_Camera.Projection_Matrix * target_lower_Left; </pre></li>
+<li id="l159"><pre> </pre></li>
+<li id="l160"><pre>      target_Centre_norm        : Vector_3d    := (target_Centre_proj (0) / target_Centre_proj (3), </pre></li>
+<li id="l161"><pre>                                                  target_Centre_proj (1) / target_Centre_proj (3), </pre></li>
+<li id="l162"><pre>                                                  target_Centre_proj (2) / target_Centre_proj (3)); </pre></li>
+<li id="l163"><pre>      target_Lower_Left_norm    : Vector_3d    := (target_Lower_Left_proj (0) / target_Lower_Left_proj (3), </pre></li>
+<li id="l164"><pre>                                                  target_Lower_Left_proj (1) / target_Lower_Left_proj (3), </pre></li>
+<li id="l165"><pre>                                                  target_Lower_Left_proj (2) / target_Lower_Left_proj (3)); </pre></li>
+<li id="l166"><pre> </pre></li>
+<li id="l167"><pre>      target_Centre_norm_0to1   : Vector_3d    := (target_Centre_norm (0)     * 0.5 + 0.5, </pre></li>
+<li id="l168"><pre>                                                  target_Centre_norm (1)     * 0.5 + 0.5, </pre></li>
+<li id="l169"><pre>                                                  target_Centre_norm (2)     * 0.5 + 0.5); </pre></li>
+<li id="l170"><pre>      target_Lower_Left_norm_0to1  : Vector_3d := (target_Lower_Left_norm (0) * 0.5 + 0.5, </pre></li>
+<li id="l171"><pre>                                                  target_Lower_Left_norm (1) * 0.5 + 0.5, </pre></li>
+<li id="l172"><pre>                                                  target_Lower_Left_norm (2) * 0.5 + 0.5); </pre></li>
+<li id="l173"><pre> </pre></li>
+<li id="l174"><pre>      viewport_Width            : Integer      := the_Camera.clipper.main_Clipping.x2 - the_Camera.clipper.main_Clipping.x1 + 1; </pre></li>
+<li id="l175"><pre>      viewport_Height           : Integer      := the_Camera.clipper.main_Clipping.y2 - the_Camera.clipper.main_Clipping.y1 + 1; </pre></li>
+<li id="l176"><pre> </pre></li>
+<li id="l177"><pre>      Width                     : Real         := 2.0  *  Real (viewport_Width) * (target_Centre_norm_0to1 (0) - target_Lower_Left_norm_0to1 (0)); </pre></li>
+<li id="l178"><pre>      Width_pixels              : GL.Sizei     := GL.Sizei (Integer (Real (viewport_Width) * target_Lower_Left_norm_0to1 (0) + Width) </pre></li>
+<li id="l179"><pre>                                                           - Integer (Real (viewport_Width) * target_Lower_Left_norm_0to1 (0)) </pre></li>
+<li id="l180"><pre>                                                           + 1); </pre></li>
+<li id="l181"><pre> </pre></li>
+<li id="l182"><pre>      Height                    : Real         := 2.0  *  Real (viewport_Height) * (target_Centre_norm_0to1 (1) - target_Lower_Left_norm_0to1 (1)); </pre></li>
+<li id="l183"><pre>      Height_pixels             : GL.Sizei     := GL.Sizei (Integer (Real (viewport_Height) * target_Lower_Left_norm_0to1 (1) + Height) </pre></li>
+<li id="l184"><pre>                                                           - Integer (Real (viewport_Height) * target_Lower_Left_norm_0to1 (1)) </pre></li>
+<li id="l185"><pre>                                                           + 1); </pre></li>
+<li id="l186"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l187"><pre>      o.<span class="keyword">all</span>.target_camera_Distance := Norm (target_Centre);   <span class="comment">-- nb : cache distance from camera to target.</span> </pre></li>
+<li id="l188"><pre> </pre></li>
+<li id="l189"><pre>      <span class="keyword">return</span> (x      =&gt; GL.Int (target_Lower_Left_norm_0to1 (0) * Real (Viewport_Width)), </pre></li>
+<li id="l190"><pre>              y      =&gt; GL.Int (target_Lower_Left_norm_0to1 (1) * Real (viewport_Height)), </pre></li>
+<li id="l191"><pre>              width  =&gt; Width_pixels, </pre></li>
+<li id="l192"><pre>              height =&gt; Height_pixels); </pre></li>
+<li id="l193"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l194"><pre> </pre></li>
+<li id="l195"><pre>   <span class="keyword">procedure</span> update (o             : <span class="keyword">in</span> <span class="keyword">out</span> Impostor; </pre></li>
+<li id="l196"><pre>                     the_Camera    : <span class="keyword">in</span>     p_Camera; </pre></li>
+<li id="l197"><pre>                     texture_Pool  : <span class="keyword">in</span>     GL.textures.p_Pool) </pre></li>
+<li id="l198"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l199"><pre>      <span class="keyword">use</span> GL, GL.Textures; </pre></li>
+<li id="l200"><pre> </pre></li>
+<li id="l201"><pre>      Width_size                : GL.textures.Size := to_Size (Natural (o.current_Width_pixels)); </pre></li>
+<li id="l202"><pre>      Height_size               : GL.textures.Size := to_Size (Natural (o.current_Height_pixels)); </pre></li>
+<li id="l203"><pre> </pre></li>
+<li id="l204"><pre>      texture_Width             : GL.sizei         := GL.sizei (power_of_2_Ceiling (Natural (o.current_Width_pixels))); </pre></li>
+<li id="l205"><pre>      texture_Height            : GL.sizei         := GL.sizei (power_of_2_Ceiling (Natural (o.current_Height_pixels))); </pre></li>
+<li id="l206"><pre> </pre></li>
+<li id="l207"><pre>      GL_Error  : Boolean; </pre></li>
+<li id="l208"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l209"><pre>      o.prior_pixel_Region    := (o.current_copy_X, o.current_copy_Y,  o.current_Width_pixels, o.current_Height_pixels); </pre></li>
+<li id="l210"><pre>      o.prior_Width_pixels    := o.current_Width_pixels; </pre></li>
+<li id="l211"><pre>      o.prior_Height_pixels   := o.current_Height_pixels; </pre></li>
+<li id="l212"><pre>      o.prior_target_Rotation := o.target.Rotation; </pre></li>
+<li id="l213"><pre>      o.prior_target_Position := o.target.Centre; </pre></li>
+<li id="l214"><pre>      o.prior_camera_Position := the_Camera.clipper.Eye_Position; </pre></li>
+<li id="l215"><pre> </pre></li>
+<li id="l216"><pre>      GL.ClearColor (0.0,  0.0,  0.0,   0.0); </pre></li>
+<li id="l217"><pre>      render        ((1 =&gt; o.Target),  the_Camera.<span class="keyword">all</span>); <span class="comment">-- render the target for subsequent copy to impostor texture.</span> </pre></li>
+<li id="l218"><pre> </pre></li>
+<li id="l219"><pre>      <span class="keyword">declare</span> <span class="comment">-- set texture coordinates for the veneer.</span> </pre></li>
+<li id="l220"><pre>         <span class="keyword">use</span> GL.Skins; </pre></li>
+<li id="l221"><pre>         the_Veneer  : p_Veneer_transparent_unlit_textured := p_Veneer_transparent_unlit_textured (o.skinned_Geometry.Veneer); </pre></li>
+<li id="l222"><pre> </pre></li>
+<li id="l223"><pre>         X_first     : Real := o.expand_X; </pre></li>
+<li id="l224"><pre>         Y_first     : Real := o.expand_Y; </pre></li>
+<li id="l225"><pre>         X_last      : Real := Real (o.current_Width_pixels)  / Real (texture_Width)  - X_First; </pre></li>
+<li id="l226"><pre>         Y_last      : Real := Real (o.current_Height_pixels) / Real (texture_Height) - Y_First; </pre></li>
+<li id="l227"><pre>      <span class="keyword">begin</span> </pre></li>
+<li id="l228"><pre>         the_Veneer.texture_Coordinates := (1 =&gt; (s =&gt; X_first,     t =&gt; Y_first), </pre></li>
+<li id="l229"><pre>                                            2 =&gt; (s =&gt; X_last,      t =&gt; Y_first), </pre></li>
+<li id="l230"><pre>                                            3 =&gt; (s =&gt; X_last,      t =&gt; Y_last), </pre></li>
+<li id="l231"><pre>                                            4 =&gt; (s =&gt; X_first,     t =&gt; Y_last)); </pre></li>
+<li id="l232"><pre>      <span class="keyword">end</span>; </pre></li>
+<li id="l233"><pre> </pre></li>
+<li id="l234"><pre>      <span class="keyword">if</span>        Width_size  /= GL.textures.Size_width  (o.skin.Texture) </pre></li>
+<li id="l235"><pre>        <span class="keyword">or</span> <span class="keyword">else</span> Height_size /= GL.textures.Size_height (o.skin.Texture) </pre></li>
+<li id="l236"><pre>      <span class="keyword">then</span> </pre></li>
+<li id="l237"><pre>         free (texture_Pool.<span class="keyword">all</span>,  o.skin.Texture); </pre></li>
+<li id="l238"><pre>         o.skin.<span class="keyword">all</span>.Texture := new_Texture (texture_Pool,  Natural (texture_Width),  Natural (texture_Height)); </pre></li>
+<li id="l239"><pre>      <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l240"><pre> </pre></li>
+<li id="l241"><pre>      enable (o.skin.<span class="keyword">all</span>.Texture); </pre></li>
+<li id="l242"><pre> </pre></li>
+<li id="l243"><pre>      GL.CopyTexSubImage2D (gl.TEXTURE_2D,  0, </pre></li>
+<li id="l244"><pre>                            o.current_copy_x_Offset, o.current_copy_y_Offset, </pre></li>
+<li id="l245"><pre>                            o.current_copy_X,        o.current_copy_Y, </pre></li>
+<li id="l246"><pre>                            o.current_copy_Width,    o.current_copy_Height); </pre></li>
+<li id="l247"><pre> </pre></li>
+<li id="l248"><pre>      GL.Errors.log (error_occurred =&gt; gl_Error); </pre></li>
+<li id="l249"><pre> </pre></li>
+<li id="l250"><pre>      <span class="keyword">if</span> gl_Error <span class="keyword">then</span> </pre></li>
+<li id="l251"><pre>         put_Line (<span class="string">&quot;x_Offset : &quot;</span> &amp; GL.Int&apos;image (o.current_copy_x_Offset) &amp; <span class="string">&quot; ********&quot;</span>); </pre></li>
+<li id="l252"><pre>         put_Line (<span class="string">&quot;y_Offset : &quot;</span> &amp; GL.Int&apos;image (o.current_copy_y_Offset)); </pre></li>
+<li id="l253"><pre> </pre></li>
+<li id="l254"><pre>         put_Line (<span class="string">&quot;start x : &quot;</span> &amp; GL.Int&apos;image (o.current_copy_X)); </pre></li>
+<li id="l255"><pre>         put_Line (<span class="string">&quot;start y : &quot;</span> &amp; GL.Int&apos;image (o.current_copy_Y)); </pre></li>
+<li id="l256"><pre> </pre></li>
+<li id="l257"><pre>         put_Line (<span class="string">&quot;copy width : &quot;</span>  &amp; GL.sizei&apos;image (o.current_copy_Width)); </pre></li>
+<li id="l258"><pre>         put_Line (<span class="string">&quot;copy height : &quot;</span> &amp; GL.sizei&apos;image (o.current_copy_Height)); </pre></li>
+<li id="l259"><pre> </pre></li>
+<li id="l260"><pre>         put_Line (<span class="string">&quot;width_pixels : &quot;</span>  &amp; GL.sizei&apos;image (o.current_Width_pixels)); </pre></li>
+<li id="l261"><pre>         put_Line (<span class="string">&quot;height_pixels : &quot;</span> &amp; GL.sizei&apos;image (o.current_Height_pixels)); </pre></li>
+<li id="l262"><pre> </pre></li>
+<li id="l263"><pre>         put_Line (<span class="string">&quot;width_size : &quot;</span>  &amp; GL.textures.size&apos;image (Width_size)); </pre></li>
+<li id="l264"><pre>         put_Line (<span class="string">&quot;height_size : &quot;</span> &amp; GL.textures.size&apos;image (Height_size)); </pre></li>
+<li id="l265"><pre> </pre></li>
+<li id="l266"><pre>         put_Line (<span class="string">&quot;texture width : &quot;</span>  &amp; GL.sizei&apos;image (texture_Width)); </pre></li>
+<li id="l267"><pre>         put_Line (<span class="string">&quot;texutre height : &quot;</span> &amp; GL.sizei&apos;image (texture_Height)); </pre></li>
+<li id="l268"><pre>      <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l269"><pre> </pre></li>
+<li id="l270"><pre>      o.never_Updated := False; </pre></li>
+<li id="l271"><pre>      o.freshen_Count := 0; </pre></li>
+<li id="l272"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l273"><pre> </pre></li>
+<li id="l274"><pre>   <span class="keyword">procedure</span> freshen (o  : <span class="keyword">in</span> <span class="keyword">out</span> Impostor&apos;Class;   the_Camera    : <span class="keyword">in</span>     globe_3d.p_Camera; </pre></li>
+<li id="l275"><pre>                                                   texture_Pool  : <span class="keyword">in</span>     GL.Textures.p_Pool; </pre></li>
+<li id="l276"><pre>                                                   is_Valid      :    <span class="keyword">out</span> Boolean) </pre></li>
+<li id="l277"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l278"><pre>      update_Required  : Boolean := o.Update_required (the_Camera);    <span class="comment">-- nb : caches current update info</span> </pre></li>
+<li id="l279"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l280"><pre>      <span class="keyword">if</span> update_Required <span class="keyword">then</span> </pre></li>
+<li id="l281"><pre>         o.update (the_Camera, texture_Pool); </pre></li>
+<li id="l282"><pre>      <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l283"><pre> </pre></li>
+<li id="l284"><pre>      is_Valid := o.is_Valid; </pre></li>
+<li id="l285"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l286"><pre> </pre></li>
+<li id="l287"><pre>   <span class="keyword">function</span> target_camera_Distance (o  : <span class="keyword">in</span> Impostor&apos;Class) <span class="keyword">return</span> Real </pre></li>
+<li id="l288"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l289"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l290"><pre>      <span class="keyword">return</span> o.target_camera_Distance; </pre></li>
+<li id="l291"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l292"><pre> </pre></li>
+<li id="l293"><pre>   <span class="keyword">function</span> is_Valid (o  : <span class="keyword">in</span> Impostor&apos;Class) <span class="keyword">return</span> Boolean </pre></li>
+<li id="l294"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l295"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l296"><pre>      <span class="keyword">return</span> o.is_Valid; </pre></li>
+<li id="l297"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l298"><pre> </pre></li>
+<li id="l299"><pre>   <span class="keyword">function</span> never_Updated (o  : <span class="keyword">in</span> Impostor&apos;Class) <span class="keyword">return</span> Boolean </pre></li>
+<li id="l300"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l301"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l302"><pre>      <span class="keyword">return</span> o.never_Updated; </pre></li>
+<li id="l303"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l304"><pre> </pre></li>
+<li id="l305"><pre>   <span class="keyword">function</span> frame_Count_since_last_update (o  : <span class="keyword">in</span> Impostor&apos;Class) <span class="keyword">return</span> Natural </pre></li>
+<li id="l306"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l307"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l308"><pre>      <span class="keyword">return</span> Natural (o.freshen_Count); </pre></li>
+<li id="l309"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l310"><pre> </pre></li>
+<li id="l311"><pre>   <span class="keyword">function</span> skinned_Geometrys (o  : <span class="keyword">in</span> Impostor) <span class="keyword">return</span> GL.skinned_geometry.skinned_Geometrys </pre></li>
+<li id="l312"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l313"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l314"><pre>      <span class="keyword">return</span> (1 =&gt; o.skinned_Geometry); </pre></li>
+<li id="l315"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l316"><pre> </pre></li>
+<li id="l317"><pre>   <span class="keyword">function</span> face_Count (o  : <span class="keyword">in</span> Impostor) <span class="keyword">return</span> Natural </pre></li>
+<li id="l318"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l319"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l320"><pre>      <span class="keyword">return</span> 1; </pre></li>
+<li id="l321"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l322"><pre> </pre></li>
+<li id="l323"><pre>   <span class="keyword">procedure</span> Display (o  : <span class="keyword">in</span> <span class="keyword">out</span> Impostor;   clip  : <span class="keyword">in</span>     Clipping_data) </pre></li>
+<li id="l324"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l325"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l326"><pre>      <span class="keyword">null</span>;   <span class="comment">-- actual display is done by the renderer (ie glut.Windows), which requests all skinned Geometry&apos;s</span> </pre></li>
+<li id="l327"><pre>              <span class="comment">-- and then applies &apos;gl state&apos; sorting for performance, before drawing.</span> </pre></li>
+<li id="l328"><pre>   <span class="keyword">end</span> Display; </pre></li>
+<li id="l329"><pre> </pre></li>
+<li id="l330"><pre>   <span class="keyword">procedure</span> set_Alpha (o     : <span class="keyword">in</span> <span class="keyword">out</span> Impostor;   Alpha  : <span class="keyword">in</span> GL.Double) </pre></li>
+<li id="l331"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l332"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l333"><pre>      <span class="keyword">null</span>;   <span class="comment">-- tbd</span> </pre></li>
+<li id="l334"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l335"><pre> </pre></li>
+<li id="l336"><pre>   <span class="keyword">function</span> Bounds (o  : <span class="keyword">in</span>     Impostor) <span class="keyword">return</span> GL.geometry.Bounds_record </pre></li>
+<li id="l337"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l338"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l339"><pre>      <span class="keyword">return</span> o.skinned_geometry.Geometry.Bounds; </pre></li>
+<li id="l340"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l341"><pre> </pre></li>
+<li id="l342"><pre>   <span class="keyword">function</span>  is_Transparent (o     : <span class="keyword">in</span> Impostor) <span class="keyword">return</span> Boolean </pre></li>
+<li id="l343"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l344"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l345"><pre>      <span class="keyword">return</span> True;   <span class="comment">-- tbd : - if using gl alpha test, depth sorting is not needed apparently.</span> </pre></li>
+<li id="l346"><pre>                     <span class="comment">--        in which case this could be set to False, and treated as a non - transparent in g3d.render.</span> </pre></li>
+<li id="l347"><pre>                     <span class="comment">--        may then be faster (?).</span> </pre></li>
+<li id="l348"><pre>                     <span class="comment">--      - seems to make little difference . .. test with different vid card.</span> </pre></li>
+<li id="l349"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l350"><pre> </pre></li>
+<li id="l351"><pre>   <span class="keyword">function</span> Skin (o  : <span class="keyword">access</span> Impostor) <span class="keyword">return</span> GL.skins.p_Skin_transparent_unlit_textured </pre></li>
+<li id="l352"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l353"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l354"><pre>      <span class="keyword">return</span> GL.skins.p_Skin_transparent_unlit_textured (o.skinned_geometry.skin); </pre></li>
+<li id="l355"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l356"><pre> </pre></li>
+<li id="l357"><pre>   <span class="keyword">function</span> Quads (o  : <span class="keyword">in</span> Impostor) <span class="keyword">return</span> GL.geometry.primitives.p_Quads </pre></li>
+<li id="l358"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l359"><pre>      <span class="keyword">use</span> GL.Geometry.Primitives, GL.geometry.primal; </pre></li>
+<li id="l360"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l361"><pre>      <span class="keyword">return</span> p_Quads (p_primal_Geometry (o.skinned_geometry.Geometry).Primitive); </pre></li>
+<li id="l362"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l363"><pre> </pre></li>
+<li id="l364"><pre>   <span class="comment">-- note : only old, unused code folows (may be useful) . ..</span> </pre></li>
+<li id="l365"><pre>   <span class="comment">--</span> </pre></li>
+<li id="l366"><pre> </pre></li>
+<li id="l367"><pre>   <span class="comment">-- tbd : enable_rotation is no good for impostors, since they must be aligned with the viewport</span> </pre></li>
+<li id="l368"><pre>   <span class="comment">--      it might be useful for general billboards however !</span> </pre></li>
+<li id="l369"><pre>   <span class="comment">--</span> </pre></li>
+<li id="l370"><pre>   <span class="keyword">procedure</span> enable_Rotation (o  : <span class="keyword">in</span> Impostor;   camera_Site  : <span class="keyword">in</span> Vector_3D) </pre></li>
+<li id="l371"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l372"><pre>      <span class="keyword">use</span> globe_3d.Math, globe_3d.REF, GL; </pre></li>
+<li id="l373"><pre>      lookAt        : Vector_3D := (0.0,  0.0,  1.0); </pre></li>
+<li id="l374"><pre>      objToCamProj  : Vector_3D := Normalized ((camera_Site (0) - o.Centre (0),  0.0,  camera_Site (2) - o.Centre (2))); </pre></li>
+<li id="l375"><pre>      upAux         : Vector_3D := lookAt * objToCamProj; </pre></li>
+<li id="l376"><pre>      angleCosine   : GL.Double := lookAt * objToCamProj; </pre></li>
+<li id="l377"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l378"><pre>      <span class="keyword">if</span>    angleCosine &gt; - 0.9999 </pre></li>
+<li id="l379"><pre>        <span class="keyword">and</span> angleCosine &lt;  0.9999 </pre></li>
+<li id="l380"><pre>      <span class="keyword">then</span> </pre></li>
+<li id="l381"><pre>         GL.Rotate (arcCos (angleCosine) * 180.0 / 3.14,   upAux (0), upAux (1), upAux (2)); </pre></li>
+<li id="l382"><pre>      <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l383"><pre> </pre></li>
+<li id="l384"><pre>      <span class="keyword">declare</span> </pre></li>
+<li id="l385"><pre>         objToCam  : Vector_3D := Normalized ((camera_Site (0) - o.Centre (0), </pre></li>
+<li id="l386"><pre>                                              camera_Site (1) - o.Centre (1), </pre></li>
+<li id="l387"><pre>                                              camera_Site (2) - o.Centre (2))); </pre></li>
+<li id="l388"><pre>      <span class="keyword">begin</span> </pre></li>
+<li id="l389"><pre>         angleCosine := objToCamProj * objToCam; </pre></li>
+<li id="l390"><pre> </pre></li>
+<li id="l391"><pre>         <span class="keyword">if</span>    angleCosine &gt; - 0.9999 </pre></li>
+<li id="l392"><pre>           <span class="keyword">and</span> angleCosine &lt;  0.9999 </pre></li>
+<li id="l393"><pre>         <span class="keyword">then</span> </pre></li>
+<li id="l394"><pre>            <span class="keyword">if</span> objToCam (1) &lt; 0.0 <span class="keyword">then</span> </pre></li>
+<li id="l395"><pre>               GL.Rotate (arcCos (angleCosine) * 180.0 / 3.14,   1.0, 0.0, 0.0); </pre></li>
+<li id="l396"><pre>            <span class="keyword">else</span> </pre></li>
+<li id="l397"><pre>               GL.Rotate (arcCos (angleCosine) * 180.0 / 3.14,  - 1.0, 0.0, 0.0); </pre></li>
+<li id="l398"><pre>            <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l399"><pre>         <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l400"><pre>      <span class="keyword">end</span>; </pre></li>
+<li id="l401"><pre> </pre></li>
+<li id="l402"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l403"><pre>   <span class="comment">--</span> </pre></li>
+<li id="l404"><pre>   <span class="comment">-- based on lighthouse3d billboard example.</span> </pre></li>
+<li id="l405"><pre> </pre></li>
+<li id="l406"><pre><span class="keyword">end</span> GLOBE_3D.Impostor; </pre></li>
+<li id="l407"><pre> </pre></li>
+</ol></div>
+</div>
+
+</body>
+</html>

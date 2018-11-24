@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    Package: Portals
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+
+  <div id='navigation'>
+    <h2 class="button">Navigation</h2>
+    <a href='#Description'><div class="button2">Description</div></a>
+    <a href='#Methods'><div class="button2">Subprograms &amp; Entries</div></a>
+  </div><!-- navigation -->
+  </div>
+</div> <!-- leftSide -->
+
+<div class='default' id='rightSide'>
+ <div id='rightSideInside'>
+ <div id='Index'>
+  <h2>Index</h2>
+  <script type="text/javascript">
+    var names = new Array (
+new Array ('Intersect', 'globe_3d-portals.ads:5:13', 'subp-spec'),
+new Array ('Find_<wbr/>bounding_<wbr/>box', 'globe_3d-portals.ads:7:13', 'subp-spec'),
+new Array ('Draw_<wbr/>boundary', 'globe_3d-portals.ads:14:13', 'subp-spec'),
+      new Array ('dummy', '', ''));
+    printIndexList (names);
+  </script>
+  <noscript>
+    <ul>
+      <li class='subp-spec'><a href="#globe_3d-portals.ads:5:13">Intersect</a></li>
+      <li class='subp-spec'><a href="#globe_3d-portals.ads:7:13">Find_<wbr/>bounding_<wbr/>box</a></li>
+      <li class='subp-spec'><a href="#globe_3d-portals.ads:14:13">Draw_<wbr/>boundary</a></li>
+    </ul>
+  </noscript>
+ </div>
+ </div>
+</div>
+
+<div class='default' id='documentation'>
+  <div class='title'>
+    Package:
+<span class="droplink"><i>Portals</i><ul>
+  <li><a href="src_globe_3d-portals.ads.html">Goto spec source</a></li>
+  <li><a href="src_globe_3d-portals.adb.html">Goto body source</a></li>
+</ul></span>
+  </div>
+  <div class='subprograms'>
+    <h1><a name='Description' id='Description'></a>Description</h1>
+    <div class="class">
+    <div class='details'><pre><span class="keyword">package</span> <span class="name_emphasis">GLOBE_3D.Portals</span> <span class="keyword">is</span></pre></div>
+    </div>
+  </div>
+
+
+
+
+
+
+    <div class='subprograms'>
+      <h1><a name='Methods' id='Methods'></a>Subprograms &amp; Entries</h1>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-portals.ads:5:13' id='globe_3d-portals.ads:5:13'></a>
+<span class="droplink">Intersect<ul>
+  <li><a href="src_globe_3d-portals.ads.html#l5">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-portals.adb.html#l9">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Intersect</span> <table><tr><td>(</td><td><span class="name"><a name="globe_3d-portals.ads:5:24"></a>A</span>, <span class="name"><a name="globe_3d-portals.ads:5:27"></a>B</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:131:9" title="defined at globe_3d.ads:131:9">Rectangle</a>;</td></tr><tr><td></td><td><span class="name"><a name="globe_3d-portals.ads:5:42"></a>C</span></td><td>: <span class="keyword">out</span> <a href="globe_3d.ads.html#globe_3d.ads:131:9" title="defined at globe_3d.ads:131:9">Rectangle</a>;</td></tr><tr><td></td><td><span class="name"><a name="globe_3d-portals.ads:5:61"></a>non_empty</span></td><td>: <span class="keyword">out</span> Boolean);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-portals.ads.html#l5" title="globe_3d-portals.ads:5:13">globe_3d-portals.ads:5:13</a> (declaration)</i></div>
+            <div><i><a href="src_globe_3d-portals.adb.html#l9" title="globe_3d-portals.adb:9:14">globe_3d-portals.adb:9:14</a> (body)</i></div>
+            <div><i><a href="src_globe_3d-portals.adb.html#l17" title="globe_3d-portals.adb:17:8">globe_3d-portals.adb:17:8</a> (label)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l698" title="globe_3d.adb:698:22">globe_3d.adb:698:22</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="globe_3d.adb.html#globe_3d.adb:673:20" title="defined at globe_3d.adb:673:20">GLOBE_3D.Display.Display_clipped.Try_portal</a> defined at <a href="src_globe_3d.adb.html#l673" title="globe_3d.adb:673:20">globe_3d.adb:673:20</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-portals.ads:7:13' id='globe_3d-portals.ads:7:13'></a>
+<span class="droplink">Find_bounding_box<ul>
+  <li><a href="src_globe_3d-portals.ads.html#l7">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-portals.adb.html#l49">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Find_bounding_box</span> <table><tr><td>(</td><td> <span class="name"><a name="globe_3d-portals.ads:8:5"></a>o</span></td><td>:     <a href="globe_3d.ads.html#globe_3d.ads:263:9" title="defined at globe_3d.ads:263:9">Object_3D</a>'Class;</td></tr><tr><td></td><td><span class="name"><a name="globe_3d-portals.ads:9:5"></a>face</span></td><td>:     Positive;</td></tr><tr><td></td><td><span class="name"><a name="globe_3d-portals.ads:10:5"></a>b</span></td><td>: <span class="keyword">out</span> <a href="globe_3d.ads.html#globe_3d.ads:131:9" title="defined at globe_3d.ads:131:9">Rectangle</a>;</td></tr><tr><td></td><td><span class="name"><a name="globe_3d-portals.ads:11:5"></a>success</span></td><td>: <span class="keyword">out</span> Boolean );</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-portals.ads.html#l7" title="globe_3d-portals.ads:7:13">globe_3d-portals.ads:7:13</a> (declaration)</i></div>
+            <div><i><a href="src_globe_3d-portals.adb.html#l49" title="globe_3d-portals.adb:49:14">globe_3d-portals.adb:49:14</a> (body)</i></div>
+            <div><i><a href="src_globe_3d-portals.adb.html#l77" title="globe_3d-portals.adb:77:8">globe_3d-portals.adb:77:8</a> (label)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l696" title="globe_3d.adb:696:19">globe_3d.adb:696:19</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="globe_3d.adb.html#globe_3d.adb:673:20" title="defined at globe_3d.adb:673:20">GLOBE_3D.Display.Display_clipped.Try_portal</a> defined at <a href="src_globe_3d.adb.html#l673" title="globe_3d.adb:673:20">globe_3d.adb:673:20</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="globe_3d-portals.adb.html#globe_3d-portals.adb:19:14" title="defined at globe_3d-portals.adb:19:14">GLOBE_3D.Portals.Projection</a> defined at <a href="src_globe_3d-portals.adb.html#l19" title="globe_3d-portals.adb:19:14">globe_3d-portals.adb:19:14</a></i></div>
+            <div><i>Math.+ defined at <a href="src_globe_3d-math.ads.html#l13" title="globe_3d-math.ads:13:13">globe_3d-math.ads:13:13</a></i></div>
+        </div>
+      </div>
+      <div class="class">
+        <h3>
+          <a name='globe_3d-portals.ads:14:13' id='globe_3d-portals.ads:14:13'></a>
+<span class="droplink">Draw_boundary<ul>
+  <li><a href="src_globe_3d-portals.ads.html#l14">Goto spec in source</a></li>
+  <li><a href="src_globe_3d-portals.adb.html#l79">Goto body in source</a></li>
+</ul></span>
+        </h3>
+        <div class='details'><pre><span class="keyword">procedure</span> <span class="name_emphasis">Draw_boundary</span> <table><tr><td>(</td><td><span class="name"><a name="globe_3d-portals.ads:14:28"></a>main</span>, <span class="name"><a name="globe_3d-portals.ads:14:34"></a>clip</span></td><td>: <a href="globe_3d.ads.html#globe_3d.ads:131:9" title="defined at globe_3d.ads:131:9">Rectangle</a>);</td></tr></table></pre></div>
+        <div class='profile'>
+          <h4>References:</h4>
+            <div><i><a href="src_globe_3d-portals.ads.html#l14" title="globe_3d-portals.ads:14:13">globe_3d-portals.ads:14:13</a> (declaration)</i></div>
+            <div><i><a href="src_globe_3d-portals.adb.html#l79" title="globe_3d-portals.adb:79:14">globe_3d-portals.adb:79:14</a> (body)</i></div>
+            <div><i><a href="src_globe_3d-portals.adb.html#l142" title="globe_3d-portals.adb:142:8">globe_3d-portals.adb:142:8</a> (label)</i></div>
+            <div><i><a href="src_globe_3d.adb.html#l768" title="globe_3d.adb:768:13">globe_3d.adb:768:13</a> (call)</i></div>
+        </div>
+        <div class='profile'>
+          <h4>Called by:</h4>
+            <div><i><a href="globe_3d.adb.html#globe_3d.adb:669:17" title="defined at globe_3d.adb:669:17">GLOBE_3D.Display.Display_clipped</a> defined at <a href="src_globe_3d.adb.html#l669" title="globe_3d.adb:669:17">globe_3d.adb:669:17</a></i></div>
+        </div>
+        <div class='profile'>
+          <h4>Calls:</h4>
+            <div><i><a href="gl.ads.html#gl.ads:3426:14" title="defined at gl.ads:3426:14">GL.Color</a> defined at <a href="src_gl.ads.html#l3426" title="gl.ads:3426:14">gl.ads:3426:14</a></i></div>
+            <div><i><a href="gl.ads.html#gl.ads:706:14" title="defined at gl.ads:706:14">GL.Disable</a> defined at <a href="src_gl.ads.html#l706" title="gl.ads:706:14">gl.ads:706:14</a></i></div>
+            <div><i><a href="gl.ads.html#gl.ads:704:14" title="defined at gl.ads:704:14">GL.Enable</a> defined at <a href="src_gl.ads.html#l704" title="gl.ads:704:14">gl.ads:704:14</a></i></div>
+            <div><i><a href="gl.ads.html#gl.ads:1432:14" title="defined at gl.ads:1432:14">GL.GL_Begin</a> defined at <a href="src_gl.ads.html#l1432" title="gl.ads:1432:14">gl.ads:1432:14</a></i></div>
+            <div><i><a href="gl.ads.html#gl.ads:1434:14" title="defined at gl.ads:1434:14">GL.GL_End</a> defined at <a href="src_gl.ads.html#l1434" title="gl.ads:1434:14">gl.ads:1434:14</a></i></div>
+            <div><i><a href="gl.ads.html#gl.ads:3282:14" title="defined at gl.ads:3282:14">GL.LoadIdentity</a> defined at <a href="src_gl.ads.html#l3282" title="gl.ads:3282:14">gl.ads:3282:14</a></i></div>
+            <div><i><a href="gl.ads.html#gl.ads:1338:14" title="defined at gl.ads:1338:14">GL.MatrixMode</a> defined at <a href="src_gl.ads.html#l1338" title="gl.ads:1338:14">gl.ads:1338:14</a></i></div>
+            <div><i><a href="gl.ads.html#gl.ads:3258:14" title="defined at gl.ads:3258:14">GL.Ortho</a> defined at <a href="src_gl.ads.html#l3258" title="gl.ads:3258:14">gl.ads:3258:14</a></i></div>
+            <div><i><a href="gl.ads.html#gl.ads:3241:14" title="defined at gl.ads:3241:14">GL.PopAttrib</a> defined at <a href="src_gl.ads.html#l3241" title="gl.ads:3241:14">gl.ads:3241:14</a></i></div>
+            <div><i><a href="gl.ads.html#gl.ads:3280:14" title="defined at gl.ads:3280:14">GL.PopMatrix</a> defined at <a href="src_gl.ads.html#l3280" title="gl.ads:3280:14">gl.ads:3280:14</a></i></div>
+            <div><i><a href="gl.ads.html#gl.ads:3239:14" title="defined at gl.ads:3239:14">GL.PushAttrib</a> defined at <a href="src_gl.ads.html#l3239" title="gl.ads:3239:14">gl.ads:3239:14</a></i></div>
+            <div><i><a href="gl.ads.html#gl.ads:3278:14" title="defined at gl.ads:3278:14">GL.PushMatrix</a> defined at <a href="src_gl.ads.html#l3278" title="gl.ads:3278:14">gl.ads:3278:14</a></i></div>
+            <div><i><a href="globe_3d-portals.adb.html#globe_3d-portals.adb:90:17" title="defined at globe_3d-portals.adb:90:17">GLOBE_3D.Portals.Draw_boundary.Frame_Rect</a> defined at <a href="src_globe_3d-portals.adb.html#l90" title="globe_3d-portals.adb:90:17">globe_3d-portals.adb:90:17</a></i></div>
+            <div><i><a href="globe_3d-portals.adb.html#globe_3d-portals.adb:83:17" title="defined at globe_3d-portals.adb:83:17">GLOBE_3D.Portals.Draw_boundary.Line</a> defined at <a href="src_globe_3d-portals.adb.html#l83" title="globe_3d-portals.adb:83:17">globe_3d-portals.adb:83:17</a></i></div>
+        </div>
+      </div>
+    </div>
+</div> <!-- documentation -->
+
+</body>
+</html>

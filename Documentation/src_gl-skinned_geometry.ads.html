@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    File: gl-skinned_geometry.ads
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+  </div>
+</div> <!-- leftSide -->
+
+<div class='subprograms'>
+  <div class='details'><ol><li id="l1"><pre><span class="comment">-------------------------------------------------------------------------</span> </pre></li>
+<li id="l2"><pre> <span class="comment">--  GL.skinned_Geometry - an association of a skin with a geometry primitive.</span> </pre></li>
+<li id="l3"><pre> <span class="comment">--</span> </pre></li>
+<li id="l4"><pre> <span class="comment">--  Copyright (c) Rod Kay 2007</span> </pre></li>
+<li id="l5"><pre> <span class="comment">--  AUSTRALIA</span> </pre></li>
+<li id="l6"><pre> <span class="comment">--  Permission granted to use this software, without any warranty,</span> </pre></li>
+<li id="l7"><pre> <span class="comment">--  for any purpose, provided this copyright note remains attached</span> </pre></li>
+<li id="l8"><pre> <span class="comment">--  and unmodified if sources are distributed further.</span> </pre></li>
+<li id="l9"><pre> <span class="comment">-------------------------------------------------------------------------</span> </pre></li>
+<li id="l10"><pre> </pre></li>
+<li id="l11"><pre><span class="keyword">with</span> <span class="droplink">GL.Geometry<ul><li><a href="gl-geometry.ads.html#gl-geometry.ads:15:12" title="To API doc">To API doc</a></li><li><a href="src_gl-geometry.ads.html#l15" title="To spec">To spec</a></li><li><a href="src_gl-geometry.adb.html#l18" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l12"><pre><span class="keyword">with</span> <span class="droplink">GL.Skins<ul><li><a href="gl-skins.ads.html#gl-skins.ads:15:12" title="To API doc">To API doc</a></li><li><a href="src_gl-skins.ads.html#l15" title="To spec">To spec</a></li><li><a href="src_gl-skins.adb.html#l14" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l13"><pre> </pre></li>
+<li id="l14"><pre><span class="keyword">package</span> <span class="droplink">GL.Skinned_Geometry<ul><li><a href="gl-skinned_geometry.ads.html#gl-skinned_geometry.ads:14:12" title="To API doc">To API doc</a></li><li><a href="src_gl-skinned_geometry.ads.html#l14" title="To spec">To spec</a></li><li><a href="src_gl-skinned_geometry.adb.html#l18" title="To body">To body</a></li></ul></span> <span class="keyword">is</span> </pre></li>
+<li id="l15"><pre> </pre></li>
+<li id="l16"><pre>   <span class="keyword">type</span> <a href="gl-skinned_geometry.ads.html#gl-skinned_geometry.ads:16:9" title="defined at gl-skinned_geometry.ads:16:9">Skinned_Geometry_t</a> <span class="keyword">is</span> </pre></li>
+<li id="l17"><pre>      <span class="keyword">record</span> </pre></li>
+<li id="l18"><pre>         Geometry  : <span class="droplink">GL.Geometry.p_Geometry<ul><li><a href="gl-geometry.ads.html#gl-geometry.ads:118:9" title="To API doc">To API doc</a></li><li><a href="src_gl-geometry.ads.html#l118" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l19"><pre>         Skin      : <span class="droplink">GL.Skins.p_Skin<ul><li><a href="gl-skins.ads.html#gl-skins.ads:33:9" title="To API doc">To API doc</a></li><li><a href="src_gl-skins.ads.html#l33" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l20"><pre>         Veneer    : <span class="droplink">GL.Skins.p_Veneer<ul><li><a href="gl-skins.ads.html#gl-skins.ads:19:9" title="To API doc">To API doc</a></li><li><a href="src_gl-skins.ads.html#l19" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l21"><pre>      <span class="keyword">end</span> <span class="keyword">record</span>; </pre></li>
+<li id="l22"><pre> </pre></li>
+<li id="l23"><pre>   <span class="keyword">type</span> <a href="gl-skinned_geometry.ads.html#gl-skinned_geometry.ads:23:9" title="defined at gl-skinned_geometry.ads:23:9">skinned_Geometrys</a> <span class="keyword">is</span> <span class="keyword">array</span> (Positive <span class="keyword">range</span> &lt;&gt;) <span class="keyword">of</span> <span class="droplink">Skinned_Geometry_t<ul><li><a href="gl-skinned_geometry.ads.html#gl-skinned_geometry.ads:16:9" title="To API doc">To API doc</a></li><li><a href="src_gl-skinned_geometry.ads.html#l16" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l24"><pre> </pre></li>
+<li id="l25"><pre>   <a href="gl-skinned_geometry.ads.html#gl-skinned_geometry.ads:25:4" title="defined at gl-skinned_geometry.ads:25:4">null_skinned_Geometrys</a>  : <span class="keyword">constant</span> <span class="droplink">skinned_Geometrys<ul><li><a href="gl-skinned_geometry.ads.html#gl-skinned_geometry.ads:23:9" title="To API doc">To API doc</a></li><li><a href="src_gl-skinned_geometry.ads.html#l23" title="To spec">To spec</a></li></ul></span> (1 .. 0) := (<span class="keyword">others</span> =&gt; (Geometry =&gt; <span class="keyword">null</span>, </pre></li>
+<li id="l26"><pre>                                                                               Skin     =&gt; <span class="keyword">null</span>, </pre></li>
+<li id="l27"><pre>                                                                               Veneer   =&gt; <span class="keyword">null</span>)); </pre></li>
+<li id="l28"><pre> </pre></li>
+<li id="l29"><pre> <span class="comment">--   function Bounds (Self  : in</span> </pre></li>
+<li id="l30"><pre> </pre></li>
+<li id="l31"><pre>   <span class="keyword">procedure</span> <span class="droplink">Destroy<ul><li><a href="gl-skinned_geometry.ads.html#gl-skinned_geometry.ads:31:14" title="To API doc">To API doc</a></li><li><a href="src_gl-skinned_geometry.adb.html#l22" title="To body">To body</a></li></ul></span> (<span class="droplink">Self<ul><li><a href="gl-skinned_geometry.ads.html#gl-skinned_geometry.ads:31:23" title="To API doc">To API doc</a></li><li><a href="src_gl-skinned_geometry.adb.html#l22" title="To body">To body</a></li></ul></span>  : <span class="keyword">in</span> <span class="keyword">out</span> <span class="droplink">Skinned_Geometry_t<ul><li><a href="gl-skinned_geometry.ads.html#gl-skinned_geometry.ads:16:9" title="To API doc">To API doc</a></li><li><a href="src_gl-skinned_geometry.ads.html#l16" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l32"><pre> </pre></li>
+<li id="l33"><pre><span class="keyword">end</span> <span class="droplink">GL.Skinned_Geometry<ul><li><a href="gl-skinned_geometry.ads.html#gl-skinned_geometry.ads:14:12" title="To API doc">To API doc</a></li><li><a href="src_gl-skinned_geometry.ads.html#l14" title="To spec">To spec</a></li><li><a href="src_gl-skinned_geometry.adb.html#l18" title="To body">To body</a></li></ul></span>; </pre></li>
+</ol></div>
+</div>
+
+</body>
+</html>

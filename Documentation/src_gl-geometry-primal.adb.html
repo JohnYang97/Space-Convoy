@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    File: gl-geometry-primal.adb
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+  </div>
+</div> <!-- leftSide -->
+
+<div class='subprograms'>
+  <div class='details'><ol><li id="l1"><pre><span class="keyword">pragma</span> Style_Checks (Off); </pre></li>
+<li id="l2"><pre><span class="keyword">pragma</span> Warnings (Off); </pre></li>
+<li id="l3"><pre> </pre></li>
+<li id="l4"><pre><span class="comment">-------------------------------------------------------------------------</span> </pre></li>
+<li id="l5"><pre> <span class="comment">--  GL.Geometry - GL geometry primitives</span> </pre></li>
+<li id="l6"><pre> <span class="comment">--</span> </pre></li>
+<li id="l7"><pre> <span class="comment">--  Copyright (c) Rod Kay 2007</span> </pre></li>
+<li id="l8"><pre> <span class="comment">--  AUSTRALIA</span> </pre></li>
+<li id="l9"><pre> <span class="comment">--  Permission granted to use this software, without any warranty,</span> </pre></li>
+<li id="l10"><pre> <span class="comment">--  for any purpose, provided this copyright note remains attached</span> </pre></li>
+<li id="l11"><pre> <span class="comment">--  and unmodified if sources are distributed further.</span> </pre></li>
+<li id="l12"><pre> <span class="comment">-------------------------------------------------------------------------</span> </pre></li>
+<li id="l13"><pre> </pre></li>
+<li id="l14"><pre><span class="keyword">with</span> Ada.Numerics.Generic_Elementary_functions; </pre></li>
+<li id="l15"><pre><span class="keyword">with</span> Ada.Text_IO; <span class="keyword">use</span> Ada.Text_IO; </pre></li>
+<li id="l16"><pre> </pre></li>
+<li id="l17"><pre><span class="keyword">package</span> <span class="keyword">body</span> GL.Geometry.primal <span class="keyword">is</span> </pre></li>
+<li id="l18"><pre> </pre></li>
+<li id="l19"><pre>   <span class="keyword">function</span>  primitive_Id (Self  : <span class="keyword">in</span>     primal_Geometry) <span class="keyword">return</span> GL.ObjectTypeEnm </pre></li>
+<li id="l20"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l21"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l22"><pre>      <span class="keyword">return</span> self.primitive.primitive_Id; </pre></li>
+<li id="l23"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l24"><pre> </pre></li>
+<li id="l25"><pre>   <span class="keyword">function</span>  vertex_Count  (Self  : <span class="keyword">in</span>     primal_Geometry) <span class="keyword">return</span> GL.geometry.vertex_Id </pre></li>
+<li id="l26"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l27"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l28"><pre>      <span class="keyword">return</span> self.primitive.Vertices&apos;Length; </pre></li>
+<li id="l29"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l30"><pre> </pre></li>
+<li id="l31"><pre>   <span class="keyword">function</span>  indices_Count (Self  : <span class="keyword">in</span>     primal_Geometry) <span class="keyword">return</span> GL.positive_uInt </pre></li>
+<li id="l32"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l33"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l34"><pre>      <span class="keyword">return</span> self.primitive.Indices&apos;Length; </pre></li>
+<li id="l35"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l36"><pre> </pre></li>
+<li id="l37"><pre>   <span class="keyword">function</span> Bounds (Self  : <span class="keyword">in</span>     primal_Geometry) <span class="keyword">return</span> GL.geometry.Bounds_record </pre></li>
+<li id="l38"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l39"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l40"><pre>      <span class="keyword">return</span> Bounds (self.Primitive.Vertices.<span class="keyword">all</span>); </pre></li>
+<li id="l41"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l42"><pre> </pre></li>
+<li id="l43"><pre>   <span class="keyword">function</span> Vertices (Self  : <span class="keyword">in</span>     primal_Geometry) <span class="keyword">return</span> GL.geometry.GL_Vertex_array </pre></li>
+<li id="l44"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l45"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l46"><pre>      <span class="keyword">return</span> self.primitive.Vertices.<span class="keyword">all</span>; </pre></li>
+<li id="l47"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l48"><pre> </pre></li>
+<li id="l49"><pre>   <span class="keyword">procedure</span> set_Vertices  (Self  : <span class="keyword">in</span> <span class="keyword">out</span> primal_Geometry;   To  : <span class="keyword">access</span> GL.geometry.GL_Vertex_array) </pre></li>
+<li id="l50"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l51"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l52"><pre>      self.primitive.set_Vertices (to =&gt; To); </pre></li>
+<li id="l53"><pre>      self.Bounds := Bounds (self.primitive.Vertices.<span class="keyword">all</span>); </pre></li>
+<li id="l54"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l55"><pre> </pre></li>
+<li id="l56"><pre>   <span class="keyword">function</span> Indices (Self  : <span class="keyword">in</span>     primal_Geometry) <span class="keyword">return</span> GL.geometry.vertex_Id_array </pre></li>
+<li id="l57"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l58"><pre>      the_Indices  : GL.geometry.vertex_Id_array := self.primitive.Indices.<span class="keyword">all</span>; </pre></li>
+<li id="l59"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l60"><pre>      increment (the_Indices); </pre></li>
+<li id="l61"><pre>      <span class="keyword">return</span> the_Indices; </pre></li>
+<li id="l62"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l63"><pre> </pre></li>
+<li id="l64"><pre>   <span class="keyword">procedure</span> set_Indices   (Self  : <span class="keyword">in</span> <span class="keyword">out</span> primal_Geometry;   To  : <span class="keyword">access</span> GL.geometry.vertex_Id_array) </pre></li>
+<li id="l65"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l66"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l67"><pre>      self.primitive.set_Indices (to =&gt; To); </pre></li>
+<li id="l68"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l69"><pre> </pre></li>
+<li id="l70"><pre>   <span class="keyword">procedure</span> Draw (Self  : <span class="keyword">in</span>     primal_Geometry) </pre></li>
+<li id="l71"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l72"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l73"><pre>      self.Primitive.draw; </pre></li>
+<li id="l74"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l75"><pre> </pre></li>
+<li id="l76"><pre>   <span class="keyword">procedure</span> destroy (Self  : <span class="keyword">in</span> <span class="keyword">out</span> primal_Geometry) </pre></li>
+<li id="l77"><pre>   <span class="keyword">is</span> </pre></li>
+<li id="l78"><pre>      <span class="keyword">use</span> Primitives; </pre></li>
+<li id="l79"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l80"><pre>      free (self.Primitive); </pre></li>
+<li id="l81"><pre>   <span class="keyword">end</span>; </pre></li>
+<li id="l82"><pre> </pre></li>
+<li id="l83"><pre><span class="keyword">end</span> GL.Geometry.primal; </pre></li>
+</ol></div>
+</div>
+
+</body>
+</html>

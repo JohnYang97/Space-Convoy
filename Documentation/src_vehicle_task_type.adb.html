@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    File: vehicle_task_type.adb
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+  </div>
+</div> <!-- leftSide -->
+
+<div class='subprograms'>
+  <div class='details'><ol><li id="l1"><pre><span class="comment">-- Suggestions for packages which might be useful:</span> </pre></li>
+<li id="l2"><pre> </pre></li>
+<li id="l3"><pre><span class="comment">--  with Ada.Real_Time;              use Ada.Real_Time;</span> </pre></li>
+<li id="l4"><pre><span class="comment">--  with Ada.Text_IO;                use Ada.Text_IO;</span> </pre></li>
+<li id="l5"><pre><span class="keyword">with</span> <span class="droplink">Exceptions<ul><li><a href="exceptions.ads.html#exceptions.ads:17:10" title="To API doc">To API doc</a></li><li><a href="src_exceptions.ads.html#l17" title="To spec">To spec</a></li><li><a href="src_exceptions.adb.html#l8" title="To body">To body</a></li></ul></span>;                 <span class="keyword">use</span> <span class="droplink">Exceptions<ul><li><a href="exceptions.ads.html#exceptions.ads:17:10" title="To API doc">To API doc</a></li><li><a href="src_exceptions.ads.html#l17" title="To spec">To spec</a></li><li><a href="src_exceptions.adb.html#l8" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l6"><pre><span class="comment">--  with Real_Type;                  use Real_Type;</span> </pre></li>
+<li id="l7"><pre><span class="comment">--  with Generic_Sliding_Statistics;</span> </pre></li>
+<li id="l8"><pre><span class="comment">--  with Rotations;                  use Rotations;</span> </pre></li>
+<li id="l9"><pre><span class="comment">--  with Vectors_3D;                 use Vectors_3D;</span> </pre></li>
+<li id="l10"><pre><span class="keyword">with</span> <span class="droplink">Vehicle_Interface<ul><li><a href="vehicle_interface.ads.html#vehicle_interface.ads:10:9" title="To API doc">To API doc</a></li><li><a href="src_vehicle_interface.ads.html#l10" title="To spec">To spec</a></li><li><a href="src_vehicle_interface.adb.html#l12" title="To body">To body</a></li></ul></span>;          <span class="keyword">use</span> <span class="droplink">Vehicle_Interface<ul><li><a href="vehicle_interface.ads.html#vehicle_interface.ads:10:9" title="To API doc">To API doc</a></li><li><a href="src_vehicle_interface.ads.html#l10" title="To spec">To spec</a></li><li><a href="src_vehicle_interface.adb.html#l12" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l11"><pre><span class="comment">--  with Vehicle_Message_Type;       use Vehicle_Message_Type;</span> </pre></li>
+<li id="l12"><pre><span class="comment">--  with Swarm_Structures;           use Swarm_Structures;</span> </pre></li>
+<li id="l13"><pre><span class="comment">--  with Ada.Text_IO; use Ada.Text_IO;</span> </pre></li>
+<li id="l14"><pre> </pre></li>
+<li id="l15"><pre><span class="keyword">package</span> <span class="keyword">body</span> <span class="droplink">Vehicle_Task_Type<ul><li><a href="vehicle_task_type.ads.html#vehicle_task_type.ads:3:9" title="To API doc">To API doc</a></li><li><a href="src_vehicle_task_type.ads.html#l3" title="To spec">To spec</a></li></ul></span> <span class="keyword">is</span> </pre></li>
+<li id="l16"><pre> </pre></li>
+<li id="l17"><pre>   <span class="keyword">task</span> <span class="keyword">body</span> <span class="droplink">Vehicle_Task<ul><li><a href="vehicle_task_type.ads.html#vehicle_task_type.ads:5:14" title="To API doc">To API doc</a></li><li><a href="src_vehicle_task_type.ads.html#l5" title="To spec">To spec</a></li></ul></span> <span class="keyword">is</span> </pre></li>
+<li id="l18"><pre> </pre></li>
+<li id="l19"><pre>      Vehicle_No : Positive; <span class="keyword">pragma</span> Unreferenced (<a href="src_vehicle_task_type.adb.html#l19" title="defined at vehicle_task_type.adb:19:7">Vehicle_No</a>); </pre></li>
+<li id="l20"><pre>      <span class="comment">-- You will want to take the pragma out, once you use the &quot;Vehicle_No&quot;</span> </pre></li>
+<li id="l21"><pre> </pre></li>
+<li id="l22"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l23"><pre> </pre></li>
+<li id="l24"><pre>      <span class="comment">-- You need to react to this call and provide your task_id.</span> </pre></li>
+<li id="l25"><pre>      <span class="comment">-- You can e.g. employ the assigned vehicle number (Vehicle_No)</span> </pre></li>
+<li id="l26"><pre>      <span class="comment">-- in communications with other vehicles.</span> </pre></li>
+<li id="l27"><pre> </pre></li>
+<li id="l28"><pre>      <span class="keyword">accept</span> <span class="droplink">Identify<ul><li><a href="vehicle_task_type.ads.html#vehicle_task_type.ads:6:13" title="To API doc">To API doc</a></li><li><a href="src_vehicle_task_type.ads.html#l6" title="To spec">To spec</a></li></ul></span> (Set_Vehicle_No : Positive; Local_Task_Id : <span class="keyword">out</span> Task_Id) <span class="keyword">do</span> </pre></li>
+<li id="l29"><pre>         <a href="src_vehicle_task_type.adb.html#l19" title="defined at vehicle_task_type.adb:19:7">Vehicle_No</a>     := <span class="droplink">Set_Vehicle_No<ul><li><a href="vehicle_task_type.ads.html#vehicle_task_type.ads:6:23" title="To API doc">To API doc</a></li><li><a href="src_vehicle_task_type.ads.html#l6" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l30"><pre>         <span class="droplink">Local_Task_Id<ul><li><a href="vehicle_task_type.ads.html#vehicle_task_type.ads:6:50" title="To API doc">To API doc</a></li><li><a href="src_vehicle_task_type.ads.html#l6" title="To spec">To spec</a></li></ul></span>  := Current_Task; </pre></li>
+<li id="l31"><pre>      <span class="keyword">end</span> <span class="droplink">Identify<ul><li><a href="vehicle_task_type.ads.html#vehicle_task_type.ads:6:13" title="To API doc">To API doc</a></li><li><a href="src_vehicle_task_type.ads.html#l6" title="To spec">To spec</a></li><li><a href="src_vehicle_task_type.adb.html#l28" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l32"><pre> </pre></li>
+<li id="l33"><pre>      <span class="comment">-- Replace the rest of this task with your own code.</span> </pre></li>
+<li id="l34"><pre>      <span class="comment">-- Maybe synchronizing on an external event clock like &quot;Wait_For_Next_Physics_Update&quot;,</span> </pre></li>
+<li id="l35"><pre>      <span class="comment">-- yet you can synchronize on e.g. the real-time clock as well.</span> </pre></li>
+<li id="l36"><pre> </pre></li>
+<li id="l37"><pre>      <span class="comment">-- Without control this vehicle will go for its natural swarming instinct.</span> </pre></li>
+<li id="l38"><pre> </pre></li>
+<li id="l39"><pre>      <span class="keyword">select</span> </pre></li>
+<li id="l40"><pre> </pre></li>
+<li id="l41"><pre>         <span class="droplink">Flight_Termination.Stop<ul><li><a href="vehicle_interface.ads.html#vehicle_interface.ads:62:13" title="To API doc">To API doc</a></li><li><a href="src_vehicle_interface.ads.html#l62" title="To spec">To spec</a></li><li><a href="src_vehicle_interface.adb.html#l124" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l42"><pre> </pre></li>
+<li id="l43"><pre>      <span class="keyword">then</span> <span class="keyword">abort</span> </pre></li>
+<li id="l44"><pre> </pre></li>
+<li id="l45"><pre>         Outer_task_loop : <span class="keyword">loop</span> </pre></li>
+<li id="l46"><pre> </pre></li>
+<li id="l47"><pre>            <span class="droplink">Wait_For_Next_Physics_Update<ul><li><a href="vehicle_interface.ads.html#vehicle_interface.ads:47:14" title="To API doc">To API doc</a></li><li><a href="src_vehicle_interface.ads.html#l47" title="To spec">To spec</a></li><li><a href="src_vehicle_interface.adb.html#l112" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l48"><pre> </pre></li>
+<li id="l49"><pre>            <span class="comment">-- Your vehicle should respond to the world here: sense, listen, talk, act?</span> </pre></li>
+<li id="l50"><pre> </pre></li>
+<li id="l51"><pre>         <span class="keyword">end</span> <span class="keyword">loop</span> Outer_task_loop; </pre></li>
+<li id="l52"><pre> </pre></li>
+<li id="l53"><pre>      <span class="keyword">end</span> <span class="keyword">select</span>; </pre></li>
+<li id="l54"><pre> </pre></li>
+<li id="l55"><pre>   <span class="keyword">exception</span> </pre></li>
+<li id="l56"><pre>      <span class="keyword">when</span> E : <span class="keyword">others</span> =&gt; <span class="droplink">Show_Exception<ul><li><a href="exceptions.ads.html#exceptions.ads:19:14" title="To API doc">To API doc</a></li><li><a href="src_exceptions.ads.html#l19" title="To spec">To spec</a></li><li><a href="src_exceptions.adb.html#l10" title="To body">To body</a></li></ul></span> (E); </pre></li>
+<li id="l57"><pre> </pre></li>
+<li id="l58"><pre>   <span class="keyword">end</span> <span class="droplink">Vehicle_Task<ul><li><a href="vehicle_task_type.ads.html#vehicle_task_type.ads:5:14" title="To API doc">To API doc</a></li><li><a href="src_vehicle_task_type.ads.html#l5" title="To spec">To spec</a></li><li><a href="src_vehicle_task_type.adb.html#l17" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l59"><pre> </pre></li>
+<li id="l60"><pre><span class="keyword">end</span> <span class="droplink">Vehicle_Task_Type<ul><li><a href="vehicle_task_type.ads.html#vehicle_task_type.ads:3:9" title="To API doc">To API doc</a></li><li><a href="src_vehicle_task_type.ads.html#l3" title="To spec">To spec</a></li><li><a href="src_vehicle_task_type.adb.html#l15" title="To body">To body</a></li></ul></span>; </pre></li>
+</ol></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    File: glut-devices.ads
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+  </div>
+</div> <!-- leftSide -->
+
+<div class='subprograms'>
+  <div class='details'><ol><li id="l1"><pre><span class="comment">------------------------------------------------------------------------------</span> </pre></li>
+<li id="l2"><pre> <span class="comment">--  File :            Game_control.ads</span> </pre></li>
+<li id="l3"><pre> <span class="comment">--  Description :     Command set for games, based on GLUT</span> </pre></li>
+<li id="l4"><pre> <span class="comment">--  Copyright (c) Gautier de Montmollin/Rod Kay 2007</span> </pre></li>
+<li id="l5"><pre> <span class="comment">------------------------------------------------------------------------------</span> </pre></li>
+<li id="l6"><pre> </pre></li>
+<li id="l7"><pre> <span class="comment">-- with GLOBE_3D;</span> </pre></li>
+<li id="l8"><pre> <span class="comment">-- with GL;</span> </pre></li>
+<li id="l9"><pre> <span class="comment">-- with Game_control;</span> </pre></li>
+<li id="l10"><pre> </pre></li>
+<li id="l11"><pre><span class="keyword">package</span> <span class="droplink">GLUT.Devices<ul><li><a href="glut-devices.ads.html#glut-devices.ads:11:14" title="To API doc">To API doc</a></li><li><a href="src_glut-devices.ads.html#l11" title="To spec">To spec</a></li><li><a href="src_glut-devices.adb.html#l11" title="To body">To body</a></li></ul></span> <span class="keyword">is</span> </pre></li>
+<li id="l12"><pre> </pre></li>
+<li id="l13"><pre>   <span class="keyword">procedure</span> <span class="droplink">Initialize<ul><li><a href="glut-devices.ads.html#glut-devices.ads:13:14" title="To API doc">To API doc</a></li><li><a href="src_glut-devices.adb.html#l138" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l14"><pre>   <span class="comment">--</span> </pre></li>
+<li id="l15"><pre>   <span class="comment">-- Sets up the GLUT mouse and keybaord devices.</span> </pre></li>
+<li id="l16"><pre> </pre></li>
+<li id="l17"><pre>   <span class="comment">-- Keyboard</span> </pre></li>
+<li id="l18"><pre>   <span class="comment">--</span> </pre></li>
+<li id="l19"><pre> </pre></li>
+<li id="l20"><pre>   <span class="keyword">type</span> <a href="glut-devices.ads.html#glut-devices.ads:20:9" title="defined at glut-devices.ads:20:9">Key_set</a>         <span class="keyword">is</span> <span class="keyword">array</span> (Character) <span class="keyword">of</span> Boolean; </pre></li>
+<li id="l21"><pre>   <span class="keyword">type</span> <a href="glut-devices.ads.html#glut-devices.ads:21:9" title="defined at glut-devices.ads:21:9">Modifier_set</a>    <span class="keyword">is</span> <span class="keyword">array</span> (<span class="droplink">GLUT.Active_Shift<ul><li><a href="glut.ads.html#glut.ads:245:4" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l245" title="To spec">To spec</a></li></ul></span> .. <span class="droplink">GLUT.Active_Alt<ul><li><a href="glut.ads.html#glut.ads:247:4" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l247" title="To spec">To spec</a></li></ul></span>) <span class="keyword">of</span> Boolean; </pre></li>
+<li id="l22"><pre>   <span class="keyword">type</span> <a href="glut-devices.ads.html#glut-devices.ads:22:9" title="defined at glut-devices.ads:22:9">Special_set</a>     <span class="keyword">is</span> <span class="keyword">array</span> (1 .. 200) <span class="keyword">of</span> Boolean; </pre></li>
+<li id="l23"><pre>   <span class="keyword">type</span> <a href="glut-devices.ads.html#glut-devices.ads:23:9" title="defined at glut-devices.ads:23:9">Special_key_set</a> <span class="keyword">is</span> <span class="keyword">array</span> (1 .. 128) <span class="keyword">of</span> Boolean; </pre></li>
+<li id="l24"><pre> </pre></li>
+<li id="l25"><pre>   <span class="keyword">type</span> <a href="glut-devices.ads.html#glut-devices.ads:25:9" title="defined at glut-devices.ads:25:9">Keyboard</a> <span class="keyword">is</span> </pre></li>
+<li id="l26"><pre>      <span class="keyword">record</span> </pre></li>
+<li id="l27"><pre>         normal_set      : <span class="droplink">Key_set<ul><li><a href="glut-devices.ads.html#glut-devices.ads:20:9" title="To API doc">To API doc</a></li><li><a href="src_glut-devices.ads.html#l20" title="To spec">To spec</a></li></ul></span>   := (<span class="keyword">others</span> =&gt; False); </pre></li>
+<li id="l28"><pre>         normal_set_mem  : <span class="droplink">Key_set<ul><li><a href="glut-devices.ads.html#glut-devices.ads:20:9" title="To API doc">To API doc</a></li><li><a href="src_glut-devices.ads.html#l20" title="To spec">To spec</a></li></ul></span>   := (<span class="keyword">others</span> =&gt; False); </pre></li>
+<li id="l29"><pre> </pre></li>
+<li id="l30"><pre>         modif_set        : <span class="droplink">Devices.Modifier_set<ul><li><a href="glut-devices.ads.html#glut-devices.ads:21:9" title="To API doc">To API doc</a></li><li><a href="src_glut-devices.ads.html#l21" title="To spec">To spec</a></li></ul></span>    := (<span class="keyword">others</span> =&gt; False); </pre></li>
+<li id="l31"><pre>         special_set      : <span class="droplink">Devices.Special_set<ul><li><a href="glut-devices.ads.html#glut-devices.ads:22:9" title="To API doc">To API doc</a></li><li><a href="src_glut-devices.ads.html#l22" title="To spec">To spec</a></li></ul></span>     := (<span class="keyword">others</span> =&gt; False); </pre></li>
+<li id="l32"><pre>         special_set_mem  : <span class="droplink">Devices.Special_key_set<ul><li><a href="glut-devices.ads.html#glut-devices.ads:23:9" title="To API doc">To API doc</a></li><li><a href="src_glut-devices.ads.html#l23" title="To spec">To spec</a></li></ul></span> := (<span class="keyword">others</span> =&gt; False); </pre></li>
+<li id="l33"><pre>      <span class="keyword">end</span> <span class="keyword">record</span>; </pre></li>
+<li id="l34"><pre> </pre></li>
+<li id="l35"><pre>   <span class="keyword">type</span> <a href="glut-devices.ads.html#glut-devices.ads:35:9" title="defined at glut-devices.ads:35:9">p_Keyboard</a> <span class="keyword">is</span> <span class="keyword">access</span> <span class="keyword">all</span> <span class="droplink">Keyboard<ul><li><a href="glut-devices.ads.html#glut-devices.ads:25:9" title="To API doc">To API doc</a></li><li><a href="src_glut-devices.ads.html#l25" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l36"><pre> </pre></li>
+<li id="l37"><pre>   <a href="glut-devices.ads.html#glut-devices.ads:37:4" title="defined at glut-devices.ads:37:4">default_Keyboard</a>  : <span class="keyword">aliased</span> <span class="droplink">Keyboard<ul><li><a href="glut-devices.ads.html#glut-devices.ads:25:9" title="To API doc">To API doc</a></li><li><a href="src_glut-devices.ads.html#l25" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l38"><pre> </pre></li>
+<li id="l39"><pre>   <span class="keyword">function</span> <span class="droplink">Strike_once<ul><li><a href="glut-devices.ads.html#glut-devices.ads:39:13" title="To API doc">To API doc</a></li><li><a href="src_glut-devices.adb.html#l156" title="To body">To body</a></li></ul></span> (<span class="droplink">c<ul><li><a href="glut-devices.ads.html#glut-devices.ads:39:26" title="To API doc">To API doc</a></li><li><a href="src_glut-devices.adb.html#l156" title="To body">To body</a></li></ul></span>  :        Character; </pre></li>
+<li id="l40"><pre>                         <a href="glut-devices.ads.html#glut-devices.ads:40:26" title="defined at glut-devices.ads:40:26">kb</a> : <span class="keyword">access</span> <span class="droplink">Keyboard<ul><li><a href="glut-devices.ads.html#glut-devices.ads:25:9" title="To API doc">To API doc</a></li><li><a href="src_glut-devices.ads.html#l25" title="To spec">To spec</a></li></ul></span> := <span class="droplink">default_Keyboard<ul><li><a href="glut-devices.ads.html#glut-devices.ads:37:4" title="To API doc">To API doc</a></li><li><a href="src_glut-devices.ads.html#l37" title="To spec">To spec</a></li></ul></span>&apos;Access) <span class="keyword">return</span> Boolean; </pre></li>
+<li id="l41"><pre> </pre></li>
+<li id="l42"><pre>   <span class="keyword">function</span> <span class="droplink">Strike_once<ul><li><a href="glut-devices.ads.html#glut-devices.ads:42:13" title="To API doc">To API doc</a></li><li><a href="src_glut-devices.adb.html#l164" title="To body">To body</a></li></ul></span> (<a href="glut-devices.ads.html#glut-devices.ads:42:26" title="defined at glut-devices.ads:42:26">special</a> :        Integer; </pre></li>
+<li id="l43"><pre>                         <a href="glut-devices.ads.html#glut-devices.ads:43:26" title="defined at glut-devices.ads:43:26">kb</a>      : <span class="keyword">access</span> <span class="droplink">Keyboard<ul><li><a href="glut-devices.ads.html#glut-devices.ads:25:9" title="To API doc">To API doc</a></li><li><a href="src_glut-devices.ads.html#l25" title="To spec">To spec</a></li></ul></span> := <span class="droplink">default_Keyboard<ul><li><a href="glut-devices.ads.html#glut-devices.ads:37:4" title="To API doc">To API doc</a></li><li><a href="src_glut-devices.ads.html#l37" title="To spec">To spec</a></li></ul></span>&apos;Access) <span class="keyword">return</span> Boolean; </pre></li>
+<li id="l44"><pre> </pre></li>
+<li id="l45"><pre>   <span class="comment">-- Mouse</span> </pre></li>
+<li id="l46"><pre>   <span class="comment">--</span> </pre></li>
+<li id="l47"><pre> </pre></li>
+<li id="l48"><pre>   <span class="keyword">type</span> <a href="glut-devices.ads.html#glut-devices.ads:48:9" title="defined at glut-devices.ads:48:9">mouse_button_Set</a> <span class="keyword">is</span> <span class="keyword">array</span> (<span class="droplink">GLUT.LEFT_BUTTON<ul><li><a href="glut.ads.html#glut.ads:45:4" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l45" title="To spec">To spec</a></li></ul></span> .. <span class="droplink">GLUT.RIGHT_BUTTON<ul><li><a href="glut.ads.html#glut.ads:47:4" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l47" title="To spec">To spec</a></li></ul></span>) <span class="keyword">of</span> Boolean; </pre></li>
+<li id="l49"><pre> </pre></li>
+<li id="l50"><pre>   <span class="keyword">type</span> <a href="glut-devices.ads.html#glut-devices.ads:50:9" title="defined at glut-devices.ads:50:9">Mouse</a> <span class="keyword">is</span> </pre></li>
+<li id="l51"><pre>      <span class="keyword">record</span> </pre></li>
+<li id="l52"><pre>         oldx, oldy, mx, my  : Integer          := 0; </pre></li>
+<li id="l53"><pre>         button_state        : <span class="droplink">mouse_button_Set<ul><li><a href="glut-devices.ads.html#glut-devices.ads:48:9" title="To API doc">To API doc</a></li><li><a href="src_glut-devices.ads.html#l48" title="To spec">To spec</a></li></ul></span> := (<span class="keyword">others</span> =&gt; False); </pre></li>
+<li id="l54"><pre>      <span class="keyword">end</span> <span class="keyword">record</span>; </pre></li>
+<li id="l55"><pre> </pre></li>
+<li id="l56"><pre>   <span class="keyword">type</span> <a href="glut-devices.ads.html#glut-devices.ads:56:9" title="defined at glut-devices.ads:56:9">p_Mouse</a> <span class="keyword">is</span> <span class="keyword">access</span> <span class="keyword">all</span> <span class="droplink">Mouse<ul><li><a href="glut-devices.ads.html#glut-devices.ads:50:9" title="To API doc">To API doc</a></li><li><a href="src_glut-devices.ads.html#l50" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l57"><pre> </pre></li>
+<li id="l58"><pre>   <a href="glut-devices.ads.html#glut-devices.ads:58:4" title="defined at glut-devices.ads:58:4">default_Mouse</a>  : <span class="keyword">aliased</span> <span class="droplink">Mouse<ul><li><a href="glut-devices.ads.html#glut-devices.ads:50:9" title="To API doc">To API doc</a></li><li><a href="src_glut-devices.ads.html#l50" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l59"><pre> </pre></li>
+<li id="l60"><pre><span class="keyword">end</span> <span class="droplink">GLUT.Devices<ul><li><a href="glut-devices.ads.html#glut-devices.ads:11:14" title="To API doc">To API doc</a></li><li><a href="src_glut-devices.ads.html#l11" title="To spec">To spec</a></li><li><a href="src_glut-devices.adb.html#l11" title="To body">To body</a></li></ul></span>; </pre></li>
+</ol></div>
+</div>
+
+</body>
+</html>

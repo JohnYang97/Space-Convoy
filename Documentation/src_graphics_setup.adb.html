@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+
+  <title>
+    File: graphics_setup.adb
+  </title>
+  <link rel='stylesheet' href='support/docgen.css' type='text/css'/>
+  <link rel='stylesheet' href='support/tags.css' type='text/css'/>
+  <script src='support/docgen.js' type='text/javascript' charset='utf-8'></script>
+</head>
+<body onload="onloadDoc();">
+
+<div id='leftSide'>
+  <div id='leftSideInside'>
+  <div id='header'>
+    <h2 class="button">Documentation</h2>
+    <a href='toc.html'><div class="button2">Table of Contents</div></a>
+
+    <a href='tree.html'><div class="button2">Class Inheritance Tree</div></a>
+
+  </div>
+  </div>
+</div> <!-- leftSide -->
+
+<div class='subprograms'>
+  <div class='details'><ol><li id="l1"><pre><span class="comment">--</span> </pre></li>
+<li id="l2"><pre><span class="comment">-- Jan &amp; Uwe R. Zimmer, Australia, July 2011</span> </pre></li>
+<li id="l3"><pre><span class="comment">--</span> </pre></li>
+<li id="l4"><pre> </pre></li>
+<li id="l5"><pre><span class="keyword">with</span> Ada.Numerics;                      <span class="keyword">use</span> Ada.Numerics; </pre></li>
+<li id="l6"><pre><span class="keyword">with</span> Ada.Numerics.Elementary_Functions; <span class="keyword">use</span> Ada.Numerics.Elementary_Functions; </pre></li>
+<li id="l7"><pre> </pre></li>
+<li id="l8"><pre><span class="keyword">with</span> <span class="droplink">Graphics_Configuration<ul><li><a href="graphics_configuration.ads.html#graphics_configuration.ads:14:9" title="To API doc">To API doc</a></li><li><a href="src_graphics_configuration.ads.html#l14" title="To spec">To spec</a></li></ul></span>;            <span class="keyword">use</span> <span class="droplink">Graphics_Configuration<ul><li><a href="graphics_configuration.ads.html#graphics_configuration.ads:14:9" title="To API doc">To API doc</a></li><li><a href="src_graphics_configuration.ads.html#l14" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l9"><pre><span class="keyword">with</span> <span class="droplink">Graphics_Data<ul><li><a href="graphics_data.ads.html#graphics_data.ads:12:9" title="To API doc">To API doc</a></li><li><a href="src_graphics_data.ads.html#l12" title="To spec">To spec</a></li></ul></span>;                     <span class="keyword">use</span> <span class="droplink">Graphics_Data<ul><li><a href="graphics_data.ads.html#graphics_data.ads:12:9" title="To API doc">To API doc</a></li><li><a href="src_graphics_data.ads.html#l12" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l10"><pre> </pre></li>
+<li id="l11"><pre><span class="keyword">with</span> <span class="droplink">GL<ul><li><a href="gl.ads.html#gl.ads:66:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l66" title="To spec">To spec</a></li><li><a href="src_gl.adb.html#l17" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l12"><pre> </pre></li>
+<li id="l13"><pre><span class="keyword">with</span> <span class="droplink">GLOBE_3D<ul><li><a href="globe_3d.ads.html#globe_3d.ads:77:9" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l77" title="To spec">To spec</a></li><li><a href="src_globe_3d.adb.html#l17" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l14"><pre><span class="comment">--  with GLOBE_3D.Textures;</span> </pre></li>
+<li id="l15"><pre> </pre></li>
+<li id="l16"><pre><span class="keyword">with</span> <span class="droplink">GLU<ul><li><a href="glu.ads.html#glu.ads:48:9" title="To API doc">To API doc</a></li><li><a href="src_glu.ads.html#l48" title="To spec">To spec</a></li><li><a href="src_glu.adb.html#l3" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l17"><pre><span class="keyword">with</span> <span class="droplink">GLUT<ul><li><a href="glut.ads.html#glut.ads:22:9" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l22" title="To spec">To spec</a></li><li><a href="src_glut.adb.html#l7" title="To body">To body</a></li></ul></span>;                              <span class="keyword">use</span> <span class="droplink">GLUT<ul><li><a href="glut.ads.html#glut.ads:22:9" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l22" title="To spec">To spec</a></li><li><a href="src_glut.adb.html#l7" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l18"><pre><span class="keyword">with</span> <span class="droplink">GLUT.Devices<ul><li><a href="glut-devices.ads.html#glut-devices.ads:11:14" title="To API doc">To API doc</a></li><li><a href="src_glut-devices.ads.html#l11" title="To spec">To spec</a></li><li><a href="src_glut-devices.adb.html#l11" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l19"><pre> </pre></li>
+<li id="l20"><pre><span class="keyword">with</span> <span class="droplink">Vectors_2D_N<ul><li><a href="vectors_2d_n.ads.html#vectors_2d_n.ads:7:9" title="To API doc">To API doc</a></li><li><a href="src_vectors_2d_n.ads.html#l7" title="To spec">To spec</a></li></ul></span>;                      <span class="keyword">use</span> <span class="droplink">Vectors_2D_N<ul><li><a href="vectors_2d_n.ads.html#vectors_2d_n.ads:7:9" title="To API doc">To API doc</a></li><li><a href="src_vectors_2d_n.ads.html#l7" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l21"><pre> </pre></li>
+<li id="l22"><pre><span class="keyword">package</span> <span class="keyword">body</span> <span class="droplink">Graphics_Setup<ul><li><a href="graphics_setup.ads.html#graphics_setup.ads:5:9" title="To API doc">To API doc</a></li><li><a href="src_graphics_setup.ads.html#l5" title="To spec">To spec</a></li></ul></span> <span class="keyword">is</span> </pre></li>
+<li id="l23"><pre> </pre></li>
+<li id="l24"><pre>   Deg_2_Rad : <span class="keyword">constant</span> := Pi / 180.0; </pre></li>
+<li id="l25"><pre> </pre></li>
+<li id="l26"><pre>   <span class="comment">------------------</span> </pre></li>
+<li id="l27"><pre>   <span class="comment">-- Clear For 3D --</span> </pre></li>
+<li id="l28"><pre>   <span class="comment">------------------</span> </pre></li>
+<li id="l29"><pre> </pre></li>
+<li id="l30"><pre>   <span class="keyword">procedure</span> Reset_for_3D <span class="keyword">is</span> </pre></li>
+<li id="l31"><pre> </pre></li>
+<li id="l32"><pre>      <span class="keyword">use</span> <span class="droplink">GL<ul><li><a href="gl.ads.html#gl.ads:66:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l66" title="To spec">To spec</a></li><li><a href="src_gl.adb.html#l17" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l33"><pre> </pre></li>
+<li id="l34"><pre>      Aspect_Ratio       : <span class="keyword">constant</span> <span class="droplink">GL.Double<ul><li><a href="gl.ads.html#gl.ads:128:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l128" title="To spec">To spec</a></li></ul></span> := <span class="droplink">GL.Double<ul><li><a href="gl.ads.html#gl.ads:128:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l128" title="To spec">To spec</a></li></ul></span> (<span class="droplink">Viewer_Size<ul><li><a href="graphics_data.ads.html#graphics_data.ads:25:4" title="To API doc">To API doc</a></li><li><a href="src_graphics_data.ads.html#l25" title="To spec">To spec</a></li></ul></span> (x)) / <span class="droplink">GL.Double<ul><li><a href="gl.ads.html#gl.ads:128:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l128" title="To spec">To spec</a></li></ul></span> (<span class="droplink">Viewer_Size<ul><li><a href="graphics_data.ads.html#graphics_data.ads:25:4" title="To API doc">To API doc</a></li><li><a href="src_graphics_data.ads.html#l25" title="To spec">To spec</a></li></ul></span> (y)); </pre></li>
+<li id="l35"><pre>      Half_Field_of_View : Float := 0.5 * Float (Eye.FOVy) * <a href="src_graphics_setup.adb.html#l24" title="defined at graphics_setup.adb:24:4">Deg_2_Rad</a>; <span class="comment">-- In Radians</span> </pre></li>
+<li id="l36"><pre> </pre></li>
+<li id="l37"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l38"><pre>      <span class="keyword">if</span> <a href="src_graphics_setup.adb.html#l34" title="defined at graphics_setup.adb:34:7">Aspect_Ratio</a> &gt; 1.0 <span class="keyword">then</span> <span class="comment">-- If Wider than High</span> </pre></li>
+<li id="l39"><pre>         <a href="src_graphics_setup.adb.html#l35" title="defined at graphics_setup.adb:35:7">Half_Field_of_View</a> := Arctan (Float (<a href="src_graphics_setup.adb.html#l34" title="defined at graphics_setup.adb:34:7">Aspect_Ratio</a>) * Tan (Float (Eye.FOVy))); </pre></li>
+<li id="l40"><pre>      <span class="keyword">end</span> <span class="keyword">if</span>; </pre></li>
+<li id="l41"><pre>      Eye.Clipper.max_dot_product := <span class="droplink">GLOBE_3D.Real<ul><li><a href="globe_3d.ads.html#globe_3d.ads:102:12" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l102" title="To spec">To spec</a></li></ul></span> (Sin (<a href="src_graphics_setup.adb.html#l35" title="defined at graphics_setup.adb:35:7">Half_Field_of_View</a>)); </pre></li>
+<li id="l42"><pre>      Eye.Clipper.main_clipping := (0, 0, <span class="droplink">Viewer_Size<ul><li><a href="graphics_data.ads.html#graphics_data.ads:25:4" title="To API doc">To API doc</a></li><li><a href="src_graphics_data.ads.html#l25" title="To spec">To spec</a></li></ul></span> (x) - 1, <span class="droplink">Viewer_Size<ul><li><a href="graphics_data.ads.html#graphics_data.ads:25:4" title="To API doc">To API doc</a></li><li><a href="src_graphics_data.ads.html#l25" title="To spec">To spec</a></li></ul></span> (y) - 1); </pre></li>
+<li id="l43"><pre> </pre></li>
+<li id="l44"><pre>      <span class="droplink">GL.Viewport<ul><li><a href="gl.ads.html#gl.ads:3272:14" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l3272" title="To spec">To spec</a></li><li><a href="src_gl.ads.html#l4107" title="To body">To body</a></li></ul></span> (0, 0, <span class="droplink">GL.Sizei<ul><li><a href="gl.ads.html#gl.ads:125:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l125" title="To spec">To spec</a></li></ul></span> (<span class="droplink">Viewer_Size<ul><li><a href="graphics_data.ads.html#graphics_data.ads:25:4" title="To API doc">To API doc</a></li><li><a href="src_graphics_data.ads.html#l25" title="To spec">To spec</a></li></ul></span> (x)), <span class="droplink">GL.Sizei<ul><li><a href="gl.ads.html#gl.ads:125:9" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l125" title="To spec">To spec</a></li></ul></span> (<span class="droplink">Viewer_Size<ul><li><a href="graphics_data.ads.html#graphics_data.ads:25:4" title="To API doc">To API doc</a></li><li><a href="src_graphics_data.ads.html#l25" title="To spec">To spec</a></li></ul></span> (y))); </pre></li>
+<li id="l45"><pre>      <span class="droplink">GL.MatrixMode<ul><li><a href="gl.ads.html#gl.ads:1338:14" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l1338" title="To spec">To spec</a></li><li><a href="src_gl.ads.html#l4165" title="To body">To body</a></li></ul></span> (GL.PROJECTION); </pre></li>
+<li id="l46"><pre>      <span class="droplink">GL.LoadIdentity<ul><li><a href="gl.ads.html#gl.ads:3282:14" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l3282" title="To spec">To spec</a></li><li><a href="src_gl.ads.html#l4171" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l47"><pre> </pre></li>
+<li id="l48"><pre>      <span class="droplink">GLU.Perspective<ul><li><a href="glu.ads.html#glu.ads:600:14" title="To API doc">To API doc</a></li><li><a href="src_glu.ads.html#l600" title="To spec">To spec</a></li><li><a href="src_glu.ads.html#l670" title="To body">To body</a></li></ul></span> (<span class="droplink">fovy<ul><li><a href="glu.ads.html#glu.ads:600:27" title="To API doc">To API doc</a></li><li><a href="src_glu.ads.html#l600" title="To spec">To spec</a></li></ul></span>   =&gt; Eye.FOVy, <span class="comment">-- Field of View in the Y</span> </pre></li>
+<li id="l49"><pre>                       <span class="droplink">aspect<ul><li><a href="glu.ads.html#glu.ads:601:27" title="To API doc">To API doc</a></li><li><a href="src_glu.ads.html#l601" title="To spec">To spec</a></li></ul></span> =&gt; <a href="src_graphics_setup.adb.html#l34" title="defined at graphics_setup.adb:34:7">Aspect_Ratio</a>, </pre></li>
+<li id="l50"><pre>                       <span class="droplink">zNear<ul><li><a href="glu.ads.html#glu.ads:602:27" title="To API doc">To API doc</a></li><li><a href="src_glu.ads.html#l602" title="To spec">To spec</a></li></ul></span>  =&gt; <span class="droplink">Camera_Close_Clipping_Plane<ul><li><a href="graphics_configuration.ads.html#graphics_configuration.ads:36:4" title="To API doc">To API doc</a></li><li><a href="src_graphics_configuration.ads.html#l36" title="To spec">To spec</a></li></ul></span>, </pre></li>
+<li id="l51"><pre>                       <span class="droplink">zFar<ul><li><a href="glu.ads.html#glu.ads:603:27" title="To API doc">To API doc</a></li><li><a href="src_glu.ads.html#l603" title="To spec">To spec</a></li></ul></span>   =&gt; <span class="droplink">Camera_Far_Clipping_Plane<ul><li><a href="graphics_configuration.ads.html#graphics_configuration.ads:37:4" title="To API doc">To API doc</a></li><li><a href="src_graphics_configuration.ads.html#l37" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l52"><pre> </pre></li>
+<li id="l53"><pre>      <span class="droplink">GL.MatrixMode<ul><li><a href="gl.ads.html#gl.ads:1338:14" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l1338" title="To spec">To spec</a></li><li><a href="src_gl.ads.html#l4165" title="To body">To body</a></li></ul></span> (GL.MODELVIEW); </pre></li>
+<li id="l54"><pre>      <span class="droplink">GL.ShadeModel<ul><li><a href="gl.ads.html#gl.ads:1633:14" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l1633" title="To spec">To spec</a></li><li><a href="src_gl.ads.html#l4343" title="To body">To body</a></li></ul></span> (GL.SMOOTH);           <span class="comment">-- Smooth vs. Flat</span> </pre></li>
+<li id="l55"><pre>      <span class="droplink">GL.ClearColor<ul><li><a href="gl.ads.html#gl.ads:3192:14" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l3192" title="To spec">To spec</a></li><li><a href="src_gl.ads.html#l4117" title="To body">To body</a></li></ul></span> (0.0, 0.0, 0.07, 0.0); <span class="comment">-- Clear Value for Colour Buffer</span> </pre></li>
+<li id="l56"><pre>      <span class="droplink">GL.ClearAccum<ul><li><a href="gl.ads.html#gl.ads:3201:14" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l3201" title="To spec">To spec</a></li><li><a href="src_gl.ads.html#l4163" title="To body">To body</a></li></ul></span> (0.0, 0.0, 0.0, 0.0);  <span class="comment">-- Clear Value for Accumulation Buffer</span> </pre></li>
+<li id="l57"><pre>   <span class="keyword">end</span> <span class="droplink">Reset_for_3D<ul><li><a href="src_graphics_setup.adb.html#l30" title="To spec">To spec</a></li><li><a href="src_graphics_setup.adb.html#l30" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l58"><pre> </pre></li>
+<li id="l59"><pre>   <span class="comment">--------------------</span> </pre></li>
+<li id="l60"><pre>   <span class="comment">-- Window Resized --</span> </pre></li>
+<li id="l61"><pre>   <span class="comment">--------------------</span> </pre></li>
+<li id="l62"><pre> </pre></li>
+<li id="l63"><pre>   <span class="keyword">procedure</span> <span class="droplink">Window_Resize<ul><li><a href="graphics_setup.ads.html#graphics_setup.ads:8:14" title="To API doc">To API doc</a></li><li><a href="src_graphics_setup.ads.html#l8" title="To spec">To spec</a></li></ul></span> (<span class="droplink">Size_x<ul><li><a href="graphics_setup.ads.html#graphics_setup.ads:8:29" title="To API doc">To API doc</a></li><li><a href="src_graphics_setup.ads.html#l8" title="To spec">To spec</a></li></ul></span>, <span class="droplink">Size_y<ul><li><a href="graphics_setup.ads.html#graphics_setup.ads:8:37" title="To API doc">To API doc</a></li><li><a href="src_graphics_setup.ads.html#l8" title="To spec">To spec</a></li></ul></span> : Integer) <span class="keyword">is</span> </pre></li>
+<li id="l64"><pre> </pre></li>
+<li id="l65"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l66"><pre>      <span class="droplink">Viewer_Size<ul><li><a href="graphics_data.ads.html#graphics_data.ads:25:4" title="To API doc">To API doc</a></li><li><a href="src_graphics_data.ads.html#l25" title="To spec">To spec</a></li></ul></span> := ((x =&gt; <span class="droplink">Size_x<ul><li><a href="graphics_setup.ads.html#graphics_setup.ads:8:29" title="To API doc">To API doc</a></li><li><a href="src_graphics_setup.ads.html#l8" title="To spec">To spec</a></li></ul></span>, y =&gt; <span class="droplink">Size_y<ul><li><a href="graphics_setup.ads.html#graphics_setup.ads:8:37" title="To API doc">To API doc</a></li><li><a href="src_graphics_setup.ads.html#l8" title="To spec">To spec</a></li></ul></span>)); </pre></li>
+<li id="l67"><pre>      <span class="droplink">Reset_for_3D<ul><li><a href="src_graphics_setup.adb.html#l30" title="To spec">To spec</a></li><li><a href="src_graphics_setup.adb.html#l30" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l68"><pre>   <span class="keyword">end</span> <span class="droplink">Window_Resize<ul><li><a href="graphics_setup.ads.html#graphics_setup.ads:8:14" title="To API doc">To API doc</a></li><li><a href="src_graphics_setup.ads.html#l8" title="To spec">To spec</a></li><li><a href="src_graphics_setup.adb.html#l63" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l69"><pre> </pre></li>
+<li id="l70"><pre>   <span class="comment">----------------------</span> </pre></li>
+<li id="l71"><pre>   <span class="comment">-- Initialize Video --</span> </pre></li>
+<li id="l72"><pre>   <span class="comment">-----------------------</span> </pre></li>
+<li id="l73"><pre> </pre></li>
+<li id="l74"><pre><span class="comment">--     Actual_LINE_WIDTH : aliased GL.Float;</span> </pre></li>
+<li id="l75"><pre> </pre></li>
+<li id="l76"><pre>   <span class="keyword">procedure</span> <span class="droplink">Initialize_Graphics<ul><li><a href="graphics_setup.ads.html#graphics_setup.ads:7:14" title="To API doc">To API doc</a></li><li><a href="src_graphics_setup.ads.html#l7" title="To spec">To spec</a></li></ul></span> (<span class="droplink">Operations<ul><li><a href="graphics_setup.ads.html#graphics_setup.ads:7:35" title="To API doc">To API doc</a></li><li><a href="src_graphics_setup.ads.html#l7" title="To spec">To spec</a></li></ul></span> : <span class="keyword">access</span> <span class="keyword">procedure</span>) <span class="keyword">is</span> </pre></li>
+<li id="l77"><pre> </pre></li>
+<li id="l78"><pre>      GLUT_Options : <span class="keyword">constant</span> <span class="droplink">Unsigned<ul><li><a href="glut.ads.html#glut.ads:24:12" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l24" title="To spec">To spec</a></li></ul></span> := <span class="droplink">GLUT.DOUBLE<ul><li><a href="glut.ads.html#glut.ads:34:4" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l34" title="To spec">To spec</a></li></ul></span> <span class="keyword">or</span> <span class="droplink">GLUT.RGB<ul><li><a href="glut.ads.html#glut.ads:30:4" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l30" title="To spec">To spec</a></li></ul></span> <span class="keyword">or</span> <span class="droplink">GLUT.DEPTH<ul><li><a href="glut.ads.html#glut.ads:37:4" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l37" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l79"><pre>      Error : Integer; <span class="keyword">pragma</span> Unreferenced (<a href="src_graphics_setup.adb.html#l79" title="defined at graphics_setup.adb:79:7">Error</a>); </pre></li>
+<li id="l80"><pre> </pre></li>
+<li id="l81"><pre>   <span class="keyword">begin</span> </pre></li>
+<li id="l82"><pre><span class="comment">--        GLOBE_3D.Set_global_data_name (&quot;Textures.zip&quot;);</span> </pre></li>
+<li id="l83"><pre><span class="comment">--        GLOBE_3D.Textures.Register_textures_from_resources;</span> </pre></li>
+<li id="l84"><pre> </pre></li>
+<li id="l85"><pre>      Eye.FOVy := <span class="droplink">Camera_Field_of_View<ul><li><a href="graphics_configuration.ads.html#graphics_configuration.ads:35:4" title="To API doc">To API doc</a></li><li><a href="src_graphics_configuration.ads.html#l35" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l86"><pre> </pre></li>
+<li id="l87"><pre>      <span class="comment">-- GLUT Stuff --</span> </pre></li>
+<li id="l88"><pre>      <span class="comment">-- Get a Window with the correct properties --</span> </pre></li>
+<li id="l89"><pre>      <span class="droplink">GLUT.Init<ul><li><a href="glut.ads.html#glut.ads:296:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l296" title="To spec">To spec</a></li><li><a href="src_glut.adb.html#l98" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l90"><pre>      <span class="droplink">GLUT.InitDisplayMode<ul><li><a href="glut.ads.html#glut.ads:317:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l317" title="To spec">To spec</a></li><li><a href="src_glut.ads.html#l318" title="To body">To body</a></li></ul></span> (<a href="src_graphics_setup.adb.html#l78" title="defined at graphics_setup.adb:78:7">GLUT_Options</a>); </pre></li>
+<li id="l91"><pre>      <span class="droplink">GLUT.InitWindowSize<ul><li><a href="glut.ads.html#glut.ads:328:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l328" title="To spec">To spec</a></li><li><a href="src_glut.ads.html#l329" title="To body">To body</a></li></ul></span> (<span class="droplink">Viewer_Size<ul><li><a href="graphics_data.ads.html#graphics_data.ads:25:4" title="To API doc">To API doc</a></li><li><a href="src_graphics_data.ads.html#l25" title="To spec">To spec</a></li></ul></span> (x), <span class="droplink">Viewer_Size<ul><li><a href="graphics_data.ads.html#graphics_data.ads:25:4" title="To API doc">To API doc</a></li><li><a href="src_graphics_data.ads.html#l25" title="To spec">To spec</a></li></ul></span> (y)); </pre></li>
+<li id="l92"><pre>      <span class="droplink">GLUT.InitWindowPosition<ul><li><a href="glut.ads.html#glut.ads:325:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l325" title="To spec">To spec</a></li><li><a href="src_glut.ads.html#l326" title="To body">To body</a></li></ul></span> (0, 50); </pre></li>
+<li id="l93"><pre>      <a href="src_graphics_setup.adb.html#l79" title="defined at graphics_setup.adb:79:7">Error</a> := <span class="droplink">GLUT.CreateWindow<ul><li><a href="glut.ads.html#glut.ads:349:13" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l349" title="To spec">To spec</a></li><li><a href="src_glut.adb.html#l114" title="To body">To body</a></li></ul></span> (<span class="droplink">Viewer_Title<ul><li><a href="graphics_configuration.ads.html#graphics_configuration.ads:40:4" title="To API doc">To API doc</a></li><li><a href="src_graphics_configuration.ads.html#l40" title="To spec">To spec</a></li></ul></span>); </pre></li>
+<li id="l94"><pre> </pre></li>
+<li id="l95"><pre>      <span class="comment">-- Feedback Procedures --</span> </pre></li>
+<li id="l96"><pre>      <span class="droplink">GLUT.ReshapeFunc<ul><li><a href="glut.ads.html#glut.ads:550:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l550" title="To spec">To spec</a></li><li><a href="src_glut.adb.html#l224" title="To body">To body</a></li></ul></span> (<span class="droplink">Window_Resize<ul><li><a href="graphics_setup.ads.html#graphics_setup.ads:8:14" title="To API doc">To API doc</a></li><li><a href="src_graphics_setup.ads.html#l8" title="To spec">To spec</a></li><li><a href="src_graphics_setup.adb.html#l63" title="To body">To body</a></li></ul></span>&apos;Address); </pre></li>
+<li id="l97"><pre>      <span class="droplink">GLUT.DisplayFunc<ul><li><a href="glut.ads.html#glut.ads:544:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l544" title="To spec">To spec</a></li><li><a href="src_glut.adb.html#l218" title="To body">To body</a></li></ul></span> (<span class="droplink">Operations<ul><li><a href="graphics_setup.ads.html#graphics_setup.ads:7:35" title="To API doc">To API doc</a></li><li><a href="src_graphics_setup.ads.html#l7" title="To spec">To spec</a></li></ul></span>.<span class="keyword">all</span>&apos;Address); </pre></li>
+<li id="l98"><pre>      <span class="droplink">GLUT.IdleFunc<ul><li><a href="glut.ads.html#glut.ads:603:14" title="To API doc">To API doc</a></li><li><a href="src_glut.ads.html#l603" title="To spec">To spec</a></li><li><a href="src_glut.adb.html#l260" title="To body">To body</a></li></ul></span> (<span class="droplink">Operations<ul><li><a href="graphics_setup.ads.html#graphics_setup.ads:7:35" title="To API doc">To API doc</a></li><li><a href="src_graphics_setup.ads.html#l7" title="To spec">To spec</a></li></ul></span>.<span class="keyword">all</span>&apos;Address); </pre></li>
+<li id="l99"><pre> </pre></li>
+<li id="l100"><pre>      <span class="droplink">GLUT.Devices.Initialize<ul><li><a href="glut-devices.ads.html#glut-devices.ads:13:14" title="To API doc">To API doc</a></li><li><a href="src_glut-devices.ads.html#l13" title="To spec">To spec</a></li><li><a href="src_glut-devices.adb.html#l138" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l101"><pre> </pre></li>
+<li id="l102"><pre>      <span class="comment">-- GL Stuff --</span> </pre></li>
+<li id="l103"><pre>      <span class="comment">-- Clear Modes --</span> </pre></li>
+<li id="l104"><pre>      <span class="droplink">GL.Disable<ul><li><a href="gl.ads.html#gl.ads:706:14" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l706" title="To spec">To spec</a></li><li><a href="src_gl.ads.html#l4141" title="To body">To body</a></li></ul></span> (GL.BLEND); </pre></li>
+<li id="l105"><pre>      <span class="droplink">GL.Disable<ul><li><a href="gl.ads.html#gl.ads:706:14" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l706" title="To spec">To spec</a></li><li><a href="src_gl.ads.html#l4141" title="To body">To body</a></li></ul></span> (GL.LIGHTING); </pre></li>
+<li id="l106"><pre>      <span class="droplink">GL.Disable<ul><li><a href="gl.ads.html#gl.ads:706:14" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l706" title="To spec">To spec</a></li><li><a href="src_gl.ads.html#l4141" title="To body">To body</a></li></ul></span> (GL.AUTO_NORMAL); </pre></li>
+<li id="l107"><pre>      <span class="droplink">GL.Disable<ul><li><a href="gl.ads.html#gl.ads:706:14" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l706" title="To spec">To spec</a></li><li><a href="src_gl.ads.html#l4141" title="To body">To body</a></li></ul></span> (GL.NORMALIZE); </pre></li>
+<li id="l108"><pre>      <span class="droplink">GL.Disable<ul><li><a href="gl.ads.html#gl.ads:706:14" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l706" title="To spec">To spec</a></li><li><a href="src_gl.ads.html#l4141" title="To body">To body</a></li></ul></span> (GL.DEPTH_TEST); </pre></li>
+<li id="l109"><pre> </pre></li>
+<li id="l110"><pre>      <span class="droplink">Reset_for_3D<ul><li><a href="src_graphics_setup.adb.html#l30" title="To spec">To spec</a></li><li><a href="src_graphics_setup.adb.html#l30" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l111"><pre> </pre></li>
+<li id="l112"><pre>      <span class="comment">-- Enable Lighting --</span> </pre></li>
+<li id="l113"><pre>      <span class="droplink">GL.Enable<ul><li><a href="gl.ads.html#gl.ads:704:14" title="To API doc">To API doc</a></li><li><a href="src_gl.ads.html#l704" title="To spec">To spec</a></li><li><a href="src_gl.ads.html#l4140" title="To body">To body</a></li></ul></span> (GL.LIGHTING); </pre></li>
+<li id="l114"><pre>      <span class="keyword">for</span> Source <span class="keyword">in</span> <span class="droplink">Initial_Lights<ul><li><a href="graphics_configuration.ads.html#graphics_configuration.ads:44:4" title="To API doc">To API doc</a></li><li><a href="src_graphics_configuration.ads.html#l44" title="To spec">To spec</a></li></ul></span>&apos;Range <span class="keyword">loop</span> </pre></li>
+<li id="l115"><pre>         <span class="droplink">GLOBE_3D.Define<ul><li><a href="globe_3d.ads.html#globe_3d.ads:492:14" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l492" title="To spec">To spec</a></li><li><a href="src_globe_3d.adb.html#l833" title="To body">To body</a></li></ul></span> (Source, <span class="droplink">Initial_Lights<ul><li><a href="graphics_configuration.ads.html#graphics_configuration.ads:44:4" title="To API doc">To API doc</a></li><li><a href="src_graphics_configuration.ads.html#l44" title="To spec">To spec</a></li></ul></span> (Source)); </pre></li>
+<li id="l116"><pre>         <span class="droplink">GLOBE_3D.Switch_light<ul><li><a href="globe_3d.ads.html#globe_3d.ads:495:14" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l495" title="To spec">To spec</a></li><li><a href="src_globe_3d.adb.html#l860" title="To body">To body</a></li></ul></span> (Source, True); </pre></li>
+<li id="l117"><pre>      <span class="keyword">end</span> <span class="keyword">loop</span>; </pre></li>
+<li id="l118"><pre> </pre></li>
+<li id="l119"><pre>      <span class="comment">-- Reset Eye</span> </pre></li>
+<li id="l120"><pre>      Eye.Clipper.Eye_Position := <span class="droplink">Camera_Initial_Position<ul><li><a href="graphics_configuration.ads.html#graphics_configuration.ads:38:4" title="To API doc">To API doc</a></li><li><a href="src_graphics_configuration.ads.html#l38" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l121"><pre>      Eye.World_Rotation       := <span class="droplink">GLOBE_3D.Id_33<ul><li><a href="globe_3d.ads.html#globe_3d.ads:117:4" title="To API doc">To API doc</a></li><li><a href="src_globe_3d.ads.html#l117" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l122"><pre>      Eye.FOVy                 := <span class="droplink">Camera_Field_of_View<ul><li><a href="graphics_configuration.ads.html#graphics_configuration.ads:35:4" title="To API doc">To API doc</a></li><li><a href="src_graphics_configuration.ads.html#l35" title="To spec">To spec</a></li></ul></span>; </pre></li>
+<li id="l123"><pre> </pre></li>
+<li id="l124"><pre><span class="comment">--        GL.GetFloatv (GL.LINE_WIDTH_RANGE, Actual_LINE_WIDTH&apos;Access);</span> </pre></li>
+<li id="l125"><pre><span class="comment">--        Put (&quot;Actual_LINE_WIDTH: &quot;); Put (Float (Actual_LINE_WIDTH), 3, 2, 0);</span> </pre></li>
+<li id="l126"><pre>   <span class="keyword">end</span> <span class="droplink">Initialize_Graphics<ul><li><a href="graphics_setup.ads.html#graphics_setup.ads:7:14" title="To API doc">To API doc</a></li><li><a href="src_graphics_setup.ads.html#l7" title="To spec">To spec</a></li><li><a href="src_graphics_setup.adb.html#l76" title="To body">To body</a></li></ul></span>; </pre></li>
+<li id="l127"><pre> </pre></li>
+<li id="l128"><pre>   <span class="comment">--</span> </pre></li>
+<li id="l129"><pre> </pre></li>
+<li id="l130"><pre><span class="keyword">end</span> <span class="droplink">Graphics_Setup<ul><li><a href="graphics_setup.ads.html#graphics_setup.ads:5:9" title="To API doc">To API doc</a></li><li><a href="src_graphics_setup.ads.html#l5" title="To spec">To spec</a></li><li><a href="src_graphics_setup.adb.html#l22" title="To body">To body</a></li></ul></span>; </pre></li>
+</ol></div>
+</div>
+
+</body>
+</html>

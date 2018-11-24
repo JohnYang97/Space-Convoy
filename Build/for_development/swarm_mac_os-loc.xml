@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<Locations >
+  <Project>
+    <vfs_file>/Users/wenjunyang/Desktop/comp2310/Assignment_1_template/swarm_mac_os.gpr</vfs_file>
+    <file_marker column=" 51" line=" 1" >
+      <vfs_project>/Users/wenjunyang/Desktop/comp2310/Assignment_1_template/swarm_mac_os.gpr</vfs_project>
+      <vfs_file>/Users/wenjunyang/Desktop/comp2310/Assignment_1_template/Sources/Student_Packages/vehicle_message_type.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 49" line=" 178" >
+      <vfs_project>/Users/wenjunyang/Desktop/comp2310/Assignment_1_template/swarm_mac_os.gpr</vfs_project>
+      <vfs_file>/Users/wenjunyang/Desktop/comp2310/Assignment_1_template/Sources/Student_Packages/vehicle_task_type.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>/Users/wenjunyang/Desktop/comp2310/Assignment_1_template/swarm_mac_os.gpr</vfs_project>
+      <vfs_file>/Users/wenjunyang/Desktop/comp2310/Assignment_1_template/Sources/Student_Packages/vehicle_task_type.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 53" line=" 23" >
+      <vfs_project>/Users/wenjunyang/Desktop/comp2310/Assignment_1_template/swarm_mac_os.gpr</vfs_project>
+      <vfs_file>/Users/wenjunyang/Desktop/comp2310/Assignment_1_template/Sources/Swarm/swarm_configuration.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 55" line=" 28" >
+      <vfs_project>/Users/wenjunyang/Desktop/comp2310/Assignment_1_template/swarm_mac_os.gpr</vfs_project>
+      <vfs_file>/Users/wenjunyang/Desktop/comp2310/Assignment_1_template/Sources/Student_Packages/vehicle_message_type.ads</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 49" line=" 178" >
+      <vfs_project>/Users/wenjunyang/Desktop/comp2310/Assignment_1_template/swarm_mac_os.gpr</vfs_project>
+      <vfs_file>/Users/wenjunyang/Desktop/comp2310/Assignment_1_template/Sources/Student_Packages/vehicle_task_type.adb</vfs_file>
+    </file_marker>
+  </Project>
+</Locations>
